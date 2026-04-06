@@ -1,11 +1,25 @@
 ---
 title: ZEROPLUS_LAP I2c 訊號錄製方式
-category: general
+domain_tags:
+  - hub
+  - monitor
+  - firmware
+task_tags:
+  - install
+  - debug
+  - release
+  - sop
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: a4d6a82b-ea52-4ed3-be30-52e833101359
 notion_url: 'https://www.notion.so/ZEROPLUS_LAP-I2c-a4d6a82bea524ed3be3052e833101359'
 notion_updated_at: '2026-01-21T09:25:00.000Z'
-exported_at: '2026-04-06T11:22:01.894Z'
+exported_at: '2026-04-06T13:14:07.335Z'
 is_summarized: false
+relations: []
 ---
 
 MTK Scaler 在 溝通時，常常會遇到抓取Bus Hound資料時，還是不能判斷是Hub or Scaler的問題，這時候就必須再抓取i2c 的訊號跟Bus Hound資料做比對，這時候就必須透過 Logic Analyzer要錄 i2c 訊號

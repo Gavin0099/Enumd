@@ -1,11 +1,22 @@
 ---
 title: Mac USB 2.0 EEP Tool 開發簡介
-category: mac
+domain_tags:
+  - hub
+  - mac
+  - tools
+task_tags:
+  - debug
+  - spec
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 20e64f6b-c656-8069-91de-fbc11a4bb622
 notion_url: 'https://www.notion.so/Mac-USB-2-0-EEP-Tool-20e64f6bc656806991defbc11a4bb622'
 notion_updated_at: '2026-01-21T09:37:00.000Z'
-exported_at: '2026-04-06T11:20:49.034Z'
+exported_at: '2026-04-06T13:13:05.153Z'
 is_summarized: false
+relations: []
 ---
 
 ## 原由

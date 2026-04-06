@@ -1,12 +1,23 @@
 ---
 title: USB Hub Firmware（8051 / Keil C51）AI 開發前先期確認 Checklist
+domain_tags:
+  - hub
+  - firmware
+task_tags:
+  - release
+  - spec
+  - sop
+  - log
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 32064f6b-c656-8028-babe-f6192ac120ed
 notion_url: >-
   https://www.notion.so/USB-Hub-Firmware-8051-Keil-C51-AI-Checklist-32064f6bc6568028babef6192ac120ed
 notion_updated_at: '2026-03-11T09:46:00.000Z'
-exported_at: '2026-04-06T11:28:30.538Z'
+exported_at: '2026-04-06T13:20:05.406Z'
 is_summarized: false
+relations: []
 ---
 
 ```mermaid

@@ -1,11 +1,19 @@
 ---
 title: Inno Setup Script
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - install
+  - config
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 1b364f6b-c656-8097-ab50-d6f8feae6f06
 notion_url: 'https://www.notion.so/Inno-Setup-Script-1b364f6bc6568097ab50d6f8feae6f06'
 notion_updated_at: '2026-01-21T09:36:00.000Z'
-exported_at: '2026-04-06T11:26:48.074Z'
+exported_at: '2026-04-06T13:18:24.507Z'
 is_summarized: false
+relations: []
 ---
 
 ```c#

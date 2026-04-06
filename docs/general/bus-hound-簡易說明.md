@@ -1,11 +1,19 @@
 ---
 title: Bus Hound 簡易說明
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 33313322-a68d-409e-8a94-fbcb18a33865
 notion_url: 'https://www.notion.so/Bus-Hound-33313322a68d409e8a94fbcb18a33865'
 notion_updated_at: '2026-01-21T09:26:00.000Z'
-exported_at: '2026-04-06T11:21:58.922Z'
+exported_at: '2026-04-06T13:14:05.453Z'
 is_summarized: false
+relations: []
 ---
 
 可以抓取USB 傳輸資料，教學如下

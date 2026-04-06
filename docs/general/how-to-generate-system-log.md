@@ -1,12 +1,21 @@
 ---
 title: How to generate system log
+domain_tags:
+  - general
+task_tags:
+  - debug
+  - sop
+  - log
+authority_level: deprecated
+is_deprecated: true
 category: general
 notion_id: e5813673-693d-48c1-934c-3f8c61fe7a1b
 notion_url: >-
   https://www.notion.so/How-to-generate-system-log-e5813673693d48c1934c3f8c61fe7a1b
 notion_updated_at: '2026-01-21T09:30:00.000Z'
-exported_at: '2026-04-06T11:22:07.049Z'
+exported_at: '2026-04-06T13:14:12.014Z'
 is_summarized: false
+relations: []
 ---
 
 ### Debug log archive

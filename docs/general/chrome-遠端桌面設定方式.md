@@ -1,11 +1,18 @@
 ---
 title: Chrome 遠端桌面設定方式
+domain_tags:
+  - general
+task_tags:
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: f2babb2a-6e22-44f8-aaef-b83685b0cd44
 notion_url: 'https://www.notion.so/Chrome-f2babb2a6e2244f8aaefb83685b0cd44'
 notion_updated_at: '2022-12-13T08:38:00.000Z'
-exported_at: '2026-04-06T11:21:04.798Z'
+exported_at: '2026-04-06T13:13:21.552Z'
 is_summarized: false
+relations: []
 ---
 
 1.google 遠端桌面

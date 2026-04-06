@@ -1,12 +1,20 @@
 ---
 title: HubDriverInstaller User Guide
+domain_tags:
+  - driver
+  - tools
+task_tags:
+  - install
+authority_level: derived
+is_deprecated: false
 category: driver
 notion_id: 2a464f6b-c656-8007-929a-fc0525144185
 notion_url: >-
   https://www.notion.so/HubDriverInstaller-User-Guide-2a464f6bc6568007929afc0525144185
 notion_updated_at: '2026-01-21T09:38:00.000Z'
-exported_at: '2026-04-06T11:27:53.924Z'
+exported_at: '2026-04-06T13:19:30.023Z'
 is_summarized: false
+relations: []
 ---
 
 ## Overview

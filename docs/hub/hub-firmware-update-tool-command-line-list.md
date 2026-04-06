@@ -1,12 +1,24 @@
 ---
 title: 'Hub Firmware Update Tool : Command Line List'
+domain_tags:
+  - hub
+  - driver
+  - firmware
+  - tools
+task_tags:
+  - install
+  - firmware-update
+  - release
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 9ad74f8a-7db3-478f-965b-a6cf0c470788
 notion_url: >-
   https://www.notion.so/Hub-Firmware-Update-Tool-Command-Line-List-9ad74f8a7db3478f965ba6cf0c470788
 notion_updated_at: '2026-01-21T09:53:00.000Z'
-exported_at: '2026-04-06T11:16:59.067Z'
+exported_at: '2026-04-06T13:10:13.593Z'
 is_summarized: false
+relations: []
 ---
 
 ### Command Line Tool Release Note

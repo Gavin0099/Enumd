@@ -1,11 +1,19 @@
 ---
 title: Log分類
-category: general
+domain_tags:
+  - firmware
+  - tools
+task_tags:
+  - log
+authority_level: source
+is_deprecated: false
+category: firmware
 notion_id: 174e63f3-f0c2-4c93-a5b6-8bd8edab03af
 notion_url: 'https://www.notion.so/Log-174e63f3f0c24c93a5b68bd8edab03af'
 notion_updated_at: '2024-03-27T06:30:00.000Z'
-exported_at: '2026-04-06T11:27:14.373Z'
+exported_at: '2026-04-06T13:18:52.611Z'
 is_summarized: false
+relations: []
 ---
 
 ## 不必要的log

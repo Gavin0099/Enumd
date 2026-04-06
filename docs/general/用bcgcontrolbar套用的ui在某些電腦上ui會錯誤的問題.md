@@ -1,11 +1,19 @@
 ---
 title: 用Bcgcontrolbar套用的UI在某些電腦上UI會錯誤的問題
+domain_tags:
+  - general
+task_tags:
+  - debug
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: a1d74bed-cd3c-49bf-ab52-89d49dc3bae8
 notion_url: 'https://www.notion.so/Bcgcontrolbar-UI-UI-a1d74bedcd3c49bfab5289d49dc3bae8'
 notion_updated_at: '2025-04-08T06:41:00.000Z'
-exported_at: '2026-04-06T11:21:21.708Z'
+exported_at: '2026-04-06T13:13:32.429Z'
 is_summarized: false
+relations: []
 ---
 
 ### 現象

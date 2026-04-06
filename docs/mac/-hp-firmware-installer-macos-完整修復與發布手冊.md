@@ -1,12 +1,28 @@
 ---
 title: "\U0001F6E0️ HP Firmware Installer (macOS) 完整修復與發布手冊"
-category: mac
+domain_tags:
+  - code-sign
+  - mac
+  - firmware
+  - tools
+  - security
+task_tags:
+  - install
+  - debug
+  - code-sign
+  - build
+  - release
+  - config
+authority_level: reference
+is_deprecated: false
+category: code-sign
 notion_id: 2ed64f6b-c656-80c2-949c-e0583a5067f6
 notion_url: >-
   https://www.notion.so/HP-Firmware-Installer-macOS-2ed64f6bc65680c2949ce0583a5067f6
 notion_updated_at: '2026-01-22T01:53:00.000Z'
-exported_at: '2026-04-06T11:20:54.405Z'
+exported_at: '2026-04-06T13:13:10.270Z'
 is_summarized: false
+relations: []
 ---
 
 目標：

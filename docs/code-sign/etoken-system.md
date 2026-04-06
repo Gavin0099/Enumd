@@ -1,11 +1,21 @@
 ---
 title: Etoken System
-category: code-sign
+domain_tags:
+  - hub
+  - code-sign
+  - tools
+  - security
+task_tags:
+  - install
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 36cce5a7-f165-47eb-bf86-39a8c55db0ef
 notion_url: 'https://www.notion.so/Etoken-System-36cce5a7f16547ebbf8639a8c55db0ef'
 notion_updated_at: '2026-04-01T05:39:00.000Z'
-exported_at: '2026-04-06T11:19:23.583Z'
+exported_at: '2026-04-06T13:11:57.334Z'
 is_summarized: false
+relations: []
 ---
 
 ### Server

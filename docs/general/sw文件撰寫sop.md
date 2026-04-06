@@ -1,11 +1,20 @@
 ---
 title: SW文件撰寫SOP
+domain_tags:
+  - general
+task_tags:
+  - release
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: e08d5f5b-bcdb-4d61-a030-a55b727abed7
 notion_url: 'https://www.notion.so/SW-SOP-e08d5f5bbcdb4d61a030a55b727abed7'
 notion_updated_at: '2022-12-13T08:30:00.000Z'
-exported_at: '2026-04-06T11:16:46.799Z'
+exported_at: '2026-04-06T13:10:02.856Z'
 is_summarized: false
+relations: []
 ---
 
 ### 簡介

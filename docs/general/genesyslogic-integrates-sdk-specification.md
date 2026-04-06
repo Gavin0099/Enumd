@@ -4,7 +4,7 @@ category: general
 notion_id: 20f725b2-2c30-4de1-a5f6-8c29228188cc
 notion_url: >-
   https://www.notion.so/GenesysLogic-integrates-SDK-specification-20f725b22c304de1a5f68c29228188cc
-notion_updated_at: '2026-01-21T09:23:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:18:54.093Z'
 is_summarized: false
 ---

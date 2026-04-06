@@ -2,13 +2,23 @@
 title: |-
   2025 Minimum Elements for a
   Software Bill of Materials (SBOM)
-category: general
+domain_tags:
+  - tools
+  - security
+task_tags:
+  - debug
+  - release
+  - sop
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 2c564f6b-c656-801f-9dc8-d7c64141aee5
 notion_url: >-
   https://www.notion.so/2025-Minimum-Elements-for-a-Software-Bill-of-Materials-SBOM-2c564f6bc656801f9dc8d7c64141aee5
 notion_updated_at: '2026-01-21T09:39:00.000Z'
-exported_at: '2026-04-06T11:27:58.247Z'
+exported_at: '2026-04-06T13:19:35.920Z'
 is_summarized: false
+relations: []
 ---
 
 ### 簡介 (Introduction)

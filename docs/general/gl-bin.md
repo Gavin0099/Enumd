@@ -1,11 +1,19 @@
 ---
 title: GL Bin
+domain_tags:
+  - general
+task_tags:
+  - log
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: 16f64f6b-c656-8075-af6c-e3f6c01680cc
 notion_url: 'https://www.notion.so/GL-Bin-16f64f6bc6568075af6ce3f6c01680cc'
 notion_updated_at: '2025-01-03T07:45:00.000Z'
-exported_at: '2026-04-06T11:26:41.023Z'
+exported_at: '2026-04-06T13:18:20.335Z'
 is_summarized: false
+relations: []
 ---
 
 ```c#

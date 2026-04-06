@@ -4,7 +4,7 @@ category: general
 notion_id: 2960100c-a14c-4a94-bcc4-04e6efaea8f6
 notion_url: >-
   https://www.notion.so/VMware-viclient-all-6-0-0-2502222-Net-Framework-3-5-0x800F081F-2960100ca14c4a94bcc404e6efaea8f6
-notion_updated_at: '2020-06-29T10:48:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:20:57.209Z'
 is_summarized: false
 ---

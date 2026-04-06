@@ -1,11 +1,19 @@
 ---
 title: electron
-category: general
+domain_tags:
+  - mac
+task_tags:
+  - build
+  - config
+authority_level: source
+is_deprecated: false
+category: mac
 notion_id: 21564f6b-c656-80c7-9f21-d8597596e0f0
 notion_url: 'https://www.notion.so/electron-21564f6bc65680c79f21d8597596e0f0'
 notion_updated_at: '2026-01-21T09:37:00.000Z'
-exported_at: '2026-04-06T11:27:25.891Z'
+exported_at: '2026-04-06T13:19:04.029Z'
 is_summarized: false
+relations: []
 ---
 
 ### 1. main.js

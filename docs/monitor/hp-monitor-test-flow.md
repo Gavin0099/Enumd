@@ -1,11 +1,22 @@
 ---
 title: HP Monitor Test Flow
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 68f8b6ac-d31a-4ce0-89ba-421ad0b0d5fc
 notion_url: 'https://www.notion.so/HP-Monitor-Test-Flow-68f8b6acd31a4ce089ba421ad0b0d5fc'
 notion_updated_at: '2026-01-21T09:27:00.000Z'
-exported_at: '2026-04-06T11:23:57.743Z'
+exported_at: '2026-04-06T13:15:51.119Z'
 is_summarized: false
+relations: []
 ---
 
 # Hub GL3523 Test Flow

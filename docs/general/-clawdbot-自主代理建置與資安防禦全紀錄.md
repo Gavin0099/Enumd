@@ -1,11 +1,22 @@
 ---
 title: ' Clawdbot 自主代理建置與資安防禦全紀錄'
-category: general
+domain_tags:
+  - security
+task_tags:
+  - debug
+  - spec
+  - sop
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: security
 notion_id: 2f664f6b-c656-8088-9714-ec442c115085
 notion_url: 'https://www.notion.so/Clawdbot-2f664f6bc65680889714ec442c115085'
 notion_updated_at: '2026-01-29T08:17:00.000Z'
-exported_at: '2026-04-06T11:28:07.434Z'
+exported_at: '2026-04-06T13:19:46.837Z'
 is_summarized: false
+relations: []
 ---
 
 建置日期： 2026-01-29

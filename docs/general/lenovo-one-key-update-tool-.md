@@ -4,7 +4,7 @@ category: general
 notion_id: 19164f6b-c656-80fb-b1d4-fdf017e455b3
 notion_url: >-
   https://www.notion.so/Lenovo-one-key-update-tool-19164f6bc65680fbb1d4fdf017e455b3
-notion_updated_at: '2026-01-21T09:36:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:24:53.631Z'
 is_summarized: false
 ---

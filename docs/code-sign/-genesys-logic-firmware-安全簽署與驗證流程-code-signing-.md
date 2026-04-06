@@ -1,12 +1,25 @@
 ---
 title: ' Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) '
+domain_tags:
+  - code-sign
+  - firmware
+  - sdk
+  - security
+task_tags:
+  - code-sign
+  - spec
+  - sop
+  - log
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: 25564f6b-c656-8075-89ad-e227d8c2c0d6
 notion_url: >-
   https://www.notion.so/Genesys-Logic-Firmware-Code-Signing-25564f6bc656807589ade227d8c2c0d6
 notion_updated_at: '2026-01-22T05:56:00.000Z'
-exported_at: '2026-04-06T11:20:17.132Z'
+exported_at: '2026-04-06T13:12:30.056Z'
 is_summarized: false
+relations: []
 ---
 
 本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。

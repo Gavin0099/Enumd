@@ -1,12 +1,25 @@
 ---
 title: 'Apple Command line update Instruction '
-category: mac
+domain_tags:
+  - hub
+  - mac
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - sop
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 0eb4902f-b770-4aad-bb23-fc2a8d818570
 notion_url: >-
   https://www.notion.so/Apple-Command-line-update-Instruction-0eb4902fb7704aadbb23fc2a8d818570
 notion_updated_at: '2026-01-21T09:27:00.000Z'
-exported_at: '2026-04-06T11:20:28.980Z'
+exported_at: '2026-04-06T13:12:45.855Z'
 is_summarized: false
+relations: []
 ---
 
 apple 有一個Tool需求為

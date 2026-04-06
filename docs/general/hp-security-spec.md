@@ -3,7 +3,7 @@ title: HP Security Spec
 category: general
 notion_id: 22d64f6b-c656-8076-a1ef-dd24eb66154e
 notion_url: 'https://www.notion.so/HP-Security-Spec-22d64f6bc6568076a1efdd24eb66154e'
-notion_updated_at: '2026-01-21T09:37:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:12.523Z'
 is_summarized: false
 ---

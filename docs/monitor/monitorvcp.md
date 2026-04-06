@@ -1,11 +1,18 @@
 ---
 title: MonitorVCP
+domain_tags:
+  - monitor
+task_tags:
+  - spec
+authority_level: source
+is_deprecated: false
 category: monitor
 notion_id: 12164f6b-c656-8098-83b4-cce9ca2db613
 notion_url: 'https://www.notion.so/MonitorVCP-12164f6bc656809883b4cce9ca2db613'
 notion_updated_at: '2026-01-21T09:35:00.000Z'
-exported_at: '2026-04-06T11:26:39.782Z'
+exported_at: '2026-04-06T13:18:18.514Z'
 is_summarized: false
+relations: []
 ---
 
 ```javascript

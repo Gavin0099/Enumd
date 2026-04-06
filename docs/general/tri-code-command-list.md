@@ -1,11 +1,24 @@
 ---
 title: Tri Code Command List
-category: general
+domain_tags:
+  - hub
+  - code-sign
+  - monitor
+  - firmware
+  - tools
+task_tags:
+  - code-sign
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 19164f6b-c656-8022-972e-eaf58a46a950
 notion_url: 'https://www.notion.so/Tri-Code-Command-List-19164f6bc6568022972eeaf58a46a950'
 notion_updated_at: '2026-01-21T09:36:00.000Z'
-exported_at: '2026-04-06T11:18:25.033Z'
+exported_at: '2026-04-06T13:10:56.738Z'
 is_summarized: false
+relations: []
 ---
 
 ## ✅ check

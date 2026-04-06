@@ -1,11 +1,21 @@
 ---
 title: Mac  Conan & Clang-Tidy 設定方式
+domain_tags:
+  - mac
+  - tools
+task_tags:
+  - install
+  - build
+  - config
+authority_level: deprecated
+is_deprecated: true
 category: mac
 notion_id: 61a76847-0a93-4a01-9a7c-1246050b510a
 notion_url: 'https://www.notion.so/Mac-Conan-Clang-Tidy-61a768470a934a019a7c1246050b510a'
 notion_updated_at: '2026-01-21T09:34:00.000Z'
-exported_at: '2026-04-06T11:21:37.674Z'
+exported_at: '2026-04-06T13:13:48.149Z'
 is_summarized: false
+relations: []
 ---
 
 ### Conan

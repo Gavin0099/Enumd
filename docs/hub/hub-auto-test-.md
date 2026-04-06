@@ -1,11 +1,25 @@
 ---
 title: 'Hub Auto Test '
+domain_tags:
+  - hub
+  - mac
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - build
+  - sop
+  - log
+  - config
+authority_level: derived
+is_deprecated: false
 category: hub
 notion_id: 861f648a-8971-4a30-a315-a98910da02ea
 notion_url: 'https://www.notion.so/Hub-Auto-Test-861f648a89714a30a315a98910da02ea'
 notion_updated_at: '2026-01-21T09:48:00.000Z'
-exported_at: '2026-04-06T11:17:25.284Z'
+exported_at: '2026-04-06T13:10:41.666Z'
 is_summarized: false
+relations: []
 ---
 
 ## 概述

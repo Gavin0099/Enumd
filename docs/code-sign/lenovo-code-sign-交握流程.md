@@ -1,11 +1,25 @@
 ---
 title: Lenovo Code Sign 交握流程
-category: code-sign
+domain_tags:
+  - hub
+  - code-sign
+  - monitor
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - code-sign
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 994405b0-04d7-40f8-be83-112eaa1ba511
 notion_url: 'https://www.notion.so/Lenovo-Code-Sign-994405b004d740f8be83112eaa1ba511'
 notion_updated_at: '2026-01-21T09:41:00.000Z'
-exported_at: '2026-04-06T11:24:45.447Z'
+exported_at: '2026-04-06T13:16:33.485Z'
 is_summarized: false
+relations: []
 ---
 
 ## 演算法

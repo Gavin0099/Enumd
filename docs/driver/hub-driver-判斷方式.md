@@ -3,7 +3,7 @@ title: Hub  driver 判斷方式
 category: driver
 notion_id: 1699ec4e-fb36-4a8d-abca-46cb1063b59f
 notion_url: 'https://www.notion.so/Hub-driver-1699ec4efb364a8dabca46cb1063b59f'
-notion_updated_at: '2022-12-13T08:48:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:18:59.418Z'
 is_summarized: false
 ---

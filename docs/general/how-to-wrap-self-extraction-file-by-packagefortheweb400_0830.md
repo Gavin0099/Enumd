@@ -1,12 +1,26 @@
 ---
 title: How to wrap self-extraction file by PackageForTheWeb400_0830
-category: general
+domain_tags:
+  - hub
+  - monitor
+  - tools
+  - security
+task_tags:
+  - install
+  - build
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 717c62a4-61cf-48f2-a22e-740600dd27d4
 notion_url: >-
   https://www.notion.so/How-to-wrap-self-extraction-file-by-PackageForTheWeb400_0830-717c62a461cf48f2a22e740600dd27d4
 notion_updated_at: '2026-01-21T09:23:00.000Z'
-exported_at: '2026-04-06T11:27:27.380Z'
+exported_at: '2026-04-06T13:19:05.968Z'
 is_summarized: false
+relations: []
 ---
 
 1. Modify ini parameters

@@ -1,11 +1,17 @@
 ---
 title: Hub Chip 資訊
+domain_tags:
+  - hub
+task_tags: []
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 0410ad52-7519-4d66-9cda-58078a8858ab
 notion_url: 'https://www.notion.so/Hub-Chip-0410ad5275194d669cda58078a8858ab'
 notion_updated_at: '2026-01-21T11:29:00.000Z'
-exported_at: '2026-04-06T11:16:48.219Z'
+exported_at: '2026-04-06T13:10:04.493Z'
 is_summarized: false
+relations: []
 ---
 
 ## Hub 相關資訊

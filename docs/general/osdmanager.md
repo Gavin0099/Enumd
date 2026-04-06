@@ -1,11 +1,19 @@
 ---
 title: OSDManager
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 27664f6b-c656-8014-9140-d757e0bd02fa
 notion_url: 'https://www.notion.so/OSDManager-27664f6bc65680149140d757e0bd02fa'
 notion_updated_at: '2026-01-21T09:38:00.000Z'
-exported_at: '2026-04-06T11:21:51.291Z'
+exported_at: '2026-04-06T13:13:58.652Z'
 is_summarized: false
+relations: []
 ---
 
 本專案旨在提供一個讓使用者能透過鍵盤熱鍵操作 OSD (On-Screen Display) 選單功能的工具。使用者不僅可以執行預設的熱鍵指令，還能透過設定介面來自訂與各項 OSD 功能對應的熱鍵組合。

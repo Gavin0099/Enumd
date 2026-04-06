@@ -1,11 +1,17 @@
 ---
 title: Hxd 計算checksum方式
-category: general
+domain_tags:
+  - hub
+task_tags: []
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: f759daf2-4516-4ca8-9f67-1bf47fdb364d
 notion_url: 'https://www.notion.so/Hxd-checksum-f759daf245164ca89f671bf47fdb364d'
 notion_updated_at: '2026-01-21T09:34:00.000Z'
-exported_at: '2026-04-06T11:21:08.184Z'
+exported_at: '2026-04-06T13:13:25.385Z'
 is_summarized: false
+relations: []
 ---
 
 1.載入要計算checksum的sum檔

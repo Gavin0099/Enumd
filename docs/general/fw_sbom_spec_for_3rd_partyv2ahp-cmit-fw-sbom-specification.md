@@ -1,12 +1,22 @@
 ---
 title: FW_SBOM_Spec_for_3rd_Party.v2a(HP CMIT FW SBOM Specification)
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - build
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 2cb64f6b-c656-808d-99b6-c7db096ce66c
 notion_url: >-
   https://www.notion.so/FW_SBOM_Spec_for_3rd_Party-v2a-HP-CMIT-FW-SBOM-Specification-2cb64f6bc656808d99b6c7db096ce66c
 notion_updated_at: '2026-02-23T06:27:00.000Z'
-exported_at: '2026-04-06T11:23:31.437Z'
+exported_at: '2026-04-06T13:15:25.459Z'
 is_summarized: false
+relations: []
 ---
 
 > 文件狀態：Rev 2.0a (2025/09/16)

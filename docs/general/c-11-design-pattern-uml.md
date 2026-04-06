@@ -1,11 +1,18 @@
 ---
 title: C++ 11 & Design pattern & UML
-category: general
+domain_tags:
+  - sdk
+task_tags:
+  - log
+authority_level: reference
+is_deprecated: false
+category: sdk
 notion_id: 04aed5cc-8ad0-4b32-842e-5480ea7cb944
 notion_url: 'https://www.notion.so/C-11-Design-pattern-UML-04aed5cc8ad04b32842e5480ea7cb944'
 notion_updated_at: '2026-01-21T09:26:00.000Z'
-exported_at: '2026-04-06T11:25:36.195Z'
+exported_at: '2026-04-06T13:17:25.620Z'
 is_summarized: false
+relations: []
 ---
 
 ## C++ 11

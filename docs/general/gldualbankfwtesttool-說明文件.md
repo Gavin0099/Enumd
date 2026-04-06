@@ -3,7 +3,7 @@ title: GLDualBankFWTestTool 說明文件
 category: general
 notion_id: 6e434487-427c-454a-a90e-36e4d4624bb6
 notion_url: 'https://www.notion.so/GLDualBankFWTestTool-6e434487427c454aa90e36e4d4624bb6'
-notion_updated_at: '2026-01-21T09:25:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:25:12.639Z'
 is_summarized: false
 ---

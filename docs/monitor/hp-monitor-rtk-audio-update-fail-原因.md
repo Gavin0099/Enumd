@@ -1,12 +1,23 @@
 ---
 title: HP Monitor RTK Audio update fail 原因
-category: monitor
+domain_tags:
+  - hub
+  - driver
+  - monitor
+  - security
+task_tags:
+  - install
+  - debug
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 757eb512-ba9c-4b25-90d7-d248a961557a
 notion_url: >-
   https://www.notion.so/HP-Monitor-RTK-Audio-update-fail-757eb512ba9c4b2590d7d248a961557a
 notion_updated_at: '2026-01-21T09:29:00.000Z'
-exported_at: '2026-04-06T11:24:13.533Z'
+exported_at: '2026-04-06T13:16:03.606Z'
 is_summarized: false
+relations: []
 ---
 
 ## 現象

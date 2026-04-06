@@ -3,7 +3,7 @@ title: 'Lenovo LDCC Update Tool '
 category: general
 notion_id: 659386ae-3baf-4ea9-ab92-0f342dd3d219
 notion_url: 'https://www.notion.so/Lenovo-LDCC-Update-Tool-659386ae3baf4ea9ab920f342dd3d219'
-notion_updated_at: '2026-01-21T09:48:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:24:30.342Z'
 is_summarized: false
 ---

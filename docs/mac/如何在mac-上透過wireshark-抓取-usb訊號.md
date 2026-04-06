@@ -1,11 +1,21 @@
 ---
 title: 如何在Mac 上透過WireShark 抓取 USB訊號
+domain_tags:
+  - mac
+task_tags:
+  - install
+  - debug
+  - log
+  - config
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: 1bc4bb39-7904-4f14-9c8f-98679ef287fc
 notion_url: 'https://www.notion.so/Mac-WireShark-USB-1bc4bb3979044f149c8f98679ef287fc'
 notion_updated_at: '2026-01-21T09:32:00.000Z'
-exported_at: '2026-04-06T11:22:05.409Z'
+exported_at: '2026-04-06T13:14:11.262Z'
 is_summarized: false
+relations: []
 ---
 
 1. 上去wireshark 官網抓取對應版本

@@ -1,6 +1,6 @@
-# Mac 相關
+# 🍎 Mac 相關
 
-> Mac OCI Tool、Xcode、Bundle ID、FDA 權限
+> Mac OCI Tool、Xcode 設定、Bundle ID、FDA 權限
 
 共 **29** 頁文件
 

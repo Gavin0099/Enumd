@@ -1,11 +1,17 @@
 ---
 title: AI 協作開發框架：定義規則的開發模式
-category: general
+domain_tags:
+  - security
+task_tags: []
+authority_level: derived
+is_deprecated: false
+category: security
 notion_id: 30564f6b-c656-8071-ab36-e7f7685f2c52
 notion_url: 'https://www.notion.so/AI-30564f6bc6568071ab36e7f7685f2c52'
 notion_updated_at: '2026-03-23T01:51:00.000Z'
-exported_at: '2026-04-06T11:28:16.573Z'
+exported_at: '2026-04-06T13:19:55.491Z'
 is_summarized: false
+relations: []
 ---
 
 # 🧠 AI 開發治理體系 — 文件說明

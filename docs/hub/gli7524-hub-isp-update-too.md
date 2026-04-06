@@ -1,12 +1,22 @@
 ---
 title: GLI7524 Hub ISP update too
+domain_tags:
+  - hub
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - config
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 1b564f6b-c656-80c8-b125-d35151dd559e
 notion_url: >-
   https://www.notion.so/GLI7524-Hub-ISP-update-too-1b564f6bc65680c8b125d35151dd559e
 notion_updated_at: '2025-03-13T10:15:00.000Z'
-exported_at: '2026-04-06T11:26:49.633Z'
+exported_at: '2026-04-06T13:18:26.217Z'
 is_summarized: false
+relations: []
 ---
 
 ### 整合至 ISP Tool 的需求整理

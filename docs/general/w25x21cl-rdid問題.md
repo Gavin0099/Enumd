@@ -1,11 +1,20 @@
 ---
 title: W25X21CL RDID問題
-category: general
+domain_tags:
+  - hub
+  - firmware
+task_tags:
+  - debug
+  - spec
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 64dac904-2fa3-40cb-9ea1-cd22fcc17cb8
 notion_url: 'https://www.notion.so/W25X21CL-RDID-64dac9042fa340cb9ea1cd22fcc17cb8'
 notion_updated_at: '2022-12-13T08:40:00.000Z'
-exported_at: '2026-04-06T11:21:28.140Z'
+exported_at: '2026-04-06T13:13:37.363Z'
 is_summarized: false
+relations: []
 ---
 
 ## 緣由

@@ -1,12 +1,27 @@
 ---
 title: HP Monitor Code Sign Update Flow
-category: code-sign
+domain_tags:
+  - hub
+  - code-sign
+  - monitor
+  - firmware
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - code-sign
+  - sop
+  - config
+authority_level: derived
+is_deprecated: false
+category: hub
 notion_id: 650b6b5c-ca52-418b-861b-86d8dfdf2ade
 notion_url: >-
   https://www.notion.so/HP-Monitor-Code-Sign-Update-Flow-650b6b5cca52418b861b86d8dfdf2ade
 notion_updated_at: '2026-01-21T09:26:00.000Z'
-exported_at: '2026-04-06T11:22:53.635Z'
+exported_at: '2026-04-06T13:14:54.569Z'
 is_summarized: false
+relations: []
 ---
 
 ### ISP Tool 與 Hub Firmware 初始化交握機制

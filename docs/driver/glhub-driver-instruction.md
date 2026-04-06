@@ -1,12 +1,19 @@
 ---
 title: GLHub Driver Instruction
+domain_tags:
+  - driver
+task_tags:
+  - install
+authority_level: source
+is_deprecated: false
 category: driver
 notion_id: b7976859-d0ec-47e0-9d9b-28ee2a1216df
 notion_url: >-
   https://www.notion.so/GLHub-Driver-Instruction-b7976859d0ec47e09d9b28ee2a1216df
 notion_updated_at: '2026-01-21T09:35:00.000Z'
-exported_at: '2026-04-06T11:19:12.154Z'
+exported_at: '2026-04-06T13:11:43.287Z'
 is_summarized: false
+relations: []
 ---
 
 ### When the driver is not installed

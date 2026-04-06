@@ -1,11 +1,22 @@
 ---
 title: Debug 前客戶取得需求資訊
-category: general
+domain_tags:
+  - hub
+  - driver
+  - tools
+task_tags:
+  - install
+  - debug
+  - log
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 33ed0366-33ad-4b39-87c6-700c6e7bb8d3
 notion_url: 'https://www.notion.so/Debug-33ed036633ad4b3987c6700c6e7bb8d3'
 notion_updated_at: '2026-01-21T09:28:00.000Z'
-exported_at: '2026-04-06T11:27:02.256Z'
+exported_at: '2026-04-06T13:18:36.968Z'
 is_summarized: false
+relations: []
 ---
 
 ## 原由

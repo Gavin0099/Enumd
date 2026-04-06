@@ -1,11 +1,25 @@
 ---
 title: eToken 安全簽章系統技術說明
+domain_tags:
+  - code-sign
+  - firmware
+  - tools
+  - security
+task_tags:
+  - install
+  - code-sign
+  - spec
+  - sop
+  - config
+authority_level: derived
+is_deprecated: false
 category: code-sign
 notion_id: 26364f6b-c656-8027-8c02-fa2b9eaf44ac
 notion_url: 'https://www.notion.so/eToken-26364f6bc65680278c02fa2b9eaf44ac'
 notion_updated_at: '2026-01-22T06:41:00.000Z'
-exported_at: '2026-04-06T11:20:21.605Z'
+exported_at: '2026-04-06T13:12:36.666Z'
 is_summarized: false
+relations: []
 ---
 
 ## 1. 系統概述

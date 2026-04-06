@@ -1,11 +1,19 @@
 ---
 title: 'Get Monitor Info '
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+task_tags:
+  - debug
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 55aaa007-5c4d-4f2d-aa79-c49899049f95
 notion_url: 'https://www.notion.so/Get-Monitor-Info-55aaa0075c4d4f2daa79c49899049f95'
 notion_updated_at: '2026-01-21T09:33:00.000Z'
-exported_at: '2026-04-06T11:21:33.596Z'
+exported_at: '2026-04-06T13:13:44.491Z'
 is_summarized: false
+relations: []
 ---
 
 ### 簡述

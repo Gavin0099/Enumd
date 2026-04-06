@@ -1,11 +1,26 @@
 ---
 title: Vibe coding
-category: general
+domain_tags:
+  - hub
+  - driver
+  - monitor
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - spec
+  - sop
+  - log
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 23a64f6b-c656-8058-8616-d84e28bbaec8
 notion_url: 'https://www.notion.so/Vibe-coding-23a64f6bc65680588616d84e28bbaec8'
 notion_updated_at: '2025-07-24T10:55:00.000Z'
-exported_at: '2026-04-06T11:26:16.345Z'
+exported_at: '2026-04-06T13:17:55.219Z'
 is_summarized: false
+relations: []
 ---
 
 ## HP OCI Tool Log Parse 

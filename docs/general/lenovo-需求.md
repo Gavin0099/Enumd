@@ -1,11 +1,21 @@
 ---
 title: Lenovo 需求
-category: general
+domain_tags:
+  - mac
+  - tools
+task_tags:
+  - debug
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: mac
 notion_id: 691d9428-f0bc-4afa-8cc8-0bd51580b5a4
 notion_url: 'https://www.notion.so/Lenovo-691d9428f0bc4afa8cc80bd51580b5a4'
 notion_updated_at: '2026-01-21T09:35:00.000Z'
-exported_at: '2026-04-06T11:24:46.671Z'
+exported_at: '2026-04-06T13:16:35.385Z'
 is_summarized: false
+relations: []
 ---
 
 ## Command line tool 

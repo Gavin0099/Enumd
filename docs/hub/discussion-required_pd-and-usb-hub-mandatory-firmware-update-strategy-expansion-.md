@@ -2,13 +2,26 @@
 title: >-
   Discussion Required_PD and USB Hub:  Mandatory Firmware Update Strategy
   Expansion for Future Projects - Genesys
+domain_tags:
+  - hub
+  - monitor
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - sop
+  - log
+authority_level: reference
+is_deprecated: false
 category: hub
 notion_id: 2c464f6b-c656-80cb-ae87-c819ee536ea8
 notion_url: >-
   https://www.notion.so/Discussion-Required_PD-and-USB-Hub-Mandatory-Firmware-Update-Strategy-Expansion-for-Future-Project-2c464f6bc65680cbae87c819ee536ea8
 notion_updated_at: '2026-01-21T09:59:00.000Z'
-exported_at: '2026-04-06T11:23:25.049Z'
+exported_at: '2026-04-06T13:15:22.652Z'
 is_summarized: false
+relations: []
 ---
 
 韌體更新優化討論

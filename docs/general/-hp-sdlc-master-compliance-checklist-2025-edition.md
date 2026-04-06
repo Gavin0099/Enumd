@@ -1,12 +1,23 @@
 ---
 title: ' HP SDLC Master Compliance Checklist (2025 Edition)'
-category: general
+domain_tags:
+  - code-sign
+  - security
+task_tags:
+  - code-sign
+  - build
+  - release
+  - spec
+authority_level: source
+is_deprecated: false
+category: code-sign
 notion_id: 2cb64f6b-c656-8098-959f-feb676081a69
 notion_url: >-
   https://www.notion.so/HP-SDLC-Master-Compliance-Checklist-2025-Edition-2cb64f6bc6568098959ffeb676081a69
 notion_updated_at: '2026-01-21T09:22:00.000Z'
-exported_at: '2026-04-06T11:23:32.842Z'
+exported_at: '2026-04-06T13:15:27.420Z'
 is_summarized: false
+relations: []
 ---
 
 > ℹ️ 文件資訊

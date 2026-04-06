@@ -1,11 +1,19 @@
 ---
 title: "\U0001F5A5️ Windows 雙網卡企業分流設定SOP（乙太公司內網＋Wi-Fi外網）"
+domain_tags:
+  - general
+task_tags:
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: 21e64f6b-c656-800d-9172-f88647c5d99b
 notion_url: 'https://www.notion.so/Windows-SOP-Wi-Fi-21e64f6bc656800d9172f88647c5d99b'
 notion_updated_at: '2026-01-21T09:46:00.000Z'
-exported_at: '2026-04-06T11:21:49.175Z'
+exported_at: '2026-04-06T13:13:56.350Z'
 is_summarized: false
+relations: []
 ---
 
 ## 1. 基本前提

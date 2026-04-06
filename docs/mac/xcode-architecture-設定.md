@@ -1,11 +1,22 @@
 ---
 title: Xcode Architecture 設定
+domain_tags:
+  - mac
+task_tags:
+  - install
+  - debug
+  - build
+  - release
+  - config
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: 1afbbc0c-4336-4c26-a651-e03d2513e7a7
 notion_url: 'https://www.notion.so/Xcode-Architecture-1afbbc0c43364c26a651e03d2513e7a7'
 notion_updated_at: '2022-12-13T09:03:00.000Z'
-exported_at: '2026-04-06T11:20:26.362Z'
+exported_at: '2026-04-06T13:12:43.277Z'
 is_summarized: false
+relations: []
 ---
 
 Debug和Release下的設定：

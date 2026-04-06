@@ -1,12 +1,26 @@
 ---
 title: HP Hemi(Z34c) CPU3 Code Sign 驗證問題
-category: code-sign
+domain_tags:
+  - hub
+  - code-sign
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - debug
+  - code-sign
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 9f455fc7-9e39-46e2-a22b-3cc4b8a88a6c
 notion_url: >-
   https://www.notion.so/HP-Hemi-Z34c-CPU3-Code-Sign-9f455fc79e3946e2a22b3cc4b8a88a6c
 notion_updated_at: '2026-01-21T09:35:00.000Z'
-exported_at: '2026-04-06T11:19:49.600Z'
+exported_at: '2026-04-06T13:12:15.485Z'
 is_summarized: false
+relations: []
 ---
 
 除了 GL3590 有 hw security module 之外，其他hub chip 是沒有的，因為hp 規定最低底線只能用 fw 做code sign驗證，所以討論過後先以GL3525為範本驗證，因為GL3525 有三個CPU ，Hub 在update 後，可以用其他CPU 來驗證code sign 

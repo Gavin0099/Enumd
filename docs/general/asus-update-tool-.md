@@ -3,7 +3,7 @@ title: 'ASUS Update Tool '
 category: general
 notion_id: 26464f6b-c656-803e-881a-e42f4b8aa570
 notion_url: 'https://www.notion.so/ASUS-Update-Tool-26464f6bc656803e881ae42f4b8aa570'
-notion_updated_at: '2026-01-21T09:57:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:22:27.520Z'
 is_summarized: false
 ---

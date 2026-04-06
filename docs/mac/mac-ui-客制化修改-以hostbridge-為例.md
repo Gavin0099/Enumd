@@ -1,11 +1,21 @@
 ---
 title: Mac UI 客制化修改 (以HostBridge 為例)
+domain_tags:
+  - mac
+task_tags:
+  - build
+  - sop
+  - log
+  - config
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: 7fef7d47-99e9-4398-a9ca-788a0a9be320
 notion_url: 'https://www.notion.so/Mac-UI-HostBridge-7fef7d4799e94398a9ca788a0a9be320'
 notion_updated_at: '2026-01-21T09:31:00.000Z'
-exported_at: '2026-04-06T11:20:24.932Z'
+exported_at: '2026-04-06T13:12:40.598Z'
 is_summarized: false
+relations: []
 ---
 
 ### Git 位置 (http://crd-sw.genesyslogic.com.tw:8081/CRD/SW/USBHub/HostBridge/Mac/Standard)

@@ -1,12 +1,23 @@
 ---
 title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+domain_tags:
+  - mac
+  - tools
+  - security
+task_tags:
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: 25c64f6b-c656-8004-9785-cbbb5ca08cd1
 notion_url: >-
   https://www.notion.so/macOS-MDM-Full-Disk-Access-FDA-25c64f6bc65680049785cbbb5ca08cd1
 notion_updated_at: '2026-01-21T09:38:00.000Z'
-exported_at: '2026-04-06T11:20:52.964Z'
+exported_at: '2026-04-06T13:13:11.496Z'
 is_summarized: false
+relations: []
 ---
 
 ## 1. 執行摘要 (Executive Summary)

@@ -1,12 +1,23 @@
 ---
 title: 'RSA 2048 verify 和 mbedtls opensource 測試問題 '
+domain_tags:
+  - code-sign
+  - sdk
+  - security
+task_tags:
+  - debug
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: caff25bb-89e4-431c-aab7-d6cb56ebc8dd
 notion_url: >-
   https://www.notion.so/RSA-2048-verify-mbedtls-opensource-caff25bb89e4431caab7d6cb56ebc8dd
 notion_updated_at: '2025-08-20T02:30:00.000Z'
-exported_at: '2026-04-06T11:19:33.136Z'
+exported_at: '2026-04-06T13:12:05.565Z'
 is_summarized: false
+relations: []
 ---
 
 解密後的資料確實有對的hash檔，但是前面還有一些無意義的資料

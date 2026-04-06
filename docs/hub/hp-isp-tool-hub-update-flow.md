@@ -1,12 +1,23 @@
 ---
 title: HP ISP Tool Hub Update Flow
+domain_tags:
+  - hub
+  - driver
+  - tools
+task_tags:
+  - install
+  - firmware-update
+  - sop
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: c448560a-d04d-444e-9bc5-70ec143296cf
 notion_url: >-
   https://www.notion.so/HP-ISP-Tool-Hub-Update-Flow-c448560ad04d444e9bc570ec143296cf
 notion_updated_at: '2026-01-21T09:28:00.000Z'
-exported_at: '2026-04-06T11:23:46.036Z'
+exported_at: '2026-04-06T13:15:37.224Z'
 is_summarized: false
+relations: []
 ---
 
 ## Install GL Driver 

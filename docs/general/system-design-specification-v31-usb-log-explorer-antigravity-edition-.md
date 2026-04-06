@@ -1,13 +1,22 @@
 ---
 title: |
   System Design Specification v3.1: USB Log Explorer (Antigravity Edition)
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - install
+  - spec
+  - log
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 2dc64f6b-c656-8000-8e7c-ccd489e93a2e
 notion_url: >-
   https://www.notion.so/System-Design-Specification-v3-1-USB-Log-Explorer-Antigravity-Edition-2dc64f6bc65680008e7cccd489e93a2e
 notion_updated_at: '2026-01-05T08:02:00.000Z'
-exported_at: '2026-04-06T11:18:33.918Z'
+exported_at: '2026-04-06T13:11:07.794Z'
 is_summarized: false
+relations: []
 ---
 
 ## 1. 專案概述 (Project Overview)

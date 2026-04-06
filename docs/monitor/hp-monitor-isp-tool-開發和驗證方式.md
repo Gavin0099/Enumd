@@ -1,11 +1,24 @@
 ---
 title: HP Monitor ISP Tool 開發和驗證方式
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+  - tools
+  - security
+task_tags:
+  - install
+  - firmware-update
+  - sop
+  - config
+authority_level: deprecated
+is_deprecated: true
+category: hub
 notion_id: a11de361-0732-4e80-af3e-c4a2a5f27583
 notion_url: 'https://www.notion.so/HP-Monitor-ISP-Tool-a11de36107324e80af3ec4a2a5f27583'
 notion_updated_at: '2026-01-21T09:22:00.000Z'
-exported_at: '2026-04-06T11:23:59.444Z'
+exported_at: '2026-04-06T13:15:52.685Z'
 is_summarized: false
+relations: []
 ---
 
 目前 Hp Monitor ISP Tool 有三個

@@ -1,12 +1,24 @@
 ---
 title: E27m & E34m Driver install fail
-category: driver
+domain_tags:
+  - hub
+  - driver
+  - monitor
+  - tools
+task_tags:
+  - install
+  - debug
+  - log
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: e0d783dd-c982-42a5-b0fa-34ba7a053682
 notion_url: >-
   https://www.notion.so/E27m-E34m-Driver-install-fail-e0d783ddc98242a5b0fa34ba7a053682
 notion_updated_at: '2024-11-15T09:27:00.000Z'
-exported_at: '2026-04-06T11:19:17.452Z'
+exported_at: '2026-04-06T13:11:48.317Z'
 is_summarized: false
+relations: []
 ---
 
 目前有看到兩個問題

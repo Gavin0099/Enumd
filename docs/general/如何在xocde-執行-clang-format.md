@@ -1,11 +1,20 @@
 ---
 title: 如何在xocde 執行 clang format
-category: general
+domain_tags:
+  - mac
+task_tags:
+  - install
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
+category: mac
 notion_id: 1c3d7838-8768-4389-8be2-03cad352a27c
 notion_url: 'https://www.notion.so/xocde-clang-format-1c3d7838876843898be203cad352a27c'
 notion_updated_at: '2026-01-21T09:32:00.000Z'
-exported_at: '2026-04-06T11:21:35.649Z'
+exported_at: '2026-04-06T13:13:46.034Z'
 is_summarized: false
+relations: []
 ---
 
 - 安裝clang format

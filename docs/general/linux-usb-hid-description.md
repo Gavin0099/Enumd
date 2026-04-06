@@ -1,12 +1,19 @@
 ---
 title: Linux USB Hid Description
+domain_tags:
+  - general
+task_tags:
+  - debug
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: 20e64f6b-c656-8045-9c13-f21bba5e4f1c
 notion_url: >-
   https://www.notion.so/Linux-USB-Hid-Description-20e64f6bc65680459c13f21bba5e4f1c
 notion_updated_at: '2026-01-21T09:37:00.000Z'
-exported_at: '2026-04-06T11:27:45.741Z'
+exported_at: '2026-04-06T13:19:21.784Z'
 is_summarized: false
+relations: []
 ---
 
 ```swift

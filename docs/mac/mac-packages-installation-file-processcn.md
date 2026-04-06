@@ -1,12 +1,23 @@
 ---
 title: Mac packages installation file process(CN)
+domain_tags:
+  - mac
+  - firmware
+  - tools
+task_tags:
+  - install
+  - build
+  - config
+authority_level: derived
+is_deprecated: false
 category: mac
 notion_id: fd09273b-f260-4e9d-88d5-d6dc971918e8
 notion_url: >-
   https://www.notion.so/Mac-packages-installation-file-process-CN-fd09273bf2604e9d88d5d6dc971918e8
 notion_updated_at: '2025-03-18T02:43:00.000Z'
-exported_at: '2026-04-06T11:20:39.908Z'
+exported_at: '2026-04-06T13:12:55.459Z'
 is_summarized: false
+relations: []
 ---
 
 ### Summary

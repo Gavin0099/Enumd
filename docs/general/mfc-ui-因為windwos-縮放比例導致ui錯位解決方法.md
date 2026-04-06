@@ -1,11 +1,19 @@
 ---
 title: MFC UI 因為Windwos 縮放比例導致UI錯位解決方法
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 49cfb167-8e41-4b36-8338-4aab1856b004
 notion_url: 'https://www.notion.so/MFC-UI-Windwos-UI-49cfb1678e414b3683384aab1856b004'
 notion_updated_at: '2024-11-14T03:08:00.000Z'
-exported_at: '2026-04-06T11:21:29.521Z'
+exported_at: '2026-04-06T13:13:40.043Z'
 is_summarized: false
+relations: []
 ---
 
 ### 參考資料

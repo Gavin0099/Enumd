@@ -1,11 +1,24 @@
 ---
 title: HP RTK Scaler Code Sign
+domain_tags:
+  - code-sign
+  - monitor
+  - security
+task_tags:
+  - firmware-update
+  - code-sign
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: 0fceb0f6-23ec-4892-b1a6-6c92764b8921
 notion_url: 'https://www.notion.so/HP-RTK-Scaler-Code-Sign-0fceb0f623ec4892b1a66c92764b8921'
 notion_updated_at: '2026-01-26T05:58:00.000Z'
-exported_at: '2026-04-06T11:22:44.645Z'
+exported_at: '2026-04-06T13:14:45.432Z'
 is_summarized: false
+relations: []
 ---
 
 RTK的燒錄流程, 每個Scaler大同小異, 除了Disable Flash Hardware Write Protection需要下的參數不同以外, 最大的差別在於數位簽章的部分, 此章節只針對數位簽章的流程作介紹

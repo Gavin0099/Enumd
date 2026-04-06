@@ -1,12 +1,22 @@
 ---
 title: How to use the decryption tool to decrypt the scaler encrypted bin file
+domain_tags:
+  - monitor
+  - tools
+  - security
+task_tags:
+  - spec
+  - sop
+authority_level: deprecated
+is_deprecated: true
 category: monitor
 notion_id: 43a91fe8-4adc-446a-9f20-6cb4f789ac74
 notion_url: >-
   https://www.notion.so/How-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file-43a91fe84adc446a9f206cb4f789ac74
 notion_updated_at: '2022-12-13T09:03:00.000Z'
-exported_at: '2026-04-06T11:20:05.580Z'
+exported_at: '2026-04-06T13:12:25.846Z'
 is_summarized: false
+relations: []
 ---
 
 1. Execute command line Tool

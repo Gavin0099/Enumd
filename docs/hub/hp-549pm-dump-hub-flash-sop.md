@@ -1,12 +1,19 @@
 ---
 title: HP 549pm dump hub flash SOP
+domain_tags:
+  - hub
+task_tags:
+  - sop
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 26364f6b-c656-8057-bb31-e325a43f9805
 notion_url: >-
   https://www.notion.so/HP-549pm-dump-hub-flash-SOP-26364f6bc6568057bb31e325a43f9805
 notion_updated_at: '2026-01-21T09:38:00.000Z'
-exported_at: '2026-04-06T11:23:16.849Z'
+exported_at: '2026-04-06T13:15:15.402Z'
 is_summarized: false
+relations: []
 ---
 
 - 開啟GL_SS_HUB_ISP.exe

@@ -1,12 +1,19 @@
 ---
 title: HP silent install project support list
+domain_tags:
+  - general
+task_tags:
+  - install
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: 61c33921-1b70-4e69-b3c8-0a50fd0d9f1a
 notion_url: >-
   https://www.notion.so/HP-silent-install-project-support-list-61c339211b704e69b3c80a50fd0d9f1a
 notion_updated_at: '2025-07-15T02:59:00.000Z'
-exported_at: '2026-04-06T11:24:18.907Z'
+exported_at: '2026-04-06T13:16:08.064Z'
 is_summarized: false
+relations: []
 ---
 
 - Z27k

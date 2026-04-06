@@ -1,11 +1,20 @@
 ---
 title: U27m Scaler Update速度
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+  - tools
+task_tags:
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: c1bcb448-d494-4528-b43a-641fcbd17094
 notion_url: 'https://www.notion.so/U27m-Scaler-Update-c1bcb448d4944528b43a641fcbd17094'
 notion_updated_at: '2026-01-21T09:57:00.000Z'
-exported_at: '2026-04-06T11:22:58.847Z'
+exported_at: '2026-04-06T13:14:58.885Z'
 is_summarized: false
+relations: []
 ---
 
 ### Scaler bin Size : 1536260

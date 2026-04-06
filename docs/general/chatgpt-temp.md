@@ -1,11 +1,19 @@
 ---
 title: ChatGPT temp
-category: general
+domain_tags:
+  - firmware
+task_tags:
+  - install
+  - debug
+authority_level: source
+is_deprecated: false
+category: firmware
 notion_id: f18be3ee-d01f-459c-aade-4fccedf5835c
 notion_url: 'https://www.notion.so/ChatGPT-temp-f18be3eed01f459caade4fccedf5835c'
 notion_updated_at: '2024-01-26T10:31:00.000Z'
-exported_at: '2026-04-06T11:27:37.238Z'
+exported_at: '2026-04-06T13:19:15.237Z'
 is_summarized: false
+relations: []
 ---
 
 ```python

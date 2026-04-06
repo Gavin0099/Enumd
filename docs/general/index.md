@@ -1,6 +1,6 @@
-# 技術文件
+# 📋 技術文件
 
-> Visual Studio、CMake、Git、Windows 指令
+> Visual Studio、CMake、Git、Windows 指令、Log 抓取
 
 共 **179** 頁文件
 

@@ -1,11 +1,22 @@
 ---
 title: SW272U 抓取log方式
-category: general
+domain_tags:
+  - monitor
+  - firmware
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - log
+authority_level: source
+is_deprecated: false
+category: monitor
 notion_id: 8c1c0e8d-b23f-47ec-8863-2d5070f31d40
 notion_url: 'https://www.notion.so/SW272U-log-8c1c0e8db23f47ec88632d5070f31d40'
 notion_updated_at: '2026-01-21T09:33:00.000Z'
-exported_at: '2026-04-06T11:27:12.902Z'
+exported_at: '2026-04-06T13:18:49.546Z'
 is_summarized: false
+relations: []
 ---
 
 1. 其他—>系統監視程式

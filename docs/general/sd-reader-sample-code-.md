@@ -1,11 +1,18 @@
 ---
 title: 'SD Reader Sample Code '
-category: general
+domain_tags:
+  - sdk
+task_tags:
+  - config
+authority_level: reference
+is_deprecated: false
+category: sdk
 notion_id: 1bb3599a-57ec-4728-9366-23296f8879f3
 notion_url: 'https://www.notion.so/SD-Reader-Sample-Code-1bb3599a57ec4728936623296f8879f3'
 notion_updated_at: '2026-01-21T09:35:00.000Z'
-exported_at: '2026-04-06T11:26:36.961Z'
+exported_at: '2026-04-06T13:18:15.451Z'
 is_summarized: false
+relations: []
 ---
 
 ```python

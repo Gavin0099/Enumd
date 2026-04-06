@@ -1,12 +1,23 @@
 ---
 title: RickTek 7880 PD Update Flow
-category: general
+domain_tags:
+  - hub
+  - tools
+task_tags:
+  - firmware-update
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 9b2dacf2-80e8-4bd9-a93b-4c64ddd8bce1
 notion_url: >-
   https://www.notion.so/RickTek-7880-PD-Update-Flow-9b2dacf280e84bd9a93b4c64ddd8bce1
 notion_updated_at: '2026-01-21T09:23:00.000Z'
-exported_at: '2026-04-06T11:22:42.900Z'
+exported_at: '2026-04-06T13:14:42.019Z'
 is_summarized: false
+relations: []
 ---
 
 此簡介主要根據RickTek PD的update 文件(RT7880T In System Programming Spec V1.0) 做說明，最新版的spec 如下連結

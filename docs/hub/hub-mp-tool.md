@@ -1,11 +1,21 @@
 ---
 title: Hub MP Tool
+domain_tags:
+  - hub
+  - tools
+task_tags:
+  - firmware-update
+  - log
+  - config
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 5376eed8-60b2-4ef5-a079-bf96c132e6f3
 notion_url: 'https://www.notion.so/Hub-MP-Tool-5376eed860b24ef5a079bf96c132e6f3'
 notion_updated_at: '2020-05-21T01:26:00.000Z'
-exported_at: '2026-04-06T11:16:41.942Z'
+exported_at: '2026-04-06T13:09:58.031Z'
 is_summarized: false
+relations: []
 ---
 
 Hub MP Tool

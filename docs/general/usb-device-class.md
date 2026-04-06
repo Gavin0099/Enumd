@@ -1,11 +1,18 @@
 ---
 title: USB Device Class
-category: general
+domain_tags:
+  - monitor
+task_tags:
+  - spec
+authority_level: source
+is_deprecated: false
+category: monitor
 notion_id: 09bb5fc6-5513-451f-9f7e-59b09e159483
 notion_url: 'https://www.notion.so/USB-Device-Class-09bb5fc65513451f9f7e59b09e159483'
 notion_updated_at: '2020-04-29T08:28:00.000Z'
-exported_at: '2026-04-06T11:25:03.420Z'
+exported_at: '2026-04-06T13:16:53.374Z'
 is_summarized: false
+relations: []
 ---
 
 多數的USB 裝置與其他的裝置會有類似的功能，當有許多裝置的屬性或是行為相近時，便會把此產品歸為一類，定義成一套相同的協定。

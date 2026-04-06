@@ -1,11 +1,22 @@
 ---
 title: Monitor debug & 參考資料
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+  - firmware
+task_tags:
+  - firmware-update
+  - debug
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 22b64f6b-c656-80b2-a6ce-d06d2bde90c7
 notion_url: 'https://www.notion.so/Monitor-debug-22b64f6bc65680b2a6ced06d2bde90c7'
 notion_updated_at: '2026-01-21T09:37:00.000Z'
-exported_at: '2026-04-06T11:27:48.424Z'
+exported_at: '2026-04-06T13:19:24.850Z'
 is_summarized: false
+relations: []
 ---
 
 ## Monitor Firmware Multi-Path Update Architecture

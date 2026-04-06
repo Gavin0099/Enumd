@@ -1,11 +1,24 @@
 ---
 title: MTK Scaler Update flow
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: c2e85e39-91b1-40ff-9a4d-cc4a2f95c771
 notion_url: 'https://www.notion.so/MTK-Scaler-Update-flow-c2e85e3991b140ff9a4dcc4a2f95c771'
 notion_updated_at: '2026-01-21T09:22:00.000Z'
-exported_at: '2026-04-06T11:22:29.761Z'
+exported_at: '2026-04-06T13:14:35.645Z'
 is_summarized: false
+relations: []
 ---
 
 此簡介主要根據MTK 的update 文件(HP Digutal signature for Hub ISP rule) 做說明，最新版的spec 如下連結

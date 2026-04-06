@@ -1,6 +1,6 @@
-# Monitor
+# 🖥 Monitor
 
-> HP/Lenovo/ASUS Monitor、MTK/RTK Scaler
+> HP/Lenovo/ASUS Monitor、MTK/RTK Scaler、OCI 架構
 
 共 **23** 頁文件
 

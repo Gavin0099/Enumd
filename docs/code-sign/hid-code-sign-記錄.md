@@ -1,11 +1,30 @@
 ---
 title: HID Code Sign 記錄
-category: code-sign
+domain_tags:
+  - hub
+  - driver
+  - code-sign
+  - mac
+  - monitor
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - code-sign
+  - build
+  - release
+  - spec
+  - sop
+  - log
+authority_level: reference
+is_deprecated: false
+category: hub
 notion_id: f01a9f3e-ae43-4404-901e-e1631d35d2e3
 notion_url: 'https://www.notion.so/HID-Code-Sign-f01a9f3eae434404901ee1631d35d2e3'
 notion_updated_at: '2026-01-21T09:13:00.000Z'
-exported_at: '2026-04-06T11:28:34.320Z'
+exported_at: '2026-04-06T13:20:08.565Z'
 is_summarized: false
+relations: []
 ---
 
 ### Update Protocol

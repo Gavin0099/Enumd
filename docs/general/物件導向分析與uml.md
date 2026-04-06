@@ -1,11 +1,18 @@
 ---
 title: 物件導向分析與UML
-category: general
+domain_tags:
+  - security
+task_tags:
+  - spec
+authority_level: source
+is_deprecated: false
+category: security
 notion_id: cc137648-1e83-4d27-9f2c-cd461ad56355
 notion_url: 'https://www.notion.so/UML-cc1376481e834d279f2ccd461ad56355'
 notion_updated_at: '2020-04-29T08:28:00.000Z'
-exported_at: '2026-04-06T11:25:01.705Z'
+exported_at: '2026-04-06T13:16:52.762Z'
 is_summarized: false
+relations: []
 ---
 
 http://www.codedata.com.tw/java/michael

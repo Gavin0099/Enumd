@@ -1,12 +1,19 @@
 ---
 title: visual studio 2017 administrator 設定方式
+domain_tags:
+  - general
+task_tags:
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: 7b1ea788-2595-49d6-8388-a3086ec96aea
 notion_url: >-
   https://www.notion.so/visual-studio-2017-administrator-7b1ea788259549d68388a3086ec96aea
 notion_updated_at: '2024-12-20T08:37:00.000Z'
-exported_at: '2026-04-06T11:20:58.785Z'
+exported_at: '2026-04-06T13:13:16.081Z'
 is_summarized: false
+relations: []
 ---
 
 1.開始-->Visual Studio 2017右鍵—>開啟檔案位置

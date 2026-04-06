@@ -1,11 +1,19 @@
 ---
 title: ChatGPT 簡介
-category: general
+domain_tags:
+  - mac
+task_tags:
+  - debug
+  - spec
+authority_level: source
+is_deprecated: false
+category: mac
 notion_id: 58868cc8-7fb3-46e6-ae38-43d9cb5443c2
 notion_url: 'https://www.notion.so/ChatGPT-58868cc87fb346e6ae3843d9cb5443c2'
 notion_updated_at: '2023-04-10T09:43:00.000Z'
-exported_at: '2026-04-06T11:27:11.382Z'
+exported_at: '2026-04-06T13:18:48.274Z'
 is_summarized: false
+relations: []
 ---
 
 ### ChatGPT

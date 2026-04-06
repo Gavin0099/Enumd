@@ -1,11 +1,27 @@
 ---
 title: 'Linux & Mac 共code '
-category: mac
+domain_tags:
+  - hub
+  - code-sign
+  - mac
+  - monitor
+  - firmware
+  - sdk
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - code-sign
+  - build
+authority_level: deprecated
+is_deprecated: true
+category: hub
 notion_id: e1e95a7e-ae4a-4406-bd68-0e50c0078bcf
 notion_url: 'https://www.notion.so/Linux-Mac-code-e1e95a7eae4a4406bd680e50c0078bcf'
 notion_updated_at: '2026-01-21T10:01:00.000Z'
-exported_at: '2026-04-06T11:20:31.741Z'
+exported_at: '2026-04-06T13:12:49.812Z'
 is_summarized: false
+relations: []
 ---
 
 ## 目前狀況

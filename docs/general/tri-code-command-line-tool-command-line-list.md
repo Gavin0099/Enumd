@@ -4,7 +4,7 @@ category: general
 notion_id: 15b64f6b-c656-80ce-87c8-d29b68e14d84
 notion_url: >-
   https://www.notion.so/Tri-Code-Command-line-Tool-command-line-List-15b64f6bc65680ce87c8d29b68e14d84
-notion_updated_at: '2026-01-21T09:36:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:18:21.732Z'
 is_summarized: false
 ---

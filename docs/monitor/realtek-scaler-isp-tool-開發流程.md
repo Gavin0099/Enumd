@@ -1,11 +1,22 @@
 ---
 title: Realtek Scaler ISP tool 開發流程
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+  - tools
+task_tags:
+  - firmware-update
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 626f60f6-0306-4081-bb4c-781c224047b9
 notion_url: 'https://www.notion.so/Realtek-Scaler-ISP-tool-626f60f603064081bb4c781c224047b9'
 notion_updated_at: '2022-11-25T07:12:00.000Z'
-exported_at: '2026-04-06T11:22:46.157Z'
+exported_at: '2026-04-06T13:14:45.937Z'
 is_summarized: false
+relations: []
 ---
 
 # 已支援的Scaler IC

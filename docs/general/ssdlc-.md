@@ -1,11 +1,19 @@
 ---
 title: 'SSDLC '
-category: general
+domain_tags:
+  - tools
+  - security
+task_tags:
+  - sop
+authority_level: source
+is_deprecated: false
+category: tools
 notion_id: 1d064f6b-c656-80e2-ab46-d7ad1c859b9b
 notion_url: 'https://www.notion.so/SSDLC-1d064f6bc65680e2ab46d7ad1c859b9b'
 notion_updated_at: '2026-01-21T09:36:00.000Z'
-exported_at: '2026-04-06T11:27:21.427Z'
+exported_at: '2026-04-06T13:18:58.422Z'
 is_summarized: false
+relations: []
 ---
 
 ## SAST 工具比較表

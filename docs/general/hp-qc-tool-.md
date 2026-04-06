@@ -3,7 +3,7 @@ title: 'HP QC Tool '
 category: general
 notion_id: 55a37d53-67b1-4fa5-a4f3-1d4881e31e64
 notion_url: 'https://www.notion.so/HP-QC-Tool-55a37d5367b14fa5a4f31d4881e31e64'
-notion_updated_at: '2026-01-21T09:33:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:20:45.885Z'
 is_summarized: false
 ---

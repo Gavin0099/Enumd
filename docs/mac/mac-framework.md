@@ -1,11 +1,21 @@
 ---
 title: Mac Framework
+domain_tags:
+  - mac
+  - security
+task_tags:
+  - build
+  - log
+  - config
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: 1c364f6b-c656-80ba-b96f-fdf94236eec3
 notion_url: 'https://www.notion.so/Mac-Framework-1c364f6bc65680bab96ffdf94236eec3'
 notion_updated_at: '2026-01-21T09:36:00.000Z'
-exported_at: '2026-04-06T11:27:43.415Z'
+exported_at: '2026-04-06T13:19:19.782Z'
 is_summarized: false
+relations: []
 ---
 
 ### ① 新增一份 Info.plist.in 模板（放在專案根目錄）

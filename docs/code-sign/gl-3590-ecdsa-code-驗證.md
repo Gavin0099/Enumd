@@ -1,11 +1,19 @@
 ---
 title: GL 3590 Ecdsa code 驗證
+domain_tags:
+  - code-sign
+  - security
+task_tags:
+  - code-sign
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: affee102-ae32-4933-b089-b2afdd93cf98
 notion_url: 'https://www.notion.so/GL-3590-Ecdsa-code-affee102ae324933b089b2afdd93cf98'
 notion_updated_at: '2022-12-13T09:01:00.000Z'
-exported_at: '2026-04-06T11:19:47.575Z'
+exported_at: '2026-04-06T13:12:13.836Z'
 is_summarized: false
+relations: []
 ---
 
 ## Hash 

@@ -3,7 +3,7 @@ title: CLI command line list
 category: general
 notion_id: 96fc1314-b7dc-4cd0-8378-d48693ab6a54
 notion_url: 'https://www.notion.so/CLI-command-line-list-96fc1314b7dc4cd08378d48693ab6a54'
-notion_updated_at: '2023-04-17T08:47:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:26:04.170Z'
 is_summarized: false
 ---

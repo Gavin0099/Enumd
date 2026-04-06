@@ -1,12 +1,19 @@
 ---
 title: 'USB3.1 Ch10 Hub, Host Downstream Port, and Device Upstream Port Specification'
+domain_tags:
+  - hub
+task_tags:
+  - spec
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 1de64f6b-c656-80e0-b99d-e3eb9eb37b81
 notion_url: >-
   https://www.notion.so/USB3-1-Ch10-Hub-Host-Downstream-Port-and-Device-Upstream-Port-Specification-1de64f6bc65680e0b99de3eb9eb37b81
 notion_updated_at: '2026-01-21T09:45:00.000Z'
-exported_at: '2026-04-06T11:16:24.935Z'
+exported_at: '2026-04-06T13:09:45.497Z'
 is_summarized: false
+relations: []
 ---
 
 ### Ch10 Hub, Host Downstream Port, and Device Upstream Port Specification

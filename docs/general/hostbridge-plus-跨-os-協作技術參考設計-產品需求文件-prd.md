@@ -1,11 +1,21 @@
 ---
 title: HostBridge plus 跨 OS 協作技術參考設計 - 產品需求文件 (PRD)
+domain_tags:
+  - general
+task_tags:
+  - debug
+  - release
+  - spec
+  - sop
+authority_level: reference
+is_deprecated: false
 category: general
 notion_id: 27f64f6b-c656-8030-9b23-ea8ff0921d57
 notion_url: 'https://www.notion.so/HostBridge-plus-OS-PRD-27f64f6bc65680309b23ea8ff0921d57'
 notion_updated_at: '2026-01-21T09:38:00.000Z'
-exported_at: '2026-04-06T11:26:18.064Z'
+exported_at: '2026-04-06T13:17:57.253Z'
 is_summarized: false
+relations: []
 ---
 
 ---

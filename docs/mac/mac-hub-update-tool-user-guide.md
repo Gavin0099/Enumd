@@ -4,7 +4,7 @@ category: mac
 notion_id: 56046d23-c398-44a5-8fb8-3c2bd77f10f8
 notion_url: >-
   https://www.notion.so/Mac-Hub-Update-Tool-User-Guide-56046d23c39844a58fb83c2bd77f10f8
-notion_updated_at: '2026-01-21T09:33:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:18:18.076Z'
 is_summarized: false
 ---

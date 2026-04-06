@@ -1,12 +1,20 @@
 ---
 title: 'E22/E24i 1st & 2nd Scalar Update '
-category: general
+domain_tags:
+  - hub
+  - monitor
+task_tags:
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 3e8cb702-558c-4375-881e-dd20f2a9605c
 notion_url: >-
   https://www.notion.so/E22-E24i-1st-2nd-Scalar-Update-3e8cb702558c4375881edd20f2a9605c
 notion_updated_at: '2025-07-15T02:58:00.000Z'
-exported_at: '2026-04-06T11:24:17.667Z'
+exported_at: '2026-04-06T13:16:06.730Z'
 is_summarized: false
+relations: []
 ---
 
 ### ini 設定

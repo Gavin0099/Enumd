@@ -1,12 +1,22 @@
 ---
 title: ' Generic USB Filter Driver '
+domain_tags:
+  - driver
+  - security
+task_tags:
+  - install
+  - spec
+  - sop
+authority_level: derived
+is_deprecated: false
 category: driver
 notion_id: 2c664f6b-c656-8050-a06f-d090fd72e48c
 notion_url: >-
   https://www.notion.so/Generic-USB-Filter-Driver-2c664f6bc6568050a06fd090fd72e48c
 notion_updated_at: '2026-01-21T09:39:00.000Z'
-exported_at: '2026-04-06T11:19:20.333Z'
+exported_at: '2026-04-06T13:11:53.992Z'
 is_summarized: false
+relations: []
 ---
 
 > 💡 簡介

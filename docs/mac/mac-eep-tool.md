@@ -1,11 +1,18 @@
 ---
 title: Mac EEP Tool
+domain_tags:
+  - mac
+  - tools
+task_tags: []
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: 21164f6b-c656-8018-bef4-ff9eb1b89139
 notion_url: 'https://www.notion.so/Mac-EEP-Tool-21164f6bc6568018bef4ff9eb1b89139'
 notion_updated_at: '2025-06-13T02:04:00.000Z'
-exported_at: '2026-04-06T11:26:55.163Z'
+exported_at: '2026-04-06T13:18:32.117Z'
 is_summarized: false
+relations: []
 ---
 
 ```swift

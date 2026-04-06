@@ -1,11 +1,22 @@
 ---
 title: Teledyne LeCroy python安裝和測試方式
-category: general
+domain_tags:
+  - hub
+  - tools
+task_tags:
+  - install
+  - release
+  - spec
+  - log
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: f817386f-e2c5-464f-867d-07f5b3d09c21
 notion_url: 'https://www.notion.so/Teledyne-LeCroy-python-f817386fe2c5464f867d07f5b3d09c21'
 notion_updated_at: '2026-01-21T09:33:00.000Z'
-exported_at: '2026-04-06T11:26:20.813Z'
+exported_at: '2026-04-06T13:17:59.976Z'
 is_summarized: false
+relations: []
 ---
 
 1. 安裝USBProtocolSuiteSW9.01_B4310_BETA-EV(Z:\SW_Release_New\Hub\temp\USBProtocolSuiteSW9.01_B4310_BETA-EV)

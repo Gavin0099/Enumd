@@ -1,12 +1,24 @@
 ---
 title: How to bound target device
-category: general
+domain_tags:
+  - hub
+  - tools
+task_tags:
+  - install
+  - firmware-update
+  - spec
+  - sop
+  - config
+authority_level: reference
+is_deprecated: false
+category: hub
 notion_id: d3077cd9-a9ed-4209-89c6-4afd27cfe268
 notion_url: >-
   https://www.notion.so/How-to-bound-target-device-d3077cd9a9ed420989c64afd27cfe268
 notion_updated_at: '2026-01-21T10:01:00.000Z'
-exported_at: '2026-04-06T11:17:16.148Z'
+exported_at: '2026-04-06T13:10:27.218Z'
 is_summarized: false
+relations: []
 ---
 
 # 原因

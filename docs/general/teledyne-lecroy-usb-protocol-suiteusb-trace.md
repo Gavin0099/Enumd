@@ -1,12 +1,23 @@
 ---
 title: Teledyne LeCroy USB Protocol Suite(USB Trace)
-category: general
+domain_tags:
+  - hub
+task_tags:
+  - install
+  - release
+  - spec
+  - log
+  - config
+authority_level: reference
+is_deprecated: false
+category: hub
 notion_id: c7a93108-ce1b-4429-95f5-488bc00fef26
 notion_url: >-
   https://www.notion.so/Teledyne-LeCroy-USB-Protocol-Suite-USB-Trace-c7a93108ce1b442995f5488bc00fef26
 notion_updated_at: '2026-01-21T09:28:00.000Z'
-exported_at: '2026-04-06T11:21:57.329Z'
+exported_at: '2026-04-06T13:14:03.968Z'
 is_summarized: false
+relations: []
 ---
 
 ### 安裝路徑

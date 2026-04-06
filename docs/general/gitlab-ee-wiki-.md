@@ -1,11 +1,27 @@
 ---
 title: 'GitLab EE wiki '
-category: general
+domain_tags:
+  - hub
+  - code-sign
+  - monitor
+  - firmware
+  - sdk
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - code-sign
+  - spec
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 2d164f6b-c656-8060-a348-dc35115213b5
 notion_url: 'https://www.notion.so/GitLab-EE-wiki-2d164f6bc6568060a348dc35115213b5'
 notion_updated_at: '2025-12-22T10:01:00.000Z'
-exported_at: '2026-04-06T11:28:03.117Z'
+exported_at: '2026-04-06T13:19:44.875Z'
 is_summarized: false
+relations: []
 ---
 
 # USB Hub & Monitor Solution Wiki

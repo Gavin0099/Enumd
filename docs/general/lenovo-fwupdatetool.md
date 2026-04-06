@@ -3,7 +3,7 @@ title: Lenovo FWUpdateTool
 category: general
 notion_id: 0a4adf45-3d44-46b3-8c3a-f927d5d12261
 notion_url: 'https://www.notion.so/Lenovo-FWUpdateTool-0a4adf453d4446b38c3af927d5d12261'
-notion_updated_at: '2026-01-21T09:28:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:24:31.970Z'
 is_summarized: false
 ---

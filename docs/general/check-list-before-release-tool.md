@@ -4,7 +4,7 @@ category: general
 notion_id: 07475f4f-99a2-4906-9446-ac40e1e21bec
 notion_url: >-
   https://www.notion.so/Check-list-before-release-tool-07475f4f99a249069446ac40e1e21bec
-notion_updated_at: '2026-01-21T09:49:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:17:04.025Z'
 is_summarized: false
 ---

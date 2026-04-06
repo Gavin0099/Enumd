@@ -1,11 +1,27 @@
 ---
 title: Draw.io 相關連結
-category: general
+domain_tags:
+  - hub
+  - driver
+  - code-sign
+  - monitor
+  - firmware
+  - sdk
+  - tools
+task_tags:
+  - firmware-update
+  - code-sign
+  - spec
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 1ff76cd4-55cb-4678-afab-2becb11ad1d9
 notion_url: 'https://www.notion.so/Draw-io-1ff76cd455cb4678afab2becb11ad1d9'
 notion_updated_at: '2026-01-21T09:41:00.000Z'
-exported_at: '2026-04-06T11:17:17.722Z'
+exported_at: '2026-04-06T13:10:28.782Z'
 is_summarized: false
+relations: []
 ---
 
 ## Recovery

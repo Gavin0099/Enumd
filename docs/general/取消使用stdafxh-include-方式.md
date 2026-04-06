@@ -1,11 +1,21 @@
 ---
 title: 取消使用stdafx.h include 方式
-category: general
+domain_tags:
+  - sdk
+task_tags:
+  - debug
+  - build
+  - release
+  - spec
+authority_level: source
+is_deprecated: false
+category: sdk
 notion_id: a6ee4d9a-357c-4207-bc64-cf63ab2f3883
 notion_url: 'https://www.notion.so/stdafx-h-include-a6ee4d9a357c4207bc64cf63ab2f3883'
 notion_updated_at: '2022-12-13T08:38:00.000Z'
-exported_at: '2026-04-06T11:21:02.789Z'
+exported_at: '2026-04-06T13:13:19.481Z'
 is_summarized: false
+relations: []
 ---
 
 取消使用stdafx.h include 方式

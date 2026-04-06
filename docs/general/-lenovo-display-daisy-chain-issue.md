@@ -1,12 +1,23 @@
 ---
 title: ' Lenovo Display Daisy Chain issue'
-category: general
+domain_tags:
+  - monitor
+  - tools
+  - security
+task_tags:
+  - debug
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: monitor
 notion_id: 1a564f6b-c656-80a0-b5c1-f2fb3d61841b
 notion_url: >-
   https://www.notion.so/Lenovo-Display-Daisy-Chain-issue-1a564f6bc65680a0b5c1f2fb3d61841b
 notion_updated_at: '2025-02-25T09:55:00.000Z'
-exported_at: '2026-04-06T11:26:42.864Z'
+exported_at: '2026-04-06T13:18:22.167Z'
 is_summarized: false
+relations: []
 ---
 
 ## 問題現象

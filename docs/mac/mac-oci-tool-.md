@@ -1,11 +1,25 @@
 ---
 title: 'MAC OCI Tool '
-category: mac
+domain_tags:
+  - hub
+  - code-sign
+  - mac
+  - firmware
+  - sdk
+  - tools
+task_tags:
+  - code-sign
+  - build
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 9601f1bb-65ae-438f-8447-1ab7ca3638d2
 notion_url: 'https://www.notion.so/MAC-OCI-Tool-9601f1bb65ae438f84471ab7ca3638d2'
 notion_updated_at: '2026-01-21T09:57:00.000Z'
-exported_at: '2026-04-06T11:20:23.153Z'
+exported_at: '2026-04-06T13:12:37.488Z'
 is_summarized: false
+relations: []
 ---
 
 ## UML Link 

@@ -3,7 +3,7 @@ title: HP 724 pu firmware 更新流程與 ini 設定說明文件
 category: general
 notion_id: 25064f6b-c656-802e-9494-cddf12b46fa2
 notion_url: 'https://www.notion.so/HP-724-pu-firmware-ini-25064f6bc656802e9494cddf12b46fa2'
-notion_updated_at: '2026-01-21T09:38:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:14.501Z'
 is_summarized: false
 ---

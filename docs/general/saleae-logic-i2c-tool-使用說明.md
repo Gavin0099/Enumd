@@ -3,7 +3,7 @@ title: Saleae logic i2c  Tool 使用說明
 category: general
 notion_id: e84134df-3be6-4146-a8fb-494759c60fe2
 notion_url: 'https://www.notion.so/Saleae-logic-i2c-Tool-e84134df3be64146a8fb494759c60fe2'
-notion_updated_at: '2026-03-25T03:41:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:22:03.505Z'
 is_summarized: false
 ---

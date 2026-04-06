@@ -1,11 +1,22 @@
 ---
 title: 'Etoken System Code View '
+domain_tags:
+  - code-sign
+  - security
+task_tags:
+  - debug
+  - spec
+  - sop
+  - config
+authority_level: derived
+is_deprecated: false
 category: code-sign
 notion_id: 30664f6b-c656-8098-9143-df9d5416492f
 notion_url: 'https://www.notion.so/Etoken-System-Code-View-30664f6bc65680989143df9d5416492f'
 notion_updated_at: '2026-02-13T06:22:00.000Z'
-exported_at: '2026-04-06T11:28:21.095Z'
+exported_at: '2026-04-06T13:19:57.603Z'
 is_summarized: false
+relations: []
 ---
 
 ## etoken_dongle_server

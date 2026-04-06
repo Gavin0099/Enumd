@@ -1,11 +1,22 @@
 ---
 title: Mac OCI Dll Import 方式
+domain_tags:
+  - mac
+  - firmware
+  - sdk
+  - tools
+task_tags:
+  - spec
+  - log
+authority_level: source
+is_deprecated: false
 category: mac
 notion_id: b3863058-d8a5-4599-8c1d-ed61389b86ca
 notion_url: 'https://www.notion.so/Mac-OCI-Dll-Import-b3863058d8a545998c1ded61389b86ca'
 notion_updated_at: '2026-01-21T09:32:00.000Z'
-exported_at: '2026-04-06T11:20:35.555Z'
+exported_at: '2026-04-06T13:12:51.972Z'
 is_summarized: false
+relations: []
 ---
 
 Architecture 可以參考下面連結

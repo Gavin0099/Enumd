@@ -1,11 +1,19 @@
 ---
 title: 結構 struct 的宣告與封裝和使用練習 c#
-category: general
+domain_tags:
+  - sdk
+task_tags:
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
+category: sdk
 notion_id: 9670f1d3-d332-4fe0-813e-7f444f616567
 notion_url: 'https://www.notion.so/struct-c-9670f1d3d3324fe0813e7f444f616567'
 notion_updated_at: '2022-12-13T08:39:00.000Z'
-exported_at: '2026-04-06T11:21:12.216Z'
+exported_at: '2026-04-06T13:13:28.678Z'
 is_summarized: false
+relations: []
 ---
 
 This is my structure mapping in c#:

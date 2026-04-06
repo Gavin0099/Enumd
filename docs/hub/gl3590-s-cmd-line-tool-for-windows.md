@@ -1,12 +1,22 @@
 ---
 title: GL3590-s cmd line tool for Windows
+domain_tags:
+  - hub
+  - mac
+  - tools
+task_tags:
+  - release
+  - log
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 7dbfe126-83d4-415e-80e8-13a014c12261
 notion_url: >-
   https://www.notion.so/GL3590-s-cmd-line-tool-for-Windows-7dbfe12683d4415e80e813a014c12261
 notion_updated_at: '2022-03-21T06:29:00.000Z'
-exported_at: '2026-04-06T11:27:00.936Z'
+exported_at: '2026-04-06T13:18:37.397Z'
 is_summarized: false
+relations: []
 ---
 
 ### Mac

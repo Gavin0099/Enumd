@@ -1,11 +1,27 @@
 ---
 title: Genesys Logic Spec
-category: general
+domain_tags:
+  - hub
+  - code-sign
+  - mac
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - code-sign
+  - spec
+  - sop
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 82cc3866-6397-4de5-8c65-b57ea7ebffc0
 notion_url: 'https://www.notion.so/Genesys-Logic-Spec-82cc386663974de58c65b57ea7ebffc0'
 notion_updated_at: '2026-02-23T07:18:00.000Z'
-exported_at: '2026-04-06T11:16:45.437Z'
+exported_at: '2026-04-06T13:10:00.802Z'
 is_summarized: false
+relations: []
 ---
 
 ## Vendor Command 

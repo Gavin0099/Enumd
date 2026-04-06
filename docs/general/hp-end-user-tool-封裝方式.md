@@ -3,7 +3,7 @@ title: HP End User Tool 封裝方式
 category: general
 notion_id: 504ff5cb-ffb5-4260-90fe-4726c3cfadb8
 notion_url: 'https://www.notion.so/HP-End-User-Tool-504ff5cbffb5426090fe4726c3cfadb8'
-notion_updated_at: '2020-12-04T07:32:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:27:28.836Z'
 is_summarized: false
 ---

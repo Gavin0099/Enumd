@@ -4,7 +4,7 @@ category: general
 notion_id: 29c64f6b-c656-80a5-a42b-d6bd2889c3eb
 notion_url: >-
   https://www.notion.so/HP-Mandatory-Firmware-Update-Strategy-Expansion-for-Future-Projects-29c64f6bc65680a5a42bd6bd2889c3eb
-notion_updated_at: '2026-01-21T10:01:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:38.614Z'
 is_summarized: false
 ---

@@ -1,11 +1,21 @@
 ---
 title: Mac 權限問題
+domain_tags:
+  - mac
+  - security
+task_tags:
+  - debug
+  - build
+  - config
+authority_level: deprecated
+is_deprecated: true
 category: mac
 notion_id: 5e33658a-9fea-4e96-98d3-baf8226f640a
 notion_url: 'https://www.notion.so/Mac-5e33658a9fea4e9698d3baf8226f640a'
 notion_updated_at: '2026-01-21T09:33:00.000Z'
-exported_at: '2026-04-06T11:20:44.445Z'
+exported_at: '2026-04-06T13:12:59.026Z'
 is_summarized: false
+relations: []
 ---
 
 ### 前言:

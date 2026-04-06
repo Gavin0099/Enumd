@@ -1,11 +1,18 @@
 ---
 title: Git & GitLab
+domain_tags:
+  - general
+task_tags:
+  - sop
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: bacf898b-de35-47a0-9a71-f77b265a1df7
 notion_url: 'https://www.notion.so/Git-GitLab-bacf898bde3547a09a71f77b265a1df7'
 notion_updated_at: '2026-01-21T09:31:00.000Z'
-exported_at: '2026-04-06T11:26:01.334Z'
+exported_at: '2026-04-06T13:17:48.185Z'
 is_summarized: false
+relations: []
 ---
 
 ## 前緣

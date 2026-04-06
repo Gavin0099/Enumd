@@ -1,0 +1,150 @@
+{
+  "total_pages": 310,
+  "last_exported": "2026-04-06T13:20:29.720Z",
+  "categories": [
+    {
+      "dir": "hub",
+      "title": "Hub 文件",
+      "icon": "🔌",
+      "description": "Hub chip、ini 參數、Firmware Update Tool、SDK 規範",
+      "highlights": [
+        "Hub Chip 資訊",
+        "Hub ini parameter",
+        "GL Hub Software Development Kit"
+      ],
+      "count": 35,
+      "latest_update": "FORCE_REFRESH"
+    },
+    {
+      "dir": "driver",
+      "title": "Driver 相關",
+      "icon": "🛠",
+      "description": "Driver 安裝、刪除、除錯、CSR 調試",
+      "highlights": [
+        "Hub Driver 除錯方式",
+        "Driver 刪除方式",
+        "Windows 10 H2 driver 移除流程"
+      ],
+      "count": 14,
+      "latest_update": "FORCE_REFRESH"
+    },
+    {
+      "dir": "code-sign",
+      "title": "Code Sign",
+      "icon": "🔐",
+      "description": "ECC/RSA 金鑰、簽章流程、eToken、GL3590",
+      "highlights": [
+        "Code Sign 概述",
+        "eToken 安全簽章系統技術說明",
+        "Code sign Flow"
+      ],
+      "count": 30,
+      "latest_update": "FORCE_REFRESH"
+    },
+    {
+      "dir": "mac",
+      "title": "Mac 相關",
+      "icon": "🍎",
+      "description": "Mac OCI Tool、Xcode 設定、Bundle ID、FDA 權限",
+      "highlights": [
+        "MAC OCI Tool",
+        "Xcode Architecture 設定",
+        "Mac 權限問題"
+      ],
+      "count": 29,
+      "latest_update": "FORCE_REFRESH"
+    },
+    {
+      "dir": "monitor",
+      "title": "Monitor",
+      "icon": "🖥",
+      "description": "HP/Lenovo/ASUS Monitor、MTK/RTK Scaler、OCI 架構",
+      "highlights": [
+        "MTK Scaler Update flow",
+        "HP Monitor Code Sign Update Flow",
+        "Lenovo offline update flow"
+      ],
+      "count": 23,
+      "latest_update": "FORCE_REFRESH"
+    },
+    {
+      "dir": "general",
+      "title": "技術文件",
+      "icon": "📋",
+      "description": "Visual Studio、CMake、Git、Windows 指令、Log 抓取",
+      "highlights": [
+        "How to generate system log",
+        "Cmake 設定方式",
+        "Git Command List"
+      ],
+      "count": 179,
+      "latest_update": "FORCE_REFRESH"
+    }
+  ],
+  "recently_updated": [
+    {
+      "title": "GLHubUpdateToolCli req command Description",
+      "slug": "glhubupdatetoolcli-req-command-description",
+      "category": "hub",
+      "notion_url": "https://www.notion.so/GLHubUpdateToolCli-req-command-Description-f339ce40e65b43ee89b3241875c19295",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:16:56.076Z"
+    },
+    {
+      "title": "Hub Driver ",
+      "slug": "hub-driver-",
+      "category": "driver",
+      "notion_url": "https://www.notion.so/Hub-Driver-b4d524328cd2470bbd1793ef8df3666a",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:19:00.735Z"
+    },
+    {
+      "title": "Hub Driver Debugging method (CSR)",
+      "slug": "hub-driver-debugging-method-csr",
+      "category": "driver",
+      "notion_url": "https://www.notion.so/Hub-Driver-Debugging-method-CSR-8c4a4dcd51054f00ba45fe81aded2f9f",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:19:06.516Z"
+    },
+    {
+      "title": "Hub  driver 判斷方式",
+      "slug": "hub-driver-判斷方式",
+      "category": "driver",
+      "notion_url": "https://www.notion.so/Hub-driver-1699ec4efb364a8dabca46cb1063b59f",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:18:59.418Z"
+    },
+    {
+      "title": "Hub Driver 除錯方式",
+      "slug": "hub-driver-除錯方式",
+      "category": "driver",
+      "notion_url": "https://www.notion.so/Hub-Driver-0fc75da2455d449bb551e802938b793f",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:19:04.903Z"
+    },
+    {
+      "title": "ECC key",
+      "slug": "ecc-key",
+      "category": "code-sign",
+      "notion_url": "https://www.notion.so/ECC-key-b732ac5100fc44e0a3cef59eda9d46f6",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:19:45.810Z"
+    },
+    {
+      "title": "GL Hub Code Sign Recovery Flow",
+      "slug": "gl-hub-code-sign-recovery-flow",
+      "category": "code-sign",
+      "notion_url": "https://www.notion.so/GL-Hub-Code-Sign-Recovery-Flow-c2f60ef2157043f6a2e31ccef25aec2d",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:17:22.629Z"
+    },
+    {
+      "title": "GL3590 Code Sign flow (Hub + HostBridge)",
+      "slug": "gl3590-code-sign-flow-hub-hostbridge",
+      "category": "code-sign",
+      "notion_url": "https://www.notion.so/GL3590-Code-Sign-flow-Hub-HostBridge-1c083970f4f84851af0224410062402b",
+      "notion_updated_at": "FORCE_REFRESH",
+      "exported_at": "2026-04-06T11:19:30.218Z"
+    }
+  ]
+}

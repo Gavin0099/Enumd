@@ -23,13 +23,15 @@ import {
   getChildPageIds,
 } from "../lib/notion";
 import { summarizePage } from "../lib/summarize";
-import { categorize, titleToSlug } from "../lib/categorize";
+import { titleToSlug } from "../lib/categorize";
+import { inferTagsFromText, inferTagsWithAI } from "../lib/infer-tags";
 
 const DOCS_DIR = join(process.cwd(), "docs");
 const RATE_LIMIT_MS = 350;
 const SKIP_TITLES = ["未整理資料", "舊資料"];
 
 const useSummarize = process.argv.includes("--summarize");
+const useAIInfer = process.argv.includes("--infer"); // AI tag inference for ambiguous pages
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -52,15 +54,39 @@ function buildFilePath(category: string, slug: string): string {
   return join(dir, `${slug}.md`);
 }
 
-function buildFrontmatter(page: PageObjectResponse, category: string, isSummarized: boolean) {
+async function buildFrontmatter(
+  page: PageObjectResponse,
+  content: string,
+  isSummarized: boolean
+) {
+  const title = getPageTitle(page);
+
+  // Infer tags: use AI only when --infer flag is set AND rule-based gives weak results
+  let tags = inferTagsFromText(title, content);
+  if (useAIInfer && tags.task_tags.length === 0) {
+    tags = await inferTagsWithAI(title, content);
+  }
+
+  // Primary display category = first domain_tag (for sidebar grouping)
+  const primary_category = tags.domain_tags[0];
+
   return {
-    title: getPageTitle(page),
-    category,
+    title,
+    // New knowledge model fields
+    domain_tags: tags.domain_tags,
+    task_tags: tags.task_tags,
+    authority_level: tags.authority_level,
+    is_deprecated: tags.authority_level === "deprecated",
+    // Legacy / display
+    category: primary_category,
+    // Notion metadata
     notion_id: page.id,
     notion_url: getPageUrl(page),
     notion_updated_at: getPageLastEdited(page),
     exported_at: new Date().toISOString(),
     is_summarized: isSummarized,
+    // Relations (empty by default, filled manually or by future tooling)
+    relations: [],
   };
 }
 
@@ -72,9 +98,11 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
     return "skipped";
   }
 
-  const category = categorize(title);
+  // Quick infer for routing only (no AI, just title)
+  const { domain_tags } = inferTagsFromText(title, "");
+  const primary_category = domain_tags[0];
   const slug = titleToSlug(title) || page.id;
-  const filePath = buildFilePath(category, slug);
+  const filePath = buildFilePath(primary_category, slug);
 
   // Stale check: skip if Notion page hasn't changed
   const existing = getExistingMeta(filePath);
@@ -83,7 +111,7 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
     return "skipped";
   }
 
-  console.log(`  [export] ${title} → ${category}/${slug}.md`);
+  console.log(`  [export] ${title} → ${primary_category}/${slug}.md`);
 
   let content = await getPageContent(page.id);
   await sleep(RATE_LIMIT_MS);
@@ -98,7 +126,7 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
     console.log(`    → summarized`);
   }
 
-  const fm = buildFrontmatter(page, category, useSummarize);
+  const fm = await buildFrontmatter(page, content, useSummarize);
   const fileContent = matter.stringify(`\n${content}\n`, fm);
   writeFileSync(filePath, fileContent, "utf8");
 

@@ -4,7 +4,7 @@ category: general
 notion_id: 2c464f6b-c656-8022-bd69-ef9892a96f21
 notion_url: >-
   https://www.notion.so/HP_Display_Firmware_Update_Specification-2c464f6bc6568022bd69ef9892a96f21
-notion_updated_at: '2026-01-21T09:39:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:23.685Z'
 is_summarized: false
 ---

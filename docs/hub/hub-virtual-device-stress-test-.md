@@ -1,12 +1,21 @@
 ---
 title: 'Hub virtual device stress test '
+domain_tags:
+  - hub
+  - tools
+task_tags:
+  - install
+  - sop
+authority_level: derived
+is_deprecated: false
 category: hub
 notion_id: 19164f6b-c656-8013-90e4-ff783a98c341
 notion_url: >-
   https://www.notion.so/Hub-virtual-device-stress-test-19164f6bc656801390e4ff783a98c341
 notion_updated_at: '2026-01-21T09:36:00.000Z'
-exported_at: '2026-04-06T11:27:16.625Z'
+exported_at: '2026-04-06T13:18:54.222Z'
 is_summarized: false
+relations: []
 ---
 
 # USB 測試工具需求概述

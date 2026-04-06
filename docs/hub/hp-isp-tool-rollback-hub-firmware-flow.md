@@ -1,12 +1,22 @@
 ---
 title: HP ISP Tool Rollback hub firmware flow
+domain_tags:
+  - hub
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - sop
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 91d4ad6a-d60a-4a22-b4b6-29aaf6df17d4
 notion_url: >-
   https://www.notion.so/HP-ISP-Tool-Rollback-hub-firmware-flow-91d4ad6ad60a4a22b4b629aaf6df17d4
 notion_updated_at: '2026-01-21T09:28:00.000Z'
-exported_at: '2026-04-06T11:23:43.950Z'
+exported_at: '2026-04-06T13:15:35.570Z'
 is_summarized: false
+relations: []
 ---
 
 1. 開啟HP_ISPTool.exe

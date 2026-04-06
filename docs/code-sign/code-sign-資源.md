@@ -1,11 +1,21 @@
 ---
 title: Code Sign 資源
+domain_tags:
+  - code-sign
+  - sdk
+  - tools
+  - security
+task_tags:
+  - code-sign
+authority_level: derived
+is_deprecated: false
 category: code-sign
 notion_id: e84fd949-7e1f-4991-b023-8081b7f802ff
 notion_url: 'https://www.notion.so/Code-Sign-e84fd9497e1f4991b0238081b7f802ff'
 notion_updated_at: '2025-08-20T02:34:00.000Z'
-exported_at: '2026-04-06T11:20:01.439Z'
+exported_at: '2026-04-06T13:12:22.976Z'
 is_summarized: false
+relations: []
 ---
 
 目前有3種方式可以做到此功能

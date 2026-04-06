@@ -1,12 +1,21 @@
 ---
 title: HP Good Place 524pu Scaler Update fail
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+task_tags:
+  - debug
+  - log
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: d572ba9d-9154-43bd-b4f7-5a9de395cf72
 notion_url: >-
   https://www.notion.so/HP-Good-Place-524pu-Scaler-Update-fail-d572ba9d915443bdb4f75a9de395cf72
 notion_updated_at: '2026-01-21T09:34:00.000Z'
-exported_at: '2026-04-06T11:23:02.204Z'
+exported_at: '2026-04-06T13:15:04.411Z'
 is_summarized: false
+relations: []
 ---
 
 ## 緣由 

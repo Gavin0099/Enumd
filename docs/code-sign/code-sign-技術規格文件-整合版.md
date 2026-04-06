@@ -1,11 +1,22 @@
 ---
 title: Code-Sign 技術規格文件 (整合版)
+domain_tags:
+  - code-sign
+  - firmware
+  - tools
+task_tags:
+  - code-sign
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: 24e64f6b-c656-80fa-ad53-dbfb5144ee02
 notion_url: 'https://www.notion.so/Code-Sign-24e64f6bc65680faad53dbfb5144ee02'
 notion_updated_at: '2026-01-21T09:44:00.000Z'
-exported_at: '2026-04-06T11:20:15.583Z'
+exported_at: '2026-04-06T13:12:28.613Z'
 is_summarized: false
+relations: []
 ---
 
 > 文件版本: 2.0

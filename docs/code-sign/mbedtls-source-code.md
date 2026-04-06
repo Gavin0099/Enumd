@@ -1,11 +1,20 @@
 ---
 title: mbedtls Source Code
+domain_tags:
+  - code-sign
+  - sdk
+  - security
+task_tags:
+  - spec
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: a6abd599-f50f-46fb-a0f6-d58c87bcc930
 notion_url: 'https://www.notion.so/mbedtls-Source-Code-a6abd599f50f46fba0f6d58c87bcc930'
 notion_updated_at: '2026-01-21T09:27:00.000Z'
-exported_at: '2026-04-06T11:19:34.640Z'
+exported_at: '2026-04-06T13:12:05.824Z'
 is_summarized: false
+relations: []
 ---
 
 ### mbedtls_rsa_init

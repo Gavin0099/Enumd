@@ -1,11 +1,18 @@
 ---
 title: Notion 使用方式
+domain_tags:
+  - general
+task_tags:
+  - config
+authority_level: source
+is_deprecated: false
 category: general
 notion_id: a55dd00f-04ec-4733-9aa8-7c1fe0f64893
 notion_url: 'https://www.notion.so/Notion-a55dd00f04ec47339aa87c1fe0f64893'
 notion_updated_at: '2023-09-22T06:34:00.000Z'
-exported_at: '2026-04-06T11:21:42.251Z'
+exported_at: '2026-04-06T13:13:50.720Z'
 is_summarized: false
+relations: []
 ---
 
 ### 前言

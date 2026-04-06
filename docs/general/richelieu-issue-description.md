@@ -1,12 +1,27 @@
 ---
 title: Richelieu Issue description
-category: general
+domain_tags:
+  - hub
+  - driver
+  - firmware
+  - sdk
+  - tools
+task_tags:
+  - install
+  - firmware-update
+  - debug
+  - spec
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 1f164f6b-c656-8056-9297-d483c45380a5
 notion_url: >-
   https://www.notion.so/Richelieu-Issue-description-1f164f6bc65680569297d483c45380a5
 notion_updated_at: '2026-01-21T09:37:00.000Z'
-exported_at: '2026-04-06T11:21:47.461Z'
+exported_at: '2026-04-06T13:13:53.051Z'
 is_summarized: false
+relations: []
 ---
 
 ## 需求

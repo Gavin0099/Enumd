@@ -1,12 +1,23 @@
 ---
 title: 'HP Scheduled update flow '
-category: general
+domain_tags:
+  - hub
+  - monitor
+task_tags:
+  - firmware-update
+  - spec
+  - sop
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: f148b440-3d63-4a52-87aa-1470fbda401d
 notion_url: >-
   https://www.notion.so/HP-Scheduled-update-flow-f148b4403d634a5287aa1470fbda401d
 notion_updated_at: '2026-01-21T10:00:00.000Z'
-exported_at: '2026-04-06T11:23:00.670Z'
+exported_at: '2026-04-06T13:15:01.038Z'
 is_summarized: false
+relations: []
 ---
 
 ### SW requirement

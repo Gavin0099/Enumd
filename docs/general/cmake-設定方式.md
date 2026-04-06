@@ -1,11 +1,23 @@
 ---
 title: Cmake 設定方式
-category: general
+domain_tags:
+  - code-sign
+  - mac
+  - firmware
+  - sdk
+task_tags:
+  - firmware-update
+  - build
+  - config
+authority_level: deprecated
+is_deprecated: true
+category: code-sign
 notion_id: 6a58c756-d06a-4644-b533-e671532f58fb
 notion_url: 'https://www.notion.so/Cmake-6a58c756d06a4644b533e671532f58fb'
 notion_updated_at: '2026-01-21T09:31:00.000Z'
-exported_at: '2026-04-06T11:21:32.309Z'
+exported_at: '2026-04-06T13:13:42.465Z'
 is_summarized: false
+relations: []
 ---
 
 ## Cmake GUI 

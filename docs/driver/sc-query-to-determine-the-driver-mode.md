@@ -1,12 +1,22 @@
 ---
 title: SC query to determine the driver mode
-category: driver
+domain_tags:
+  - hub
+  - driver
+task_tags:
+  - install
+  - debug
+  - spec
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: e08705d0-f901-4499-80c1-430a36887e50
 notion_url: >-
   https://www.notion.so/SC-query-to-determine-the-driver-mode-e08705d0f901449980c1430a36887e50
 notion_updated_at: '2022-12-13T08:49:00.000Z'
-exported_at: '2026-04-06T11:19:09.106Z'
+exported_at: '2026-04-06T13:11:38.951Z'
 is_summarized: false
+relations: []
 ---
 
 ## Purpose

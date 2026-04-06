@@ -1,12 +1,18 @@
 ---
 title: Bin file merge case  & Update case
-category: general
+domain_tags:
+  - hub
+task_tags: []
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: ad331bb3-eb36-4a49-921a-0dc14b6757c8
 notion_url: >-
   https://www.notion.so/Bin-file-merge-case-Update-case-ad331bb3eb364a49921a0dc14b6757c8
 notion_updated_at: '2023-06-01T03:27:00.000Z'
-exported_at: '2026-04-06T11:16:51.132Z'
+exported_at: '2026-04-06T13:10:08.200Z'
 is_summarized: false
+relations: []
 ---
 
 # Bin file merge case 

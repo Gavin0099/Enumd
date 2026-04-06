@@ -1,12 +1,22 @@
 ---
 title: HP ISP Tool Update hub firmware flow(Z24m)
+domain_tags:
+  - hub
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - sop
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 18bfefb4-49f5-47ed-9f88-a91c44401b24
 notion_url: >-
   https://www.notion.so/HP-ISP-Tool-Update-hub-firmware-flow-Z24m-18bfefb449f547ed9f88a91c44401b24
 notion_updated_at: '2026-01-21T09:29:00.000Z'
-exported_at: '2026-04-06T11:27:04.848Z'
+exported_at: '2026-04-06T13:18:42.791Z'
 is_summarized: false
+relations: []
 ---
 
 1. 開啟HP_ISPTool.exe

@@ -4,7 +4,7 @@ category: general
 notion_id: 6c2f377a-5ddc-450f-8301-2f6743d5bb38
 notion_url: >-
   https://www.notion.so/HP-DISPLAY-FIRMWARE-SPECIFICATION-V1-1-6c2f377a5ddc450f83012f6743d5bb38
-notion_updated_at: '2026-01-21T09:29:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:24:06.099Z'
 is_summarized: false
 ---

@@ -1,12 +1,22 @@
 ---
 title: Command line uninstall driver
+domain_tags:
+  - driver
+  - tools
+task_tags:
+  - install
+  - spec
+  - log
+authority_level: source
+is_deprecated: false
 category: driver
 notion_id: d44145a9-d3a6-44b2-9bb0-a84cc3191282
 notion_url: >-
   https://www.notion.so/Command-line-uninstall-driver-d44145a9d3a644b29bb0a84cc3191282
 notion_updated_at: '2022-12-13T08:48:00.000Z'
-exported_at: '2026-04-06T11:18:56.098Z'
+exported_at: '2026-04-06T13:11:26.244Z'
 is_summarized: false
+relations: []
 ---
 
 wmic product where "description='Genesys Logic Generic USB Class Filter Driver'" call uninstall

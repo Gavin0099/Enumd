@@ -1,12 +1,23 @@
 ---
 title: openssl generate rsa key pair & Etoken code sign
+domain_tags:
+  - code-sign
+  - security
+task_tags:
+  - code-sign
+  - spec
+  - sop
+  - log
+authority_level: source
+is_deprecated: false
 category: code-sign
 notion_id: 28faaac2-a352-48d9-a1d8-200b670ab64e
 notion_url: >-
   https://www.notion.so/openssl-generate-rsa-key-pair-Etoken-code-sign-28faaac2a35248d9a1d8200b670ab64e
 notion_updated_at: '2022-02-15T06:34:00.000Z'
-exported_at: '2026-04-06T11:19:22.169Z'
+exported_at: '2026-04-06T13:11:55.540Z'
 is_summarized: false
+relations: []
 ---
 
 openssl generate rsa key pair & Etoken code sign

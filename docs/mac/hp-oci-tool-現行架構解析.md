@@ -3,7 +3,7 @@ title: HP OCI Tool 現行架構解析
 category: mac
 notion_id: 26f64f6b-c656-8024-9e1f-f0324389728e
 notion_url: 'https://www.notion.so/HP-OCI-Tool-26f64f6bc65680249e1ff0324389728e'
-notion_updated_at: '2026-01-23T05:43:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:18.518Z'
 is_summarized: false
 ---

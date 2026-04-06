@@ -1,11 +1,24 @@
 ---
 title: Code Sign 概述
-category: code-sign
+domain_tags:
+  - hub
+  - code-sign
+  - monitor
+  - firmware
+  - tools
+  - security
+task_tags:
+  - code-sign
+  - sop
+authority_level: derived
+is_deprecated: false
+category: hub
 notion_id: de487bab-0ebe-40bb-8a3c-7a984b87c118
 notion_url: 'https://www.notion.so/Code-Sign-de487bab0ebe40bb8a3c7a984b87c118'
 notion_updated_at: '2026-01-21T09:42:00.000Z'
-exported_at: '2026-04-06T11:19:43.612Z'
+exported_at: '2026-04-06T13:12:09.711Z'
 is_summarized: false
+relations: []
 ---
 
 ### 前提:

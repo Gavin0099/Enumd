@@ -1,11 +1,23 @@
 ---
 title: Code sign Flow
+domain_tags:
+  - code-sign
+  - firmware
+  - security
+task_tags:
+  - firmware-update
+  - code-sign
+  - sop
+  - log
+authority_level: derived
+is_deprecated: false
 category: code-sign
 notion_id: db4ac3e7-bf1d-4d31-a1e9-88aa426dec0c
 notion_url: 'https://www.notion.so/Code-sign-Flow-db4ac3e7bf1d4d31a1e988aa426dec0c'
 notion_updated_at: '2026-01-21T09:28:00.000Z'
-exported_at: '2026-04-06T11:19:57.712Z'
+exported_at: '2026-04-06T13:12:19.032Z'
 is_summarized: false
+relations: []
 ---
 
 ## Genesys Logic code sign overview

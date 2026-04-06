@@ -1,12 +1,27 @@
 ---
 title: GL Hub Software Development Kit
+domain_tags:
+  - hub
+  - driver
+  - firmware
+  - sdk
+  - tools
+task_tags:
+  - install
+  - build
+  - release
+  - spec
+  - log
+authority_level: derived
+is_deprecated: false
 category: hub
 notion_id: 8549ca6d-3a91-4f07-81ec-69fec19cd106
 notion_url: >-
   https://www.notion.so/GL-Hub-Software-Development-Kit-8549ca6d3a914f0781ec69fec19cd106
 notion_updated_at: '2026-01-21T09:53:00.000Z'
-exported_at: '2026-04-06T11:17:28.150Z'
+exported_at: '2026-04-06T13:10:44.429Z'
 is_summarized: false
+relations: []
 ---
 
  

@@ -1,11 +1,18 @@
 ---
 title: Z24nG3 Scaler update 時間
-category: monitor
+domain_tags:
+  - hub
+  - monitor
+task_tags: []
+authority_level: deprecated
+is_deprecated: true
+category: hub
 notion_id: f565f8ee-74a8-4d8d-aefd-292680ca5cf3
 notion_url: 'https://www.notion.so/Z24nG3-Scaler-update-f565f8ee74a84d8daefd292680ca5cf3'
 notion_updated_at: '2026-01-21T09:26:00.000Z'
-exported_at: '2026-04-06T11:24:11.331Z'
+exported_at: '2026-04-06T13:16:01.629Z'
 is_summarized: false
+relations: []
 ---
 
 ## 治具update 時間 (216KHz)

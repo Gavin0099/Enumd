@@ -1,12 +1,23 @@
 ---
 title: 'Lenovo Daisy-chain Update flow '
-category: general
+domain_tags:
+  - monitor
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - build
+  - sop
+authority_level: derived
+is_deprecated: false
+category: monitor
 notion_id: 16964f6b-c656-80a7-aba7-c44020ad45d6
 notion_url: >-
   https://www.notion.so/Lenovo-Daisy-chain-Update-flow-16964f6bc65680a7aba7c44020ad45d6
 notion_updated_at: '2026-01-21T09:56:00.000Z'
-exported_at: '2026-04-06T11:24:50.441Z'
+exported_at: '2026-04-06T13:16:40.804Z'
 is_summarized: false
+relations: []
 ---
 
 # 6.3 Flow of updating daisy-chained monitors

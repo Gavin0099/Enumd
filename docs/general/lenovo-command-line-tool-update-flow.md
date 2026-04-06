@@ -4,7 +4,7 @@ category: general
 notion_id: 10d64f6b-c656-8019-a2b0-ef5990ce130a
 notion_url: >-
   https://www.notion.so/Lenovo-command-Line-tool-update-flow-10d64f6bc6568019a2b0ef5990ce130a
-notion_updated_at: '2024-09-26T12:10:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:27:39.777Z'
 is_summarized: false
 ---

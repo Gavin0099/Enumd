@@ -4,7 +4,7 @@ category: general
 notion_id: 2c464f6b-c656-80ac-ab27-c1629a6d48d2
 notion_url: >-
   https://www.notion.so/HP-Project-Store-Forward-FW-Update-Specification-2c464f6bc65680acab27c1629a6d48d2
-notion_updated_at: '2026-01-21T09:43:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:21.724Z'
 is_summarized: false
 ---

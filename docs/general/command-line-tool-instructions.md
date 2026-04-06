@@ -4,7 +4,7 @@ category: general
 notion_id: 631cc8a7-c735-4165-9f54-47786ad93458
 notion_url: >-
   https://www.notion.so/Command-Line-Tool-Instructions-631cc8a7c73541659f5447786ad93458
-notion_updated_at: '2024-05-21T02:00:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:26:07.672Z'
 is_summarized: false
 ---

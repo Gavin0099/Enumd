@@ -1,11 +1,19 @@
 ---
 title: PS196 Update Flow
-category: general
+domain_tags:
+  - firmware
+task_tags:
+  - firmware-update
+  - sop
+authority_level: source
+is_deprecated: false
+category: firmware
 notion_id: fb94e559-a9af-4c7f-9fec-42eac18146d3
 notion_url: 'https://www.notion.so/PS196-Update-Flow-fb94e559a9af4c7f9fec42eac18146d3'
 notion_updated_at: '2026-01-21T09:34:00.000Z'
-exported_at: '2026-04-06T11:24:15.384Z'
+exported_at: '2026-04-06T13:16:06.253Z'
 is_summarized: false
+relations: []
 ---
 
 PS196 I2C slave address：0x10

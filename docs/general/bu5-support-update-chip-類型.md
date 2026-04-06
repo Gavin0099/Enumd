@@ -1,11 +1,19 @@
 ---
 title: BU5 Support Update Chip 類型
-category: general
+domain_tags:
+  - hub
+  - mac
+  - monitor
+task_tags: []
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: aad9af30-5364-4e8d-8dea-66eede1f422b
 notion_url: 'https://www.notion.so/BU5-Support-Update-Chip-aad9af3053644e8d8dea66eede1f422b'
 notion_updated_at: '2025-06-25T02:14:00.000Z'
-exported_at: '2026-04-06T11:16:31.324Z'
+exported_at: '2026-04-06T13:09:51.441Z'
 is_summarized: false
+relations: []
 ---
 
 目前BU5 可以 update chip 如下

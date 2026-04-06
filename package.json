@@ -8,6 +8,7 @@
     "preview": "vitepress preview docs",
     "export": "tsx --env-file .env.local scripts/export.ts",
     "export:summarize": "tsx --env-file .env.local scripts/export.ts --summarize",
+    "export:full": "tsx --env-file .env.local scripts/export.ts --summarize --infer",
     "build-index": "tsx --env-file .env.local scripts/build-index.ts",
     "check-stale": "tsx --env-file .env.local scripts/check-stale.ts"
   },

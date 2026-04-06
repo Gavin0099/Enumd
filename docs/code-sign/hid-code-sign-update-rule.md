@@ -1,12 +1,24 @@
 ---
 title: HID Code Sign Update Rule
+domain_tags:
+  - code-sign
+  - tools
+  - security
+task_tags:
+  - firmware-update
+  - code-sign
+  - spec
+  - sop
+authority_level: reference
+is_deprecated: false
 category: code-sign
 notion_id: 33e33bcf-c850-4314-9d00-b9174d82bb75
 notion_url: >-
   https://www.notion.so/HID-Code-Sign-Update-Rule-33e33bcfc85043149d00b9174d82bb75
 notion_updated_at: '2026-02-11T08:13:00.000Z'
-exported_at: '2026-04-06T11:19:59.413Z'
+exported_at: '2026-04-06T13:12:20.789Z'
 is_summarized: false
+relations: []
 ---
 
 ## Protocol

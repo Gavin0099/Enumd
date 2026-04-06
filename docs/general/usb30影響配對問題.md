@@ -1,11 +1,23 @@
 ---
 title: USB3.0影響配對問題
-category: general
+domain_tags:
+  - hub
+  - code-sign
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - code-sign
+  - sop
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: de97d58e-aa31-4cdd-8407-640927deb83a
 notion_url: 'https://www.notion.so/USB3-0-de97d58eaa314cdd8407640927deb83a'
 notion_updated_at: '2022-08-05T06:03:00.000Z'
-exported_at: '2026-04-06T11:17:14.557Z'
+exported_at: '2026-04-06T13:10:25.686Z'
 is_summarized: false
+relations: []
 ---
 
 ### USB Container ID Capability Descriptor 

@@ -1,11 +1,19 @@
 ---
 title: 短期行動 vs 長期視野，從混亂到有序，結構化軟體建構之路
-category: general
+domain_tags:
+  - tools
+task_tags:
+  - release
+  - sop
+authority_level: reference
+is_deprecated: false
+category: tools
 notion_id: fd6e9a5d-8a8c-40b6-b4a2-4346bba22de1
 notion_url: 'https://www.notion.so/vs-fd6e9a5d8a8c40b6b4a24346bba22de1'
 notion_updated_at: '2023-09-04T06:38:00.000Z'
-exported_at: '2026-04-06T11:26:28.592Z'
+exported_at: '2026-04-06T13:18:06.764Z'
 is_summarized: false
+relations: []
 ---
 
 ### 起點：挑戰與混亂

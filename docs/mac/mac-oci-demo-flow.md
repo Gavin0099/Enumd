@@ -1,11 +1,24 @@
 ---
 title: Mac OCI Demo flow
-category: mac
+domain_tags:
+  - hub
+  - mac
+  - monitor
+  - firmware
+  - tools
+task_tags:
+  - sop
+  - log
+  - config
+authority_level: source
+is_deprecated: false
+category: hub
 notion_id: 420db67e-12a8-4cc0-992c-6d176da2857f
 notion_url: 'https://www.notion.so/Mac-OCI-Demo-flow-420db67e12a84cc0992c6d176da2857f'
 notion_updated_at: '2026-01-21T09:55:00.000Z'
-exported_at: '2026-04-06T11:26:06.122Z'
+exported_at: '2026-04-06T13:17:52.387Z'
 is_summarized: false
+relations: []
 ---
 
 ### Demo Flow

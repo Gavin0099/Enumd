@@ -1,11 +1,25 @@
 ---
 title: Hub FW Update 策略技術評估 — CFU 導入分析
+domain_tags:
+  - hub
+  - driver
+  - mac
+  - firmware
+  - tools
+task_tags:
+  - firmware-update
+  - debug
+  - build
+  - spec
+authority_level: source
+is_deprecated: false
 category: hub
 notion_id: 31b64f6b-c656-81d2-9d52-d6c472df308e
 notion_url: 'https://www.notion.so/Hub-FW-Update-CFU-31b64f6bc65681d29d52d6c472df308e'
 notion_updated_at: '2026-03-10T05:46:00.000Z'
-exported_at: '2026-04-06T11:28:28.920Z'
+exported_at: '2026-04-06T13:20:03.841Z'
 is_summarized: false
+relations: []
 ---
 
 # CFU 導入技術評估報告

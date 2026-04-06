@@ -1,11 +1,20 @@
 ---
 title: Flutter
-category: general
+domain_tags:
+  - sdk
+  - tools
+task_tags:
+  - install
+  - config
+authority_level: source
+is_deprecated: false
+category: sdk
 notion_id: d51469d4-a93d-4f90-89ef-bc08955fc095
 notion_url: 'https://www.notion.so/Flutter-d51469d4a93d4f9089efbc08955fc095'
 notion_updated_at: '2023-07-26T03:29:00.000Z'
-exported_at: '2026-04-06T11:26:25.892Z'
+exported_at: '2026-04-06T13:18:03.722Z'
 is_summarized: false
+relations: []
 ---
 
 ```python

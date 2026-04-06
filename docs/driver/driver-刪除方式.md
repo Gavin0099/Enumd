@@ -1,11 +1,18 @@
 ---
 title: Driver 刪除方式
+domain_tags:
+  - driver
+task_tags:
+  - config
+authority_level: source
+is_deprecated: false
 category: driver
 notion_id: c588003e-590e-48ef-b423-53e61b8d638e
 notion_url: 'https://www.notion.so/Driver-c588003e590e48efb42353e61b8d638e'
 notion_updated_at: '2020-06-08T10:11:00.000Z'
-exported_at: '2026-04-06T11:18:57.597Z'
+exported_at: '2026-04-06T13:11:27.867Z'
 is_summarized: false
+relations: []
 ---
 
 Device Filter 刪除方式

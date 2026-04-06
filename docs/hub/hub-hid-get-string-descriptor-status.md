@@ -1,12 +1,20 @@
 ---
 title: Hub HID Get String Descriptor Status
+domain_tags:
+  - hub
+task_tags:
+  - sop
+  - log
+authority_level: reference
+is_deprecated: false
 category: hub
 notion_id: 26a29b76-0a0b-42b1-9b53-87aab005635f
 notion_url: >-
   https://www.notion.so/Hub-HID-Get-String-Descriptor-Status-26a29b760a0b42b19b5387aab005635f
 notion_updated_at: '2026-01-21T10:01:00.000Z'
-exported_at: '2026-04-06T11:17:19.133Z'
+exported_at: '2026-04-06T13:10:30.124Z'
 is_summarized: false
+relations: []
 ---
 
 # Trace現象

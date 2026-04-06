@@ -3,7 +3,7 @@ title: HP ISP Tool update 速度問題
 category: general
 notion_id: 8368afc6-87aa-4e7b-b18a-11329ee3d524
 notion_url: 'https://www.notion.so/HP-ISP-Tool-update-8368afc687aa4e7bb18a11329ee3d524'
-notion_updated_at: '2026-01-21T09:29:00.000Z'
+notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:17:29.452Z'
 is_summarized: false
 ---

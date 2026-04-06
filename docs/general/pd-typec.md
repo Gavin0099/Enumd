@@ -1,11 +1,18 @@
 ---
 title: PD + TYPEC
+domain_tags:
+  - general
+task_tags:
+  - spec
+authority_level: derived
+is_deprecated: false
 category: general
 notion_id: b61e1768-0971-4b26-9d1b-4ecc6f2327f7
 notion_url: 'https://www.notion.so/PD-TYPEC-b61e176809714b269d1b4ecc6f2327f7'
 notion_updated_at: '2020-04-29T08:28:00.000Z'
-exported_at: '2026-04-06T11:25:08.927Z'
+exported_at: '2026-04-06T13:16:56.507Z'
 is_summarized: false
+relations: []
 ---
 
 http://www.chongdiantou.com/wp/archives/22407.html
