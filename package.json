@@ -1,0 +1,25 @@
+{
+  "name": "notion-wiki",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "export": "tsx --env-file .env.local scripts/export.ts",
+    "export:summarize": "tsx --env-file .env.local scripts/export.ts --summarize",
+    "build-index": "tsx --env-file .env.local scripts/build-index.ts",
+    "check-stale": "tsx --env-file .env.local scripts/check-stale.ts"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@notionhq/client": "^2.2.15",
+    "gray-matter": "^4.0.3",
+    "js-sha256": "^0.11.0"
+  }
+}

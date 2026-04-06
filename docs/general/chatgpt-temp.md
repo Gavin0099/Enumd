@@ -1,0 +1,1751 @@
+---
+title: ChatGPT temp
+category: general
+notion_id: f18be3ee-d01f-459c-aade-4fccedf5835c
+notion_url: 'https://www.notion.so/ChatGPT-temp-f18be3eed01f459caade4fccedf5835c'
+notion_updated_at: '2024-01-26T10:31:00.000Z'
+exported_at: '2026-04-06T11:27:37.238Z'
+is_summarized: false
+---
+
+```python
+import time
+import os
+import os.path
+from datetime import datetime
+import threading
+import subprocess
+from tl_api.TLAutomationApi import *
+
+def run_installer():
+    try:
+        max_attempts = 200
+        for i in range(max_attempts):
+            try:
+                print(f"START TEST {i+1}")
+                execute_firmware_installation(i)
+
+            except Exception as e:
+                print(f"Error during installation on attempt {i+1}: {e}")
+                break
+        else:
+            print(f"Update completed after {i+1} attempts")
+
+    except KeyboardInterrupt:
+        print("Update process interrupted by user.")
+    except Exception as e:
+        print(f"Error in run_installer: {e}")
+
+def execute_firmware_installation(attempt_number):
+    ApiInterface.Cleanup()  # Cleanup in case if the previous session was not closed correctly.
+    api_instance = ApiInterface.CreateInstance()  # Retrieve the initial object.
+    print("Checking software-only methods")
+    analyzer = IAnalyzer()  # Create IAnalyzer object.
+    analyzer.id = api_instance.id  # Set its id that has been retrieved in CreateInstance call
+
+    start_recording_parameters = [r"C:\Users\Kraken\Desktop\HP_OCI_v1.6.9.10_GoodPlace_524pu_V0_30_5_0_0118_PD_V08_TPV\LeCroy_REC_Setting.rec"]
+    print('StartRecording...')
+    time.sleep(1)
+    analyzer.StartRecording(start_recording_parameters)
+    print('StartRecording end..')
+
+    result = subprocess.run(["HPFirmwareInstaller_debug.exe", "-ni", "-f"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+    stop_recording_parameters = [0]  # abort_upload
+    time.sleep(3)
+    print('StopRecording...')
+    analyzer.StopRecording(stop_recording_parameters)
+
+    if result.returncode != 0:
+        raise Exception(f"HPFirmwareInstaller.exe failed on attempt {attempt_number + 1}. Return Code: {hex(result.returncode)}")
+
+def countdown(n):
+    for i in range(n, 0, -1):
+        print(f'\rRemaining time: {i} seconds', end='')
+        time.sleep(1)
+
+if __name__ == "__main__":
+    threading.Thread(target=run_installer).start()
+```
+https://aoai-rd3.azurewebsites.net/
+https://chat.openai.com/share/5d8e22ac-1ebf-4cd2-a4a4-6f9e3e66a7b4
+```python
+if (cpuTypeString.find(SCALER_CHIP_SERIES_TSUMR2) != std::string::npos)
+    {
+        m_astorScalerType = ASTORSCALER_TSUMR2;
+    }
+   if (csScalerFWVersion.GetLength() >= 7 && csScalerFWVersion.GetAt(6) == 'a')
+    {
+        m_astorScalerType = ASTORSCALER_TSUMR2;
+    }
+
+   GetMonitorHandleRetry(m_cstrModelName);
+```
+```c#
+bool IsVersionValid(const std::string& versionStr, size_t index, char charToCheck)
+{
+    return versionStr.length() >= (index + 1) && versionStr[index] == charToCheck;
+}
+
+AstorScalerType CISPDockingDlg::DetermineScalerType(const std::string& cpuTypeString, const CString& csScalerFWVersion)
+{
+    const std::string SCALER_CHIP_SERIES_TSUMR2 = "TSUMR2";
+    const char VALID_VERSION_CHAR = 'a';
+    const size_t VALID_VERSION_INDEX = 6;
+
+    std::string sVersion;
+
+    if (cpuTypeString.find(SCALER_CHIP_SERIES_TSUMR2) != std::string::npos)
+    {
+        return ASTORSCALER_TSUMR2;
+    }
+
+    if (IsVersionValid(csScalerFWVersion.GetString(), VALID_VERSION_INDEX, VALID_VERSION_CHAR)) 
+    {
+        return ASTORSCALER_TSUMR2;
+    }
+
+    if(GetMonitorHandle(m_cstrModelName))
+    {
+         // [未变更的代码部分]
+
+        sVersion.assign(chars.begin(), chars.end());
+    }
+
+    if (IsVersionValid(sVersion, VALID_VERSION_INDEX, VALID_VERSION_CHAR)) 
+    {
+        return ASTORSCALER_TSUMR2;
+    }
+
+    return ASTORSCALER_TSUMCD; // 已修复的可能的拼写错误
+}
+```
+```python
+uint8_t major = (version >> 24) & 0xFF;
+uint8_t minor = (version >> 16) & 0xFF;
+uint8_t patch = (version >> 8) & 0xFF;
+uint8_t build = version & 0xFF;
+
+CString strVersion;
+strVersion.Format(_T("%d.%d.%d.%d"), major, minor, patch, build);
+
+#include <chrono>
+#include <iomanip>
+#include <sstream>
+
+uint32_t timestamp = 539166215;  // Example value
+
+auto time_point = std::chrono::system_clock::from_time_t(timestamp);
+std::time_t tt = std::chrono::system_clock::to_time_t(time_point);
+std::tm* tm = std::localtime(&tt);
+
+std::wostringstream woss;
+woss << std::put_time(tm, L"%Y-%m-%d"); // You can change format as needed
+std::wstring strDate = woss.str();
+```
+```python
+@echo off
+
+:START
+	CD /d "%~dp0"
+	if exist "%~dp0Update.bat" set "UpdatePath=%~dp0Update.bat"
+:CREATEVB
+	echo Set WshShell = WScript.CreateObject^("WScript.Shell"^) > "%temp%\Background.vbs"
+	echo Call WshShell.Run ^("""%UpdatePath%""",0^) >> "%temp%\Background.vbs"
+	echo Set WshShell = Nothing >> "%temp%\Background.vbs"
+	"%temp%\Background.vbs"
+
+:END
+	if exist "%temp%\Background.vbs" ( del /q /f "%temp%\Background.vbs" )
+	exit /B
+```
+```python
+@echo off
+setlocal
+
+set SuccessMsg=Update successfully
+
+set arg1=%1
+set arg2=%2
+
+set HubFwPath1=HubFW/GL3523-OTY5H_TPV_HP_Rose_E24m_G4_L1_Hub_FW6012sig.bin
+set HubFwPath2=HubFW/GL3523-OTY3H_TPV_HP_Rose_E24m_G4_L2_Hub_FW6021sig.bin
+set AudioFwPath=HP_0001_E24m_CM_0386.sfs
+set CameraFwPath=sf_merged_YHSY-7_v0013_20211202.bin
+
+set narg1="/ms=1&hub=%HubFwPath1%"
+set narg2="/ms=2&hub=%HubFwPath2%"
+set narg3="/au=3&fw=%AudioFwPath%"
+set narg4="/cu=2&fw=%CameraFwPath%"
+
+GLHubUpdateToolCli.exe /cl
+
+GLHubUpdateToolCli.exe /di /d
+
+set VAR=
+for /f "tokens=*" %%i in ('wmic os get version ^| findstr /c:"6.1"') do set VAR=%%i
+
+IF NOT "%VAR%"=="" (
+    timeout /T 30 /NOBREAK > nul 
+) ELSE (
+    timeout /T 3 /NOBREAK > nul 
+) 
+
+GLHubUpdateToolCli.exe %narg1%
+
+GLHubUpdateToolCli.exe %narg2%
+
+GLHubUpdateToolCli.exe %narg3%
+
+GLHubUpdateToolCli.exe %narg4%
+timeout /t 5
+GLHubUpdateToolCli.exe /su 
+
+GLHubUpdateToolCli.exe /du
+
+
+if %errorlevel% EQU 0 (
+echo %SuccessMsg%
+)
+pause
+```
+```python
+@echo on
+setlocal enabledelayedexpansion
+
+set SuccessMsg=Update successfully
+set arg1=%1
+
+:: Use the current directory as the base path
+set BasePath=%~dp0
+
+
+:: Extract year, month, day, hour, minute, and second from current date and time
+set Year=%date:~10,4%
+set Month=%date:~4,2%
+set Day=%date:~7,2%
+set Hour=%time:~0,2%
+set Minute=%time:~3,2%
+set Second=%time:~6,2%
+
+
+set HubFwPath1=HubFW/GL3523-OTY5H_TPV_HP_Rose_E27m_G4_L1_Hub_FW5515sig.bin
+set HubFwPath2=HubFW/GL3523-OTY3H_TPV_HP_Rose_E27m_G4_L2_Hub_FW5524sig.bin
+set AudioFwPath=HP_0001_E27m_CM_0B86_MIX.sfs
+set CameraFwPath=sf_merged_YHSY-7_v0013_20211202.bin
+
+set narg1="/ms=1&hub=%HubFwPath1%"
+set narg2="/ms=2&hub=%HubFwPath2%"
+set narg3="/au=3&fw=%AudioFwPath%"
+set narg4="/cu=2&fw=%CameraFwPath%"
+
+"%BasePath%GLHubUpdateToolCli.exe" /cl
+call :RenameLog CL
+
+"%BasePath%GLHubUpdateToolCli.exe" /di /d
+call :RenameLog DI_D
+
+set VAR=
+for /f "tokens=*" %%i in ('wmic os get version ^| findstr /c:"6.1"') do set VAR=%%i
+
+IF NOT "%VAR%"=="" (
+    timeout /T 30 /NOBREAK > nul 
+) ELSE (
+    timeout /T 3 /NOBREAK > nul 
+) 
+
+if "%arg1%"=="" (
+    :: Execute all updates if no parameter is given
+    "%BasePath%GLHubUpdateToolCli.exe" %narg1%
+    call :RenameLog Hub1
+
+    "%BasePath%GLHubUpdateToolCli.exe" %narg2%
+    call :RenameLog Hub2
+
+    "%BasePath%GLHubUpdateToolCli.exe" %narg3%
+    call :RenameLog Audio
+
+    "%BasePath%GLHubUpdateToolCli.exe" %narg4%
+    call :RenameLog Camera
+
+    "%BasePath%GLHubUpdateToolCli.exe" /su 
+    call :RenameLog Scaler
+) else (
+    :: Execute specific update based on the provided parameter
+    if "%arg1%"=="1" (
+        "%BasePath%GLHubUpdateToolCli.exe" %narg1%
+        call :RenameLog Hub1
+    )
+    if "%arg1%"=="2" (
+        "%BasePath%GLHubUpdateToolCli.exe" %narg2%
+        call :RenameLog Hub2
+    )
+    if "%arg1%"=="3" (
+        "%BasePath%GLHubUpdateToolCli.exe" %narg3%
+        call :RenameLog Audio
+    )
+    if "%arg1%"=="4" (
+        "%BasePath%GLHubUpdateToolCli.exe" %narg4%
+        call :RenameLog Camera
+    )
+    if "%arg1%"=="5" (
+        "%BasePath%GLHubUpdateToolCli.exe" /su 
+        call :RenameLog Scaler
+    )
+)
+
+timeout /t 5
+
+:: Define a function to copy and rename the log file
+:RenameLog
+for /f "delims=" %%a in ('powershell -command "Get-Date -UFormat '%%Y%%m%%d_%%H%%M%%S'"') do set CurrentDateTime=%%a
+::set CurrentDateTime=%Year%%Month%%Day%_%Hour%%Minute%%Second%
+if exist "%BasePath%Log\Test_Log_0.txt" (
+    copy "%BasePath%Log\Test_Log_0.txt" "%BasePath%Log\%~1_!CurrentDateTime!.txt"
+) else (
+    echo Error: %BasePath%\Log\Test_Log_0.txt does not exist!
+    exit /b
+)
+goto :eof
+
+
+if %errorlevel% EQU 0 (
+    echo %SuccessMsg%
+)
+pause
+```
+```c#
+@echo off
+setlocal enabledelayedexpansion
+
+:: Initialize variables
+set SuccessMsg=Update successfully
+
+:: Extract date and time for log renaming
+for /f "delims=" %%a in ('powershell -command "Get-Date -UFormat '%%Y%%m%%d_%%H%%M%%S'"') do set CurrentDateTime=%%a
+
+:: Set firmware paths
+set HubFwPath1=HubFW/GL3523-OTY5H_TPV_HP_Rose_E24m_G4_L1_Hub_FW6012sig.bin
+set HubFwPath2=HubFW/GL3523-OTY3H_TPV_HP_Rose_E24m_G4_L2_Hub_FW6021sig.bin
+set AudioFwPath=HP_0001_E24m_CM_0386.sfs
+set CameraFwPath=sf_merged_YHSY-7_v0013_20211202.bin
+
+:: Set new arguments
+set narg1="/ms=1&hub=%HubFwPath1%"
+set narg2="/ms=2&hub=%HubFwPath2%"
+set narg3="/au=3&fw=%AudioFwPath%"
+set narg4="/cu=2&fw=%CameraFwPath%"
+
+:: Run initial commands
+GLHubUpdateToolCli.exe /cl
+call :RenameLog CL
+
+GLHubUpdateToolCli.exe /di /d
+call :RenameLog DI_D
+
+:: Determine system version and set appropriate timeout
+set VAR=
+for /f "tokens=*" %%i in ('wmic os get version ^| findstr /c:"6.1"') do set VAR=%%i
+
+IF NOT "%VAR%"=="" (
+    timeout /T 30 /NOBREAK > nul 
+) ELSE (
+    timeout /T 3 /NOBREAK > nul 
+) 
+
+:: Execute firmware updates
+GLHubUpdateToolCli.exe %narg1%
+call :RenameLog Hub1
+
+GLHubUpdateToolCli.exe %narg2%
+call :RenameLog Hub2
+
+GLHubUpdateToolCli.exe %narg3%
+call :RenameLog Audio
+
+GLHubUpdateToolCli.exe %narg4%
+call :RenameLog Camera
+
+:: Final commands
+timeout /t 5
+GLHubUpdateToolCli.exe /su 
+call :RenameLog Scaler
+
+GLHubUpdateToolCli.exe /du
+call :RenameLog DU
+
+:: Check for errors
+if %errorlevel% EQU 0 (
+    echo %SuccessMsg%
+)
+pause
+
+:: Function to rename and save logs
+:RenameLog
+if exist "Log\Test_Log_0.txt" (
+    copy "Log\Test_Log_0.txt" "Log\%~1_!CurrentDateTime!.txt"
+) else (
+    echo Error: Log\Test_Log_0.txt does not exist!
+    exit /b
+)
+goto :eof
+```
+```python
+// Tester.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+#include <memory>
+
+#include <GL_SDK.h>
+#pragma comment(lib, "GL_SDK.lib")
+
+int main()
+{
+    /// test SDKVersion
+    auto ver = SDKVersion();
+
+    InitialzeSDK();
+
+    ERROR_CODE ret;
+
+    /// test UsbSelectiveSuspend off
+    ret = UsbSelectiveSuspend(false);
+
+    /// test DetectUsbHub
+    size_t nDetectedCount = 0;
+
+    ret = DetectUsbHub(&nDetectedCount);
+
+    /// test GetUsbHubList
+    std::unique_ptr<UsbDeviceInfo[]> devArray = std::make_unique<UsbDeviceInfo[]>(nDetectedCount);
+
+    ret = GetUsbHubList(devArray.get(), nDetectedCount);
+
+    /// test QueryUsbHubFwCount
+    auto &targetDev = devArray[0];
+    size_t nFwCount = 0;
+    ret             = QueryUsbHubFwCount(&targetDev, &nFwCount);
+
+    /// test GetUsbHubFwVersion
+    std::unique_ptr<GlFwVersion[]> fwVerArray = std::make_unique<GlFwVersion[]>(nFwCount);
+
+    ret = GetUsbHubFwVersion(&targetDev, fwVerArray.get(), nFwCount);
+
+    /// test GetSpecificFwVersion
+    GlFwVersion fwVer;
+    fwVer.fw.eType = GL_FW_TYPE_HUB;
+    fwVer.fw.iIdx  = 0;
+
+    ret = GetSpecificFwVersion(&targetDev, &fwVer);
+
+    /// test SendControlPipe and CloseControlPipe
+    // Write
+    uint8_t pData[0x10] = {0x6E, 0x51, 0x83, 0xC0, 0x99, 0xDD, 0x38};
+    ret                 = SendControlPipe(&targetDev, UsbSetupPacket({0x40, 0x7c, 0x0000, 0x0000, 0x0007}), pData);
+
+    // Get
+    memset(pData, 0x00, 0x10);
+    ret = SendControlPipe(&targetDev, UsbSetupPacket({0xC0, 0x7f, 0x0000, 0x0000, 0x0010}), pData);
+
+    ret = CloseControlPipe(&targetDev);
+
+    /// test UpdateFw
+    const wchar_t *fw_path = L"GL3590-OV1S1_Hub(UPC)_FW9405.bin";
+    ret                    = UpdateFw(&targetDev, fwVer.fw, fw_path);
+
+    /// test UsbSelectiveSuspend on
+    ret = UsbSelectiveSuspend(true);
+
+    UninitialzeSDK();
+}
+```
+```python
+//*****************************************************************************
+//* Copyright © 2020 - 2021 Genesys Logic, Inc. All Rights Reserved.          *
+//* You may not reproduce, distribute, publish, display, perform, modify,     *
+//* adapt, transmit, broadcast, present, recite, release, license or          *
+//* otherwise exploit any part of this publication in any form, by any means, *
+//* without the prior written permission of Genesys Logic, Inc.               *
+//*****************************************************************************
+
+#include <gtest/gtest.h>
+
+#include <dlfcn.h>
+#include <filesystem>
+
+#include <GL_SDK.h>
+#include <version.h>
+
+/// Functional Cases
+class DLL_FixtureTests : public ::testing::Test
+{
+public:
+    // static void SetUpTestSuite()
+    // {
+    // }
+
+    // static void TearDownTestSuite()
+    // {
+    // }
+
+    static void *_handle;
+};
+
+void *DLL_FixtureTests::_handle = nullptr;
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, LOAD_DLL)
+{
+#ifdef __linux__
+    std::filesystem::path fsFileFullPathName = "./libGL_SDK.so";
+#elif __APPLE__
+    std::filesystem::path fsFileFullPathName = "./libGL_SDK.dylib";
+#endif
+
+    _handle = dlopen(fsFileFullPathName.c_str(), RTLD_NOW);
+    ASSERT_TRUE(_handle) << "dlopen failed:" << dlerror();
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, SDKVersion)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC = uint32_t (*)();
+    auto SDKVersion   = (LPFNDLLFUNC)dlsym(_handle, "SDKVersion");
+    ASSERT_TRUE(SDKVersion) << "dlsym failed:" << dlerror();
+
+    auto ret = SDKVersion();
+    auto var = uint32_t(VERSION_MAJOR << 24 | VERSION_MINOR << 16 | VERSION_MAINTENANCE << 8 | VERSION_BUILD);
+    EXPECT_EQ(ret, var);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, InstallHubDriver)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC     = ERROR_CODE (*)();
+    auto InstallHubDriver = (LPFNDLLFUNC)dlsym(_handle, "InstallHubDriver");
+    ASSERT_FALSE(InstallHubDriver);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, UninstallHubDriver)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC       = ERROR_CODE (*)();
+    auto UninstallHubDriver = (LPFNDLLFUNC)dlsym(_handle, "UninstallHubDriver");
+    ASSERT_FALSE(UninstallHubDriver);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, UsbSelectiveSuspend)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC        = ERROR_CODE (*)(bool);
+    auto UsbSelectiveSuspend = (LPFNDLLFUNC)dlsym(_handle, "UsbSelectiveSuspend");
+    ASSERT_FALSE(UsbSelectiveSuspend);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, InitializeSDK)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC  = void (*)();
+    auto InitializeSDK = (LPFNDLLFUNC)dlsym(_handle, "InitializeSDK");
+    ASSERT_TRUE(InitializeSDK) << "dlsym failed:" << dlerror();
+
+    InitializeSDK();
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, DetectUsbHub)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC = ERROR_CODE (*)(size_t *);
+    auto DetectUsbHub = (LPFNDLLFUNC)dlsym(_handle, "DetectUsbHub");
+    ASSERT_TRUE(DetectUsbHub) << "dlsym failed:" << dlerror();
+
+    auto ret = DetectUsbHub(nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, GetUsbHubList)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC  = ERROR_CODE (*)(UsbDeviceInfo *, size_t);
+    auto GetUsbHubList = (LPFNDLLFUNC)dlsym(_handle, "GetUsbHubList");
+    ASSERT_TRUE(GetUsbHubList) << "dlsym failed:" << dlerror();
+
+    auto ret = GetUsbHubList(nullptr, 0);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, QueryUsbHubFwCount)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC       = ERROR_CODE (*)(const UsbDeviceInfo *, size_t *);
+    auto QueryUsbHubFwCount = (LPFNDLLFUNC)dlsym(_handle, "QueryUsbHubFwCount");
+    ASSERT_TRUE(QueryUsbHubFwCount) << "dlsym failed:" << dlerror();
+
+    auto ret = QueryUsbHubFwCount(nullptr, nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, GetUsbHubFwVersion)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC       = ERROR_CODE (*)(const UsbDeviceInfo *, GlFwVersion *, size_t);
+    auto GetUsbHubFwVersion = (LPFNDLLFUNC)dlsym(_handle, "GetUsbHubFwVersion");
+    ASSERT_TRUE(GetUsbHubFwVersion) << "dlsym failed:" << dlerror();
+
+    auto ret = GetUsbHubFwVersion(nullptr, nullptr, 0);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, GetSpecificFwVersion)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC         = ERROR_CODE (*)(const UsbDeviceInfo *, GlFwVersion *);
+    auto GetSpecificFwVersion = (LPFNDLLFUNC)dlsym(_handle, "GetSpecificFwVersion");
+    ASSERT_TRUE(GetSpecificFwVersion) << "dlsym failed:" << dlerror();
+
+    auto ret = GetSpecificFwVersion(nullptr, nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, SendControlPipe)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC    = ERROR_CODE (*)(const UsbDeviceInfo *, UsbSetupPacket, uint8_t *);
+    auto SendControlPipe = (LPFNDLLFUNC)dlsym(_handle, "SendControlPipe");
+    ASSERT_TRUE(SendControlPipe) << "dlsym failed:" << dlerror();
+
+    UsbSetupPacket pkt = {0};
+    auto ret           = SendControlPipe(nullptr, pkt, nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, CloseControlPipe)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC     = ERROR_CODE (*)(const UsbDeviceInfo *);
+    auto CloseControlPipe = (LPFNDLLFUNC)dlsym(_handle, "CloseControlPipe");
+    ASSERT_TRUE(CloseControlPipe) << "dlsym failed:" << dlerror();
+
+    auto ret = CloseControlPipe(nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, UpdateFw)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC = ERROR_CODE (*)(const UsbDeviceInfo *, GlFw, const char *);
+    auto UpdateFw     = (LPFNDLLFUNC)dlsym(_handle, "UpdateFw");
+    ASSERT_TRUE(UpdateFw) << "dlsym failed:" << dlerror();
+
+    GlFw fw  = {GL_FW_TYPE_END};
+    auto ret = UpdateFw(nullptr, fw, nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, ResetUsbHub)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC = ERROR_CODE (*)(const UsbDeviceInfo *);
+    auto ResetUsbHub  = (LPFNDLLFUNC)dlsym(_handle, "ResetUsbHub");
+    ASSERT_TRUE(ResetUsbHub) << "dlsym failed:" << dlerror();
+
+    auto ret = ResetUsbHub(nullptr);
+    EXPECT_EQ(ret, ERROR_CODE_INVALID_PARAMETER);
+}
+
+// NOLINTNEXTLINE(cert-err58-cpp)
+TEST_F(DLL_FixtureTests, UninitializeSDK)
+{
+    ASSERT_TRUE(_handle);
+
+    using LPFNDLLFUNC    = void (*)();
+    auto UninitializeSDK = (LPFNDLLFUNC)dlsym(_handle, "UninitializeSDK");
+    ASSERT_TRUE(UninitializeSDK) << "dlsym failed:" << dlerror();
+
+    UninitializeSDK();
+}
+```
+```python
+HANDLE CISPDockingDlg::GetMonitorHandle(CString modelName) {
+  WriteString(_T("GetMonitorHandle() Starts: Current monitor is %s \n"), modelName);
+
+  // Lambda function for monitor enumeration callback
+  auto monitorEnumCallback = [](HMONITOR, HDC, LPRECT, LPARAM pData) -> BOOL {
+    auto monitors = reinterpret_cast<std::vector<HMONITOR>*>(pData);
+    monitors->push_back(hMonitor);
+    return TRUE;  // Continue enumeration
+  };
+
+  std::vector<HMONITOR> monitors;
+  if (EnumDisplayMonitors(nullptr, nullptr, monitorEnumCallback, reinterpret_cast<LPARAM>(&monitors)) == 0) {
+    Sleep(3000);
+    monitors.clear();
+    if (EnumDisplayMonitors(nullptr, nullptr, monitorEnumCallback, reinterpret_cast<LPARAM>(&monitors)) == 0) {
+      WriteString(_T("Could not find Monitor Handles\n"));
+      throw std::runtime_error("Could not find Monitor Handles");
+    }
+  }
+
+  modelName = modelName.MakeUpper();
+
+  for (HMONITOR hMonitor : monitors) {
+    DWORD cPhysicalMonitors;
+    BOOL bSuccess = GetNumberOfPhysicalMonitorsFromHMONITOR(hMonitor, &cPhysicalMonitors);
+    if (!bSuccess) {
+      continue;  // Skip to the next monitor
+    }
+
+    std::unique_ptr<PHYSICAL_MONITOR[]> pPhysicalMonitors(new PHYSICAL_MONITOR[cPhysicalMonitors]);
+    if (!GetPhysicalMonitorsFromHMONITOR(hMonitor, cPhysicalMonitors, pPhysicalMonitors.get())) {
+      continue;  // Skip to the next monitor
+    }
+
+    for (DWORD i = 0; i < cPhysicalMonitors; ++i) {
+      DWORD dwLen = 0;
+      if (!GetCapabilitiesStringLength(pPhysicalMonitors[i].hPhysicalMonitor, &dwLen)) {
+        Sleep(3000);  // Retry after a delay
+        if (!GetCapabilitiesStringLength(pPhysicalMonitors[i].hPhysicalMonitor, &dwLen)) {
+          WriteString(_T("GetCapabilitiesStringLength() failed\n"));
+          continue;  // Skip to the next monitor
+        }
+      }
+
+      std::unique_ptr<char[]> szString(new char[dwLen]);
+      if (!CapabilitiesRequestAndCapabilitiesReply(pPhysicalMonitors[i].hPhysicalMonitor, szString.get(), dwLen)) {
+        WriteString(_T("CapabilitiesRequestAndCapabilitiesReply() failed\n"));
+        continue;  // Skip to the next monitor
+      }
+
+      CString cstrCurMonitor(szString.get());
+      cstrCurMonitor = cstrCurMonitor.MakeUpper();
+      WriteString(_T("Current Monitor %d = %s \n"), i, cstrCurMonitor);
+
+      if (cstrCurMonitor.Find(modelName) != -1) {
+        WriteString(_T("Matched Name %s = %s \n"), cstrCurMonitor, modelName);
+        monitorCtrl.handle = pPhysicalMonitors->hPhysicalMonitor;
+        return pPhysicalMonitors[i].hPhysicalMonitor;  // Monitor matched, return the handle
+      }
+    }
+  }
+
+  throw std::runtime_error("No matching monitor found");
+}
+
+// Usage
+try {
+  HANDLE hMonitor = GetMonitorHandle("ModelName");
+  // Handle monitor...
+} catch (const std::runtime_error& e) {
+  // Handle error...
+}
+```
+```c#
+HANDLE CISPDockingDlg::GetMonitorHandle(CString modelName) {
+  WriteString(_T("GetMonitorHandle() Starts: Current monitor is %s \n"),
+              modelName);
+
+  // 使用 std::vector 儲存枚舉到的監視器
+  std::vector<HMONITOR> monitors;
+  if (EnumDisplayMonitors(
+          nullptr, nullptr,
+          [](HMONITOR hMonitor, HDC, LPRECT, LPARAM pData) -> BOOL {
+            auto monitors = reinterpret_cast<std::vector<HMONITOR> *>(pData);
+            monitors->push_back(hMonitor);
+            return TRUE; // 繼續枚舉
+          },
+          reinterpret_cast<LPARAM>(&monitors)) == 0) {
+    Sleep(3000); // 重試前暫停
+    monitors.clear();
+    if (EnumDisplayMonitors(
+            nullptr, nullptr,
+            [](HMONITOR hMonitor, HDC, LPRECT, LPARAM pData) -> BOOL {
+              auto monitors = reinterpret_cast<std::vector<HMONITOR> *>(pData);
+              monitors->push_back(hMonitor);
+              return TRUE; // 繼續枚舉
+            },
+            reinterpret_cast<LPARAM>(&monitors)) == 0) {
+      WriteString(_T("Could not find Monitor Handles\n"));
+      throw std::runtime_error("Could not find Monitor Handles");
+    }
+  }
+
+  modelName = modelName.MakeUpper();
+
+  // 遍歷找到的所有監視器
+  for (HMONITOR hMonitor : monitors) {
+    DWORD cPhysicalMonitors;
+    BOOL bSuccess =
+        GetNumberOfPhysicalMonitorsFromHMONITOR(hMonitor, &cPhysicalMonitors);
+    if (!bSuccess) {
+      continue; // 跳至下一個監視器
+    }
+
+    // 使用智能指針自動管理物理監視器的記憶體
+    std::unique_ptr<PHYSICAL_MONITOR[]> pPhysicalMonitors(
+        new PHYSICAL_MONITOR[cPhysicalMonitors]);
+    if (!GetPhysicalMonitorsFromHMONITOR(hMonitor, cPhysicalMonitors,
+                                         pPhysicalMonitors.get())) {
+      continue; // 跳至下一個監視器
+    }
+
+    // 遍歷所有物理監視器
+    for (DWORD i = 0; i < cPhysicalMonitors; ++i) {
+      DWORD dwLen = 0;
+      if (!GetCapabilitiesStringLength(pPhysicalMonitors[i].hPhysicalMonitor,
+                                       &dwLen)) {
+        Sleep(3000); // 重試前暫停
+        if (!GetCapabilitiesStringLength(pPhysicalMonitors[i].hPhysicalMonitor,
+                                         &dwLen)) {
+          WriteString(_T("GetCapabilitiesStringLength() failed\n"));
+          continue; // 跳至下一個監視器
+        }
+      }
+
+      // 使用智能指針自動管理能力字符串的記憶體
+      std::unique_ptr<char[]> szString(new char[dwLen]);
+      if (!CapabilitiesRequestAndCapabilitiesReply(
+              pPhysicalMonitors[i].hPhysicalMonitor, szString.get(), dwLen)) {
+        WriteString(_T("CapabilitiesRequestAndCapabilitiesReply() failed\n"));
+        continue; // 跳至下一個監視器
+      }
+
+      CString cstrCurMonitor(szString.get());
+      cstrCurMonitor = cstrCurMonitor.MakeUpper();
+      WriteString(_T("Current Monitor %d = %s \n"), i, cstrCurMonitor);
+
+      // 比較監視器名稱
+      if (cstrCurMonitor.Find(modelName) != -1) {
+        WriteString(_T("Matched Name %s = %s \n"), cstrCurMonitor, modelName);
+        WriteString(_T("Matched Monitor handel = %x \n"),
+                    pPhysicalMonitors[i].hPhysicalMonitor);
+        monitorCtrl.handle = pPhysicalMonitors[i].hPhysicalMonitor;
+        return pPhysicalMonitors[i]
+            .hPhysicalMonitor; // 匹配到監視器，返回其句柄
+      }
+    }
+  }
+
+  WriteString(_T("No matching monitor found"));
+  return false;
+}
+```
+```c
+WriteString(_T("Physical Monitor %d: Handle: %p, Description: %s\n"),
+                        i,
+                        pPhysicalMonitors[i].hPhysicalMonitor,
+                        pPhysicalMonitors[i].szPhysicalMonitorDescription);
+```
+```c
+Physical Monitor 0: Handle: 00000000, Description: HP E24i G4 WUXGA Monitor
+Physical Monitor 0: Handle: 00000028, Description: Generic PnP Monitor
+```
+```c#
+struct MonitorControl {
+    HANDLE* handle;  // 指向 HANDLE 的指针
+
+    MonitorControl() : handle(nullptr) {}
+
+    // 设定 handle 指针指向一个现有的 HANDLE
+    void SetHandle(HANDLE* pHandle) {
+        handle = pHandle;
+    }
+};
+
+// 示例使用
+MonitorControl monitorCtrl;
+monitorCtrl.SetHandle(&(pPhysicalMonitors[i].hPhysicalMonitor));
+
+// 现在，当你想要用这个句柄时
+if (monitorCtrl.handle != nullptr && *monitorCtrl.handle != nullptr) {
+    SetVCPFeature(*monitorCtrl.handle, iVCPCode, iSubVCPCode);
+}
+```
+```c
+std::string RetrieveScalerHwRevision() {
+    DWORD value1 = 0, value2 = 0;
+    int8_t mh = 0, ml = 0, sh = 0, sl = 0;
+    std::vector<char> chars;
+    std::string sVersion;
+
+    for (int i = 0; i < 0xFF; ++i) {
+        int SubVcpCode = 0x9E00 + i;
+        if (!SetVCPCode(0xF5, SubVcpCode)) {
+            // 处理设置 VCP 代码失败的情况
+            break;
+        }
+        if (!GetVCPCode(0xF5, &value1, &value2)) {
+            // 处理获取 VCP 代码失败的情况
+            break;
+        }
+
+        mh = ((value2 & 0xFF00) >> 8);
+        ml = (value2 & 0xFF);
+        sh = ((value1 & 0xFF00) >> 8);
+        sl = (value1 & 0xFF);
+
+        chars.push_back(static_cast<char>(mh));
+        chars.push_back(static_cast<char>(ml));
+        chars.push_back(static_cast<char>(sh));
+        chars.push_back(static_cast<char>(sl));
+
+        if (mh == 0 || ml == 0 || sh == 0 || sl == 0)
+            break;
+    }
+
+    sVersion.assign(chars.begin(), chars.end());
+    return sVersion; // 返回得到的硬件版本字符串
+}
+
+// 使用封装后的函数
+void SomeFunction() {
+    std::string hwRevision = RetrieveScalerHwRevision();
+    // 将 std::string 转换为 CString
+    CString cstrHwRevision(hwRevision.c_str());
+    WriteString(_T("Scaler hw reversion is %s \n"), cstrHwRevision);
+}
+```
+```c
+$SuccessMsg = "Success"
+$FailureMsg = "Failure"
+
+# 定義要執行的命令參數
+$commands = @(
+    "/di /d",
+    "/su",
+    "/du"
+)
+
+foreach ($argument in $commands) {
+    # 使用Start-Process來執行命令
+    $process = Start-Process -FilePath ".\GLHubUpdateToolCli.exe" -ArgumentList $argument -NoNewWindow -Wait -PassThru
+
+    # 檢查命令執行後的退出代碼
+    if ($process.ExitCode -ne 0) {
+        Write-Output $FailureMsg
+        exit $process.ExitCode
+    }
+}
+
+# 如果所有命令都成功執行，則輸出成功消息
+Write-Output $SuccessMsg
+```
+```c
+using System;
+using System.Runtime.InteropServices;
+
+namespace TestAppGLHub
+{
+    public enum GLHubAPIEnum
+    {
+        // Enumeration for SDK error codes and error counts
+        ERROR_CODE_OK,
+        ERROR_CODE_SDK_NOT_INIT,
+        ERROR_CODE_FUNCTION_FAILED,
+        ERROR_CODE_INVALID_PARAMETER,
+        ERROR_CODE_FILE_NOT_EXIST,
+        ERROR_CODE_COUNT,
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct USBDeviceDescriptor
+    {
+        public uint bLength;
+        public uint bDescriptorType;
+        public uint bcdUSB;
+        public uint bDeviceClass;
+        public uint bDeviceSubClass;
+        public uint bDeviceProtocol;
+        public uint bMaxPacketSize0;
+        public uint idVendor;
+        public uint idProduct;
+        public uint bcdDevice;
+        public uint iManufacturer;
+        public uint iProduct;
+        public uint iSerialNumber;
+        public uint bNumConfigurations;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct UsbDeviceInfo
+    {
+        public USBDeviceDescriptor DeviceDesc;
+        public string szManufacturer;
+        public string szProduct;
+        public string szSerialNumber;
+        public ulong uLocationPort;
+        public IntPtr pEntityObj;
+    }
+
+    public struct UsbSetupPacket
+    {
+        public uint bmRequest;
+        public uint bRequest;
+        public uint wValue;
+        public uint wIndex;
+        public uint wLength;
+    }
+
+    class Program
+    {
+        const string DllPath = @"GL_SDK.dll";
+
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int SDKVersion();
+
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum InitializeSDK();
+
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum UninitializeSDK();
+
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum UsbSelectiveSuspend(bool enable);
+
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum DetectUsbHub(out int nDetectedCount);
+
+        [DllImport(DllPath, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum GetUsbHubList(IntPtr pDevList, int nDetectedCount);
+
+        [DllImport(DllPath, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum SendControlPipe(IntPtr deviceInfo, UsbSetupPacket setupPacket, out uint pData);
+
+        [DllImport(DllPath, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum CloseControlPipe(IntPtr deviceInfo);
+
+        static void Main(string[] args)
+        {
+            int sdkVersion = SDKVersion();
+            Console.WriteLine("SDK Version: " + sdkVersion);
+
+            GLHubAPIEnum ret = InitializeSDK();
+            if (ret != GLHubAPIEnum.ERROR_CODE_OK)
+            {
+                Console.WriteLine("Failed to initialize SDK");
+                return;
+            }
+
+            int dCount = 0;
+            ret = DetectUsbHub(out dCount);
+            if (ret != GLHubAPIEnum.ERROR_CODE_OK)
+            {
+                Console.WriteLine("Failed to detect USB hubs");
+                UninitializeSDK();
+                return;
+            }
+
+            // Use GCHandle to pin the array in memory
+            UsbDeviceInfo[] devArray = new UsbDeviceInfo[dCount];
+            GCHandle gch = GCHandle.Alloc(devArray, GCHandleType.Pinned);
+            IntPtr pDevArray = gch.AddrOfPinnedObject();
+
+            try
+            {
+                ret = GetUsbHubList(pDevArray, dCount);
+                if (ret != GLHubAPIEnum.ERROR_CODE_OK)
+                {
+                    Console.WriteLine("Failed to get USB hub list");
+                    return;
+                }
+
+                // Process the devArray as needed
+                // ...
+            }
+            finally
+            {
+                if (gch.IsAllocated)
+                    gch.Free();
+            }
+
+            UninitializeSDK();
+        }
+    }
+}
+```
+```c
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TestAppGLHub
+{
+    public enum GLHubAPIEnum
+    {
+        /// <summary>
+        /// Enumeration for SDK error codes and error counts
+        /// </summary>
+        ERROR_CODE_OK,
+        ERROR_CODE_SDK_NOT_INIT,
+        ERROR_CODE_FUNCTION_FAILED,
+        ERROR_CODE_INVALID_PARAMETER,
+        ERROR_CODE_FILE_NOT_EXIST,
+        ERROR_CODE_COUNT,
+    }
+    [StructLayout(LayoutKind.Sequential)]
+    public struct USBDeviceDescriptor
+    {
+        public uint bLength;
+        public uint bDescriptorType;
+        public uint bcdUSB;
+        public uint bDeviceClass;
+        public uint bDeviceSubClass;
+        public uint bDeviceProtocol;
+        public uint bMaxPacketSize0;
+        public uint idVendor;
+        public uint idProduct;
+        public uint bcdDevice;
+        public uint iManufacturer;
+        public uint iProduct;
+        public uint iSerialNumber;
+        public uint bNumConfigurations;
+    }
+    [StructLayout(LayoutKind.Sequential)]
+    public struct UsbDeviceInfo
+    {
+        public USBDeviceDescriptor DeviceDesc;
+        public string szManufacturer;
+        public string szProduct;
+        public string szSerialNumber;
+        public ulong uLocationPort;
+        public IntPtr pEntityObj;
+
+    }
+    public struct UsbSetupPacket
+    {
+        public uint bmRequest;
+        public uint bRequest;
+        public uint wValue;
+        public uint wIndex;
+        public uint wLength;
+    }
+    class Program
+    {
+        const string DllPath = @"GL_SDK.dll";
+
+        /// <summary>
+        /// Method to get the SDK Version of GLHub API 
+        /// </summary>   
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int SDKVersion();
+
+        /// <summary>
+        /// Method to Initialz the SDK
+        /// </summary>   
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum InitialzeSDK();
+
+        /// <summary>
+        /// Method to Uninitialze the SDK
+        /// </summary>   
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum UninitialzeSDK();
+
+        /// <summary>
+        /// Method to suspend selective usb hub
+        /// </summary>   
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum UsbSelectiveSuspend(bool enable);
+
+        /// <summary>
+        /// Method to detect usb hub
+        /// </summary>   
+        [DllImport(DllPath, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum DetectUsbHub(out int nDetectedCount);
+
+        /// <summary>
+        /// Method to get list of usb hub(s)
+        /// </summary>   
+        [DllImport(DllPath, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum GetUsbHubList(out UsbDeviceInfo[] bufDevList, int nDetectedCount);
+
+        /// <summary>
+        /// Method to send commands usb hub(s)
+        /// </summary>   
+        [DllImport(DllPath, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum SendControlPipe(out UsbDeviceInfo deviceInfo, UsbSetupPacket setupPacket, out uint pData);
+
+        /// <summary>
+        /// Method to send close the communication with usb hub(s)
+        /// </summary>   
+        [DllImport(DllPath, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
+        public static extern GLHubAPIEnum CloseControlPipe(out UsbDeviceInfo deviceInfo);
+
+
+        static void Main(string[] args)
+        {
+            int sdkVersion = SDKVersion();
+
+            InitialzeSDK();
+
+            GLHubAPIEnum ret;
+
+            /// test UsbSelectiveSuspend off
+            ret = UsbSelectiveSuspend(false);
+            int dCount = 0;
+
+            ret = DetectUsbHub(out dCount);
+            UsbDeviceInfo[] devArray = new UsbDeviceInfo[dCount];
+
+            ret = GetUsbHubList(out devArray, dCount);
+
+            int wdCount = 0;
+
+
+
+        }
+    }
+}
+```
+```c#
+for (size_t n = 0; n < nDetectedCount; n++)
+        printf("UsbHubList: %#x: %u, VID:%04hx PID:%04hx\n",
+               ret,
+               n,
+               devArray[n].DeviceDesc.idVendor,
+               devArray[n].DeviceDesc.idProduct);
+
+    /// test QueryUsbHubFwCount
+    size_t nFwCount = 0;
+
+    ret = QueryUsbHubFwCount(&devArray[0], &nFwCount);
+    printf("QueryUsbHubFwCount: %#x: %u\n", ret, nFwCount);
+
+    /// test GetUsbHubFwVersion
+    fwVerArray = calloc(nFwCount, sizeof(GlFwVersion));
+
+    ret = GetUsbHubFwVersion(&devArray[0], fwVerArray, nFwCount);
+    for (size_t n = 0; n < nFwCount; n++)
+        printf("FwVersion: %#x: %u, type:%d\n", ret, n, fwVerArray[n].fw.eType);
+
+    /// test GetSpecificFwVersion
+    GlFwVersion fwVer;
+    fwVer.fw.eType = GL_FW_TYPE_HUB;
+    fwVer.fw.iIdx  = 0;
+
+    ret = GetSpecificFwVersion(&devArray[0], &fwVer);
+    printf("GetSpecificFwVersion: %#x: 0, hub version:%04X\n", ret, fwVer.uVersion);
+
+  ///  SendControlPipe Write
+  UsbSetupPacket pkt = {0x40, 0x7c, 0x0000, 0x0000, 0x000a};
+  uint8_t pData[0x12] = {0x6e, 0x51, 0x86, 0x01, 0xfe,
+                         0xe9, 0x0d, 0x00, 0x00, 0xa2};
+
+  ret = SendControlPipe(&devArray[1], pkt, pData);
+ printf("SendControlPipe: %#x\n", ret);
+  ///  SendControlPipe Read
+  pkt = {0xc0, 0x7f, 0x0100, 0x0000, 0x0020};
+  uint8_t ReadpData[0x12] = {0x00};
+
+  ret = SendControlPipe(&devArray[1], pkt, ReadpData);
+
+ printf("SendControlPipe: %#x\n", ret);
+    /// test SendControlPipe and CloseControlPipe
+    UsbSetupPacket pkt  = {0x80, 0x06, 0x0100, 0x0000, 0x0012};
+    uint8_t pData[0x12] = {0};
+
+    ret = SendControlPipe(&devArray[0], pkt, pData);
+    printf("SendControlPipe: %#x\n", ret);
+
+    ret = CloseControlPipe(&devArray[0]);
+    printf("CloseControlPipe: %#x\n", ret);
+```
+```c
+std::string CISPDockingDlg::GetMonitorHandleEx(CString modelName) {
+  WriteString(_T("GetMonitorHandle() Starts: Current monitor is %s \n"),
+              modelName);
+
+  std::vector<HMONITOR> monitors;
+  if (EnumDisplayMonitors(
+          nullptr, nullptr,
+          [](HMONITOR hMonitor, HDC, LPRECT, LPARAM pData) -> BOOL {
+            auto monitors = reinterpret_cast<std::vector<HMONITOR> *>(pData);
+            monitors->push_back(hMonitor);
+            return TRUE;
+          },
+          reinterpret_cast<LPARAM>(&monitors)) == 0) {
+    Sleep(3000);
+    monitors.clear();
+    if (EnumDisplayMonitors(
+            nullptr, nullptr,
+            [](HMONITOR hMonitor, HDC, LPRECT, LPARAM pData) -> BOOL {
+              auto monitors = reinterpret_cast<std::vector<HMONITOR> *>(pData);
+              monitors->push_back(hMonitor);
+              return TRUE;
+            },
+            reinterpret_cast<LPARAM>(&monitors)) == 0) {
+      WriteString(_T("Could not find Monitor Handles\n"));
+      throw std::runtime_error("Could not find Monitor Handles");
+    }
+  }
+
+  modelName = modelName.MakeUpper();
+
+  for (HMONITOR hMonitor : monitors) {
+    DWORD cPhysicalMonitors;
+    BOOL bSuccess =
+        GetNumberOfPhysicalMonitorsFromHMONITOR(hMonitor, &cPhysicalMonitors);
+    if (!bSuccess) {
+      continue;
+    }
+
+    std::unique_ptr<PHYSICAL_MONITOR[]> pPhysicalMonitors(
+        new PHYSICAL_MONITOR[cPhysicalMonitors]);
+    if (!GetPhysicalMonitorsFromHMONITOR(hMonitor, cPhysicalMonitors,
+                                         pPhysicalMonitors.get())) {
+      continue;
+    }
+
+    for (DWORD i = 0; i < cPhysicalMonitors; ++i) {
+      DWORD dwLen = 0;
+      WriteString(_T("Physical Monitor %d: Handle: %p, Description: %s\n"), i,
+                  pPhysicalMonitors[i].hPhysicalMonitor,
+                  pPhysicalMonitors[i].szPhysicalMonitorDescription);
+      if (!GetCapabilitiesStringLength(pPhysicalMonitors[i].hPhysicalMonitor,
+                                       &dwLen)) {
+        Sleep(3000);
+        if (!GetCapabilitiesStringLength(pPhysicalMonitors[i].hPhysicalMonitor,
+                                         &dwLen)) {
+          WriteString(_T("GetCapabilitiesStringLength() failed\n"));
+          continue;
+        }
+      }
+
+      std::unique_ptr<char[]> szString(new char[dwLen]);
+      if (!CapabilitiesRequestAndCapabilitiesReply(
+              pPhysicalMonitors[i].hPhysicalMonitor, szString.get(), dwLen)) {
+        WriteString(_T("CapabilitiesRequestAndCapabilitiesReply() failed\n"));
+        continue;
+      }
+
+      CString cstrCurMonitor(szString.get());
+      cstrCurMonitor = cstrCurMonitor.MakeUpper();
+      WriteString(_T("Current Monitor %d = %s \n"), i, cstrCurMonitor);
+
+      if (cstrCurMonitor.Find(modelName) != -1) {
+        WriteString(_T("Matched Name %s = %s \n"), cstrCurMonitor, modelName);
+        WriteString(_T("Matched Monitor handel = %x \n"),
+                    pPhysicalMonitors[i].hPhysicalMonitor);
+
+        std::string monitorHwReversion =
+            RetrieveScalerHwRevision(pPhysicalMonitors[i].hPhysicalMonitor);
+        return monitorHwReversion;
+      }
+    }
+  }
+
+  WriteString(_T("No matching monitor found"));
+  return "";
+}
+```
+```c#
+std::string CISPDockingDlg::GetMonitorHardwareRevisionByModel(std::string modelName) {
+    WriteString("GetMonitorHandle() Starts: Current monitor is %s \n", modelName.c_str());
+
+    std::vector<HMONITOR> monitors;
+    if (!TryEnumDisplayMonitors(monitors)) {
+        WriteString("Could not find Monitor Handles\n");
+        throw std::runtime_error("Could not find Monitor Handles");
+    }
+
+    // 將 modelName 轉換為大寫
+    std::transform(modelName.begin(), modelName.end(), modelName.begin(), ::toupper);
+
+    for (HMONITOR hMonitor : monitors) {
+        std::string monitorHwRevision = ProcessMonitor(hMonitor, modelName);
+        if (!monitorHwRevision.empty()) {
+            return monitorHwRevision;
+        }
+    }
+
+    WriteString("No matching monitor found");
+    return "";
+}
+
+bool CISPDockingDlg::TryEnumDisplayMonitors(std::vector<HMONITOR>& monitors) {
+    auto enumMonitorsFunc = [](HMONITOR hMonitor, HDC, LPRECT, LPARAM pData) -> BOOL {
+        auto monitors = reinterpret_cast<std::vector<HMONITOR>*>(pData);
+        monitors->push_back(hMonitor);
+        return TRUE;
+    };
+
+    if (EnumDisplayMonitors(nullptr, nullptr, enumMonitorsFunc, reinterpret_cast<LPARAM>(&monitors)) == 0) {
+        Sleep(3000);
+        monitors.clear();
+        if (EnumDisplayMonitors(nullptr, nullptr, enumMonitorsFunc, reinterpret_cast<LPARAM>(&monitors)) == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+```
+```c
+for (size_t i = 0; i < nIspInfoCount; i++)
+    {
+        if ((acquirePkt.deviceType != DIT_HUB && vecInfo[i]->pDevInfo->instType != acquirePkt.deviceType) ||
+            (acquirePkt.fwType < FW_TYPE_COUNT && !vecInfo[i]->IsFwAvailable(acquirePkt.fwType)))
+        {
+            this->ReleaseDevice(vecInfo[i]);
+            vecInfo.erase(vecInfo.begin() + i);
+            i--;
+            nIspInfoCount--;
+        }
+    }
+```
+```c
+return this->ReadBillboardVersion(pDevInfo,
+                                          ispPkt.uFwVersion,
+                                          pDevInfo->pDevInfo->DeviceDesc.idVendor,
+                                          pDevInfo->pDevInfo->DeviceDesc.idProduct);
+```
+```c
+int32_t HubVendorCommand::GetFlashTableItem(FlashTableItem &item)
+{
+    int32_t iRet = GL_NO_ERR;
+
+    if (m_pCurOperateDev->HasGpioSpiFlash())
+        this->LockGpioSpiFlash();
+
+    std::vector<gli::FlashRdidHdr> vecHdr;
+
+    FlashTable *pFlashTable = FlashTableGenerator::AcquireInstance();
+
+    iRet = pFlashTable->GetQuickMapHeader(vecHdr);
+    if (iRet != GL_NO_ERR)
+        return iRet;
+
+    FlashRdidContent content;
+
+    uint16_t uValue = 0;
+
+    for (const auto &hdr : vecHdr)
+    {
+        uValue = (hdr.uRDID_COMMAND << 8);
+
+        if (hdr.uRDID_REQUEST_DUMMY)
+            uValue |= GL_VALUE_ISP_R_FLASH_REG_DUMMY;
+        else
+            uValue |= GL_VALUE_ISP_R_FLASH_REG_NO_DUMMY;
+
+        memset(content.uRDID, 0, sizeof(FlashRdidContent));
+
+        MACRO_CALL_AND_RETURN_PAR_4(IspRead, iRet, uValue, 0, content.uRDID, hdr.uRDID_LENGTH);
+
+        if (hdr.uRDID_REQUEST_DUMMY > 1)
+        {
+            uint8_t uCopyCount = hdr.uRDID_REQUEST_DUMMY - 1;
+
+            memset(content.uRDID, 0, uCopyCount);
+        }
+
+        iRet = pFlashTable->MapTableContentIdx(hdr, content);
+        if (iRet >= 0)
+        {
+            iRet = pFlashTable->GetTableContent((iRet & 0xff), item);
+            break;
+        }
+    }
+
+    return iRet;
+}
+```
+```plain text
+int32_t GlPdCtrl::GetPdCodeSize(const IspPacket *pIspPkt)
+{
+    const IspPacket *pPkt = nullptr;
+
+    IspPacket pkt;
+
+    if (pIspPkt->pBuf == nullptr)
+    {
+        if (pIspPkt->strFwFilePath.empty())
+            return FW_ERR_INVALID_PARAM;
+
+        std::ifstream file(pIspPkt->strFwFilePath, std::ios::binary | std::ios::ate);
+        if (!file.is_open())
+            return GL_ERR_OPEN_FILE;
+
+        file.seekg(0, std::ios::beg);
+        if (!file.good())
+            return GL_ERR_SEEK_FILE;
+
+        pkt.pBuf       = new uint8_t[0x400];
+        pkt.nBufSize   = 0x400;
+        pkt.nDataCount = pkt.nBufSize;
+        file.read((char *)pkt.pBuf, 0x400);
+        if (!file.good())
+            return GL_ERR_READ_FILE;
+
+        pPkt = &pkt;
+    }
+    else
+    {
+        pPkt = pIspPkt;
+    }
+}
+```
+```c
+import configparser
+import os
+import subprocess
+import time
+import threading
+
+# ini 文件的相對路徑
+ini_file_path = os.path.join('HP_OCI_v1.6.9.7_734pm_20231129_0.40.8.0_pwd123', 'HP_OCI_v1.6.9.7_734pm_20231129_0.40.8.0', 'Firmware', 'Hub', 'settings.ini')
+
+# 用於更新的 bin 文件的路徑
+bin_file_paths = [
+    os.path.join('Firmware', 'GL3590-TZYS3_HP_U34C_Hub_DB_FW3441sig.bin'),
+    os.path.join('Firmware', 'GL3590-TZYS3_HP_U34C_Hub_DB_FW3442sig.bin'),
+]
+
+def change_bin_file_path():
+    # 建立設定解析器
+    config = configparser.ConfigParser()
+
+    # 讀取 ini 文件
+    config.read(ini_file_path)
+
+    # 取得當前的 bin 文件路徑
+    current_bin_file_path = config.get('Hub1', 'BinFile')
+
+    # 根據當前的 bin 文件路徑選擇下一個 bin 文件路徑
+    next_bin_file_path = bin_file_paths[0] if current_bin_file_path == bin_file_paths[1] else bin_file_paths[1]
+
+    # 更新 ini 文件的 BinFile 參數
+    config.set('Hub1', 'BinFile', next_bin_file_path)
+
+    # 儲存 ini 文件
+    with open(ini_file_path, 'w') as ini_file:
+        config.write(ini_file)
+
+def run_installer():
+    try:  
+        max_attempts = 200
+        for i in range(max_attempts):
+            # 更改 bin 文件路徑
+            change_bin_file_path()
+
+            print(f"START TEST {i+1}")
+
+            # HPFirmwareInstaller_debug.exe 的相對路徑
+            installer_path = os.path.join('HP_OCI_v1.6.9.7_734pm_20231129_0.40.8.0_pwd123', 'HP_OCI_v1.6.9.7_734pm_20231129_0.40.8.0', 'HPFirmwareInstaller_debug.exe')
+            result = subprocess.run([installer_path, "-s", "-f"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+ 
+            countdown(100)
+            print(f'\n')
+            if result.returncode != 0:
+                print(f"HPFirmwareInstaller.app failed on attempt {i+1}")
+                print("Return Code:", hex(result.returncode))
+                break
+            time.sleep(1)
+        else:
+            print(f"Update done , Save Sal{i+1}")
+
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+def countdown(n):
+    for i in range(n, 0, -1):
+        print(f'\rRemaining time: {i} seconds', end='')
+        time.sleep(1)
+        
+if __name__ == "__main__":
+    threading.Thread(target=run_installer).start()
+```
+```python
+import subprocess
+import colorama
+from colorama import Fore
+
+colorama.init(autoreset=True)
+# 設定一個計數器用於迴圈
+count = 0
+
+while count < 100:
+    try:
+        # 增加計數器
+        count += 1
+
+        # 使用 Popen 開啟子進程並執行 ColorCal.exe
+        process = subprocess.Popen(['ColorCal.exe'], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
+        # 等待 ColorCal.exe 執行完成並捕獲輸出
+        output, errors = process.communicate()
+
+        # 列印 ColorCal.exe 的輸出和錯誤信息
+        print("ColorCal Output:", output)
+        if errors:
+            print("ColorCal Errors:", errors)
+
+        # 計算 '0x83' 出現的次數，將 '0x83' 當作字符串處理
+        occurrences = output.count('0x83')
+
+        # 打印 '0x83' 的出現次數
+        print(f"{Fore.RED}Iteration {count}: '0x83' occurred {occurrences} times")
+
+        # 檢查是否出現超過5次 '0x83'
+        if occurrences >= 5:
+            print("Tool output '0x83' five or more times, stopping...")
+            break
+
+    except Exception as e:
+        print(f"An error occurred during iteration {count}: {e}")
+        break
+
+# 如果執行了100次而沒有提早停止，顯示完成訊息
+if count == 100:
+    print("Completed 100 iterations without '0x83' appearing five or more times.")
+```
+```python
+CMStarScalerCtrl::GetScalerMntFirmwarePacketVersion(std::string &packetFwVer) {
+  BYTE getValue[0x40] = {0};
+  uint32_t fwPacketVersion = 0;
+  UINT stageVer = 0, modelVer = 0, majorVer = 0, minorVer = 0;
+  int ddcciOffset = 0;
+  int checkSumLength = 0;
+  UINT BufferLength = 0x20;
+  BYTE *pDataCheckSum; // Calculate Checksum use
+  pDataCheckSum = (BYTE *)malloc(sizeof(BYTE) * BufferLen
+  if (GetMTKScalerDDCCIData(SCALER_MNT_FIRMWARE_PACKET_VERSION_COMMAND,
+                            getValue) == FALSE)
+    return SCALER_ERR_GET_INFO;
+
+  if (getValue[0] == 0x6f && getValue[1] == 0x6e) {
+
+    checkSumLength = getValue[2] ^ 0x80;
+
+    if (checkSumLength >= 20)
+      return SCALER_ERR_GET_INFO;
+
+    getValue[0] = 0x50;
+
+    memset(pDataCheckSum, 0, BufferLength);
+
+    memcpy(pDataCheckSum, getValue, checkSumLength + 3);
+
+    if (getValue[checkSumLength + 3] !=
+        Calculate_XOR_CheckSum(pDataCheckSum, checkSumLength + 3))
+      return 0;
+  } else
+    ddcciOffset = 4;
+
+  __super::CallbackText(XD_INFO_PRINT,
+                        "GetScalerMntFirmwarePacketVersion ddcciOffset =%d\n",
+                        ddcciOffset);
+
+  stageVer = getValue[ddcciOffset];
+  modelVer = getValue[ddcciOffset + 1];
+  majorVer = getValue[ddcciOffset + 2];
+  minorVer = getValue[ddcciOffset + 3];
+
+  fwPacketVersion =
+      (stageVer << 24) + (modelVer << 16) + (majorVer << 8) + minorVer;
+
+  packetFwVer = std::to_string(stageVer) + "." + std::to_string(modelVer) +
+                "." + std::to_string(majorVer) + "." + std::to_string(minorVer);
+
+  return fwPacketVersion;
+}
+```
+```python
+import configparser
+import os
+import subprocess
+import time
+import threading
+
+# ini 文件的相對路徑
+ini_file_path = os.path.join('Firmware', 'Hub', 'GLHub.ini')
+
+# 用於更新的 bin 文件的路徑
+bin_file_paths = [
+    'Firmware\GL3590-TZYS3_HP_U34C_Hub_FW3462sig.bin',
+    'Firmware\GL3590-TZYS3_HP_U34C_Hub_FW3472sig.bin',
+]
+
+def change_bin_file_path():
+    # 建立設定解析器
+    config = configparser.ConfigParser()
+
+    # 讀取 ini 文件
+    config.read(ini_file_path)
+
+    # 取得當前的 bin 文件路徑
+    current_bin_file_path = config.get('Hub1', 'BinFile')
+
+    # 根據當前的 bin 文件路徑選擇下一個 bin 文件路徑
+    next_bin_file_path = bin_file_paths[0] if current_bin_file_path == bin_file_paths[1] else bin_file_paths[1]
+
+    # 更新 ini 文件的 BinFile 參數
+    config.set('Hub1', 'BinFile', next_bin_file_path)
+
+    # 儲存 ini 文件
+    with open(ini_file_path, 'w') as ini_file:
+        config.write(ini_file)
+
+def run_installer():
+    try:  
+        max_attempts = 200
+        for i in range(max_attempts):
+            # 更改 bin 文件路徑
+            change_bin_file_path()
+
+            print(f"START TEST {i+1}")
+            # HPFirmwareInstaller_debug.exe 的相對路徑
+            installer_path = 'HPFirmwareInstaller_debug.exe'
+            result = subprocess.run([installer_path, "-ni", "-f"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+ 
+            countdown(100)
+            print(f'\n')
+            if result.returncode != 0:
+                print(f"HPFirmwareInstaller.app failed on attempt {i+1}")
+                print("Return Code:", hex(result.returncode))
+                break
+            time.sleep(1)
+        else:
+            print(f"Update done , Save Sal{i+1}")
+
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+def countdown(n):
+    for i in range(n, 0, -1):
+        print(f'\rRemaining time: {i} seconds', end='')
+        time.sleep(1)
+        
+if __name__ == "__main__":
+    threading.Thread(target=run_installer).start()
+```

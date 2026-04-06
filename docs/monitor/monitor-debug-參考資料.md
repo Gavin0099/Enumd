@@ -1,0 +1,178 @@
+---
+title: Monitor debug & 參考資料
+category: monitor
+notion_id: 22b64f6b-c656-80b2-a6ce-d06d2bde90c7
+notion_url: 'https://www.notion.so/Monitor-debug-22b64f6bc65680b2a6ced06d2bde90c7'
+notion_updated_at: '2026-01-21T09:37:00.000Z'
+exported_at: '2026-04-06T11:27:48.424Z'
+is_summarized: false
+---
+
+## Monitor Firmware Multi-Path Update Architecture
+```mermaid
+flowchart TB
+    %% Host
+    subgraph Host_PC[Host PC]
+        PC
+    end
+
+    %% Hub
+    subgraph USB_Hub[USB Hub]
+        Hub
+    end
+
+    %% Downport Update Path
+    subgraph Downport_Update_Path[Hub Downport Update Path]
+        PD1[PD Controller]
+        DMC1[DMC Chip]
+        Audio1[Audio Chip]
+        GR1[Gamma Retimer]
+        PD1Type[HID/DFU Interface]
+        DMC1Type[HID/DFU Interface]
+        Audio1Type[HID/DFU Interface]
+        GR1Type[HID/DFU Interface]
+    end
+
+    %% Scaler Update Path
+    subgraph Scaler_I2C_Update_Path[Scaler I2C Update Path]
+        Scaler[Scaler IC]
+        PD2[PD Controller]
+        DMC2[DMC Chip]
+        Audio2[Audio Chip]
+        GR2[Gamma Retimer]
+        Camera[Camera Module]
+        PD2Type[I2C]
+        DMC2Type[I2C]
+        Audio2Type[I2C]
+        GR2Type[I2C]
+        CameraType[I2C]
+    end
+
+    %% 主要連線
+    PC -- USB --> Hub
+
+    %% Downport Path
+    Hub -- Downport --> PD1
+    Hub -- Downport --> DMC1
+    Hub -- Downport --> Audio1
+    Hub -- Downport --> GR1
+
+    %% Downport device interface標註
+    PD1 -- Interface --> PD1Type
+    DMC1 -- Interface --> DMC1Type
+    Audio1 -- Interface --> Audio1Type
+    GR1 -- Interface --> GR1Type
+
+    %% Hub to Scaler
+    Hub -- I2C --> Scaler
+
+    %% Scaler I2C 下游
+    Scaler -- I2C --> PD2
+    Scaler -- I2C --> DMC2
+    Scaler -- I2C --> Audio2
+    Scaler -- I2C --> GR2
+    Scaler -- I2C --> Camera
+
+    %% Scaler path device interface標註
+    PD2 -- Interface --> PD2Type
+    DMC2 -- Interface --> DMC2Type
+    Audio2 -- Interface --> Audio2Type
+    GR2 -- Interface --> GR2Type
+    Camera -- Interface --> CameraType
+
+    %% 顏色定義
+    classDef host fill:#ffe082,stroke:#ef6c00,stroke-width:2;
+    classDef hub fill:#81d4fa,stroke:#0277bd,stroke-width:2;
+    classDef downport fill:#c8e6c9,stroke:#388e3c,stroke-width:2;
+    classDef scaler fill:#fff9c4,stroke:#fbc02d,stroke-width:2;
+    classDef interface fill:#f8bbd0,stroke:#ad1457,stroke-width:2;
+    classDef camera fill:#e1bee7,stroke:#7b1fa2,stroke-width:2;
+
+    class PC host;
+    class Hub hub;
+    class PD1,DMC1,Audio1,GR1 downport;
+    class PD1Type,DMC1Type,Audio1Type,GR1Type interface;
+    class Scaler scaler;
+    class PD2,DMC2,Audio2,GR2 scaler;
+    class PD2Type,DMC2Type,Audio2Type,GR2Type interface;
+    class Camera camera;
+    class CameraType interface;
+
+```
+## Monitor Debug 步驟
+1. 先看 Update Tool Log/Error Code
+1. 用 usbview 抓 Hub 資訊
+1. 確認主機與顯示器的相容性
+1. 檢查硬體板號或維修紀錄
+1. 比對 USB 資料流
+1. I2C 訊號檢查
+```mermaid
+flowchart TD
+    A[分析 Update Tool Log / Error Code]:::log
+    B[用 usbview 檢查 Hub 資訊]:::usbview
+    C[主機與顯示器相容性確認]:::compat
+    C1[單一主機接多台同型號顯示器]:::compat
+    C2[單一顯示器接多台不同主機]:::compat
+    D[檢查 PCB 板號／硬體維修紀錄]:::hw
+    E[Bus Hound 比對 USB 資料流]:::bus
+    F[I2C 訊號分析]:::i2c
+
+    A --> B
+    B --> C
+    C --> C1
+    C --> C2
+    C1 --> D
+    C2 --> D
+    D --> E
+    E --> F
+
+    %% 顏色定義
+    classDef log fill:#ffecb3,stroke:#ff9800,stroke-width:2;
+    classDef usbview fill:#b3e5fc,stroke:#0288d1,stroke-width:2;
+    classDef compat fill:#bbdefb,stroke:#1976d2,stroke-width:2;
+    classDef hw fill:#ffe0b2,stroke:#d84315,stroke-width:2;
+    classDef bus fill:#e1bee7,stroke:#7b1fa2,stroke-width:2;
+    classDef i2c fill:#c8e6c9,stroke:#388e3c,stroke-width:2;
+
+    class A log;
+    class B usbview;
+    class C,C1,C2 compat;
+    class D hw;
+    class E bus;
+    class F i2c;
+
+```
+## I2C Update 流程說明
+1. 軟體（SW）透過 USB Request 傳送給 Hub
+1. Hub 組合出特定 I2C Command，轉送給 Scaler
+1. 訊號驗證/Debug 工具
+```mermaid
+flowchart LR
+    SW[PC Update Tool]:::sw
+    Hub[USB Hub]:::hub
+    Scaler[Scaler IC]:::scaler
+
+    BH[Bus Hound USB]:::debug
+    LA[Logic Analyzer I2C SDA CLK]:::debug
+
+    %% 資料流
+    SW -- USB Request --> Hub
+    Hub -- I2C Command --> Scaler
+
+    %% Debug 監控路徑
+    SW -. 監控 .-> BH
+    Hub -. 監控 .-> LA
+
+    %% 顏色定義
+    classDef sw fill:#e1f5fe,stroke:#039be5,stroke-width:2;
+    classDef hub fill:#fff9c4,stroke:#fbc02d,stroke-width:2;
+    classDef scaler fill:#c8e6c9,stroke:#388e3c,stroke-width:2;
+    classDef debug fill:#ffcdd2,stroke:#d32f2f,stroke-width:2;
+
+    class SW sw;
+    class Hub hub;
+    class Scaler scaler;
+    class BH,LA debug;
+
+```
+## 名詞解釋

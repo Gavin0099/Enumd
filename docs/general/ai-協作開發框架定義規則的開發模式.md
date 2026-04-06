@@ -1,0 +1,230 @@
+---
+title: AI 協作開發框架：定義規則的開發模式
+category: general
+notion_id: 30564f6b-c656-8071-ab36-e7f7685f2c52
+notion_url: 'https://www.notion.so/AI-30564f6bc6568071ab36e7f7685f2c52'
+notion_updated_at: '2026-03-23T01:51:00.000Z'
+exported_at: '2026-04-06T11:28:16.573Z'
+is_summarized: false
+---
+
+# 🧠 AI 開發治理體系 — 文件說明
+這套開發治理體系將 AI 從「代碼產生器」轉型為 「規則執行官」，旨在透過嚴格的檔案結構與行為規範，確保跨平台開發（如 Avalonia）與底層原生對接（Native Interop）的品質與安全。
+> 💡 語言策略：治理文件以英文撰寫以降低 Token 消耗；Agent 所有輸出仍強制使用繁體中文。
+---
+## 📂 七大核心治理文件
+### 1. SYSTEM_PROMPT.md（核心意識）
+本檔案是整套體系的 最高權威與每次對話的預設意識，以極簡指令集濃縮治理精華。
+- 強制初始化：每個任務開始前，Agent 必須依序完成五步——標頭驗證（LANG / LEVEL / SCOPE，含新增的 review 範圍）、記憶體同步（讀取 memory/ 目錄）、有界上下文確認、動態載入宣告（明確列出本輪載入的治理文件與理由）、ADR 衝突檢查。
+- 優先順序裁決：確立七份文件的唯一權威鏈：SYSTEM_PROMPT → HUMAN-OVERSIGHT → REVIEW_CRITERIA → AGENT → ARCHITECTURE → TESTING → NATIVE-INTEROP。
+- 全域規則：強制繁體中文輸出、≤30 字決策摘要開頭、零容忍紅線（隱式技術債、邏輯洩漏、模糊意圖、治理衝突、未授權的高風險變更）。這些規則不可被任何子文件覆蓋。
+- 記憶體管家：定義 memory/ 檔案更新規範與觸發時機，禁止覆蓋既有記錄，僅限追加或標記過時。此為正式治理職責，非可選項。
+- Context Window 管理：當偵測到回應品質下降時，強制產出狀態快照（State Snapshot），包含標頭、進度、決策、風險與下一步，供新對話恢復上下文。同時定義主動載入管理策略，避免重複讀取治理文件，Token 緊張時優先載入狀態檔。
+- 目錄結構與格式規範：區分 governance/（規則，變更需人類審查）與 memory/（狀態，Agent 可自主更新）。四份 memory 檔案各有標準範本與必填欄位，知識庫強制「問題 → 原因 → 解法」結構，並新增 反面教材（Anti-Patterns） 強制區塊，記錄絕不能再犯的錯誤。
+- 交付物清單：列出任務完成必備產出（行為定義、測試、程式碼、審計追蹤、memory 更新、ADR、技術債記錄、狀態快照、審查裁決），缺一即視為未完成。
+### 2. HUMAN-OVERSIGHT.md（安全閥）
+優先順序第二的協議，體現「自主權止於問責制」，是所有「停止並升級」行為的權威定義。
+- 升級觸發：分為五類——需求模糊/矛盾、架構護欄衝突、高風險變更（原生互操作/ABI/核心領域）、多條合理路徑並存、模型或提示版本變更。任一觸發即強制停止。
+- 升級流程：立即停止 → 陳述風險 → 提議 1-3 個具體選項與影響評估 → 等待人類確認。禁止猜測、推斷意圖或代替人類選擇。
+- 狀態恢復：對話中斷後恢復須重讀記憶體與標頭；模型變更視為實質性變更，需重載治理文件。新增狀態快照恢復流程——解析快照欄位、向人類確認上下文、依標頭重載治理文件。
+- 審計追蹤：每個任務必須產出人類可讀追蹤，涵蓋時間戳、輸入參數、有界上下文、關鍵決策、套用護欄與權衡理由。
+### 3. REVIEW_CRITERIA.md（審查協議）🆕
+優先順序第三的新增文件，定義程式碼審查與稽核的完整協議。當 SCOPE = review 時啟動。
+- 稽核員子模式：Agent 從實作者切換為懷疑性驗證者，執行管線暫停，改由審查清單取代。所有治理護欄仍作為稽核參考有效。
+- 審查哲學：禁止「假設能跑」、禁止因 diff 小就跳過檢查、沒有證據的「LGTM」是治理違規。
+- 裁決等級：🔴 BLOCKING（治理違規，立即拒絕）、⚠️ WARNING（需權衡理由或 ADR 更新）、💡 SUGGESTION（非阻塞改善建議）。
+- 強制稽核清單：四個維度——邊界與架構（Domain 完整性、ACL、ADR 一致性）、物理安全（記憶體所有權、ABI 對齊、錯誤分類）、品質閘門（失敗路徑、行為鎖定、跨平台）、線程安全（UI 線程、非同步路徑）。不涉及的維度標記 N/A。
+- 知識庫交叉檢查：發出裁決前必須掃描 03_knowledge_base.md，比對反面教材並檢查回歸風險。
+- 標準化輸出：審查結果必須包含裁決摘要、治理稽核結果、技術發現（含位置與治理條款引用）、知識庫對齊結果。
+- 審查後動作：APPROVED → 更新任務狀態；CHANGES_REQUESTED → 記錄至審計追蹤；ESCALATED → 依升級流程執行。發現新反面教材則記錄至知識庫。
+### 4. AGENT.md（行為合約）
+規範 Agent 的思維模式與運作流水線。
+- 任務分級 (L0-L2)：
+- 稽核員子模式：當 SCOPE = review 時，執行管線暫停，行為切換至 REVIEW_CRITERIA.md 規範。
+- 執行管線：五步不可跳過——分析（Given/When/Then + 失敗路徑）、定義（合約先於類別）、測試（護欄不是覆蓋率）、實作（最小合規，優先局部修補以節省 Token）、重構（測試保護下）。
+- 語言規範：針對 C++/C#/ObjC/Swift/JS 定義所有權與錯誤處理，需先確認語言版本與工具鏈。C# 規則新增 Avalonia UI 線程安全硬規則——任何觸發 PropertyChanged 的操作必須在 Dispatcher.UIThread 上執行，從背景線程直接操作 ViewModel 為崩潰級紅線。
+- Context Window 檢查點：偵測到上下文退化時必須通知人類並產出狀態快照。也在自然斷點（管線步驟過渡、高風險實作前、對話超過約 30 輪）主動提供。
+- 禁止行為：嚴禁超出範圍、投機性抽象、偽造覆蓋率或在歧義下假設意圖。
+### 5. ARCHITECTURE.md（結構紅線）
+定義系統邊界，防止結構腐蝕。
+- 物理隔離：Domain（純邏輯）禁止呼叫 P/Invoke、感知 OS、平台、UI、時間或環境變數。同時設有反誤判規則，防止教條式過度解讀。
+- 介面准入：「兩年測試問句」——若不抽介面，兩年後會壞什麼？不明則停止。
+- 防腐層 (ACL)：原生 API 與 Domain 語言衝突時強制使用，但「可替換」不等於「立刻抽象化一切」。
+- 範例驅動：提供具體程式碼對照（過度工程 vs 硬邊界案例），引導 Agent 判斷。
+- ADR 閉環機制：定義決策觸發條件與存放位置（docs/adr/）。新增 衝突檢查——產出新 ADR 前必須列出所有現有 ADR 標題，確認無衝突或明確標註取代關係。ADR 範本新增「衝突檢查」欄位。
+### 6. TESTING.md（品質守門員）
+確保行為被精確鎖定。
+- 行為鎖定：測試鎖定輸入、輸出與副作用，而非內部實作；綠燈即代表行為被保留。
+- 強制覆蓋：L1 以上必須含 1 個無效輸入、1 個邊界值、1 個失敗路徑。禁止僅測試快樂路徑。
+- 跨平台對齊：L1 建議雙平台驗證，L2 原生互操作 必須 進行至少雙平台整合測試。
+- 平台差異測試清單：針對 L1+ 跨平台任務，提供 9 項平台敏感區域的參考清單（路徑分隔符、wchar_t 大小、結構對齊、行尾符號、檔案系統大小寫、環境變數、原生庫名稱、布林封送、UI 線程模型），附具體測試策略。
+- 難測區域策略：原生依賴須被隔離、可替換、可觀察；允許錄製回應，禁止掩蓋風險的偽測試。
+- 完成定義：行為被鎖定、失敗路徑被覆蓋且能安全重構才視為 Done。
+### 7. NATIVE-INTEROP.md（物理安全）
+針對 C# 呼叫底層庫（C++/ObjC/Swift）的物理規範。
+- ABI 安全：強制顯式 StructLayout 與字節對齊（Pack），嚴禁依賴編譯器預設。
+- 記憶體管理：明確配置與釋放者；禁止裸露指標，必須封裝於 SafeHandle。IntPtr 不得滲透至 Domain。
+- 錯誤語意階層：新增錯誤嚴重性分類——邏輯錯誤（可恢復）轉譯為 Result<T, E> 傳遞至 Domain；崩潰/恐慌（不可恢復，如 Access Violation、記憶體損毀）必須在 Infrastructure 層 FailFast，禁止包裝為 Result 進入 Domain。不確定時視為崩潰（fail-safe 預設）。
+- 平台探測：載入前必須檢查 OS/架構/ABI，禁止硬編碼路徑，統一由 NativeLibraryLoader 處理。
+- ADR 連動：針對記憶體所有權、跨平台差異等核心決策必須建立 ADR。
+---
+## 📂 記憶體結構
+```plain text
+memory/
+├── governance/                  ← 規則（變更需人類審查）
+│   ├── SYSTEM_PROMPT.md         ← 核心意識
+│   ├── HUMAN-OVERSIGHT.md       ← 安全閥
+│   ├── REVIEW_CRITERIA.md       ← 審查協議 🆕
+│   ├── AGENT.md                 ← 行為合約
+│   ├── ARCHITECTURE.md          ← 結構紅線
+│   ├── TESTING.md               ← 品質守門員
+│   └── NATIVE-INTEROP.md        ← 物理安全
+│
+├── 00_master_plan.md            ← 狀態（Agent 可自主更新）
+├── 01_active_task.md
+├── 02_tech_stack.md
+└── 03_knowledge_base.md         ← 含強制反面教材區塊
+```
+---
+## 📊 文件職責總覽表
+---
+## 🔄 版本演進
+### MD EN
+```mermaid
+flowchart TB
+    %% 區域定義 (Zone Definitions)
+    subgraph Zone_Policy [Layer 7: Policy & Governance Zone / 策略與憲法區]
+        L7[("Constitution L7<br/>(治理憲法)<br/>SYSTEM_PROMPT.md<br/>ARCHITECTURE.md")]
+        L6["Auditor L6<br/>(治理審計)<br/>governance_auditor.py"]
+    end
+
+    subgraph Zone_Runtime [Layer 4-5: Execution & Persistence Zone / 執行與持久化區]
+        subgraph Group_Engine [Runtime Engine L4 / 執行引擎]
+            G_Pre{pre_task_check}
+            G_Post{post_task_check}
+            G_End{session_end}
+        end
+
+        subgraph Group_Memory [Memory Pipeline L5 / 記憶流水線]
+            M_Curator[memory_curator]
+            M_Promoter[memory_promoter]
+        end
+    end
+
+    subgraph Zone_Evidence [Layer 3: Validation & Evidence Zone / 證據驗證區]
+        L3_Ingestor["Evidence Ingestor L3<br/>(證據接入器)<br/>test_result_ingestor.py"]
+        L3_Drift["Drift Checker L3<br/>(架構偏移偵測)<br/>arch_drift_checker"]
+    end
+
+    subgraph Zone_Input [Layer 1-2: Adaptation & Intelligence Zone / 接入與感知區]
+        subgraph Group_Adapter [Adapters L1 / 適配層]
+            A_Norm[normalize_event]
+            A_Disp[dispatcher]
+        end
+        
+        subgraph Group_Rules [Rule Packs L2 / 規則包系統]
+            R_Suggester[rule_pack_suggester]
+            R_Loader[rule_pack_loader]
+        end
+    end
+
+    %% 交互關係 (Interactions)
+    User((AI Agent / Tool)) --> A_Norm
+    A_Norm --> A_Disp
+    A_Disp -- "Query Suggestions" --> R_Suggester
+    R_Suggester -- "Load Rules" --> R_Loader
+    
+    R_Loader -- "Inject Context" --> G_Pre
+    L3_Ingestor -- "Provide Evidence" --> G_Pre
+    L3_Drift -- "Verify Boundary" --> G_Post
+
+    G_Pre --> G_Post --> G_End
+    G_End -- "Submit Session" --> M_Curator
+    M_Curator --> M_Promoter
+    
+    M_Promoter -- "Promote to Policy" --> L6
+    L6 -- "Compliance" --> L7
+
+    %% 樣式 (Styles)
+    style Zone_Policy fill:#e8f5e9,stroke:#4caf50,stroke-dasharray: 5 5
+    style Zone_Runtime fill:#fffde7,stroke:#fbc02d
+    style Zone_Evidence fill:#e3f2fd,stroke:#2196f3
+    style Zone_Input fill:#f5f5f5,stroke:#9e9e9e
+
+    style L7 fill:#c8e6c9,stroke:#2e7d32
+    style G_Pre fill:#fff9c4,stroke:#fbc02d
+    style G_Post fill:#fff9c4,stroke:#fbc02d
+    style L3_Ingestor fill:#bbdefb,stroke:#1976d2
+```
+📖 欄位功能與流程說明 (Field Descriptions)
+```mermaid
+flowchart TD
+    %% 區域定義 (Zone Definitions)
+    subgraph Zone_Policy [Policy & Audit Zone / 策略與審計區]
+        M["Governance Constitution L7<br/>(治理憲法基準)<br/>SYSTEM_PROMPT / ARCHITECTURE"]
+        L["Governance Auditor L6<br/>(治理審計與狀態)<br/>governance_auditor.py"]
+    end
+
+    subgraph Zone_Runtime [Runtime Gatekeeper Zone / 執行期守門員區]
+        E{pre_task_check<br/>L4}
+        F["AI Code Action<br/>(AI 實作行為)"]
+        H{post_task_check<br/>L4}
+        I[session_end<br/>L4]
+    end
+
+    subgraph Zone_Validation [Evidence Validation Zone / 證據驗證區]
+        G["Evidence Validators L3<br/>(驗證器群組)<br/>test_result_ingestor<br/>refactor_validator"]
+    end
+
+    subgraph Zone_Ingress [Event Ingress Zone / 事件接入區]
+        A([AI Coding Event])
+        B["Adapter Layer L1<br/>(平台適配器)<br/>Claude / Codex / Gemini"]
+        C["Event Normalizer L1<br/>(事件歸一化)"]
+        D["Rule Pack Loader L2<br/>(規則加載器)"]
+    end
+
+    subgraph Zone_Persistence [Durable Memory Zone / 持久化記憶區]
+        J["Memory Pipeline L5<br/>(記憶流水線)<br/>snapshot → curator → promoter"]
+        K[("Durable Memory L5<br/>(長期治理記憶)")]
+    end
+
+    %% 交互關係 (Interactions)
+    %% 接入流程
+    A --> B --> C --> D
+    
+    %% 憲法下達 (Top-down Policy)
+    M -- "Set Constraints" --> D
+    M -- "Policy Gate" --> E
+    M -- "Audit Criteria" --> H
+    
+    %% 執行循環
+    D --> E
+    E -->|Approved| F
+    F --> G
+    G -- "Verify Evidence" --> H
+    H --> I
+    
+    %% 固化流程
+    I --> J --> K
+    
+    %% 回饋閉環 (Feedback Loop)
+    K --> L
+    L --> M
+
+    %% 樣式美化
+    style Zone_Policy fill:#e8f5e9,stroke:#4caf50,stroke-dasharray: 5 5
+    style Zone_Runtime fill:#fff9c4,stroke:#fbc02d
+    style Zone_Validation fill:#e3f2fd,stroke:#2196f3
+    style Zone_Ingress fill:#f5f5f5,stroke:#9e9e9e
+    style Zone_Persistence fill:#ede7f6,stroke:#673ab7
+
+    style E fill:#fff176,stroke:#fbc02d
+    style H fill:#fff176,stroke:#fbc02d
+    style M fill:#c8e6c9,stroke:#2e7d32
+    style K fill:#d1c4e9,stroke:#512da8
+```
+📖 欄位功能與流程說明 (Field Descriptions)
+### 💡 設計重點
+- 憲法（M）的穿透力：在圖中你可以看到，憲法（Policy）直接影響了 Rule Loader (L2)、Pre-check (L4) 和 Post-check (L4)，這體現了「政策指導執行」的設計。
+- 證據（G）的決定權：AI 實作後的程式碼（F）必須經過驗證器（G）的審查，結果才會流向 Post-check，這符合你提到的「不再只是標籤，而是要求證據」的理念。
+這張圖現在與你提供的圖片風格完美對齊，並且清楚解釋了 Runtime 的動態邏輯。
