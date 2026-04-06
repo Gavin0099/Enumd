@@ -1,0 +1,20 @@
+{
+  "name": "notion-private-wiki",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "export": "tsx --env-file .env.local scripts/export.ts",
+    "build-index": "tsx --env-file .env.local scripts/build-index.ts"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "gray-matter": "^4.0.3"
+  }
+}
