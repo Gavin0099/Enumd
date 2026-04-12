@@ -1,0 +1,263 @@
+name: Governance Check
+
+on:
+  push:
+    branches: [main, 'feature/**']
+    paths:
+      - '.github/workflows/governance.yml'
+      - 'governance/**'
+      - 'governance_tools/**'
+      - 'runtime_hooks/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'examples/**'
+      - 'requirements.txt'
+      - 'PLAN.md'
+      - 'triage/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/governance.yml'
+      - 'governance/**'
+      - 'governance_tools/**'
+      - 'runtime_hooks/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'examples/**'
+      - 'requirements.txt'
+      - 'PLAN.md'
+      - 'triage/**'
+  workflow_dispatch:
+
+concurrency:
+  group: governance-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  plan-freshness:
+    name: PLAN.md Freshness
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check PLAN.md freshness
+        run: |
+          OUTPUT=$(python governance_tools/plan_freshness.py --format json) || true
+          echo "$OUTPUT" | python3 -c "
+          import json, sys
+          r = json.load(sys.stdin)
+          status = r['status']
+          days = r.get('days_since_update')
+          limit = r.get('threshold_days', '?')
+          print(f'PLAN.md status: {status} ({days}d since last update, threshold: {limit}d)')
+          if status == 'CRITICAL' or status == 'ERROR':
+              print('::error file=PLAN.md::PLAN.md is CRITICAL stale, please update before pushing.')
+              sys.exit(1)
+          elif status == 'STALE':
+              print(f'::warning file=PLAN.md::PLAN.md is STALE ({days}d). Consider updating soon.')
+          "
+
+  phase-gates:
+    name: Phase Gate Verification
+    runs-on: ubuntu-latest
+    if: github.event_name != 'push'
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install documented dependencies
+        run: pip install -r requirements.txt
+
+      - name: Verify phase gates
+        run: bash scripts/verify_phase_gates.sh
+
+      - name: Verify strict example runtime readiness
+        run: python governance_tools/example_readiness.py --strict-runtime --format human
+
+      - name: Build trust signal overview artifacts
+        run: |
+          python governance_tools/trust_signal_snapshot.py --project-root . --plan PLAN.md --release-version v1.0.0-alpha --contract examples/usb-hub-contract/contract.yaml --strict-runtime --write-bundle artifacts/trust-signals --publish-status-dir artifacts/trust-signals/published --format human
+          python governance_tools/release_package_snapshot.py --version v1.0.0-alpha --write-bundle artifacts/release-package/v1.0.0-alpha --format human
+          python governance_tools/release_package_publication_reader.py --file artifacts/release-package/v1.0.0-alpha/PUBLICATION_MANIFEST.json --format human
+          python governance_tools/release_surface_overview.py --version v1.0.0-alpha --bundle-manifest artifacts/release-package/v1.0.0-alpha/MANIFEST.json --publication-manifest artifacts/release-package/v1.0.0-alpha/PUBLICATION_MANIFEST.json --format human --output artifacts/release-surface/release_surface_overview.txt
+          python governance_tools/release_surface_overview.py --version v1.0.0-alpha --bundle-manifest artifacts/release-package/v1.0.0-alpha/MANIFEST.json --publication-manifest artifacts/release-package/v1.0.0-alpha/PUBLICATION_MANIFEST.json --format json --output artifacts/release-surface/release_surface_overview.json
+          python governance_tools/release_surface_overview.py --version v1.0.0-alpha --bundle-manifest artifacts/release-package/v1.0.0-alpha/MANIFEST.json --publication-manifest artifacts/release-package/v1.0.0-alpha/PUBLICATION_MANIFEST.json --format markdown --output artifacts/release-surface/release_surface_overview.md
+          python governance_tools/reviewer_handoff_snapshot.py --project-root . --plan PLAN.md --release-version v1.0.0-alpha --contract examples/usb-hub-contract/contract.yaml --release-bundle-manifest artifacts/release-package/v1.0.0-alpha/MANIFEST.json --release-publication-manifest artifacts/release-package/v1.0.0-alpha/PUBLICATION_MANIFEST.json --write-bundle artifacts/reviewer-handoff/v1.0.0-alpha --publish-status-dir artifacts/reviewer-handoff/published --publication-root artifacts/reviewer-handoff --format human
+          python governance_tools/reviewer_handoff_reader.py --release-version v1.0.0-alpha --file artifacts/reviewer-handoff/v1.0.0-alpha/MANIFEST.json --format human
+          python governance_tools/reviewer_handoff_publication_reader.py --release-version v1.0.0-alpha --file artifacts/reviewer-handoff/PUBLICATION_MANIFEST.json --format human
+
+      - name: Upload trust signal overview artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trust-signal-overview
+          path: artifacts/trust-signals/
+          if-no-files-found: warn
+
+      - name: Upload release package artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-package
+          path: artifacts/release-package/
+          if-no-files-found: warn
+
+      - name: Upload release surface artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-surface
+          path: artifacts/release-surface/
+          if-no-files-found: warn
+
+      - name: Upload reviewer handoff artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reviewer-handoff
+          path: artifacts/reviewer-handoff/
+          if-no-files-found: warn
+
+  memory-pressure:
+    name: Memory Pressure
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check memory pressure
+        run: |
+          if [ ! -d "memory" ]; then
+            echo "memory/ not found, skipping pressure check"
+            exit 0
+          fi
+          OUTPUT=$(python governance_tools/memory_janitor.py --memory-root ./memory --check --format json) || true
+          echo "$OUTPUT" | python3 -c "
+          import json, sys
+          r = json.load(sys.stdin)
+          status = r['status']
+          lines = r['line_count']
+          hard = r.get('hard_limit', 200)
+          print(f'Memory status: {status} ({lines}/{hard} lines)')
+          if status == 'EMERGENCY':
+              print('::error::Memory EMERGENCY, run: python governance_tools/memory_janitor.py --execute')
+              sys.exit(1)
+          elif status == 'CRITICAL':
+              print(f'::warning::Memory CRITICAL ({lines} lines). Run memory_janitor --execute soon.')
+          elif status == 'WARNING':
+              print(f'::notice::Memory WARNING ({lines} lines). Monitor and plan cleanup.')
+          "
+
+  doc-drift:
+    name: Documentation Drift
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check documentation drift
+        run: python governance_tools/doc_drift_checker.py --project-root . --format human
+
+  runtime-enforcement:
+    name: Runtime Governance Enforcement
+    runs-on: ubuntu-latest
+    if: github.event_name != 'push'
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
+
+      - name: Install documented dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run runtime governance enforcement
+        run: bash scripts/run-runtime-governance.sh --mode ci
+
+      - name: Upload runtime smoke handoff artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runtime-smoke-handoff
+          path: artifacts/runtime/smoke/
+          if-no-files-found: warn
+
+  violation-triage-gate:
+    name: Violation Triage Gate
+    runs-on: ubuntu-latest
+    if: github.event_name != 'push'
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
+
+      - name: Install documented dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run governance auditor and triage report
+        run: |
+          mkdir -p artifacts/triage
+          OUTPUT=$(python governance_tools/governance_auditor.py --project-root . --format json) || true
+          echo "$OUTPUT" > /tmp/ga_output.json
+
+          if [ -f "triage/governance_auditor.triage.json" ]; then
+            python governance_tools/violation_triage.py --mode generate --input /tmp/ga_output.json --input-format governance_auditor --triage-file triage/governance_auditor.triage.json --output artifacts/triage/governance_auditor.triage.json
+          else
+            python governance_tools/violation_triage.py --mode generate --input /tmp/ga_output.json --input-format governance_auditor --output artifacts/triage/governance_auditor.triage.json
+          fi
+
+      - name: Evaluate violation triage gate
+        run: |
+          RESULT=$(python governance_tools/violation_triage.py --mode evaluate --triage-file artifacts/triage/governance_auditor.triage.json --format json)
+          echo "$RESULT" | python3 -c "
+          import json, sys
+          r = json.load(sys.stdin)
+          for ann in r.get('annotations', []):
+              level = ann['level']
+              msg = ann['message'].replace('%', '%25').replace('\n', '%0A')
+              loc = ann.get('file', '')
+              if level == 'error':
+                  print(f'::error file={loc}::{msg}')
+              elif level == 'warning':
+                  print(f'::warning file={loc}::{msg}')
+              else:
+                  print(f'::notice file={loc}::{msg}')
+          print(f'Triage gate: {r[\"summary\"]}')
+          sys.exit(r['exit_code'])
+          "
+
+      - name: Upload triage artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: violation-triage
+          path: artifacts/triage/
+          if-no-files-found: warn

@@ -1,10 +1,13 @@
 import { Client } from "@notionhq/client";
+import * as dotenv from "dotenv";
 import type {
   PageObjectResponse,
   BlockObjectResponse,
   RichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { SignalCollector } from "./signals";
+
+dotenv.config({ path: ".env.local" });
 
 export const notion = new Client({ auth: process.env.NOTION_TOKEN });
 

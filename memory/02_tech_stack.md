@@ -1,5 +1,11 @@
 # Tech Stack
 
-## Repo Facts
+## Core
+- **Environment**: Node.js / TypeScript / tsx
+- **Source**: Notion API (@notionhq/client)
+- **Formatting**: gray-matter (Markdown transformation)
 
-- Fill in runtime, language, and tooling facts for this repo.
+## Intelligence
+- **Evidence Kernel**: Enumd (v2.7.1)
+- **Verification**: Internal invariant validator, dual-path discovery counting.
+- **Auditing**: Pre-flight Integrity Audit (CLI), Raw API Reality Audit.
