@@ -167,10 +167,11 @@ export async function blocksToMarkdown(
           md = `[UNSUPPORTED_BLOCK: ${block.type}]`;
           renderState = 'degraded';
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error(`Error rendering block ${block.id} (${block.type}):`, e);
+      collector?.registerError(block.type, e.message || String(e));
       md = `[RENDER_FAILURE: ${block.type}]`;
-      renderState = 'dropped'; // Actually surfacing a placeholder, but treat as loss of intent
+      renderState = 'dropped'; // Surface a placeholder, but treat as loss of intent
     }
 
     // Register the outcome
@@ -222,9 +223,58 @@ async function fetchAllChildren(blockId: string, collector?: SignalCollector): P
   return allBlocks;
 }
 
-export async function getPageContent(pageId: string, collector?: SignalCollector): Promise<string> {
-  const blocks = await fetchAllChildren(pageId, collector);
-  return blocksToMarkdown(blocks, collector);
+/**
+ * PHASE 7: Independent Discovery Pass
+ * Strictly separate from rendering to detect shared traversal bugs.
+ */
+export async function discoverBlocks(
+  blockId: string, 
+  counts: { total: number; byType: Record<string, number> } = { total: 0, byType: {} }
+): Promise<{ total: number; byType: Record<string, number> }> {
+  let cursor: string | undefined;
+
+  do {
+    const response: any = await notion.blocks.children.list({
+      block_id: blockId,
+      start_cursor: cursor,
+      page_size: 100,
+    });
+
+    for (const block of response.results) {
+      counts.total += 1;
+      counts.byType[block.type] = (counts.byType[block.type] || 0) + 1;
+
+      if (block.has_children) {
+        await discoverBlocks(block.id, counts);
+      }
+    }
+
+    cursor = response.next_cursor;
+  } while (cursor);
+
+  return counts;
+}
+
+export async function getPageContent(pageId: string) {
+  const collector = new SignalCollector(pageId);
+
+  try {
+    // 1. Discovery Pass (Independent Counting)
+    console.log(`[Discovery] Starting independent counting for ${pageId}...`);
+    const discovery = await discoverBlocks(pageId);
+    collector.setDiscoveryData(discovery.total, discovery.byType);
+    console.log(`[Discovery] Found ${discovery.total} blocks.`);
+
+    // 2. Extraction Pass (Rendering)
+    const blocks = await fetchAllChildren(pageId, collector);
+    const markdown = await blocksToMarkdown(blocks, collector);
+    
+    const signal = collector.getSignal();
+    return { markdown, signal };
+  } catch (error) {
+    console.error("Error exporting page:", error);
+    throw error;
+  }
 }
 
 export async function getChildPageIds(blockId: string, depth = 0): Promise<string[]> {

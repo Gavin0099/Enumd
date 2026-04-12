@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest notion-rag --typescript --tailwind --app --no-eslint --no-src-dir --import-alias \"@/*\")",
+      "Bash(npm install:*)",
+      "Bash(node -e \"const n = require\\('@notionhq/client'\\); const c = new n.Client\\({auth:'x'}\\); console.log\\(Object.keys\\(c.databases\\)\\)\")",
+      "Bash(node -e \"const n = require\\('@notionhq/client'\\); const c = new n.Client\\({auth:'x'}\\); console.log\\(Object.keys\\(c\\)\\)\")",
+      "Bash(node -e \"const n = require\\('@notionhq/client'\\); const c = new n.Client\\({auth:'x'}\\); for \\(const k of Object.keys\\(c\\)\\) { const v = c[k]; if \\(typeof v === 'object' && v\\) console.log\\(k, Object.keys\\(v\\)\\) }\")",
+      "Bash(python ai-governance-framework/governance_tools/adopt_governance.py --target notion-rag --framework-root ai-governance-framework --dry-run)",
+      "Bash(python ai-governance-framework/governance_tools/adopt_governance.py --target notion-rag --framework-root ai-governance-framework)",
+      "Bash(python ai-governance-framework/governance_tools/adopt_governance.py --help)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 d:/Enumd/ai-governance-framework/governance_tools/adopt_governance.py --target d:/Enumd/notion-rag --framework-root d:/Enumd/ai-governance-framework)",
+      "Bash(where python:*)",
+      "Bash(where python3:*)",
+      "Bash(where py:*)",
+      "Bash(C:/Users/daish/AppData/Local/Python/bin/pip install:*)",
+      "Bash(C:/Users/daish/AppData/Local/Python/bin/python3.exe -m pip install -r d:/Enumd/ai-governance-framework/requirements.txt -q)",
+      "Bash(C:/Users/daish/AppData/Local/Python/bin/python3.exe d:/Enumd/ai-governance-framework/governance_tools/adopt_governance.py --target d:/Enumd/notion-rag --framework-root d:/Enumd/ai-governance-framework)",
+      "Bash(curl -s https://api.notion.com/v1/users/me -H 'Authorization: Bearer ntn_271022669669r1q1XuLUtXPr7KQsWtjUnDVUGHY46Y87ZYn' -H 'Notion-Version: 2022-06-28')",
+      "Bash(curl -s https://api.notion.com/v1/users/me -H 'Authorization: Bearer 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' -H 'Notion-Version: 2022-06-28')",
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "Bash(ls d:/Enumd/notion-rag/.env*)",
+      "Read(//d/Enumd/**)",
+      "WebFetch(domain:iamvista.substack.com)",
+      "Bash(curl -s -X POST https://api.cloudflare.com/client/v4/accounts/46cc1da0d640ad1a2a9ae433f7d4515f/vectorize/v2/indexes/notion-rag/query -H 'Authorization: Bearer cfut_RDBvLBU4GmJE1HLgzwE4Kec41AL00SH0825NWwsw747127e0' -H 'Content-Type: application/json' -d '{\"vector\": [], \"topK\": 1, \"returnMetadata\": \"all\"}')",
+      "Bash(npx tsx --env-file .env.local -e ':*)",
+      "Bash(node --loader tsx/esm --env-file .env.local -e ':*)",
+      "Bash(npx tsx:*)"
+    ],
+    "additionalDirectories": [
+      "d:\\Enumd\\notion-rag"
+    ]
+  }
+}

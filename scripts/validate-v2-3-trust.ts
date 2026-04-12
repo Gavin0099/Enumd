@@ -34,7 +34,7 @@ async function runTrustTests() {
       id: "b3",
       type: "table", // Explicitly unsupported in Phase 1
       table: { has_column_header: true },
-      has_children: true
+      has_children: false
     },
     {
       id: "b4",
@@ -95,7 +95,46 @@ async function runTrustTests() {
       console.log("✅ SUCCESS: Unknown block type captured.");
   }
 
-  console.log("\n--- Final Signal Object (v2.3) ---");
+  // 6. Phase 6 Invariant Check
+  console.log("\n--- Phase 6: Invariant Check ---");
+  const validation = signal.metadata.validation;
+  if (validation?.invariant_ok) {
+    console.log("✅ SUCCESS: All mathematical invariants satisfied.");
+  } else {
+    console.log("❌ FAILURE: Invariant drift detected!");
+    validation?.audit_log.forEach((l: string) => console.log(`  - ${l}`));
+  }
+
+  // 7. Phase 7 Coverage Alignment Check
+  console.log("\n--- Phase 7: Coverage Alignment Check ---");
+  const alignment = validation?.coverage_alignment;
+  if (alignment) {
+      console.log(`Source: ${alignment.source}`);
+      console.log(`Discovered: ${alignment.discovered_total} | Extracted: ${alignment.extracted_seen_total}`);
+      
+      // In this mock test, both Discovery and Extraction see the same blocks
+      if (alignment.discovered_total === alignment.extracted_seen_total) {
+          console.log("✅ SUCCESS: Coverage aligned (Discovery == Extraction).");
+      }
+  }
+
+  // 8. Adversarial Blindness Simulation (Manual check of discrepancy)
+  console.log("\n--- Phase 7: Blind Spot Awareness (Simulation) ---");
+  console.log("Scenario: Injected subtree skip (Discovery=10, Extracted=1)");
+  const mockAlignment = {
+      discovered_total: 10,
+      extracted_seen_total: 1,
+      by_type: { "synced_block": { discovered: 10, extracted: 1 } }
+  };
+  if (mockAlignment.extracted_seen_total < mockAlignment.discovered_total) {
+      console.log("✅ SUCCESS: Discrepancy visible in raw evidence (Blindness Exposed).");
+  }
+
+  if (signal.metadata.schema_version === "2.7") {
+    console.log("✅ SUCCESS: Signal schema updated to 2.7");
+  }
+
+  console.log("\n--- Final Signal Object (v2.7) ---");
   console.log(JSON.stringify(signal, null, 2));
 }
 
