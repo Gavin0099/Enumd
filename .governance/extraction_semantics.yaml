@@ -1,0 +1,39 @@
+# .governance/extraction_semantics.yaml
+# Trusted Evidence Interpretation Contract (v2.3)
+
+schema_version: "2.3"
+interpretation_rules:
+  - id: SILENT_LOSS_DETECTION
+    condition: "metrics.blocks.*.dropped > 0"
+    severity: CRITICAL
+    advisory: "SILENT_LOSS: Content was encountered but significantly omitted or failed to render. RAG trustworthiness is compromised."
+    action: ESCALATE_FOR_HUMAN_REVIEW
+
+  - id: EXPLICIT_DEGRADATION_ADVISORY
+    condition: "metrics.blocks.*.degraded_rendered > 0"
+    severity: ADVISORY
+    advisory: "EXPLICIT_DEGRADATION: Some content (e.g., tables, images) was rendered using fallbacks/placeholders. Visual review suggested."
+    action: HYBRID_ROUTING_TO_SOURCE
+
+  - id: FIDELITY_LOSS_THRESHOLD
+    condition: "fidelity.rich_text.links.preserved < fidelity.rich_text.links.total"
+    severity: NON-CRITICAL
+    advisory: "FORMATTING_LOSS: Some semantic links or formatting were dropped during extraction."
+    action: FLAG_LOW_CONFIDENCE
+
+  - id: TRUNCATION_WARNING
+    condition: "metrics.structure.truncated == true"
+    severity: CRITICAL
+    advisory: "CONTENT_TRUNCATED: The page was too large for a single extraction pass. Knowledge is incomplete."
+    action: RE-EXTRACTION_REQUIRED
+
+context_overrides:
+  spec:
+    rule_overrides:
+      EXPLICIT_DEGRADATION_ADVISORY:
+        severity: CRITICAL
+        advisory: "SPEC_INTEGRITY_RISK: Specs must have 0% explicit degradation. Red-flagging for manual verification."
+  note:
+    rule_overrides:
+      EXPLICIT_DEGRADATION_ADVISORY:
+        severity: INFORMATIONAL
