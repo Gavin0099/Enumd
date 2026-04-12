@@ -135,6 +135,34 @@ export async function blocksToMarkdown(
           md = `<details><summary>${richTextToString(block.toggle.rich_text, collector).text}</summary>\n\n`;
           renderState = 'fully';
           break;
+        case "table":
+          // Tables are recursive in Notion; we handle rows as children
+          md = ""; // The table header/body will be built from children
+          renderState = 'fully';
+          break;
+        case "table_row": {
+          const cells = block.table_row.cells.map((cell: any) => richTextToString(cell, collector).text);
+          md = `| ${cells.join(" | ")} |`;
+          renderState = 'fully';
+          break;
+        }
+        case "image": {
+          const url = (block.image as any).file?.url || (block.image as any).external?.url;
+          const caption = richTextToString(block.image.caption, collector).text;
+          md = `![${caption || 'image'}](${url})`;
+          renderState = 'degraded'; // Image is degraded because we don't host it locally yet
+          break;
+        }
+        case "file":
+        case "pdf":
+        case "video": {
+          const type = block.type;
+          const url = (block as any)[type].file?.url || (block as any)[type].external?.url;
+          const caption = richTextToString((block as any)[type].caption || [], collector).text;
+          md = `[DOWNLOAD ${type.toUpperCase()}: ${caption || type}](${url})`;
+          renderState = 'degraded';
+          break;
+        }
         default:
           md = `[UNSUPPORTED_BLOCK: ${block.type}]`;
           renderState = 'degraded';
