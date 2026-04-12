@@ -22,6 +22,7 @@ import {
   getPageContent,
   getChildPageIds,
 } from "../lib/notion";
+import { SignalCollector } from "../lib/signals";
 import { summarizePage } from "../lib/summarize";
 import { titleToSlug } from "../lib/categorize";
 import { inferTagsFromText, inferTagsWithAI } from "../lib/infer-tags";
@@ -112,8 +113,10 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
   }
 
   console.log(`  [export] ${title} → ${primary_category}/${slug}.md`);
+  const updatedAt = getPageLastEdited(page);
+  const collector = new SignalCollector(page.id, updatedAt);
 
-  let content = await getPageContent(page.id);
+  let content = await getPageContent(page.id, collector);
   await sleep(RATE_LIMIT_MS);
 
   if (!content.trim()) {
@@ -129,6 +132,11 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
   const fm = await buildFrontmatter(page, content, useSummarize);
   const fileContent = matter.stringify(`\n${content}\n`, fm);
   writeFileSync(filePath, fileContent, "utf8");
+
+  // Atomic Signal Persistence
+  const signal = collector.getSignal();
+  const metaPath = filePath.replace(".md", ".metadata.json");
+  writeFileSync(metaPath, JSON.stringify(signal, null, 2), "utf8");
 
   return "exported";
 }
