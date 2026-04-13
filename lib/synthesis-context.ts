@@ -10,6 +10,15 @@ export interface SynthesisAudit {
   dropped_duplicate_nodes: string[];
   dropped_below_score_nodes: string[];
   total_context_edges: number;
+  snapshot_profile?: {
+    core_count: number;
+    dependency_count: number;
+    related_count: number;
+    context_edge_count: number;
+    has_low_integrity_core: boolean;
+    max_dependency_depth: number;
+    context_class: "rich_graph" | "dependency_only" | "related_only" | "sparse";
+  };
 }
 
 export interface SynthesisContext {
@@ -155,6 +164,33 @@ export class SynthesisContextBuilder {
       if (context.contextEdges.length === 0 && selectedSlugs.size > 1) {
           context.warnings.push("WARNING: Selected nodes produced 0 context edges. Subgraph is completely disjointed except for implicit associations.");
       }
+
+      // Calculate max depth of chosen dependencies
+      let maxDepDepth = 0;
+      context.dependencies.forEach(d => {
+          const depthMeta = flattenedDeps.get(d.slug)?.depth || 0;
+          if (depthMeta > maxDepDepth) maxDepDepth = depthMeta;
+      });
+
+      // Context Classifier
+      let contextClass: "rich_graph" | "dependency_only" | "related_only" | "sparse" = "sparse";
+      if (context.dependencies.length > 0 && context.relatedContext.length > 0) {
+          contextClass = "rich_graph";
+      } else if (context.dependencies.length > 0) {
+          contextClass = "dependency_only";
+      } else if (context.relatedContext.length > 0) {
+          contextClass = "related_only";
+      }
+
+      audit.snapshot_profile = {
+          core_count: context.coreTopics.length,
+          dependency_count: context.dependencies.length,
+          related_count: context.relatedContext.length,
+          context_edge_count: context.contextEdges.length,
+          has_low_integrity_core: context.coreTopics.some(c => c.integrity_band === "LOW"),
+          max_dependency_depth: maxDepDepth,
+          context_class: contextClass
+      };
 
       return { context, audit };
   }
