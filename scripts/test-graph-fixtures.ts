@@ -1,5 +1,8 @@
 import { GraphNode } from "../lib/knowledge-types";
 import { inferExplicitLinks, inferTagOverlap, dedupeAndRankEdges } from "../lib/knowledge-inference";
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
+import { KnowledgeQueryEngine } from "../lib/knowledge-query";
 
 // Minimal test fixtures
 
@@ -42,8 +45,29 @@ function runTests() {
   const tagEdges = inferTagOverlap(TEST_NODES[0], TEST_NODES, tagFrequencies);
   console.log("Test 2: Tag Overlap Scoring");
   // We expect a connection to hub-chip-specs (shared firmware-update) and code-sign-flow (shared sop) 
-  // depending on threshold configuration. We'll leave it simple for the stub.
-  console.log("  (Stubbed) Output:", tagEdges.map(e => e.target));
+  const TEMP_DIR = join(__dirname, ".temp");
+  mkdirSync(TEMP_DIR, { recursive: true });
+  const nodesPath = join(TEMP_DIR, "nodes.json");
+  const edgesPath = join(TEMP_DIR, "edges.json");
+  
+  writeFileSync(nodesPath, JSON.stringify(TEST_NODES));
+  writeFileSync(edgesPath, JSON.stringify([
+    {
+        source: "hub-firmware", target: "code-sign-flow", type: "explicit_ref", confidence: "high", score: 1.0, bidirectional: false
+    },
+    {
+        source: "hub-firmware", target: "hub-chip-specs", type: "tag_related", confidence: "medium", score: 0.8, bidirectional: true
+    }
+]));
+
+const queryEngine = new KnowledgeQueryEngine(nodesPath, edgesPath);
+console.log("\nTest 3: Query Engine - rankRelated");
+const related = queryEngine.rankRelated("hub-firmware");
+if (related.length === 2 && related[0].node.slug === "code-sign-flow" && related[0].score === 1.0) {
+    console.log("  ✅ PASS", related.map(r => r.node.slug));
+} else {
+    console.error("  ❌ FAIL", related);
+}
 
   console.log("\nDone.");
 }
