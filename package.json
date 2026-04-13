@@ -13,6 +13,7 @@
     "rebuild": "npm run export && npm run build:graph",
     "test:graph": "tsx --env-file .env.local scripts/test-graph-fixtures.ts",
     "test:synthesis": "tsx --env-file .env.local scripts/test-synthesis-context.ts",
+    "generate:synthesis": "tsx --env-file .env.local scripts/run-synthesis.ts",
     "build-index": "tsx --env-file .env.local scripts/build-index.ts",
     "check-stale": "tsx --env-file .env.local scripts/check-stale.ts"
   },
