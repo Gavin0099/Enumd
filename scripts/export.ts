@@ -86,8 +86,11 @@ async function buildFrontmatter(
     notion_updated_at: getPageLastEdited(page),
     exported_at: new Date().toISOString(),
     is_summarized: isSummarized,
-    // Relations (empty by default, filled manually or by future tooling)
-    relations: [],
+    // Relations (Object schema for clear separation of authority vs inference)
+    relations: {
+      manual: [],
+      inferred: []
+    },
   };
 }
 
