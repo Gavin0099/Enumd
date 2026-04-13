@@ -57,16 +57,19 @@ export class SynthesisContextBuilder {
           context.warnings.push(`Core topic ${topicSlug} not found in the graph.`);
           return { context, audit };
       }
+      
+      // Normalize topic slug to whatever the engine resolved (in case of title Fallback UX)
+      const trueSlug = coreNode.slug;
 
       // 1. Core Selection
       context.coreTopics.push(coreNode);
       audit.selected_core_count++;
       if (coreNode.integrity_band === "LOW") {
-          context.warnings.push(`Core topic ${topicSlug} has LOW integrity.`);
+          context.warnings.push(`Core topic ${trueSlug} has LOW integrity.`);
       }
 
       // 2. Dependencies Flattening & Gating
-      const rawPaths = this.queryEngine.getDependencyChain(topicSlug, maxDepth);
+      const rawPaths = this.queryEngine.getDependencyChain(trueSlug, maxDepth);
       const flattenedDeps = new Map<string, { node: GraphNode, depth: number }>();
       
       for (const path of rawPaths) {
@@ -109,11 +112,11 @@ export class SynthesisContextBuilder {
       audit.selected_dependency_count = context.dependencies.length;
 
       // 3. RelatedContext Selection
-      const rawRelated = this.queryEngine.rankRelated(topicSlug, 20); // fetch more to allow for filtering
+      const rawRelated = this.queryEngine.rankRelated(trueSlug, 20); // fetch more to allow for filtering
       for (const rel of rawRelated) {
           const node = rel.node;
           
-          if (node.slug === topicSlug || context.dependencies.some(d => d.slug === node.slug)) {
+          if (node.slug === trueSlug || context.dependencies.some(d => d.slug === node.slug)) {
                audit.dropped_duplicate_nodes.push(node.slug);
                continue;
           }
@@ -129,9 +132,9 @@ export class SynthesisContextBuilder {
           }
           
           // Require confidence >= medium
-          const confidence = this.queryEngine.getNeighbors(topicSlug).find(e => 
-              (e.source === topicSlug && e.target === node.slug) || 
-              (e.bidirectional && e.target === topicSlug && e.source === node.slug)
+          const confidence = this.queryEngine.getNeighbors(trueSlug).find(e => 
+              (e.source === trueSlug && e.target === node.slug) || 
+              (e.bidirectional && e.target === trueSlug && e.source === node.slug)
           )?.confidence;
 
           if (confidence === "low") {
@@ -147,7 +150,7 @@ export class SynthesisContextBuilder {
 
       // 4. Edge Pruning
       const selectedSlugs = new Set([
-          topicSlug,
+          trueSlug,
           ...context.dependencies.map(d => d.slug),
           ...context.relatedContext.map(r => r.slug)
       ]);
