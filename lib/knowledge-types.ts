@@ -19,7 +19,8 @@ export interface GraphNode {
   id: string; // Notion or document ID
   slug: string;
   title: string;
-  path: string; // relative path within docs/ e.g., hub/hub-firmware.md
+  path: string; // relative path within docs/ e.g., hub/hub-firmware.md or absolute depending on origin
+  site_path?: string; // root-relative URL path for VitePress, e.g. /hub/code-sign-flow.html
   category: string;
   domain_tags: string[];
   task_tags: string[];

@@ -1,7 +1,7 @@
 /**
  * Knowledge Graph Inference Pipeline
  *
- * Scans docs/**/*.md and their corresponding .metadata.json, builds the 
+ * Scans markdown files and their corresponding .metadata.json, builds the 
  * advisory knowledge graph, outputs artifacts to /knowledge, and safely 
  * injects the derived relations into the Markdown frontmatter 'relations.inferred', 
  * preserving the manual ones.
@@ -58,12 +58,16 @@ function processDocs() {
 
     const slug = file.split(/[\\/]/).pop()?.replace(".md", "") || "";
     const category = file.split(/[\\/]/).slice(-2, -1)[0] || "general";
+    
+    const sitePathStr = file.substring(DOCS_DIR.length).replace(/^[\\/]+/, '').replace(/\\/g, '/');
+    const sitePath = `/${sitePathStr}`.replace(/\.md$/, '.html');
 
     const node: GraphNode = {
         id: frontmatter.notion_id,
         slug: slug,
         title: frontmatter.title || slug,
         path: file,
+        site_path: sitePath,
         category: category,
         domain_tags: frontmatter.domain_tags || [],
         task_tags: frontmatter.task_tags || [],
@@ -121,7 +125,7 @@ function processDocs() {
   console.log(`[build-graph] Updating frontmatters...`);
   let updatedCount = 0;
   for (const node of nodes) {
-      const nodeEdges = edges.filter(e => e.source === node.slug);
+      const nodeEdges = edges.filter(e => e.source === node.slug || (e.bidirectional && e.target === node.slug));
       if (nodeEdges.length === 0) continue;
 
       const fileContent = readFileSync(node.path, "utf8");
@@ -133,7 +137,7 @@ function processDocs() {
           return {
               target: targetSlug,
               title: targetNode?.title || targetSlug,
-              path: targetNode ? `/${targetNode.path}`.replace(/\.md$/, '.html') : '',
+              path: targetNode?.site_path || '',
               type: e.type,
               confidence: e.confidence,
               score: e.score
