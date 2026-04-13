@@ -20,6 +20,14 @@ export class KnowledgeQueryEngine {
     }
   }
 
+  public getNode(slug: string): GraphNode | undefined {
+      return this.nodes.get(slug);
+  }
+
+  public getAllEdges(): GraphEdge[] {
+      return this.edges;
+  }
+
   public getNeighbors(nodeSlug: string, options?: QueryOptions): GraphEdge[] {
       const minScore = options?.minScore ?? 0.0;
       const validTypes = options?.types;
