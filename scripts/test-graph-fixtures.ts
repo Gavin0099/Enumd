@@ -4,72 +4,65 @@ import { writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
 import { KnowledgeQueryEngine } from "../lib/knowledge-query";
 
-// Minimal test fixtures
+console.log("Running Strict Graph Inference Fixture Tests...\n");
 
-const TEST_NODES: GraphNode[] = [
-  {
-    id: "uuid-1", slug: "hub-firmware", title: "Hub Firmware", path: "hub/hub-firmware.md", category: "hub",
-    domain_tags: ["hub"], task_tags: ["firmware-update", "sop"], authority_level: "guideline", notion_id: "uuid-1"
-  },
-  {
-    id: "uuid-2", slug: "code-sign-flow", title: "Code Sign Flow", path: "hub/code-sign-flow.md", category: "hub",
-    domain_tags: ["hub", "security"], task_tags: ["code-sign", "sop"], authority_level: "procedure", notion_id: "uuid-2"
-  },
-  {
-    id: "uuid-3", slug: "hub-chip-specs", title: "Hub Chip Specs", path: "hub/hub-chip-specs.md", category: "hub",
-    domain_tags: ["hub"], task_tags: ["spec", "hardware-info", "firmware-update"], authority_level: "reference", notion_id: "uuid-3"
-  }
+// --- TEST 1: Deduplication Directionality ---
+console.log("TEST 1: Deduplication Directionality");
+const t1Nodes: GraphNode[] = [
+    { id: "A", slug: "node-a", title: "Node A", path: "a.md", category: "test", domain_tags: ["d1"], task_tags: ["t1"], authority_level: "P0", notion_id: "A" },
+    { id: "B", slug: "node-b", title: "Node B", path: "b.md", category: "test", domain_tags: ["d1"], task_tags: ["t1"], authority_level: "P0", notion_id: "B" }
 ];
 
-function runTests() {
-  console.log("Running Graph Inference Fixture Tests...\n");
+// A -> B explicitly
+const explicitAtoB = inferExplicitLinks(t1Nodes[0], t1Nodes, "Link to [B](./node-b)");
+// B -> A explicitly
+const explicitBtoA = inferExplicitLinks(t1Nodes[1], t1Nodes, "Link to [A](./node-a)");
+// A <-> B implicitly via tags
+const tagOverlapA = inferTagOverlap(t1Nodes[0], t1Nodes, { "t1": 2 }); 
 
-  // Test 1: Explicit Links
-  const markdownContent = `Please refer to [Code Sign Flow](./code-sign-flow) for details.`;
-  const explicitEdges = inferExplicitLinks(TEST_NODES[0], TEST_NODES, markdownContent);
-  console.log("Test 1: Explicit Links");
-  if (explicitEdges.length === 1 && explicitEdges[0].target === "code-sign-flow" && explicitEdges[0].basis[0].kind === "explicit_link") {
-      console.log("  ✅ PASS");
-  } else {
-      console.error("  ❌ FAIL", explicitEdges);
-  }
+const combinedEdges = [...explicitAtoB, ...explicitBtoA, ...tagOverlapA];
+const dedupedEdges = dedupeAndRankEdges(combinedEdges);
 
-  // Test 2: Tag Overlap Scoring (TF-IDF Simulation)
-  const tagFrequencies = {
-      "firmware-update": 2,
-      "sop": 2,
-      "code-sign": 1,
-      "spec": 1,
-      "hardware-info": 1
-  };
-  const tagEdges = inferTagOverlap(TEST_NODES[0], TEST_NODES, tagFrequencies);
-  console.log("Test 2: Tag Overlap Scoring");
-  // We expect a connection to hub-chip-specs (shared firmware-update) and code-sign-flow (shared sop) 
-  const TEMP_DIR = join(__dirname, ".temp");
-  mkdirSync(TEMP_DIR, { recursive: true });
-  const nodesPath = join(TEMP_DIR, "nodes.json");
-  const edgesPath = join(TEMP_DIR, "edges.json");
-  
-  writeFileSync(nodesPath, JSON.stringify(TEST_NODES));
-  writeFileSync(edgesPath, JSON.stringify([
-    {
-        source: "hub-firmware", target: "code-sign-flow", type: "explicit_ref", confidence: "high", score: 1.0, bidirectional: false
-    },
-    {
-        source: "hub-firmware", target: "hub-chip-specs", type: "tag_related", confidence: "medium", score: 0.8, bidirectional: true
-    }
-]));
+const hasAtoB = dedupedEdges.some(e => e.source === "node-a" && e.target === "node-b" && e.type === "explicit_ref" && !e.bidirectional);
+const hasBtoA = dedupedEdges.some(e => e.source === "node-b" && e.target === "node-a" && e.type === "explicit_ref" && !e.bidirectional);
+const totalEdges = dedupedEdges.length;
+
+if (hasAtoB && hasBtoA && totalEdges === 2) {
+    console.log("  ✅ PASS: Directional edges are correctly isolated");
+} else {
+    console.error("  ❌ FAIL: Directionality lost during dedupe", dedupedEdges);
+    process.exit(1);
+}
+
+// --- TEST 2: Score Calculation & Tag Thresholds ---
+console.log("\nTEST 2: Score Normalization (TF-IDF Thresholding)");
+const t2Edges = inferTagOverlap(t1Nodes[0], t1Nodes, { "t1": 2 });
+if (t2Edges.length === 0) {
+     // Score threshold is 1.5, Math.log(3 / 3) = 0 > fails
+     console.log("  ✅ PASS: Hub tag effectively neutralized (score below threshold)");
+} else {
+     console.error("  ❌ FAIL: Score thresholding leak", t2Edges);
+     process.exit(1);
+}
+
+// --- TEST 3: Query Engine Tracing ---
+console.log("\nTEST 3: Query Engine Tracing");
+const TEMP_DIR = join(__dirname, ".temp");
+mkdirSync(TEMP_DIR, { recursive: true });
+const nodesPath = join(TEMP_DIR, "nodes.json");
+const edgesPath = join(TEMP_DIR, "edges.json");
+
+writeFileSync(nodesPath, JSON.stringify(t1Nodes));
+writeFileSync(edgesPath, JSON.stringify(dedupedEdges));
 
 const queryEngine = new KnowledgeQueryEngine(nodesPath, edgesPath);
-console.log("\nTest 3: Query Engine - rankRelated");
-const related = queryEngine.rankRelated("hub-firmware");
-if (related.length === 2 && related[0].node.slug === "code-sign-flow" && related[0].score === 1.0) {
-    console.log("  ✅ PASS", related.map(r => r.node.slug));
+const deps = queryEngine.getDependencyChain("node-a", 2);
+// node-a explicitly depends on node-b in dedupedEdges
+if (deps.length > 0 && deps[0].some(n => n.slug === "node-b")) {
+    console.log("  ✅ PASS: Dependency chain accurately traced");
 } else {
-    console.error("  ❌ FAIL", related);
+    console.error("  ❌ FAIL: Dependency traceability broken", deps);
+    process.exit(1);
 }
 
-  console.log("\nDone.");
-}
-
-runTests();
+console.log("\nAll fixtures passed.");

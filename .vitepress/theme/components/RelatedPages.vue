@@ -3,8 +3,8 @@
     <h3 class="related-title">延伸閱讀 & 相關知識 (Graph Inference)</h3>
     <ul class="related-list">
       <li v-for="page in relatedPages" :key="page.target">
-        <a :href="`../${page.target}`" class="related-link">
-          <span class="related-target">{{ page.target }}</span>
+        <a :href="page.path" class="related-link">
+          <span class="related-target">{{ page.title || page.target }}</span>
           <span class="related-badge" :class="page.confidence">{{ page.type }} / score: {{ Math.round(page.score * 100) / 100 }}</span>
         </a>
       </li>

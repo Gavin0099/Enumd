@@ -86,7 +86,7 @@ function processDocs() {
   const report = builder.generateReport();
 
   // Graph Diff Computation
-  let diffStats: import("../lib/knowledge-types").GraphDiffStats = { added_edges: 0, removed_edges: 0, confidence_shifts: 0 };
+  let diffStats: import("../lib/knowledge-types").GraphDiffStats = { added_edges: 0, removed_edges: 0, confidence_shifts: 0, score_shifts: 0 };
   const edgesPath = join(KNOWLEDGE_DIR, "edges.json");
   if (existsSync(edgesPath)) {
       const prevEdges = JSON.parse(readFileSync(edgesPath, "utf8")) as import("../lib/knowledge-types").GraphEdge[];
@@ -96,14 +96,17 @@ function processDocs() {
       diffStats.added_edges = [...newEdgeIds].filter(id => !prevEdgeIds.has(id)).length;
       diffStats.removed_edges = [...prevEdgeIds].filter(id => !newEdgeIds.has(id)).length;
       
-      let shifts = 0;
+      let confShifts = 0;
+      let scoShifts = 0;
       for (const edge of edges) {
           const prev = prevEdges.find(e => e.source === edge.source && e.target === edge.target && e.type === edge.type);
-          if (prev && prev.confidence !== edge.confidence) {
-              shifts++;
+          if (prev) {
+              if (prev.confidence !== edge.confidence) confShifts++;
+              if (Math.abs(prev.score - edge.score) >= 0.1) scoShifts++;
           }
       }
-      diffStats.confidence_shifts = shifts;
+      diffStats.confidence_shifts = confShifts;
+      diffStats.score_shifts = scoShifts;
   }
   report.drift_stats = diffStats;
 
@@ -124,12 +127,18 @@ function processDocs() {
       const fileContent = readFileSync(node.path, "utf8");
       const parsed = matter(fileContent);
       
-      const inferredRelations = nodeEdges.map(e => ({
-          target: e.target,
-          type: e.type,
-          confidence: e.confidence,
-          score: e.score
-      }));
+      const inferredRelations = nodeEdges.map(e => {
+          const targetSlug = e.source === node.slug ? e.target : e.source;
+          const targetNode = nodes.find(n => n.slug === targetSlug);
+          return {
+              target: targetSlug,
+              title: targetNode?.title || targetSlug,
+              path: targetNode ? `/${targetNode.path}`.replace(/\.md$/, '.html') : '',
+              type: e.type,
+              confidence: e.confidence,
+              score: e.score
+          };
+      });
 
       // Initialize if missing
       if (!parsed.data.relations) {

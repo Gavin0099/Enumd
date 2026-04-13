@@ -40,6 +40,7 @@ export interface GraphDiffStats {
   added_edges: number;
   removed_edges: number;
   confidence_shifts: number;
+  score_shifts: number;
 }
 
 export interface GraphBuildReport {
