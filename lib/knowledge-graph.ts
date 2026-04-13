@@ -25,7 +25,7 @@ export class KnowledgeGraphBuilder {
     // Calculate global tag frequencies for tf-idf
     const tagFrequencies: Record<string, number> = {};
     for (const node of this.nodes) {
-        for (const tag of node.task_tags) {
+        for (const tag of node.task_tags || []) {
             tagFrequencies[tag] = (tagFrequencies[tag] || 0) + 1;
         }
     }
