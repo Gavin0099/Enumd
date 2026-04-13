@@ -85,10 +85,33 @@ function processDocs() {
   const edges = builder.getEdges();
   const report = builder.generateReport();
 
+  // Graph Diff Computation
+  let diffStats: import("../lib/knowledge-types").GraphDiffStats = { added_edges: 0, removed_edges: 0, confidence_shifts: 0 };
+  const edgesPath = join(KNOWLEDGE_DIR, "edges.json");
+  if (existsSync(edgesPath)) {
+      const prevEdges = JSON.parse(readFileSync(edgesPath, "utf8")) as import("../lib/knowledge-types").GraphEdge[];
+      const prevEdgeIds = new Set(prevEdges.map(e => `${e.source}-${e.target}-${e.type}`));
+      const newEdgeIds = new Set(edges.map(e => `${e.source}-${e.target}-${e.type}`));
+      
+      diffStats.added_edges = [...newEdgeIds].filter(id => !prevEdgeIds.has(id)).length;
+      diffStats.removed_edges = [...prevEdgeIds].filter(id => !newEdgeIds.has(id)).length;
+      
+      let shifts = 0;
+      for (const edge of edges) {
+          const prev = prevEdges.find(e => e.source === edge.source && e.target === edge.target && e.type === edge.type);
+          if (prev && prev.confidence !== edge.confidence) {
+              shifts++;
+          }
+      }
+      diffStats.confidence_shifts = shifts;
+  }
+  report.drift_stats = diffStats;
+
   // Export artifacts
   writeFileSync(join(KNOWLEDGE_DIR, "nodes.json"), JSON.stringify(nodes, null, 2));
-  writeFileSync(join(KNOWLEDGE_DIR, "edges.json"), JSON.stringify(edges, null, 2));
+  writeFileSync(edgesPath, JSON.stringify(edges, null, 2));
   writeFileSync(join(KNOWLEDGE_DIR, "build-report.json"), JSON.stringify(report, null, 2));
+  writeFileSync(join(KNOWLEDGE_DIR, "graph_diff.json"), JSON.stringify(diffStats, null, 2));
   console.log(`[build-graph] Graph generated: ${edges.length} edges.`);
 
   // Write back to Frontmatter safely
