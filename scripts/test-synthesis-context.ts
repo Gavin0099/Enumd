@@ -26,6 +26,9 @@ if (!targetSlug) {
    targetSlug = allNodes[0]?.slug || "unknown";
 }
 
+// Extract slug smartly if user passed a file path like "docs\general\0206.md"
+targetSlug = targetSlug.split(/[\\/]/).pop()?.replace(".md", "") || targetSlug;
+
 console.log(`Building context snapshot for topic: ${targetSlug}`);
 
 const { context, audit } = contextBuilder.buildContext(targetSlug, 3);

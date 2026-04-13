@@ -17,7 +17,177 @@ notion_url: 'https://www.notion.so/USB3-0-de97d58eaa314cdd8407640927deb83a'
 notion_updated_at: '2022-08-05T06:03:00.000Z'
 exported_at: '2026-04-06T13:10:25.686Z'
 is_summarized: false
-relations: []
+relations:
+  manual: []
+  inferred:
+    - target: windows
+      title: windows
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp_display_firmware_update_specification
+      title: HP_Display_Firmware_Update_Specification
+      path: /firmware/hp_display_firmware_update_specification.html
+      type: tag_related
+      confidence: medium
+      score: 0.745264903150195
+    - target: vendor
+      title: vendor
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6396514171100957
+    - target: 2021部門創新提案
+      title: 2021部門創新提案
+      path: /general/2021部門創新提案.html
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: flutter
+      title: Flutter
+      path: /general/flutter.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: log分類
+      title: Log分類
+      path: /general/log分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mt9052
+      title: MT9052
+      path: /general/mt9052.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: osdmanager
+      title: OSDManager
+      path: /general/osdmanager.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: vibe
+      title: vibe
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.8818324653304117
+    - target: w25x21cl
+      title: w25x21cl
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: zeroplus_lap
+      title: zeroplus_lap
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.562006756775364
+    - target: 交叉評核作業
+      title: 交叉評核作業
+      path: /general/交叉評核作業.html
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: 取消使用stdafxh
+      title: 取消使用stdafxh
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: 新架構導入新的chip
+      title: 新架構導入新的chip
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: 用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題
+      title: 用Bcgcontrolbar套用的UI在某些電腦上UI會錯誤的問題
+      path: /general/用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題.html
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: 研發投扺專案資料列印流程
+      title: 研發投扺專案資料列印流程
+      path: /general/研發投扺專案資料列印流程.html
+      type: tag_related
+      confidence: medium
+      score: 0.562006756775364
+    - target: 自動化測試
+      title: 自動化測試
+      path: /general/自動化測試.html
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: 自評
+      title: 自評
+      path: /general/自評.html
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: xcode
+      title: xcode
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: 如何在mac
+      title: 如何在mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: vmware
+      title: vmware
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: usbview
+      title: usbview
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 工作目標
+      title: 工作目標
+      path: /general/工作目標.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 新人參考資料
+      title: 新人參考資料
+      path: /general/新人參考資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 短期行動
+      title: 短期行動
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 遠端會議相關資料
+      title: 遠端會議相關資料
+      path: /general/遠端會議相關資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usb31
+      title: usb31
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: z24ng3
+      title: z24ng3
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 ### USB Container ID Capability Descriptor 

@@ -13,7 +13,231 @@ notion_url: 'https://www.notion.so/OSDManager-27664f6bc65680149140d757e0bd02fa'
 notion_updated_at: '2026-01-21T09:38:00.000Z'
 exported_at: '2026-04-06T13:13:58.652Z'
 is_summarized: false
-relations: []
+relations:
+  manual: []
+  inferred:
+    - target: rsa
+      title: rsa
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: hp_display_firmware_update_specification
+      title: HP_Display_Firmware_Update_Specification
+      path: /firmware/hp_display_firmware_update_specification.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tvsuthinkvantage
+      title: tvsuthinkvantage
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: flutter
+      title: Flutter
+      path: /general/flutter.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: log分類
+      title: Log分類
+      path: /general/log分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: richelieu
+      title: richelieu
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: ricktek
+      title: ricktek
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: teledyne
+      title: teledyne
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: tri
+      title: tri
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: 如何在xocde
+      title: 如何在xocde
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: 新架構導入新的chip
+      title: 新架構導入新的chip
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: 結構
+      title: 結構
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: 自動化測試
+      title: 自動化測試
+      path: /general/自動化測試.html
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: sunpluscameradll
+      title: sunpluscameradll
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5309665066604119
+    - target: ssdlc
+      title: ssdlc
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: sw272u
+      title: sw272u
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: system
+      title: system
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: teledyne
+      title: teledyne
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usb30影響配對問題
+      title: USB3.0影響配對問題
+      path: /general/usb30影響配對問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usbview
+      title: usbview
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: vibe
+      title: vibe
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 交叉評核作業
+      title: 交叉評核作業
+      path: /general/交叉評核作業.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 工作目標
+      title: 工作目標
+      path: /general/工作目標.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 新人參考資料
+      title: 新人參考資料
+      path: /general/新人參考資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 短期行動
+      title: 短期行動
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 自評
+      title: 自評
+      path: /general/自評.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 遠端會議相關資料
+      title: 遠端會議相關資料
+      path: /general/遠端會議相關資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: p32p
+      title: p32p
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: realtek
+      title: realtek
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: u27m
+      title: u27m
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: rtk
+      title: rtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: saleae
+      title: saleae
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: srs
+      title: srs
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: standard
+      title: standard
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tool
+      title: tool
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tri
+      title: tri
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: vmware
+      title: vmware
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 本專案旨在提供一個讓使用者能透過鍵盤熱鍵操作 OSD (On-Screen Display) 選單功能的工具。使用者不僅可以執行預設的熱鍵指令，還能透過設定介面來自訂與各項 OSD 功能對應的熱鍵組合。

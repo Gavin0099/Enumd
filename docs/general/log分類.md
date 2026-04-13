@@ -13,7 +13,375 @@ notion_url: 'https://www.notion.so/Log-174e63f3f0c24c93a5b68bd8edab03af'
 notion_updated_at: '2024-03-27T06:30:00.000Z'
 exported_at: '2026-04-06T13:18:52.611Z'
 is_summarized: false
-relations: []
+relations:
+  manual: []
+  inferred:
+    - target: openssl
+      title: openssl
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: hp_display_firmware_update_specification
+      title: HP_Display_Firmware_Update_Specification
+      path: /firmware/hp_display_firmware_update_specification.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: secure
+      title: secure
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tvsuthinkvantage
+      title: tvsuthinkvantage
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: vendor
+      title: vendor
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: flutter
+      title: Flutter
+      path: /general/flutter.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: sw272u
+      title: sw272u
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: system
+      title: system
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: teledyne
+      title: teledyne
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: teledyne
+      title: teledyne
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: usbview
+      title: usbview
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: vibe
+      title: vibe
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: zeroplus_lap
+      title: zeroplus_lap
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: 自動化測試
+      title: 自動化測試
+      path: /general/自動化測試.html
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: 遠端會議相關資料
+      title: 遠端會議相關資料
+      path: /general/遠端會議相關資料.html
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: usb
+      title: usb
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: 如何在mac
+      title: 如何在mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: saleae
+      title: saleae
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3358342500897551
+    - target: mfc
+      title: mfc
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: osdmanager
+      title: OSDManager
+      path: /general/osdmanager.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: ps196
+      title: ps196
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: richelieu
+      title: richelieu
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: ricktek
+      title: ricktek
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: ssdlc
+      title: ssdlc
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tri
+      title: tri
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usb30影響配對問題
+      title: USB3.0影響配對問題
+      path: /general/usb30影響配對問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: w25x21cl
+      title: w25x21cl
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 交叉評核作業
+      title: 交叉評核作業
+      path: /general/交叉評核作業.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 工作目標
+      title: 工作目標
+      path: /general/工作目標.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 新人參考資料
+      title: 新人參考資料
+      path: /general/新人參考資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 新架構導入新的chip
+      title: 新架構導入新的chip
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 短期行動
+      title: 短期行動
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 自評
+      title: 自評
+      path: /general/自評.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mtk
+      title: mtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: macos
+      title: macos
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: monitor
+      title: monitor
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: monitor
+      title: monitor
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mtk
+      title: mtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: p32p
+      title: p32p
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: realtek
+      title: realtek
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: u27m
+      title: u27m
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: rtk
+      title: rtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: sunpluscameradll
+      title: sunpluscameradll
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: merge
+      title: merge
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: srs
+      title: srs
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: standard
+      title: standard
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tool
+      title: tool
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tri
+      title: tri
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: vmware
+      title: vmware
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 ## 不必要的log

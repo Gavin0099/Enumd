@@ -12,7 +12,87 @@ notion_url: 'https://www.notion.so/MonitorVCP-12164f6bc656809883b4cce9ca2db613'
 notion_updated_at: '2026-01-21T09:35:00.000Z'
 exported_at: '2026-04-06T13:18:18.514Z'
 is_summarized: false
-relations: []
+relations:
+  manual: []
+  inferred:
+    - target: vendor
+      title: vendor
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mt9052
+      title: MT9052
+      path: /general/mt9052.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: sw272u
+      title: sw272u
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tri
+      title: tri
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tricode
+      title: tricode
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usb
+      title: usb
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: vibe
+      title: vibe
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: zeroplus_lap
+      title: zeroplus_lap
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mtk
+      title: mtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: p32p
+      title: p32p
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: realtek
+      title: realtek
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: u27m
+      title: u27m
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: z24ng3
+      title: z24ng3
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 ```javascript

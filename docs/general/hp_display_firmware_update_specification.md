@@ -7,6 +7,627 @@ notion_url: >-
 notion_updated_at: FORCE_REFRESH
 exported_at: '2026-04-06T11:23:23.685Z'
 is_summarized: false
+relations:
+  manual: []
+  inferred:
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.745264903150195
+    - target: mbedtls
+      title: mbedtls
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: openssl
+      title: openssl
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7016644727874368
+    - target: rsa
+      title: rsa
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hubdriverinstaller
+      title: hubdriverinstaller
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: sc
+      title: sc
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: windows
+      title: windows
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: tvsuthinkvantage
+      title: tvsuthinkvantage
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7059228443009842
+    - target: vendor
+      title: vendor
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: electron
+      title: electron
+      path: /general/electron.html
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: flutter
+      title: Flutter
+      path: /general/flutter.html
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: inno
+      title: inno
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7999235701501313
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4254391945951472
+    - target: ps196
+      title: ps196
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: richelieu
+      title: richelieu
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.9
+    - target: ricktek
+      title: ricktek
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: sw272u
+      title: sw272u
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: system
+      title: system
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: teledyne
+      title: teledyne
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: teledyne
+      title: teledyne
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: tri
+      title: tri
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7016644727874368
+    - target: usb30影響配對問題
+      title: USB3.0影響配對問題
+      path: /general/usb30影響配對問題.html
+      type: tag_related
+      confidence: medium
+      score: 0.745264903150195
+    - target: vibe
+      title: vibe
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: windows
+      title: windows
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: zeroplus_lap
+      title: zeroplus_lap
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: 取消使用stdafxh
+      title: 取消使用stdafxh
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7563231397873731
+    - target: 如何在xocde
+      title: 如何在xocde
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: 新架構導入新的chip
+      title: 新架構導入新的chip
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7999235701501313
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.6623224139382259
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7059228443009842
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7999235701501313
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.9
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: linux
+      title: linux
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.9
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.8661949973410199
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.9
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.8661949973410199
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.8661949973410199
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: xcode
+      title: xcode
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.8661949973410199
+    - target: 如何在mac
+      title: 如何在mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: monitor
+      title: monitor
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: mtk
+      title: mtk
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: realtek
+      title: realtek
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: sunpluscameradll
+      title: sunpluscameradll
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: merge
+      title: merge
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.8661949973410199
+    - target: saleae
+      title: saleae
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.3198257085550478
+    - target: standard
+      title: standard
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7059228443009842
+    - target: tool
+      title: tool
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4254391945951472
+    - target: tri
+      title: tri
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.5960509867473374
+    - target: vmware
+      title: vmware
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.38609713574593635
+    - target: secure
+      title: secure
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 2021部門創新提案
+      title: 2021部門創新提案
+      path: /general/2021部門創新提案.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: log分類
+      title: Log分類
+      path: /general/log分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mfc
+      title: mfc
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: osdmanager
+      title: OSDManager
+      path: /general/osdmanager.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: ssdlc
+      title: ssdlc
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usbview
+      title: usbview
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: w25x21cl
+      title: w25x21cl
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: windows
+      title: windows
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 交叉評核作業
+      title: 交叉評核作業
+      path: /general/交叉評核作業.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 工作目標
+      title: 工作目標
+      path: /general/工作目標.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 新人參考資料
+      title: 新人參考資料
+      path: /general/新人參考資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 物件導向分析與uml
+      title: 物件導向分析與UML
+      path: /general/物件導向分析與uml.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 短期行動
+      title: 短期行動
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 自動化測試
+      title: 自動化測試
+      path: /general/自動化測試.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 自評
+      title: 自評
+      path: /general/自評.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 遠端會議相關資料
+      title: 遠端會議相關資料
+      path: /general/遠端會議相關資料.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hub
+      title: hub
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mtk
+      title: mtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: usb
+      title: usb
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: macos
+      title: macos
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: monitor
+      title: monitor
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: p32p
+      title: p32p
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: u27m
+      title: u27m
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: rtk
+      title: rtk
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: io
+      title: io
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 憑證檔案
+      title: 憑證檔案
+      path: /general/憑證檔案.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: ikv
+      title: ikv
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: srs
+      title: srs
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 ## 1. 規格重整 (Specification Restructured)

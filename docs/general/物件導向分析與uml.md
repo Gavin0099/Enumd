@@ -12,7 +12,27 @@ notion_url: 'https://www.notion.so/UML-cc1376481e834d279f2ccd461ad56355'
 notion_updated_at: '2020-04-29T08:28:00.000Z'
 exported_at: '2026-04-06T13:16:52.762Z'
 is_summarized: false
-relations: []
+relations:
+  manual: []
+  inferred:
+    - target: hp_display_firmware_update_specification
+      title: HP_Display_Firmware_Update_Specification
+      path: /firmware/hp_display_firmware_update_specification.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 2021部門創新提案
+      title: 2021部門創新提案
+      path: /general/2021部門創新提案.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 憑證檔案
+      title: 憑證檔案
+      path: /general/憑證檔案.html
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 http://www.codedata.com.tw/java/michael

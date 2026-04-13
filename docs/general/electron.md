@@ -13,7 +13,327 @@ notion_url: 'https://www.notion.so/electron-21564f6bc65680c79f21d8597596e0f0'
 notion_updated_at: '2026-01-21T09:37:00.000Z'
 exported_at: '2026-04-06T13:19:04.029Z'
 is_summarized: false
-relations: []
+relations:
+  manual: []
+  inferred:
+    - target: hid
+      title: hid
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: hp
+      title: hp
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp
+      title: hp
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp
+      title: hp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: hp
+      title: hp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: hp
+      title: hp
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp
+      title: hp
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp
+      title: hp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: hp_display_firmware_update_specification
+      title: HP_Display_Firmware_Update_Specification
+      path: /firmware/hp_display_firmware_update_specification.html
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: fw_sbom_spec_for_3rd_partyv2ahp
+      title: fw_sbom_spec_for_3rd_partyv2ahp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: git
+      title: git
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: how
+      title: how
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: 取消使用stdafxh
+      title: 取消使用stdafxh
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: gl
+      title: gl
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: hub
+      title: hub
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: linux
+      title: linux
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: mac
+      title: mac
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: xcode
+      title: xcode
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: genesyslogic
+      title: genesyslogic
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: hp
+      title: hp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.4800978615950834
+    - target: hp
+      title: hp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: hp
+      title: hp
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: merge
+      title: merge
+      path: ''
+      type: tag_related
+      confidence: medium
+      score: 0.7348390900632056
+    - target: genesys
+      title: genesys
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo
+      title: lenovo
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 交叉評核作業
+      title: 交叉評核作業
+      path: /general/交叉評核作業.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 如何在xocde
+      title: 如何在xocde
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 工作目標
+      title: 工作目標
+      path: /general/工作目標.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 自評
+      title: 自評
+      path: /general/自評.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl3590
+      title: gl3590
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl
+      title: gl
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac
+      title: mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: macos
+      title: macos
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 如何在mac
+      title: 如何在mac
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 憑證檔案
+      title: 憑證檔案
+      path: /general/憑證檔案.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl
+      title: gl
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: saleae
+      title: saleae
+      path: ''
+      type: same_domain
+      confidence: low
+      score: 0.2
 ---
 
 ### 1. main.js
