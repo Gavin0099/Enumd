@@ -21,7 +21,12 @@ export class KnowledgeQueryEngine {
   }
 
   public getNode(slug: string): GraphNode | undefined {
-      return this.nodes.get(slug);
+      let node = this.nodes.get(slug);
+      if (!node) {
+          // Fallback UX: try finding by title instead of slug
+          node = Array.from(this.nodes.values()).find(n => n.title.toLowerCase() === slug.toLowerCase());
+      }
+      return node;
   }
 
   public getAllEdges(): GraphEdge[] {
