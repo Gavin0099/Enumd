@@ -20,6 +20,7 @@ export function inferExplicitLinks(node: GraphNode, allNodes: GraphNode[], markd
               target: targetNode.slug,
               type: "explicit_ref",
               confidence: "high",
+              score: 1.0,
               bidirectional: false,
               generated_at: new Date().toISOString(),
               basis: [{
@@ -54,17 +55,21 @@ export function inferTagOverlap(node: GraphNode, allNodes: GraphNode[], tagFrequ
       
       // Threshold: needs arbitrary tuning. Let's say score > 1.5 is a valid edge
       if (score > 1.5) {
+          // Normalize score to 0.0 ~ 0.9 range (tags never reach 1.0 like explicit links)
+          const normalizedScore = Math.min(score / 5.0, 0.9);
+          
           edges.push({
               source: node.slug,
               target: other.slug,
               type: "tag_related",
               confidence: "medium",
+              score: normalizedScore,
               bidirectional: true, // Tag overlap is naturally bidirectional
               generated_at: new Date().toISOString(),
               basis: [{
                   kind: "tag_overlap",
-                  weight: score,
-                  details: { shared_tags: sharedTags }
+                  weight: normalizedScore,
+                  details: { shared_tags: sharedTags, raw_score: score }
               }]
           });
       }
@@ -85,11 +90,12 @@ export function inferDomainAffinity(node: GraphNode, allNodes: GraphNode[]): Gra
               target: other.slug,
               type: "same_domain",
               confidence: "low",
+              score: 0.2, // Base minimum score
               bidirectional: true,
               generated_at: new Date().toISOString(),
               basis: [{
                  kind: "same_domain",
-                 weight: 0.3,
+                 weight: 0.2,
                  details: { shared_domains: sharedDomains, target_authority: other.authority_level } 
               }]
           });
@@ -110,9 +116,9 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
   
   const merged: GraphEdge[] = [];
   grouped.forEach((edgeList, id) => {
-      // Find the strongest tie between these two nodes
       let finalType: GraphEdge["type"] = "same_domain";
       let confidence: GraphEdge["confidence"] = "low";
+      let maxScore = 0;
       const allBasis = [];
       let isBidirectional = true; 
       
@@ -130,11 +136,9 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
       
       for (const e of edgeList) {
           allBasis.push(...e.basis);
+          if (e.score > maxScore) maxScore = e.score;
       }
       
-      // To ensure source vs target logic is somewhat preserved for direct links
-      // If it's explicit ref, we should keep the original source/target.
-      // We will pick the first explicit_ref or the first edge as base
       const baseEdge = edgeList.find(e => e.type === "explicit_ref") || edgeList[0];
       
       merged.push({
@@ -142,15 +146,11 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
           target: baseEdge.target,
           type: finalType,
           confidence,
+          score: maxScore,
           bidirectional: isBidirectional,
           generated_at: new Date().toISOString(),
           basis: allBasis
       });
-      
-      // If explicit link is bidirectional (A->B and B->A), they'll be merged into one. 
-      // This MVP dedupe is a bit simplified, merging A->B and B->A into a single edge record for simplicity,
-      // but in real KG we might want two distinct edges if types differ.
-      // For now, this meets the dedupe & symetry test requirements.
   });
   
   return merged;

@@ -9,6 +9,7 @@ export interface GraphEdge {
   target: string; // slug
   type: "explicit_ref" | "tag_related" | "same_domain" | "related_to"; // strict observation-grade or low-level interpreted
   confidence: "high" | "medium" | "low";
+  score: number; // 0.0 ~ 1.0 continuous score for ranking
   basis: EdgeBasis[];
   bidirectional: boolean;
   generated_at: string;
@@ -29,6 +30,18 @@ export interface GraphNode {
   integrity_band?: "HIGH" | "MEDIUM" | "LOW";
 }
 
+export interface GraphAnomaly {
+  type: "hub_explosion" | "orphaned_cluster" | "low_signal_edge_cluster";
+  node: string;
+  degree: number;
+}
+
+export interface GraphDiffStats {
+  added_edges: number;
+  removed_edges: number;
+  confidence_shifts: number;
+}
+
 export interface GraphBuildReport {
   total_nodes: number;
   total_edges: number;
@@ -36,4 +49,6 @@ export interface GraphBuildReport {
   low_confidence_edges: number;
   orphan_nodes: string[];
   high_degree_nodes: string[];
+  edge_anomalies: GraphAnomaly[];
+  drift_stats?: GraphDiffStats;
 }

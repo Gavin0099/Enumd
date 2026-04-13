@@ -50,6 +50,13 @@ export class KnowledgeGraphBuilder {
     }
     const highDegreeNodes = Object.entries(degreeCount).filter(([_, c]) => c > 10).map(([n]) => n);
 
+    const edge_anomalies: import("./knowledge-types").GraphAnomaly[] = [];
+    Object.entries(degreeCount).forEach(([node, degree]) => {
+        if (degree > 30) {
+            edge_anomalies.push({ type: "hub_explosion", node, degree });
+        }
+    });
+
     const edges_by_type: Record<string, number> = {};
     for (const edge of this.edges) {
         edges_by_type[edge.type] = (edges_by_type[edge.type] || 0) + 1;
@@ -61,7 +68,8 @@ export class KnowledgeGraphBuilder {
       edges_by_type,
       low_confidence_edges: this.edges.filter(e => e.confidence === "low").length,
       orphan_nodes: orphanNodes,
-      high_degree_nodes: highDegreeNodes
+      high_degree_nodes: highDegreeNodes,
+      edge_anomalies
     };
   }
 }

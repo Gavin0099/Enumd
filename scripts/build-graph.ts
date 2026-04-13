@@ -104,7 +104,8 @@ function processDocs() {
       const inferredRelations = nodeEdges.map(e => ({
           target: e.target,
           type: e.type,
-          confidence: e.confidence
+          confidence: e.confidence,
+          score: e.score
       }));
 
       // Initialize if missing
