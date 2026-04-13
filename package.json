@@ -9,6 +9,9 @@
     "export": "tsx --env-file .env.local scripts/export.ts",
     "export:summarize": "tsx --env-file .env.local scripts/export.ts --summarize",
     "export:full": "tsx --env-file .env.local scripts/export.ts --summarize --infer",
+    "build:graph": "tsx --env-file .env.local scripts/build-graph.ts",
+    "rebuild": "npm run export && npm run build:graph",
+    "test:graph": "tsx --env-file .env.local scripts/test-graph-fixtures.ts",
     "build-index": "tsx --env-file .env.local scripts/build-index.ts",
     "check-stale": "tsx --env-file .env.local scripts/check-stale.ts"
   },
