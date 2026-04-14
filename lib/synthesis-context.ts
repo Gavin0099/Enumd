@@ -77,7 +77,12 @@ export interface SynthesisAudit {
     noise_signal: "LOW" | "MEDIUM" | "HIGH";
   };
   recommended_model?: "haiku" | "sonnet" | "undecided";
-  model_used?: string;
+  recommendation_status?: "applied" | "undecided" | "not_applicable";
+  applied_model?: "haiku" | "sonnet";
+  model_policy_reason?: string;
+  batch_id?: string;
+  wave_id?: number;
+  synthesis_code_hash?: string;
 }
 
 export interface SynthesisPolicy {
@@ -345,7 +350,10 @@ export class SynthesisContextBuilder {
           };
       }
 
-      audit.recommended_model = "undecided"; // Deferring choice until Calibration Phase 4.9 results
+      audit.recommended_model = "undecided";
+      audit.recommendation_status = "undecided";
+      audit.applied_model = "haiku";
+      audit.model_policy_reason = "Production Policy v1: Haiku-only due to graph density ceiling";
 
       return { context, audit };
   }

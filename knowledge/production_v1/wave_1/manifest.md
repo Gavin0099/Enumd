@@ -1,0 +1,54 @@
+# Wave 1 Manifest
+
+| Slug | Topology | Trust | Noise | Review |
+| :--- | :--- | :--- | :--- | :--- |
+| -投影片大綱從餵指令到定規則 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| -clawdbot-自主代理建置與資安防禦全紀錄 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -generic-usb-filter-driver- | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -genesys-logic-firmware-安全簽署與驗證流程-code-signing- | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -hp-firmware-installer-macos-完整修復與發布手冊 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -hp-sdlc-master-compliance-checklist-2025-edition | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -lenovo-display-daisy-chain-issue | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 0206-0209-交接 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 0326-0330-交接 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 12261230-交接 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 2021-今年重點目標 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 2021部門創新提案 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 20240729-82-交接事項 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 2024部門創新提案 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 2025-519523-交接事項 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 2025-工作會報 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 2025-minimum-elements-for-a-software-bill-of-materials-sbom | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 2025h2-報告 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 3rd-party-code-signing-specification-ecdsa | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 3rd-party-code-signing-specification-ecdsaen- | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 工作目標 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 世界上最快樂的工作 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 交叉評核作業 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 共好會議 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 各家ui | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 如何在mac-上透過wireshark-抓取-usb訊號 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 如何在xocde-執行-clang-format | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 自動化測試 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 自評 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 克服團隊領導的五大障礙-會議記錄 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 判斷dll-是-x86-還是-x64 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 判斷dll-是-x86-還是-x64 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 取消使用stdafxh-include-方式 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 物件導向分析與uml | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 研發投扺專案資料列印流程 | RECOVERABLE | HUMAN_REVIEW | HIGH | [ ] |
+| 軟體一組會議記錄 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 軟體品質 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 短期行動-vs-長期視野從混亂到有序結構化軟體建構之路 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 結構-struct-的宣告與封裝和使用練習-c | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 新人參考資料 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 新架構導入新的chip-updatemt9052-方式 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 遠端會議相關資料 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| 憑證檔案 | RECOVERABLE | HUMAN_REVIEW | HIGH | [ ] |
+| 憑證檔案 | RECOVERABLE | HUMAN_REVIEW | HIGH | [ ] |
+| ai-協作開發框架定義規則的開發模式 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| apple-command-line-update-instruction- | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |

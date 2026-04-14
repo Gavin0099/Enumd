@@ -1,5 +1,5 @@
 {
-  "requested_slug": "apple-command-line-update-instruction-",
+  "requested_slug": "12261230-交接",
   "selected_core_count": 1,
   "selected_dependency_count": 0,
   "selected_related_count": 3,
@@ -52,5 +52,8 @@
   "recommendation_status": "undecided",
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
-  "model_used": "claude-3-haiku-20240307"
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-14T08-01-28-629Z",
+  "wave_id": 1,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64"
 }

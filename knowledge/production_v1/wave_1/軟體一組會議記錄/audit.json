@@ -1,0 +1,80 @@
+{
+  "requested_slug": "ai-協作開發框架定義規則的開發模式",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "3rd-party-code-signing-specification-ecdsaen-",
+    "camera-透過我們驗證-code-sign",
+    "code-sign-ecc-key",
+    "code-sign-flow",
+    "code-sign-概述",
+    "code-sign-資源",
+    "etoken-system-code-view-",
+    "etoken-system",
+    "etoken-安全簽章系統技術說明",
+    "gl-3590-ecdsa-code-驗證",
+    "hid-code-sign-update-rule",
+    "hp-hemiz34c-cpu3-code-sign-驗證問題",
+    "hp-monitor-code-sign-update-flow",
+    "hp-rtk-scaler-code-sign",
+    "lenovo-code-sign-交握流程",
+    "mbedtls-source-code",
+    "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "-generic-usb-filter-driver-"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 0,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": true,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "ISOLATED",
+    "recommended_policy": "A",
+    "reason": "No context found in the 0.22-0.3 window. Lowering threshold won't resolve this topology gap."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "ISOLATED",
+    "count_at_0_3": 0,
+    "count_at_0_22": 0,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-14T08-01-28-629Z",
+  "wave_id": 1,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64"
+}
