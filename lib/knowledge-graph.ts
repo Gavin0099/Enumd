@@ -1,5 +1,5 @@
 import { GraphNode, GraphEdge, GraphBuildReport } from "./knowledge-types";
-import { inferExplicitLinks, inferTagOverlap, inferDomainAffinity, dedupeAndRankEdges } from "./knowledge-inference";
+import { inferExplicitLinks, inferTagOverlap, inferDomainAffinity, inferTitleSimilarity, dedupeAndRankEdges } from "./knowledge-inference";
 
 export class KnowledgeGraphBuilder {
   private nodes: GraphNode[] = [];
@@ -35,6 +35,7 @@ export class KnowledgeGraphBuilder {
       rawEdges.push(...inferExplicitLinks(node, this.nodes, content));
       rawEdges.push(...inferTagOverlap(node, this.nodes, tagFrequencies));
       rawEdges.push(...inferDomainAffinity(node, this.nodes));
+      rawEdges.push(...inferTitleSimilarity(node, this.nodes));
     }
 
     this.edges = dedupeAndRankEdges(rawEdges);

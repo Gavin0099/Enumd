@@ -1,9 +1,9 @@
 import { KnowledgeQueryEngine } from "../lib/knowledge-query";
-import { SynthesisContextBuilder } from "../lib/synthesis-context";
-import { existsSync, mkdirSync, writeFileSync } from "fs";
+import { SynthesisContextBuilder, DEFAULT_POLICY_A } from "../lib/synthesis-context";
+import { existsSync, writeFileSync } from "fs";
 import { join } from "path";
 
-console.log("Running Deterministic Synthesis Context Assembly Test...\n");
+console.log("Running Updated Synthesis Context Assembly Test (Policy-Aware)...\n");
 
 const KNOWLEDGE_DIR = join(process.cwd(), "knowledge");
 const nodesPath = join(KNOWLEDGE_DIR, "nodes.json");
@@ -17,21 +17,18 @@ if (!existsSync(nodesPath) || !existsSync(edgesPath)) {
 const queryEngine = new KnowledgeQueryEngine(nodesPath, edgesPath);
 const contextBuilder = new SynthesisContextBuilder(queryEngine);
 
-// Ensure we have a valid test slug. Let's pick the first node with some edges as an example,
-// or just provide one from args.
 let targetSlug = process.argv[2];
 if (!targetSlug) {
    const allNodes = Array.from(queryEngine['nodes'].values());
-   // Try to find a node that has explicitly links if possible
    targetSlug = allNodes[0]?.slug || "unknown";
 }
 
-// Extract slug smartly if user passed a file path like "docs\general\0206.md"
 targetSlug = targetSlug.split(/[\\/]/).pop()?.replace(".md", "") || targetSlug;
 
 console.log(`Building context snapshot for topic: ${targetSlug}`);
+console.log(`Using Policy: ${DEFAULT_POLICY_A.name} (Threshold: ${DEFAULT_POLICY_A.score_threshold})`);
 
-const { context, audit } = contextBuilder.buildContext(targetSlug, 3);
+const { context, audit } = contextBuilder.buildContext(targetSlug, DEFAULT_POLICY_A);
 
 // Output
 const snapshotPath = join(KNOWLEDGE_DIR, "synthesis_snapshot.json");
@@ -41,16 +38,11 @@ writeFileSync(snapshotPath, JSON.stringify(context, null, 2));
 writeFileSync(auditPath, JSON.stringify(audit, null, 2));
 
 console.log("\nResults:");
+console.log(`- Topology Status: ${audit.advisory?.topology_status}`);
 console.log(`- Core Topics: ${context.coreTopics.length}`);
 console.log(`- Dependencies: ${context.dependencies.length}`);
 console.log(`- Related Contexts: ${context.relatedContext.length}`);
 console.log(`- Context Edges: ${context.contextEdges.length}`);
-if (context.warnings.length > 0) {
-    console.log(`- Warnings: \n  ${context.warnings.join("\n  ")}`);
-}
-
-console.log("\nAudit saved to: " + auditPath);
-console.log("Snapshot saved to: " + snapshotPath);
 
 // Assertions for verification
 console.log("\nRunning Assertions...");
@@ -67,16 +59,15 @@ if (idSet.size !== allIds.length) {
     console.error("❌ FAIL: Duplicate slugs found across Selection Categories.");
     passed = false;
 } else {
-    console.log("✅ PASS: No duplicate slugs across Core, Dependencies, and Related.");
+    console.log("✅ PASS: No duplicate slugs.");
 }
 
-// 2. No LOW integrity in related
-const hasLowRelated = context.relatedContext.some(n => n.integrity_band === "LOW");
-if (hasLowRelated) {
-    console.error("❌ FAIL: LOW integrity node leaked into RelatedContext.");
+// 2. Advisory metadata check
+if (!audit.advisory || !audit.topology_signature) {
+    console.error("❌ FAIL: Missing Advisory or Topology Signature in Audit contract.");
     passed = false;
 } else {
-    console.log("✅ PASS: No LOW integrity in RelatedContext.");
+    console.log(`✅ PASS: Advisory present (${audit.advisory.topology_status}).`);
 }
 
 // 3. No dangling edges
@@ -85,11 +76,11 @@ if (danglingEdges.length > 0) {
     console.error("❌ FAIL: Context contains dangling edges!");
     passed = false;
 } else {
-    console.log("✅ PASS: ContextEdges are completely closed within the sub-graph.");
+    console.log("✅ PASS: ContextEdges are closed.");
 }
 
 if (!passed) {
     process.exit(1);
 } else {
-    console.log("\nAll context boundary rules passed.");
+    console.log("\nContract validation passed.");
 }

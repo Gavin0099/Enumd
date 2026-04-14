@@ -1,0 +1,28 @@
+{
+  "requested_slug": "Log分類",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 2,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hp_display_firmware_update_specification",
+    "flutter",
+    "osdmanager",
+    "usb30影響配對問題",
+    "交叉評核作業",
+    "工作目標",
+    "新人參考資料",
+    "自評"
+  ],
+  "total_context_edges": 3,
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 2,
+    "context_edge_count": 3,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "requested_slug": "2021部門創新提案",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hp_display_firmware_update_specification",
+    "mt9052",
+    "物件導向分析與uml",
+    "憑證檔案"
+  ],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 6,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 6 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  }
+}

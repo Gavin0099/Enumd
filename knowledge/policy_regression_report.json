@@ -1,0 +1,116 @@
+[
+  {
+    "topic_slug": "2021部門創新提案",
+    "timestamp": "2026-04-14T02:23:07.798Z",
+    "topology": {
+      "high_score_count": 6,
+      "borderline_count": 0,
+      "best_borderline_score": 0,
+      "gap_detected": false
+    },
+    "advisory": {
+      "topology_status": "STABLE_AT_A",
+      "recommended_policy": "A",
+      "reason": "Baseline threshold (0.3) already yielded 6 nodes. Lowering threshold is likely unnecessary noise."
+    },
+    "actual_metrics": {
+      "related_count": 3,
+      "edge_count": 6
+    }
+  },
+  {
+    "topic_slug": "Flutter",
+    "timestamp": "2026-04-14T02:23:07.803Z",
+    "topology": {
+      "high_score_count": 1,
+      "borderline_count": 0,
+      "best_borderline_score": 0,
+      "gap_detected": true
+    },
+    "advisory": {
+      "topology_status": "ISOLATED",
+      "recommended_policy": "A",
+      "reason": "No context found in the 0.22-0.3 window. Lowering threshold won't resolve this topology gap."
+    },
+    "actual_metrics": {
+      "related_count": 1,
+      "edge_count": 1
+    }
+  },
+  {
+    "topic_slug": "electron",
+    "timestamp": "2026-04-14T02:23:07.806Z",
+    "topology": {
+      "high_score_count": 1,
+      "borderline_count": 0,
+      "best_borderline_score": 0,
+      "gap_detected": true
+    },
+    "advisory": {
+      "topology_status": "ISOLATED",
+      "recommended_policy": "A",
+      "reason": "No context found in the 0.22-0.3 window. Lowering threshold won't resolve this topology gap."
+    },
+    "actual_metrics": {
+      "related_count": 1,
+      "edge_count": 1
+    }
+  },
+  {
+    "topic_slug": "HP_Display_Firmware_Update_Specification",
+    "timestamp": "2026-04-14T02:23:07.812Z",
+    "topology": {
+      "high_score_count": 3,
+      "borderline_count": 0,
+      "best_borderline_score": 0,
+      "gap_detected": false
+    },
+    "advisory": {
+      "topology_status": "STABLE_AT_A",
+      "recommended_policy": "A",
+      "reason": "Baseline threshold (0.3) already yielded 3 nodes. Lowering threshold is likely unnecessary noise."
+    },
+    "actual_metrics": {
+      "related_count": 3,
+      "edge_count": 4
+    }
+  },
+  {
+    "topic_slug": "OSDManager",
+    "timestamp": "2026-04-14T02:23:07.815Z",
+    "topology": {
+      "high_score_count": 1,
+      "borderline_count": 0,
+      "best_borderline_score": 0,
+      "gap_detected": true
+    },
+    "advisory": {
+      "topology_status": "ISOLATED",
+      "recommended_policy": "A",
+      "reason": "No context found in the 0.22-0.3 window. Lowering threshold won't resolve this topology gap."
+    },
+    "actual_metrics": {
+      "related_count": 1,
+      "edge_count": 1
+    }
+  },
+  {
+    "topic_slug": "Log分類",
+    "timestamp": "2026-04-14T02:23:07.818Z",
+    "topology": {
+      "high_score_count": 2,
+      "borderline_count": 0,
+      "best_borderline_score": 0,
+      "gap_detected": false
+    },
+    "advisory": {
+      "topology_status": "STABLE_AT_A",
+      "recommended_policy": "A",
+      "reason": "Baseline threshold (0.3) already yielded 2 nodes. Lowering threshold is likely unnecessary noise."
+    },
+    "actual_metrics": {
+      "related_count": 2,
+      "edge_count": 3
+    }
+  }
+]

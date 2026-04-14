@@ -1,0 +1,87 @@
+{
+  "requested_slug": "synthetic-clash-noise-test",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 1,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hub-auto-test-",
+    "hp-monitor-test-flow",
+    "hub-virtual-device-stress-test-"
+  ],
+  "total_context_edges": 1,
+  "topology_signature": {
+    "high_score_count": 1,
+    "borderline_count": 1,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "861f648a-8971-4a30-a315-a98910da02ea",
+          "slug": "hub-auto-test-",
+          "title": "Hub Auto Test ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-auto-test-.md",
+          "site_path": "/hub/hub-auto-test-.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "mac",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "build",
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "derived",
+          "notion_id": "861f648a-8971-4a30-a315-a98910da02ea",
+          "notion_updated_at": "2026-01-21T09:48:00.000Z",
+          "exported_at": "2026-04-06T13:10:41.666Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "RECOVERABLE",
+    "recommended_policy": "A",
+    "reason": "Found 1 borderline node, but insufficient for stable policy switch (Hysteresis Safety). Staying with Policy A."
+  },
+  "decision_confidence": "LOW",
+  "decision_basis": {
+    "topology_status": "RECOVERABLE",
+    "count_at_0_3": 1,
+    "count_at_0_22": 2,
+    "borderline_count": 1,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 1,
+    "context_edge_count": 1,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "model_used": "claude-3-5-sonnet-20241022"
+}

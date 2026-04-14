@@ -1,0 +1,1232 @@
+{
+  "requested_slug": "tricode-ptester",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "code-sign-概述 (confidence: low)",
+    "hid-code-sign-記錄 (confidence: low)",
+    "hp-monitor-code-sign-update-flow (confidence: low)",
+    "lenovo-code-sign-交握流程 (confidence: low)",
+    "e27m-e34m-driver-install-fail (confidence: low)",
+    "hp-project-store-forward-fw-update-specification (confidence: low)",
+    "bu5-support-update-chip-類型 (confidence: low)",
+    "drawio-相關連結 (confidence: low)",
+    "e22e24i-1st-2nd-scalar-update- (confidence: low)",
+    "gitlab-ee-wiki- (confidence: low)",
+    "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830 (confidence: low)",
+    "hp-534pm-fail-log (confidence: low)",
+    "hp-scheduled-update-flow- (confidence: low)",
+    "mt9052 (confidence: low)",
+    "tri-code-command-list (confidence: low)",
+    "vibe-coding (confidence: low)",
+    "zeroplus_lap-i2c-訊號錄製方式 (confidence: low)",
+    "discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion- (confidence: low)",
+    "gl3590-hostbridge-code-sign (confidence: low)",
+    "hp-isp-tool-hub-update-flowhid (confidence: low)"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 0,
+    "borderline_count": 43,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "de487bab-0ebe-40bb-8a3c-7a984b87c118",
+          "slug": "code-sign-概述",
+          "title": "Code Sign 概述",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\code-sign-概述.md",
+          "site_path": "/code-sign/code-sign-概述.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "code-sign",
+            "sop"
+          ],
+          "authority_level": "derived",
+          "notion_id": "de487bab-0ebe-40bb-8a3c-7a984b87c118",
+          "notion_updated_at": "2026-01-21T09:42:00.000Z",
+          "exported_at": "2026-04-06T13:12:09.711Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "f01a9f3e-ae43-4404-901e-e1631d35d2e3",
+          "slug": "hid-code-sign-記錄",
+          "title": "HID Code Sign 記錄",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\hid-code-sign-記錄.md",
+          "site_path": "/code-sign/hid-code-sign-記錄.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "code-sign",
+            "mac",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "code-sign",
+            "build",
+            "release",
+            "spec",
+            "sop",
+            "log"
+          ],
+          "authority_level": "reference",
+          "notion_id": "f01a9f3e-ae43-4404-901e-e1631d35d2e3",
+          "notion_updated_at": "2026-01-21T09:13:00.000Z",
+          "exported_at": "2026-04-06T13:20:08.565Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "650b6b5c-ca52-418b-861b-86d8dfdf2ade",
+          "slug": "hp-monitor-code-sign-update-flow",
+          "title": "HP Monitor Code Sign Update Flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\hp-monitor-code-sign-update-flow.md",
+          "site_path": "/code-sign/hp-monitor-code-sign-update-flow.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "code-sign",
+            "sop",
+            "config"
+          ],
+          "authority_level": "derived",
+          "notion_id": "650b6b5c-ca52-418b-861b-86d8dfdf2ade",
+          "notion_updated_at": "2026-01-21T09:26:00.000Z",
+          "exported_at": "2026-04-06T13:14:54.569Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "994405b0-04d7-40f8-be83-112eaa1ba511",
+          "slug": "lenovo-code-sign-交握流程",
+          "title": "Lenovo Code Sign 交握流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\lenovo-code-sign-交握流程.md",
+          "site_path": "/code-sign/lenovo-code-sign-交握流程.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "code-sign",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "994405b0-04d7-40f8-be83-112eaa1ba511",
+          "notion_updated_at": "2026-01-21T09:41:00.000Z",
+          "exported_at": "2026-04-06T13:16:33.485Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "e0d783dd-c982-42a5-b0fa-34ba7a053682",
+          "slug": "e27m-e34m-driver-install-fail",
+          "title": "E27m & E34m Driver install fail",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\driver\\e27m-e34m-driver-install-fail.md",
+          "site_path": "/driver/e27m-e34m-driver-install-fail.html",
+          "category": "driver",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "e0d783dd-c982-42a5-b0fa-34ba7a053682",
+          "notion_updated_at": "2024-11-15T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:11:48.317Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2c464f6b-c656-80ac-ab27-c1629a6d48d2",
+          "slug": "hp-project-store-forward-fw-update-specification",
+          "title": "HP Project: Store & Forward FW Update Specification",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\hp-project-store-forward-fw-update-specification.md",
+          "site_path": "/general/hp-project-store-forward-fw-update-specification.html",
+          "category": "general",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "2c464f6b-c656-80ac-ab27-c1629a6d48d2",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:23:21.724Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "aad9af30-5364-4e8d-8dea-66eede1f422b",
+          "slug": "bu5-support-update-chip-類型",
+          "title": "BU5 Support Update Chip 類型",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\bu5-support-update-chip-類型.md",
+          "site_path": "/general/bu5-support-update-chip-類型.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "mac",
+            "monitor"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "aad9af30-5364-4e8d-8dea-66eede1f422b",
+          "notion_updated_at": "2025-06-25T02:14:00.000Z",
+          "exported_at": "2026-04-06T13:09:51.441Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1ff76cd4-55cb-4678-afab-2becb11ad1d9",
+          "slug": "drawio-相關連結",
+          "title": "Draw.io 相關連結",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\drawio-相關連結.md",
+          "site_path": "/general/drawio-相關連結.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "code-sign",
+            "spec",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "1ff76cd4-55cb-4678-afab-2becb11ad1d9",
+          "notion_updated_at": "2026-01-21T09:41:00.000Z",
+          "exported_at": "2026-04-06T13:10:28.782Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "3e8cb702-558c-4375-881e-dd20f2a9605c",
+          "slug": "e22e24i-1st-2nd-scalar-update-",
+          "title": "E22/E24i 1st & 2nd Scalar Update ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\e22e24i-1st-2nd-scalar-update-.md",
+          "site_path": "/general/e22e24i-1st-2nd-scalar-update-.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "monitor"
+          ],
+          "task_tags": [
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "3e8cb702-558c-4375-881e-dd20f2a9605c",
+          "notion_updated_at": "2025-07-15T02:58:00.000Z",
+          "exported_at": "2026-04-06T13:16:06.730Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2d164f6b-c656-8060-a348-dc35115213b5",
+          "slug": "gitlab-ee-wiki-",
+          "title": "GitLab EE wiki ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\gitlab-ee-wiki-.md",
+          "site_path": "/general/gitlab-ee-wiki-.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "sdk",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "code-sign",
+            "spec",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "2d164f6b-c656-8060-a348-dc35115213b5",
+          "notion_updated_at": "2025-12-22T10:01:00.000Z",
+          "exported_at": "2026-04-06T13:19:44.875Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "717c62a4-61cf-48f2-a22e-740600dd27d4",
+          "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+          "title": "How to wrap self-extraction file by PackageForTheWeb400_0830",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\how-to-wrap-self-extraction-file-by-packagefortheweb400_0830.md",
+          "site_path": "/general/how-to-wrap-self-extraction-file-by-packagefortheweb400_0830.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "install",
+            "build",
+            "spec",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "717c62a4-61cf-48f2-a22e-740600dd27d4",
+          "notion_updated_at": "2026-01-21T09:23:00.000Z",
+          "exported_at": "2026-04-06T13:19:05.968Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1e60c98e-0d00-4f84-89fb-affac5ee1d18",
+          "slug": "hp-534pm-fail-log",
+          "title": "HP 534pm fail log",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\hp-534pm-fail-log.md",
+          "site_path": "/general/hp-534pm-fail-log.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware"
+          ],
+          "task_tags": [
+            "debug",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "1e60c98e-0d00-4f84-89fb-affac5ee1d18",
+          "notion_updated_at": "2026-01-21T09:56:00.000Z",
+          "exported_at": "2026-04-06T13:15:04.472Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "f148b440-3d63-4a52-87aa-1470fbda401d",
+          "slug": "hp-scheduled-update-flow-",
+          "title": "HP Scheduled update flow ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\hp-scheduled-update-flow-.md",
+          "site_path": "/general/hp-scheduled-update-flow-.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "monitor"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "spec",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "f148b440-3d63-4a52-87aa-1470fbda401d",
+          "notion_updated_at": "2026-01-21T10:00:00.000Z",
+          "exported_at": "2026-04-06T13:15:01.038Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "966f6a6d-bd33-4344-9440-24065a3cfbfb",
+          "slug": "mt9052",
+          "title": "MT9052",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\mt9052.md",
+          "site_path": "/general/mt9052.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "monitor"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "966f6a6d-bd33-4344-9440-24065a3cfbfb",
+          "notion_updated_at": "2022-12-13T05:57:00.000Z",
+          "exported_at": "2026-04-06T13:14:39.367Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "19164f6b-c656-8022-972e-eaf58a46a950",
+          "slug": "tri-code-command-list",
+          "title": "Tri Code Command List",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\tri-code-command-list.md",
+          "site_path": "/general/tri-code-command-list.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "code-sign",
+            "spec",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "19164f6b-c656-8022-972e-eaf58a46a950",
+          "notion_updated_at": "2026-01-21T09:36:00.000Z",
+          "exported_at": "2026-04-06T13:10:56.738Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "23a64f6b-c656-8058-8616-d84e28bbaec8",
+          "slug": "vibe-coding",
+          "title": "Vibe coding",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\vibe-coding.md",
+          "site_path": "/general/vibe-coding.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "spec",
+            "sop",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "23a64f6b-c656-8058-8616-d84e28bbaec8",
+          "notion_updated_at": "2025-07-24T10:55:00.000Z",
+          "exported_at": "2026-04-06T13:17:55.219Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a4d6a82b-ea52-4ed3-be30-52e833101359",
+          "slug": "zeroplus_lap-i2c-訊號錄製方式",
+          "title": "ZEROPLUS_LAP I2c 訊號錄製方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\zeroplus_lap-i2c-訊號錄製方式.md",
+          "site_path": "/general/zeroplus_lap-i2c-訊號錄製方式.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "release",
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "a4d6a82b-ea52-4ed3-be30-52e833101359",
+          "notion_updated_at": "2026-01-21T09:25:00.000Z",
+          "exported_at": "2026-04-06T13:14:07.335Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2c464f6b-c656-80cb-ae87-c819ee536ea8",
+          "slug": "discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-",
+          "title": "Discussion Required_PD and USB Hub:  Mandatory Firmware Update Strategy Expansion for Future Projects - Genesys",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-.md",
+          "site_path": "/hub/discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "sop",
+            "log"
+          ],
+          "authority_level": "reference",
+          "notion_id": "2c464f6b-c656-80cb-ae87-c819ee536ea8",
+          "notion_updated_at": "2026-01-21T09:59:00.000Z",
+          "exported_at": "2026-04-06T13:15:22.652Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "06e74c82-89ff-48be-9919-4e76eae5b2ea",
+          "slug": "gl3590-hostbridge-code-sign",
+          "title": "GL3590 +HostBridge Code Sign",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\gl3590-hostbridge-code-sign.md",
+          "site_path": "/hub/gl3590-hostbridge-code-sign.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "code-sign",
+            "log"
+          ],
+          "authority_level": "reference",
+          "notion_id": "06e74c82-89ff-48be-9919-4e76eae5b2ea",
+          "notion_updated_at": "2024-11-20T03:13:00.000Z",
+          "exported_at": "2026-04-06T13:11:59.752Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "3572ae8d-c013-487f-b074-8263c1a74808",
+          "slug": "hp-isp-tool-hub-update-flowhid",
+          "title": "HP ISP Tool Hub Update Flow(HID)",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hp-isp-tool-hub-update-flowhid.md",
+          "site_path": "/hub/hp-isp-tool-hub-update-flowhid.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "3572ae8d-c013-487f-b074-8263c1a74808",
+          "notion_updated_at": "2026-01-21T09:32:00.000Z",
+          "exported_at": "2026-04-06T13:15:39.061Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2350cfdf-4940-42d8-a80a-ce72496fefd0",
+          "slug": "hub-2020工作事項",
+          "title": "Hub 2020工作事項",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-2020工作事項.md",
+          "site_path": "/hub/hub-2020工作事項.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "release",
+            "spec",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "2350cfdf-4940-42d8-a80a-ce72496fefd0",
+          "notion_updated_at": "2026-01-21T09:26:00.000Z",
+          "exported_at": "2026-04-06T13:09:56.634Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "11964f6b-c656-8082-b5ab-df201c5e1ed8",
+          "slug": "hub-fw-bug",
+          "title": "Hub Fw bug",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-fw-bug.md",
+          "site_path": "/hub/hub-fw-bug.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "build",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "11964f6b-c656-8082-b5ab-df201c5e1ed8",
+          "notion_updated_at": "2024-11-13T10:51:00.000Z",
+          "exported_at": "2026-04-06T13:19:18.281Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "e1e95a7e-ae4a-4406-bd68-0e50c0078bcf",
+          "slug": "linux-mac-共code-",
+          "title": "Linux & Mac 共code ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\linux-mac-共code-.md",
+          "site_path": "/mac/linux-mac-共code-.html",
+          "category": "mac",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "mac",
+            "monitor",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "code-sign",
+            "build"
+          ],
+          "authority_level": "deprecated",
+          "notion_id": "e1e95a7e-ae4a-4406-bd68-0e50c0078bcf",
+          "notion_updated_at": "2026-01-21T10:01:00.000Z",
+          "exported_at": "2026-04-06T13:12:49.812Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "420db67e-12a8-4cc0-992c-6d176da2857f",
+          "slug": "mac-oci-demo-flow",
+          "title": "Mac OCI Demo flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\mac-oci-demo-flow.md",
+          "site_path": "/mac/mac-oci-demo-flow.html",
+          "category": "mac",
+          "domain_tags": [
+            "hub",
+            "mac",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "420db67e-12a8-4cc0-992c-6d176da2857f",
+          "notion_updated_at": "2026-01-21T09:55:00.000Z",
+          "exported_at": "2026-04-06T13:17:52.387Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "55aaa007-5c4d-4f2d-aa79-c49899049f95",
+          "slug": "get-monitor-info-",
+          "title": "Get Monitor Info ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\get-monitor-info-.md",
+          "site_path": "/monitor/get-monitor-info-.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor"
+          ],
+          "task_tags": [
+            "debug"
+          ],
+          "authority_level": "source",
+          "notion_id": "55aaa007-5c4d-4f2d-aa79-c49899049f95",
+          "notion_updated_at": "2026-01-21T09:33:00.000Z",
+          "exported_at": "2026-04-06T13:13:44.491Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "d572ba9d-9154-43bd-b4f7-5a9de395cf72",
+          "slug": "hp-good-place-524pu-scaler-update-fail",
+          "title": "HP Good Place 524pu Scaler Update fail",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-good-place-524pu-scaler-update-fail.md",
+          "site_path": "/monitor/hp-good-place-524pu-scaler-update-fail.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor"
+          ],
+          "task_tags": [
+            "debug",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "d572ba9d-9154-43bd-b4f7-5a9de395cf72",
+          "notion_updated_at": "2026-01-21T09:34:00.000Z",
+          "exported_at": "2026-04-06T13:15:04.411Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a11de361-0732-4e80-af3e-c4a2a5f27583",
+          "slug": "hp-monitor-isp-tool-開發和驗證方式",
+          "title": "HP Monitor ISP Tool 開發和驗證方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-monitor-isp-tool-開發和驗證方式.md",
+          "site_path": "/monitor/hp-monitor-isp-tool-開發和驗證方式.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "install",
+            "firmware-update",
+            "sop",
+            "config"
+          ],
+          "authority_level": "deprecated",
+          "notion_id": "a11de361-0732-4e80-af3e-c4a2a5f27583",
+          "notion_updated_at": "2026-01-21T09:22:00.000Z",
+          "exported_at": "2026-04-06T13:15:52.685Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "757eb512-ba9c-4b25-90d7-d248a961557a",
+          "slug": "hp-monitor-rtk-audio-update-fail-原因",
+          "title": "HP Monitor RTK Audio update fail 原因",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-monitor-rtk-audio-update-fail-原因.md",
+          "site_path": "/monitor/hp-monitor-rtk-audio-update-fail-原因.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "security"
+          ],
+          "task_tags": [
+            "install",
+            "debug"
+          ],
+          "authority_level": "source",
+          "notion_id": "757eb512-ba9c-4b25-90d7-d248a961557a",
+          "notion_updated_at": "2026-01-21T09:29:00.000Z",
+          "exported_at": "2026-04-06T13:16:03.606Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "68f8b6ac-d31a-4ce0-89ba-421ad0b0d5fc",
+          "slug": "hp-monitor-test-flow",
+          "title": "HP Monitor Test Flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-monitor-test-flow.md",
+          "site_path": "/monitor/hp-monitor-test-flow.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "68f8b6ac-d31a-4ce0-89ba-421ad0b0d5fc",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:15:51.119Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "67a9d7a0-6ac4-4269-892a-fa56f8abe844",
+          "slug": "lenovo-monitor-firmware-update-specification-v01",
+          "title": "Lenovo monitor firmware update specification V0.1",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\lenovo-monitor-firmware-update-specification-v01.md",
+          "site_path": "/monitor/lenovo-monitor-firmware-update-specification-v01.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "spec",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "67a9d7a0-6ac4-4269-892a-fa56f8abe844",
+          "notion_updated_at": "2020-12-04T07:47:00.000Z",
+          "exported_at": "2026-04-06T13:19:11.253Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "22b64f6b-c656-80b2-a6ce-d06d2bde90c7",
+          "slug": "monitor-debug-參考資料",
+          "title": "Monitor debug & 參考資料",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\monitor-debug-參考資料.md",
+          "site_path": "/monitor/monitor-debug-參考資料.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "22b64f6b-c656-80b2-a6ce-d06d2bde90c7",
+          "notion_updated_at": "2026-01-21T09:37:00.000Z",
+          "exported_at": "2026-04-06T13:19:24.850Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "c2e85e39-91b1-40ff-9a4d-cc4a2f95c771",
+          "slug": "mtk-scaler-update-flow",
+          "title": "MTK Scaler Update flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\mtk-scaler-update-flow.md",
+          "site_path": "/monitor/mtk-scaler-update-flow.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "spec",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "c2e85e39-91b1-40ff-9a4d-cc4a2f95c771",
+          "notion_updated_at": "2026-01-21T09:22:00.000Z",
+          "exported_at": "2026-04-06T13:14:35.645Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "626f60f6-0306-4081-bb4c-781c224047b9",
+          "slug": "realtek-scaler-isp-tool-開發流程",
+          "title": "Realtek Scaler ISP tool 開發流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\realtek-scaler-isp-tool-開發流程.md",
+          "site_path": "/monitor/realtek-scaler-isp-tool-開發流程.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "626f60f6-0306-4081-bb4c-781c224047b9",
+          "notion_updated_at": "2022-11-25T07:12:00.000Z",
+          "exported_at": "2026-04-06T13:14:45.937Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "c1bcb448-d494-4528-b43a-641fcbd17094",
+          "slug": "u27m-scaler-update速度",
+          "title": "U27m Scaler Update速度",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\u27m-scaler-update速度.md",
+          "site_path": "/monitor/u27m-scaler-update速度.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "c1bcb448-d494-4528-b43a-641fcbd17094",
+          "notion_updated_at": "2026-01-21T09:57:00.000Z",
+          "exported_at": "2026-04-06T13:14:58.885Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "f565f8ee-74a8-4d8d-aefd-292680ca5cf3",
+          "slug": "z24ng3-scaler-update-時間",
+          "title": "Z24nG3 Scaler update 時間",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\z24ng3-scaler-update-時間.md",
+          "site_path": "/monitor/z24ng3-scaler-update-時間.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "monitor"
+          ],
+          "task_tags": [],
+          "authority_level": "deprecated",
+          "notion_id": "f565f8ee-74a8-4d8d-aefd-292680ca5cf3",
+          "notion_updated_at": "2026-01-21T09:26:00.000Z",
+          "exported_at": "2026-04-06T13:16:01.629Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "23264f6b-c656-8094-93d5-fb1994d575f0",
+          "slug": "command-line-tool-user-guide",
+          "title": "Command Line Tool User Guide",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\command-line-tool-user-guide.md",
+          "site_path": "/tools/command-line-tool-user-guide.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "23264f6b-c656-8094-93d5-fb1994d575f0",
+          "notion_updated_at": "2025-07-16T10:02:00.000Z",
+          "exported_at": "2026-04-06T13:13:07.269Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "27f64f6b-c656-806e-abbe-d0046fd28ec0",
+          "slug": "gl-enduser-tool-for-electron",
+          "title": "GL Enduser Tool for Electron",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\gl-enduser-tool-for-electron.md",
+          "site_path": "/tools/gl-enduser-tool-for-electron.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "mac",
+            "monitor",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "spec",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "27f64f6b-c656-806e-abbe-d0046fd28ec0",
+          "notion_updated_at": "2025-10-01T03:12:00.000Z",
+          "exported_at": "2026-04-06T13:14:02.187Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "701f2510-fdd6-4c0e-b86f-0491bf009826",
+          "slug": "hp-end-user-tool-packing-user-guide",
+          "title": "HP End User Tool Packing User Guide",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-end-user-tool-packing-user-guide.md",
+          "site_path": "/tools/hp-end-user-tool-packing-user-guide.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "code-sign",
+            "build",
+            "release"
+          ],
+          "authority_level": "source",
+          "notion_id": "701f2510-fdd6-4c0e-b86f-0491bf009826",
+          "notion_updated_at": "2022-12-13T08:44:00.000Z",
+          "exported_at": "2026-04-06T13:11:18.357Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "504ff5cb-ffb5-4260-90fe-4726c3cfadb8",
+          "slug": "hp-end-user-tool-封裝方式",
+          "title": "HP End User Tool 封裝方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-end-user-tool-封裝方式.md",
+          "site_path": "/tools/hp-end-user-tool-封裝方式.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "build",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "504ff5cb-ffb5-4260-90fe-4726c3cfadb8",
+          "notion_updated_at": "2020-12-04T07:32:00.000Z",
+          "exported_at": "2026-04-06T13:19:08.233Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "f35ef343-d38c-44e7-8c0a-15297922cf68",
+          "slug": "hp-enduser-tool-debug-sop",
+          "title": "HP EndUser Tool Debug SOP",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-enduser-tool-debug-sop.md",
+          "site_path": "/tools/hp-enduser-tool-debug-sop.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "code-sign",
+            "sop",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "f35ef343-d38c-44e7-8c0a-15297922cf68",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:15:45.726Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a767a04c-6e2c-4725-a704-5a3167d3554c",
+          "slug": "hp-enduser-tool-包裝流程",
+          "title": "HP EndUser Tool 包裝流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-enduser-tool-包裝流程.md",
+          "site_path": "/tools/hp-enduser-tool-包裝流程.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "a767a04c-6e2c-4725-a704-5a3167d3554c",
+          "notion_updated_at": "2026-01-21T09:23:00.000Z",
+          "exported_at": "2026-04-06T13:19:09.936Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "55a37d53-67b1-4fa5-a4f3-1d4881e31e64",
+          "slug": "hp-qc-tool-",
+          "title": "HP QC Tool ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-qc-tool-.md",
+          "site_path": "/tools/hp-qc-tool-.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "55a37d53-67b1-4fa5-a4f3-1d4881e31e64",
+          "notion_updated_at": "2026-01-21T09:33:00.000Z",
+          "exported_at": "2026-04-06T13:13:00.523Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "659386ae-3baf-4ea9-ab92-0f342dd3d219",
+          "slug": "lenovo-ldcc-update-tool-",
+          "title": "Lenovo LDCC Update Tool ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\lenovo-ldcc-update-tool-.md",
+          "site_path": "/tools/lenovo-ldcc-update-tool-.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "release",
+            "spec",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "659386ae-3baf-4ea9-ab92-0f342dd3d219",
+          "notion_updated_at": "2026-01-21T09:48:00.000Z",
+          "exported_at": "2026-04-06T13:16:20.562Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "RECOVERABLE",
+    "recommended_policy": "B",
+    "reason": "Found meaningful gain (43 nodes, best: 0.25). Policy B recommended for better depth."
+  },
+  "decision_confidence": "MEDIUM",
+  "decision_basis": {
+    "topology_status": "RECOVERABLE",
+    "count_at_0_3": 0,
+    "count_at_0_22": 43,
+    "borderline_count": 43,
+    "best_score": 0.25,
+    "threshold_used": 0.22,
+    "related_limit_used": 5,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "decision_guards": {
+    "allow_policy_b": true,
+    "violations": []
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  }
+}

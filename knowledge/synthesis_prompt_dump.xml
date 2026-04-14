@@ -1,0 +1,189 @@
+<context_boundaries>
+<core_topic id="log分類" title="Log分類" path="/general/log分類.html">
+
+## 不必要的log
+- 
+## 更好懂得log
+## 不知道誰呼叫的
+::DbgPrint(XD_INFO, "--\tDynamic:\n");
+::DumpBuffer(XD_INFO, (uint8_t *)hubInfo.StringDesc[1], GL_STRING_DESCRIPTOR_LENGTH_MAX / 2);
+2024-03-27 09:49:08 [info ] 000: 43323330 30303033 30640000 00000000
+2024-03-27 09:49:08 [info ] 010: 00000000 00000000 00000000 00000000
+Running Mode 43
+SS Port Number 32
+HS Port Number 33
+SS Connection Status 30
+HS Connection Status 30
+FS Connection Status 30
+LS Connection Status 30
+Charging Ports 33
+Non removable Ports 30
+7394 Bonding 64
+```c++
+2024-03-27 14:15:13 [info ] --	Basic:8742390735902074239073590208700
+
+2024-03-27 14:15:13 [info ] --	Tool Version: 8
+2024-03-27 14:15:13 [info ] --	Mask Project Code: 7423
+2024-03-27 14:15:13 [info ] --	Mask Project Hardware: 9
+2024-03-27 14:15:13 [info ] --	Mask Project Firmware: 07
+2024-03-27 14:15:13 [info ] --	Mask Project IC Type: 359020
+2024-03-27 14:15:13 [info ] --	Running Project Code: 7423
+2024-03-27 14:15:13 [info ] --	Running Project Hardware: 9
+2024-03-27 14:15:13 [info ] --	Running Project Firmware: 07
+2024-03-27 14:15:13 [info ] --	Running Project IC Type: 359020
+2024-03-27 14:15:13 [info ] --	Firmware Version: 8700
+
+
+2024-03-27 14:15:13 [info ] --	Dynamic:
+2024-03-27 14:15:13 [info ] 000: 43323330 30303033 30640000 00000000
+2024-03-27 14:15:13 [info ] 010: 00000000 00000000 00000000 00000000
+
+2024-03-27 14:15:13 [info ] --	Running Mode: C
+2024-03-27 14:15:13 [info ] --	SS Port Number: 2
+2024-03-27 14:15:13 [info ] --	HS Port Number: 3
+2024-03-27 14:15:13 [info ] --	SS Connection Status: 0
+2024-03-27 14:15:13 [info ] --	HS Connection Status: 0
+2024-03-27 14:15:13 [info ] --	FS Connection Status: 0
+2024-03-27 14:15:13 [info ] --	LS Connection Status: 0
+2024-03-27 14:15:13 [info ] --	Charging Ports: 3
+2024-03-27 14:15:13 [info ] --	Non-removable Ports: 0
+2024-03-27 14:15:13 [info ] --	Bonding: d
+
+
+
+2024-03-27 14:15:13 [info ] --	Vendor:01000000000000000000000000000 A
+
+2024-03-27 14:15:13 [info ] --	3rd Party Vendor Ver. Info: 1
+2024-03-27 14:15:13 [info ] --	DFP Device 0
+2024-03-27 14:15:13 [info ] --	MStar Scalar 0
+2024-03-27 14:15:13 [info ] --	Realtek Scalar 0
+2024-03-27 14:15:13 [info ] --	Richtek PD 0
+2024-03-27 14:15:13 [info ] --	TI 0
+2024-03-27 14:15:13 [info ] --	STM PD 0
+2024-03-27 14:15:13 [info ] --	ROHM PD 0
+2024-03-27 14:15:13 [info ] --	Eevertech PD 0
+2024-03-27 14:15:13 [info ] --	HP Proprietary 0
+2024-03-27 14:15:13 [info ] --	Belkin Arbitrator 0
+2024-03-27 14:15:13 [info ] --	GL PD 0
+2024-03-27 14:15:13 [info ] --	GlMasterKit 0
+2024-03-27 14:15:13 [info ] --	Primax 0
+2024-03-27 14:15:13 [info ] --	HID ISP tool 0
+2024-03-27 14:15:13 [info ] --	Novatek Scalar 0
+2024-03-27 14:15:13 [info ] --	Hub index 0
+2024-03-27 14:15:13 [info ] --	Synaptics 0
+2024-03-27 14:15:13 [info ] --	ISP Extend function 0
+2024-03-27 14:15:13 [info ] --	Parade ID 0
+
+```
+
+</core_topic>
+  <related_context>
+    <related id="自動化測試" title="自動化測試" path="/general/自動化測試.html">
+    
+    ## 緣由
+    在面對遇到客戶USB 問題時，常常都要透過錄製 usb 訊號或是 i2c 訊號來分析問題點，如果透過人工的方式來抓取的話，會耗費很多人力，如果用自動化測試的方式來抓取對應的log ，讓 Tool 反覆測試來找出問題點，會是一種比較好的測試方式
+    目前想法是透過Python 來串每個Tool ，目前找起來 i2c & Usb Trace Tool 都有提供 python api ，至於 bus hound 可能要透過 winauto 的方式來實作功能。
+    ###  Pythone 架構
+    透過Main來決定要開啟那些功能，透過簡單的參數設定就可以讓使用者決定要錄製那些log
+    ## 相關Tool 設定和說明
+    ### 錄製 i2c 資料
+    ### Saleae Logic 2 Automation Interface Documentation
+    ### bus hound 資料
+    ### Python winauto
+    ### Bus hound SDK 
+    ### 錄製 usb 資料
+    ### Teledyne LeCroy Advisor T3 for python
+    ### Notification 作法
+    - Teams
+    
+    </related>
+    <related id="遠端會議相關資料" title="遠端會議相關資料" path="/general/遠端會議相關資料.html">
+    
+    > BU5 week meeting
+    More ways to join:
+    ---
+    ---
+    Join from the meeting link
+    ---
+    https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m29d2bc2e2091e2e8eca048a86548fe53
+    ---
+    0985235747 HP NICK
+    > SW training Meeting
+    https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m6693d7ba1f44ba416ce3385108f7019a
+    > 雙周會
+    More ways to join:
+    ---
+    ---
+    Click Here to join your Meeting
+    ---
+    ---
+    677 756 3494
+    ---
+    272607
+    ---
+    677 756 3494
+    ---
+    Please use computer audio or the mobile phone app's device audio option whenever possible.
+    ---
+    Microsoft Teams 會議
+    在您的電腦或行動裝置應用程式上加入
+    按一下這裡以加入會議
+    會議識別碼: 423 539 478 818  密碼: 6bdTid
+    下載 Teams |加入網路
+    深入了解 | 會議選項
+    ///////////////////////////////////////////////
+    使用 Google Meet 加入會議
+    會議連結
+    meet.google.com/ftz-wuby-xao
+    ///////////////////////////////////////////////
+    https://teams.microsoft.com/l/meetup-join/19:meeting_NjczODA0NmEtZjFjNC00MWZjLWJlMTMtOTEyNTE2OWIwMDcz@thread.v2/0?context=%7B%22Tid%22:%2266c65d8a-9158-4521-a2d8-664963db48e4%22,%22Oid%22:%225a646280-a38c-4b74-a478-0ce924763e4a%22%7D
+    https://hp.zoom.com/j/92436304484?pwd=YWIxZzdPbUhUdFZEVjg1bjE3Yll6QT09&from=addon
+    meet.google.com/eav-pxwk-csw
+    Monday, August 1, 2022
+    10:00 AM  |  (UTC+08:00) Taipei  |  1 hr 30 mins
+    Join meeting
+    More ways to join:
+    Join from the meeting link	
+    https://genesyslogic.webex.com/genesyslogic/j.php?MTID=mb48d958c8e8f0c0aa74dbcc85e7c6870
+    Join by meeting number 	
+    Meeting number (access code): 2454 388 8458 	
+    Meeting password: 97435451
+    Click Here to join your Meeting
+    https://hp.zoom.com/j/96120515387?pwd=VU5PbmlHWXd6TUlyRzI5QStxWThoQT09&from=addon
+    
+    Microsoft Teams 會議
+    在您的電腦或行動裝置應用程式上加入
+    按一下這裡以加入會議
+    深入了解 | 會議選項
+    Microsoft Teams 會議 【請以公司email帳號加入會議】
+    在您的電腦或行動裝置應用程式上加入
+    按一下這裡以加入會議
+    深入了解 | 會議選項
+    Gavin.Wu@genesyslogic.com.tw
+    網址：https://genesyslogic.webex.com
+    登入帳號：Gene.Webex
+    登入密碼：ew34%TEFJou
+    https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m6693d7ba1f44ba416ce3385108f7019a
+    Hi Wistron & Genesys team,
+    Let's take 30 minutes to discuss this topic at 11:00 tomorrow(12/22/2021).
+    Thanks!
+    Click Here to join your Meeting 
+    Microsoft Teams 會議
+    在您的電腦或行動裝置應用程式上加入
+    按一下這裡以加入會議
+    按一下這裡以加入會議
+    https://hp.zoom.com/j/98505965223?pwd=b1Rua2tTNWNReTMyU0Rkb0E5OHVXdz09
+    Click Here to join your Meeting
+    https://hp.zoom.com/j/93508365211?pwd=b2p5bkVLZ3BjaC81elJrcWRpSkcwZz09
+    https://meet.google.com/jso-taqw-apo
+    https://meet.google.com/jso-taqw-apo
+    https://meet.google.com/nht-wyis-amt
+    https://hp.zoom.com/j/95219966918?pwd=NWFjbzJQVzJFbERxU0phaDU4Wkppdz09
+    五月
+    六月
+    七月
+    八月
+    
+    </related>
+  </related_context>
+</context_boundaries>

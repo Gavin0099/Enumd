@@ -1,0 +1,113 @@
+<context_boundaries>
+<core_topic id="2021部門創新提案" title="2021部門創新提案" path="/general/2021部門創新提案.html">
+
+### 普通的做法
+- Code Review
+- 別的部門提出需求時，要有正式的SPEC，並且要有review動作，而且在完成時，整理成一份完整的文件以便留存
+- 利用相關軟體，讓大家了解目前BU 需求的優先順序
+- 每個人分享自己擅長的技術, 越淺顯易懂越好, 不見得與工作會有相關性。這樣可以增加大家的知識, 也可以了解不同部門的同事在做的東西, 或許分享的一些技術未來會用在工作上也不一定。例如軟體組可以分享不同的程式語言, 做些基本的介紹或語法
+- 持續精進做事，先了解自己的作法，定期詢問他人或是自我檢視何處可以進步。提出問題，對他人的作法有疑慮，或是無法清楚該如何動作，主動提出\告知。該如何做?何時做?
+- 關於Hub&PD相關工作，規劃Wiki 資訊，能讓新人比較容易上手，且能找到想要的資訊。
+- 開發的重要專案、軟體都需做個詳細手冊，從概念到實作進行說明，可幫助自己事後回憶、或讓要加入專案的人更有效率地上手。
+### 天馬行空的做法
+- 3─2─2
+「3─2─2」代表什麼？發想人之一的哈佛商學院學者惠蘭斯（Ashley Whillans）解釋，「3」是3天實際到班，「2」是兩天在家工作，最後的「2」則是原本的例休。
+對台灣來說，混合工作的出發點是：對主管來說，不能再局限於「視覺管理」（Seeing Management），看得到員工才放心，必須強化對員工的信任感，不管透過什麼方式，只要員工能自主完成分內工作，那就不必硬性要求員工非得進辦公室。
+- 目標與關鍵成果（OKR）
+Objectives & Key Results，是透過每一組目標（objectives）搭配2～4 個關鍵成果（key results），讓團隊了解「要做什麼」及「如何做」。
+- 番茄鐘
+https://zh.wikipedia.org/zh-tw/番茄工作法
+- 一週工作四天 
+(https://www.inside.com.tw/article/18002-microsoft-japan-four-day-work-week-productivity) (https://www.managertoday.com.tw/articles/view/62080)
+
+</core_topic>
+  <related_context>
+    <related id="自動化測試" title="自動化測試" path="/general/自動化測試.html">
+    
+    ## 緣由
+    在面對遇到客戶USB 問題時，常常都要透過錄製 usb 訊號或是 i2c 訊號來分析問題點，如果透過人工的方式來抓取的話，會耗費很多人力，如果用自動化測試的方式來抓取對應的log ，讓 Tool 反覆測試來找出問題點，會是一種比較好的測試方式
+    目前想法是透過Python 來串每個Tool ，目前找起來 i2c & Usb Trace Tool 都有提供 python api ，至於 bus hound 可能要透過 winauto 的方式來實作功能。
+    ###  Pythone 架構
+    透過Main來決定要開啟那些功能，透過簡單的參數設定就可以讓使用者決定要錄製那些log
+    ## 相關Tool 設定和說明
+    ### 錄製 i2c 資料
+    ### Saleae Logic 2 Automation Interface Documentation
+    ### bus hound 資料
+    ### Python winauto
+    ### Bus hound SDK 
+    ### 錄製 usb 資料
+    ### Teledyne LeCroy Advisor T3 for python
+    ### Notification 作法
+    - Teams
+    
+    </related>
+    <related id="usb30影響配對問題" title="USB3.0影響配對問題" path="/general/usb30影響配對問題.html">
+    
+    ### USB Container ID Capability Descriptor 
+    - 相同的USB Container ID Capability Descriptor：在mask code or 透過燒錄器燒錄 or code sign 的FW下回報的都是一樣，因此同時插入兩個hub會發生合併錯誤。過去ISP tool都是使用這種。
+    - 合併的流程
+    ### Companion device
+    USB xHCI host controller回報的Companion device互相指到對方： tool曾經有用這種，後來遇到幾次host回報錯誤的資訊就不再使用。
+    - port 6的companion device在USB#ROOT_HUB30#XXX的port 22
+    - port 22的companion device在USB#ROOT_HUB30#XXX的port 6
+    - 錯誤案例
+            HOST1的L1 USB2 hub沒有回報有companion，HOST2的L1 USB3 hub也沒有回報有companion，因此tool才把這兩個hub當成獨立的兩個裝置。
+    ### port location
+    使用port location：PCB上的電路設計導致USB tree看到的L1/L2裝置的位置不對稱。遇到當下有想用更複雜的方式做合併hub，後來放棄複雜的做法，直接使用USB2就可以解決。
+    
+    </related>
+    <related id="交叉評核作業" title="交叉評核作業" path="/general/交叉評核作業.html">
+    
+    ### JasonTY
+    時程的掌握度不錯，在遇到難題時會比較找不到方向
+    時程的掌握度不錯，如果廣度能再提升會更好
+    ### Adam
+    技術能力強，也很樂意幫member 尋找解法，在做需求時如果可以跟大家分享更多會更好
+    CLI Tool 在整合到Mars上很順利，在member遇到問題時也很樂意解決
+    Mac OCI Tool 在基礎建設上花了很大的功夫，讓後面的demo 順利很多
+    ### Bernie
+    有windows 經驗後做mac 的oci tool 上手很快，但是對於時程評估比較有落差
+    接到需求時會及時提供給BU，但對於後續的文件化比較不足
+    接到需求時會及時提供給客戶，但是有時候會因為想要早一點release ，導致code的品質有點落差
+    ### Vic
+    對於BU的需求總是可以滿意，讓BU無後顧之憂
+    協助member Git 疑難雜症解決，也寫了不少文件幫助member釐清問題
+    對於所寫的功能要求較高，但是對於時程的評估比較不足，如果能對於自身要做的東西做更多的討論會更好
+    ### Standy
+    DiagnosticTool 有提出並做好蠻多不錯的功能，讓大家除錯更方便，HP OCI Tool UI部分重整的更好，讓後續開發更加順利
+    ### Nick 
+    在Hub Auto Test 部分，在前期規劃時有遇到疑問都會詳細的回答，並且在Mars 部分要做的東西都可以規畫出來好讓後續工作更加順利
+    
+    </related>
+    <related id="用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題" title="用Bcgcontrolbar套用的UI在某些電腦上UI會錯誤的問題" path="/general/用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題.html">
+    
+    ### 現象
+    在某些電腦上 check box , list item , close buttom 都會有UI顯示的問題，如下紅框
+    ### 原因 
+    在Windows Display Setting 裡面，如果變更文字, 應用程式和其他項目的大小改成100% 以上，就會發生此問題
+    ---
+    ### Re Try 過程 
+    - BCG API 
+    - source code 寫法有問題?
+    - 修改DPI感知 —> 沒有用
+    ---
+    ### 解法
+    修改BCG API裡面的 EnableVisualManagerStyle function 
+    ```c
+    EnableVisualManagerStyle(TRUE, TRUE); —> EnableVisualManagerStyle(FALSE, TRUE);
+    ```
+    但是修改好的UI是沒有套上visual Manager style ，如下圖
+    
+    </related>
+    <related id="研發投扺專案資料列印流程" title="研發投扺專案資料列印流程" path="/general/研發投扺專案資料列印流程.html">
+    
+    ## 2023 更新 ，使用Edge 開啟會有問題，請使用IE 模式開始，開啟方式如下圖
+    - 截圖
+    1. 開啟工作周報，選擇Keyword
+    1. 輸入有參與的專案代號按查詢，記得不要輸入年度，沒有會得到不完整的資料
+    1. 勾選所有2020的週報，按下匯出網頁
+    1. 會得出所有2020關於此專案的週報，接下來按列印即可
+    
+    </related>
+  </related_context>
+</context_boundaries>

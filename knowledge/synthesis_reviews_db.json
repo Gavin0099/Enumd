@@ -1,0 +1,317 @@
+[
+  {
+    "topic_slug": "2021部門創新提案",
+    "timestamp": "2026-04-13T08:38:11.461Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 3,
+      "context_edge_count": 6,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "related_only"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Insightful",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "2021部門創新提案",
+    "timestamp": "2026-04-13T08:42:07.388Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 3,
+      "context_edge_count": 6,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "related_only"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Adequate",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "2021部門創新提案",
+    "timestamp": "2026-04-13T10:50:44.437Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 3,
+      "context_edge_count": 6,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "related_only"
+    },
+    "metrics": {
+      "traceability": "Weak",
+      "boundary_discipline": "Leaked",
+      "dependency_correctness": "N/A",
+      "compression_quality": "Parroting",
+      "hallucination_risk": "Severe"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": false
+  },
+  {
+    "topic_slug": "Bus Hound 簡易說明",
+    "timestamp": "2026-04-13T11:02:29.986Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 0,
+      "context_edge_count": 0,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "sparse"
+    },
+    "metrics": {
+      "traceability": "Partial",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Adequate",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "GL Hub Software Development Kit",
+    "timestamp": "2026-04-13T11:03:53.170Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 0,
+      "context_edge_count": 0,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "sparse"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Adequate",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "HP Scheduled update flow ",
+    "timestamp": "2026-04-13T11:04:48.650Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 0,
+      "context_edge_count": 0,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "sparse"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Adequate",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "HP_Display_Firmware_Update_Specification",
+    "timestamp": "2026-04-13T11:14:25.819Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 3,
+      "context_edge_count": 4,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "related_only"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Adequate",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "OSDManager",
+    "timestamp": "2026-04-13T11:17:02.534Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 1,
+      "context_edge_count": 1,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "related_only"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Insightful",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  },
+  {
+    "topic_slug": "Log分類",
+    "timestamp": "2026-04-13T11:18:23.560Z",
+    "snapshot_profile": {
+      "core_count": 1,
+      "dependency_count": 0,
+      "related_count": 2,
+      "context_edge_count": 3,
+      "has_low_integrity_core": false,
+      "max_dependency_depth": 0,
+      "context_class": "related_only"
+    },
+    "metrics": {
+      "traceability": "Complete",
+      "boundary_discipline": "Strict",
+      "dependency_correctness": "Accurate",
+      "compression_quality": "Insightful",
+      "hallucination_risk": "None"
+    },
+    "issues": [],
+    "feedback": {
+      "nodes_to_add": [],
+      "nodes_to_drop": [],
+      "prompt_adjustments": ""
+    },
+    "recommended_action": {
+      "change_threshold": false,
+      "lower_related_limit": false,
+      "raise_related_limit": false,
+      "tighten_prompt": false,
+      "refuse_sparse_graph": false,
+      "allow_minimal_summary": false
+    },
+    "pass": true
+  }
+]

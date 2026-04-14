@@ -53,10 +53,10 @@ export function inferTagOverlap(node: GraphNode, allNodes: GraphNode[], tagFrequ
           score += Math.log((TOTAL_DOCS + 1) / (df + 1));
       }
       
-      // Threshold: needs arbitrary tuning. Let's say score > 1.5 is a valid edge
-      if (score > 1.5) {
-          // Normalize score to 0.0 ~ 0.9 range (tags never reach 1.0 like explicit links)
-          const normalizedScore = Math.min(score / 5.0, 0.9);
+      // Threshold: Lowering from 1.5 to 1.0 to fill the Threshold Void
+      if (score > 1.0) {
+          // Allow scores to land more naturally in the 0.22 - 0.5 range
+          const normalizedScore = Math.min(score / 4.0, 0.9);
           
           edges.push({
               source: node.slug,
@@ -85,20 +85,62 @@ export function inferDomainAffinity(node: GraphNode, allNodes: GraphNode[]): Gra
       
       const sharedDomains = node.domain_tags.filter(d => other.domain_tags.includes(d));
       if (sharedDomains.length > 0) {
+          const score = Math.min(0.15 + (sharedDomains.length * 0.05), 0.4);
           edges.push({
               source: node.slug,
               target: other.slug,
               type: "same_domain",
               confidence: "low",
-              score: 0.2, // Base minimum score
+              score: score,
               bidirectional: true,
               generated_at: new Date().toISOString(),
               basis: [{
                  kind: "same_domain",
-                 weight: 0.2,
+                 weight: score,
                  details: { shared_domains: sharedDomains, target_authority: other.authority_level } 
               }]
           });
+      }
+  }
+  return edges;
+}
+
+export function inferTitleSimilarity(node: GraphNode, allNodes: GraphNode[]): GraphEdge[] {
+  const edges: GraphEdge[] = [];
+  const tokenize = (s: string) => s.toLowerCase().split(/[\s_-]+/).filter(w => w.length > 1);
+  const nodeWords = new Set(tokenize(node.title));
+  
+  if (nodeWords.size === 0) return edges;
+
+  for (const other of allNodes) {
+      if (other.slug === node.slug) continue;
+      
+      const otherWords = tokenize(other.title);
+      const intersection = otherWords.filter(w => nodeWords.has(w));
+      
+      if (intersection.length > 0) {
+          const unionSize = new Set([...nodeWords, ...otherWords]).size;
+          const jaccard = intersection.length / unionSize;
+          
+          // Jaccard similarity scaled to 0.0 ~ 0.5 range
+          const score = Math.min(jaccard * 1.5, 0.5); 
+
+          if (score > 0.1) {
+              edges.push({
+                  source: node.slug,
+                  target: other.slug,
+                  type: "related_to",
+                  confidence: "low",
+                  score: score,
+                  bidirectional: true,
+                  generated_at: new Date().toISOString(),
+                  basis: [{
+                      kind: "authority_hint", // Reusing kind for title matching signal
+                      weight: score,
+                      details: { reason: "Title similarity", match_count: intersection.length, jaccard }
+                  }]
+              });
+          }
       }
   }
   return edges;
@@ -119,7 +161,7 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
   const directedGroup = new Map<string, GraphEdge[]>();
 
   for (const edge of undirectedEdges) {
-      const id = edge.source < edge.target ? `${edge.source}-${edge.target}` : `${edge.target}-${edge.source}`;
+      const id = edge.source < edge.target ? `${edge.source}|||${edge.target}` : `${edge.target}|||${edge.source}`;
       if (!undirectedGroup.has(id)) undirectedGroup.set(id, []);
       undirectedGroup.get(id)!.push(edge);
   }
@@ -139,7 +181,7 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
       const baseEdge = edgeList[0];
       
       // Pull in any undirected basis that matches A-B
-      const undirectedId = baseEdge.source < baseEdge.target ? `${baseEdge.source}-${baseEdge.target}` : `${baseEdge.target}-${baseEdge.source}`;
+      const undirectedId = baseEdge.source < baseEdge.target ? `${baseEdge.source}|||${baseEdge.target}` : `${baseEdge.target}|||${baseEdge.source}`;
       let combinedList = [...edgeList];
       if (undirectedGroup.has(undirectedId)) {
            combinedList = [...combinedList, ...undirectedGroup.get(undirectedId)!];
@@ -182,7 +224,7 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
       // Best approach: If we generated A->B explicit, creating B->A undirected representing the remaining semantic overlap
       // might be complex. Let's merge purely.
       
-      const parts = undirectedId.split('-');
+      const parts = undirectedId.split('|||');
       const src = parts[0];
       const tgt = parts[1];
       

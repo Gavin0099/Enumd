@@ -1,0 +1,53 @@
+{
+  "requested_slug": "mtk-scaler-update-flow",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "model_used": "claude-3-haiku-20240307"
+}

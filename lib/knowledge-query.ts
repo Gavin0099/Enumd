@@ -21,10 +21,23 @@ export class KnowledgeQueryEngine {
   }
 
   public getNode(slug: string): GraphNode | undefined {
+      // 1. Exact Match
       let node = this.nodes.get(slug);
+      
+      // 2. Partial Prefix Match (for truncated slugs in edges)
       if (!node) {
-          // Fallback UX: try finding by title instead of slug
-          node = Array.from(this.nodes.values()).find(n => n.title.toLowerCase() === slug.toLowerCase());
+          const candidates = Array.from(this.nodes.values()).filter(n => n.slug.startsWith(slug));
+          if (candidates.length === 1) {
+              node = candidates[0];
+          }
+      }
+
+      // 3. Fallback: Search by title (Normalized)
+      if (!node) {
+          const normalizedInput = slug.toLowerCase().replace(/[-_]/g, ' ');
+          node = Array.from(this.nodes.values()).find(n => 
+              n.title.toLowerCase().replace(/[-_]/g, ' ') === normalizedInput
+          );
       }
       return node;
   }
@@ -36,9 +49,13 @@ export class KnowledgeQueryEngine {
   public getNeighbors(nodeSlug: string, options?: QueryOptions): GraphEdge[] {
       const minScore = options?.minScore ?? 0.0;
       const validTypes = options?.types;
+      const includeIncoming = options?.minScore !== undefined; // If we are doing broad probe, include incoming
 
       return this.edges.filter(edge => {
-          const isNeighbor = edge.source === nodeSlug || (edge.target === nodeSlug && edge.bidirectional);
+          let isNeighbor = false;
+          if (edge.source === nodeSlug) isNeighbor = true;
+          if (edge.target === nodeSlug && (edge.bidirectional || includeIncoming)) isNeighbor = true;
+          
           if (!isNeighbor) return false;
           if (edge.score < minScore) return false;
           if (validTypes && !validTypes.includes(edge.type)) return false;
