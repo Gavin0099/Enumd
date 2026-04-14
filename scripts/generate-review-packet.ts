@@ -36,9 +36,11 @@ function extractClaims(md: string): string[] {
 }
 
 function findEvidence(claim: string, xml: string): { line: number, text: string } | null {
+    // Strip enforcer prefix before matching
+    const cleanClaim = claim.replace(/^\[未有直接 Source 錨點，待確認\]\s*/, "").trim();
+    
     // Simple keyword matching for evidence
-    // We try to find the most significant technical keywords from the claim in the XML
-    const keywords = claim.split(/[\s,()\[\]「」]/).filter(w => w.length > 2);
+    const keywords = cleanClaim.split(/[\s,()\[\]「」：、。.！？\-–_`*#|]/).filter(w => w.length > 2);
     const xmlLines = xml.split("\n");
     
     let bestMatch = { line: -1, text: "", score: 0 };
@@ -64,8 +66,14 @@ function classifyClaim(claim: string, evidenceScore: number): { tier: string, ri
         "總的來說",
         "這些資訊可以幫助",
         "⚠️ 此頁圖譜上下文不足",
-        "摘要僅根據單一核心節點生成"
+        "摘要僅根據單一核心節點生成",
     ];
+
+    // Claims already processed by the Enforcement Layer (downgraded)
+    // → treat as Structural, NOT a new violation
+    if (claim.trimStart().startsWith("[未有直接 Source 錨點，待確認]")) {
+        return { tier: "Downgraded", risk: "LOW" };
+    }
 
     if (structuralPhrases.some(p => claim.includes(p))) {
         return { tier: "Structural", risk: "LOW" };
@@ -113,7 +121,7 @@ async function run() {
 
         for (const claim of claims) {
             const evidence = findEvidence(claim, sourceXml);
-            const score = evidence ? claim.split(" ").filter(w => evidence.text.includes(w)).length : 0;
+            const score = evidence ? evidence.line : 0; // use presence of match as signal
             const classification = classifyClaim(claim, score);
             
             let enforcement = "✅ PASSED";

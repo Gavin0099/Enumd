@@ -4,6 +4,7 @@ import { execSync } from "child_process";
 import * as crypto from "crypto";
 import { KnowledgeQueryEngine } from "../lib/knowledge-query";
 import { SynthesisContextBuilder } from "../lib/synthesis-context";
+import { enforceDraft } from "../lib/synthesis-enforcer";
 
 /**
  * Enumd Production Wave Runner (v1)
@@ -88,16 +89,34 @@ async function run() {
             execSync(`npx tsx --env-file .env.local scripts/run-synthesis.ts "${node.slug}" --policy=A --model=haiku`, { stdio: 'pipe' });
             
             const synthDir = join(KNOWLEDGE_DIR, "synthesis_A");
-            const draft = readFileSync(join(synthDir, "synthesis_draft.md"), "utf8");
+            const rawDraft = readFileSync(join(synthDir, "synthesis_draft.md"), "utf8");
             const audit = JSON.parse(readFileSync(join(synthDir, "synthesis_prompt_dump.audit.json"), "utf8"));
             const sourceXml = readFileSync(join(synthDir, "synthesis_prompt_dump.xml"), "utf8");
+
+            // ─── ENFORCEMENT GATE ───────────────────────────────────────
+            // Run before any write to disk. The raw LLM draft is NEVER
+            // saved directly. Only the enforced output is persisted.
+            const { cleanedDraft, report } = enforceDraft(rawDraft, sourceXml);
+
+            if (!report.is_clean) {
+                console.log(`   ⚡ ENFORCEMENT: ${report.removed_count} removed, ${report.downgraded_count} downgraded (from ${report.original_claim_count} lines)`);
+            } else {
+                console.log(`   ✅ ENFORCEMENT: Draft is 100% anchored. No violations.`);
+            }
+            // ────────────────────────────────────────────────────────────
 
             // Inject governance fields
             audit.batch_id = BATCH_ID;
             audit.wave_id = currentWaveIdx + 1;
             audit.synthesis_code_hash = codeHash;
+            audit.enforcement_report = {
+                removed: report.removed_count,
+                downgraded: report.downgraded_count,
+                total_lines: report.original_claim_count,
+                is_clean: report.is_clean,
+            };
 
-            writeFileSync(join(dest, "synthesis.md"), draft);
+            writeFileSync(join(dest, "synthesis.md"), cleanedDraft);
             writeFileSync(join(dest, "audit.json"), JSON.stringify(audit, null, 2));
             writeFileSync(join(dest, "source.xml"), sourceXml);
 
