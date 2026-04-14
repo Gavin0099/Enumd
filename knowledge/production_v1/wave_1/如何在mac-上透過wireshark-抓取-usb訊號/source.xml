@@ -1,0 +1,67 @@
+<context_boundaries>
+<core_topic id="如何在mac-上透過wireshark-抓取-usb訊號" title="如何在Mac 上透過WireShark 抓取 USB訊號" path="/mac/如何在mac-上透過wireshark-抓取-usb訊號.html">
+
+1. 上去wireshark 官網抓取對應版本
+1. 確認是否開啟 SIP (System Integrity Protection) ，如果開啟的話是無法在Wireshark 抓到USB訊號，用cmd 執行下面command 確認SIP狀態
+1. 如果SIP 不是 disable 的話要回到mac recovery mode 去關閉csrutil
+1. 因爲USB 也有權限問題，所以要先看要開哪個USB權限，command 如下
+1. 因為每台電腦USB 設備不一樣，所以要找XHC開頭的device ，然後執行下面command，我這邊是XHC20 ，以這個當作範例
+1. 開啟WireShark 選擇device 後可能會遇到無法capture的問題，如下圖，這樣就必須安裝chmodbpf.pkg
+1. 開啟WireShark後可以直接選擇特定device ，這邊我是選XHC20
+1. 開啟後就可以看到此usb 的 訊號，也可以透過filter 的設定來找特定的usb device 
+1. 以下面為例，如果要filter 只抓USB_HID_DEVICE的話，可以看他的位置識別
+1. 然後在WireShark的 filter 輸入下面command，就可以抓到特定device 所有的USB訊號
+1. 透過下面command 可以抓到全部的control command 
+1. 其他參數可以參考下面網址
+
+</core_topic>
+  <related_context>
+    <related id="command-line-uninstall-driver" title="Command line uninstall driver" path="/driver/command-line-uninstall-driver.html">
+    
+    wmic product where "description='Genesys Logic Generic USB Class Filter Driver'" call uninstall
+    wmic product where "description='Evernote v. 6.20.2'" call uninstall
+    WMIC.EXE /OUTPUT:D:\PRODUCT.XML PRODUCT GET NAME,VERSION
+    ```plain text
+    wmic /node:"hostname" product where "Name like '%%Genesys%%'" get Name
+    pause
+    ```
+    ## Class Filter Driver移除方式
+    - wmic product where "" call uninstall 
+    這種方式只有透過MSI安裝才可以這樣移除，目前 Class Filter driver 透過 installShield 包的方法不是透過MSI包裝
+    - 直接指向C:\Program Files (x86)\InstallShield Installation Information\{D6BB1C82-B3BF-48D8-8E43-FDD1DC6B21E2} 對裡面的 setup.exe 下 uninstall command ，不過透過slient mode uninstall 時不會成功，google 了一下 要先做成 uninstall.iss ，這樣slient mode uninstall 才可以ok，目前透過下面方式還沒辦法做成功
+    ```c
+    "C:\Program Files (x86)\InstallShield Installation Information\{D6BB1C82-B3BF-48D8-8E43-FDD1DC6B21E2}\Setup.exe" -s -f1C:\uninstall.iss
+    ```
+    
+    </related>
+    <related id="e27m-e34m-driver-install-fail" title="E27m & E34m Driver install fail" path="/driver/e27m-e34m-driver-install-fail.html">
+    
+    目前有看到兩個問題
+    ## Cisco Webex + AMD 平台 Install or Uninstall driver fail 
+    ### 概要
+    在AMD 平台上(還不確定，在Lenovo平台也有看到) 如果有安裝Cisco Webex 時，如果install driver ，有機率driver install 會失敗，失敗的現象如下
+    在某幾個Hub driver 會掛不起來，導致Tool 詢問Hub 資訊會錯誤
+    Log 會出現下面訊息
+    ## AMD 平台  透過 HP EndUser Tool update scaler 會fail
+    ### 概要
+    在TPV 美國FAE 發現使用HP EndUser Tool update E27m or E34m Scaler 會 fail  ，
+    - 錯誤截圖
+    - log 
+    主要問題點為Scaler update 完 Reset MCU後，會導致driver 抓到的hub device 會出錯，如下圖，E27m 只有兩層Hub ，但是 reset MCU後會抓到6個Hub 
+    截圖
+    ### 目前測到重新插拔就會遇到類似的狀態
+    每重插拔一次就會多長出一組Hub
+    —> Cisco Webex造成的，
+    
+    </related>
+    <related id="hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式" title="HP ISP Tool 遇到舊driver 移除方式和新driver安裝方式" path="/driver/hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式.html">
+    
+    1. 開啟應用程式與功能—> 找到 "Genesys Logic Generic USB Class Filter Driver" —> 解除安裝
+    1. 重開機
+    1. 開啟HP_ISPTool_v1.5.0.6 檔案夾 —> 選擇GLHubDriver.exe
+    1. Install Driver Ver 1.4 
+    5.執行HP ISP Tool
+    
+    </related>
+  </related_context>
+</context_boundaries>

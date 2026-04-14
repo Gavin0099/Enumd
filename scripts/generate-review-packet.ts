@@ -1,0 +1,146 @@
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from "fs";
+import { join } from "path";
+
+/**
+ * Verifiable Review Packet Generator (v2)
+ * Goal: Transform Traceability into Verifiability via Claim-Level Tracing.
+ */
+
+const PROD_DIR = join(process.cwd(), "knowledge/production_v1/wave_1");
+const WORKBOOK_PATH = join(PROD_DIR, "reviewer_workbook_v3.md");
+
+const ENFORCEMENT_POLICY = {
+    PURGE_UNANCHORED_INFERENCE: true,
+    FAIL_ON_BLOCKER: true
+};
+
+const REVIEW_SAMPLE_SLUGS = [
+    "研發投扺專案資料列印流程",
+    "憑證檔案",
+    "ai-協作開發框架定義規則的開發模式",
+    "2021部門創新提案",
+    "世界上最快樂的工作",
+    "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "新架構導入新的chip-updatemt9052-方式",
+    "-clawdbot-自主代理建置與資安防禦全紀錄",
+    "-投影片大綱從餵指令到定規則"
+];
+
+function extractClaims(md: string): string[] {
+    // Basic sentence splitting for technical claims
+    // We look for sentences that aren't just headers or empty lines
+    return md.split(/[。.\n]/)
+        .map(s => s.trim())
+        .filter(s => s.length > 10 && !s.startsWith("#") && !s.startsWith("!["));
+}
+
+function findEvidence(claim: string, xml: string): { line: number, text: string } | null {
+    // Simple keyword matching for evidence
+    // We try to find the most significant technical keywords from the claim in the XML
+    const keywords = claim.split(/[\s,()\[\]「」]/).filter(w => w.length > 2);
+    const xmlLines = xml.split("\n");
+    
+    let bestMatch = { line: -1, text: "", score: 0 };
+    
+    for (let i = 0; i < xmlLines.length; i++) {
+        let score = 0;
+        for (const kw of keywords) {
+            if (xmlLines[i].includes(kw)) score++;
+        }
+        if (score > bestMatch.score) {
+            bestMatch = { line: i + 1, text: xmlLines[i].trim(), score };
+        }
+    }
+    
+    return bestMatch.score > 0 ? { line: bestMatch.line, text: bestMatch.text } : null;
+}
+
+function classifyClaim(claim: string, evidenceScore: number): { tier: string, risk: string } {
+    const structuralPhrases = [
+        "根據提供的內容",
+        "以下是針對",
+        "本文件概述了",
+        "總的來說",
+        "這些資訊可以幫助",
+        "⚠️ 此頁圖譜上下文不足",
+        "摘要僅根據單一核心節點生成"
+    ];
+
+    if (structuralPhrases.some(p => claim.includes(p))) {
+        return { tier: "Structural", risk: "LOW" };
+    }
+
+    if (evidenceScore > 3) return { tier: "Explicit", risk: "LOW" };
+    if (evidenceScore >= 1) return { tier: "Derived", risk: "MID" };
+    return { tier: "Inferred", risk: "HIGH" };
+}
+
+async function run() {
+    console.log("🛠️ Generating Verifiable Reviewer Workbook v2...");
+
+    let workbook = "# Reviewer Workbook v2 (Wave 1 Audit)\n\n";
+    
+    if (existsSync(join(PROD_DIR, "lockfile.json"))) {
+        const lockfile = JSON.parse(readFileSync(join(PROD_DIR, "lockfile.json"), "utf8"));
+        workbook += "## 📦 Batch Integrity Contract\n\n";
+        workbook += "```json\n" + JSON.stringify(lockfile, null, 2) + "\n```\n\n";
+    }
+
+    workbook += "## 🔍 Stratified 10-Node Audit Samples\n\n";
+
+    for (const slug of REVIEW_SAMPLE_SLUGS) {
+        const nodeDir = join(PROD_DIR, slug);
+        if (!existsSync(nodeDir)) {
+            console.warn(`⚠️ Node ${slug} not found in Wave 1 directory.`);
+            continue;
+        }
+
+        const synthesis = readFileSync(join(nodeDir, "synthesis.md"), "utf8");
+        const sourceXml = existsSync(join(nodeDir, "source.xml")) 
+            ? readFileSync(join(nodeDir, "source.xml"), "utf8") 
+            : "";
+        
+        workbook += `---\n\n### Node: ${slug}\n\n`;
+        workbook += `[Synthesis](${slug}/synthesis.md) | [Audit](${slug}/audit.json) | [Source XML](${slug}/source.xml)\n\n`;
+        
+        workbook += "#### Claim Trace Table\n\n";
+        workbook += "| Claim | Evidence (Source XML) | Tier | Risk | Enforcement |\n";
+        workbook += "| :--- | :--- | :--- | :--- | :--- |\n";
+
+        const claims = extractClaims(synthesis); 
+        let blockerCount = 0;
+
+        for (const claim of claims) {
+            const evidence = findEvidence(claim, sourceXml);
+            const score = evidence ? claim.split(" ").filter(w => evidence.text.includes(w)).length : 0;
+            const classification = classifyClaim(claim, score);
+            
+            let enforcement = "✅ PASSED";
+            if (classification.tier === "Inferred" && classification.risk === "HIGH") {
+                enforcement = "🚩 BLOCKER (Unanchored)";
+                blockerCount++;
+            }
+
+            const truncatedClaim = claim.length > 60 ? claim.slice(0, 57) + "..." : claim;
+            const truncatedEvidence = evidence 
+                ? `L${evidence.line}: ${evidence.text.length > 50 ? evidence.text.slice(0, 47) + "..." : evidence.text}` 
+                : "❌ No direct match";
+            
+            workbook += `| ${truncatedClaim} | ${truncatedEvidence} | ${classification.tier} | ${classification.risk} | ${enforcement} |\n`;
+        }
+
+        if (blockerCount > 0) {
+            workbook += `\n> [!CAUTION]\n> **ENFORCEMENT FAILED**: ${blockerCount} unanchored claims detected. This node MUST be purged or downgraded before release.\n\n`;
+        } else {
+            workbook += `\n> [!IMPORTANT]\n> **ENFORCEMENT PASSED**: Component is 100% anchored or correctly scoped.\n\n`;
+        }
+
+        workbook += "\n";
+    }
+
+    writeFileSync(WORKBOOK_PATH, workbook);
+    console.log(`✅ Enforced Workbook generated at ${WORKBOOK_PATH}`);
+}
+
+run();

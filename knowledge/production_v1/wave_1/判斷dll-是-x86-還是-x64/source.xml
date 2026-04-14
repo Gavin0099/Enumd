@@ -1,0 +1,12 @@
+<context_boundaries>
+<core_topic id="判斷dll-是-x86-還是-x64" title="判斷dll 是 x86 還是 x64" path="/sdk/判斷dll-是-x86-還是-x64.html">
+
+C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64>dumpbin.exe
+```c#
+ dumpbin.exe /headers GLHubAPI.dll
+```
+- x86
+- x64
+
+</core_topic>
+</context_boundaries>

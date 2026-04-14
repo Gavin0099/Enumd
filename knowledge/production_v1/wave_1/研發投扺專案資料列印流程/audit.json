@@ -1,299 +1,31 @@
 {
-  "requested_slug": "憑證檔案",
+  "requested_slug": "研發投扺專案資料列印流程",
   "selected_core_count": 1,
   "selected_dependency_count": 0,
-  "selected_related_count": 0,
+  "selected_related_count": 3,
   "dropped_low_integrity_nodes": [],
   "dropped_duplicate_nodes": [],
-  "dropped_below_score_nodes": [
-    "hp-display-firmware-specification-v11",
-    "hp_display_firmware_update_specification",
-    "20240729-82-交接事項",
-    "2025-519523-交接事項",
-    "2025-工作會報",
-    "lenovo-spec-",
-    "-hp-firmware-installer-macos-完整修復與發布手冊",
-    "mac-framework",
-    "mac-權限問題",
-    "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
-    "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
-    "3rd-party-code-signing-specification-ecdsaen-",
-    "camera-透過我們驗證-code-sign",
-    "code-sign-ecc-key",
-    "code-sign-flow",
-    "code-sign-概述",
-    "code-sign-資源",
-    "etoken-system-code-view-",
-    "etoken-system",
-    "etoken-安全簽章系統技術說明"
-  ],
-  "total_context_edges": 0,
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
   "topology_signature": {
-    "high_score_count": 0,
-    "borderline_count": 10,
-    "best_borderline_score": 0.25,
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
     "gap_detected": false,
-    "borderline_neighbors": [
-      {
-        "node": {
-          "id": "6c2f377a-5ddc-450f-8301-2f6743d5bb38",
-          "slug": "hp-display-firmware-specification-v11",
-          "title": "HP DISPLAY FIRMWARE SPECIFICATION V1.1",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\hp-display-firmware-specification-v11.md",
-          "site_path": "/general/hp-display-firmware-specification-v11.html",
-          "category": "general",
-          "domain_tags": [],
-          "task_tags": [],
-          "authority_level": "unknown",
-          "notion_id": "6c2f377a-5ddc-450f-8301-2f6743d5bb38",
-          "notion_updated_at": "FORCE_REFRESH",
-          "exported_at": "2026-04-06T11:24:06.099Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "2c464f6b-c656-8022-bd69-ef9892a96f21",
-          "slug": "hp_display_firmware_update_specification",
-          "title": "HP_Display_Firmware_Update_Specification",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\hp_display_firmware_update_specification.md",
-          "site_path": "/general/hp_display_firmware_update_specification.html",
-          "category": "general",
-          "domain_tags": [],
-          "task_tags": [],
-          "authority_level": "unknown",
-          "notion_id": "2c464f6b-c656-8022-bd69-ef9892a96f21",
-          "notion_updated_at": "FORCE_REFRESH",
-          "exported_at": "2026-04-06T11:23:23.685Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "453efec9-28a1-4524-b8f6-cb95001f079f",
-          "slug": "20240729-82-交接事項",
-          "title": "2024/07/29 ~  8/2 交接事項",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\20240729-82-交接事項.md",
-          "site_path": "/general/20240729-82-交接事項.html",
-          "category": "general",
-          "domain_tags": [
-            "hub",
-            "mac",
-            "firmware",
-            "tools",
-            "security"
-          ],
-          "task_tags": [
-            "firmware-update",
-            "debug"
-          ],
-          "authority_level": "source",
-          "notion_id": "453efec9-28a1-4524-b8f6-cb95001f079f",
-          "notion_updated_at": "2026-01-21T09:35:00.000Z",
-          "exported_at": "2026-04-06T13:19:00.829Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "1f364f6b-c656-8097-b508-cf0515b98d3a",
-          "slug": "2025-519523-交接事項",
-          "title": "2025 5/19~5/23 交接事項",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\2025-519523-交接事項.md",
-          "site_path": "/general/2025-519523-交接事項.html",
-          "category": "general",
-          "domain_tags": [
-            "hub",
-            "mac",
-            "tools",
-            "security"
-          ],
-          "task_tags": [
-            "debug"
-          ],
-          "authority_level": "source",
-          "notion_id": "1f364f6b-c656-8097-b508-cf0515b98d3a",
-          "notion_updated_at": "2026-01-21T09:37:00.000Z",
-          "exported_at": "2026-04-06T13:19:02.190Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "2aa64f6b-c656-8049-bbd8-d648061fbd29",
-          "slug": "2025-工作會報",
-          "title": "2025 工作會報",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\2025-工作會報.md",
-          "site_path": "/general/2025-工作會報.html",
-          "category": "general",
-          "domain_tags": [
-            "mac",
-            "firmware",
-            "sdk",
-            "tools",
-            "security"
-          ],
-          "task_tags": [
-            "firmware-update"
-          ],
-          "authority_level": "source",
-          "notion_id": "2aa64f6b-c656-8049-bbd8-d648061fbd29",
-          "notion_updated_at": "2026-01-02T08:18:00.000Z",
-          "exported_at": "2026-04-06T13:18:34.001Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "fabfe71c-c9e3-461f-9e7e-1b48ed67cfb4",
-          "slug": "lenovo-spec-",
-          "title": "Lenovo spec ",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\lenovo-spec-.md",
-          "site_path": "/general/lenovo-spec-.html",
-          "category": "general",
-          "domain_tags": [
-            "mac",
-            "tools",
-            "security"
-          ],
-          "task_tags": [
-            "spec",
-            "sop"
-          ],
-          "authority_level": "source",
-          "notion_id": "fabfe71c-c9e3-461f-9e7e-1b48ed67cfb4",
-          "notion_updated_at": "2026-01-21T09:33:00.000Z",
-          "exported_at": "2026-04-06T13:13:03.222Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "2ed64f6b-c656-80c2-949c-e0583a5067f6",
-          "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
-          "title": "🛠️ HP Firmware Installer (macOS) 完整修復與發布手冊",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\-hp-firmware-installer-macos-完整修復與發布手冊.md",
-          "site_path": "/mac/-hp-firmware-installer-macos-完整修復與發布手冊.html",
-          "category": "mac",
-          "domain_tags": [
-            "code-sign",
-            "mac",
-            "firmware",
-            "tools",
-            "security"
-          ],
-          "task_tags": [
-            "install",
-            "debug",
-            "code-sign",
-            "build",
-            "release",
-            "config"
-          ],
-          "authority_level": "reference",
-          "notion_id": "2ed64f6b-c656-80c2-949c-e0583a5067f6",
-          "notion_updated_at": "2026-01-22T01:53:00.000Z",
-          "exported_at": "2026-04-06T13:13:10.270Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "1c364f6b-c656-80ba-b96f-fdf94236eec3",
-          "slug": "mac-framework",
-          "title": "Mac Framework",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\mac-framework.md",
-          "site_path": "/mac/mac-framework.html",
-          "category": "mac",
-          "domain_tags": [
-            "mac",
-            "security"
-          ],
-          "task_tags": [
-            "build",
-            "log",
-            "config"
-          ],
-          "authority_level": "source",
-          "notion_id": "1c364f6b-c656-80ba-b96f-fdf94236eec3",
-          "notion_updated_at": "2026-01-21T09:36:00.000Z",
-          "exported_at": "2026-04-06T13:19:19.782Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "5e33658a-9fea-4e96-98d3-baf8226f640a",
-          "slug": "mac-權限問題",
-          "title": "Mac 權限問題",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\mac-權限問題.md",
-          "site_path": "/mac/mac-權限問題.html",
-          "category": "mac",
-          "domain_tags": [
-            "mac",
-            "security"
-          ],
-          "task_tags": [
-            "debug",
-            "build",
-            "config"
-          ],
-          "authority_level": "deprecated",
-          "notion_id": "5e33658a-9fea-4e96-98d3-baf8226f640a",
-          "notion_updated_at": "2026-01-21T09:33:00.000Z",
-          "exported_at": "2026-04-06T13:12:59.026Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      },
-      {
-        "node": {
-          "id": "25c64f6b-c656-8004-9785-cbbb5ca08cd1",
-          "slug": "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
-          "title": "macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明",
-          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\macos-mdm-與-full-disk-access-fda-權限管理實作說明.md",
-          "site_path": "/mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html",
-          "category": "mac",
-          "domain_tags": [
-            "mac",
-            "tools",
-            "security"
-          ],
-          "task_tags": [
-            "spec",
-            "sop",
-            "config"
-          ],
-          "authority_level": "source",
-          "notion_id": "25c64f6b-c656-8004-9785-cbbb5ca08cd1",
-          "notion_updated_at": "2026-01-21T09:38:00.000Z",
-          "exported_at": "2026-04-06T13:13:11.496Z"
-        },
-        "score": 0.25,
-        "type": "same_domain"
-      }
-    ]
+    "borderline_neighbors": []
   },
   "advisory": {
-    "topology_status": "RECOVERABLE",
-    "recommended_policy": "B",
-    "reason": "Found meaningful gain (10 nodes, best: 0.25). Policy B recommended for better depth."
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
   },
-  "decision_confidence": "MEDIUM",
+  "decision_confidence": "HIGH",
   "decision_basis": {
-    "topology_status": "RECOVERABLE",
-    "count_at_0_3": 0,
-    "count_at_0_22": 10,
-    "borderline_count": 10,
-    "best_score": 0.25,
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
     "threshold_used": 0.3,
     "related_limit_used": 3,
     "pilot_evaluation": {
@@ -302,21 +34,17 @@
       "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
     }
   },
-  "decision_guards": {
-    "allow_policy_b": true,
-    "violations": []
-  },
   "snapshot_profile": {
     "core_count": 1,
     "dependency_count": 0,
-    "related_count": 0,
-    "context_edge_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
     "has_low_integrity_core": false,
     "max_dependency_depth": 0,
-    "context_class": "sparse"
+    "context_class": "related_only"
   },
   "outcome_metrics": {
-    "source_diversity": 1,
+    "source_diversity": 2,
     "avg_integrity_score": 0,
     "noise_signal": "HIGH"
   },
@@ -325,7 +53,7 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-14T08-01-28-629Z",
+  "batch_id": "batch_2026-04-14T09-16-32-301Z",
   "wave_id": 1,
   "synthesis_code_hash": "474e353e487e9f110f475bf131949e64"
 }

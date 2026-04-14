@@ -1,0 +1,155 @@
+<context_boundaries>
+<core_topic id="2025-工作會報" title="2025 工作會報" path="/general/2025-工作會報.html">
+
+## 2025/01
+- Lenovo ui 修改和 daisy chain update 功能
+- GL Bin Tool
+- Dell Fischer SDK
+- Lenovo one key update tool
+- HP E24mv CMSL update tool 
+- DS-UCL5 command line tool 
+## 2025/02
+- Dell Fischer dock 
+- copilot 測試
+- Lenovo P40w-20
+- Lenovo NB GL852G-60 黑畫面
+- GLBin Tool 
+- Lenovo P27QD-40 Daisy chain
+- Lenovo  one key update tool 
+- Lenovo P34wd-40 one kye update tool
+- Dell Fischer dock 
+## 2025/03
+- Mac USB2.0 EEP Tool 
+- Lenovo P34wd-40 one kye update tool
+- Dell Fischer SDK
+- Lenovo P40w-20
+- Lenovo P24QD one kye update tool
+- GLBin
+- Merge Code for 9511 
+- MSI command line tool 
+- I-ODATA CWQ341SDB EndUser Tool 
+- Lenovo P32u one key update tool 
+## 2025/04
+- HP E24mv Enduser Tool
+- HP CMSL Firmware update tool 
+- Mac USB 2.0 EEP Tool
+- IO Data C242SD Enduser tool 
+- Richelieu Command Line tool 
+- Lenovo Inno Setup user guide 
+- Lenovo Inno Setup user guide for Lenovo P34WD-40
+## 2025/05
+- Richelieu Command Line tool 
+- Mac USB 2.0 EEP Tool
+- GLBin
+- Mac One Key Update Tool 
+- HP Enduser Tool Z24q 
+## 2025/06
+- Mac USB 2.0 EEP Tool
+- Mac Lenovo one key updat e tool
+- command POC_ALG_W
+- Electron Tool (Enduser tool)
+- 東碩 DUD15X0D10 Enduser Update Tool 
+## 2025/07
+- LADM T27-40
+- 同星DS-UCL6 command line tool 
+- Lenovo P49-30 LADM 
+- Lenovo P40W-40 one key update tool
+- HP Security spec 
+- HP CMSL Firmware Update Tool for 27u & 27k
+- app for oci xml & usbview log parse 
+- CR1500 command line tool 
+- IYAMA XCB4594DQSU EndUser Tool 
+- HP 549pm & 724pu  OCI Tool
+- HP 732xk oci tool
+## 2025/08
+- GL Bin Tool
+- HP 724pu oci tool 
+- Mac PD2705U command line tool
+- IO Data C242SD Enduser tool 
+- Code Sign Spec 整理討論
+- philips mac sdk 
+- Electron Tool
+## 2025/09
+- eToken & GLBin
+- HP 549pm Scheduled update
+- ASUS PA329CRV update tool 
+- HP E24mv G4 Enduser Tool
+- HP OCI Tool
+## 2025/10
+- Host Bridge PRD
+- Richelieu Command Line tool 
+- HP E24mv command line tool 
+- HP EndUser Tool WOA driver 
+## 2025/11
+- HP EndUser Tool & command line tool WOA driver 
+- HP E22 G4 enduer tool
+- HP E24mv G4 MT9700 enduser tool 
+- 湘凡command line tool 
+- Lenovo P49w-30
+- ELO ET1523L
+- HP OCI Tool  738pu for WOA 
+- command line tool for Hvb6702 & Hvb6802
+- macOS Firmware Installer 權限
+- HP ISP Tool new UI
+- HP 732xk oci tool
+## 2025/12
+- GL Electron update tool 
+- HP OCI Tool windows & mac & linux
+- HP OCI Tool Poly udpate 
+- GL Driver 
+- HP SSDLC & SBOM
+
+</core_topic>
+  <related_context>
+    <related id="camera-透過我們驗證-code-sign" title="Camera 透過我們驗證 code sign" path="/code-sign/camera-透過我們驗證-code-sign.html">
+    
+    ### Camera
+    1. generate ecdsa key & sign ecdsa key
+    1. 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+    1. 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+    1.  2 , 3點 可以改成 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update 
+    1. 下圖為Hub Code Sign 驗證 flow ，驗證code sign 應該Tool 就可以控制，FW 應該不用改甚麼，但是還是要麻煩俊太確認看看
+    
+    </related>
+    <related id="code-sign-flow" title="Code sign Flow" path="/code-sign/code-sign-flow.html">
+    
+    ## Genesys Logic code sign overview
+    因應客戶的需求，firmware 都必須要驗證合法性，目前做法是把bin檔做成hash，然後 用 private key 對 hash 做sign的動作產生signature(deliver signed firmware) 
+    把 firmware bin data & signature & public key 傳送給security module，讓 security module透過 public key 對 signature做解密，產生hash ，然後再用firmware bin data 產生一組 hash ，互相做比對，來決定firmware bin是否合法(firmware update and verification)。
+    code sign 的做法有下面幾種
+    1. OpenSSL
+    會把generate 出來的key pair 放在電腦裡面，deliver signed firmware 也是在電腦裡面完成的
+    1. Token
+    1. HSM (Hardware security module)
+    A hardware security module (HSM) is a physical computing device that safeguards and manages digital keys, performs encryption and decryption functions for digital signatures, strong authentication and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a computer or network server. A hardware security module contains one or more secure cryptoprocessor chips
+    但是根據HP 規定要符合fips 140-2 level 3 以上，所以至少要用Token來達成code sign 功能
+    fips 140-2 level 3
+    > **Note:** In addition to the tamper-evident physical security mechanisms required at Security Level 2, Security Level 3 attempts to prevent the intruder from gaining access to CSPs held within the cryptographic module. Physical security mechanisms required at Security Level 3 are intended to have a high probability of detecting and responding to attempts at physical access, use or modification of the cryptographic module. The physical security mechanisms may include the use of strong enclosures and tamper-detection/response circuitry that zeroes all plaintext CSPs when the removable covers/doors of the cryptographic module are opened.
+    目前Genesys Logic 使用的 code sign 演算法為Ecdsa nistp256
+    ## Genesys Logic CodeSign flow
+    1. generate key
+    1. deliver signed firmware
+    sign的動作如下，先把Data轉成hash 檔，然後透過eToken or Smart Card裡面的 Private key 轉成 signatute 
+    1. firmware update and verification
+    
+    </related>
+    <related id="hid-code-sign-update-rule" title="HID Code Sign Update Rule" path="/code-sign/hid-code-sign-update-rule.html">
+    
+    ## Protocol
+    - 驗證方式只存在GLbinTool 以及 FW本身，ISP Tool只有做update data 動作
+    - 不同Model 不能互燒
+    - Flash 內沒有 signature 時，在ISP時要先用 Vender command 送。
+    - Vendor Command 
+    - 不能 run 的 code 不能留在裡面。
+    ## HP ISP Flow
+    - 說明
+    - HID Code Sign Bin Format
+    - HID Code Sign Bin Format (GL9511)
+    ### Version 2.0
+    - ISP Command ：Tool 會指定 Address 與長度並將整份檔案送下去，FW 需自己分析各資料位置。
+    ## 驗證方式
+    - 驗證 Public Key & Signature
+    
+    </related>
+  </related_context>
+</context_boundaries>

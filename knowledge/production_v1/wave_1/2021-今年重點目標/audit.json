@@ -1,5 +1,5 @@
 {
-  "requested_slug": "2025-519523-交接事項",
+  "requested_slug": "2021-今年重點目標",
   "selected_core_count": 1,
   "selected_dependency_count": 0,
   "selected_related_count": 3,
@@ -53,7 +53,7 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-14T08-01-28-629Z",
+  "batch_id": "batch_2026-04-14T09-16-32-301Z",
   "wave_id": 1,
   "synthesis_code_hash": "474e353e487e9f110f475bf131949e64"
 }

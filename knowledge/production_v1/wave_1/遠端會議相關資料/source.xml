@@ -1,0 +1,142 @@
+<context_boundaries>
+<core_topic id="遠端會議相關資料" title="遠端會議相關資料" path="/general/遠端會議相關資料.html">
+
+> BU5 week meeting
+More ways to join:
+---
+---
+Join from the meeting link
+---
+https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m29d2bc2e2091e2e8eca048a86548fe53
+---
+0985235747 HP NICK
+> SW training Meeting
+https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m6693d7ba1f44ba416ce3385108f7019a
+> 雙周會
+More ways to join:
+---
+---
+Click Here to join your Meeting
+---
+---
+677 756 3494
+---
+272607
+---
+677 756 3494
+---
+Please use computer audio or the mobile phone app's device audio option whenever possible.
+---
+Microsoft Teams 會議
+在您的電腦或行動裝置應用程式上加入
+按一下這裡以加入會議
+會議識別碼: 423 539 478 818  密碼: 6bdTid
+下載 Teams |加入網路
+深入了解 | 會議選項
+///////////////////////////////////////////////
+使用 Google Meet 加入會議
+會議連結
+meet.google.com/ftz-wuby-xao
+///////////////////////////////////////////////
+https://teams.microsoft.com/l/meetup-join/19:meeting_NjczODA0NmEtZjFjNC00MWZjLWJlMTMtOTEyNTE2OWIwMDcz@thread.v2/0?context=%7B%22Tid%22:%2266c65d8a-9158-4521-a2d8-664963db48e4%22,%22Oid%22:%225a646280-a38c-4b74-a478-0ce924763e4a%22%7D
+https://hp.zoom.com/j/92436304484?pwd=YWIxZzdPbUhUdFZEVjg1bjE3Yll6QT09&from=addon
+meet.google.com/eav-pxwk-csw
+Monday, August 1, 2022
+10:00 AM  |  (UTC+08:00) Taipei  |  1 hr 30 mins
+Join meeting
+More ways to join:
+Join from the meeting link	
+https://genesyslogic.webex.com/genesyslogic/j.php?MTID=mb48d958c8e8f0c0aa74dbcc85e7c6870
+Join by meeting number 	
+Meeting number (access code): 2454 388 8458 	
+Meeting password: 97435451
+Click Here to join your Meeting
+https://hp.zoom.com/j/96120515387?pwd=VU5PbmlHWXd6TUlyRzI5QStxWThoQT09&from=addon
+
+Microsoft Teams 會議
+在您的電腦或行動裝置應用程式上加入
+按一下這裡以加入會議
+深入了解 | 會議選項
+Microsoft Teams 會議 【請以公司email帳號加入會議】
+在您的電腦或行動裝置應用程式上加入
+按一下這裡以加入會議
+深入了解 | 會議選項
+Gavin.Wu@genesyslogic.com.tw
+網址：https://genesyslogic.webex.com
+登入帳號：Gene.Webex
+登入密碼：ew34%TEFJou
+https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m6693d7ba1f44ba416ce3385108f7019a
+Hi Wistron & Genesys team,
+Let's take 30 minutes to discuss this topic at 11:00 tomorrow(12/22/2021).
+Thanks!
+Click Here to join your Meeting 
+Microsoft Teams 會議
+在您的電腦或行動裝置應用程式上加入
+按一下這裡以加入會議
+按一下這裡以加入會議
+https://hp.zoom.com/j/98505965223?pwd=b1Rua2tTNWNReTMyU0Rkb0E5OHVXdz09
+Click Here to join your Meeting
+https://hp.zoom.com/j/93508365211?pwd=b2p5bkVLZ3BjaC81elJrcWRpSkcwZz09
+https://meet.google.com/jso-taqw-apo
+https://meet.google.com/jso-taqw-apo
+https://meet.google.com/nht-wyis-amt
+https://hp.zoom.com/j/95219966918?pwd=NWFjbzJQVzJFbERxU0phaDU4Wkppdz09
+五月
+六月
+七月
+八月
+
+</core_topic>
+  <related_context>
+    <related id="-genesys-logic-firmware-安全簽署與驗證流程-code-signing-" title=" Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) " path="/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html">
+    
+    本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+    - 核心要求：所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+    - 挑戰：在滿足嚴格安全合規性的前提下，建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。
+    - 最終方案：我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+    ---
+    ## 💡 簡介 (Introduction)
+    ---
+    ## 🔑 Code Signing 資源與實作方案 (含 FIPS 合規要求)
+    ---
+    ## 🏛️ eToken 簽署系統架構解析
+    ---
+    ## 🔑 Genkey 金鑰生成與佈署流程解析
+    ---
+    ## 📜 Sign File 簽署檔案工作流程
+    ---
+    ## 🔄 端到端的程式碼簽署與驗證完整流程
+    ---
+    ## 🚀 程式碼簽署與驗證流程 (Boot Code Verify)
+    ---
+    ## eToken 集中式管理與安全存取服務平台(未來架構)
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsa" title="3rd party code signing specification (ECDSA)" path="/code-sign/3rd-party-code-signing-specification-ecdsa.html">
+    
+    ## Genesys Logic code sign overview
+    - 因應需求，firmware 都必須要驗證合法性。
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verify
+    ### Implement
+    ### Using OpenSSL
+    ### Using eToken
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsaen-" title="3rd party code signing specification (ECDSA)(EN) " path="/code-sign/3rd-party-code-signing-specification-ecdsaen-.html">
+    
+    ## Genesys Logic code sign overview
+    - Firmware must be verified before updating to flash.
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verification
+    ### Implementation
+    ### Using OpenSSL
+    ### Store the Private key
+    
+    </related>
+  </related_context>
+</context_boundaries>

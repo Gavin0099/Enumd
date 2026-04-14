@@ -1,6 +1,6 @@
-以下是 Generic USB Filter Driver 的綜合 Markdown 報告:
+以下是針對 ' Generic USB Filter Driver ' 核心主題的詳細文件:
 
-# Generic USB Filter Driver 概述
+# Generic USB Filter Driver 文件
 
 ## 專案概述 (Overview)
 此專案包含核心驅動程式 (Kernel Driver) 與相關的安裝檔案 (.inf)。驅動程式會掛載 (Attach) 在目標 USB 裝置的驅動程式堆疊 (Driver Stack) 上，攔截並處理 PnP (Plug and Play) 與 Power 事件，同時提供 Control Device Object (CDO) 供使用者模式 (User-Mode) 的應用程式進行通訊。
@@ -130,6 +130,11 @@ flowchart TD
 ```
 
 ### 3. ISP 關鍵程式碼分析
+[filter.c](filter.c): 驅動程式進入點與裝置新增邏輯。
+[filter_ioctl.h](filter_ioctl.h): 定義 IOCTL Control Codes。
+[filter_control.c](filter_control.c): 處理 IOCTL 請求。
+[filter_fdo.c](filter_fdo.c): 處理 PnP 與 Power 事件。
+
 ### 4. ISP 安全性與限制
 > ⚠️ 無狀態保存 (Stateless Design)
 
@@ -169,12 +174,12 @@ flowchart TD
 ```
 
 ## IOCTL 命令列表 (IOCTL Commands)
-定義於 filter_ioctl.h 中的主要控制碼：
+定義於 [filter_ioctl.h](filter_ioctl.h) 中的主要控制碼：
 
 ## WDK Modernization Plan (WDK 現代化計畫)
 
 ### 目標 (Goal)
-將 Generic USB Filter Driver 專案從舊版 WDK 環境遷移至現代化的 WDK 標準。
+將 Generic USB Filter Driver 專案從舊版 WDK 環境遷移至最新的 WDK 標準。
 
 ### 使用者審查事項 (User Review Required)
 > ❗ IMPORTANT: Build System Change
@@ -244,7 +249,4 @@ flowchart TD
 ## 檔案結構 (File Structure)
 - 📄 filter.c: 驅動程式進入點與裝置新增邏輯。
 - 📄 filter_ioctl.h: 定義 IOCTL Control Codes。
-- 📄 filter_control.c: 處理 IOCTL 請求。
-- 📄 filter_fdo.c: 處理 PnP 與 Power 事件。
-- ⚙️ glusbflt.vcxproj: (New) MSBuild 專案檔。
-- 📁 isp_x64/: Binary 與 INF 輸出目錄。
+- 📄 filter_control.c: 處理

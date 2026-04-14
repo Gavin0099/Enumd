@@ -90,6 +90,7 @@ async function run() {
             const synthDir = join(KNOWLEDGE_DIR, "synthesis_A");
             const draft = readFileSync(join(synthDir, "synthesis_draft.md"), "utf8");
             const audit = JSON.parse(readFileSync(join(synthDir, "synthesis_prompt_dump.audit.json"), "utf8"));
+            const sourceXml = readFileSync(join(synthDir, "synthesis_prompt_dump.xml"), "utf8");
 
             // Inject governance fields
             audit.batch_id = BATCH_ID;
@@ -98,6 +99,7 @@ async function run() {
 
             writeFileSync(join(dest, "synthesis.md"), draft);
             writeFileSync(join(dest, "audit.json"), JSON.stringify(audit, null, 2));
+            writeFileSync(join(dest, "source.xml"), sourceXml);
 
             manifest.push({
                 slug: node.slug,

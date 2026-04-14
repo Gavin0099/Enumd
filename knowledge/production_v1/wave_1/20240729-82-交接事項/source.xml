@@ -1,0 +1,645 @@
+<context_boundaries>
+<core_topic id="20240729-82-交接事項" title="2024/07/29 ~  8/2 交接事項" path="/general/20240729-82-交接事項.html">
+
+### 
+1. RE: HP Z24m ISP Tool @Bernie.Hsieh 
+1. RE: SW272U update FW fail, 2024/6 客訴 @Bernie.Hsieh 
+1. RE: [Foxconn_Lenovo P27u-20/P40w-20/T22i-30] LADM需求評估 @Bernie.Hsieh 
+1. RE: RE: IIYAMA GB3290QSU-B1新机种回路确认 @Adam.Chen 
+1. FW: [Mega Drive] URGENT - Hub Firmware Security Verification @Bernie.Hsieh @Standy Huang 
+1. RE: PA248CRV, PA329CRV FW update tool @Vic Chen 
+1. RE: Re: P27U-20T Billboard FW Update DEMO成功视频 @Vic Chen 
+1. RE: Mac os 一键更新支持_联想T24v-30&P34w-20 @Bernie.Hsieh
+
+</core_topic>
+  <related_context>
+    <related id="camera-透過我們驗證-code-sign" title="Camera 透過我們驗證 code sign" path="/code-sign/camera-透過我們驗證-code-sign.html">
+    
+    ### Camera
+    1. generate ecdsa key & sign ecdsa key
+    1. 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+    1. 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+    1.  2 , 3點 可以改成 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update 
+    1. 下圖為Hub Code Sign 驗證 flow ，驗證code sign 應該Tool 就可以控制，FW 應該不用改甚麼，但是還是要麻煩俊太確認看看
+    
+    </related>
+    <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
+    
+    ### Update Protocol
+    - HID update flow
+    - Vendor Command 第二碼
+    - HID 預設只使用 2.0
+    ### Tool & Test
+    - file:///\\genesyslogic.com.tw\GenesysData\SW_Release_New\Hub\HID\Tool
+    - 驗證
+    ### 執行中
+    - Release Tool
+    - 請SE確認各OS有沒有自動喚醒 device。
+    - HID 驗證 USB LOGO 問題。
+    - 整理 chip function list，用表格列出各 chip 機制的不同。
+    HID 速度問題。
+    - FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。
+    ### 待討讑
+    - GL3590
+    - Tool 在 chrome book上應該可以直接執行、更新，SW 會再討論如何測試、驗證。
+    - SW需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。
+    - 檢查不同 OS 平台（ex：mac, linux, chrome book）。
+    ### 已驗證 & 解決
+    2021/11/05 HID 會把重抓到的 device 當成不同個
+    2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號
+    2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題
+    2021/11/05 Scaler update 在 write command 時速度慢
+    2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）
+    2021/11/05 程式閃退
+    2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）
+    2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。
+    Google 在 ISP 相關。
+    HP ISP Tool ( HID ) 預設只使用 2.0
+    ### 會議記錄
+    2021/12/17 HP ISP Tool
+    
+    </related>
+    <related id="hp-hemiz34c-cpu3-code-sign-驗證問題" title="HP Hemi(Z34c) CPU3 Code Sign 驗證問題" path="/code-sign/hp-hemiz34c-cpu3-code-sign-驗證問題.html">
+    
+    除了 GL3590 有 hw security module 之外，其他hub chip 是沒有的，因為hp 規定最低底線只能用 fw 做code sign驗證，所以討論過後先以GL3525為範本驗證，因為GL3525 有三個CPU ，Hub 在update 後，可以用其他CPU 來驗證code sign 
+    - code sign commmand  spec
+    - GL3525 FW and Flash Configuration Application Note
+    ### 目前遇到的問題
+    - 原本 public key & signature 是用額外的 hex 檔案來做驗證，現在必須改成用 etoken sign 過的 檔案來做驗證，這時 public key format 是不一樣的，如下
+    - 在某些情況下計算 sha256 的 hash 值會斷線，
+    - 如果送完sha256 hsah 正確後驗證 rsa2048 signature & public key 解密後的 hash 都會是0x00
+          因為pd fw 只有針對u3 做 code sign 功能， u2 是沒有做code sign 功能的，原本tool 都預設 跑 u2驗證code sign ，所以才會發現這個現象
+    - 每次回傳的 rsa 2048 hash 值都不一樣
+    - update的bin檔是正確的還是錯誤的，回傳值都是PASS
+          PD Fw 有誤，請fw 修改一版就正常了
+    - rsa2048 的 hash 跟其他Tool 算出的hash 不一致
+    - sha256 的 hash 跟 rsa2048的 hash 不一致
+    - 每次驗證完code sign 重新上電後，PD fw都會不見
+          在驗證成功後會寫入最新版的public key ，當初預設寫在 0x16000的位置，沒有考慮到要透過PD fw 來驗證code sign的問題，還在討論public key 要放在哪邊
+    - GL3525 每個Traget 都是update到固定 offset ，所以跟原本的chip(GL3523 , GL3590) update方式不一樣，GLBin 產生 rom 檔的方式要修改
+    ### 最後 update 時間 :  3 sec(update fw) + 25 sec(sha256 hash) + 24 sec(rsa2048) = 52 sec
+    - update fw 時間 :  3sec
+    - sha256 hash 計算時間: 25 sec
+    - rsa2048 解密時間: 24 sec
+    ### Rsa2048 解密時間減少緣故
+    原本GL3523 是 CPU 是12.5MHz ，所以 rsa2048解密時間大概是50幾秒，因為GL3525 CPU 是25MHz，所以rsa2048解密時間變到24秒
+    ### 需要注意步驟
+    1. 必須用U3 來跑 (UUUISP=1)
+    1. Public key & Signature 要做Reverse (code 裡面有實作)
+    1. 計算hash command length 必須要跟hub 大小一致
+    1. hash 值要改回原本的算法 (code 裡面有實作)
+    1. public key format 要改成兩個byte 合成一個byte (code 裡面有實作)
+    ## Sha 256 sample code 
+    ```python
+    #include <8051.h>
+    #include <string.h>
+    
+    #define ROTLEFT(a, b) ((a << b) | (a >> (32 - b)))
+    #define ROTRIGHT(a, b) ((a >> b) | (a << (32 - b)))
+    #define CH(x, y, z) ((x & y) ^ (~x & z))
+    #define MAJ(x, y, z) ((x & y) ^ (x & z) ^ (y & z))
+    #define EP0(x) (ROTRIGHT(x, 2) ^ ROTRIGHT(x, 13) ^ ROTRIGHT(x, 22))
+    #define EP1(x) (ROTRIGHT(x, 6) ^ ROTRIGHT(x, 11) ^ ROTRIGHT(x, 25))
+    #define SIG0(x) (ROTRIGHT(x, 7) ^ ROTRIGHT(x, 18) ^ (x >> 3))
+    #define SIG1(x) (ROTRIGHT(x, 17) ^ ROTRIGHT(x, 19) ^ (x >> 10))
+    
+    typedef struct {
+        unsigned char data[64];
+        unsigned int datalen;
+        unsigned long long bitlen;
+        unsigned int state[8];
+    } SHA256_CTX;
+    
+    unsigned int k[64] = {
+        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+    };
+    
+    void sha256_transform(SHA256_CTX *ctx, const unsigned char data[]) {
+        unsigned int a, b, c, d, e, f, g, h, i, j, t1, t2, m[64];
+    
+        for (i = 0, j = 0; i < 16; ++i, j += 4)
+            m[i] = (data[j] << 24) | (data[j + 1] << 16) | (data[j + 2] << 8) | (data[j + 3]);
+        for (; i < 64; ++i)
+            m[i] = SIG1(m[i - 2]) + m[i - 7] + SIG0(m[i - 15]) + m[i - 16];
+    
+        a = ctx->state[0];
+        b = ctx->state[1];
+        c = ctx->state[2];
+        d = ctx->state[3];
+        e = ctx->state[4];
+        f = ctx->state[5];
+        g = ctx->state[6];
+        h = ctx->state[7];
+    
+        for (i = 0; i < 64; ++i) {
+            t1 = h + EP1(e) + CH(e, f, g) + k[i] + m[i];
+            t2 = EP0(a) + MAJ(a, b, c);
+            h = g;
+            g = f;
+            f = e;
+            e = d + t1;
+            d = c;
+            c = b;
+            b = a;
+            a = t1 + t2;
+        }
+    
+        ctx->state[0] += a;
+        ctx->state[1] += b;
+        ctx->state[2] += c;
+        ctx->state[3] += d;
+        ctx->state[4] += e;
+        ctx->state[5] += f;
+        ctx->state[6] += g;
+        ctx->state[7] += h;
+    }
+    
+    void sha256_init(SHA256_CTX *ctx) {
+        ctx->datalen = 0;
+        ctx->bitlen = 0;
+        ctx->state[0] = 0x6a09e667;
+        ctx->state[1] = 0xbb67ae85;
+        ctx->state[2] = 0x3c6ef372;
+        ctx->state[3] = 0xa54ff53a;
+        ctx->state[4] = 0x510e527f;
+        ctx->state[5] = 0x9b05688c;
+        ctx->state[6] = 0x1f83d9ab;
+        ctx->state[7] = 0x5be0cd19;
+    }
+    
+    void sha256_update(SHA256_CTX *ctx, const unsigned char data[], size_t len) {
+        for (unsigned int i = 0; i < len; ++i) {
+            ctx->data[ctx->datalen] = data[i];
+            ctx->datalen++;
+            if (ctx->datalen == 64) {
+                sha256_transform(ctx, ctx->data);
+                ctx->bitlen += 512;
+                ctx->datalen = 0;
+            }
+        }
+    }
+    
+    void sha256_final(SHA256_CTX *ctx, unsigned char hash[]) {
+        unsigned int i = ctx->datalen;
+    
+        if (ctx->datalen < 56) {
+            ctx->data[i++] = 0x80;
+            while (i < 56)
+                ctx->data[i++] = 0x00;
+        } else {
+            ctx->data[i++] = 0x80;
+            while (i < 64)
+                ctx->data[i++] = 0x00;
+            sha256_transform(ctx, ctx->data);
+            memset(ctx->data, 0, 56);
+        }
+    
+        ctx->bitlen += ctx->datalen * 8;
+        ctx->data[63] = ctx->bitlen;
+        ctx->data[62] = ctx->bitlen >> 8;
+        ctx->data[61] = ctx->bitlen >> 16;
+        ctx->data[60] = ctx->bitlen >> 24;
+        ctx->data[59] = ctx->bitlen >> 32;
+        ctx->data[58] = ctx->bitlen >> 40;
+        ctx->data[57] = ctx->bitlen >> 48;
+        ctx->data[56] = ctx->bitlen >> 56;
+        sha256_transform(ctx, ctx->data);
+    
+        for (i = 0; i < 4; ++i) {
+            hash[i]      = (ctx->state[0] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 4]  = (ctx->state[1] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 8]  = (ctx->state[2] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 12] = (ctx->state[3] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 16] = (ctx->state[4] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 20] = (ctx->state[5] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 24] = (ctx->state[6] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 28] = (ctx->state[7] >> (24 - i * 8)) & 0x000000ff;
+        }
+    }
+    
+    void main() {
+        unsigned char data[32768]; // 32K data
+        unsigned char hash[32];
+        SHA256_CTX ctx;
+        int i;
+    
+        // Fill the data array with some values
+        for (i = 0; i < 32768; ++i) {
+            data[i] = i % 256;
+        }
+    
+        // Initialize SHA-256 context
+        sha256_init(&ctx);
+    
+        // Start the timer
+        TH0 = 0x00;
+        TL0 = 0x00;
+        TR0 = 1; // Start Timer0
+    
+        // Update SHA-256 with data
+        sha256_update(&ctx, data, 32768);
+    
+        // Finalize SHA-256
+        sha256_final(&ctx, hash);
+    
+        // Stop the timer
+        TR0 = 0; // Stop Timer0
+    
+        // Calculate the elapsed time
+        unsigned int elapsed_time = (TH0 << 8) | TL0;
+    
+        // Print the hash (example: sending to UART, assuming UART is initialized)
+        for (i = 0; i < 32; ++i) {
+            printf("%02x", hash[i]);
+        }
+    
+        // Print the elapsed time
+        printf("\nElapsed time: %u timer ticks\n", elapsed_time);
+    }
+    
+    ```
+    ## 8051 優化 code 
+    ```python
+    #include <8051.h>
+    #include <string.h>
+    
+    #define ROTLEFT(a, b) ((a << b) | (a >> (32 - b)))
+    #define ROTRIGHT(a, b) ((a >> b) | (a << (32 - b)))
+    #define CH(x, y, z) ((x & y) ^ (~x & z))
+    #define MAJ(x, y, z) ((x & y) ^ (x & z) ^ (y & z))
+    #define EP0(x) (ROTRIGHT(x, 2) ^ ROTRIGHT(x, 13) ^ ROTRIGHT(x, 22))
+    #define EP1(x) (ROTRIGHT(x, 6) ^ ROTRIGHT(x, 11) ^ ROTRIGHT(x, 25))
+    #define SIG0(x) (ROTRIGHT(x, 7) ^ ROTRIGHT(x, 18) ^ (x >> 3))
+    #define SIG1(x) (ROTRIGHT(x, 17) ^ ROTRIGHT(x, 19) ^ (x >> 10))
+    
+    typedef struct {
+        unsigned char data[64];
+        unsigned int datalen;
+        unsigned long long bitlen;
+        unsigned int state[8];
+    } SHA256_CTX;
+    
+    unsigned int k[64] = {
+        0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+        0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+        0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+        0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+        0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+        0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+        0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+        0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+    };
+    
+    void sha256_transform(SHA256_CTX *ctx, const unsigned char data[]) {
+        unsigned int a, b, c, d, e, f, g, h, i, j, t1, t2, m[64];
+    
+        // 優化數據載入
+        for (i = 0, j = 0; i < 16; ++i, j += 4) {
+            m[i] = (data[j] << 24) | (data[j + 1] << 16) | (data[j + 2] << 8) | (data[j + 3]);
+        }
+        for (; i < 64; ++i) {
+            m[i] = SIG1(m[i - 2]) + m[i - 7] + SIG0(m[i - 15]) + m[i - 16];
+        }
+    
+        a = ctx->state[0];
+        b = ctx->state[1];
+        c = ctx->state[2];
+        d = ctx->state[3];
+        e = ctx->state[4];
+        f = ctx->state[5];
+        g = ctx->state[6];
+        h = ctx->state[7];
+    
+        // 優化的64輪變換
+        for (i = 0; i < 64; ++i) {
+            __asm {
+                MOV A, h
+                ADD A, EP1(e)
+                ADD A, CH(e, f, g)
+                ADD A, k[i]
+                ADD A, m[i]
+                MOV t1, A
+    
+                MOV A, a
+                ADD A, EP0(a)
+                ADD A, MAJ(a, b, c)
+                MOV t2, A
+    
+                MOV h, g
+                MOV g, f
+                MOV f, e
+                MOV e, d
+                ADD e, t1
+                MOV d, c
+                MOV c, b
+                MOV b, a
+                MOV a, t1
+                ADD a, t2
+            }
+        }
+    
+        ctx->state[0] += a;
+        ctx->state[1] += b;
+        ctx->state[2] += c;
+        ctx->state[3] += d;
+        ctx->state[4] += e;
+        ctx->state[5] += f;
+        ctx->state[6] += g;
+        ctx->state[7] += h;
+    }
+    
+    void sha256_init(SHA256_CTX *ctx) {
+        ctx->datalen = 0;
+        ctx->bitlen = 0;
+        ctx->state[0] = 0x6a09e667;
+        ctx->state[1] = 0xbb67ae85;
+        ctx->state[2] = 0x3c6ef372;
+        ctx->state[3] = 0xa54ff53a;
+        ctx->state[4] = 0x510e527f;
+        ctx->state[5] = 0x9b05688c;
+        ctx->state[6] = 0x1f83d9ab;
+        ctx->state[7] = 0x5be0cd19;
+    }
+    
+    void sha256_update(SHA256_CTX *ctx, const unsigned char data[], size_t len) {
+        for (unsigned int i = 0; i < len; ++i) {
+            ctx->data[ctx->datalen] = data[i];
+            ctx->datalen++;
+            if (ctx->datalen == 64) {
+                sha256_transform(ctx, ctx->data);
+                ctx->bitlen += 512;
+                ctx->datalen = 0;
+            }
+        }
+    }
+    
+    void sha256_final(SHA256_CTX *ctx, unsigned char hash[]) {
+        unsigned int i = ctx->datalen;
+    
+        if (ctx->datalen < 56) {
+            ctx->data[i++] = 0x80;
+            while (i < 56)
+                ctx->data[i++] = 0x00;
+        } else {
+            ctx->data[i++] = 0x80;
+            while (i < 64)
+                ctx->data[i++] = 0x00;
+            sha256_transform(ctx, ctx->data);
+            memset(ctx->data, 0, 56);
+        }
+    
+        ctx->bitlen += ctx->datalen * 8;
+        ctx->data[63] = ctx->bitlen;
+        ctx->data[62] = ctx->bitlen >> 8;
+        ctx->data[61] = ctx->bitlen >> 16;
+        ctx->data[60] = ctx->bitlen >> 24;
+        ctx->data[59] = ctx->bitlen >> 32;
+        ctx->data[58] = ctx->bitlen >> 40;
+        ctx->data[57] = ctx->bitlen >> 48;
+        ctx->data[56] = ctx->bitlen >> 56;
+        sha256_transform(ctx, ctx->data);
+    
+        for (i = 0; i < 4; ++i) {
+            hash[i]      = (ctx->state[0] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 4]  = (ctx->state[1] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 8]  = (ctx->state[2] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 12] = (ctx->state[3] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 16] = (ctx->state[4] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 20] = (ctx->state[5] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 24] = (ctx->state[6] >> (24 - i * 8)) & 0x000000ff;
+            hash[i + 28] = (ctx->state[7] >> (24 - i * 8)) & 0x000000ff;
+        }
+    }
+    
+    void main() {
+        unsigned char data[32768]; // 32K data
+        unsigned char hash[32];
+        SHA256_CTX ctx;
+        int i;
+    
+        // Fill the data array with some values
+        for (i = 0; i < 32768; ++i) {
+            data[i] = i % 256;
+        }
+    
+        // Initialize SHA-256 context
+        sha256_init(&ctx);
+    
+        // Start the timer
+        TH0 = 0x00;
+        TL0 = 0x00;
+        TR0 = 1; // Start Timer0
+    
+        // Update SHA-256 with data
+        sha256_update(&ctx, data, 32768);
+    
+        // Finalize SHA-256
+        sha256_final(&ctx, hash);
+    
+        // Stop the timer
+        TR0 = 0; // Stop Timer0
+    
+        // Calculate the elapsed time
+        unsigned int elapsed_time = (TH0 << 8) | TL0;
+    
+        // Print the hash (example: sending to UART, assuming UART is initialized)
+        for (i = 0; i < 32; ++i) {
+            printf("%02x", hash[i]);
+        }
+    
+        // Print the elapsed time
+        printf("\nElapsed time: %u timer ticks\n", elapsed_time);
+    }
+    
+    ```
+    ### AES Sample code 
+    ```javascript
+    unsigned char sbox[256] = {
+        0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b,
+        0xfe, 0xd7, 0xab, 0x76, 0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0,
+        0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0, 0xb7, 0xfd, 0x93, 0x26,
+        0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,
+        0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2,
+        0xeb, 0x27, 0xb2, 0x75, 0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0,
+        0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84, 0x53, 0xd1, 0x00, 0xed,
+        0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,
+        0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f,
+        0x50, 0x3c, 0x9f, 0xa8, 0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5,
+        0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2, 0xcd, 0x0c, 0x13, 0xec,
+        0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,
+        0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8, 0x14,
+        0xde, 0x5e, 0x0b, 0xdb, 0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c,
+        0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79, 0xe7, 0xc8, 0x37, 0x6d,
+        0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,
+        0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f,
+        0x4b, 0xbd, 0x8b, 0x8a, 0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e,
+        0x61, 0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e, 0xe1, 0xf8, 0x98, 0x11,
+        0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
+        0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f,
+        0xb0, 0x54, 0xbb, 0x16
+    };
+    
+    unsigned char rsbox[256] = {
+        0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3, 0x9e,
+        0x81, 0xf3, 0xd7, 0xfb, 0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87,
+        0x34, 0x8e, 0x43, 0x44, 0xc4, 0xde, 0xe9, 0xcb, 0x54, 0x7b, 0x94, 0x32,
+        0xa6, 0xc2, 0x23, 0x3d, 0xee, 0x4c, 0x95, 0x0b, 0x42, 0xfa, 0xc3, 0x4e,
+        0x08, 0x2e, 0xa1, 0x66, 0x28, 0xd9, 0x24, 0xb2, 0x76, 0x5b, 0xa2, 0x49,
+        0x6d, 0x8b, 0xd1, 0x25, 0x72, 0xf8, 0xf6, 0x64, 0x86, 0x68, 0x98, 0x16,
+        0xd4, 0xa4, 0x5c, 0xcc, 0x5d, 0x65, 0xb6, 0x92, 0x6c, 0x70, 0x48, 0x50,
+        0xfd, 0xed, 0xb9, 0xda, 0x5e, 0x15, 0x46, 0x57, 0xa7, 0x8d, 0x9d, 0x84,
+        0x90, 0xd8, 0xab, 0x00, 0x8c, 0xbc, 0xd3, 0x0a, 0xf7, 0xe4, 0x58, 0x05,
+        0xb8, 0xb3, 0x45, 0x06, 0xd0, 0x2c, 0x1e, 0x8f, 0xca, 0x3f, 0x0f, 0x02,
+        0xc1, 0xaf, 0xbd, 0x03, 0x01, 0x13, 0x8a, 0x6b, 0x3a, 0x91, 0x11, 0x41,
+        0x4f, 0x67, 0xdc, 0xea, 0x97, 0xf2, 0xcf, 0xce, 0xf0, 0xb4, 0xe6, 0x73,
+        0x96, 0xac, 0x74, 0x22, 0xe7, 0xad, 0x35, 0x85, 0xe2, 0xf9, 0x37, 0xe8,
+        0x1c, 0x75, 0xdf, 0x6e, 0x47, 0xf1, 0x1a, 0x71, 0x1d, 0x29, 0xc5, 0x89,
+        0x6f, 0xb7, 0x62, 0x0e, 0xaa, 0x18, 0xbe, 0x1b, 0xfc, 0x56, 0x3e, 0x4b,
+        0xc6, 0xd2, 0x79, 0x20, 0x9a, 0xdb, 0xc0, 0xfe, 0x78, 0xcd, 0x5a, 0xf4,
+        0x1f, 0xdd, 0xa8, 0x33, 0x88, 0x07, 0xc7, 0x31, 0xb1, 0x12, 0x10, 0x59,
+        0x27, 0x80, 0xec, 0x5f, 0x60, 0x51, 0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0x0d,
+        0x2d, 0xe5, 0x7a, 0x9f, 0x93, 0xc9, 0x9c, 0xef, 0xa0, 0xe0, 0x3b, 0x4d,
+        0xae, 0x2a, 0xf5, 0xb0, 0xc8, 0xeb, 0xbb, 0x3c, 0x83, 0x53, 0x99, 0x61,
+        0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63,
+        0x55, 0x21, 0x0c, 0x7d
+    };
+    
+    unsigned char Rcon[255] = {
+        0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c,
+        0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a,
+        0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd,
+        0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a,
+        0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80,
+        0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6,
+        0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72,
+        0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc,
+        0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10,
+        0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e,
+        0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5,
+        0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94,
+        0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02,
+        0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d,
+        0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d,
+        0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f,
+        0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb
+    };
+    
+    void InvMixColumns() {
+        int i;
+        unsigned char a, b, c, d;
+        for (i = 0; i < 4; i++) {
+            a = state[0][i];
+            b = state[1][i];
+            c = state[2][i];
+            d = state[3][i];
+    
+            state[0][i] = Multiply(a, 0x0e) ^ Multiply(b, 0x0b) ^ Multiply(c, 0x0d) ^ Multiply(d, 0x09);
+            state[1][i] = Multiply(a, 0x09) ^ Multiply(b, 0x0e) ^ Multiply(c, 0x0b) ^ Multiply(d, 0x0d);
+            state[2][i] = Multiply(a, 0x0d) ^ Multiply(b, 0x09) ^ Multiply(c, 0x0e) ^ Multiply(d, 0x0b);
+            state[3][i] = Multiply(a, 0x0b) ^ Multiply(b, 0x0d) ^ Multiply(c, 0x09) ^ Multiply(d, 0x0e);
+        }
+    }
+    
+    void InvSubBytes() {
+        int i, j;
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                state[i][j] = rsbox[state[i][j]];
+            }
+        }
+    }
+    
+    void InvShiftRows() {
+        unsigned char temp;
+    
+        temp = state[1][3];
+        state[1][3] = state[1][2];
+        state[1][2] = state[1][1];
+        state[1][1] = state[1][0];
+        state[1][0] = temp;
+    
+        temp = state[2][0];
+        state[2][0] = state[2][2];
+        state[2][2] = temp;
+    
+        temp = state[2][1];
+        state[2][1] = state[2][3];
+        state[2][3] = temp;
+    
+        temp = state[3][0];
+        state[3][0] = state[3][1];
+        state[3][1] = state[3][2];
+        state[3][2] = state[3][3];
+        state[3][3] = temp;
+    }
+    
+    void InvCipher() {
+        int i, j, round = 0;
+    
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                state[j][i] = out[i * 4 + j];
+            }
+        }
+    
+        AddRoundKey(Nr);
+    
+        for (round = Nr - 1; round > 0; round--) {
+            InvShiftRows();
+            InvSubBytes();
+            AddRoundKey(round);
+            InvMixColumns();
+        }
+    
+        InvShiftRows();
+        InvSubBytes();
+        AddRoundKey(0);
+    
+        for (i = 0; i < 4; i++) {
+            for (j = 0; j < 4; j++) {
+                in[i * 4 + j] = state[j][i];
+            }
+        }
+    }
+    
+    
+    int main() {
+        KeyExpansion();
+    
+        printf("\nText before encryption:\n");
+        for (int i = 0; i < 16; i++) {
+            printf("%02x ", in[i]);
+        }
+        printf("\n");
+    
+        Cipher();
+    
+        printf("\nEncrypted text:\n");
+        for (int i = 0; i < 16; i++) {
+            printf("%02x ", out[i]);
+        }
+        printf("\n");
+    
+        InvCipher();
+    
+        printf("\nDecrypted text:\n");
+        for (int i = 0; i < 16; i++) {
+            printf("%02x ", in[i]);
+        }
+        printf("\n");
+    
+        return 0;
+    }
+    
+    ```
+    
+    </related>
+  </related_context>
+</context_boundaries>
