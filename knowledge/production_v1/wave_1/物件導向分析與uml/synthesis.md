@@ -1,30 +1,30 @@
-物件導向分析與UML報告
 
-[摘要]
-物件導向分析與UML是一種軟體開發方法論,透過建立各種UML圖表來描述系統的需求、架構和設計。本報告將概述物件導向分析的核心概念,並詳細介紹UML的主要圖表類型及其應用,包括用例圖、活動圖、類別圖、序列圖等。報告將闡述這些UML圖表如何協助軟體開發團隊進行需求分析、系統設計和實現。
+[物件導向分析與UML](general/物件導向分析與uml.html)
 
-[物件導向分析概述]
-物件導向分析是一種軟體開發方法論,著重於將系統抽象化為一組相互關聯的物件。這些物件包含數據和行為,可以相互交互以實現系統的功能需求。[Use Case Diagram]用例圖是物件導向分析的核心工具,用於描述系統的功能需求和使用者交互。用例圖包含使用者(Actor)、系統功能(Use Case)以及它們之間的關係。
+物件導向分析與設計(Object-Oriented Analysis and Design, OOAD)是一種軟體開發方法論,它以物件為中心,將系統分解為一組相互作用的物件。物件導向分析與設計通常使用統一建模語言(Unified Modeling Language, UML)來描述和設計系統。
 
-[UML圖表介紹]
-UML(Unified Modeling Language)是一種標準化的建模語言,廣泛應用於物件導向軟體開發的各個階段。主要UML圖表類型包括:
 
-1. 用例圖(Use Case Diagram)：描述系統的功能需求和使用者交互。[Use Case Diagram]
-2. 活動圖(Activity Diagram)：描述系統中的工作流程和活動順序。[Activity diagram]
-3. 類別圖(Class Diagram)：描述系統中的類別、屬性和方法,以及它們之間的關係。[Key Abstractions]
-4. 序列圖(Sequence Diagram)：描述對象之間的交互順序。[Interaction Diagrams]
+### 2.1 Use Case Diagram
 
-這些UML圖表可以相互關聯,共同描述系統的需求、架構和設計。例如,用例圖可以引導活動圖的建立,而活動圖又可以指導類別圖的設計。[use case diagram —> active diagram —> class diagram]
+`[Use Case Diagram](general/物件導向分析與uml.html#use-case-diagram)`
 
-[UML在軟體開發中的應用]
-UML在軟體開發的各個階段都有重要應用:
+### 2.2 Activity Diagram
 
-1. 需求分析：用例圖可以清楚地描述系統的功能需求和使用者交互。[需求分析]
-2. 架構設計：活動圖和類別圖有助於確定系統的關鍵抽象概念和架構。[架構]
-3. 詳細設計：序列圖可以詳細描述對象之間的交互過程。[Design]
-4. 實現：UML圖表可以為代碼實現提供清晰的藍圖。[Implement]
+`[Activity Diagram](general/物件導向分析與uml.html#activity-diagram)`
 
-總之,UML為軟體開發團隊提供了一種標準化的建模語言,有助於提高需求分析、系統設計和實現的效率與質量。
+### 2.3 Class Diagram
 
-[結論]
-物件導向分析與UML是一種強大的軟體開發方法論,通過建立各種UML圖表來描述系統的需求、架構和設計。UML圖表在軟體開發的各個階段都有重要應用,有助於提高團隊的協作效率和軟體質量。本報告概述了物件導向分析的核心概念,並詳細介紹了UML的主要圖表類型及其在軟體開發中的應用。
+`[Key Abstractions](general/物件導向分析與uml.html#key-abstractions)`
+`[Domain Model](general/物件導向分析與uml.html#domain-model)`
+
+### 2.4 Interaction Diagrams
+
+`[Interaction Diagrams](general/物件導向分析與uml.html#interaction-diagrams)`
+
+## 3. 物件導向分析與設計流程
+
+
+`[圖形取代文字](http://www.codedata.com.tw/java/michael)`
+`[需求分析, 架構, Design, Implement](general/物件導向分析與uml.html)`
+
+目前市面上有多種UML建模工具,如[Visual Paradigm](https://online.visual-paradigm.com/tw/)等,可以輔助開發人員進行物件導向分析與設計。

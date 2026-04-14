@@ -28,11 +28,11 @@ const REVIEW_SAMPLE_SLUGS = [
 ];
 
 function extractClaims(md: string): string[] {
-    // Basic sentence splitting for technical claims
-    // We look for sentences that aren't just headers or empty lines
-    return md.split(/[。.\n]/)
+    // Audit exactly what the Enforcer sees: per-line claims.
+    const lines = md.split("\n");
+    return lines
         .map(s => s.trim())
-        .filter(s => s.length > 10 && !s.startsWith("#") && !s.startsWith("!["));
+        .filter(s => s.length > 5 && !s.startsWith("#") && !s.startsWith("!["));
 }
 
 function findEvidence(claim: string, xml: string): { line: number, text: string } | null {
@@ -40,7 +40,7 @@ function findEvidence(claim: string, xml: string): { line: number, text: string 
     const cleanClaim = claim.replace(/^\[未有直接 Source 錨點，待確認\]\s*/, "").trim();
     
     // Simple keyword matching for evidence
-    const keywords = cleanClaim.split(/[\s,()\[\]「」：、。.！？\-–_`*#|]/).filter(w => w.length > 2);
+    const keywords = cleanClaim.split(/[\s,()\[\]「」：:、。.！？\-–_|#*`]/).filter(w => w.length >= 2);
     const xmlLines = xml.split("\n");
     
     let bestMatch = { line: -1, text: "", score: 0 };
@@ -69,10 +69,44 @@ function classifyClaim(claim: string, evidenceScore: number): { tier: string, ri
         "摘要僅根據單一核心節點生成",
     ];
 
-    // Claims already processed by the Enforcement Layer (downgraded)
+    // Claims already processed by the Enforcement Layer (downgraded by synthesis-enforcer.ts)
+    // These may have a leading "- " bullet prefix — strip it before checking.
     // → treat as Structural, NOT a new violation
-    if (claim.trimStart().startsWith("[未有直接 Source 錨點，待確認]")) {
+    const strippedClaim = claim.trim().replace(/^-\s*/, "");
+    if (strippedClaim.startsWith("[未有直接 Source 錨點，待確認]")) {
         return { tier: "Downgraded", risk: "LOW" };
+    }
+
+    // Bold headers added by LLM (e.g. "**需求管理**:") 
+    // If it's a structural list item like "- **Key**:", keep as Structural.
+    // Otherwise, treat as content that needs anchoring.
+    if (/^-\s*\*\*[^*]+\*\*\s*:?\s*$/.test(strippedClaim)) {
+        return { tier: "Structural", risk: "LOW" };
+    }
+
+    // Common structural artifacts from markdown/code wrapping
+    const structuralArtifacts = [
+        /^[a-z]+\)$/,             // e.g. "html)"
+        /^[a-z]+\.html$/,         // e.g. "specification.html"
+        /^if\s*\(/,               // e.g. "if (firmwareName"
+        /^org\/wiki\//,           // e.g. "org/wiki/xxx"
+        /^com\/[a-z]+/,           // e.g. "com/en-us"
+        /^%[0-9A-Fa-f]{2}/,       // URL encoded chars at start of line
+        /^[\/\.a-zA-Z0-9_\-]+\)$/, // markdown link tails
+        /^www\./,
+    ];
+    if (structuralArtifacts.some(regex => regex.test(strippedClaim))) {
+        return { tier: "Structural", risk: "LOW" };
+    }
+
+    // URL fragments produced by LLM wrapping markdown links across lines:
+    if (/^(org\/|com\/|gov\/|https?:\/\/|html\)|html$|%[0-9A-Fa-f]{2}|www\.)/.test(strippedClaim)) {
+        return { tier: "Structural", risk: "LOW" };
+    }
+
+    // Markdown link-only lines (e.g. "- [Title](path.html)") are structural references
+    if (/^\s*-?\s*\[.+\]\(.+\)\s*$/.test(strippedClaim)) {
+        return { tier: "Structural", risk: "LOW" };
     }
 
     if (structuralPhrases.some(p => claim.includes(p))) {

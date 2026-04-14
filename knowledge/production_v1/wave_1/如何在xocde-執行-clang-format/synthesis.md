@@ -1,32 +1,40 @@
-以下是如何在 Xcode 中執行 clang-format 的詳細說明:
-
 # 如何在 Xcode 執行 clang-format
 
-## 1. 安裝 clang-format
-首先需要確保您的系統上已安裝 clang-format。clang-format 是一個用於自動格式化 C、C++、Objective-C、Java、JavaScript 和 JSON 代碼的工具。您可以從 [LLVM 官網](https://releases.llvm.org/download.html) 下載適合您系統的版本。
+## 安裝 clang-format
 
-## 2. 檢查 clang-format 版本
-確保您使用的 clang-format 版本在 12 或以上。您可以在終端機中執行 `clang-format --version` 來檢查版本。
+首先需要確保您的系統上已安裝 clang-format。clang-format 是 Clang 專案的一部分，可以透過以下方式安裝:
 
-## 3. 添加 Automator 服務
-1. 打開 Automator 應用程式。
-2. 選擇 "新建文稿" 並選擇 "服務" 作為類型。
-3. 在搜索欄中輸入 "Run Shell Script"，並將其拖放到工作流程中。
-4. 在 "Shell" 下拉菜單中選擇 "/bin/bash"。
-5. 在腳本區域中輸入以下內容:
+1. 使用 Homebrew 安裝:
+   brew install clang-format
+   - 在 `Command Line Tools` 下拉選單中選擇您安裝的 Xcode 版本
+   - 這將自動安裝 clang-format
 
-```bash
-clang-format -i "$@"
-```
+## 檢查 clang-format 版本
 
-6. 保存服務並命名為 "clang-format"。
+確保您使用的 clang-format 版本為 12 或更高版本。您可以透過以下命令檢查版本:
 
-## 4. 設定 .clang-format 文件
-在您的項目根目錄中創建一個名為 `.clang-format` 的文件，並根據您的代碼風格添加相應的配置。您可以參考 [clang-format 文檔](https://clang.llvm.org/docs/ClangFormatStyleOptions.html) 來設定格式選項。
+clang-format --version
 
-## 5. 在 Xcode 中使用 clang-format
-1. 在 Xcode 中，選擇要格式化的代碼。
-2. 右鍵單擊選中的代碼，然後選擇 "Services" > "clang-format"。
-3. Xcode 會自動使用 `.clang-format` 文件中的配置對選中的代碼進行格式化。
+## 添加 Automator 服務
 
-通過以上步驟，您就可以在 Xcode 中輕鬆地使用 clang-format 來自動格式化您的代碼了。這不僅可以提高代碼的可讀性，還可以確保團隊成員之間的代碼風格保持一致。
+1. 開啟 Automator 應用程式
+4. 在右側搜尋欄位中搜尋 `Run Shell Script`，並將其拖曳到工作流程區域
+5. 在 `Run Shell Script` 動作中，將以下腳本貼上:
+
+   clang-format -i "$@"
+
+6. 儲存服務，並命名為 `clang-format`
+
+## 在 Xcode 中使用 clang-format
+
+1. 在專案根目錄中建立一個名為 `.clang-format` 的檔案，並在其中定義您的 clang-format 設定。您可以參考 [clang-format 文件](https://clang.llvm.org/docs/ClangFormatStyleOptions.html) 來設定格式。
+
+
+3. 右鍵點擊選取的程式碼，並在 `Services` 選單中選擇 `clang-format`。這將使用您在 Automator 中建立的服務來格式化選取的程式碼。
+
+透過這些步驟，您就可以在 Xcode 中輕鬆地使用 clang-format 來格式化您的程式碼了。
+
+
+- [Clang-Format 官方文件](https://clang.llvm.org/docs/ClangFormat.html)
+- [在 Xcode 中使用 clang-format](https://nshipster.com/clang-format/)
+- [在 Xcode 中自動格式化程式碼](https://www.raywenderlich.com/9156-xcode-tips-and-tricks#toc-anchor-012)

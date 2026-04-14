@@ -59,7 +59,7 @@ function scoreEvidence(sentence: string, sourceXml: string): number {
 
     const keywords = sentence
         .split(/[\s,()[\]「」：:、。.！？\-–_|#*`]/)
-        .filter(w => w.length > 3);
+        .filter(w => w.length >= 2);
 
     if (keywords.length === 0) return 0;
 
@@ -97,28 +97,28 @@ function classifyLine(
         return "Structural";
     }
 
-    // Bold section headers added by LLM (e.g. "- **Decision Summary**:", "### Etoken...")
-    // These are structural scaffolding, not factual claims.
-    if (/^#{1,6}\s/.test(trimmed)) return "Structural";
-    if (/^-?\s*\*\*[^*]+\*\*\s*:?\s*$/.test(trimmed)) return "Structural";
+    // Bold headers added by LLM (e.g. "**需求管理**:") 
+    // If it's a structural list item like "- **Key**:", keep as Structural.
+    // Otherwise, treat as content that needs anchoring.
+    if (/^-\s*\*\*[^*]+\*\*\s*:?\s*$/.test(trimmed)) return "Structural";
 
-    // URL continuation fragments produced when LLM wraps markdown links across lines
-    // e.g. "org/wiki/Software_requirements_specification) 以定義..."
-    // These are NOT independent claims, they are syntactic artifacts.
-    if (/^(org\/|com\/|gov\/|https?:\/\/|html\)|html$|[a-z]+\.html)/.test(trimmed)) return "Structural";
+    // Common structural artifacts from markdown/code wrapping
+    if (/^(org\/|com\/|gov\/|https?:\/\/|html\)|html$|%[0-9A-Fa-f]{2}|www\.)/.test(trimmed)) return "Structural";
+    if (/^[\/\.a-zA-Z0-9_\-]+\)$/.test(trimmed)) return "Structural"; // link fragments
+    if (/^if\s*\(/.test(trimmed)) return "Structural"; // code fragments
     if (/^path\/to\//.test(trimmed)) return "Structural";
 
-    // Markdown link-only lines (e.g. "- [Title](path.html): ...") are structural references
-    if (/^\s*-?\s*\[.+\]\(.+\)/.test(trimmed)) return "Structural";
+    // Markdown link-only lines (e.g. "- [Title](path.html)") are structural references
+    if (/^\s*-?\s*\[.+\]\(.+\)\s*$/.test(trimmed)) return "Structural";
 
     // Explicit allowlisted framing phrases
     if (STRUCTURAL_ALLOWLIST.some(p => trimmed.includes(p))) {
         return "Structural";
     }
 
-    // Inline markdown links embedded in sentences (e.g. "產生 ECDSA 金鑰 `[Camera](url)`")
-    // The link portion is a reference, not a standalone claim that needs evidence.
-    if (/\[.+?\]\(.+?\)/.test(trimmed)) return "Structural";
+    // Inline markdown links (e.g. "Text [Link](url)")
+    // DO NOT bypass as Structural anymore. If the line has text, it must be anchored.
+    // However, if the line is JUST the link (already caught above), it stays structural.
 
     if (evidenceScore > 3) return "Explicit";
     if (evidenceScore >= 1) return "Derived";
@@ -128,33 +128,19 @@ function classifyLine(
 // ─────────────────────────────────────────────
 // Determine enforcement action for an INFERRED line.
 // ─────────────────────────────────────────────
-function determineAction(line: string): { action: "REMOVE" | "DOWNGRADE"; replacement?: string } {
+function determineAction(
+    line: string,
+    evidenceScore: number
+): { action: "REMOVE" | "DOWNGRADE"; replacement?: string } {
     const trimmed = line.trim();
 
-    // Summary / generalization → REMOVE entirely
-    const removePatterns = [
-        "總的來說",
-        "換句話說",
-        "綜合以上",
-        "這些做法旨在",
-        "這些資訊可以幫助",
-        "可以幫助開發人員",
-        "旨在提高",
-        "同時也與",
-        "這些資訊",
-        "以下是針對",
-        "的詳細文件",
-    ];
-    if (removePatterns.some(p => trimmed.includes(p))) {
+    // If evidence score is 0 (no keyword hit at all in source),
+    // this is a completely unanchored claim → REMOVE to prevent false positives
+    if (evidenceScore === 0) {
         return { action: "REMOVE" };
     }
 
-    // Very short fragments → REMOVE
-    if (trimmed.length <= 10) {
-        return { action: "REMOVE" };
-    }
-
-    // Other inferred technical claims → DOWNGRADE with uncertainty prefix
+    // Partial evidence (score > 0 but still Inferred) → DOWNGRADE with uncertainty prefix
     const isBullet = /^[-*]\s/.test(trimmed);
     const core = trimmed.replace(/^[-*]\s*/, "");
     const prefix = isBullet ? "- " : "";
@@ -183,22 +169,67 @@ export function enforceDraft(
 
     const outputLines: string[] = [];
 
+    const removePatterns = [
+        "總的來說",
+        "換句話說",
+        "綜合以上",
+        "這些做法旨在",
+        "這些資訊可以幫助",
+        "可以幫助開發人員",
+        "旨在提高",
+        "同時也與",
+        "這些資訊",
+        "以下是針對",
+        "的詳細文件",
+        "提供了一個集中的位置",
+        "確保跨平台開發與底層",
+        "工作是獲得經濟報酬的活動",
+        "旨在確保",
+        "也提供了相關的操作截圖",
+        "旨在透過",
+        "具體體現",
+        "這些做法",
+        "這造成需求",
+        "旨在定義",
+        "我們也要做出相應的工具",
+        "旨在根據",
+        "這項工作流程",
+        "致力於",
+        "可以看出",
+        "涉及了",
+        "旨在提高",
+        "旨在描述",
+    ];
+
     for (const line of lines) {
+        const trimmed = line.trim();
+
+        // 🟢 MANDATORY PURGE: Framing and summary fragments are removed regardless of evidence.
+        if (removePatterns.some(p => trimmed.includes(p))) {
+            removedCount++;
+            continue;
+        }
+
+        // 🟢 FRAGMENT PURGE: Synthetic artifacts (link tails, code parts)
+        if (trimmed.length > 0 && (trimmed.length <= 15 || /^[a-z]+\)$|^if\s*\(/.test(trimmed))) {
+            removedCount++;
+            continue;
+        }
+
         const score = scoreEvidence(line, sourceXml);
         const tier = classifyLine(line, score);
 
         if (tier === "Inferred") {
-            // 🔴 ENFORCEMENT: Inferred with no anchor = violation → act now
-            const { action, replacement } = determineAction(line);
+            // 🔴 ENFORCEMENT: Inferred with zero or partial anchor
+            const { action, replacement } = determineAction(line, score);
 
             if (action === "REMOVE") {
                 removedCount++;
                 verdicts.push({ claim: line, evidenceScore: score, tier, action: "REMOVE" });
-                // NOT added to outputLines
             } else {
                 downgradedCount++;
+                outputLines.push(replacement || line);
                 verdicts.push({ claim: line, evidenceScore: score, tier, action: "DOWNGRADE", replacement });
-                outputLines.push(replacement!);
             }
         } else {
             keptCount++;

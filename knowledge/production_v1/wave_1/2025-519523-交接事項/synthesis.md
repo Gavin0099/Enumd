@@ -1,45 +1,49 @@
-以下是針對「2025 5/19~5/23 交接事項」的文件合成報告:
+以下為 2025 5/19~5/23 交接事項的綜合報告:
 
 # 2025 5/19~5/23 交接事項
 
-## 核心主題概述
-本次交接事項涵蓋以下幾個重點:
 
-1. **Richelieu Issue**: 由 @Adam.Chen 負責處理。
-2. **Lenovo P27QD-40**: 由 @Standy Huang 負責處理。
-3. **Lenovo Mac One Key Update tool**: 由 @Bernie.Hsieh 負責處理。
-4. **GLBin**: 由 @Adam.Chen 負責處理。
-5. **HP Silent mode bat檔修改**: 由 @Adam.Chen 負責處理。
-6. **GenX AMD 7P Dragon Range Hub**: 無更多細節提供。
+1. Richelieu Issue @Adam.Chen
+2. Lenovo P27QD-40 @Standy Huang
+3. Lenovo Mac One Key Update tool @Bernie.Hsieh
+4. GLBin @Adam.Chen
+5. HP Silent mode bat檔修改 @Adam.Chen
+6. GenX AMD 7P Dragon Range Hub
 
-## 相關上下文
-在交接事項的上下文中,我們發現以下幾個相關主題:
 
-1. **Camera 透過我們驗證 code sign**:
-   - 需要告知如何 Erase Camera 以及如何 Read Camera data,以符合 Hub Security Model 的要求。
-   - 可以改為告知整個 update flow 以及相關文件,由工具控制整個更新流程。
+1. [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)
+   - 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+   - 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+   - 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update
 
-2. **Etoken System Code View**:
-   - `etoken_dongle_server` 和 `etoken_server` 在架構、安全性和測試完整性方面存在多項風險,需要進行改善。
-   - 發現的主要問題包括:執行緒生命週期不可控、外部輸入缺乏邊界控制、測試覆蓋不足等。
-   - 這些問題與既有的反模式和陷阱高度重疊,需要進一步修正。
+2. [Etoken System Code View](code-sign/etoken-system-code-view-.html)
+   - 連線工作流程使用 detach 且無生命週期收斂,違反可預測關閉原則
+   - 檔案大小與外部命令執行缺乏邊界控制,存在資源與執行風險
+   - SQL 注入風險、shutdown race / UAF 風險、OOM/卡死風險
 
-3. **HID Code Sign 記錄**:
-   - 記錄了 HID 更新流程、Vendor Command 規範、以及相關工具和測試情況。
-   - 已驗證並解決了一些問題,如重抓設備、OS 無法識別、寫入速度慢等。
-   - 仍有待討論的議題,如 GL3590、Chrome OS 支援、ISP Tool 使用 filter driver 或 HID 等。
+3. [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html)
+   - HID update flow
+   - Vendor Command 第二碼
+   - 驗證 USB LOGO 問題
+   - FW UPD 已經是 open source 了,但 SW 目前 Build 不起來,無法測試
+   - 檢查不同 OS 平台（ex：mac, linux, chrome book）
 
-## 核心主題與相關上下文的關係
-在本次交接事項中,核心主題涉及多個不同的技術領域和系統組件,包括:
+1. **Richelieu Issue @Adam.Chen**
+   - 需要瞭解 Richelieu 相關的問題,並確保在交接過程中能夠順利解決。
 
-1. **Richelieu Issue**: 可能涉及相關的 code sign 驗證和更新流程。
-2. **Lenovo P27QD-40 和 Lenovo Mac One Key Update tool**: 可能涉及 HID 相關的更新機制。
-3. **GLBin 和 HP Silent mode bat檔修改**: 可能涉及系統配置和腳本修改。
-4. **GenX AMD 7P Dragon Range Hub**: 缺乏更多細節,無法確定相關上下文。
+2. **Lenovo P27QD-40 @Standy Huang**
+   - 需要瞭解 Lenovo P27QD-40 的相關情況,並確保在交接過程中能夠順利處理。
 
-這些核心主題都需要與相關的上下文進行整合和協調,以確保交接過程的順利進行。例如,需要了解 code sign 驗證和 HID 更新流程的最新情況,並確保相關工具和測試方案的完整性。同時,也需要關注系統配置和腳本修改等細節,確保交接後的系統穩定性。
+3. **Lenovo Mac One Key Update tool @Bernie.Hsieh**
+   - 需要瞭解 Lenovo Mac One Key Update tool 的相關情況,並確保在交接過程中能夠順利處理。
 
-## 結論
-基於提供的上下文,我們可以初步了解本次交接事項的主要內容和相關領域。但由於缺乏某些核心主題的更多細節,如 GenX AMD 7P Dragon Range Hub,無法完全確定其與整體交接事項的關係。
+4. **GLBin @Adam.Chen**
+   - 需要瞭解 GLBin 的相關情況,並確保在交接過程中能夠順利處理。
 
-因此,在實際交接過程中,需要進一步收集和整合相關的技術文件和資訊,以確保交接工作的順利進行。同時,也需要密切關注 code sign 驗證、HID 更新、系統配置等關鍵領域,確保交接後的系統穩定性和可靠性。
+5. **HP Silent mode bat檔修改 @Adam.Chen**
+   - 需要瞭解 HP Silent mode bat檔修改的相關情況,並確保在交接過程中能夠順利處理。
+
+6. **GenX AMD 7P Dragon Range Hub**
+   - 需要瞭解 GenX AMD 7P Dragon Range Hub 的相關情況,並確保在交接過程中能夠順利處理。
+
+在交接過程中,需要仔細瞭解上述各個重點,並確保能夠順利處理相關的技術和流程問題。同時,也需要注意與 [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)、[Etoken System Code View](code-sign/etoken-system-code-view-.html) 和 [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html) 等相關的背景知識,以確保交接過程中能夠順利進行。

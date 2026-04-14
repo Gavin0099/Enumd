@@ -9,14 +9,14 @@
 | -hp-firmware-installer-macos-完整修復與發布手冊 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | -hp-sdlc-master-compliance-checklist-2025-edition | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | -lenovo-display-daisy-chain-issue | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
-| -windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
+| -windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
 | 0206-0209-交接 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 0326-0330-交接 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 12261230-交接 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 2021-今年重點目標 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 2021部門創新提案 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 20240729-82-交接事項 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
-| 2024部門創新提案 | ISOLATED | HUMAN_REVIEW | HIGH | [ ] |
+| 2024部門創新提案 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 2025-519523-交接事項 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 2025-工作會報 | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |
 | 2025-minimum-elements-for-a-software-bill-of-materials-sbom | STABLE_AT_A | HUMAN_REVIEW | HIGH | [ ] |

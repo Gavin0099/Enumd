@@ -1,34 +1,13 @@
-2021 年重點目標報告
 
-## 目標概述
-2021 年的重點目標是將 HP Enduser Tool、 General Enduser Tool 和 Standard ISP Tool 整合成新的架構。在此過程中需要事先規劃好要測試的 HP Display Model 以及各種 code sign 方式。每週四的例會將檢視整合的進度。
+2021 年的重點目標是整合 HP Enduser Tool、 General Enduser Tool 和 Standard ISP Tool 成為新的架構。在此過程中需要事先規劃好要測試的 HP Display Model 以及各種 code sign 方式，並在每週四的例會中檢視進度。[`目標是年底將 HP Enduser Tool、 General Enduser Tool、Standard ISP Tool 整合成新架構， 並且需事先規劃好，要測試哪些 HP Display Model、包含各種code sign方式； 將在每週四例會檢視進度。`]
 
-## 閱讀書籍
-為了達成上述目標，預計在 2.5 個月內閱讀完以下兩本書:
-1. [設計模式的解析與活用](https://www.books.com.tw/products/0010844576)
-2. [大話設計模式](https://www.books.com.tw/products/0010291950)
+3. 嘗試加入 SPD Log（一個較完整的開源 LOG 系統），取代原有的 LOG 系統。[`試著加入 SPD Log （Open source 中較完整的 LOG系統） ，取代原本的 LOG 系統。`]
 
-## 技術學習
-除了閱讀書籍外，還需要學習並熟悉以下技術:
-1. [Design pattern](https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
-2. C++11 常用部分
+- 使用 draw.io 繪製流程圖。[`流程圖可使用draw IO繪製。`]
 
-## 改善 LOG 系統
-計劃嘗試將原有的 LOG 系統替換為 [SPD Log](https://github.com/SPDOfficial/SPDLog)，這是一個較為完整的開源 LOG 系統。
+在整合工具的過程中，需要了解 Genesys Logic Firmware 的安全簽署和驗證流程（Code Signing）。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`]
 
-## 流程圖繪製
-使用 [draw.io](https://app.diagrams.net/) 工具繪製流程圖。
 
-## 其他方法論
-此外，也計劃初步接觸以下方法論:
-1. [戴明環 (PDCA)](https://zh.wikipedia.org/wiki/%E6%88%B4%E6%98%8E%E7%92%B0)
-2. [Six Sigma](https://zh.wikipedia.org/wiki/Six_Sigma)
-這些方法論可以幫助規劃並持續改善需求的執行過程。
+Genesys Logic 設計了一套內部簽署系統，使用 FIPS L3 認證的 USB eToken 硬體作為金鑰儲存，並搭配自行開發的 SDK 應用程式。[`我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。`]
 
-## 相關背景知識
-在完成上述目標的同時，也需要參考以下相關文件:
-1. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)
-2. [3rd party code signing specification (ECDSA)](code-sign/3rd-party-code-signing-specification-ecdsa.html)
-3. [3rd party code signing specification (ECDSA)(EN)](code-sign/3rd-party-code-signing-specification-ecdsaen-.html)
-
-這些文件描述了 Genesys Logic 為滿足 HP Code Signing 安全要求而設計的韌體簽署與驗證架構，以及相關的實作細節。
+此外，也可以參考 3rd party code signing specification (ECDSA) 的相關文件，了解 Genesys Logic 的程式碼簽署和驗證流程。[`3rd party code signing specification (ECDSA)`]

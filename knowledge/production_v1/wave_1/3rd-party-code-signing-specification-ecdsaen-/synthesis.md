@@ -1,29 +1,21 @@
 報告書：3rd party code signing specification (ECDSA)(EN)
 
-## 摘要
-本報告書旨在概述 Genesys Logic 針對第三方韌體代碼簽署所制定的 ECDSA 規範。Genesys Logic 為滿足 HP Code Signing 安全要求，設計了一套完整的韌體簽署與驗證架構。該架構採用 ECDSA nistp256 加密演算法，並符合 FIPS 140-2 Level 3 安全標準。本報告將深入探討該簽署流程的實作細節，包括使用 OpenSSL 和 eToken 硬體的具體實現方式。
+本報告書旨在概述 Genesys Logic 針對第三方韌體代碼簽署所制定的 ECDSA 規範。Genesys Logic 要求所有韌體更新必須經過簽署驗證流程，以確保韌體的完整性和安全性。本報告將深入探討相關的實作細節和技術要求。
 
-## 1. Genesys Logic 代碼簽署概述
-- 所有韌體在更新至 flash 之前，都必須經過合法性驗證。
-- 簽署後的二進制檔案格式如下：
+Genesys Logic 的韌體簽署流程必須符合以下核心要求：
 
-## 2. 簽署流程
-1. **簽署 (Sign)**
-2. **驗證 (Verification)**
+1. 採用 ECDSA (Elliptic Curve Digital Signature Algorithm) nistp256 加密演算法，以滿足 FIPS 140-2 Level 3 的安全標準。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]
+2. 建立一套兼具成本效益、可擴展性和災難恢復能力的內部簽署系統。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]
+3. 將私密金鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中，並透過自行開發的 SDK 應用程式進行簽署操作。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]
 
-### 2.1 實作方式
-Genesys Logic 提供了兩種代碼簽署的實作方式：
+Genesys Logic 的韌體簽署流程包括以下步驟：
 
-#### 2.1.1 使用 OpenSSL
-1. 生成 ECDSA 金鑰對 `[Code sign - ECC key](code-sign/code-sign-ecc-key.html)`
-2. 使用私鑰對二進制檔案進行數位簽章 `[Code sign - ECC key](code-sign/code-sign-ecc-key.html)`
-3. 將簽章資訊附加至原始二進制檔案
+1. **簽署 (Sign)**: 使用 ECDSA 私鑰對韌體二進位檔案進行數位簽章。[`3rd-party-code-signing-specification-ecdsa`]
+2. **驗證 (Verify)**: 在韌體更新前，使用 ECDSA 公鑰驗證二進位檔案的數位簽章是否合法。[`3rd-party-code-signing-specification-ecdsa`]
 
-#### 2.1.2 使用 eToken
-Genesys Logic 選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案 `[Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)`。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+Genesys Logic 提供了以下兩種實作方式供開發者參考：
 
-### 2.2 私鑰儲存
-Genesys Logic 採用 FIPS 140-2 Level 3 認證的 USB eToken 硬體來安全地儲存私鑰 `[Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)`。
+1. **使用 OpenSSL**: 利用 OpenSSL 工具套件進行 ECDSA 金鑰生成、簽署和驗證。[`3rd-party-code-signing-specification-ecdsa`, `code-sign-ecc-key`]
+2. **使用 eToken**: 將 ECDSA 私鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中，並透過自行開發的 SDK 應用程式進行簽署操作。[`3rd-party-code-signing-specification-ecdsa`]
 
-## 3. 結論
-Genesys Logic 針對第三方韌體代碼簽署設計了一套完整的 ECDSA 規範，滿足了 HP Code Signing 的嚴格安全要求。該方案採用 ECDSA nistp256 加密演算法，並符合 FIPS 140-2 Level 3 安全標準。Genesys Logic 提供了使用 OpenSSL 和 eToken 硬體的具體實現方式，確保私鑰的安全性和簽署流程的可控性。
+Genesys Logic 針對第三方韌體代碼簽署制定了嚴格的 ECDSA 規範，以確保韌體的完整性和安全性。開發者可以參考上述兩種實作方式，根據實際需求選擇合適的技術路徑。無論採用哪種方式，都必須確保私密金鑰的安全性，並嚴格遵守 FIPS 140-2 Level 3 的安全標準。

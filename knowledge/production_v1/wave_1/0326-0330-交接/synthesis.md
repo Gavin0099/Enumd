@@ -1,31 +1,30 @@
-根據提供的上下文資訊，我們可以歸納出以下關鍵點:
 
-1. **ISP tool 4.3.2.B update FW fail**
-   - 這是一個關於韌體更新失敗的問題，需要進一步了解失敗的原因。
 
-2. **TPV conference models with new webcam IC ECN-524pm/527pm/534pm + E24mv**
-   - 這是關於新型號攝像頭 IC 的資訊，可能需要配合更新相關的韌體或驅動程式。
 
-3. **IIYAMA HUB部分線路圖review**
-   - 這是關於 IIYAMA 品牌 HUB 產品的線路圖審查，可能涉及硬體設計或相容性問題。
+
 
 4. **Evaluation Request: Supporting CFU for Display FW Update via RTOS_USB Hub_Genesys**
-   - 這是關於透過 RTOS USB Hub Genesys 進行顯示器韌體更新的評估請求，需要了解相關的更新流程和技術實現。
+   - 需要支援透過 RTOS USB Hub Genesys 進行顯示器韌體更新的功能。
 
-從上述關鍵點可以看出,這些問題都涉及到韌體更新和硬體相容性方面的挑戰。要解決這些問題,需要深入了解相關的技術細節,如韌體更新流程、硬體設計、驅動程式等。同時也需要與相關的團隊或供應商進行密切溝通和協作,以確保問題能夠得到有效解決。
-
-此外,根據提供的相關上下文資訊,我們可以進一步了解到以下幾點:
 
 1. **Camera 透過我們驗證 code sign**
-   - 這涉及到攝像頭韌體的 code sign 驗證流程,需要確保韌體的安全性和完整性。
-   - 需要告知如何 Erase Camera 以及如何 Read Camera data,以便進行後續的驗證和更新。
+   - 需要處理相機韌體的 code sign 驗證流程，包括生成 ECDSA 金鑰、告知如何擦除相機、如何讀取相機資料等。
 
 2. **HID Code Sign 記錄**
-   - 這涉及到 HID 韌體的 code sign 驗證流程,需要了解相關的 update 協議、工具和測試方法。
-   - 需要解決一些已知的問題,如 HID 速度問題、不同 OS 平台的相容性等。
+   - 記錄工具和測試情況，包括 Release Tool、自動喚醒裝置、USB LOGO 問題、整理 chip function list、HID 速度問題等。
+   - 記錄已驗證和解決的問題，如重抓 device 被認為是不同裝置、OS 無法識別裝置、Set Report 資料沒有傳下去、Write Command 速度慢、驗證資料出錯、程式閃退等。
 
 3. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**
-   - 這涉及到 HP 品牌產品的 code sign 驗證問題,需要深入了解相關的技術實現和遇到的挑戰。
-   - 需要解決 public key 格式、hash 值計算、簽名驗證等方面的問題。
+   - 除了 GL3590 有硬體安全模組外，其他 hub chip 沒有，所以必須使用 FW 進行 code sign 驗證。
+   - 討論使用 GL3525 作為範本進行驗證，因為 GL3525 有三個 CPU，Hub 更新後可以用其他 CPU 進行 code sign 驗證。
+   - 遇到的問題包括 public key & signature 格式不同、計算 sha256 hash 會斷線、rsa2048 hash 值不一致、每次驗證完 PD FW 都會不見等。
+   - 最後更新時間約 52 秒，其中 FW 更新 3 秒、sha256 hash 25 秒、rsa2048 解密 24 秒。
 
-綜上所述,要解決這些問題,需要深入了解相關的技術細節,並與相關團隊或供應商進行密切溝通和協作。同時也需要注意韌體更新流程的安全性和完整性,確保產品的可靠性和穩定性。
+
+1. **Camera 透過我們驗證 code sign** 與 **0326-0330 交接** 的關係:
+   - 需要處理相機韌體的 code sign 驗證流程，這是 0326-0330 交接的一部分。
+
+2. **HID Code Sign 記錄** 與 **0326-0330 交接** 的關係:
+
+3. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題** 與 **0326-0330 交接** 的關係:
+   - 討論了 HP 產品的 code sign 驗證問題，這也是 0326-0330 交接的一部分。

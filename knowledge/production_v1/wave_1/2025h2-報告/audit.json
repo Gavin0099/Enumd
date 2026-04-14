@@ -53,7 +53,13 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-14T09-16-32-301Z",
+  "batch_id": "batch_2026-04-14T10-52-56-634Z",
   "wave_id": 1,
-  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64"
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 2,
+    "downgraded": 0,
+    "total_lines": 15,
+    "is_clean": false
+  }
 }
