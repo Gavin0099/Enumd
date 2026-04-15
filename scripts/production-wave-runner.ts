@@ -1,10 +1,8 @@
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync } from "fs";
 import { join } from "path";
 import { execSync } from "child_process";
 import * as crypto from "crypto";
 import Anthropic from "@anthropic-ai/sdk";
-import { KnowledgeQueryEngine } from "../lib/knowledge-query";
-import { SynthesisContextBuilder } from "../lib/synthesis-context";
 import { enforceDraft } from "../lib/synthesis-enforcer";
 import { runKalCheck } from "../lib/kal-checker";
 import { extractVerifiedClaims, AtomicClaim } from "../lib/claim-store";
@@ -50,15 +48,18 @@ async function run() {
     console.log(`   - Batch ID   : ${BATCH_ID}`);
 
     // 2. Inventory & Wave Splitting
-    const engine = new KnowledgeQueryEngine(join(KNOWLEDGE_DIR, "nodes.json"), join(KNOWLEDGE_DIR, "edges.json"));
     const rawNodes: { slug: string }[] = JSON.parse(readFileSync(join(KNOWLEDGE_DIR, "nodes.json"), "utf8"));
 
     // Deduplicate by slug before wave splitting — nodes.json may contain
     // duplicate entries from merged exports. Processing duplicates wastes
     // API calls and produces no additional output (mkdirSync is idempotent).
     const seenSlugs = new Set<string>();
+    const duplicateSlugs: string[] = [];
     const allNodes = rawNodes.filter(n => {
-        if (seenSlugs.has(n.slug)) return false;
+        if (seenSlugs.has(n.slug)) {
+            duplicateSlugs.push(n.slug);
+            return false;
+        }
         seenSlugs.add(n.slug);
         return true;
     });
@@ -66,6 +67,18 @@ async function run() {
     if (dedupedCount > 0) {
         console.log(`   ⚠️  Deduplication: removed ${dedupedCount} duplicate slugs (${rawNodes.length} → ${allNodes.length} unique nodes)`);
     }
+
+    // Persist dedupe artifact so reviewers can audit why a slug may be absent from a wave
+    const dedupeReport = {
+        generated_at: new Date().toISOString(),
+        raw_count: rawNodes.length,
+        unique_count: allNodes.length,
+        duplicate_count: dedupedCount,
+        note: "Duplicate slugs: first occurrence in sort order is kept; all subsequent are dropped.",
+        duplicate_slugs: [...new Set(duplicateSlugs)].sort(),  // unique list, sorted
+    };
+    writeFileSync(join(PROD_DIR, "dedupe-report.json"), JSON.stringify(dedupeReport, null, 2));
+    console.log(`   📋 dedupe-report.json written to production_v1/`);
 
     const sortedNodes = allNodes.sort((a, b) => a.slug.localeCompare(b.slug));
 
@@ -102,7 +115,6 @@ async function run() {
     // 4. Execution
     const manifest = [];
     const waveAtomicClaims: AtomicClaim[] = [];
-    const builder = new SynthesisContextBuilder(engine);
 
     for (let i = 0; i < currentNodes.length; i++) {
         const node = currentNodes[i];

@@ -156,21 +156,38 @@ function truncate(s: string, n: number): string {
     return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
 
+// Source layer badge — visually distinct so users can't conflate the two
+const SOURCE_BADGE: Record<SearchResult["source"], string> = {
+    claims:    "[CLAIM INDEX]    ",   // precise: verified claim, anchored to source XML
+    synthesis: "[SYNTHESIS TEXT] ",  // fuzzy:   full-text keyword match, unverified context
+};
+
+const SOURCE_NOTE: Record<SearchResult["source"], string> = {
+    claims:    "Verified atomic claim — anchored to source XML during enforcement.",
+    synthesis: "Full-text keyword match — not claim-level verified. Review synthesis.md manually.",
+};
+
 function render(results: SearchResult[], query: string, usedSource: "claims" | "synthesis" | "mixed") {
     const sourceLabel = usedSource === "claims"
-        ? "atomic claims index"
+        ? "atomic claims index (precise)"
         : usedSource === "synthesis"
-        ? "synthesis full-text"
-        : "claims + synthesis";
+        ? "synthesis full-text (fuzzy — run backfill to enable claim index)"
+        : "mixed: claim index + synthesis fallback (result quality varies — see badge per result)";
 
-    console.log(`\n🔍 Query: "${query}"  |  Source: ${sourceLabel}  |  Top ${Math.min(results.length, topN)} of ${results.length} results\n`);
+    console.log(`\n🔍 Query: "${query}"`);
+    console.log(`   Source : ${sourceLabel}`);
+    console.log(`   Results: top ${Math.min(results.length, topN)} of ${results.length}\n`);
     console.log("─".repeat(72));
 
     const top = results.slice(0, topN);
     for (let i = 0; i < top.length; i++) {
         const r = top[i];
-        console.log(`\n[${i + 1}] ${r.slug}  (Wave ${r.wave}, score: ${r.score})`);
-        console.log(`    📄 knowledge/production_v1/wave_${r.wave}/${r.slug}/synthesis.md`);
+        const badge = SOURCE_BADGE[r.source];
+        const note  = SOURCE_NOTE[r.source];
+        console.log(`\n[${i + 1}] ${badge} score: ${r.score}  wave: ${r.wave}`);
+        console.log(`    Node : ${r.slug}`);
+        console.log(`    File : knowledge/production_v1/wave_${r.wave}/${r.slug}/synthesis.md`);
+        console.log(`    Note : ${note}`);
         for (const ex of r.excerpts.slice(0, 3)) {
             console.log(`    ▸ ${truncate(ex, 90)}`);
         }
@@ -178,6 +195,9 @@ function render(results: SearchResult[], query: string, usedSource: "claims" | "
 
     if (results.length === 0) {
         console.log("  No results found. Try broader keywords or remove --wave filter.");
+        if (usedSource === "synthesis") {
+            console.log("  Tip: run 'npm run backfill:audit -- --wave=1' to build the claim index for better results.");
+        }
     }
     console.log("\n" + "─".repeat(72));
 }
