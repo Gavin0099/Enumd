@@ -1,0 +1,117 @@
+{
+  "requested_slug": "hp-enduser-tool-包裝流程",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T09-15-12-351Z",
+  "wave_id": 3,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 6,
+    "downgraded": 0,
+    "total_lines": 42,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What are the steps to update the firmware of an HP monitor if there are no functional changes required?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides the steps to update the firmware, including replacing the Hub and Scaler bin files and modifying the HPFwUpdate.ini parameters."
+      },
+      {
+        "question": "What is the process to update the firmware for a different model of HP monitor?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text explains that for a different model, you need to use the HP ISP Tool to clear the Hub and then update the corresponding Hub firmware, and then use an MTK jig to update the dual version of the Scaler."
+      },
+      {
+        "question": "What are the different code sign verification methods mentioned in the synthesis?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text mentions four different code sign verification methods: HP Hw Check Code Signed, HP Sw Check Code Signed, HP Code Signed Slave, and HP Hub Check Code Signed (ECDSA)."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 4,
+    "supported": 2,
+    "uncertain": 0,
+    "unsupported": 2,
+    "unsupported_claims": [
+      {
+        "claim": "- 介紹了 Lenovo 的 Code Sign 交握演算法，包括所需參數和流程。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about Lenovo's code sign handshake algorithm."
+      },
+      {
+        "claim": "- 說明了 Lenovo Uniupdate 流程中的 CRC 簽章驗證機制。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about Lenovo Uniupdate's CRC signature verification mechanism."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "SUPPRESS_DERIVED",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.5,
+    "derived_count": 4,
+    "reason": "Majority-unsupported Derived tier: 2/4 (50%). Derived claims cannot be collectively trusted as source-derived.",
+    "suppression_note": "⚠️ Derived-tier claims suppressed: majority of Derived claims lacked semantic source support. Source-near claims retained.",
+    "removed_count": 4
+  }
+}

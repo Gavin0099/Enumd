@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "[GLBinTool.exe](https://gli-cse.genesyslogic.com.tw/svn/storage/Users/GavinWu/Windows/GLBinTool)是一款用於合併 GL3590 韌體二進位檔案的工具。它可以執行以下操作:",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "a. 將 GL3590-TZ2YS1_Hub_UFPC(Host)_FW8725.bin 和 GL3590_HostBridge_FW1008.bin 合併成 bbb.sum 檔案，供 HP ISP Tool 進行簽署和燒錄。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "b. 將 GL3590-TZ2YS1_Hub_UFPC(Host)_FW8725.bin、GL3590_HostBridge_FW1008.bin 和 5678.pub 公鑰合併成 bbb.sum 檔案，供燒錄機燒錄使用。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "[HP ISP Tool](https://gli-cse.genesyslogic.com.tw/svn/storage/Users/JasonWu/IsptoolRefine2018/HP_ISPTool)提供以下功能:",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "1. Hub + Host Bridge 簽署",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "b. Hub + HostBridge ISP",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "c. Hub + HostBridge Recovery",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "1. 韌體會透過 Toolstring 告知 Support 當前的模式（尚未確定具體做法）。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "2. 切換 Vendor Command（從 81 切換到 A1）。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "1. 燒錄 Hub 0、Hub 1、H.B 0、H.B 1 和公鑰。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "判斷 Hub 和 Host Bridge 分別在哪個 block 上運行（可以詢問韌體以獲取相關資訊）。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "- 將 Hub 0 複製到 Hub 1",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "- 將 HB 0 複製到 HB 1",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "[IKV Tool](https://gli-cse.genesyslogic.com.tw/svn/storage/Users/JasonWu/IsptoolRefine2018/IKV)提供程式碼簽署功能:",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "openssl ecparam -out privatekey.key -name prime256v1 -genkey",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "ikvTool.exe sign -k 1234.priv -p 1234.pub -f 1121.sum",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "ikvTool.exe verify -k 1234.pub -f 8400.sum -r 8400.sum.SigR -s 8400.sum.SigS -t sw",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "2. 利用 HP ISP Tool 進行簽署和燒錄操作。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "3. 採用 IKV Tool 實現程式碼簽署和驗證。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl3590-hostbridge-code-sign",
+    "claim": "這些工具和流程確保了 GL3590 韌體的安全性和合規性，滿足了 HP 的 Code Signing 要求。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

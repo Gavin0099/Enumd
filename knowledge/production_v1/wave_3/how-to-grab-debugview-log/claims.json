@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "how-to-grab-debugview-log",
+    "claim": "以下是根據提供的內容所撰寫的「如何抓取 DebugView 日誌」的完整 Markdown 報告:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-debugview-log",
+    "claim": "根據提供的內容,抓取 DebugView 日誌的步驟如下:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-debugview-log",
+    "claim": "2. 開啟 Update Tool。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-debugview-log",
+    "claim": "3. 在 DebugView 中,選擇 `File` -> `Save as` 來保存日誌。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-debugview-log",
+    "claim": "1. **DebugView 4.7 和 4.9 版本的差異**: 根據提供的資訊,DebugView 有 4.7 版和 4.9 版可供選擇。兩個版本的日誌格式可能略有不同,使用時請注意。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-debugview-log",
+    "claim": "總之,使用 DebugView 抓取日誌的關鍵步驟包括:以管理員權限運行 DebugView、開啟 Update Tool,然後選擇 `File` -> `Save as` 來保存日誌檔案。使用時請注意不同版本的日誌格式差異。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

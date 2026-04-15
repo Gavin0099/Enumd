@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "在市面上使用公司 hub chip 的周邊產品越來越多樣,且出貨也越來越多。若在客戶端燒錄韌體到非預期的裝置中,導致 hub 發生錯誤而無法使用,將造成後續很多維修的支出,甚至危害公司名聲。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "為了確保操作的是目標裝置,需要在可操作的 hub 裝置列表中,透過比對目標裝置資訊,將不是目標的裝置移除。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "在 ISP 新架構的框架下,透過類別 `TargetDeviceChecker` 及設定的 `TargetDevice.ini` 檔案來進行目標裝置的比對。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "`TargetDeviceChecker` 會在 Tool 啟動後將 `TargetDevice.ini` 中的參數解析後存放在內部記憶體中,之後每次 `AcquireDevice()` 的流程中都會呼叫 `MatchDevice()`。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "1. 將裝置列表的所有內容放到「不符合」的列表中。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "2. 從「不符合」的列表找到第一個目標裝置。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "3. 從「不符合」的裝置列表往後比對第二、第三等目標裝置。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "4. 若沒找到所有目標裝置,將「已符合」列表中的內容放回「不符合」的列表並排序,再從第一個目標裝置的下一個位置(offset A的下一個)再次執行步驟 2 以後的流程。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "以下是用於 QSI Targus Dock310 的設定內容:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "FwAvailable=hub,pd",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "- `FwAvailable=hub,pd,dc...`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "- `PID=0610,0620`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "- `Product=USB2.1 Hub,USB3.1 Hub`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-bound-target-device",
+    "claim": "透過 `TargetDeviceChecker` 類別和 `TargetDevice.ini` 設定檔,可以在 ISP 工具中確保只操作目標裝置,避免錯誤燒錄導致的後續維修支出和公司聲譽受損。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

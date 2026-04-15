@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "根據提供的內容，以下是如何抓取 HP ISP Tool 日誌的步驟:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "1. 在 HP ISP Tool 的資料夾中打開 GL_Hub.ini 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "2. 填寫 GL_Hub.ini 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "3. 開啟 HP ISP Tool。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "4. 將 HP ISP Tool 資料夾中的日誌資料夾回傳給我們進行分析。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "在 HP ISP Tool 的安裝資料夾中找到並打開 GL_Hub.ini 檔案。這個檔案包含了 HP ISP Tool 的一些設定資訊。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "根據您的具體情況，填寫 GL_Hub.ini 檔案中的相關設定。這可能包括設定 API Key、指定韌體檔案路徑等。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-hp-isp-tool-log",
+    "claim": "啟動 HP ISP Tool 應用程式。在執行過程中，HP ISP Tool 會產生各種日誌資訊。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

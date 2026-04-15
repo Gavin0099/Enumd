@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "以下是根據提供的內容所撰寫的 GLHub Driver Instruction 文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "- 請安裝 Driver Ver. 2.4",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "- 更新驅動程式至 Ver. 2.00",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "- GLHub Driver v2.4 將會移除類別和設備過濾驅動程式並重新啟動。流程如下:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "1. 當未安裝驅動程式時，需要安裝 Driver Ver. 2.4。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "2. 當先前已安裝設備過濾驅動程式時，需要移除舊版並更新至 Ver. 2.00。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "4. 當同時安裝有設備過濾驅動程式和舊版類別過濾驅動程式時，GLHub Driver v2.4 會自動移除並重新啟動系統。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "5. GLHubDriver V2.4.0 是當前最新版本。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhub-driver-instruction",
+    "claim": "這些安裝和升級步驟確保了 GLHub 驅動程式能夠順利在系統上運行。同時也介紹了相關的 eToken 簽章系統和通用 USB 過濾驅動程式的技術背景。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "`GLBin Tool` 是 Genesys Logic 開發的一款命令列工具，用於執行韌體二進位檔案的簽署和驗證操作。該工具是 [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html) 架構中的關鍵組件之一。",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "`GLBin Tool` 主要用於以下兩種情境:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "1. **HID 韌體簽署**：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "- 輸入: `GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig.bin`",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "- 輸出: `GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig(hid).bin`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "- 命令: `glbin -s GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig.bin -f -o GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig(hid).bin`",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "- 輸入: `GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig.bin`",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "- 輸出: `GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig.rom`",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "- 命令: `glbin -s GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig.bin -m -o GL3523-OTY5H_HP_Friends_E24_G5_Hub_FW2400sig.rom`",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "`GLBin Tool` 的簽署流程遵循 [3rd party code signing specification (ECDSA)](code-sign/3rd-party-code-signing-specification-ecdsa.html) 和 [3rd party code signing specification (ECDSA)(EN)](code-sign/3rd-party-code-signing-specification-ecdsaen-.html) 中定義的標準:",
+    "tier": "Explicit",
+    "evidence_score": 31,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "1. 使用 ECDSA nistp256 演算法對輸入的二進位檔案進行數位簽章。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "此簽署流程確保了韌體的完整性和真實性，滿足了 HP Code Signing 的嚴格安全要求。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "`GLBin Tool` 是 [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html) 架構中的一個組件。它與 FIPS 140-2 Level 3 認證的 USB eToken 硬體設備和自行開發的金鑰管理系統 (KMS) 緊密配合,共同實現了端到端的程式碼簽署與驗證流程。",
+    "tier": "Explicit",
+    "evidence_score": 24,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glbin-tool-user-guide",
+    "claim": "`GLBin Tool` 是 Genesys Logic 為滿足 HP Code Signing 安全要求而開發的關鍵工具。它透過 ECDSA 數位簽章技術,確保了韌體二進位檔案的完整性和真實性,為整個韌體安全簽署與驗證流程提供了關鍵支持。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

@@ -1,0 +1,410 @@
+[
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- Bundle ID: 廠商/ODM 必須擁有唯一的 Bundle ID。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 安裝路徑: 強制為 `/Applications/HP/firmware/[ModelName]/`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 清理機制: 安裝前必須刪除該目錄內的舊檔案。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "ODM 必須提供兩種 .pkg 版本：",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Auto-Execute: 安裝後自動啟動 (用於 Silent Deploy)。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Install-Only: 僅安裝檔案，需手動執行 (用於系統整合)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 正向測試: 首次更新、強制更新、壓力測試 (50次循環)。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 負向測試: 簽章無效、權限不足、斷電保護、資源耗盡。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- Gatekeeper: 必須通過 Notarization (公證) 與 Code Signing。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- Hardened Runtime: 必須啟用。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 權限控制: 最小權限原則，暫存檔需安全加密。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "此表格用於追蹤 HP Specification (Rev 0.9) 的執行狀態。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- ✅ 已達成 (Ready)：已具備解決方案或工具（包含本次提供的 PoC）。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- ⚠️ 需執行 (Action Required)：需要廠商/ODM 進行開發或行政申請。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "此部分涉及安裝檔 (.pkg) 的製作架構與部署行為。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "此部分規範 Updater App 本身的核心邏輯，確保在各種使用者情境下都能正確判斷是否該更新。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "驗證框架的強健性 (Robustness)，確保在異常狀況下（如駭客攻擊、檔案損毀、斷電、資源不足）系統能優雅地失敗 (Fail Gracefully)，且絕不損壞硬體。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 安全性 (Security, 2.1 - 2.3)：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "這是防止惡意軟體入侵的第一道防線。macOS Gatekeeper 非常嚴格，如果 2.1 沒做好，App 連開都開不了。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 防變磚 (Anti-Brick, 2.4 - 2.5)：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "這是使用者體驗最關鍵的部分。Item 2.4 (斷電保護) 通常需要硬體配合 (Dual Bank Firmware)，若硬體不支援，軟體必須實作強大的 Recovery Mode (救援模式) 偵測機制。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 系統穩定性 (Stability, 2.6)：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "防止更新程式因為磁碟滿了寫入一半而導致檔案損毀。這是防禦性程式設計 (Defensive Programming) 的基本要求。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- ⚠️ 需執行 (Action Required)：目前尚未完成，需要 RD 修改底層程式碼或 DevOps 調整打包流程。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "此部分主要由 DevOps (打包/簽章) 與 Build Settings 決定，確保應用程式能通過 macOS Gatekeeper。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "此部分主要由 Vendor RD 在 C/C++ 程式碼中實作，防止應用程式在 Root 權限下被惡意利用。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Item 3.1 & 3.2 (DevOps 責任)：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "這是最常見的卡關點。如果在本地開發時能跑，但打包給 QA 後無法執行，通常就是 Hardened Runtime 擋住了某些未簽署的第三方 Library。請務必檢查 Console Log 中的 Crash Report。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Item 3.4 & 3.5 (RD 責任)：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "這是 Root Daemon 開發的標準工序。由於韌體更新程式是以 Root 權限運行，駭客非常喜歡利用這類程式作為後門。如果沒有做這些檢查，資安稽核 (Security Audit) 必定不會通過。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Item 3.6 (RD 責任)：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "macOS 的 `/tmp` 是所有使用者共享的目錄。如果不鎖定權限，其他惡意程式可以偷偷替換掉你的韌體檔，導致使用者被刷入帶有惡意 Payload 的韌體。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 作業系統: macOS 12 (Monterey) 或以上。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 執行環境: Python 3.x (macOS 通常內建)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "- 必要權限: 由於涉及硬體 I/O，執行時必須使用 Root 權限 (sudo)。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "請參考提供的 `stress_test_gui.py` 程式碼。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "開啟 macOS 的 Terminal (終端機)，進入存放 `stress_test_gui.py` 的目錄。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "由於韌體更新涉及 USB 硬體存取，務必使用 `sudo` 執行：",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "sudo python3 stress_test_gui.py",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "輸入指令後，系統會要求您輸入 macOS 登入密碼。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Update Tool Path: 點擊 Browse，選擇編譯好的 `HPFirmwareInstaller` 執行檔。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Firmware A: 選擇版本 A 的 `.bin` 或 `.pkg` 檔。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Firmware B: 選擇版本 B 的 `.bin` 或 `.pkg` 檔。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. Test Cycles: 設定為 50 (符合規格書 Item 1.4 要求)。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 點擊 Start Test。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "若 Log 出現紅色錯誤（例如 Exit Code: 107 Device not connected）：",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 檢查 USB 連接是否鬆動。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 增加程式碼中的 `time.sleep(5)` 時間（可能裝置重啟較慢）。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "1. 確認 `HPFirmwareInstaller` 的指令參數是否正確。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "這些功能已經包含在目前的 Python 程式碼邏輯中，可以直接用來產出測試報告。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp_display_firmware_update_specification",
+    "claim": "這些項目目前的 PoC 有潛力做到，但需要稍微修改程式碼或操作方式才能驗證。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

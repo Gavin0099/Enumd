@@ -1,0 +1,165 @@
+<context_boundaries>
+<core_topic id="hp-good-place-524pu-scaler-update-fail" title="HP Good Place 524pu Scaler Update fail" path="/monitor/hp-good-place-524pu-scaler-update-fail.html">
+
+## 緣由 
+1月多時，RTK有來看524 pu update 的問題，其中一點為 scaler 會 update fail ，但是只有在RTK NB才會發生，那時錄製了i2c 訊號分析，scaler write data 到某一筆後，scaler 就回Nak 
+## Debug 過程
+1. 推測需要接上USB Trace 分析問題點，但是手上的板子加上測試電腦測試了70幾次都是成功的，TPV 提到他們那邊有NB(HP EliteBook 630)可以複製出來，所以有跑到他們那邊看問題
+1. 1/24 有去TPV 使用HP EliteBook 630測試，發現情況如下
+1. 只能先從TPV帶回來那台筆電接上USB Trace & LA 來跑測試，但是跑了100多次都成功
+1. 如果沒有接上USB Trace & LA的話，會看到fail後5秒 hub 才回來
+1. 且分析bus hound & i2c 會發現有一筆command ，hub 回 xact error 後 就 reset 了
+1. 討論過後發現HID command 並沒有加上retry ，所以加上retry 試試看，加上retry 後 ，HP EliteBook 630可以跑到 100次以上沒有fail ，但是客戶的NB(HP Sandwalker MV sku 11, Dragonfly G4) 會顯示crc check fail
+1. 2/2 有再去TPV 借了HP Sandwalker MV sku 11, Dragonfly G4來分析問題點，同樣的，接上LA後都會update 成功，
+1. TPV 有一台筆電接上LA也可以複製出錯誤來，TPV Gary 有持續把LA log 提供出來讓我們分析
+
+</core_topic>
+  <related_context>
+    <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
+    
+    ### Update Protocol
+    - HID update flow
+    - Vendor Command 第二碼
+    - HID 預設只使用 2.0
+    ### Tool & Test
+    - file:///\\genesyslogic.com.tw\GenesysData\SW_Release_New\Hub\HID\Tool
+    - 驗證
+    ### 執行中
+    - Release Tool
+    - 請SE確認各OS有沒有自動喚醒 device。
+    - HID 驗證 USB LOGO 問題。
+    - 整理 chip function list，用表格列出各 chip 機制的不同。
+    HID 速度問題。
+    - FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。
+    ### 待討讑
+    - GL3590
+    - Tool 在 chrome book上應該可以直接執行、更新，SW 會再討論如何測試、驗證。
+    - SW需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。
+    - 檢查不同 OS 平台（ex：mac, linux, chrome book）。
+    ### 已驗證 & 解決
+    2021/11/05 HID 會把重抓到的 device 當成不同個
+    2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號
+    2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題
+    2021/11/05 Scaler update 在 write command 時速度慢
+    2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）
+    2021/11/05 程式閃退
+    2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）
+    2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。
+    Google 在 ISP 相關。
+    HP ISP Tool ( HID ) 預設只使用 2.0
+    ### 會議記錄
+    2021/12/17 HP ISP Tool
+    
+    </related>
+    <related id="e27m-e34m-driver-install-fail" title="E27m & E34m Driver install fail" path="/driver/e27m-e34m-driver-install-fail.html">
+    
+    目前有看到兩個問題
+    ## Cisco Webex + AMD 平台 Install or Uninstall driver fail 
+    ### 概要
+    在AMD 平台上(還不確定，在Lenovo平台也有看到) 如果有安裝Cisco Webex 時，如果install driver ，有機率driver install 會失敗，失敗的現象如下
+    在某幾個Hub driver 會掛不起來，導致Tool 詢問Hub 資訊會錯誤
+    Log 會出現下面訊息
+    ## AMD 平台  透過 HP EndUser Tool update scaler 會fail
+    ### 概要
+    在TPV 美國FAE 發現使用HP EndUser Tool update E27m or E34m Scaler 會 fail  ，
+    - 錯誤截圖
+    - log 
+    主要問題點為Scaler update 完 Reset MCU後，會導致driver 抓到的hub device 會出錯，如下圖，E27m 只有兩層Hub ，但是 reset MCU後會抓到6個Hub 
+    截圖
+    ### 目前測到重新插拔就會遇到類似的狀態
+    每重插拔一次就會多長出一組Hub
+    —> Cisco Webex造成的，
+    
+    </related>
+    <related id="hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga" title="HP Enterprise Firmware Stress Tool - Technical Specification (Rev 9.0 GA)" path="/general/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html">
+    
+    Project Name: Cross-Platform Display Firmware Update Stress Harness
+    Version: Rev 9.0 (Gold / General Availability)
+    Standard: HP Display Firmware Update Spec (Item 1.4 & 1.2)
+    Core Philosophy: Fault Tolerant, Observable, Reproducible, Liability-Aware.
+    ---
+    ## 1. 核心架構原則 (Core Architecture Principles)
+    1. Process Control (進程控制): 嚴禁使用 subprocess.run。必須使用 subprocess.Popen 以支援即時的中止 (Abort) 與漸進式殺除 (Kill Escalation)。
+    1. Result State Machine (結果狀態機): 結果不再是二元對立，固定為 5 種狀態：PASS, FAIL, WARNING, TIMEOUT, UNKNOWN。
+    1. Session Verdict (會話結算): 測試結束後，必須產出單一的 Session 級別判定 (Pass/Fail/Warning)，以供 CI/CD 或驗收報告使用。
+    1. Contradiction Handling (矛盾處理): 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）。
+    1. Evidence Retention (證據保全): 失敗、超時或狀態不明的 Log 檔案 絕對禁止刪除。
+    ---
+    ## 2. 模組詳細規格 (Module Specifications)
+    ### 2.1 Log Parser & Result Logic (logic/log_parser.py)
+    目標: 將非結構化的 Log 文本轉換為結構化的測試結果。
+    - Result States (Enum):
+    - Regex Patterns (Configurable):
+    - Strict Mode Policy:
+    ---
+    ### 2.2 Tool Adapter (logic/tool_adapter.py)
+    目標: 封裝 OCI Tool 的異質性，提供統一的執行與生命週期管理。
+    - Process Execution Model:
+    - Kill Escalation Strategy (當觸發 Abort 或 Timeout 時):
+    - Liability Disclaimer (責任邊界定義):
+    - Contradiction Logic (矛盾升級規則):
+    執行完畢後，比對 exit_code 與 log_parse_result：
+    - Command Construction:
+    - Log Retention Policy:
+    ---
+    ### 2.3 Platform Manager (utils/platform_manager.py)
+    目標: 處理 OS 差異，確保測試環境合規。
+    - Linux Sleep Inhibit Strategy:
+    ---
+    ### 2.4 Harness Logic & Features (logic/test_runner.py)
+    目標: 處理測試流程控制、干擾模擬與結果結算。
+    - Session Verdict Logic (Session 結算規則):
+    - Display Interference (Cross-Platform Strategy):
+    - Timer Accuracy:
+    ---
+    ### 2.5 Data Persistence (logic/logger.py)
+    目標: 確保所有測試數據可追溯、可除錯。
+    - JSONL Stream (logs/session_{id}.jsonl):
+    - Session Summary (logs/session_{id}_summary.json):
+    - Sanitization (脫敏):
+    ---
+    ### 2.6 Version Detection (logic/version_detector.py)
+    目標: 可靠地抓取 OCI Tool 版本。
+    - Configurable Search Paths:
+    - Method:
+    ---
+    ### 2.7 底層工具功能需求與映射 (OCI Tool Functional Profile)
+    目標: 定義 Harness 如何呼叫底層 OCI Tool (FirmwareInstaller.exe)。
+    ### A. 核心指令映射表 (Command Mapping)
+    ### B. OCI Tool 行為規範 (Behavioral Requirements)
+    1. Exit Code 可靠性: 嚴重錯誤時必須回傳非 0。若回傳 0 但 Log Error，Harness 視為 FAIL。
+    1. Log 完整性: Log 內容必須包含明確的 "Success" 或 "Error" 關鍵字。
+    1. 並發鎖定: OCI Tool 應處理單一實例鎖定。Harness 也會實作 Thread Lock。
+    ---
+    ## 3. UI 介面與控制項詳細定義 (UI Controls & Layout Definition)
+    本章節定義 GUI 的具體佈局與功能映射，開發者必須嚴格參照提供的下圖 進行刻畫。
+    ### 3.1 介面佈局概覽 (Layout Overview)
+    視窗主要分為三個區域：
+    1. 左側資訊欄 (Side Panel): 顯示版本資訊。
+    1. 右側主操作區 (Main Content): 包含韌體來源、測試場景、執行參數。
+    1. 底部狀態區 (Status Area): 顯示當前進度與回傳碼。
+    ---
+    ### 3.2 詳細控制項規格 (Control Specifications)
+    ### A. OCI Firmware Package Folder (頂部區域)
+    用於設定 A/B Test 的韌體來源。
+    ### B. Tool Version (左側面板)
+    顯示相關工具的版本資訊，用於環境確認。
+    ### C. Execution Control (右上方)
+    控制測試的強度與頻率。
+    ### D. Test Scenarios (中間左側 - 核心測試選項)
+    勾選以啟用特定的壓力測試邏輯。
+    ### E. Time Accuracy Check Setting (中間下方 - 進階設定)
+    預設隱藏，點擊 "..." 後顯示。
+    ### F. Feedback Area (右下角)
+    即時顯示測試狀態。
+    ---
+    ## 4. 給 Antigravity (AI Agent) 的執行指令 (Prompt)
+    請複製以下方塊中的內容，這是針對 AI 優化的指令集：
+    > "請依照 Technical Specification (Rev 9.0 GA) 建立一個 PySide6 專案。
+    Connected fw update stress:
+    Disconnected fw update stress:
+    UI的部分:
+    
+    </related>
+  </related_context>
+</context_boundaries>

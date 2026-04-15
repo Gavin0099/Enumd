@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "以下是 HID Code Sign 記錄的綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- Vendor Command 第二碼",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- HID 預設只使用 2.0 版本 `[3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)`",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 驗證工具位於: `file:///\\\\genesyslogic.com.tw\\GenesysData\\SW_Release_New\\Hub\\HID\\Tool`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 需要驗證各作業系統是否自動喚醒裝置 `[HID Code Sign 記錄](hid-code-sign-記錄.html#執行中)`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 需要驗證 HID 是否符合 USB LOGO 規範 `[HID Code Sign 記錄](hid-code-sign-記錄.html#執行中)`",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 整理 chip function list，列出各 chip 機制的差異 `[HID Code Sign 記錄](hid-code-sign-記錄.html#執行中)`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 需要解決 HID 速度問題 `[HID Code Sign 記錄](hid-code-sign-記錄.html#執行中)`",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- FW UPD 已經是 open source，但目前無法成功 build 和測試 `[HID Code Sign 記錄](hid-code-sign-記錄.html#執行中)`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 在 Chrome OS 上直接執行和更新工具 `[HID Code Sign 記錄](hid-code-sign-記錄.html#待討讑)`",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 討論 ISP 工具在燒錄時，需要明確提示是使用 filter driver 還是 HID `[HID Code Sign 記錄](hid-code-sign-記錄.html#待討讑)`",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 檢查不同作業系統平台的相容性 (macOS, Linux, Chrome OS) `[HID Code Sign 記錄](hid-code-sign-記錄.html#待討讑)`",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/05 HID 會把重抓到的 device 當成不同個",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/05 Scaler update 在 set report 時，會有資料沒有傳下去的問題",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/05 Scaler update 在 write command 時速度慢",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/05 驗證資料時出錯 (ISP_ERR_VERIFY_DEVICE)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/05 程式閃退",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/08 驗證資料時出錯 (ISP_ERR_SEND_COMMAND)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/11/19 請 MTK 導入 Hardware CRC 的機制 (被拒絕)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- Google 在 ISP 相關",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- HP ISP Tool (HID) 預設只使用 2.0 版本 `[3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)`",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "- 2021/12/17 HP ISP Tool `[HID Code Sign 記錄](hid-code-sign-記錄.html#會議記錄)`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "本文件的核心主題是 HID Code Sign 記錄，與 Genesys Logic 韌體安全簽署與驗證流程密切相關。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hid-code-sign-記錄",
+    "claim": "此外，`[3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)` 和 `[3rd party code signing specification (ECDSA)(EN)](3rd-party-code-signing-specification-ecdsaen-.html)` 兩份文件進一步詳述了 Genesys Logic 的程式碼簽署和驗證流程，包括簽署 bin 檔案的格式、使用 OpenSSL 和 eToken 的具體實現方式等。",
+    "tier": "Explicit",
+    "evidence_score": 33,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

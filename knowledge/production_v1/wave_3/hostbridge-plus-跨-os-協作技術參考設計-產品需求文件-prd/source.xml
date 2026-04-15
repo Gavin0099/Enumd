@@ -1,0 +1,303 @@
+<context_boundaries>
+<core_topic id="hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd" title="HostBridge plus 跨 OS 協作技術參考設計 - 產品需求文件 (PRD)" path="/general/hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd.html">
+
+---
+文件版本: V1.0
+發布日期: 2025年10月16日
+文件負責人:GavinWu
+機密等級: 內部機密 (Internal Confidential)
+---
+### 目錄
+1. 產品目標與背景 (The "Why")
+1.1. 問題陳述 (Problem Statement)
+1.2. 商業目標 (Business Goal)
+1.3. 成功指標 (Success Metrics / KPIs)
+1. 目標使用者與情境 (The "Who" & "When/Where")
+2.1. 客戶 Persona (OEM Customer)
+2.2. 終端使用者 Persona (End-User Persona)
+2.3. 使用者情境 (User Scenarios)
+1. 功能規格與範疇 (The "What")
+3.1. 核心功能列表 (Core Feature List)
+3.2. 功能詳述 (Features in Detail)
+3.3. 使用者故事與驗收條件 (User Stories & Acceptance Criteria)
+3.4. 範疇定義 (Scope Definition - In/Out of Scope)
+1. 使用者流程與設計稿 (The "How")
+4.1. 使用者流程 (User Flow)
+4.2. 線框圖 / UI 設計稿 (Wireframes / UI Mockups)
+4.3. OEM 客製化指南 (OEM Customization Guideline)
+1. 非功能性需求 (Non-functional Requirements)
+5.1. 效能需求 (Performance)
+5.2. 穩定性與可靠性需求 (Stability & Reliability)
+5.3. 相容性需求 (Compatibility)
+5.4. 安全性需求 (Security)
+5.5. 可維運性與可觀測性 (Operability & Observability)
+5.6. 無障礙與在地化 (Accessibility & Localization)
+5.7. 隱私權與資料保留 (Privacy & Data Retention)
+5.8. 安裝與更新 (Installation & Update)
+5.9. 相依性與防護機制 (Dependencies & Guardrails)
+1. 交付項目 (Deliverables for OEM)
+6.1. 軟體開發套件 (Software Development Kit, SDK)
+6.2. 技術整合文件 (Technical Integration Document)
+6.3. 測試報告與工具 (QA Report & Tools)
+---
+## 一、核心必備文件與資訊 (The "What" & "Why")
+### 1. 產品目標與背景 (The "Why")
+- 問題陳述 (Problem Statement):
+---
+- 商業目標 (Business Goal):
+---
+- 成功指標 (Success Metrics / KPIs):
+---
+## 二、目標使用者與情境 (The "Who" & "When/Where")
+### 2.1. 客戶 Persona (OEM Customer)
+### 輪廓 (Persona): Alex，Tier-1 OEM 的 Monitor & Docking 軟體平台產品經理
+- 例如：
+- 背景與特徵 (Background & Characteristics):
+- 目標 (Goals):
+- 痛點 (Pain Points):
+- 我們如何幫助他 (How We Help Him):
+---
+### 2.2 終端使用者 Persona (End-User Persona)
+### Persona 1: 全端軟體工程師 (Full-stack Software Engineer)
+- 輪廓 (Persona):
+- 目標 (Goals):
+- 痛點 (Pain Points):
+- 我們如何幫助他 (How We Help Him):
+---
+### Persona 2: UI/UX 設計師 (UI/UX Designer)
+- 輪廓 (Persona):
+- 目標 (Goals):
+- 痛點 (Pain Points):
+- 我們如何幫助她 (How We Help Her):
+---
+### 2.3 使用者情境 (User Scenarios)
+### 情境一：軟體工程師 David 的一個典型開發日下午
+- 情境標題： 無縫的跨平台開發與除錯 (Seamless Cross-Platform Development & Debugging)
+- 使用者目標： 在 Windows PC 上開發後端 API，並在 MacBook 上對 iOS App 進行整合測試，同時處理團隊溝通。
+故事流程：
+1. 開始工作 (14:00): David 的主要工作在 Windows PC 上，他打開 VS Code 編寫後端程式。同時，他將滑鼠無縫地移動到旁邊的 MacBook Pro，啟用「延伸模式」。MacBook 的螢幕立刻變成 PC 的第三個顯示器，他將顯示後端服務即時 Log 的終端機視窗拖曳到這個延伸螢幕上，方便隨時監控。
+1. 發現問題 (15:30): David 在 PC 上完成了一段新 API 的開發，需要馬上在 iOS App 上進行測試。他不需要拿起 MacBook，而是直接在 PC 上啟用「遠端模式」。
+1. 高效除錯 (15:35): MacBook 的桌面以一個視窗的形式出現在 PC 的主螢幕上。David 使用他最順手的機械鍵盤和滑鼠，在這個視窗中打開 Xcode，修改前端程式碼並重新編譯 App。整個過程，他的視線和雙手都無需離開主工作區。
+1. 高效檔案傳輸 (15:50): 在 Mac 上完成編譯測試後，David 需要將這個 App 的封裝檔 (.app 或 .ipa) 歸檔到 PC 的專案資料夾中。他直接從遠端視窗中，將編譯好的檔案拖曳到 PC 桌面上，整個傳輸過程僅需數秒，無縫且直覺。
+1. 臨時視訊會議 (16:00): 團隊主管發起一個臨時的 Teams 視訊通話，要 David 展示剛才的修復進度。David 在 PC 上接聽通話，然後點擊 Teams 的「分享畫面」功能，選擇分享那個「MacBook 遠端視窗」。
+1. 流暢展示 (16:05): 團隊成員可以清晰地看到他在遠端視窗中操作 iOS 模擬器的畫面，包含 App 的音效也同步串流。David 僅用一副連接在顯示器上的耳機，就能同時處理會議通話和 App 音效，順暢地完成了這次 Demo。
+1. 工作結束 (17:00): 會議結束後，他關閉遠端模式，繼續在 PC 上開發，同時在 Mac 的延伸螢幕上監控 Log，高效地完成了下午的工作。
+---
+### 情境二：UI/UX 設計師 Emily 的創意設計流程
+- 情境標題： 流暢的跨平台設計與高保真預覽 (Fluid Cross-Platform Design & High-Fidelity Preview)
+- 使用者目標： 在 iMac 上完成一個包含動畫與音效的 App 介面設計，並確保其在 Windows 和 iPad 上的視覺與聽覺體驗一致。
+故事流程：
+1. 主要設計 (10:00): Emily 在她的 iMac 上使用 Figma 進行 App 介面的主要視覺設計。桌面極簡，只有一套 Apple Magic Keyboard 和 Mouse。為了即時確認設計在不同平台的呈現，她將 iMac 設為 Host，並與她的 Windows 筆電 (Client) 保持連接。
+1. 即時 Windows 預覽 (11:30): 設計稿初步完成後，她想確認在 Windows 系統下的字體渲染和色彩表現。她沒有匯出任何檔案，只是自然地將滑鼠從 iMac 螢幕的邊緣移出，游標便神奇地出現在旁邊的 Windows 筆電螢幕上。她直接在 Windows 上打開瀏覽器，登入 Figma 查看，進行即時比對和微調。
+1. iPad 繪圖板模式 (14:05): 連接成功後，她啟用「延伸模式」。iPad Pro 立刻成為 iMac 的一個延伸觸控螢幕。接著，她直接在 iMac 上打開 Adobe Illustrator，然後拿起 Apple Pencil，在 iPad 上進行繪圖，筆觸直接反應在 iMac 的 Illustrator 畫布上，iPad 變成了一塊專業的無線繪圖板。
+1. 動態與音效預覽 (16:00): 設計稿的最後一步是製作一個帶有音效的轉場動畫。她在 Mac 上的 Principle 軟體中完成後，為了確保音畫體驗在各平台一致，她啟用了「遠端模式」。
+1. 切換回 Windows 進行最終預覽 (16:00): 完成圖標並整合進設計後，Emily 需要進行最後的動態與音效預覽。她再次切換連接，將 iMac (Host) 重新連上 Windows 筆電 (Client)。為了體驗最真實的互動效果，她啟用了**「遠端模式」。
+1. 高保真體驗 (16:10): iMac 的畫面和聲音被完整、低延遲地串流到 Windows 筆電上。Emily 在 Windows 筆電上與這個 App 互動，聽到的按鍵音效和看到的動畫效果，就如同在原生 iMac 上操作一樣，完美確保了最終交付品質。
+## 三. The "What" (功能規格與範疇)
+### 3.1 核心功能列表 (Core Feature List)
+- [P0] 裝置連接與角色指定 (Device Connection & Role Designation)
+- [P0] 延伸模式 (Extension Mode)
+- [P0] 遠端模式 (Remote Mode) - (內含音訊分享)
+- [P0] KM 分享模式 (KM Share Mode)
+- [P1] 跨裝置檔案傳輸 (Cross-Device File Transfer) - (基礎服務)
+---
+### 3.2 功能詳述 (Features in Detail)
+- 3.2.1 裝置連接與角色指定 (Device Connection & Role Designation)
+---
+- 3.2.2 延伸模式 (Extension Mode)
+---
+- 3.2.3 遠端模式 (Remote Mode)(內含音訊分享)
+---
+- 3.2.4 KM 分享模式 (KM Share Mode)
+- 3.2.5 跨裝置檔案傳輸 (Cross-Device File Transfer) - (基礎服務)
+---
+### 3.3 使用者故事與驗收條件 (User Stories & Acceptance Criteria)
+### 使用者故事 1：KM 分享模式 - 無縫跨屏控制
+- 故事 (Story):
+- 驗收條件 (Acceptance Criteria, AC):
+---
+### 使用者故事 2：延伸模式 - 釋放 iPad 生產力
+- 故事 (Story):
+- 驗收條件 (Acceptance Criteria, AC):
+---
+### 使用者故事 3：遠端模式 - 高效的跨平台編譯與測試
+- 故事 (Story):
+- 驗收條件 (Acceptance Criteria, AC):
+- AC1: (模式啟用與影音串流)
+- AC2: (視窗模式下的遠端控制)
+- AC3: (全螢幕模式下的遠端控制)
+- AC4: (解析度設定生效)
+- AC5: (Client 端鍵鼠鎖定)
+
+</core_topic>
+  <related_context>
+    <related id="etoken-system-code-view-" title="Etoken System Code View " path="/code-sign/etoken-system-code-view-.html">
+    
+    ## etoken_dongle_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: 不通過。連線工作流程使用 detach 且無生命週期收斂，違反可預測關閉原則。
+    - Native Safety: 不通過。檔案大小與外部命令執行缺乏邊界控制，存在資源與執行風險。
+    - Test Integrity: 不通過。看不到針對失敗路徑（超大輸入、shutdown race、協定錯位）的測試證據。
+    ### Technical Findings
+    1. [BLOCKING] Detached worker thread may outlive owner (this)
+    1. [BLOCKING] Unbounded memory allocation from peer-provided file size
+    1. [WARNING] Protocol error opcode mismatch in public-key stage
+    1. [WARNING] system() execution path with externally-derived parameters
+    1. [WARNING] Timeout conversion bug in select()
+    1. [SUGGESTION] Hardcoded token password in source
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md.
+    - Result: Conflict Found (特別是 system()/sub-process hang 與協定失配/卡住風險已命中)。
+    ## etoken_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: Release 組態已移除 OFFLINE_TEST，這點較前版改善；但連線工作執行緒仍採 detach，生命週期不可控，違反可預測性。
+    - Native Safety: 未發現新的 pointer free 錯誤；但外部命令執行與檔案大小處理缺乏邊界，仍有高風險。
+    - Test Integrity: 看不到對失敗路徑（超大 file size、thread shutdown race、SQL 注入字串）的測試鎖定證據。
+    ### Technical Findings
+    1. [BLOCKING] SQL injection 風險（登入授權查詢）
+    1. [WARNING] detach 執行緒捕獲 this，存在 shutdown race / UAF 風險
+    1. [WARNING] Dongle 管理同樣使用 detach，生命週期不可驗證
+    1. [WARNING] 檔案大小由對端提供且未設上限，可能 OOM/卡死
+    1. [WARNING] 對 Dongle 端取檔同樣無大小上限
+    1. [WARNING] DB 密碼硬編碼在程式碼
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md（含 system()/子程序卡死、流程卡住類型）。
+    - Result: Conflict Found（當前風險與既有 anti-pattern 高度重疊）。
+    
+    </related>
+    <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
+    
+    ### Update Protocol
+    - HID update flow
+    - Vendor Command 第二碼
+    - HID 預設只使用 2.0
+    ### Tool & Test
+    - file:///\\genesyslogic.com.tw\GenesysData\SW_Release_New\Hub\HID\Tool
+    - 驗證
+    ### 執行中
+    - Release Tool
+    - 請SE確認各OS有沒有自動喚醒 device。
+    - HID 驗證 USB LOGO 問題。
+    - 整理 chip function list，用表格列出各 chip 機制的不同。
+    HID 速度問題。
+    - FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。
+    ### 待討讑
+    - GL3590
+    - Tool 在 chrome book上應該可以直接執行、更新，SW 會再討論如何測試、驗證。
+    - SW需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。
+    - 檢查不同 OS 平台（ex：mac, linux, chrome book）。
+    ### 已驗證 & 解決
+    2021/11/05 HID 會把重抓到的 device 當成不同個
+    2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號
+    2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題
+    2021/11/05 Scaler update 在 write command 時速度慢
+    2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）
+    2021/11/05 程式閃退
+    2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）
+    2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。
+    Google 在 ISP 相關。
+    HP ISP Tool ( HID ) 預設只使用 2.0
+    ### 會議記錄
+    2021/12/17 HP ISP Tool
+    
+    </related>
+    <related id="hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga" title="HP Enterprise Firmware Stress Tool - Technical Specification (Rev 9.0 GA)" path="/general/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html">
+    
+    Project Name: Cross-Platform Display Firmware Update Stress Harness
+    Version: Rev 9.0 (Gold / General Availability)
+    Standard: HP Display Firmware Update Spec (Item 1.4 & 1.2)
+    Core Philosophy: Fault Tolerant, Observable, Reproducible, Liability-Aware.
+    ---
+    ## 1. 核心架構原則 (Core Architecture Principles)
+    1. Process Control (進程控制): 嚴禁使用 subprocess.run。必須使用 subprocess.Popen 以支援即時的中止 (Abort) 與漸進式殺除 (Kill Escalation)。
+    1. Result State Machine (結果狀態機): 結果不再是二元對立，固定為 5 種狀態：PASS, FAIL, WARNING, TIMEOUT, UNKNOWN。
+    1. Session Verdict (會話結算): 測試結束後，必須產出單一的 Session 級別判定 (Pass/Fail/Warning)，以供 CI/CD 或驗收報告使用。
+    1. Contradiction Handling (矛盾處理): 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）。
+    1. Evidence Retention (證據保全): 失敗、超時或狀態不明的 Log 檔案 絕對禁止刪除。
+    ---
+    ## 2. 模組詳細規格 (Module Specifications)
+    ### 2.1 Log Parser & Result Logic (logic/log_parser.py)
+    目標: 將非結構化的 Log 文本轉換為結構化的測試結果。
+    - Result States (Enum):
+    - Regex Patterns (Configurable):
+    - Strict Mode Policy:
+    ---
+    ### 2.2 Tool Adapter (logic/tool_adapter.py)
+    目標: 封裝 OCI Tool 的異質性，提供統一的執行與生命週期管理。
+    - Process Execution Model:
+    - Kill Escalation Strategy (當觸發 Abort 或 Timeout 時):
+    - Liability Disclaimer (責任邊界定義):
+    - Contradiction Logic (矛盾升級規則):
+    執行完畢後，比對 exit_code 與 log_parse_result：
+    - Command Construction:
+    - Log Retention Policy:
+    ---
+    ### 2.3 Platform Manager (utils/platform_manager.py)
+    目標: 處理 OS 差異，確保測試環境合規。
+    - Linux Sleep Inhibit Strategy:
+    ---
+    ### 2.4 Harness Logic & Features (logic/test_runner.py)
+    目標: 處理測試流程控制、干擾模擬與結果結算。
+    - Session Verdict Logic (Session 結算規則):
+    - Display Interference (Cross-Platform Strategy):
+    - Timer Accuracy:
+    ---
+    ### 2.5 Data Persistence (logic/logger.py)
+    目標: 確保所有測試數據可追溯、可除錯。
+    - JSONL Stream (logs/session_{id}.jsonl):
+    - Session Summary (logs/session_{id}_summary.json):
+    - Sanitization (脫敏):
+    ---
+    ### 2.6 Version Detection (logic/version_detector.py)
+    目標: 可靠地抓取 OCI Tool 版本。
+    - Configurable Search Paths:
+    - Method:
+    ---
+    ### 2.7 底層工具功能需求與映射 (OCI Tool Functional Profile)
+    目標: 定義 Harness 如何呼叫底層 OCI Tool (FirmwareInstaller.exe)。
+    ### A. 核心指令映射表 (Command Mapping)
+    ### B. OCI Tool 行為規範 (Behavioral Requirements)
+    1. Exit Code 可靠性: 嚴重錯誤時必須回傳非 0。若回傳 0 但 Log Error，Harness 視為 FAIL。
+    1. Log 完整性: Log 內容必須包含明確的 "Success" 或 "Error" 關鍵字。
+    1. 並發鎖定: OCI Tool 應處理單一實例鎖定。Harness 也會實作 Thread Lock。
+    ---
+    ## 3. UI 介面與控制項詳細定義 (UI Controls & Layout Definition)
+    本章節定義 GUI 的具體佈局與功能映射，開發者必須嚴格參照提供的下圖 進行刻畫。
+    ### 3.1 介面佈局概覽 (Layout Overview)
+    視窗主要分為三個區域：
+    1. 左側資訊欄 (Side Panel): 顯示版本資訊。
+    1. 右側主操作區 (Main Content): 包含韌體來源、測試場景、執行參數。
+    1. 底部狀態區 (Status Area): 顯示當前進度與回傳碼。
+    ---
+    ### 3.2 詳細控制項規格 (Control Specifications)
+    ### A. OCI Firmware Package Folder (頂部區域)
+    用於設定 A/B Test 的韌體來源。
+    ### B. Tool Version (左側面板)
+    顯示相關工具的版本資訊，用於環境確認。
+    ### C. Execution Control (右上方)
+    控制測試的強度與頻率。
+    ### D. Test Scenarios (中間左側 - 核心測試選項)
+    勾選以啟用特定的壓力測試邏輯。
+    ### E. Time Accuracy Check Setting (中間下方 - 進階設定)
+    預設隱藏，點擊 "..." 後顯示。
+    ### F. Feedback Area (右下角)
+    即時顯示測試狀態。
+    ---
+    ## 4. 給 Antigravity (AI Agent) 的執行指令 (Prompt)
+    請複製以下方塊中的內容，這是針對 AI 優化的指令集：
+    > "請依照 Technical Specification (Rev 9.0 GA) 建立一個 PySide6 專案。
+    Connected fw update stress:
+    Disconnected fw update stress:
+    UI的部分:
+    
+    </related>
+  </related_context>
+</context_boundaries>

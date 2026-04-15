@@ -1,0 +1,999 @@
+<context_boundaries>
+<core_topic id="hp-hemiz34c-cpu3-code-sign-驗證問題" title="HP Hemi(Z34c) CPU3 Code Sign 驗證問題" path="/code-sign/hp-hemiz34c-cpu3-code-sign-驗證問題.html">
+
+除了 GL3590 有 hw security module 之外，其他hub chip 是沒有的，因為hp 規定最低底線只能用 fw 做code sign驗證，所以討論過後先以GL3525為範本驗證，因為GL3525 有三個CPU ，Hub 在update 後，可以用其他CPU 來驗證code sign 
+- code sign commmand  spec
+- GL3525 FW and Flash Configuration Application Note
+### 目前遇到的問題
+- 原本 public key & signature 是用額外的 hex 檔案來做驗證，現在必須改成用 etoken sign 過的 檔案來做驗證，這時 public key format 是不一樣的，如下
+- 在某些情況下計算 sha256 的 hash 值會斷線，
+- 如果送完sha256 hsah 正確後驗證 rsa2048 signature & public key 解密後的 hash 都會是0x00
+      因為pd fw 只有針對u3 做 code sign 功能， u2 是沒有做code sign 功能的，原本tool 都預設 跑 u2驗證code sign ，所以才會發現這個現象
+- 每次回傳的 rsa 2048 hash 值都不一樣
+- update的bin檔是正確的還是錯誤的，回傳值都是PASS
+      PD Fw 有誤，請fw 修改一版就正常了
+- rsa2048 的 hash 跟其他Tool 算出的hash 不一致
+- sha256 的 hash 跟 rsa2048的 hash 不一致
+- 每次驗證完code sign 重新上電後，PD fw都會不見
+      在驗證成功後會寫入最新版的public key ，當初預設寫在 0x16000的位置，沒有考慮到要透過PD fw 來驗證code sign的問題，還在討論public key 要放在哪邊
+- GL3525 每個Traget 都是update到固定 offset ，所以跟原本的chip(GL3523 , GL3590) update方式不一樣，GLBin 產生 rom 檔的方式要修改
+### 最後 update 時間 :  3 sec(update fw) + 25 sec(sha256 hash) + 24 sec(rsa2048) = 52 sec
+- update fw 時間 :  3sec
+- sha256 hash 計算時間: 25 sec
+- rsa2048 解密時間: 24 sec
+### Rsa2048 解密時間減少緣故
+原本GL3523 是 CPU 是12.5MHz ，所以 rsa2048解密時間大概是50幾秒，因為GL3525 CPU 是25MHz，所以rsa2048解密時間變到24秒
+### 需要注意步驟
+1. 必須用U3 來跑 (UUUISP=1)
+1. Public key & Signature 要做Reverse (code 裡面有實作)
+1. 計算hash command length 必須要跟hub 大小一致
+1. hash 值要改回原本的算法 (code 裡面有實作)
+1. public key format 要改成兩個byte 合成一個byte (code 裡面有實作)
+## Sha 256 sample code 
+```python
+#include <8051.h>
+#include <string.h>
+
+#define ROTLEFT(a, b) ((a << b) | (a >> (32 - b)))
+#define ROTRIGHT(a, b) ((a >> b) | (a << (32 - b)))
+#define CH(x, y, z) ((x & y) ^ (~x & z))
+#define MAJ(x, y, z) ((x & y) ^ (x & z) ^ (y & z))
+#define EP0(x) (ROTRIGHT(x, 2) ^ ROTRIGHT(x, 13) ^ ROTRIGHT(x, 22))
+#define EP1(x) (ROTRIGHT(x, 6) ^ ROTRIGHT(x, 11) ^ ROTRIGHT(x, 25))
+#define SIG0(x) (ROTRIGHT(x, 7) ^ ROTRIGHT(x, 18) ^ (x >> 3))
+#define SIG1(x) (ROTRIGHT(x, 17) ^ ROTRIGHT(x, 19) ^ (x >> 10))
+
+typedef struct {
+    unsigned char data[64];
+    unsigned int datalen;
+    unsigned long long bitlen;
+    unsigned int state[8];
+} SHA256_CTX;
+
+unsigned int k[64] = {
+    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+};
+
+void sha256_transform(SHA256_CTX *ctx, const unsigned char data[]) {
+    unsigned int a, b, c, d, e, f, g, h, i, j, t1, t2, m[64];
+
+    for (i = 0, j = 0; i < 16; ++i, j += 4)
+        m[i] = (data[j] << 24) | (data[j + 1] << 16) | (data[j + 2] << 8) | (data[j + 3]);
+    for (; i < 64; ++i)
+        m[i] = SIG1(m[i - 2]) + m[i - 7] + SIG0(m[i - 15]) + m[i - 16];
+
+    a = ctx->state[0];
+    b = ctx->state[1];
+    c = ctx->state[2];
+    d = ctx->state[3];
+    e = ctx->state[4];
+    f = ctx->state[5];
+    g = ctx->state[6];
+    h = ctx->state[7];
+
+    for (i = 0; i < 64; ++i) {
+        t1 = h + EP1(e) + CH(e, f, g) + k[i] + m[i];
+        t2 = EP0(a) + MAJ(a, b, c);
+        h = g;
+        g = f;
+        f = e;
+        e = d + t1;
+        d = c;
+        c = b;
+        b = a;
+        a = t1 + t2;
+    }
+
+    ctx->state[0] += a;
+    ctx->state[1] += b;
+    ctx->state[2] += c;
+    ctx->state[3] += d;
+    ctx->state[4] += e;
+    ctx->state[5] += f;
+    ctx->state[6] += g;
+    ctx->state[7] += h;
+}
+
+void sha256_init(SHA256_CTX *ctx) {
+    ctx->datalen = 0;
+    ctx->bitlen = 0;
+    ctx->state[0] = 0x6a09e667;
+    ctx->state[1] = 0xbb67ae85;
+    ctx->state[2] = 0x3c6ef372;
+    ctx->state[3] = 0xa54ff53a;
+    ctx->state[4] = 0x510e527f;
+    ctx->state[5] = 0x9b05688c;
+    ctx->state[6] = 0x1f83d9ab;
+    ctx->state[7] = 0x5be0cd19;
+}
+
+void sha256_update(SHA256_CTX *ctx, const unsigned char data[], size_t len) {
+    for (unsigned int i = 0; i < len; ++i) {
+        ctx->data[ctx->datalen] = data[i];
+        ctx->datalen++;
+        if (ctx->datalen == 64) {
+            sha256_transform(ctx, ctx->data);
+            ctx->bitlen += 512;
+            ctx->datalen = 0;
+        }
+    }
+}
+
+void sha256_final(SHA256_CTX *ctx, unsigned char hash[]) {
+    unsigned int i = ctx->datalen;
+
+    if (ctx->datalen < 56) {
+        ctx->data[i++] = 0x80;
+        while (i < 56)
+            ctx->data[i++] = 0x00;
+    } else {
+        ctx->data[i++] = 0x80;
+        while (i < 64)
+            ctx->data[i++] = 0x00;
+        sha256_transform(ctx, ctx->data);
+        memset(ctx->data, 0, 56);
+    }
+
+    ctx->bitlen += ctx->datalen * 8;
+    ctx->data[63] = ctx->bitlen;
+    ctx->data[62] = ctx->bitlen >> 8;
+    ctx->data[61] = ctx->bitlen >> 16;
+    ctx->data[60] = ctx->bitlen >> 24;
+    ctx->data[59] = ctx->bitlen >> 32;
+    ctx->data[58] = ctx->bitlen >> 40;
+    ctx->data[57] = ctx->bitlen >> 48;
+    ctx->data[56] = ctx->bitlen >> 56;
+    sha256_transform(ctx, ctx->data);
+
+    for (i = 0; i < 4; ++i) {
+        hash[i]      = (ctx->state[0] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 4]  = (ctx->state[1] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 8]  = (ctx->state[2] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 12] = (ctx->state[3] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 16] = (ctx->state[4] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 20] = (ctx->state[5] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 24] = (ctx->state[6] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 28] = (ctx->state[7] >> (24 - i * 8)) & 0x000000ff;
+    }
+}
+
+void main() {
+    unsigned char data[32768]; // 32K data
+    unsigned char hash[32];
+    SHA256_CTX ctx;
+    int i;
+
+    // Fill the data array with some values
+    for (i = 0; i < 32768; ++i) {
+        data[i] = i % 256;
+    }
+
+    // Initialize SHA-256 context
+    sha256_init(&ctx);
+
+    // Start the timer
+    TH0 = 0x00;
+    TL0 = 0x00;
+    TR0 = 1; // Start Timer0
+
+    // Update SHA-256 with data
+    sha256_update(&ctx, data, 32768);
+
+    // Finalize SHA-256
+    sha256_final(&ctx, hash);
+
+    // Stop the timer
+    TR0 = 0; // Stop Timer0
+
+    // Calculate the elapsed time
+    unsigned int elapsed_time = (TH0 << 8) | TL0;
+
+    // Print the hash (example: sending to UART, assuming UART is initialized)
+    for (i = 0; i < 32; ++i) {
+        printf("%02x", hash[i]);
+    }
+
+    // Print the elapsed time
+    printf("\nElapsed time: %u timer ticks\n", elapsed_time);
+}
+
+```
+## 8051 優化 code 
+```python
+#include <8051.h>
+#include <string.h>
+
+#define ROTLEFT(a, b) ((a << b) | (a >> (32 - b)))
+#define ROTRIGHT(a, b) ((a >> b) | (a << (32 - b)))
+#define CH(x, y, z) ((x & y) ^ (~x & z))
+#define MAJ(x, y, z) ((x & y) ^ (x & z) ^ (y & z))
+#define EP0(x) (ROTRIGHT(x, 2) ^ ROTRIGHT(x, 13) ^ ROTRIGHT(x, 22))
+#define EP1(x) (ROTRIGHT(x, 6) ^ ROTRIGHT(x, 11) ^ ROTRIGHT(x, 25))
+#define SIG0(x) (ROTRIGHT(x, 7) ^ ROTRIGHT(x, 18) ^ (x >> 3))
+#define SIG1(x) (ROTRIGHT(x, 17) ^ ROTRIGHT(x, 19) ^ (x >> 10))
+
+typedef struct {
+    unsigned char data[64];
+    unsigned int datalen;
+    unsigned long long bitlen;
+    unsigned int state[8];
+} SHA256_CTX;
+
+unsigned int k[64] = {
+    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+};
+
+void sha256_transform(SHA256_CTX *ctx, const unsigned char data[]) {
+    unsigned int a, b, c, d, e, f, g, h, i, j, t1, t2, m[64];
+
+    // 優化數據載入
+    for (i = 0, j = 0; i < 16; ++i, j += 4) {
+        m[i] = (data[j] << 24) | (data[j + 1] << 16) | (data[j + 2] << 8) | (data[j + 3]);
+    }
+    for (; i < 64; ++i) {
+        m[i] = SIG1(m[i - 2]) + m[i - 7] + SIG0(m[i - 15]) + m[i - 16];
+    }
+
+    a = ctx->state[0];
+    b = ctx->state[1];
+    c = ctx->state[2];
+    d = ctx->state[3];
+    e = ctx->state[4];
+    f = ctx->state[5];
+    g = ctx->state[6];
+    h = ctx->state[7];
+
+    // 優化的64輪變換
+    for (i = 0; i < 64; ++i) {
+        __asm {
+            MOV A, h
+            ADD A, EP1(e)
+            ADD A, CH(e, f, g)
+            ADD A, k[i]
+            ADD A, m[i]
+            MOV t1, A
+
+            MOV A, a
+            ADD A, EP0(a)
+            ADD A, MAJ(a, b, c)
+            MOV t2, A
+
+            MOV h, g
+            MOV g, f
+            MOV f, e
+            MOV e, d
+            ADD e, t1
+            MOV d, c
+            MOV c, b
+            MOV b, a
+            MOV a, t1
+            ADD a, t2
+        }
+    }
+
+    ctx->state[0] += a;
+    ctx->state[1] += b;
+    ctx->state[2] += c;
+    ctx->state[3] += d;
+    ctx->state[4] += e;
+    ctx->state[5] += f;
+    ctx->state[6] += g;
+    ctx->state[7] += h;
+}
+
+void sha256_init(SHA256_CTX *ctx) {
+    ctx->datalen = 0;
+    ctx->bitlen = 0;
+    ctx->state[0] = 0x6a09e667;
+    ctx->state[1] = 0xbb67ae85;
+    ctx->state[2] = 0x3c6ef372;
+    ctx->state[3] = 0xa54ff53a;
+    ctx->state[4] = 0x510e527f;
+    ctx->state[5] = 0x9b05688c;
+    ctx->state[6] = 0x1f83d9ab;
+    ctx->state[7] = 0x5be0cd19;
+}
+
+void sha256_update(SHA256_CTX *ctx, const unsigned char data[], size_t len) {
+    for (unsigned int i = 0; i < len; ++i) {
+        ctx->data[ctx->datalen] = data[i];
+        ctx->datalen++;
+        if (ctx->datalen == 64) {
+            sha256_transform(ctx, ctx->data);
+            ctx->bitlen += 512;
+            ctx->datalen = 0;
+        }
+    }
+}
+
+void sha256_final(SHA256_CTX *ctx, unsigned char hash[]) {
+    unsigned int i = ctx->datalen;
+
+    if (ctx->datalen < 56) {
+        ctx->data[i++] = 0x80;
+        while (i < 56)
+            ctx->data[i++] = 0x00;
+    } else {
+        ctx->data[i++] = 0x80;
+        while (i < 64)
+            ctx->data[i++] = 0x00;
+        sha256_transform(ctx, ctx->data);
+        memset(ctx->data, 0, 56);
+    }
+
+    ctx->bitlen += ctx->datalen * 8;
+    ctx->data[63] = ctx->bitlen;
+    ctx->data[62] = ctx->bitlen >> 8;
+    ctx->data[61] = ctx->bitlen >> 16;
+    ctx->data[60] = ctx->bitlen >> 24;
+    ctx->data[59] = ctx->bitlen >> 32;
+    ctx->data[58] = ctx->bitlen >> 40;
+    ctx->data[57] = ctx->bitlen >> 48;
+    ctx->data[56] = ctx->bitlen >> 56;
+    sha256_transform(ctx, ctx->data);
+
+    for (i = 0; i < 4; ++i) {
+        hash[i]      = (ctx->state[0] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 4]  = (ctx->state[1] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 8]  = (ctx->state[2] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 12] = (ctx->state[3] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 16] = (ctx->state[4] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 20] = (ctx->state[5] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 24] = (ctx->state[6] >> (24 - i * 8)) & 0x000000ff;
+        hash[i + 28] = (ctx->state[7] >> (24 - i * 8)) & 0x000000ff;
+    }
+}
+
+void main() {
+    unsigned char data[32768]; // 32K data
+    unsigned char hash[32];
+    SHA256_CTX ctx;
+    int i;
+
+    // Fill the data array with some values
+    for (i = 0; i < 32768; ++i) {
+        data[i] = i % 256;
+    }
+
+    // Initialize SHA-256 context
+    sha256_init(&ctx);
+
+    // Start the timer
+    TH0 = 0x00;
+    TL0 = 0x00;
+    TR0 = 1; // Start Timer0
+
+    // Update SHA-256 with data
+    sha256_update(&ctx, data, 32768);
+
+    // Finalize SHA-256
+    sha256_final(&ctx, hash);
+
+    // Stop the timer
+    TR0 = 0; // Stop Timer0
+
+    // Calculate the elapsed time
+    unsigned int elapsed_time = (TH0 << 8) | TL0;
+
+    // Print the hash (example: sending to UART, assuming UART is initialized)
+    for (i = 0; i < 32; ++i) {
+        printf("%02x", hash[i]);
+    }
+
+    // Print the elapsed time
+    printf("\nElapsed time: %u timer ticks\n", elapsed_time);
+}
+
+```
+### AES Sample code 
+```javascript
+unsigned char sbox[256] = {
+    0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b,
+    0xfe, 0xd7, 0xab, 0x76, 0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0,
+    0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0, 0xb7, 0xfd, 0x93, 0x26,
+    0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,
+    0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2,
+    0xeb, 0x27, 0xb2, 0x75, 0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0,
+    0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84, 0x53, 0xd1, 0x00, 0xed,
+    0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,
+    0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f,
+    0x50, 0x3c, 0x9f, 0xa8, 0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5,
+    0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2, 0xcd, 0x0c, 0x13, 0xec,
+    0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,
+    0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8, 0x14,
+    0xde, 0x5e, 0x0b, 0xdb, 0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c,
+    0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79, 0xe7, 0xc8, 0x37, 0x6d,
+    0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,
+    0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f,
+    0x4b, 0xbd, 0x8b, 0x8a, 0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e,
+    0x61, 0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e, 0xe1, 0xf8, 0x98, 0x11,
+    0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
+    0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f,
+    0xb0, 0x54, 0xbb, 0x16
+};
+
+unsigned char rsbox[256] = {
+    0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3, 0x9e,
+    0x81, 0xf3, 0xd7, 0xfb, 0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87,
+    0x34, 0x8e, 0x43, 0x44, 0xc4, 0xde, 0xe9, 0xcb, 0x54, 0x7b, 0x94, 0x32,
+    0xa6, 0xc2, 0x23, 0x3d, 0xee, 0x4c, 0x95, 0x0b, 0x42, 0xfa, 0xc3, 0x4e,
+    0x08, 0x2e, 0xa1, 0x66, 0x28, 0xd9, 0x24, 0xb2, 0x76, 0x5b, 0xa2, 0x49,
+    0x6d, 0x8b, 0xd1, 0x25, 0x72, 0xf8, 0xf6, 0x64, 0x86, 0x68, 0x98, 0x16,
+    0xd4, 0xa4, 0x5c, 0xcc, 0x5d, 0x65, 0xb6, 0x92, 0x6c, 0x70, 0x48, 0x50,
+    0xfd, 0xed, 0xb9, 0xda, 0x5e, 0x15, 0x46, 0x57, 0xa7, 0x8d, 0x9d, 0x84,
+    0x90, 0xd8, 0xab, 0x00, 0x8c, 0xbc, 0xd3, 0x0a, 0xf7, 0xe4, 0x58, 0x05,
+    0xb8, 0xb3, 0x45, 0x06, 0xd0, 0x2c, 0x1e, 0x8f, 0xca, 0x3f, 0x0f, 0x02,
+    0xc1, 0xaf, 0xbd, 0x03, 0x01, 0x13, 0x8a, 0x6b, 0x3a, 0x91, 0x11, 0x41,
+    0x4f, 0x67, 0xdc, 0xea, 0x97, 0xf2, 0xcf, 0xce, 0xf0, 0xb4, 0xe6, 0x73,
+    0x96, 0xac, 0x74, 0x22, 0xe7, 0xad, 0x35, 0x85, 0xe2, 0xf9, 0x37, 0xe8,
+    0x1c, 0x75, 0xdf, 0x6e, 0x47, 0xf1, 0x1a, 0x71, 0x1d, 0x29, 0xc5, 0x89,
+    0x6f, 0xb7, 0x62, 0x0e, 0xaa, 0x18, 0xbe, 0x1b, 0xfc, 0x56, 0x3e, 0x4b,
+    0xc6, 0xd2, 0x79, 0x20, 0x9a, 0xdb, 0xc0, 0xfe, 0x78, 0xcd, 0x5a, 0xf4,
+    0x1f, 0xdd, 0xa8, 0x33, 0x88, 0x07, 0xc7, 0x31, 0xb1, 0x12, 0x10, 0x59,
+    0x27, 0x80, 0xec, 0x5f, 0x60, 0x51, 0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0x0d,
+    0x2d, 0xe5, 0x7a, 0x9f, 0x93, 0xc9, 0x9c, 0xef, 0xa0, 0xe0, 0x3b, 0x4d,
+    0xae, 0x2a, 0xf5, 0xb0, 0xc8, 0xeb, 0xbb, 0x3c, 0x83, 0x53, 0x99, 0x61,
+    0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14, 0x63,
+    0x55, 0x21, 0x0c, 0x7d
+};
+
+unsigned char Rcon[255] = {
+    0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c,
+    0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a,
+    0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd,
+    0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a,
+    0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80,
+    0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6,
+    0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72,
+    0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc,
+    0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10,
+    0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e,
+    0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5,
+    0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94,
+    0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02,
+    0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d,
+    0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d,
+    0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f,
+    0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb
+};
+
+void InvMixColumns() {
+    int i;
+    unsigned char a, b, c, d;
+    for (i = 0; i < 4; i++) {
+        a = state[0][i];
+        b = state[1][i];
+        c = state[2][i];
+        d = state[3][i];
+
+        state[0][i] = Multiply(a, 0x0e) ^ Multiply(b, 0x0b) ^ Multiply(c, 0x0d) ^ Multiply(d, 0x09);
+        state[1][i] = Multiply(a, 0x09) ^ Multiply(b, 0x0e) ^ Multiply(c, 0x0b) ^ Multiply(d, 0x0d);
+        state[2][i] = Multiply(a, 0x0d) ^ Multiply(b, 0x09) ^ Multiply(c, 0x0e) ^ Multiply(d, 0x0b);
+        state[3][i] = Multiply(a, 0x0b) ^ Multiply(b, 0x0d) ^ Multiply(c, 0x09) ^ Multiply(d, 0x0e);
+    }
+}
+
+void InvSubBytes() {
+    int i, j;
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            state[i][j] = rsbox[state[i][j]];
+        }
+    }
+}
+
+void InvShiftRows() {
+    unsigned char temp;
+
+    temp = state[1][3];
+    state[1][3] = state[1][2];
+    state[1][2] = state[1][1];
+    state[1][1] = state[1][0];
+    state[1][0] = temp;
+
+    temp = state[2][0];
+    state[2][0] = state[2][2];
+    state[2][2] = temp;
+
+    temp = state[2][1];
+    state[2][1] = state[2][3];
+    state[2][3] = temp;
+
+    temp = state[3][0];
+    state[3][0] = state[3][1];
+    state[3][1] = state[3][2];
+    state[3][2] = state[3][3];
+    state[3][3] = temp;
+}
+
+void InvCipher() {
+    int i, j, round = 0;
+
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            state[j][i] = out[i * 4 + j];
+        }
+    }
+
+    AddRoundKey(Nr);
+
+    for (round = Nr - 1; round > 0; round--) {
+        InvShiftRows();
+        InvSubBytes();
+        AddRoundKey(round);
+        InvMixColumns();
+    }
+
+    InvShiftRows();
+    InvSubBytes();
+    AddRoundKey(0);
+
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            in[i * 4 + j] = state[j][i];
+        }
+    }
+}
+
+
+int main() {
+    KeyExpansion();
+
+    printf("\nText before encryption:\n");
+    for (int i = 0; i < 16; i++) {
+        printf("%02x ", in[i]);
+    }
+    printf("\n");
+
+    Cipher();
+
+    printf("\nEncrypted text:\n");
+    for (int i = 0; i < 16; i++) {
+        printf("%02x ", out[i]);
+    }
+    printf("\n");
+
+    InvCipher();
+
+    printf("\nDecrypted text:\n");
+    for (int i = 0; i < 16; i++) {
+        printf("%02x ", in[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+```
+
+</core_topic>
+  <related_context>
+    <related id="camera-透過我們驗證-code-sign" title="Camera 透過我們驗證 code sign" path="/code-sign/camera-透過我們驗證-code-sign.html">
+    
+    ### Camera
+    1. generate ecdsa key & sign ecdsa key
+    1. 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+    1. 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+    1.  2 , 3點 可以改成 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update 
+    1. 下圖為Hub Code Sign 驗證 flow ，驗證code sign 應該Tool 就可以控制，FW 應該不用改甚麼，但是還是要麻煩俊太確認看看
+    
+    </related>
+    <related id="code-sign-flow" title="Code sign Flow" path="/code-sign/code-sign-flow.html">
+    
+    ## Genesys Logic code sign overview
+    因應客戶的需求，firmware 都必須要驗證合法性，目前做法是把bin檔做成hash，然後 用 private key 對 hash 做sign的動作產生signature(deliver signed firmware) 
+    把 firmware bin data & signature & public key 傳送給security module，讓 security module透過 public key 對 signature做解密，產生hash ，然後再用firmware bin data 產生一組 hash ，互相做比對，來決定firmware bin是否合法(firmware update and verification)。
+    code sign 的做法有下面幾種
+    1. OpenSSL
+    會把generate 出來的key pair 放在電腦裡面，deliver signed firmware 也是在電腦裡面完成的
+    1. Token
+    1. HSM (Hardware security module)
+    A hardware security module (HSM) is a physical computing device that safeguards and manages digital keys, performs encryption and decryption functions for digital signatures, strong authentication and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a computer or network server. A hardware security module contains one or more secure cryptoprocessor chips
+    但是根據HP 規定要符合fips 140-2 level 3 以上，所以至少要用Token來達成code sign 功能
+    fips 140-2 level 3
+    > **Note:** In addition to the tamper-evident physical security mechanisms required at Security Level 2, Security Level 3 attempts to prevent the intruder from gaining access to CSPs held within the cryptographic module. Physical security mechanisms required at Security Level 3 are intended to have a high probability of detecting and responding to attempts at physical access, use or modification of the cryptographic module. The physical security mechanisms may include the use of strong enclosures and tamper-detection/response circuitry that zeroes all plaintext CSPs when the removable covers/doors of the cryptographic module are opened.
+    目前Genesys Logic 使用的 code sign 演算法為Ecdsa nistp256
+    ## Genesys Logic CodeSign flow
+    1. generate key
+    1. deliver signed firmware
+    sign的動作如下，先把Data轉成hash 檔，然後透過eToken or Smart Card裡面的 Private key 轉成 signatute 
+    1. firmware update and verification
+    
+    </related>
+    <related id="code-sign-技術規格文件-整合版" title="Code-Sign 技術規格文件 (整合版)" path="/code-sign/code-sign-技術規格文件-整合版.html">
+    
+    > 文件版本: 2.0
+    ---
+    ## 1. 適用範圍與演進路徑
+    💡 **盲點提醒**：後續新 IC 若在 Flash Block 構成或 Bank 切割方式上改動，`GL code sign info` 中 bit6=0 的「跟隨 FW 起始 Block」規則，可能直接失效，需預留 fallback。
+    ---
+    ## 2. 核心設計原則與情境定義 (最新)
+    為了相容舊有的非 Code-Sign Bonding IC 以及支援新的 Code-Sign Bonding IC，我們定義了三種主要情境 (case)。
+    ### 核心判斷點
+    1. IC Bonding 類型: Code-Sign vs. Non-Code Sign。
+    1. HP_Propertary String: FW Bin 中的字串 ('5', 'A', 'B')，作為工具鏈和 FW 的主要行為依據。
+    1. GL Code-Sign Info: GL Signature 前的 6-byte 設定區塊。
+    ### 應用範圍
+    - eToken Sign Code: 主要依賴 HP_Propertary 和 GL code sign info。
+    - eToken Gen ROM: 依賴 Bonding, HP_Propertary, 和 GL code sign info。
+    - ISP Tool & FW Load Code: 必須同時使用上述全部三個判斷點。
+    ### 2.1. 情境、IC 與參數對照表
+    表一：Flash FW 配置及 ISP 差異
+    ### 核心情境對照表
+    ### 關鍵規則與備註
+    ### A. 韌體升級路徑限制 (Firmware Upgrade Path)
+    1. ❌ 禁止降級路徑:
+    ### B. GL Code-Sign Info 的角色與規則
+    1. 結構獨立性:
+    1. 功能與兼容性:
+    ### C. 情境適用性限制 (Case-specific Constraints)
+    1. case3 的專屬性:
+    表二：IC、適用類型與參數對應
+    ---
+    ## 3. 6-Byte 設定區塊規格 (GL code sign info)
+    ### 3.1. 概覽
+    為了讓韌體 (FW) 能夠在啟動時驗證公鑰 (Public Key) 和簽名 (Hash+Signature)，我們在 GL Signature 前方定義了一個 6-Byte 的設定區塊 (0xF4-0xF9)。這個區塊的功能是告訴 Boot ROM 在 Flash 中的哪個位置可以找到這兩組關鍵資訊。
+    此區塊分為兩部分：
+    - 公鑰位置資訊：前 3 個位元組 (0xF4-0xF6)，用於定義 Public Key 的儲存位置。
+    - 驗證資訊位置：後 3 個位元組 (0xF7-0xF9)，用於定義驗證資訊 (Hash+Sig) 的儲存位置。
+    ### 3.2. 結構定義
+    ### 3.3. 內部邏輯規則圖
+    下圖視覺化了公鑰位置資訊 (0xF4-0xF6) 的內部處理邏輯。（驗證資訊區塊的邏輯與此完全相同，但在 case1 和 case2 中會被忽略）
+    ```mermaid
+    %% Code-Sign Info General Rules Diagram (Final Outline Style - 100% Compatible)
+    flowchart TD
+        classDef field fill:transparent,stroke:#60A5FA,stroke-width:2px
+        classDef titleNode fill:transparent,stroke:transparent,font-weight:bold
+        classDef decision fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef rule fill:transparent,stroke:#9CA3AF,stroke-width:2px,stroke-dasharray: 5 5
+        classDef dependency stroke:#9CA3AF,stroke-width:1.5px,stroke-dasharray: 4 4
+        classDef stop fill:transparent,stroke:#F87171,stroke-width:2px
+    
+        subgraph PK_Rules
+            style PK_Rules fill:transparent,stroke:#FCD34D,stroke-width:2px
+            PK_Rules_Title("<b>Public Key 位置資訊規則 (0xF4-0xF6)</b>")
+            B7{"<b>Bit 7:</b><br/>資訊有效旗標 (總開關)"}
+            Stop["<b>流程結束</b><br/>(後續所有欄位均被忽略)"]
+            B6{"<b>Bit 6:</b><br/>公鑰區塊定位模式"}
+            F5["<b>Offset 0xF5:</b><br/>Bank1 Address High Byte<br/><i>(恆定有效)</i>"]
+            B05["<b>Bit 0-5:</b><br/>公鑰 Flash Block 編號"]
+            F6["<b>Offset 0xF6:</b><br/>Bank2 Address High Byte"]
+            Rule_0["<b>規則:</b><br/>- Bit0-5 無效<br/>- 0xF6 (Bank2 Addr) 無效"]
+    
+            PK_Rules_Title --> B7
+            B7 -- "<b>值為 1</b><br/>(無效)" --> Stop
+            B7 -- "<b>值為 0</b><br/>(有效)" --> B6
+            B6 -- "<b>值為 0</b><br/>(跟隨 FW)" --> Rule_0
+            Rule_0 --> F5
+            B6 -- "<b>值為 1</b><br/>(顯式指定)" --> B05
+            B05 --> F5 --> F6
+            B6 -.->|"當 Bit6=1 時才有效"| B05
+            B6 -.->|"當 Bit6=1 時才有效"| F6
+        end
+        
+        class B7,B6 decision; class Stop stop; class Rule_0 rule; class B05,F5,F6 field
+        class PK_Rules_Title titleNode; linkStyle 7,8 dependency
+    ```
+    ---
+    ## 4. FW 規劃與工具鏈流程
+    ### 4.1. FW 規劃階段注意事項 (Checklist)
+    在規劃韌體專案時，為確保 Code-Sign 功能正常運作，務必注意以下關鍵事項：
+    - 空間規劃
+    - 升級模式考量
+    - 外部區塊風險
+    - 團隊溝通
+    ---
+    ### 4.2. Case 1: HP_Propertary = '5' (簽章資訊外掛)
+    ### 核心概念
+    此模式對應早期的 FW (< 64K)，所有 Code-Sign 相關資訊 (Public Key, Hash, Signature) 都被視為外部資料，由 eToken 產生後附加在原始 FW bin 之後，供 ISP Tool 在燒錄時使用。GL code sign info 在此模式下完全無效。
+    ### eToken Sign Code 流程
+    ```mermaid
+    
+    flowchart TD
+        classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5
+        classDef file fill:transparent,stroke:#10B981,stroke-width:2px
+        classDef process fill:transparent,stroke:#4338CA,stroke-width:2px
+    
+        subgraph S1 [階段 1: 輸入]
+            subgraph  FW_Orig["<b>原始 FW.bin</b><br>"]
+    		        GL_Info["<b>HP_Propertary='5'</b>"]:::config 
+            end
+        end
+        
+        subgraph S2 [階段 2: eToken Sign Code 處理]
+            Check_HP{"判斷 HP_Propertary='5'"}:::condition
+            Calc_HS("計算整個 bin 的 Hash & Signature"):::process
+        end
+    
+        subgraph S3 [階段 3: 產生檔案]
+            FW_Signed["<b>FW_signed.bin</b><br>(原始 bin + Hash + PK + Sig)"]:::file
+            FW_Rom["<b>FW.rom</b><br>(原始 bin + PK)"]:::file
+        end
+        
+        FW_Orig --> Check_HP --> Calc_HS --> S3
+        FW_Rom --> |供 HP ISP Tool 使用| End((完成))
+        FW_Signed --> |供 HP OCI Tool 使用| End((完成))
+    
+    ```
+    ---
+    ### 4.3. Case 2: HP_Propertary = 'A' (公鑰嵌入 + 重算 Checksum)
+    ### 核心概念
+    此模式是當前的主流作法 (FW >= 64K)。Public Key 被嵌入到 FW bin 的內部，這會破壞原始的 checksum-8。因此，最關鍵的步驟是 eToken 必須重新計算並覆蓋 checksum-8。Hash 和 Signature 依然作為外部資料附加。
+    ### eToken Sign Code 流程
+    ```mermaid
+    flowchart TD
+        %% --- 步驟 1: 先定義好所有會用到的樣式 ---
+        classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5
+        classDef critical fill:transparent,stroke:#DC2626,stroke-width:2.5px
+        classDef file fill:transparent,stroke:#10B981,stroke-width:2px
+        classDef process fill:transparent,stroke:#4338CA,stroke-width:2px
+        
+        %% --- 步驟 2: 定義圖形元素 (已移除列表編號) ---
+        subgraph S1 [階段 1: 輸入]
+            subgraph FW_Orig["<b>原始 FW.bin</b>"]
+    		        GL_Info["<b>HP_Propertary='A'<br><br>GL Code Sign Info</b><br>(提供 PK 位置)"]:::config
+            end
+        end
+        
+        subgraph S2 [階段 2:eToken Sign Code 處理]
+            Check_HP{"判斷 HP_Propertary='A'"}:::condition
+            Check_Bit7{"PUBLICKEY_INFO_BLOCK Bit7<br/>是否設定啟用( = 0 )？"}:::condition
+            Embed_PK["嵌入 Public Key 至<br>GL Info 指定的位置"]:::process
+            Recalc_CS["<b>重新計算並覆蓋<br>整個 bin 的 Checksum-16</b>"]:::critical
+            Calc_HS["計算 Hash & Signature"]:::process
+        end
+    
+        subgraph S3 [階段 3: 產生檔案]
+            FW_Signed_A["<b>FW_signed.bin</b><br>(PK已嵌入, Checksum已更新<br>+ Hash + PK + Sig 附加在後)"]:::file
+            FW_Rom_A["<b>FW.rom</b><br>(PK已嵌入, Checksum已更新)"]:::file
+        end
+    
+        %% --- 步驟 3: 最後定義流程走向 ---
+        FW_Orig --> Check_HP --> Check_Bit7 --"是"--> Embed_PK --> Recalc_CS --> Calc_HS --> S3
+        FW_Rom_A --> |供 HP ISP Tool 使用| End((完成))
+        FW_Signed_A --> |供 HP OCI Tool 使用| End((完成))
+        Check_Bit7 --"否"--> Abort_1((流程中止))
+      
+    ```
+    ---
+    ### 4.4. Case 3: HP_Propertary = 'B' (全部資訊嵌入)
+    ### 核心概念
+    此模式為未來 Code-Sign Bonding IC 的標準作法。所有 Code-Sign 資訊 (Public Key, Hash, Signature) 都會根據 GL code sign info 的指示嵌入到 FW bin 內部。由於這些資訊在 FW load code 時會被 Boot ROM 驗證並跳過，因此不需要重算 checksum-8。
+    ### eToken Sign Code 流程
+    ```mermaid
+    %% eToken Signing Process Flow (Bit6=1) - Final Example-Enhanced Version
+    flowchart TD
+        %% --- 步驟 1: 先定義好所有會用到的樣式 ---
+        classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5
+        classDef critical fill:transparent,stroke:#DC2626,stroke-width:2.5px
+        classDef file fill:transparent,stroke:#10B981,stroke-width:2px
+        classDef process fill:transparent,stroke:#4338CA,stroke-width:2px
+        
+        %% --- Stages ---
+        subgraph S1 [階段 1: 輸入資料]
+            subgraph FW_Orig["<b>原始 FW.bin</b>"]
+    		        %% MODIFIED: Added detailed parsing steps inside this node.
+    		        FW_Config_Example["<b>6-Byte 設定資訊 (範例)</b><br/>-----------------------------<br/>公鑰: <b>42</b> 00 10<br/>驗證: <b>42</b> 20 30<br/>-----------------------------<br/><b>解析步驟 (以 0x42 為例):</b><br/>1. 轉為二進位: <b>0b01000010</b><br/>2. 拆解位元:<br/>   - Bit 7  = <b>0</b> (有效)<br/>   - Bit 6  = <b>1</b> (啟用指定模式)<br/>   - Bit 0-5 = <b>2</b> (目標 Block = 2)"]:::config
+    				end        
+        end
+    
+        subgraph S2 [階段 2: eToken Sign Code 處理]
+        		Check_HP{"判斷 HP_Propertary='B'"}:::condition
+            Check_Bit7{"PUBLICKEY_INFO_BLOCK Bit7<br/>是否設定啟用( = 0 )？"}:::condition
+            Calc_HS["計算 Hash & Signature"]:::process
+        end
+        
+        subgraph S3 [階段 3: 產生最終檔案]
+                FW_Final_Bin_1["<b>FW_signed.bin</b><br/> + Hash + PK + Sig"]:::file
+                FW_Final_Rom_1["<b>FW.rom</b><br/>(Key/Sig 在 Block 2)"]:::file
+        end
+    
+        %% --- Flow Connections (Simple & Clean) ---
+        FW_Orig --> Check_HP --> Check_Bit7 --"是"--> Calc_HS --> S3
+        FW_Final_Rom_1 --> |供 HP ISP Tool 使用| End((完成))
+        FW_Final_Bin_1 --> |供 HP OCI Tool 使用| End((完成))
+        Check_Bit7 --"否"--> Abort_1((流程中止))
+    ```
+    ---
+    ## 5. ISP 安全性擴展 (未來規劃)
+    ### 5.1. 關鍵需求與注意事項
+    為確保 ISP 流程的安全性，特別是在引入「更換公鑰 (Public Key)」功能時，各團隊需遵守以下規則：
+    - 1. Public Key 的保護 (Protection of Public Key)
+    - 2. 更換公鑰的獨立流程 (Secure Key-Replacement Flow)
+    - 3. 合法性驗證機制的強化 (Hardening of Authentication)
+    ### 5.2. 建議的「更換公鑰」安全流程圖
+    ```mermaid
+    flowchart TD
+        %% --- 樣式定義 (可讀性優化的描邊風格) ---
+        classDef process fill:transparent,stroke:#4338CA,stroke-width:2px
+        classDef decision fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef sec_gate fill:transparent,stroke:#DC2626,stroke-width:2px
+        classDef locked fill:transparent,stroke:#6B7280,stroke-width:2px
+    
+        %% --- 主流程 ---
+        Start("Tool 連線<br/>FW 進入 ISP Ram Code") --> AllCmdsLocked
+        AllCmdsLocked["<b>狀態: 所有 Vendor Cmds 已鎖定</b>"] --> Handshake
+        Handshake{"<b>1. 基礎合法性驗證</b><br/>(Challenge-Response Handshake)"}
+    
+        Handshake -- "驗證失敗" --> Abort((流程中止))
+        Handshake -- "驗證成功" --> BasicCmdsUnlocked
+    
+        BasicCmdsUnlocked["<b>狀態: 解鎖<u>標準</u> ISP 指令</b><br/>(Erase, Program, Verify...)"] --> ChoosePath
+        ChoosePath{操作選擇}
+    
+        %% --- A. 標準韌體更新路徑 ---
+        ChoosePath -- "A. 標準 FW 更新<br/>(使用現有金鑰)" --> StandardISP
+        subgraph StandardISP [" "]
+            style StandardISP fill:transparent,stroke:#4ADE80,stroke-width:2.5px
+            EraseFW["Sector Erase<br/>(Bypass Key 保護區)"]
+            ProgramFW["Program New FW<br/>(由<b>現有私鑰</b>簽署)"]
+            EraseFW --> ProgramFW
+        end
+        StandardISP --> Relock
+    
+        %% --- B. 安全換鑰與韌體更新路徑 ---
+        ChoosePath -- "B. 安全換鑰與韌體更新" --> KeyChangeAuth
+        KeyChangeAuth{"<b>2. 換鑰授權 (高權限驗證)</b><br/>(需第二次驗證或特殊 Token)"} -- "授權失敗" --> Abort2((中止))
+        KeyChangeAuth -- "授權成功" --> SecureUpdateFlow
+        
+        subgraph SecureUpdateFlow [" "]
+            style SecureUpdateFlow fill:transparent,stroke:#F43F5E,stroke-width:2.5px
+            KeyCmdsUnlocked["<b>狀態: 解鎖<u>換鑰</u>與燒錄指令</b>"]
+            EraseKey["Erase Key Sector"]
+            ProgKey["Program New Public Key"]
+            EraseFW_Secure["Erase FW Sector"]
+            ProgramFW_Secure["Program New FW<br/>(必須由<b>新的私鑰</b>簽署)"]
+            KeyCmdsUnlocked --> EraseKey --> ProgKey --> EraseFW_Secure --> ProgramFW_Secure
+        end
+        SecureUpdateFlow --> Relock
+        
+        %% --- 結束狀態 ---
+        Relock["<b>操作完成/斷線</b><br/>重新鎖定所有指令"] --> Done((完成))
+        
+        %% --- 應用樣式 ---
+        class Start,BasicCmdsUnlocked,KeyCmdsUnlocked,Relock,EraseFW,ProgramFW,EraseKey,ProgKey,EraseFW_Secure,ProgramFW_Secure process
+        class AllCmdsLocked locked
+        class Handshake,ChoosePath,KeyChangeAuth decision
+        class Abort,Abort2,Done sec_gate
+    ```
+    ### 5.3. 待辦事項與待確認問題
+    - [SW 團隊協助確認]
+    - [FW 團隊需執行]
+    ---
+    ## 6. GL7524 Code Sign Update flow
+    > 此章節描述 ISP Tool 與 FW Ram Code 之間的運行時互動，主要適用於 case1 和 case2
+    ```mermaid
+    flowchart TD
+        %% --- 樣式定義 (通用高對比描邊風格，兼顧深淺模式) ---
+        classDef process fill:transparent,stroke:#38BDF8,stroke-width:2px,color:#38BDF8
+        classDef decision fill:transparent,stroke:#F59E0B,stroke-width:2.5px,color:#F59E0B
+        classDef command fill:transparent,stroke:#F87171,stroke-width:2px,color:#F87171
+        classDef section_header fill:transparent,stroke:#475569,stroke-width:2.5px,color:#475569,font-weight:bold
+        classDef success fill:transparent,stroke:#22c55e,color:#22c55e,stroke-width:2.5px
+        classDef fail fill:transparent,stroke:#ef4444,color:#ef4444,stroke-width:2.5px
+    
+        %% === 流程起點與準備 ===
+        Start(["(start)"]):::command
+        ParseGL["<b>Parse Update File</b><br/>(獲取 Signature, Public Key)"]:::process
+        PrepareUpdate["<b>寫入待更新韌體至 Flash</b><br/>(Write update image to staging area)"]:::process
+        Start --> ParseGL --> PrepareUpdate
+    
+        %% === 階段一: Public Key 檢查與更新 (已加上 Command) ===
+        Section_Key["階段一: Public Key 檢查與更新"]:::section_header
+        PK1_Check_Exist{"Flash 中是否有<br>既有的 Public Key?"}:::decision
+        PK2_Write_Key["將更新檔的 Public Key<br/>寫入 Flash"]:::process
+        PK3_Check_Match{"Flash 中的 Public Key<br/>是否與更新檔一致?"}:::decision
+        PK3_cmd("C0 | A2 | public key offset | 00 | ..."):::command
+    
+        PrepareUpdate --> Section_Key --> PK1_Check_Exist
+        PK1_Check_Exist -- "否 (Flash is empty)" --> PK2_Write_Key
+        PK1_Check_Exist -- "是 (Flash has a key)" --> PK3_Check_Match
+        PK3_cmd --o PK3_Check_Match
+        
+        %% === 階段二: Hash 驗證 (已加上 Command) ===
+        Section_Hash["階段二: Hash 驗證"]:::section_header
+        A2["Enable SHA256 Engine"]:::process
+        A2_cmd("40 | AC | 00 | 00 | 00"):::command
+        A3["FW Read Update Area"]:::process
+        A4["Tool: Send Hash Data"]:::process
+        A4_cmd("40 | AC | 0B | 00 | 32"):::command
+        A5{"FW: 回報 Hash<br/>比對結果"}:::decision
+        A5_cmd("C0 | AC | 0B | 00 | 01"):::command
+    
+        PK2_Write_Key --> Section_Hash
+        PK3_Check_Match -- "是 (Keys match)" --> Section_Hash
+        Section_Hash --> A2 --> A3 --> A4 --> A5
+        A2_cmd --o A2
+        A4_cmd --o A4
+        A5_cmd --o A5
+    
+        %% === 階段三: Signature 驗證 (已加上 Command) ===
+        Section_Sig["階段三: Signature 驗證"]:::section_header
+        B4["Tool: Provide Public Key Location"]:::process
+        B4_cmd("40 | AC | 020C | public key offset | 00 | 00"):::command
+        B5["Tool: Send Signature Data"]:::process
+        B5_cmd("40 | AC | 010C | 00 | 64"):::command
+        B6{"FW: 回報 Signature<br/>驗證結果"}:::decision
+        B6_cmd("C0 | AC | 0C | 00 | 01"):::command
+    
+        A5 -- "Hash OK" --> Section_Sig --> B4 --> B5 --> B6
+        B4_cmd --o B4
+        B5_cmd --o B5
+        B6_cmd --o B6
+    
+        %% === 成功與失敗路徑 ===
+        Erase["<b>驗證失敗</b><br/>清除暫存區的韌體"]:::fail
+        CommitUpdate["<b>驗證通過</b><br/>確認並啟用新韌體"]:::success
+        End(["(end)"]):::command
+    
+        PK3_Check_Match -- "否 (Key mismatch)" --> Erase
+        A5 -- "Hash Fail" --> Erase
+        B6 -- "Signature Fail" --> Erase
+    
+        B6 -- "Signature OK" --> CommitUpdate
+        
+        CommitUpdate --> End
+        Erase --> End
+    ```
+    ---
+    ## 7. GL7524 & MCU2 Bank Check Update flow
+    > 此章節為高階應用流程，不受底層 Code-Sign 機制變動影響
+    ```mermaid
+    flowchart TD
+        %% --- 雙模式兼容的樣式定義 ---
+        %% 策略：背景透明，邊框和文字使用中等亮度的彩色，確保在深淺背景上都清晰可見
+        classDef process fill:transparent, stroke:#3b82f6, color:#3b82f6, stroke-width:2px
+        classDef decision fill:transparent, stroke:#f59e0b, color:#f59e0b, stroke-width:2.5px
+        classDef dataNode fill:transparent, stroke:#9ca3af, color:#9ca3af, stroke-width:1.5px
+        classDef startNode fill:transparent, stroke:#22c55e, color:#22c55e, stroke-width:2px
+        classDef endNode fill:transparent, stroke:#22c55e, color:#22c55e, stroke-width:2px
+    
+        %% --- 參考資料 (視覺輔助，不參與主流程) ---
+        subgraph SystemState [參考資料]
+            direction LR
+            Flash[("📦 Flash<br>HUB: 1111, 1112<br>MCU2: 0001, 0002")]:::dataNode
+            Bin[("📁 Bin File<br>New HUB: 1113<br>New MCU2: 0003")]:::dataNode
+        end
+    
+        %% --- 主流程開始 ---
+        Start(["Start"]):::startNode 
+        Start --> HUB_AskNonRunning["🔍 詢問FW：<br>哪個 HUB bank 是 non-running？"]:::process
+        
+        %% --- HUB 更新邏輯 (統一處理) ---
+        HUB_AskNonRunning --> HUB_Decision{"Non-running Bank 是..."}:::decision
+        HUB_Decision -- "Bank 0" --> UpdateHUB0["⬆️ 更新 HUB Bank 0"]:::process
+        HUB_Decision -- "Bank 1" --> UpdateHUB1["⬆️ 更新 HUB Bank 1"]:::process
+    
+        %% --- MCU 更新邏輯 (統一處理) ---
+        UpdateHUB0 & UpdateHUB1 --> MCU_AskNonRunning["🔍 詢問FW：<br>哪個 MCU2 bank 是 non-running？"]:::process
+        MCU_AskNonRunning --> MCU_Decision{"Non-running Bank 是..."}:::decision
+        MCU_Decision -- "Bank 1" --> UpdateMCU1["⬆️ 更新 MCU2 Bank 1"]:::process
+        MCU_Decision -- "Bank 2" --> UpdateMCU2["⬆️ 更新 MCU2 Bank 2"]:::process
+    
+        %% --- 結束 ---
+        UpdateMCU1 & UpdateMCU2 --> Done(["✅ 完成"]):::endNode
+    ```
+    ---
+    ### 參考連結
+    🔗 GL7524 A02 Code-Sign 與 ISP 安全架構
+    
+    </related>
+  </related_context>
+</context_boundaries>

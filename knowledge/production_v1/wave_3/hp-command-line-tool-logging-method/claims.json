@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "1. 在 Command Line Tool 的資料夾中打開 GLHub.ini 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "2. 將 `EnableLog = 1` 設定為開啟記錄功能。[`Open GLHub.ini in the command line Tool folder —> EnableLog = 1`]",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "3. 執行 Command Line Tool。[`Execute command line Tool`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "4. 在 Command Line Tool 的資料夾中打開 Log 資料夾。[`Open the Log folder in the command line Tool folder`]",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "5. 複製 Log 資料夾中的記錄檔供分析使用。[`Copy the log file inside and let us analyze`]",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "根據提供的相關內容, Command Line Tool 的記錄檔可能包含以下資訊:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- 呼叫 SDK 中各個 API 的狀態資訊",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- `HPFI_Initialize()`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- `HPFI_GetPackagedFirmwareInfo()`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- `HPFI_GetInstalledFirmwareInfo()`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- `HPFI_Install()`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- `HPFI_Finalize()`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "- 離線更新 (Stage Firmware) 的相關資訊",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-command-line-tool-logging-method",
+    "claim": "根據提供的內容,記錄檔位置是在 Command Line Tool 的 Log 資料夾中,但是否有特定的命名規則或是開啟 Debug Log 的方式並未明確說明。這部分可能需要進一步確認或是依照專案需求自行決定。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

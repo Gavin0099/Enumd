@@ -1,0 +1,546 @@
+[
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "為了讓韌體 (FW) 能夠在啟動時驗證公鑰 (Public Key) 和簽名 (Hash+Signature)，我們在 GL Signature 前方定義了一個 6-Byte 的設定區塊 (0xF4-0xF9)。這個區塊的功能是告訴 Boot ROM 在 Flash 中的哪個位置可以找到這兩組關鍵資訊。",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- 公鑰位置資訊：前 3 個位元組 (0xF4-0xF6)，用於定義 Public Key 的儲存位置。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- 驗證資訊位置：後 3 個位元組 (0xF7-0xF9)，用於定義驗證資訊 (Hash+Sig) 的儲存位置。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "下表詳細定義了 6-Byte 設定區塊中每個位元組和位元欄位的功能。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "下圖視覺化了公鑰位置資訊 (0xF4-0xF6) 的內部處理邏輯，重點展示了 Bit 7 (總開關) 和 Bit 6 (定位模式) 如何決定其他欄位的有效性。（驗證資訊區塊的邏輯與此完全相同）",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style PK_Rules fill:transparent,stroke:#FCD34D,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "PK_Rules_Title(\"<b>Public Key 位置資訊規則 (0xF4-0xF6)</b>\")",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "B7{\"<b>Bit 7:</b><br/>資訊有效旗標 (總開關)\"}",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Stop[\"<b>流程結束</b><br/>(後續所有欄位均被忽略)\"]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "B6{\"<b>Bit 6:</b><br/>公鑰區塊定位模式\"}",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "F5[\"<b>Offset 0xF5:</b><br/>Bank1 Address High Byte<br/><i>(恆定有效)</i>\"]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "B05[\"<b>Bit 0-5:</b><br/>公鑰 Flash Block 編號\"]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "F6[\"<b>Offset 0xF6:</b><br/>Bank2 Address High Byte\"]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Rule_0[\"<b>規則:</b><br/>- Bit0-5 無效<br/>- 0xF6 (Bank2 Addr) 無效\"]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "B6 -.->|\"當 Bit6=1 時才有效\"| B05",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "B6 -.->|\"當 Bit6=1 時才有效\"| F6",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class B7,B6 decision",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class Rule_0 rule",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class B05,F5,F6 field",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class PK_Rules_Title titleNode",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "linkStyle 7,8 dependency",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "我們以上方的 Hexdump 範例 ... 00 90 a0 00 b0 c0 ... 進行逐步解析。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- Offset 0xF4: PUBLICKEY_INFO_BLOCK",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- Offset 0xF5: PUBLICKEY_INFO_BANK1_ADDR_H",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- Offset 0xF6: PUBLICKEY_INFO_BANK2_ADDR_H",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- 意義: 這三個位元組的結構與邏輯和黃色區塊完全相同，只是它們定義的是「驗證資訊 (Hash+Sig)」的位置。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "PUBLICKEY_INFO_BLOCK 和 CSVERIFY_INFO_BLOCK 中的 Bit6 是一個關鍵的控制旗標，它決定了系統如何定位公鑰 (Public Key) 和驗證資訊 (Signature) 的儲存區塊 (Flash Block)。這個設計主要為了解決不同 MCU 韌體大小不一，以及是否啟用雙 Bank 升級 (Dual-Bank) 所帶來的靈活性需求。",
+    "tier": "Explicit",
+    "evidence_score": 24,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- Bit6 = 0 (簡易模式)：位置隱式關聯。公鑰/簽名所在的 Flash Block 與韌體 (FW) 本身的起始 Block 相同。這是一種簡化的預設行為。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "- Bit6 = 1 (專家模式)：位置顯式指定。公鑰/簽名所在的 Flash Block 由 Bit0-5 的值明確指定，與韌體所在的 Block 可以完全無關。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Start(\"Bit6 功能與佈局規則\")",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style Scenario1 fill:transparent,stroke:#9CA3AF",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S1_Title(\"<b>情境1: FW 跨越 Block</b>\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Rule1[\"<b>規則:</b> Key/Sig 必須與 FW <u>起始點</u><br>在同一個 Block\"]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style S1_Layout fill:transparent,stroke:transparent",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style S1_Block3 fill:transparent,stroke:#7DD3FC,stroke-width:1.5px",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S1_Block3_Title(\"Flash Block 3\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "FW1_Start(\"FW 起始部分\")",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "KeySig_OK(\"✅ <b>合法位置</b><br/>(與 FW 起始點在同一 Block)\")",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style S1_Block4 fill:transparent,stroke:#7DD3FC,stroke-width:1.5px",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S1_Block4_Title(\"Flash Block 4\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "FW1_Ext(\"FW 延伸部分\")",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "KeySig_FAIL(\"❌ <b>非法位置</b><br/>(不可跨 Block 存放)\")",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style Scenario2 fill:transparent,stroke:#9CA3AF",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S2_Title(\"<b>情境2: FW 未跨越 Block</b>\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Rule2[\"<b>規則:</b> 可利用 Block 內剩餘空間\"]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style S2_Block1 fill:transparent,stroke:#7DD3FC,stroke-width:1.5px",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S2_Block1_Title(\"Flash Block 1\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "FW2(\"FW (32KB)\")",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "KeySig_Allowed(\"✅ <b>合法位置</b><br/>(Block 內剩餘空間)\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style Scenario3 fill:transparent,stroke:#9CA3AF",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S3_Title(\"<b>情境3: 自由指定 Block</b>\")",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style S3_FW_Block fill:transparent,stroke:#7DD3FC,stroke-width:1.5px",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S3_FW_Block_Title(\"Flash Block N\")",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Config[\"Config Info<br><b>Bit6=1</b>, <b>Bit0-5 = X</b>\"]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "style S3_Target_Block fill:transparent,stroke:#7DD3FC,stroke-width:1.5px",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "S3_Target_Block_Title(\"Flash Block X\")",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "KeySig_Target(\"✅ <b>合法位置</b><br/>(由 Bit0-5 指定)\")",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Rule3[\"<b>規則:</b> 直接讀取 <b>Bit0-5</b><br>跳轉至指定的 <b>Block X</b>\"]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Rule4[\"<b>限制:</b> Key 和 Sig 需在同個目標 Block\"]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Config -.-> |指向| S3_Target_Block",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class Rule1,Rule2,Rule3,Rule4 rule",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class S1_Title,S2_Title,S3_Title,S1_Block3_Title,S1_Block4_Title,S2_Block1_Title,S3_FW_Block_Title,S3_Target_Block_Title titleNode",
+    "tier": "Explicit",
+    "evidence_score": 25,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class FW1_Start,FW1_Ext,FW2,FW3 fw",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class KeySig_OK,KeySig_Allowed,KeySig_Target ok",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "class KeySig_FAIL fail",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Q1: 為何要設計 Bit6=0 這種「跟隨模式」？",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Q2: 如果韌體很小，公鑰/簽名可以放在韌體結束後、下一個 Block 開始前的剩餘空間嗎？",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+    "claim": "Q3: Bit6=1 模式下，系統如何讀取",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

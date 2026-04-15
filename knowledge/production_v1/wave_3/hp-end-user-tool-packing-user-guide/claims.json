@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "本文件旨在說明如何將 HP 終端使用者工具包裝成安全的可發佈版本。整個流程包括整合、簽章與封裝等一系列步驟，由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "1. **WIP 階段**：將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "2. **SIGN 階段**：計算 wip.bin 的 Hash，產生 Signed bin 檔。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "3. **ROM 階段**：依晶片演算法，組裝最終檔案 rom。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "4.1 循序圖 (Sequence Diagram)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "4.2 流程圖 (Flowchart)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "1. [`eToken 安全簽章系統技術說明`](./etoken-安全簽章系統技術說明.html)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "2. [`HID Code Sign 記錄`](./hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "3. [`HP OCI APP`](./hp-oci-app.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-packing-user-guide",
+    "claim": "本文件主要說明了 HP 終端使用者工具的打包流程，包括 WIP、SIGN 和 ROM 等階段的詳細步驟。文中引用了相關的技術說明文件，以提供更完整的背景資訊。整個流程由 eToken Server 協調，確保最終產品的安全性。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "為了支援韌體更新,Flash 空間必須大於兩個韌體映像的大小。如果韌體隨時間變大,也必須包含擴大的空間。這是強制要求的原因,因為如果某一個區塊的韌體因為某些原因損壞,boot code 也能從另一個區塊的韌體啟動。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "USB 介面是首選,除非 HP 因為特定原因放棄,否則應該透過 USB 介面來更新韌體。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "顯示器必須支援 HP 的韌體安全性要求,以防止未授權的韌體被更新。由於 USB 介面不安全,因此必須在 MCU 上檢查簽名。詳細資訊請參閱附錄中的「HP Firmware Security Requirements」。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "- 驅動程式安裝和移除會導致 PC 和 Windows OS 的相容性問題",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "- 為 Windows 開發專屬的驅動程式不適用於 Linux 或 Mac,甚至為 Windows 10 開發的驅動程式可能不適用於未來的 Windows",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "HP 強烈鼓勵 IC 廠商使用內建驅動程式,尤其是推薦使用 USB HID 驅動程式,因為它已經嵌入所有現代操作系統數十年。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "- Chrome OS (依要求)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "所有的 DLL 和 EXE 檔案都必須有 SHA256 代碼簽章。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "為了支援企業遠端更新數千台顯示器,此工具必須支援靜默安裝模式,並提供日誌和返回碼,以供 Microsoft SCCM (或 Microsoft Endpoint Manager) 使用。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "為了最小化 ODM 和供應商開發新工具和新 DLL 的工作量,HP 要求 ODM 和供應商遵循 HP Firmware Installer SDK 設計。HP Firmware Installer,又稱為 OCI,是 HP 內部開發的韌體更新工具。目標是統一所有未來 HP 顯示器的 UI 設計和 DLL API。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "HP 提供了以下範例代碼、文字、DLL API 和 UI 範例。HP 將協助 ODM 和供應商開發此韌體更新工具。如有任何進一步的程式設計問題或資源,請聯絡顯示器韌體架構師 (randolph.yen@hp.com)。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-display-firmware-specification-v11",
+    "claim": "ODM 可以從以下鏈接獲取最新的 SDK 代碼。如果 ODM 想要訪問該鏈接,請聯絡 Randolph。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

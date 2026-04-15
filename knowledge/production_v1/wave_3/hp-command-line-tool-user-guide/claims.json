@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "hp-command-line-tool-user-guide",
+    "claim": "HP Command Line Tool 是一個用於更新 Linux ThinClient 的工具。該工具會根據不同的 HP 型號生成相應的 Word 文件。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

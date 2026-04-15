@@ -1,0 +1,329 @@
+{
+  "requested_slug": "hp-command-line-tool-user-guide",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "command-line-tool-debug-路徑 (confidence: low)",
+    "command-line-tool-instructions (confidence: low)",
+    "command-line-tool-logging-method (confidence: low)",
+    "command-line-tool-user-guide (confidence: low)",
+    "glbin-tool-user-guide (confidence: low)",
+    "hp-command-line-tool-logging-method (confidence: low)",
+    "hp-end-user-tool-packing-user-guide (confidence: low)",
+    "hp-end-user-tool-封裝方式 (confidence: low)",
+    "lenovo-command-line-tool-update-flow (confidence: low)",
+    "tri-code-command-line-tool-command-line-list (confidence: low)",
+    "mac-hub-update-tool-user-guide (confidence: low)",
+    "mac-command-line-tool-user-guide (confidence: low)",
+    "how-to-grab-hp-command-tool-log- (confidence: low)",
+    "hub-firmware-update-tool-command-line-list (confidence: low)",
+    "hubdriverinstaller-user-guide (confidence: low)",
+    "hp-enduser-tool- (confidence: low)",
+    "hp-qc-tool- (confidence: low)",
+    "command-line-uninstall-driver (confidence: low)",
+    "hp-oci-tool-工作彙整 (confidence: low)",
+    "hp-oci-tool-現行架構解析 (confidence: low)"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 33,
+    "borderline_count": 9,
+    "best_borderline_score": 0.2727272727272727,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "2e264f6b-c656-80ef-b8c1-eb7787d7ac46",
+          "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+          "title": "HP OCI Tool 跨平台架構技術規格書 (v3.4 - Visualized Final)\n",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-.md",
+          "site_path": "/mac/hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-.html",
+          "category": "mac",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "2e264f6b-c656-80ef-b8c1-eb7787d7ac46",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:23:41.252Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "434ef05b-c8a4-4182-bef0-d58316aafa37",
+          "slug": "how-to-grab-hp-enduser-tool-log-",
+          "title": "How to grab HP EndUser Tool log ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\how-to-grab-hp-enduser-tool-log-.md",
+          "site_path": "/tools/how-to-grab-hp-enduser-tool-log-.html",
+          "category": "tools",
+          "domain_tags": [
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "434ef05b-c8a4-4182-bef0-d58316aafa37",
+          "notion_updated_at": "2026-01-21T09:28:00.000Z",
+          "exported_at": "2026-04-06T13:15:47.334Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "90a5aaa0-d7bf-4eeb-9a5f-4275d44cba13",
+          "slug": "how-to-grab-hp-isp-tool-log",
+          "title": "How to grab HP ISP Tool log",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\how-to-grab-hp-isp-tool-log.md",
+          "site_path": "/tools/how-to-grab-hp-isp-tool-log.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools"
+          ],
+          "task_tags": [
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "deprecated",
+          "notion_id": "90a5aaa0-d7bf-4eeb-9a5f-4275d44cba13",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:15:44.222Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a0661974-bcd8-4f98-9d78-db56be0cf590",
+          "slug": "hp-isp-tool-mask-code-update-flow",
+          "title": "HP ISP Tool Mask Code Update Flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-isp-tool-mask-code-update-flow.md",
+          "site_path": "/tools/hp-isp-tool-mask-code-update-flow.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "a0661974-bcd8-4f98-9d78-db56be0cf590",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:15:48.822Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "fb0300a1-8ed0-4f2d-ba72-c97914a2b803",
+          "slug": "hp-isp-tool-special-case-update-method",
+          "title": "HP ISP Tool Special case update method",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-isp-tool-special-case-update-method.md",
+          "site_path": "/tools/hp-isp-tool-special-case-update-method.html",
+          "category": "tools",
+          "domain_tags": [
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "spec",
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "fb0300a1-8ed0-4f2d-ba72-c97914a2b803",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:15:40.410Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "91d4ad6a-d60a-4a22-b4b6-29aaf6df17d4",
+          "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+          "title": "HP ISP Tool Rollback hub firmware flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hp-isp-tool-rollback-hub-firmware-flow.md",
+          "site_path": "/hub/hp-isp-tool-rollback-hub-firmware-flow.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "91d4ad6a-d60a-4a22-b4b6-29aaf6df17d4",
+          "notion_updated_at": "2026-01-21T09:28:00.000Z",
+          "exported_at": "2026-04-06T13:15:35.570Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "89249624-7031-47fe-a4ae-7042631b2e28",
+          "slug": "hp-isp-tool-rollback-hub-firmware-flowu32",
+          "title": "HP ISP Tool Rollback hub firmware flow(U32)",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hp-isp-tool-rollback-hub-firmware-flowu32.md",
+          "site_path": "/hub/hp-isp-tool-rollback-hub-firmware-flowu32.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "89249624-7031-47fe-a4ae-7042631b2e28",
+          "notion_updated_at": "2026-01-21T09:28:00.000Z",
+          "exported_at": "2026-04-06T13:18:43.435Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "18bfefb4-49f5-47ed-9f88-a91c44401b24",
+          "slug": "hp-isp-tool-update-hub-firmware-flowz24m",
+          "title": "HP ISP Tool Update hub firmware flow(Z24m)",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hp-isp-tool-update-hub-firmware-flowz24m.md",
+          "site_path": "/hub/hp-isp-tool-update-hub-firmware-flowz24m.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "18bfefb4-49f5-47ed-9f88-a91c44401b24",
+          "notion_updated_at": "2026-01-21T09:29:00.000Z",
+          "exported_at": "2026-04-06T13:18:42.791Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "27864f6b-c656-8015-8529-c55bb347b447",
+          "slug": "hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式",
+          "title": "HP E24mv G4 EndUser Tool scaler 新舊chip 判斷方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式.md",
+          "site_path": "/monitor/hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式.html",
+          "category": "monitor",
+          "domain_tags": [
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "deprecated",
+          "notion_id": "27864f6b-c656-8015-8529-c55bb347b447",
+          "notion_updated_at": "2025-09-24T01:56:00.000Z",
+          "exported_at": "2026-04-06T13:14:00.795Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 33 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 33,
+    "count_at_0_22": 42,
+    "borderline_count": 9,
+    "best_score": 0.2727272727272727,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T09-15-12-351Z",
+  "wave_id": 3,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": true
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

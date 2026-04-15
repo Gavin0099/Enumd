@@ -1,0 +1,370 @@
+[
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "1. 解壓縮 DebugFolder.zip",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "3. 執行 getLog.bat",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "4. Systeminfo.txt 和 usbViewlog.txt 檔案將會在 DebugFolder 資料夾中產生，請將這兩個日誌檔案回傳給我們進行分析",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- Vendor Command 第二碼",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 請 SE 確認各 OS 有沒有自動喚醒 device",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- HID 驗證 USB LOGO 問題",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 整理 chip function list，用表格列出各 chip 機制的不同",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- Tool 在 Chrome Book 上應該可以直接執行、更新，SW 會再討論如何測試、驗證",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- SW 需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 檢查不同 OS 平台（ex：Mac, Linux, Chrome Book）",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/05 HID 會把重抓到的 device 當成不同個",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/05 Scaler update 在 write command 時速度慢",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/05 程式閃退",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- Google 在 ISP 相關",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- HP ISP Tool (HID) 預設只使用 2.0",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 2021/12/17 HP ISP Tool",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "1. 進程控制: 嚴禁使用 subprocess.run，必須使用 subprocess.Popen 以支援即時的中止 (Abort) 與漸進式殺除 (Kill Escalation)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "2. 結果狀態機: 結果不再是二元對立，固定為 5 種狀態：PASS, FAIL, WARNING, TIMEOUT, UNKNOWN",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "3. 會話結算: 測試結束後，必須產出單一的 Session 級別判定 (Pass/Fail/Warning)，以供 CI/CD 或驗收報告使用",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "4. 矛盾處理: 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "5. 證據保全: 失敗、超時或狀態不明的 Log 檔案 絕對禁止刪除",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "目標: 將非結構化的 Log 文本轉換為結構化的測試結果",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "目標: 封裝 OCI Tool 的異質性，提供統一的執行與生命週期管理",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "目標: 處理 OS 差異，確保測試環境合規",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "目標: 處理測試流程控制、干擾模擬與結果結算",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "目標: 確保所有測試數據可追溯、可除錯",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "目標: 可靠地抓取 OCI Tool 版本",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "Connected fw update stress:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "Disconnected fw update stress:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 思考挑戰: 設定 AI 必須「永遠挑戰想法中的假設與前提」，在產出大量內容時需進行自我審查",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 自主代理角色: 定義為精通系統自動化與 Clawdbot 架構的資深開發者，專注於權限管理與流程優化",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "2. 404 模型不存在 (API Layer)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "3. Webhook 與網路隧道",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "- 權限最小化 (Sandboxing)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "1. 環境變數保護: API Key 應存放於 .env，嚴禁硬編碼 (Hard-coding) 在 clawdbot.json 中",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "3. 定期檢查「技能 (Skills)」",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "1. 解壓縮 DebugFolder.zip",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "3. 執行 getLog.bat",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "4. Systeminfo.txt 和 usbViewlog.txt 檔案將會在 DebugFolder 資料夾中產生,請將這兩個日誌檔案回傳給我們進行分析",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-generate-system-log",
+    "claim": "此外,文件中也提到了一些相關的內容,包括 HID Code Sign 記錄、HP Enterprise Firmware Stress Tool 的技術規格,以及 Clawdbot 自主代理的建置與資安防禦。這些內容雖然與系統日誌生成沒有直接關係,但仍可提供一些背景資訊和參考。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

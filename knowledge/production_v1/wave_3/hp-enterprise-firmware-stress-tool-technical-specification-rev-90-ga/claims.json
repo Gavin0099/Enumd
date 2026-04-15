@@ -1,0 +1,338 @@
+[
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Process Control (進程控制)**: 嚴禁使用 `subprocess.run`。必須使用 `subprocess.Popen` 以支援即時的中止 (Abort) 與漸進式殺除 (Kill Escalation)。[`subprocess.Popen`](https://docs.python.org/3/library/subprocess.html#subprocess.Popen)",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Result State Machine (結果狀態機)**: 結果不再是二元對立，固定為 5 種狀態：PASS, FAIL, WARNING, TIMEOUT, UNKNOWN。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Session Verdict (會話結算)**: 測試結束後，必須產出單一的 Session 級別判定 (Pass/Fail/Warning)，以供 CI/CD 或驗收報告使用。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Contradiction Handling (矛盾處理)**: 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Evidence Retention (證據保全)**: 失敗、超時或狀態不明的 Log 檔案 絕對禁止刪除。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 將非結構化的 Log 文本轉換為結構化的測試結果。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Result States (Enum)**: 定義了 5 種測試結果狀態：PASS、FAIL、WARNING、TIMEOUT 和 UNKNOWN。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Regex Patterns (Configurable)**: 使用正則表達式來解析 Log 內容並提取測試結果。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Strict Mode Policy**: 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 封裝 OCI Tool 的異質性，提供統一的執行與生命週期管理。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Process Execution Model**: 使用 `subprocess.Popen` 執行 OCI Tool，並支援即時中止 (Abort) 和漸進式殺除 (Kill Escalation)。[`subprocess.Popen`](https://docs.python.org/3/library/subprocess.html#subprocess.Popen)",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Kill Escalation Strategy (當觸發 Abort 或 Timeout 時)**: 實現了一個漸進式的殺進程策略，先嘗試 `terminate()`，若失敗則使用 `kill()`。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Liability Disclaimer (責任邊界定義)**: 定義了 Tool Adapter 的責任範圍，例如不負責 OCI Tool 本身的錯誤。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Contradiction Logic (矛盾升級規則)**: 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Command Construction**: 根據設定的參數組裝 OCI Tool 的執行命令。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Log Retention Policy**: 失敗、超時或狀態不明的 Log 檔案 絕對禁止刪除。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 處理 OS 差異，確保測試環境合規。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Linux Sleep Inhibit Strategy**: 在 Linux 平台上，使用 `dbus-send` 命令來抑制系統休眠。[`dbus-send`](https://www.freedesktop.org/wiki/Software/dbus/)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 處理測試流程控制、干擾模擬與結果結算。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Session Verdict Logic (Session 結算規則)**: 根據各個測試步驟的結果，計算出整個 Session 的最終判定 (Pass/Fail/Warning)。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Display Interference (Cross-Platform Strategy)**: 實現了跨平台的顯示干擾模擬策略。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Timer Accuracy**: 確保計時器的準確性。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 確保所有測試數據可追溯、可除錯。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **JSONL Stream (logs/session_{id}.jsonl)**: 以 JSONL 格式記錄每個測試步驟的詳細日誌。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Session Summary (logs/session_{id}_summary.json)**: 記錄整個 Session 的彙總結果。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Sanitization (脫敏)**: 在記錄日誌時，會對敏感資訊進行脫敏處理。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 可靠地抓取 OCI Tool 版本。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Configurable Search Paths**: 支援在多個路徑中搜索 OCI Tool 的可執行檔。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "- **Method**: 使用 `subprocess.Popen` 執行 OCI Tool 並解析其輸出來獲取版本資訊。[`subprocess.Popen`](https://docs.python.org/3/library/subprocess.html#subprocess.Popen)",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "目標: 定義 Harness 如何呼叫底層 OCI Tool (FirmwareInstaller.exe)。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "定義了 Harness 如何組裝 OCI Tool 的執行命令。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Exit Code 可靠性**: 嚴重錯誤時必須回傳非 0。若回傳 0 但 Log Error，Harness 視為 FAIL。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **Log 完整性**: Log 內容必須包含明確的 \"Success\" 或 \"Error\" 關鍵字。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **並發鎖定**: OCI Tool 應處理單一實例鎖定。Harness 也會實作 Thread Lock。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **左側資訊欄 (Side Panel)**: 顯示版本資訊。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **右側主操作區 (Main Content)**: 包含韌體來源、測試場景、執行參數。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "1. **底部狀態區 (Status Area)**: 顯示當前進度與回傳碼。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "用於設定 A/B Test 的韌體來源。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "預設隱藏，點擊 \"...\" 後顯示。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "請複製以下方塊中的內容，這是針對 AI 優化的指令集：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "Connected fw update stress:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+    "claim": "Disconnected fw update stress:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

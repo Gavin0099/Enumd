@@ -1,0 +1,132 @@
+<context_boundaries>
+<core_topic id="gl3590-gl9510-code-sign" title="GL3590  & GL9510 Code Sign" path="/hub/gl3590-gl9510-code-sign.html">
+
+Hub OV2 Code Sign & Verify 方式
+有全部的功能
+- 燒錄時 fw code sign驗證
+- boot 時 mask code 驗證 燒錄進去的 ram code 合法性，合法的才 boot ，反之跳回mask code
+1.Sign (IKV Tool)
+透過ECDSA private key 把 bin 檔 sign過，但是特別點是，會從mask code 抓一段資料塞到 bin檔裡面sign過，流程如下
+- ramdom 挑出要塞進去 firmware bin檔的資料，計算方式: 0x280 + (ramdom index * 0x40)
+- 把 index 和 length 放在之前checksum offset 位置並作 XORM 0x55
+- 整個sign 過 bin 檔的格式如下
+* Public key & SIgs & Sigr要做 Reverse
+2.Verify
+- 判斷ToolString MaskID 為 GL7423
+- 判斷ToolString Bonding & 0x40 = 0x00
+- 做Hub verification利用Tool String 做亂數跟Firmware做比較，確定後 CodeSign Flag 為 TRUE
+- CodeSign Flag 為 TRUE 時，command 變成 :
+- WriteXrom
+Hub OV1 Code Sign & Verify 方式
+只有部分的功能
+- 燒錄時 fw code sign驗證
+- boot 時用舊的方式只計算 check sum 是否正確，並不會像OV2用ECDSA Code Sign 驗證
+1.Sign (IKV Tool)
+透過ECDSA private key 把 bin 檔 sign過，流程如下
+- 整個sign 過 bin 檔的格式如下
+2.Verify
+- WriteXrom
+
+</core_topic>
+  <related_context>
+    <related id="camera-透過我們驗證-code-sign" title="Camera 透過我們驗證 code sign" path="/code-sign/camera-透過我們驗證-code-sign.html">
+    
+    ### Camera
+    1. generate ecdsa key & sign ecdsa key
+    1. 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+    1. 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+    1.  2 , 3點 可以改成 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update 
+    1. 下圖為Hub Code Sign 驗證 flow ，驗證code sign 應該Tool 就可以控制，FW 應該不用改甚麼，但是還是要麻煩俊太確認看看
+    
+    </related>
+    <related id="code-sign-flow" title="Code sign Flow" path="/code-sign/code-sign-flow.html">
+    
+    ## Genesys Logic code sign overview
+    因應客戶的需求，firmware 都必須要驗證合法性，目前做法是把bin檔做成hash，然後 用 private key 對 hash 做sign的動作產生signature(deliver signed firmware) 
+    把 firmware bin data & signature & public key 傳送給security module，讓 security module透過 public key 對 signature做解密，產生hash ，然後再用firmware bin data 產生一組 hash ，互相做比對，來決定firmware bin是否合法(firmware update and verification)。
+    code sign 的做法有下面幾種
+    1. OpenSSL
+    會把generate 出來的key pair 放在電腦裡面，deliver signed firmware 也是在電腦裡面完成的
+    1. Token
+    1. HSM (Hardware security module)
+    A hardware security module (HSM) is a physical computing device that safeguards and manages digital keys, performs encryption and decryption functions for digital signatures, strong authentication and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a computer or network server. A hardware security module contains one or more secure cryptoprocessor chips
+    但是根據HP 規定要符合fips 140-2 level 3 以上，所以至少要用Token來達成code sign 功能
+    fips 140-2 level 3
+    > **Note:** In addition to the tamper-evident physical security mechanisms required at Security Level 2, Security Level 3 attempts to prevent the intruder from gaining access to CSPs held within the cryptographic module. Physical security mechanisms required at Security Level 3 are intended to have a high probability of detecting and responding to attempts at physical access, use or modification of the cryptographic module. The physical security mechanisms may include the use of strong enclosures and tamper-detection/response circuitry that zeroes all plaintext CSPs when the removable covers/doors of the cryptographic module are opened.
+    目前Genesys Logic 使用的 code sign 演算法為Ecdsa nistp256
+    ## Genesys Logic CodeSign flow
+    1. generate key
+    1. deliver signed firmware
+    sign的動作如下，先把Data轉成hash 檔，然後透過eToken or Smart Card裡面的 Private key 轉成 signatute 
+    1. firmware update and verification
+    
+    </related>
+    <related id="gl-hub-code-sign-recovery-flow" title="GL Hub Code Sign Recovery Flow" path="/hub/gl-hub-code-sign-recovery-flow.html">
+    
+    ## GL3523 Recovery Case
+    ### GL3523 Boot Code Load 優先權
+    - Bank 1 優先權最高 ， Boot Code Load Firmware不會判斷兩塊Bank 的Firmware Version
+    - 除非 Bank 1 為 Mask Code ，否則 Boot Code 不會Load Bank 2 Firmware
+    因應上面條件，所以Recovery Case 都會根據上述條件做判斷
+    - 保證 兩塊 Bank 都存在Firmware ，所以會先update Mask Code 那塊 Bank 
+    - 保證 Bank 1 的 Firmware Version 是最新的 ，一定會把最新版的 Firmware 放到 Bank 1
+    - 兩塊Firmware Version 相同時，update Bank 1
+    - 在Case 4 & Case 6 狀態，先詢問hub firmware Bank 2 的 CRC是否是正確的，如果是正確的就把Bank 1 的保護關閉，把Bank 2 的保護打開，然後update Bank 1
+    ---
+    ## GL3525 Recovery Case
+    ### GL3525 Boot Code Load 優先權
+    - Boot Code Load Area Firmware會判斷兩塊Area 的Firmware Version ，會跑最新版本的 Firmware Version，如果兩塊版本都一樣的話，會跑Bank 1
+    因應上面條件，所以Recovery Case 都會根據上述條件做判斷
+    - 保證 兩塊 Area 都存在Firmware ，所以會先update Mask Code 那塊 Bank
+    - 永遠 update Firmware Version 最舊的那塊 Bank
+    - 兩塊Firmware Version 相同時，會update Firmware 沒有跑的那塊，也就是Bank2
+    ## GL3590 Recovery Case
+    ### GL3590 Boot Code Load 優先權
+    - Boot Code Load Area Firmware會判斷兩塊Area 的Firmware Version ，會跑最新版本的 Firmware Version，如果兩塊版本都一樣的話，會跑Bank 1
+    因應上面條件，所以Recovery Case 都會根據上述條件做判斷
+    - 保證 兩塊 Area 都存在Firmware ，所以會先update Mask Code 那塊 Area
+    - 永遠 update Firmware Version 最舊的那塊 Area
+    - 兩塊Firmware Version 相同時，會update Firmware 沒有跑的那塊，也就是Bank2
+    ### Force all Mode (GL3525 & GL3590 only)
+    - Force all mode 主要功能為降版用，因為boot code 會跑Firmware 版本最大的Bank，如果降板時只update 其中一塊，版本還是無法變更，下面流程為後續討論出來的防堵流程，讓Hub Firmware 回到mask code 的機率降低
+    1. ISP Tool 會先update Hub Firmware 沒有跑的那塊，也就是Bank 2(如果這時候ISP Tool 去Update Bank 1 ， Hub Firmware 會阻擋ISP Tool Update 並回傳錯誤)
+    1. ISP Tool Update 完畢後Hub Firmware 會再去計算一次Bank 2 的 CRC ，並回傳給ISP Tool 成功與否
+    1. Hub Firmware 計算 Bank 2 CRC 正確後會把Bank 1 的保護關閉，並且把Bank 2 的保護打開，讓ISP Tool 可以update Bank 1 
+    1. ISP Tool Update 完畢後Hub Firmware 會再去計算一次Bank 1 的 CRC ，並回傳給ISP Tool 成功與否
+    ### 註解
+    - 新版Hub Firmware 可以透過Tool String 知道 Hub & HostBridge 目前是跑在哪一塊，ISP Tool 會根據此資訊把Firmware Update 到 未執行的那塊Bank
+    - 新版Hub Firmware 會防堵 ISP Tool Update 目前在跑的那一塊
+    ### 測試流程：
+    - Case 1
+    1. 燒Bank2 成功, 再燒Bank 1 成功 (PASS)   (正常燒錄方式)
+    1. 先燒 Bank 1 hub fw會擋住 (PASS)
+    1. 燒Bank 2 燒壞了, 再燒 Bank 1 會擋住 (PASS)
+    1. 燒Bank 2 成功, 再燒Bank 2 會擋住 (PASS)
+    
+    - Case 2
+    1. 燒Bank 1 成功, 再燒Bank 2 成功 (PASS)   (正常燒錄方式)
+    1. 先燒 Bank 2 會擋住 (PASS)
+    1. 燒Bank 1 燒壞了, 再燒 Bank 2 會擋住 (PASS)
+    1. 燒Bank 1 成功, 再燒Bank 1 會擋住 (PASS)
+    - Case 3
+    Master
+    Slave
+    
+    downgrade 8310
+    1. 燒Bank 2 成功, 再燒Bank 1 成功 (PASS)
+    1. 先燒 Bank 1 會擋住 (PASS)
+    1. 燒Bank 2 燒壞了, 再燒 Bank 1 會擋住 (PASS)
+    1. 燒Bank 2 成功, 再燒Bank 2 會擋住 (PASS)
+    
+    - Case 4
+    Master
+    Slave
+    downgrade 8309
+    1. 燒Bank 1 成功, 再燒Bank 2 成功 (PASS)
+    1. 先燒 Bank 2 會擋住 (PASS)
+    1. 燒Bank 1 燒壞了, 再燒 Bank 2 會擋住 (PASS)
+    1. 燒Bank 1 成功, 再燒Bank 1 會擋住 (PASS)
+    
+    </related>
+  </related_context>
+</context_boundaries>

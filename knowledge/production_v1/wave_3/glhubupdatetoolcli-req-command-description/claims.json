@@ -1,0 +1,666 @@
+[
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli 是一個命令列工具，可用於向 USB 控制管線發送設定封包。這個工具主要用於控制 Genesys Logic 公司生產的 USB Hub 晶片。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "使用 GLHubUpdateToolCli 的基本語法如下:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=id&setup=8bytes_setup_packet[&data=input_data]\"",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "- `req=id`: 指定要執行的命令 ID。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "- `setup=8bytes_setup_packet`: 設定 8 個位元組的設定封包。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "- `data=input_data`: (可選) 提供額外的輸入資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=1&setup=c072000600000100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=1&setup=4073000600000100&data=01\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "以下是一個 PowerShell 腳本，用於簡化 GLHubUpdateToolCli.exe 的呼叫:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$Addr = Read-Host -Prompt \"Please enter Addr (up to 4 hex digits)\"",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$IntAddr = [Convert]::ToInt32($Addr, 16)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$Addr = \"{0:X4}\" -f $IntAddr  # 將 Addr 轉換為至少 4 位數的十六進位字串",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$LowByte = $Addr.Substring(0, 2)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$HighByte = $Addr.Substring(2, 2)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$SwappedAddr = $HighByte + $LowByte",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$Data = Read-Host -Prompt \"Please enter Data (up to 2 hex digits, leave empty if none)\"",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$arguments = \"/req=1&setup=${command}720400$SwappedAddr\" + \"0100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$IntData = [Convert]::ToInt32($Data, 16)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$Data = \"{0:X2}\" -f $IntData  # 將 Data 轉換為至少 2 位數的十六進位字串",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$arguments = \"/req=1&setup=${command}730400$SwappedAddr\" + \"0100&data=$Data\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"About to call GLHubUpdateToolCli.exe with the following arguments: $arguments\"",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" $arguments",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=1&setup=40ab6e5100000800&data=8601fee1e4060045\"",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=1&setup=c0c1000300000400\"",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "以下是一個 Bus Hound 7.04 的捕獲範例,包含各種 USB 裝置的相關資訊:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Device - Device ID (followed by the endpoint for USB devices)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(50) USB Input Device",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(51) HID-compliant device",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(59) Generic USB Hub",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(62) Generic USB Hub",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(63) USB Input Device",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(64) HID-compliant device",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "(65) USB Mass Storage Device",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Phase  - Phase Type",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "CTL   USB control transfer",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "IN    Data in transfer",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "OUT   Data out transfer",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Data   - Hex dump of the data transferred",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Descr  - Description of the phase",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Delta  - Elapsed time from the previous phase to the current phase",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Cmd... - Position in the captured data",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Date   - Date the phase occurred in year-month-day form",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Time   - Time the phase occurred in hour:minute:second.millisec form",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"請選擇要執行的命令：\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"1. Header\"",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"2. PCBA Part Number\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"3. FW version\"",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"4. Marketing Name\"",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "$choice = Read-Host \"請輸入命令編號 (1-4)\"",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "switch ($choice) {",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"執行 Header 命令\"",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=6E518201F000&data=736461\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=c0720004020A0100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"執行 PCBA Part Number 命令\"",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=6E518201F100&data=35452e36315930312e303031\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=c0720004020A0100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"執行 FW version 命令\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=6E518201F200&data=323032333038303820303031\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=c0720004020A0100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"執行 Marketing Name 命令\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=6E518201F300&data=58554232373934515355000000000000\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "& \".\\GLHubUpdateToolCli.exe\" \"/req=1&setup=c0720004020A0100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Write-Host \"無效的選擇，請輸入 1 到 4 之間的數字。\"",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "以下是 GLHubUpdateToolCli.exe 中處理 `data=` 參數的相關程式碼片段:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "else if (sPar.compare(nPosCur, _tcslen(_T(\"data=\")), _T(\"data=\")) == 0)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "const size_t nStart = nPosCur + _tcslen(_T(\"data=\"));",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "_ftprintf_s(stderr, _T(\"Input parameter was wrong[data]!\\n\"));",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "return GL_ERR_INVALID_PARAM;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "const size_t nDataLen = nPosNext - nStart;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "_ftprintf_s(stderr, _T(\"Input parameter was wrong[data size]!\\n\"));",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "return GL_ERR_INVALID_PARAM;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "strData.resize(nDataLen / 2);",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "const auto *psData = sPar.data() + nStart;",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "for (const auto &item : strData)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "iReadPars = _stscanf_s(psData, _T(\"%hhX\"), (uint8_t *)&item);",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "_ftprintf_s(stderr, _T(\"Input parameter was wrong[data format]!\\n\"));",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "return GL_ERR_INVALID_PARAM;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "此程式碼片段負責解析 `data=` 參數,確保輸入資料的格式正確。它會檢查資料長度是否為偶數,並逐個解析十六進位字元,將其儲存到 `strData` 變數中。如果輸入格式有誤,則會回報錯誤訊息。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=1&setup=40ab6e5100000400&data=8201F000\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "GLHubUpdateToolCli.exe \"/req=1&setup=C0aa6e6f00001000\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "此外,也有一些 Bus Hound 7.04 的捕獲資料:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "Device  Phase  Data                                                Description       Delta  Cmd.Phase.Ofs(rep)  Date        Time",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "glhubupdatetoolcli-req-command-description",
+    "claim": "50.0  OUT    40 ab 6e 51  00 00 08 00  45 45 45 45  45 45 45 45  @.nQ....EEEEEEEE  794us         4.2.0        2024-09-06  17:44:23.749",
+    "tier": "Explicit",
+    "evidence_score": 28,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

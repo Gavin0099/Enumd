@@ -1,0 +1,126 @@
+{
+  "requested_slug": "hp_display_firmware_update_specification",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T09-15-12-351Z",
+  "wave_id": 3,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 12,
+    "downgraded": 0,
+    "total_lines": 149,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What are the two types of .pkg versions that the ODM must provide?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the ODM must provide two types of .pkg versions: Auto-Execute (which automatically runs after installation) and Install-Only (which just installs the files and requires manual execution)."
+      },
+      {
+        "question": "What are the key requirements for the security of the firmware update package?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the key security requirements, including passing Notarization and Code Signing, enabling Hardened Runtime, and following the principle of least privilege for permissions and temporary file encryption."
+      },
+      {
+        "question": "What are the main responsibilities of the developer (RD) versus the DevOps team in ensuring the firmware update's integrity and security?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text provides some high-level guidance on the responsibilities, mentioning that the DevOps team is responsible for packaging and signing, while the RD is responsible for implementing integrity and access control measures in the code. However, the details of these responsibilities are not fully specified."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 16,
+    "supported": 12,
+    "uncertain": 0,
+    "unsupported": 4,
+    "unsupported_claims": [
+      {
+        "claim": "輸入指令後，系統會要求您輸入 macOS 登入密碼。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about requiring a macOS login password."
+      },
+      {
+        "claim": "1. 點擊 Start Test。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention clicking a 'Start Test' button."
+      },
+      {
+        "claim": "1. 檢查 USB 連接是否鬆動。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention checking USB connection."
+      },
+      {
+        "claim": "1. 確認 `HPFirmwareInstaller` 的指令參數是否正確。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention verifying the command parameters of 'HPFirmwareInstaller'."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "AUDIT_FLAG",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.25,
+    "derived_count": 16,
+    "reason": "Non-trivial unsupported rate: 4/16 Derived claims (25%). Flagged for priority reviewer sampling.",
+    "removed_count": 0
+  }
+}

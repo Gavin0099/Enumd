@@ -1,0 +1,338 @@
+[
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "以下是基於提供的內容所撰寫的 GLI7524 Hub ISP 更新文件:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- IC 版本: 359050 (暫定)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 大小: 0x40 (64 KB)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- Bank1: 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- Bank2: 0x00010000",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 大小: 0x60 (88 KB)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- MCU2nd1: 0x00020000",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- MCU2nd2: 0x00040000",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 位置: Hub bin offset 0x336",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 用途: 定義 Hub 和 MCU2 的燒錄位置和大小",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "code FW_BIN_CONFIG_IN_FLASH FWBinConfigInFlash =",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "ISPCONFIG1,         // U8",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "HUB_CODE_SIZE,      // U8",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "HUB1_START_ADDR,    // U32",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "HUB2_START_ADDR,    // U32",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "MCU2ND_CODE_SIZE,   // U8",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "MCU2ND1_START_ADDR, // U32",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "MCU2ND2_START_ADDR  // U32",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `_DUALBANK`: 預設 0，設為 1 表示使用 dual bank ISP",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `_MCU2ND_EXIST`: 表示 MCU2nd 存在",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `HUB_CODE_SIZE`: 64 KB",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `HUB1_START_ADDR`: 0x00000000",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `HUB2_START_ADDR`: 0x00010000",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `MCU2ND_CODE_SIZE`: 88 KB",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `MCU2ND1_START_ADDR`: 0x00020000",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- `MCU2ND2_START_ADDR`: 0x00040000",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- Config 可能會在 RAM code 中擴充外部 FW 燒錄 offset，後續再確認。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 請軟體團隊將上述內容加入 ISP Tool，以便驗證:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 可參考附件中的 FW bin 作為測試範例。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "1. **解析 Hub bin offset 0x336 的 Config**:",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 讀取 `FWBinConfigInFlash` 結構，解析各欄位內容。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 根據 `ISPCONFIG1` 的 `_DUALBANK` 位元，決定是否啟用 dual bank ISP。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 根據 `_MCU2ND_EXIST` 位元，確認是否處理 MCU2nd 的燒錄。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "2. **支援 Hub FW 燒錄**:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- Bank1: 0x0000 0000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- Bank2: 0x0001 0000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 從 signature 提取 FW 大小。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "3. **支援 MCU2 FW 燒錄**:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 根據 Hub bin config 的 `MCU2ND_CODE_SIZE`、`MCU2ND1_START_ADDR` 和 `MCU2ND2_START_ADDR` 配置燒錄位置。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 支援從 signature 或 Hub bin config 兩處提取 FW 大小。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 測試 mask code load code 是否正確載入。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gli7524-hub-isp-update-too",
+    "claim": "- 確認燒錄後的 FW 在 flash 中的位置與大小是否符合預期。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

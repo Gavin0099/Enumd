@@ -1,0 +1,26 @@
+以下是基於提供的內容所撰寫的 GL EndUser Tool Merge bin head format 文件:
+
+# GL EndUser Tool Merge bin head format
+
+## bin head format
+- `0x00 - 0x05`: 頭部，必須為 `*GLHUB`
+- `0x06`: 連字號 (hyphen)
+- `0x07 - 0x0a`: FW List
+- `0x0b`: 連字號 (hyphen)
+- `0x0c - 0x0d`: 頭部版本
+- `0x0e`: 連字號 (hyphen)
+- `0x0f`: 校驗和 (checksum-8)
+
+V3: 新增 `0x10` 個位元組，可以加上 `type` 和 `code size`
+
+
+1. [GL Enduser Tool for Electron](./tools/gl-enduser-tool-for-electron.html)
+   - 本專案旨在開發一個跨平台的桌面應用程式，透過 Electron 框架提供統一的使用者介面，主要功能是與多款 USB Hub 硬體進行通訊，以實現韌體版本的查詢與線上更新。
+   - 專案採用 Electron 作為主要框架，並透過 Node.js Native Addon 技術橋接 JavaScript 與底層 C++/Objective-C 程式碼，以呼叫已分別封裝好的原生 SDK。
+
+2. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](./code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)
+   - 本文件闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+   - 核心要求是所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+
+3. [3rd party code signing specification (ECDSA)](./code-sign/3rd-party-code-signing-specification-ecdsa.html)
+   - 使用 OpenSSL 和 eToken 硬體來實現 ECDSA 簽署。

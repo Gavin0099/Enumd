@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "以下是根據提供的內容所撰寫的 HP End User Tool 封裝方式的文件報告:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "`[PackageForTheWeb400](./tools/hp-end-user-tool-封裝方式.html#packageforweb400)`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "`[InstallShield](./tools/hp-end-user-tool-封裝方式.html#installshield)`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "- 提供 script 作客製化設定",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "`[Ini parameter description](./tools/hp-end-user-tool-封裝方式.html#ini-parameter-description)`",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "1. **Model Name**: 可設定 Update Tool 的標題",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "2. **USB20SupportPidVid & USB30SupportPidVid**: 填入監控裝置的 PID VID 用於初步判斷",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "3. **Hub File Name**: 需要更新的 Bin 檔案名稱",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "4. **Panel Type**: 顯示器面板類型，可填入多種面板類型",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "5. **BinFiles**: 對應不同面板的 Scaler 韌體 Bin 檔案名稱",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "6. **Mstar_Scaler**: Scaler 晶片型號，需填入正確的型號以進行更新",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "`[PackageForTheWeb400](./tools/hp-end-user-tool-封裝方式.html#packageforweb400)`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "1. 安裝 PackageForTheWeb v400 工具",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-end-user-tool-封裝方式",
+    "claim": "3. 啟動 PackageForTheWeb4 並依照精靈步驟設定自動解壓縮安裝檔",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式",
+    "claim": "HP E24mv G4 顯示器的 scaler chip 可以透過硬體版本 (hw version) 來判斷是新款還是舊款。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

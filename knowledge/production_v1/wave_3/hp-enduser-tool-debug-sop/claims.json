@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "報告書：HP EndUser Tool Debug SOP",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "當 HP EndUser Tool 發生 update fail 時，可以先參考 [HP End User Tool Packing Instruction_code_sign](path/to/hp-end-user-tool-packing-instruction_code_sign.html) 中的「Common Problem」章節是否可以解決問題。如果仍無法解決，則需要提供兩個日誌檔以便進一步分析：",
+    "tier": "Explicit",
+    "evidence_score": 24,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "2. DebugView Log",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "1. **Not Support HP Device**：表示所使用的裝置不受支援。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "2. **Scaler Firmware verification is failed**：表示 Scaler 韌體驗證失敗。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "3. **GetScalerPublicKeyData failed**：表示無法取得 Scaler 公鑰資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "4. **SetupDiEnumDeviceInfo ERROR! i=255, (259)**：表示設備列舉失敗。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "5. **Scaler bin file not found**：表示找不到 Scaler 二進位檔案。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "6. **Hub-1 firmware verification failed**：表示 Hub-1 韌體驗證失敗。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "7. **SetupDiEnumDeviceInfo ERROR! i=255**：表示設備列舉失敗。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "1. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](path/to/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "- 本文件闡述了 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "2. [3rd party code signing specification (ECDSA)](path/to/3rd-party-code-signing-specification-ecdsa.html)",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "3. [3rd party code signing specification (ECDSA)(EN)](path/to/3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "- 本文件以英文介紹了 Genesys Logic 的程式碼簽署概述、流程以及實作方式。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "hp-enduser-tool-debug-sop",
+    "claim": "在 HP EndUser Tool 發生 update fail 時,可以先參考 User Guide 中的 Common Problem 章節,如果仍無法解決,則需要提供 USBView Log 和 DebugView Log 以便進一步分析。本報告中列出了一些常見的錯誤訊息及其可能原因,同時也提供了相關的背景資訊供參考。",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

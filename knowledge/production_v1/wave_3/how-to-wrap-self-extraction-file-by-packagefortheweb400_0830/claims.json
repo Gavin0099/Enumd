@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+    "claim": "以下是如何使用 PackageForTheWeb400_0830 包裝自解壓縮檔的詳細說明:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+    "claim": "在開始包裝自解壓縮檔之前，需要先修改一些 ini 參數以確保正確的設定。這些參數通常包括安全模式、選擇 Hub & Scaler bin 檔案以及 MStar Scaler 模式等。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+    "claim": "選擇要包裝的 Hub 和 Scaler bin 檔案。這些檔案通常是系統更新的核心組件。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+    "claim": "根據系統需求，設定適當的 MStar Scaler 模式。這可能會影響最終自解壓縮檔的行為。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+    "claim": "下載並安裝 PackageForTheWeb v400 工具，這是用於建立自解壓縮檔的主要工具。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+    "claim": "總之，使用 PackageForTheWeb400_0830 包裝自解壓縮檔需要經過修改 ini 參數、設定安全模式、選擇更新檔案、安裝包裝工具、收集檔案、啟動工具並按照嚮導步驟操作等步驟。最終生成的自解壓縮檔可用於系統更新或部署。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

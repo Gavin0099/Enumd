@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "以下是如何使用解密工具解密 Scaler 加密 bin 檔案的詳細說明:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "2. 執行解密工具 `rsa_decrypt.exe` 並傳入 Scaler 加密的 bin 檔案:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "rsa_decrypt.exe \"scaler encrypted bin file\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "4. 打開 `m27fd` 資料夾,你會看到一個名為 `temp.bin` 的檔案,這就是解密後的 Scaler bin 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "- 請務必使用最新版本的 Scaler bin 檔案替換 `m24fd` 和 `m27fd` 資料夾中的檔案。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "- 本文件介紹了 Genesys Logic 為滿足 HP Code Signing 安全要求而設計的韌體簽署與驗證架構。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+    "claim": "- 本文件以英文介紹了 Genesys Logic 的程式碼簽署流程,包括簽署和驗證。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

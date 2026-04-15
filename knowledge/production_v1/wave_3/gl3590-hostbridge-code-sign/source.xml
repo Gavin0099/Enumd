@@ -1,0 +1,125 @@
+<context_boundaries>
+<core_topic id="gl3590-hostbridge-code-sign" title="GL3590 +HostBridge Code Sign" path="/hub/gl3590-hostbridge-code-sign.html">
+
+GL3590 +HostBridge Code Sign
+1.marge bin Tool
+SVN: https://gli-cse.genesyslogic.com.tw/svn/storage/Users/GavinWu/Windows/GLBinTool
+a. bin + host bridge 合併成sum檔 (提供Sign Tool 加密讓 HP ISP Tool 燒錄)
+GLBinTool.exe -i GL3590-TZ2YS1_Hub_UFPC(Host)_FW8725.bin -h GL3590_HostBridge_FW1008.bin -o bbb.sum
+b.bin + host bridge + public key 合併成sum檔 (提供給燒錄機燒錄)
+GLBinTool.exe -i GL3590-TZ2YS1_Hub_UFPC(Host)_FW8725.bin -h GL3590_HostBridge_FW1008.bin -p 5678.pub -o bbb.sum
+2.HP ISP Tool
+SVN: https://gli-cse.genesyslogic.com.tw/svn/storage/Users/JasonWu/IsptoolRefine2018/HP_ISPTool
+提供ISP功能
+1.Hub + Host Bridge sign
+2.Hub Sign
+3.Scaler Sign
+4.PD
+5.Billboard
+目前未完成功能
+a.GL3590 code sign initial
+b.Hub + HostBridge ISP
+b.Hub + HostBridge Recovery
+GL3590 code sign initial
+1.Fw 會透過 Toolstring 告知Support 那個mode ( 還沒有確定做法)
+2.切換Vendor Command ( 81 --> A1 )
+3.做ToolString 驗證(IsFixtureValid)
+Mask Code
+1.燒錄 Hub 0 + Hub 1 + H.B 0 + H.B 1 + public key
+2.write digest
+3.verify digest
+3.1 verify fail erase block 0 1 2 3 4
+4.write signature
+5.verify signature
+5.1 verify fail erase block 0 1 2 3 4
+Ram Code
+判斷 Hub 和 H B 跑在哪個 Block ( 可以問firmware 抓到值?)
+1.Hub
+a.跑在 Hub0
+- Erase Hub 1
+- Hub 0 copy 到 Hub 1
+- Erase Hub 0
+- 燒錄Firmware 到 Hub0
+b.跑在 Hub1
+- Erase Hub 0
+- 燒錄Firmware 到 Hub0
+2.Host Bridge
+a.跑在 HB0
+- Erase HB 1
+- Hub 0 copy 到 HB 1
+- Erase HB 0
+- 燒錄Firmware 到 HB0
+b.跑在 HB1
+- Erase HB 0
+- 燒錄Firmware 到 HB 0
+3.write digest
+4.verify digest
+4.1 verify fail
+- Erase 原本燒錄的那塊
+5.write signature
+6.verify signature
+- Erase 原本燒錄的那塊
+3.IKV Tool
+SVN: https://gli-cse.genesyslogic.com.tw/svn/storage/Users/JasonWu/IsptoolRefine2018/IKV
+提供 Code Sign功能
+a.generate key
+openssl ecparam -out privatekey.key -name prime256v1 -genkey
+b.sign
+ikvTool.exe sign -k 1234.priv -p 1234.pub -f 1121.sum
+c.verify
+ikvTool.exe verify -k 1234.pub -f 8400.sum -r 8400.sum.SigR -s 8400.sum.SigS -t sw
+
+</core_topic>
+  <related_context>
+    <related id="-genesys-logic-firmware-安全簽署與驗證流程-code-signing-" title=" Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) " path="/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html">
+    
+    本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+    - 核心要求：所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+    - 挑戰：在滿足嚴格安全合規性的前提下，建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。
+    - 最終方案：我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+    ---
+    ## 💡 簡介 (Introduction)
+    ---
+    ## 🔑 Code Signing 資源與實作方案 (含 FIPS 合規要求)
+    ---
+    ## 🏛️ eToken 簽署系統架構解析
+    ---
+    ## 🔑 Genkey 金鑰生成與佈署流程解析
+    ---
+    ## 📜 Sign File 簽署檔案工作流程
+    ---
+    ## 🔄 端到端的程式碼簽署與驗證完整流程
+    ---
+    ## 🚀 程式碼簽署與驗證流程 (Boot Code Verify)
+    ---
+    ## eToken 集中式管理與安全存取服務平台(未來架構)
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsa" title="3rd party code signing specification (ECDSA)" path="/code-sign/3rd-party-code-signing-specification-ecdsa.html">
+    
+    ## Genesys Logic code sign overview
+    - 因應需求，firmware 都必須要驗證合法性。
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verify
+    ### Implement
+    ### Using OpenSSL
+    ### Using eToken
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsaen-" title="3rd party code signing specification (ECDSA)(EN) " path="/code-sign/3rd-party-code-signing-specification-ecdsaen-.html">
+    
+    ## Genesys Logic code sign overview
+    - Firmware must be verified before updating to flash.
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verification
+    ### Implementation
+    ### Using OpenSSL
+    ### Store the Private key
+    
+    </related>
+  </related_context>
+</context_boundaries>

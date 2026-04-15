@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "how-to-grab-log",
+    "claim": "在命令列工具中，執行 `getLog.bat` 指令。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "執行 `getLog.bat` 後，會在 `DebugFolder` 資料夾中生成兩個 txt 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "請將 `DebugFolder` 資料夾中的兩個 txt 檔案傳回給我們，以便進行進一步的分析。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "1. [HID Code Sign 記錄](hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "- 提到了 HID 更新流程、Vendor Command 以及 HID 預設只使用 2.0 等相關資訊。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "2. [HP Enterprise Firmware Stress Tool - Technical Specification (Rev 9.0 GA)](hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html)",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "3. [Clawdbot 自主代理建置與資安防禦全紀錄](clawdbot-自主代理建置與資安防禦全紀錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-log",
+    "claim": "- 其中提到了一些實戰故障排除的經驗，以及給 Antigravity (AI Agent) 的執行指令。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

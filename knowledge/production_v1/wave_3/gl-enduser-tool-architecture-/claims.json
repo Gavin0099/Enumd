@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "以下是基於提供的內容邊界所合成的 GL EndUser Tool Architecture 文件:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "`[ISP Tool New Architecture Class Diagram](gl-enduser-tool-architecture-.html#isp-tool-new-architecture-class-diagram)`",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "此類別圖描述了 DeviceAgent 元件在 GL EndUser Tool 架構中的角色。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "`[GL EndUser Tool Class Diagram](gl-enduser-tool-architecture-.html#gl-enduser-tool-class-diagram-link)`",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "此類別圖提供了 GL EndUser Tool 的整體架構概覽。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "`[SW Update FW flow](gl-enduser-tool-architecture-.html#sw-update-fw-flow-link)`",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "以下是與 GL EndUser Tool Architecture 相關的其他資訊:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "`[Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "此文件描述了 Camera 韌體更新的 code sign 驗證流程。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "`[Code sign Flow](code-sign/code-sign-flow.html)`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "此文件概述了 Genesys Logic 的 code sign 流程,包括使用 OpenSSL、Token 和 HSM 等方式。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "gl-enduser-tool-architecture-",
+    "claim": "`[GL Hub Code Sign Recovery Flow](hub/gl-hub-code-sign-recovery-flow.html)`",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

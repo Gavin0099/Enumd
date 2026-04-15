@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "1. 在 ISP 工具目錄中打開 `GLHub_Std_multi_v1.03.ini` 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "2. 在 `GLHub_Std_multi_v1.03.ini` 中添加以下參數。[`GL7524-A02-Code-Sign-與-ISP-安全架構(Case-3)`](./gl7524-a02-code-sign-與-isp-安全架構case-3.html)",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "1. **Bit6 = 0 (跟隨 FW 起始 Block)**: 公鑰和驗證資訊的位置與韌體 (FW) 的起始 Block 相同。這是一種簡化的預設行為。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "2. **Bit6 = 1 (顯式指定 Block)**: 公鑰和驗證資訊的位置由 Bit0-5 明確指定，與韌體所在的 Block 可以完全無關。這種模式提供了最大的佈局自由度。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "2. 404 模型不存在 (API Layer)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "3. Webhook 與網路隧道",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "本文件彙總了 Genesys Logic 相關的各種規格和應用說明,包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "1. Vendor Command",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "2. Hub Configuration",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "3. PD Configuration",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "4. PD Update Flow",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "7. MTK Scaler Spec",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "8. RTK Scaler Spec",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  },
+  {
+    "slug": "how-to-grab-isp-tool-log-",
+    "claim": "這些內容涵蓋了 ISP 工具的各種配置和應用場景,為理解 ISP 工具的使用提供了重要的背景資訊。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 3,
+    "batch_id": "batch_2026-04-15T09-15-12-351Z"
+  }
+]

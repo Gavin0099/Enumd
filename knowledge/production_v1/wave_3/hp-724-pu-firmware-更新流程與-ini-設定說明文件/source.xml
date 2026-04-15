@@ -1,0 +1,289 @@
+<context_boundaries>
+<core_topic id="hp-724-pu-firmware-更新流程與-ini-設定說明文件" title="HP 724 pu firmware 更新流程與 ini 設定說明文件" path="/general/hp-724-pu-firmware-更新流程與-ini-設定說明文件.html">
+
+### 1. 總覽 (Overview)
+本文件旨在說明裝置的韌體更新機制。此機制的運作方式為一個兩階段的判斷流程。首先，程式會利用 LegacyDate 進行一個快速的捷徑判斷來處理非常早期的韌體版本。若捷徑未命中，則會進入標準的「查表執行」流程：讀取裝置當前的 Firmware Packet Date，在 ini 設定檔中查找與該日期完全匹配的區塊，並直接使用該區塊中指定的 BinFile 檔案來進行更新。
+### 2. INI 檔案設定說明 (MonitorUpdates.ini)
+INI 檔案是更新規則的唯一來源。使用者必須為每一個已知的 PacketDate 建立一個對應的日期區塊，並在其中透過 BinFile 參數，明確指定當裝置 PacketDate 為此日期時，應該使用哪一個具體的 scaler.bin 檔案。
+### 範例 INI 內容：
+```plain text
+[Unify]
+ModelName=724pu
+PanelName=bydate
+LegacyDate=20240331
+
+[20240331]
+BinFile=Firmware/HP_724pu_PanelWISTRON_724pu_BD_WISTRON_Z24uG3_E1IM1131_V1.20.2.0_20250731_sig_Service_Header.bin
+
+[20250731]
+BinFile=Firmware/HP_724pu_PanelWISTRON_724pu_BD_WISTRON_Z24uG3_E1IM1131_V1.20.2.0_20250731_sig_Service_Header.bin
+
+[20250801]
+BinFile=Firmware/HP_724pu_PanelWISTRON_724pu_BD_WISTRON_Z24uG3_E1IM1131_V1.20.2.0_20250801_sig_Service_Header.bin
+```
+### 各區塊說明：
+- [Unify] 區塊:
+- [YYYYMMDD] 日期區塊 (例如 [20240331]):
+### 3. 處理流程詳解 (Flowchart Explained)
+1. 開始更新程序: 啟動韌體更新流程。
+1. 讀取裝置資訊: 獲取裝置當前的 Firmware Packet Date。
+1. 第一階段：LegacyDate 捷徑判斷:
+1. 第二階段：在 INI 中查找匹配項:
+1. 執行 Scaler 更新:
+```mermaid
+graph TD
+    subgraph Legend ["圖例"]
+        direction LR
+        L1[處理]:::process
+        L2{判斷/讀取}:::decision
+        L3[錯誤/終止]:::error
+    end
+
+    A[開始更新程序]:::process
+    B{讀取設備內部的<br/>Firmware Packet Date}:::decision
+    C{"第一階段：LegacyDate 捷徑判斷<br/>PacketDate < 20240401 ?"}:::decision
+    D{"第二階段：INI 查表<br/>查找與 PacketDate 匹配的日期區塊?"}:::decision
+    
+    E[使用舊版預設 Scaler Bin]:::process
+    F["讀取匹配區塊中的 BinFile 路徑"]:::process
+    G["預設行為：錯誤！<br/>日期不在任何已知區塊中，<br/>不執行 Scaler FW 更新"]:::error
+    
+    H[並執行更新]:::process
+
+    A --> B
+    B --> C
+    C -- 是 (命中捷徑) --> E
+    C -- 否 (未命中) --> D
+    
+    D -- "是 (找到匹配)" --> F
+    D -- "否 (未找到)" --> G
+    
+    E --> H
+    F --> H
+
+    %% Styling to match the original image's color scheme
+    classDef process fill:#e3f2fd,stroke:#333,stroke-width:1px
+    classDef decision fill:#fffde7,stroke:#333,stroke-width:1px
+    classDef error fill:#ffebee,stroke:#b71c1c,stroke-width:1px,color:#b71c1c
+
+    class A,E,F,H process;
+    class B,C,D decision;
+    class G error;
+```
+### 4. 方案限制與注意事項
+根據流程圖左上角的提示，此方案存在以下限制：
+- 維護成本 (Maintenance Cost):
+- 發布限制 (Release Constraint):
+- 禁止韌體降級 (No Downgrade):
+
+</core_topic>
+  <related_context>
+    <related id="hp-monitor-code-sign-update-flow" title="HP Monitor Code Sign Update Flow" path="/code-sign/hp-monitor-code-sign-update-flow.html">
+    
+    ### ISP Tool 與 Hub Firmware 初始化交握機制
+    目的是確認：
+    1. ISP Tool 是否通過 Hub Firmware 的認證。
+    1. Hub Firmware 是否通過 ISP Tool 的認證。
+    流程如下
+    - 使用bcdDevice 和ToolString 裡面的Firmware Info Tool String 來當參數
+    - 取出 bcdDevice 的兩個位元組並做 XOR 運算。
+    - Firmware Info Tool String 會 Random 產生一組 Start Range 和 Stop Range ，然後跟bcdDevice  產生出來的值再做XOR
+    - uValue：範圍組合，將 Stop 放高位、Start 放低位。
+    - uIndex：將 XOR 結果放高位，加上固定值 0x01。
+    - 使用 uValue 和 uIndex 傳送至 Hub Firmware 進行驗證。如果返回值 uRetVal != 1，表示驗證失敗。
+    ## 概述
+    目前驗證方式有分四種方式 ，可以透過Dynamic Tool String  裡面的The 3rd Party Vendor Support  HP Proprietary 參數來判斷 ，如下圖
+    - HP Hw Check Code Signed
+    因為GL3523沒有Security Module ，所以必須透過scaler 驗證 code sign
+    - HP Sw Check Code Signed
+    GL3523 使用，在此模式下連scaler 都沒有Security Module ，所以必須透過Tool 來驗證code sign
+    - HP Code Signed Slave
+    此模式下必然會有兩層以上的Hub ，另外一層Hub 會是HP Hw Check Code Signed
+    or  HP Hub Check Code Signed ，兩種方式驗證方法不一樣
+    - HP Hub Check Code Signed (ECDSA)
+    主要為GL3590 驗證方式，因為GL3590 有Security Module ，可以自己(Hub)做驗證
+    ---
+    ## HP Hw Check Code Signed update Flow
+    update前會傳送public key 給 hub ，當update到最後兩筆資料時會傳送 hash & signature給Hub ，讓Hub 傳送給 scaler ，由scaler驗證是否成功，失敗的話最後兩筆資料就不update ，這樣的話 update data不完整，hub boot 起來就不會跑這一塊，成功的話繼續update流程，可以參考下圖流程
+    Send Hash & Signature 和 Get Hub authorization 可參考下圖做法
+    ---
+    ## HP Sw Check Code Signed
+    在load bin file時就會送給 解密Tool 做驗證，驗證失敗就不做update ，成功的話就正常update
+    詳細作法可參考下圖。
+    ---
+    ## HP Code Signed Slave
+    會根據另外一層Hub的code signed mode來決定 code signed flow
+    - HP Hw Check Code Signed update Flow
+    驗證方式類似 ，只是在Send Hash & Signature 和 Get Hub authorization 這邊是送到HP Hw Check Code Signed的那層Hub給scaler 做驗證
+    - HP Hub Check Code Signed 
+    會在HP Hub Check Code Signed 一併說明
+    
+    ---
+    ## HP Hub Check Code Signed (ECDSA)
+    有兩種方式，驗證方式都是會傳給有Security Module 的Hub做驗證，只是流程不一樣
+    ### 原本Hub 就有Security Module (GL3590)
+    ```plain text
+    1.	40 ac 00 00  00 00 00 00 : Enable SHA256 Engine
+    2.	c0 a2 00 00  00 00 40 00
+    3.	c0 a2 00 00  40 00 40 00
+    4.	……
+    5.	c0 a2 00 00  c0 8f 40 00
+    6.	40 ac 0b 04  09 00 00 00 : Send Hash Length : 4K
+    7.	40 ac 0b 00  00 00 20 00 : Send Hash Data
+    8.	c0 ac 0b 02  00 00 20 00 : Read Digested Data for test 
+    9.	c0 ac 0c 02  00 00 40 00 : Read Signature     for test 
+    10.	c0 ac 0c 01  00 00 40 00 : Read  Public Key   for test 
+    11.	c0 ac 0b 00  00 00 01 00 : fw return hash comparision result
+    12.	40 ac 00 00  00 00 00 00 : Enable SHA256 Engine
+    13.	c0 a2 00 00  00 00 40 00
+    14.	c0 a2 00 00  40 00 40 00
+    15.	……
+    16.	c0 a2 00 00  c0 8f 40 00
+    17.	40 ac 0b 04  09 00 00 00 : Send signature Length : 4K
+    18.	40 ac 0c 02  00 ff 00 00 : Provide fw public key
+    19.	40 ac 0c 01  00 00 40 00 : send signature data
+    20.	c0 ac 0c 01  00 00 40 00 : Read  Public Key   for test 
+    21.	c0 ac 0b 02  00 00 20 00 : Read Digested Data for test 
+    22.	c0 ac 0c 02  00 00 40 00 : Read Signature     for test 
+    23.	c0 ac 0c 00  00 00 01 00: fw return hash comparision result
+    ```
+    ### 原本Hub 沒有Security Module(GL3523)
+    流程跟GL3590 驗證方式差不多，不一樣的地方為，當update 後 ，要把data送到有Security Module的Hub(GL3590) 做驗證，所以除了第一步是傳給GL3523 update data之外，其他command都是傳給GL3590
+    -
+    ### 原本PD沒有Security Module(GL9511)
+    hash 應該是不用驗，所以去掉此步驟，其他跟GL3523驗證方式差不多，當update 後 ，要把data送到有Security Module的Hub(GL3590) 做驗證，所以除了第一步是傳給GL3523 update data之外，其他command都是傳給GL3590
+    
+    </related>
+    <related id="hp-rtk-scaler-code-sign" title="HP RTK Scaler Code Sign" path="/code-sign/hp-rtk-scaler-code-sign.html">
+    
+    RTK的燒錄流程, 每個Scaler大同小異, 除了Disable Flash Hardware Write Protection需要下的參數不同以外, 最大的差別在於數位簽章的部分, 此章節只針對數位簽章的流程作介紹
+    RTK的數位簽章, 分為HW與SW兩種, 一種Scaler只會有一種Code Sign方式
+    如何判斷是哪一種方式, RTK有設計指令可以去問Code Sign種類, 但並沒有將這個功能加到所有的Scaler當中, 因此目前程式只能先用INI方式來強制指定
+    閱讀此章節前, 請先參考以下文件大致了解整個燒錄的流程
+    https://www.notion.so/Bu5-Spec-82cc386663974de58c65b57ea7ebffc0#1ff6387a0f6649e3a50c034cf23f2584
+    或是整理過的流程介紹
+    https://www.notion.so/HP-RTK-Scaler-Update-Flow-10a0786c41b5483e8426bf5a03ed1365
+    快速連結
+    如何判斷SW或是HW Code Sign
+    程式INI說明
+    Bin檔說明
+    SW Key
+    HW Key
+    燒錄流程說明
+    ---
+    # 如何判斷SW或是HW Code Sign
+    目前是用Scaler FW的檔名, 配合INI的設定, 來決定走HW還是SW的流程, 以下為INI的內容
+    [Scaler]
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    CodeSign Type 0:None, 1: HW, 2:SW
+    [RTD2778]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    [RTD2798]
+    NewDifferBank=1
+    CodeSign=1
+    HwWpGpio=0x1064
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xfe54
+    HwWpPinReserved=0xfe
+    HwWpPinValue=0x01
+    不同的Scaler Type會有不同的Code Sign方式, 解除Write Protect的參數也不相同, 因此這些資訊必須事先定義在INI內
+    RtkSupportModel=E24m,E27m,E34m
+    程式會根據Scaler Bin檔檔名, 去抓對應的設定
+    例如Scaler Bin為E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    程式會抓到檔名開頭的E24M, 並且在INI內找到對應的Scaler Type
+    E24m=RTD2778
+    程式再去[RTD2778]內將對應的設定全部讀入 (下圖紅框, CodeSign=2, 就會走SW驗證的流程)
+    ---
+    # 程式INI說明
+    上述的例子, 只適用於HP ISP Tool, 因為HP ISP Tool不會知道使用者選了哪一個Scaler的FW
+    因此只能在使用者選了Scaler FW之後, 再經由檔名去找到對應的設定
+    但如果是HP Enduser Tool, 因為一包只會更新一種Scaler, 所以不用在INI內設定這一段
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    直接在Scaler的section內設定即可, 例如現在要燒RTD2778, INI的內容為
+    [Scaler]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    ---
+    # Bin檔說明
+    簡單來說, SW驗證的簽章與bin檔不同檔案, HW驗證的簽章與bin檔同一個檔案
+    SW驗證: 會有兩個檔案, 檔名相同只有副檔名不同, 一個是.bin, 一個是.bin.sig
+    .bin是正常的Bin檔不包含簽章, .bin.sig為簽章內容, 以E24m為例有以下兩個檔案
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    HW驗證: 只會有一個檔案, 包含了簽章在內, 副檔名是.bin.sig, 例如E34m的bin檔為E34M_TPM340Y1_2H012_21B_715GC248_M0A_XVT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    上圖為RTK文件的內容, 其中Bank就是Block, 一個Bank的大小定義是64KB, 因此一個RTK的Scaler Bin檔, 大小一定是64KB的倍數
+    如果需要做數位簽章驗證, 則會將相關的內容放在最後一個Bank, 例如檔案大小為1245184, 總共會有1245184 / 65536 = 19個bank, 則65536 X 18 = 1179648 = 0x120000開始會存放簽章相關資料
+    以下介紹每個欄位內容
+    Header: 目前拿到的FW, Header都是ZSTR這個字串, 但不確定RTK以後的案子會不會都是一樣, 需要再與RTK做確認
+    Version: 目前拿到的FW, 內容都是0, 還不確定有什麼作用
+    User Type: 目前拿到的FW, 內容不太一樣, 有的都是0, 還不確定有什麼作用
+    Key Length: Key的長度, 算法為KeyBuf[0] + (KeyBuf[1] << 8) + (KeyBuf[2] << 16) + (KeyBuf[3] <<24)
+    例如四個Byte依序為0x04,0x03,0x00,0x00, 則長度為0x304
+    Signature Length: Signature的長度, 算法與KeyLength相同, 如果為SW驗證, Signature Length = 0, 因為Signature會在另一個檔案 (SW驗證的簽章長度為0, 這一點RTK文件內並沒有提到)
+    Key Data: 接在Signature Length後面, 長度由Key Length取得
+    Signature Data: 接在Key Data後面, 只有HW驗證的檔案才會有signature
+    ---
+    # SW Key
+    有兩種Key會從流程中得到
+    1. 從Flash得到的Key (以下簡稱Flash Key), 取得方式: 文件的4.13.7 Get Current Key Address, 先取得Key的位址後, 再用4.19.1 Get Current Verify Key from Flash的方法得到Key
+    1. 從Bin檔得到的Key (以下簡稱Bin Key), 取得方式: 文件的4.12 Extract FW/Key/Signature, 就是上面Bin檔的說明
+    Flash Key: 用RTK提供的DLL來驗證簽章 (.bin.sig的內容), 不用寫進Flash
+    Bin Key: 流程當中的Next Verify Key, 需要寫進Flash (4.18 Write Next Verify Key For New Differ Bank), 而寫到Flash的位址請參考 (4.13.6 Get Next Verify Key Address取得)
+    ---
+    # HW Key
+    與SW比較, HW的流程相對簡單, Key和簽章都是從Bin檔讀出來, 然後寫到Flash某特定的位置後, 讓Scaler自己去做驗證即可
+    Key: 從Bin檔讀出來, 寫入flash的位置為4.13.6 Get Next Verify Key Address
+    簽章: 從Bin檔讀出來, 寫入flash的位置為4.13.7 Get Signature Address
+    ---
+    # 燒錄流程說明
+    ## HW驗證
+    燒錄流程最後兩個步驟分別是Reset MCU與New Differ Bank After ISP
+    下了Reset MCU之後會造成Hub斷電, 此時FW會去進行簽章的驗證, 而驗證的時間與Bin檔的大小相關, 
+    因此程式需要在Reset MCU後Delay夠久的時間(*1), 讓FW去做驗證. 而New Differ Bank After ISP就是下指令去取得驗證的結果, 驗證結果成功, 才是完成整個燒錄流程
+    New Differ Bank After ISP會失敗的原因
+    (*1)RTK提供的公式是 Bank數 X 1.5 + 3 = Delay秒數, 例如Bin檔有10個Bank, 就需Delay 10 X 1.5 + 3 = 18秒, 但後來經過實驗, 這個時間不夠, 應該要 Bank數 X 1.5 + 10 比較保險
+    
+    </related>
+    <related id="lenovo-code-sign-交握流程" title="Lenovo Code Sign 交握流程" path="/code-sign/lenovo-code-sign-交握流程.html">
+    
+    ## 演算法
+    ### 所需參數
+    1. Session Key
+    1. Model name(LNV_T24I40_0000)
+    1. CRC 演算法
+    ### 演算法流程
+    1. Host PC(Uniupdate Tool) 傳送 Session Key 給 Monitor Controller(Hub)
+    1. Monitor Controller(Hub) 使用 Session Key & Model name 透過 crc function 產生一組 signature
+    1. Monitor Controller(Hub) 傳送計算好的signature 給 Host PC 驗證
+    1. Host PC(Uniupdate Tool) 也使用 Session Key & Model name 算好signature 給Monitor Controller(Hub) 驗證
+    1. 如果Host PC(Uniupdate Tool) 和 Monitor Controller(Hub) 都驗證 signature 成功就代表交握成功
+    ## 備註
+    1. 使用Model name的交握可以確定CRC計算能力的一致性，以及Update的目標裝置是否正確。
+    1. Lenovo Uniupdate流程中，取得session key之後的每筆command，Tool都會計算CRC signature，Hub FW也可依照接收到的signature及ultra data(FW bin data)來驗算signature，以此可以確保Command及FW bin檔傳送時的安全性。
+    1. Hub都是燒錄在非running bank的那一塊。EX: 現在run bank1，就update FW在bank 2。
+    1. Hub燒錄時，要可以判斷bonding和check sum等等，並依此回應是否燒錄成功
+    1. Hub會加入nack error code來標記ISP Fail在哪個階段，目前僅做為內部使用
+    
+    </related>
+  </related_context>
+</context_boundaries>
