@@ -1,0 +1,134 @@
+<context_boundaries>
+<core_topic id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+
+## 1. 系統概述
+本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+---
+## 2. 系統架構圖
+此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+---
+## 3. 詳細處理流程
+整個流程可分為三個主要階段：
+---
+## 4. 流程視覺化圖表
+4.1 循序圖 (Sequence Diagram)
+4.2 流程圖 (Flowchart)
+---
+## 5. 演算法特定規則
+在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+---
+## 6. 各晶片韌體格式詳解
+---
+## 7. 晶片格式總覽表
+## GLBinTool Commands
+---
+### ⚙️ WIP 階段
+```c
+glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+```
+用途
+將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+必要參數 
+- i, --input → 原始 Bin 檔
+- p, --publickey → Public Key 檔案
+- -t → 簽章類型（rsa2048 / ecdsa256）
+可選參數
+- --input#→ 第 N 個原始 Bin 檔
+回傳
+-  回傳 Output 檔案數量，若為 0 則為 Fail
+特殊狀況
+-  case A in 才需要放 public key 進去
+---
+### 🔑 SIGN 階段
+```c
+glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+```
+用途
+計算 wip.bin 的 Hash，產生 Signed bin 檔。
+必要參數
+- i, --input → wip.bin 檔
+- g, --signagure —> Signature 檔案
+- o, --output → 輸出 sig 檔
+- p, --publickey → Public Key 檔案
+- -t → 簽章類型（rsa2048 / ecdsa256）
+可選參數
+- --input#→ 第 N 個 wip.Bin 檔
+- --signagure# —>第 N 個  Signature 檔案
+- f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+特殊狀況
+-  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+---
+### 📦 ROM 階段
+```c
+glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+```
+用途
+依晶片演算法，組裝最終檔案 rom。
+必要參數
+- i, --input → wip.bin 檔
+- g, --signagure —> Signature 檔案
+- o, --output → 輸出檔案
+- p, --publickey → Public Key 檔案
+- -t → 簽章類型（rsa2048 / ecdsa256）
+可選參數
+- --input#→ 第 N 個 wip.Bin 檔
+- --signagure# —>第 N 個  Signature 檔案
+---
+## 測試Chip & bin 檔
+
+</core_topic>
+  <related_context>
+    <related id="-genesys-logic-firmware-安全簽署與驗證流程-code-signing-" title=" Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) " path="/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html">
+    
+    本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+    - 核心要求：所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+    - 挑戰：在滿足嚴格安全合規性的前提下，建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。
+    - 最終方案：我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+    ---
+    ## 💡 簡介 (Introduction)
+    ---
+    ## 🔑 Code Signing 資源與實作方案 (含 FIPS 合規要求)
+    ---
+    ## 🏛️ eToken 簽署系統架構解析
+    ---
+    ## 🔑 Genkey 金鑰生成與佈署流程解析
+    ---
+    ## 📜 Sign File 簽署檔案工作流程
+    ---
+    ## 🔄 端到端的程式碼簽署與驗證完整流程
+    ---
+    ## 🚀 程式碼簽署與驗證流程 (Boot Code Verify)
+    ---
+    ## eToken 集中式管理與安全存取服務平台(未來架構)
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsa" title="3rd party code signing specification (ECDSA)" path="/code-sign/3rd-party-code-signing-specification-ecdsa.html">
+    
+    ## Genesys Logic code sign overview
+    - 因應需求，firmware 都必須要驗證合法性。
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verify
+    ### Implement
+    ### Using OpenSSL
+    ### Using eToken
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsaen-" title="3rd party code signing specification (ECDSA)(EN) " path="/code-sign/3rd-party-code-signing-specification-ecdsaen-.html">
+    
+    ## Genesys Logic code sign overview
+    - Firmware must be verified before updating to flash.
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verification
+    ### Implementation
+    ### Using OpenSSL
+    ### Store the Private key
+    
+    </related>
+  </related_context>
+</context_boundaries>

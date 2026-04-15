@@ -1,0 +1,105 @@
+{
+  "requested_slug": "bus-hound-簡易說明",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T07-00-57-270Z",
+  "wave_id": 2,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 6,
+    "downgraded": 0,
+    "total_lines": 32,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What are the main functions of Bus Hound?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the main functions of Bus Hound, including capturing USB control transfers, input data, and providing options to run, stop, and save the captured data."
+      },
+      {
+        "question": "What are the settings available in Bus Hound?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text describes the available settings in Bus Hound, such as Capture Capacity, Max Record Length, Stop when, Phases to Capture, and Columns to Display."
+      },
+      {
+        "question": "How can I identify the device I want to capture data from?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that you can select the device to capture data from by using the Hardware ID."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 7,
+    "supported": 7,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 7,
+    "reason": "Unsupported rate 0% (0/7) below audit threshold.",
+    "removed_count": 0
+  }
+}

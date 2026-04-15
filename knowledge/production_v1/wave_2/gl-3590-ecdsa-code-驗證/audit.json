@@ -1,0 +1,230 @@
+{
+  "requested_slug": "gl-3590-ecdsa-code-驗證",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 44,
+    "borderline_count": 5,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "30664f6b-c656-8098-9143-df9d5416492f",
+          "slug": "etoken-system-code-view-",
+          "title": "Etoken System Code View ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\etoken-system-code-view-.md",
+          "site_path": "/code-sign/etoken-system-code-view-.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "code-sign",
+            "security"
+          ],
+          "task_tags": [
+            "debug",
+            "spec",
+            "sop",
+            "config"
+          ],
+          "authority_level": "derived",
+          "notion_id": "30664f6b-c656-8098-9143-df9d5416492f",
+          "notion_updated_at": "2026-02-13T06:22:00.000Z",
+          "exported_at": "2026-04-06T13:19:57.603Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "36cce5a7-f165-47eb-bf86-39a8c55db0ef",
+          "slug": "etoken-system",
+          "title": "Etoken System",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\etoken-system.md",
+          "site_path": "/code-sign/etoken-system.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "install"
+          ],
+          "authority_level": "source",
+          "notion_id": "36cce5a7-f165-47eb-bf86-39a8c55db0ef",
+          "notion_updated_at": "2026-04-01T05:39:00.000Z",
+          "exported_at": "2026-04-06T13:11:57.334Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a6abd599-f50f-46fb-a0f6-d58c87bcc930",
+          "slug": "mbedtls-source-code",
+          "title": "mbedtls Source Code",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\mbedtls-source-code.md",
+          "site_path": "/code-sign/mbedtls-source-code.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "code-sign",
+            "sdk",
+            "security"
+          ],
+          "task_tags": [
+            "spec"
+          ],
+          "authority_level": "source",
+          "notion_id": "a6abd599-f50f-46fb-a0f6-d58c87bcc930",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:12:05.824Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "caff25bb-89e4-431c-aab7-d6cb56ebc8dd",
+          "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+          "title": "RSA 2048 verify 和 mbedtls opensource 測試問題 ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\rsa-2048-verify-和-mbedtls-opensource-測試問題-.md",
+          "site_path": "/code-sign/rsa-2048-verify-和-mbedtls-opensource-測試問題-.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "code-sign",
+            "sdk",
+            "security"
+          ],
+          "task_tags": [
+            "debug",
+            "spec",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "caff25bb-89e4-431c-aab7-d6cb56ebc8dd",
+          "notion_updated_at": "2025-08-20T02:30:00.000Z",
+          "exported_at": "2026-04-06T13:12:05.565Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "16f64f6b-c656-8075-af6c-e3f6c01680cc",
+          "slug": "gl-bin",
+          "title": "GL Bin",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\gl-bin.md",
+          "site_path": "/general/gl-bin.html",
+          "category": "general",
+          "domain_tags": [
+            "general"
+          ],
+          "task_tags": [
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "16f64f6b-c656-8075-af6c-e3f6c01680cc",
+          "notion_updated_at": "2025-01-03T07:45:00.000Z",
+          "exported_at": "2026-04-06T13:18:20.335Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 44 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 44,
+    "count_at_0_22": 49,
+    "borderline_count": 5,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T07-00-57-270Z",
+  "wave_id": 2,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 13,
+    "downgraded": 2,
+    "total_lines": 44,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What encryption algorithm is used for the ECDSA code signing?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that Genesys Logic uses the ECDSA nistp256 encryption algorithm for the code signing."
+      },
+      {
+        "question": "What security standard does the ECDSA code signing process follow?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the ECDSA code signing process follows the FIPS 140-2 Level 3 security standard."
+      },
+      {
+        "question": "What is the hash value of the firmware image?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides the 32-byte hash value of the firmware image."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 1,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 1,
+    "reason": "Unsupported rate 0% (0/1) below audit threshold.",
+    "removed_count": 0
+  }
+}

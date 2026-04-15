@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 格式：必須是 JSON 格式 (CycloneDX Schema)。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 交付位置：SBOM 檔案 (.json) 必須與最終的 FW/BIOS Binary 放在同一個目錄下。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 顆粒度：每一個 FW Component 都要有自己獨立的 SBOM。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 第三方供應商 (Vendors)：負責生成自身開發元件的 SBOM。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- HP 團隊：負責 HP 內部開發元件的 SBOM 生成。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 工具名稱：python-uswid",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 來源：https://github.com/hughsie/python-uswid",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- ⚠️ 強制版本：必須使用 Commit Hash 55a060f87c800bad3955a7a45a60080a9f532b43 或更新版本（包含 HP 特定功能）。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 定義 (Define)：在 Repo 根目錄建立 .sbom.ini 模板。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 注入 (Inject)：Build Script 執行時，抓取當前 Git Hash 與 Version，填入 .ini 檔。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 生成 (Generate)：呼叫 python-uswid 工具讀取 .ini 並輸出 .json。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 打包 (Package)：將 .json 與 Binary 放在一起。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. Repository 準備 (前置作業)：在 Git Repo 的根目錄下，提交 .sbom.ini 模板檔案。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. CI 環境配置 (處理 Toolchain)：在 .gitlab-ci.yml 的 before_script 區段，或是 Dockerfile 中，必須包含強制安裝指定 Commit Hash 的 python-uswid 版本。",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 編寫 .gitlab-ci.yml (核心流程)：新增一個 Stage 來執行「注入 -> 生成 -> 打包」的流程。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 版本鎖定驗證：確認 pip 安裝時輸出的 Hash 是否為 55a060f...。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 變數注入正確性：檢查生成的 .json 內容，確認 Version 和 Hash 不是空值或佔位符。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. Artifacts 保存：確保 Job 成功後，GitLab 頁面上可以下載到那個 .json 檔。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "tag-id = CRD/SW/USBHub/Windows_Tool/brand_hp/hpisptool",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "software-name = HP 524pu USB Hub Firmware",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "software-version = 1.0.0.1",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "version-scheme = multipartnumeric",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "colloquial-version = <GIT_HASH>",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "cpe = cpe:2.3:o:genesyslogic:hp_524pu_hub_firmware:1.0.0.1:*:*:*:*:*:*:*",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "summary = USB Hub firmware component for HP 524pu platform (Genesys Logic)",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "[uSWID-Entity:SoftwareCreator]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "name = Genesys Logic Inc.",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "regid = www.genesyslogic.com.tw",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "extra-roles = TagCreator",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "[uSWID-Link:vcs]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "href = CRD/SW/USBHub/Windows_Tool/brand_hp/hpisptool",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "[uSWID-Link:ancestor1]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "href = pkg:github/tianocore/edk2@202411",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "[uSWID-Patch:patch1]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "type = cherry-pick",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "url = https://github.com/tianocore/edk2/commit/2244465...",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "description = SECURITY PATCH - CVE 2022-36763",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "references = https://github.com/.../SecurityFixes.yaml",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "\"ref\": \"bps-fw/MyComponent\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "\"dependsOn\": \"pkg:github/tuxera/ntfs-3g@2013.1.13\"",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "\"ref\": \"bps-fw/MyComponent\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "\"dependsOn\": \"pkg:github/zeux/pugixml@1.2\"",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- NTIA Minimum Elements: 美國政府 SBOM 最低要求。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- CycloneDX Guide: 採用的 JSON 標準格式。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "- 工具下載: python-uswid (GitHub)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 安裝指定版本的 python-uswid 工具",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 建立 .sbom.ini 模板檔案",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "1. 配置 gitman.yml (若專案使用)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

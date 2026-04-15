@@ -1,0 +1,120 @@
+<context_boundaries>
+<core_topic id="gl-3590-ecdsa-code-驗證" title="GL 3590 Ecdsa code 驗證" path="/code-sign/gl-3590-ecdsa-code-驗證.html">
+
+## Hash 
+- sig 檔
+```c
+DB B9 66 93 5F EB B0 AE B2 5C 1C 53 3C 83 50 33 
+0F 2B B3 E0 80 1F 07 95 D6 06 8D 3C B7 76 66 66
+```
+- FW
+```c
+db b9 66 93  5f eb b0 ae  b2 5c 1c 53  3c 83 50 33    
+0f 2b b3 e0  80 1f 07 95  d6 06 8d 3c  b7 76 66 66 
+```
+## Public key
+- public key 檔
+```c
+F9 F4 52 A9 4D 67 99 A7 30 8A A9 61 5B 6A 59 51 
+EF 96 56 39 C2 AD A9 A4 BD 02 0A C6 CE DA A5 9B 
+6A 71 06 3F 4F 7D 4B B6 72 E3 4D 29 0A 40 17 19 
+87 45 AC 94 50 F7 1C 8C E1 05 A5 44 08 B3 14 55
+```
+- Rom 檔
+
+```c
+9B A5 DA CE C6 0A 02 BD A4 A9 AD C2 39 56 96 EF 
+51 59 6A 5B 61 A9 8A 30 A7 99 67 4D A9 52 F4 F9 
+55 14 B3 08 44 A5 05 E1 8C 1C F7 50 94 AC 45 87 
+19 17 40 0A 29 4D E3 72 B6 4B 7D 4F 3F 06 71 6A
+```
+- sig 檔
+
+```c
+9B A5 DA CE C6 0A 02 BD A4 A9 AD C2 39 56 96 EF
+51 59 6A 5B 61 A9 8A 30 A7 99 67 4D A9 52 F4 F9 
+55 14 B3 08 44 A5 05 E1 8C 1C F7 50 94 AC 45 87 
+19 17 40 0A 29 4D E3 72 B6 4B 7D 4F 3F 06 71 6A
+```
+- FW
+
+```c
+
+ 9b a5 da ce  c6 0a 02 bd  a4 a9 ad c2  39 56 96 ef   
+ 51 59 6a 5b  61 a9 8a 30  a7 99 67 4d  a9 52 f4 f9                                   
+ 55 14 b3 08  44 a5 05 e1  8c 1c f7 50  94 ac 45 87                           
+ 19 17 40 0a  29 4d e3 72  b6 4b 7d 4f  3f 06 71 6a 
+```
+## Signature 
+- sig 檔
+
+```c
+4A CD 5D A8 8F 27 01 DC 99 41 FB 1A 75 5F 68 B4
+7C E7 3A 8C C7 55 5E 2D B4 07 05 60 ED 03 28 2E 
+AE D2 86 0D 34 18 DD B1 4C ED 4F C5 55 01 68 B1 
+D2 D7 70 55 73 F6 F7 60 E4 36 E9 EE 8A DB 43 6A
+```
+```c
+ 4a cd 5d a8  8f 27 01 dc  99 41 fb 1a  75 5f 68 b4  
+ 7c e7 3a 8c  c7 55 5e 2d  b4 07 05 60  ed 03 28 2e                                 
+ ae d2 86 0d  34 18 dd b1  4c ed 4f c5  55 01 68 b1                                   
+ d2 d7 70 55  73 f6 f7 60  e4 36 e9 ee  8a db 43 6a  
+```
+## Etoken 流程驗證
+Hash 正確，Public key 也正確，剩 Signature
+最後驗證 hash & public key & signature 都必須32 byte 反轉一次 fw 才可以驗證成功
+
+</core_topic>
+  <related_context>
+    <related id="-genesys-logic-firmware-安全簽署與驗證流程-code-signing-" title=" Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) " path="/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html">
+    
+    本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+    - 核心要求：所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+    - 挑戰：在滿足嚴格安全合規性的前提下，建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。
+    - 最終方案：我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+    ---
+    ## 💡 簡介 (Introduction)
+    ---
+    ## 🔑 Code Signing 資源與實作方案 (含 FIPS 合規要求)
+    ---
+    ## 🏛️ eToken 簽署系統架構解析
+    ---
+    ## 🔑 Genkey 金鑰生成與佈署流程解析
+    ---
+    ## 📜 Sign File 簽署檔案工作流程
+    ---
+    ## 🔄 端到端的程式碼簽署與驗證完整流程
+    ---
+    ## 🚀 程式碼簽署與驗證流程 (Boot Code Verify)
+    ---
+    ## eToken 集中式管理與安全存取服務平台(未來架構)
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsa" title="3rd party code signing specification (ECDSA)" path="/code-sign/3rd-party-code-signing-specification-ecdsa.html">
+    
+    ## Genesys Logic code sign overview
+    - 因應需求，firmware 都必須要驗證合法性。
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verify
+    ### Implement
+    ### Using OpenSSL
+    ### Using eToken
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsaen-" title="3rd party code signing specification (ECDSA)(EN) " path="/code-sign/3rd-party-code-signing-specification-ecdsaen-.html">
+    
+    ## Genesys Logic code sign overview
+    - Firmware must be verified before updating to flash.
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verification
+    ### Implementation
+    ### Using OpenSSL
+    ### Store the Private key
+    
+    </related>
+  </related_context>
+</context_boundaries>

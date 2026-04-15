@@ -1,0 +1,325 @@
+{
+  "requested_slug": "gl-diagnostic-tool",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "gl-bin-tool (confidence: low)",
+    "gl-enduser-tool-architecture- (confidence: low)",
+    "gl-enduser-tool-for-electron (confidence: low)",
+    "gl-enduser-tool-instruction (confidence: low)",
+    "gl-bin (confidence: low)",
+    "gl-enduser-tool-merge-bin-head-format (confidence: low)",
+    "asus-update-tool- (confidence: low)",
+    "hp-enduser-tool- (confidence: low)",
+    "hp-qc-tool- (confidence: low)",
+    "ikv-tool-相關mail資料 (confidence: low)",
+    "tool-sign-flow (confidence: low)",
+    "hub-mp-tool (confidence: low)",
+    "mac-eep-tool (confidence: low)",
+    "mac-oci-tool- (confidence: low)",
+    "gl-hubdriver-v163-測試流程",
+    "hp-oci-tool-工作彙整",
+    "hp-oci-tool-現行架構解析",
+    "command-line-tool-instructions",
+    "glbin-tool-user-guide",
+    "hp-enduser-tool-包裝流程"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 14,
+    "borderline_count": 9,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "2e4c0f4d-6123-4006-b609-6b6993676eff",
+          "slug": "gl-hubdriver-v163-測試流程",
+          "title": "GL HubDriver v1.63 測試流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\driver\\gl-hubdriver-v163-測試流程.md",
+          "site_path": "/driver/gl-hubdriver-v163-測試流程.html",
+          "category": "driver",
+          "domain_tags": [
+            "driver"
+          ],
+          "task_tags": [
+            "install",
+            "sop"
+          ],
+          "authority_level": "deprecated",
+          "notion_id": "2e4c0f4d-6123-4006-b609-6b6993676eff",
+          "notion_updated_at": "2022-12-13T08:49:00.000Z",
+          "exported_at": "2026-04-06T13:11:44.912Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2bc64f6b-c656-80e9-95b0-eb991c30b436",
+          "slug": "hp-oci-tool-工作彙整",
+          "title": "HP OCI Tool 工作彙整",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\hp-oci-tool-工作彙整.md",
+          "site_path": "/mac/hp-oci-tool-工作彙整.html",
+          "category": "mac",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "2bc64f6b-c656-80e9-95b0-eb991c30b436",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:27:55.153Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "26f64f6b-c656-8024-9e1f-f0324389728e",
+          "slug": "hp-oci-tool-現行架構解析",
+          "title": "HP OCI Tool 現行架構解析",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\hp-oci-tool-現行架構解析.md",
+          "site_path": "/mac/hp-oci-tool-現行架構解析.html",
+          "category": "mac",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "26f64f6b-c656-8024-9e1f-f0324389728e",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:23:18.518Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "631cc8a7-c735-4165-9f54-47786ad93458",
+          "slug": "command-line-tool-instructions",
+          "title": "Command Line Tool Instructions",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\command-line-tool-instructions.md",
+          "site_path": "/tools/command-line-tool-instructions.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "spec",
+            "config"
+          ],
+          "authority_level": "reference",
+          "notion_id": "631cc8a7-c735-4165-9f54-47786ad93458",
+          "notion_updated_at": "2024-05-21T02:00:00.000Z",
+          "exported_at": "2026-04-06T13:17:53.703Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "b538b25f-6343-4fb2-b098-45d27f597e20",
+          "slug": "glbin-tool-user-guide",
+          "title": "GLBin Tool User Guide",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\glbin-tool-user-guide.md",
+          "site_path": "/tools/glbin-tool-user-guide.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "tools"
+          ],
+          "task_tags": [
+            "code-sign"
+          ],
+          "authority_level": "source",
+          "notion_id": "b538b25f-6343-4fb2-b098-45d27f597e20",
+          "notion_updated_at": "2022-12-13T08:43:00.000Z",
+          "exported_at": "2026-04-06T13:11:09.247Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a767a04c-6e2c-4725-a704-5a3167d3554c",
+          "slug": "hp-enduser-tool-包裝流程",
+          "title": "HP EndUser Tool 包裝流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-enduser-tool-包裝流程.md",
+          "site_path": "/tools/hp-enduser-tool-包裝流程.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "a767a04c-6e2c-4725-a704-5a3167d3554c",
+          "notion_updated_at": "2026-01-21T09:23:00.000Z",
+          "exported_at": "2026-04-06T13:19:09.936Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "43055353-def4-459e-b9f0-fc5527c6a8c3",
+          "slug": "hp-silent-mode-tool-",
+          "title": "HP Silent mode Tool ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\hp-silent-mode-tool-.md",
+          "site_path": "/tools/hp-silent-mode-tool-.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "43055353-def4-459e-b9f0-fc5527c6a8c3",
+          "notion_updated_at": "2026-01-21T09:35:00.000Z",
+          "exported_at": "2026-04-06T13:15:08.620Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "659386ae-3baf-4ea9-ab92-0f342dd3d219",
+          "slug": "lenovo-ldcc-update-tool-",
+          "title": "Lenovo LDCC Update Tool ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\lenovo-ldcc-update-tool-.md",
+          "site_path": "/tools/lenovo-ldcc-update-tool-.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "release",
+            "spec",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "659386ae-3baf-4ea9-ab92-0f342dd3d219",
+          "notion_updated_at": "2026-01-21T09:48:00.000Z",
+          "exported_at": "2026-04-06T13:16:20.562Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1ae64f6b-c656-80cb-a6e4-ceae6d7d9e2e",
+          "slug": "merge-code-tool-help",
+          "title": "Merge Code Tool Help",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\merge-code-tool-help.md",
+          "site_path": "/tools/merge-code-tool-help.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "build",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "1ae64f6b-c656-80cb-a6e4-ceae6d7d9e2e",
+          "notion_updated_at": "2026-01-21T09:36:00.000Z",
+          "exported_at": "2026-04-06T13:18:23.896Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 14 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 14,
+    "count_at_0_22": 23,
+    "borderline_count": 9,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T07-00-57-270Z",
+  "wave_id": 2,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 1,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

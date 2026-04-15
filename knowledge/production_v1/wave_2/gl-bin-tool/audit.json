@@ -1,0 +1,111 @@
+{
+  "requested_slug": "gl-bin-tool",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T07-00-57-270Z",
+  "wave_id": 2,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 10,
+    "downgraded": 6,
+    "total_lines": 89,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What are the main functions of the GL Bin Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the main functions of the GL Bin Tool, including setting Code-Sign parameters, calculating and updating firmware checksums, embedding public keys, and calculating and appending signatures."
+      },
+      {
+        "question": "How does the GL Bin Tool handle different HP_Propertary values?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text describes how the GL Bin Tool handles different HP_Propertary values, including treating Code-Sign information as external data, embedding the public key internally, and embedding all Code-Sign information internally based on the GL Code-Sign Info settings."
+      },
+      {
+        "question": "What are the key rules for ensuring the security of the ISP process when introducing the 'Public Key Replacement' feature?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions some rules for ensuring the security of the ISP process, such as protecting the public key information and establishing a secure public key replacement process, but it does not provide a complete list of the key rules."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 18,
+    "supported": 16,
+    "uncertain": 1,
+    "unsupported": 1,
+    "unsupported_claims": [
+      {
+        "claim": "- 計算整個二進位檔案的 Hash 值, 並使用私鑰進行簽章 (Signature)。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention calculating the hash value of the entire binary file or using the private key to generate the signature."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.05555555555555555,
+    "derived_count": 18,
+    "reason": "Unsupported rate 6% (1/18) below audit threshold.",
+    "removed_count": 0
+  }
+}

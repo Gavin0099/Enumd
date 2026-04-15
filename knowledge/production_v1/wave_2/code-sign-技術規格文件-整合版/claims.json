@@ -1,0 +1,570 @@
+[
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "以下是 Code-Sign 技術規格文件 (整合版) 的綜合報告:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "💡 **盲點提醒**：後續新 IC 若在 Flash Block 構成或 Bank 切割方式上改動，`GL code sign info` 中 bit6=0 的「跟隨 FW 起始 Block」規則，可能直接失效，需預留 fallback。",
+    "tier": "Explicit",
+    "evidence_score": 21,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "為了相容舊有的非 Code-Sign Bonding IC 以及支援新的 Code-Sign Bonding IC，我們定義了三種主要情境 (case)。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "1. IC Bonding 類型: Code-Sign vs. Non-Code Sign。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "1. HP_Propertary String: FW Bin 中的字串 ('5', 'A', 'B')，作為工具鏈和 FW 的主要行為依據。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "1. GL Code-Sign Info: GL Signature 前的 6-byte 設定區塊。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "- eToken Sign Code: 主要依賴 HP_Propertary 和 GL code sign info。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "- eToken Gen ROM: 依賴 Bonding, HP_Propertary, 和 GL code sign info。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "- ISP Tool & FW Load Code: 必須同時使用上述全部三個判斷點。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "表一：Flash FW 配置及 ISP 差異",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "為了讓韌體 (FW) 能夠在啟動時驗證公鑰 (Public Key) 和簽名 (Hash+Signature)，我們在 GL Signature 前方定義了一個 6-Byte 的設定區塊 (0xF4-0xF9)。這個區塊的功能是告訴 Boot ROM 在 Flash 中的哪個位置可以找到這兩組關鍵資訊。",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "- 公鑰位置資訊：前 3 個位元組 (0xF4-0xF6)，用於定義 Public Key 的儲存位置。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "- 驗證資訊位置：後 3 個位元組 (0xF7-0xF9)，用於定義驗證資訊 (Hash+Sig) 的儲存位置。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "下圖視覺化了公鑰位置資訊 (0xF4-0xF6) 的內部處理邏輯。（驗證資訊區塊的邏輯與此完全相同，但在 case1 和 case2 中會被忽略）",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% Code-Sign Info General Rules Diagram (Final Outline Style - 100% Compatible)",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef field fill:transparent,stroke:#60A5FA,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef titleNode fill:transparent,stroke:transparent,font-weight:bold",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef decision fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef rule fill:transparent,stroke:#9CA3AF,stroke-width:2px,stroke-dasharray: 5 5",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef dependency stroke:#9CA3AF,stroke-width:1.5px,stroke-dasharray: 4 4",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef stop fill:transparent,stroke:#F87171,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "style PK_Rules fill:transparent,stroke:#FCD34D,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "PK_Rules_Title(\"<b>Public Key 位置資訊規則 (0xF4-0xF6)</b>\")",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B7{\"<b>Bit 7:</b><br/>資訊有效旗標 (總開關)\"}",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "Stop[\"<b>流程結束</b><br/>(後續所有欄位均被忽略)\"]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B6{\"<b>Bit 6:</b><br/>公鑰區塊定位模式\"}",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "F5[\"<b>Offset 0xF5:</b><br/>Bank1 Address High Byte<br/><i>(恆定有效)</i>\"]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B05[\"<b>Bit 0-5:</b><br/>公鑰 Flash Block 編號\"]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "F6[\"<b>Offset 0xF6:</b><br/>Bank2 Address High Byte\"]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "Rule_0[\"<b>規則:</b><br/>- Bit0-5 無效<br/>- 0xF6 (Bank2 Addr) 無效\"]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "PK_Rules_Title --> B7",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B7 -- \"<b>值為 1</b><br/>(無效)\" --> Stop",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B7 -- \"<b>值為 0</b><br/>(有效)\" --> B6",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B6 -- \"<b>值為 0</b><br/>(跟隨 FW)\" --> Rule_0",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B6 -- \"<b>值為 1</b><br/>(顯式指定)\" --> B05",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B05 --> F5 --> F6",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B6 -.->|\"當 Bit6=1 時才有效\"| B05",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "B6 -.->|\"當 Bit6=1 時才有效\"| F6",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "class B7,B6 decision; class Stop stop; class Rule_0 rule; class B05,F5,F6 field",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "class PK_Rules_Title titleNode; linkStyle 7,8 dependency",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "在規劃韌體專案時，為確保 Code-Sign 功能正常運作，務必注意以下關鍵事項：",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "此模式對應早期的 FW (< 64K)，所有 Code-Sign 相關資訊 (Public Key, Hash, Signature) 都被視為外部資料，由 eToken 產生後附加在原始 FW bin 之後，供 ISP Tool 在燒錄時使用。GL code sign info 在此模式下完全無效。",
+    "tier": "Explicit",
+    "evidence_score": 25,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef file fill:transparent,stroke:#10B981,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef process fill:transparent,stroke:#4338CA,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "FW_Orig --> Check_HP --> Calc_HS --> S3",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "FW_Rom --> |供 HP ISP Tool 使用| End((完成))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "FW_Signed --> |供 HP OCI Tool 使用| End((完成))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "此模式是當前的主流作法 (FW >= 64K)。Public Key 被嵌入到 FW bin 的內部，這會破壞原始的 checksum-8。因此，最關鍵的步驟是 eToken 必須重新計算並覆蓋 checksum-8。Hash 和 Signature 依然作為外部資料附加。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% --- 步驟 1: 先定義好所有會用到的樣式 ---",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef critical fill:transparent,stroke:#DC2626,stroke-width:2.5px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef file fill:transparent,stroke:#10B981,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef process fill:transparent,stroke:#4338CA,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% --- 步驟 2: 定義圖形元素 (已移除列表編號) ---",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% --- 步驟 3: 最後定義流程走向 ---",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "FW_Orig --> Check_HP --> Check_Bit7 --\"是\"--> Embed_PK --> Recalc_CS --> Calc_HS --> S3",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "FW_Rom_A --> |供 HP ISP Tool 使用| End((完成))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "FW_Signed_A --> |供 HP OCI Tool 使用| End((完成))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "Check_Bit7 --\"否\"--> Abort_1((流程中止))",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% eToken Signing Process Flow (Bit6=1) - Final Example-Enhanced Version",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% --- 步驟 1: 先定義好所有會用到的樣式 ---",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef critical fill:transparent,stroke:#DC2626,stroke-width:2.5px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef file fill:transparent,stroke:#10B981,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "classDef process fill:transparent,stroke:#4338CA,stroke-width:2px",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% --- Stages ---",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-技術規格文件-整合版",
+    "claim": "%% MODIFIED: Added detailed parsing steps inside this node.",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

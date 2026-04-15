@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "以下是關於 \"GitLab EE wiki\" 的綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "GitLab EE (Enterprise Edition) 是 GitLab 提供的企業級版本,提供了更多企業所需的功能和安全性。其 wiki 功能可讓團隊成員協作編寫和管理文件,是 GitLab EE 的重要組成部分。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "GitLab EE wiki 的主要功能包括:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "GitLab EE wiki 適用於各種企業協作場景,如:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "GitLab EE wiki 與以下相關技術有密切聯繫:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "1. **GitLab 企業版**：GitLab EE wiki 是 GitLab 企業版的一個核心功能模塊。[GitLab EE](https://about.gitlab.com/pricing/)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "2. **Markdown 語法**：GitLab EE wiki 使用 Markdown 作為文檔編寫語法。[Markdown](https://www.markdownguide.org/)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "3. **版本控制**：GitLab EE wiki 利用 Git 技術實現文檔的版本管理和協作。[Git](https://git-scm.com/)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "4. **權限管理**：GitLab EE 提供了細緻的權限控制機制,支持在 wiki 層面設置訪問權限。[GitLab 權限模型](https://docs.gitlab.com/ee/user/permissions.html)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gitlab-ee-wiki-",
+    "claim": "5. **安全性**：GitLab EE 注重企業級的安全性,如 SAML 單點登錄、2FA 等功能。[GitLab 安全性](https://about.gitlab.com/security/)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

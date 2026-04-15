@@ -1,0 +1,94 @@
+<context_boundaries>
+<core_topic id="code-sign-概述" title="Code Sign 概述" path="/code-sign/code-sign-概述.html">
+
+### 前提:
+         因應品牌廠的需求，firmware 都必須要驗證合法性，目前做法是把bin檔做成hash，然後 用 private key 對 hash 做sign 的動作產生signature(sign) 
+         把 firmware bin data & signature & public key 傳送給firmware ，讓 firmware 透過 public key 對 signature做解密，產生hash ，然後再用firmware bin data 產生一組 hash ，互相做比對，
+         來決定firmware bin是否合法(verify)。
+### sign:
+### verify:
+---
+## GL3523
+前提: 因為GL3523沒有 security Module 可以做解密的功能，所以只能用兩種方式
+### Sw Verify : 
+透過 Tool 來判斷firmware bin檔是否合法
+### Fw Verify : 
+透過 3rd Chip(Scaler) 來幫忙驗證 Hub firmware bin檔是否合法
+---
+因應這個需求，我們必須有幾樣工具需要提供
+## Generate key & Sign  Tool 
+這邊我們是用 Safenet Etoken 來做這件事，可以參考下面網址
+https://www.pronew.com.tw/products_detail.php?Id=7
+### eToken 加密流程
+> **Note:** sign Tool(GLeToken Tool)
+key management system(eTokenServer & eTokenClient Tool)
+---
+Safenet Etoken 提供 generate key pair & sign & verify 功能的 SDK ，可以透過SDK開發我們需要的功能，透過此SDK我們開發了下面幾個Tool 
+### GLeToken Tool :
+ 為 command Tool ，可以透過command line方式來做generate key & sign & verify 
+---
+### eTokenServer & eTokenClient Tool
+因應保密規則，eToken 必須放在特定的地方，且要有特定權限的人員才能做操作，所以還要提供key management system (eTokenServer & eTokenClient Tool)。 
+- 系統安裝
+- 程式
+---
+## IKV Tool
+為 command Tool ，可以透過command line方式來做generate key & sign & verify ，是透過ecdsa 方式來做
+svn path : https://gli-cse.genesyslogic.com.tw/svn/storage/Users/JasonWu/IsptoolRefine2018/IKV
+---
+## Code sing 待做事項
+
+</core_topic>
+  <related_context>
+    <related id="-genesys-logic-firmware-安全簽署與驗證流程-code-signing-" title=" Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) " path="/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html">
+    
+    本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+    - 核心要求：所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+    - 挑戰：在滿足嚴格安全合規性的前提下，建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。
+    - 最終方案：我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+    ---
+    ## 💡 簡介 (Introduction)
+    ---
+    ## 🔑 Code Signing 資源與實作方案 (含 FIPS 合規要求)
+    ---
+    ## 🏛️ eToken 簽署系統架構解析
+    ---
+    ## 🔑 Genkey 金鑰生成與佈署流程解析
+    ---
+    ## 📜 Sign File 簽署檔案工作流程
+    ---
+    ## 🔄 端到端的程式碼簽署與驗證完整流程
+    ---
+    ## 🚀 程式碼簽署與驗證流程 (Boot Code Verify)
+    ---
+    ## eToken 集中式管理與安全存取服務平台(未來架構)
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsa" title="3rd party code signing specification (ECDSA)" path="/code-sign/3rd-party-code-signing-specification-ecdsa.html">
+    
+    ## Genesys Logic code sign overview
+    - 因應需求，firmware 都必須要驗證合法性。
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verify
+    ### Implement
+    ### Using OpenSSL
+    ### Using eToken
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsaen-" title="3rd party code signing specification (ECDSA)(EN) " path="/code-sign/3rd-party-code-signing-specification-ecdsaen-.html">
+    
+    ## Genesys Logic code sign overview
+    - Firmware must be verified before updating to flash.
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verification
+    ### Implementation
+    ### Using OpenSSL
+    ### Store the Private key
+    
+    </related>
+  </related_context>
+</context_boundaries>

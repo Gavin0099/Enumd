@@ -1,0 +1,3 @@
+⚠️ 此頁圖譜上下文不足，摘要僅根據單一核心節點生成。
+
+BU5 支援多種 chip 類型,包括 Hub、PD、HostBridge 和 Scaler。其中 Hub 是 BU5 的主要產品,可與 GL3523、GL3510、GL3590 和 GL3525 等 chip 通訊。BU5 也開發了 PD chip,如 GL9510,並與其他廠商如 TI 和 MTK 合作。HostBridge 功能是透過 Hub 連接兩台電腦,支援 Windows、Mac、Linux 和 Android 等系統。Scaler 則主要用於控制螢幕顯示,與 MTK、RealTek 和 NovaTek 等公司合作。

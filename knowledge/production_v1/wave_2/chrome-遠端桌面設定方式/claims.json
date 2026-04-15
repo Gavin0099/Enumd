@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "Chrome 遠端桌面是一款由 Google 提供的遠端桌面共享工具，可以讓使用者透過 Chrome 瀏覽器遠端連線並控制其他電腦。本文將詳細說明如何設定和使用 Chrome 遠端桌面。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "1. 下載並安裝 Chrome 遠端桌面擴充功能 [`下載chrome 遠端桌面`]。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "2. 在 Chrome 瀏覽器的右上角會出現 Chrome 遠端桌面圖示，點選它。 [`右上角會出現chrome 遠端桌面icon —> 點選`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "3. 點選「啟用」以啟動 Chrome 遠端桌面功能。 [`啟用`]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "4. 輸入要遠端控制的電腦名稱，然後點選「繼續」。 [`輸入電腦名稱—> 繼續`]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "5. 系統會要求您輸入兩次 PIN 碼，輸入完成後點選「開始」。 [`輸入兩次pin碼後—> 開始`]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "1. 在 Chrome 瀏覽器的右上角找到 Chrome 遠端桌面圖示，點選它。 [`用另外一台電腦 —> chrome 遠端桌面icon`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "3. 輸入之前設定的 PIN 碼，然後點選「登入」。 [`輸入pin 碼 —> 登入`]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "- [Code-Sign 技術規格文件 (整合版)](path/to/code-sign-技術規格文件-整合版.html) [`[Code-Sign 技術規格文件 (整合版)](path/to/code-sign-技術規格文件-整合版.html)`]",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "- [Etoken System Code View](path/to/etoken-system-code-view-.html) [`[Etoken System Code View](path/to/etoken-system-code-view-.html)`]",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chrome-遠端桌面設定方式",
+    "claim": "- [eToken 安全簽章系統技術說明](path/to/etoken-安全簽章系統技術說明.html) [`[eToken 安全簽章系統技術說明](path/to/etoken-安全簽章系統技術說明.html)`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

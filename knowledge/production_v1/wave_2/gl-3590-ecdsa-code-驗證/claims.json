@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "以下是基於提供的內容所撰寫的 GL 3590 ECDSA 程式碼驗證文件:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "本文件旨在說明 Genesys Logic 針對 GL 3590 韌體開發所設計的 ECDSA 程式碼簽署與驗證流程。為滿足 HP Code Signing 的安全要求，Genesys Logic 採用了 ECDSA nistp256 加密演算法並遵循 FIPS 140-2 Level 3 安全標準。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "DB B9 66 93 5F EB B0 AE B2 5C 1C 53 3C 83 50 33",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "0F 2B B3 E0 80 1F 07 95 D6 06 8D 3C B7 76 66 66",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "F9 F4 52 A9 4D 67 99 A7 30 8A A9 61 5B 6A 59 51",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "EF 96 56 39 C2 AD A9 A4 BD 02 0A C6 CE DA A5 9B",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "6A 71 06 3F 4F 7D 4B B6 72 E3 4D 29 0A 40 17 19",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "87 45 AC 94 50 F7 1C 8C E1 05 A5 44 08 B3 14 55",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "4A CD 5D A8 8F 27 01 DC 99 41 FB 1A 75 5F 68 B4",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "7C E7 3A 8C C7 55 5E 2D B4 07 05 60 ED 03 28 2E",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "AE D2 86 0D 34 18 DD B1 4C ED 4F C5 55 01 68 B1",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "D2 D7 70 55 73 F6 F7 60 E4 36 E9 EE 8A DB 43 6A",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "1. [`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "2. [`3rd-party-code-signing-specification-ecdsa`](/code-sign/3rd-party-code-signing-specification-ecdsa.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "gl-3590-ecdsa-code-驗證",
+    "claim": "3. [`3rd-party-code-signing-specification-ecdsaen-`](/code-sign/3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

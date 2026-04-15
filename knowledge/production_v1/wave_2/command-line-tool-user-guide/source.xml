@@ -1,0 +1,10 @@
+<context_boundaries>
+<core_topic id="command-line-tool-user-guide" title="Command Line Tool User Guide" path="/tools/command-line-tool-user-guide.html">
+
+- The update tool has to run in the Command Prompt, and Command Prompt has to run as Administrator.To run as Administrator, please right-click “Command Prompt” and click “Run as administrator
+- Please enter the following path:  thinkvision_p49w_30_fw1_5_tool_1_0_20250716\thinkvision_p49w_30_fw1_5_tool_1_0\pkg\Monitor\Genesys
+- The command to update the Hub firmware using the provided batch file is:
+- The command to update the Scaler firmware using the provided batch file is:
+
+</core_topic>
+</context_boundaries>

@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "git-command-list",
+    "claim": "git clone --recursive \"http://crd-sw.genesyslogic.com.tw:8081/CRD/SW/USBHub/HostBridge/Mac/Standard\"",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "git-command-list",
+    "claim": "git reset --hard",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "git-command-list",
+    "claim": "git clean -d -xf",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "git-command-list",
+    "claim": "git branch wip/GavinWu/ModifyTheMacCmakeEnvironment",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "git-command-list",
+    "claim": "git switch master",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "git-command-list",
+    "claim": "git commit -m \"add PKG Targus setting file\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "git-command-list",
+    "claim": "git submodule add \"http://gli-gitlab.genesyslogic.com.tw:8081/CRD/SW/USBHub/HostBridge/Mac/SRC.git\" APP",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

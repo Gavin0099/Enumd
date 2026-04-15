@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "driver-刪除方式",
+    "claim": "1. Device Filter 刪除方式:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "a. 刪除 Windows\\System32\\drivers\\glusbflt.sys 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "b. 開啟 regedit,刪除 HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\services\\glusbflt 和 HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\services\\GlUsbFltService 註冊表項目。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "2. Class Filter 刪除方式:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "a. 刪除 Windows\\System32\\drivers\\glusbflt.sys 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "b. 開啟 regedit,刪除 HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\services\\glusbflt 註冊表項目,以及 HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{36FC9E60-C465-11CF-8056-444553540000} 中的 LowerFilters 參數 (glusbflt)。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "3. ClassFilterDriver 刪除方式:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "a. 刪除 Windows\\System32\\drivers\\glusbflt.sys 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "b. 開啟 regedit,刪除相關的註冊表項目。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "以上三種方式都涉及刪除 Windows\\System32\\drivers\\glusbflt.sys 驅動程式檔案,以及清除相關的註冊表項目。最後需要重新啟動電腦以完成驅動程式的刪除。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "driver-刪除方式",
+    "claim": "這些步驟與 `[Code-Sign 技術規格文件 (整合版)](path/to/code-sign/code-sign-技術規格文件-整合版.html)` 中描述的 Code-Sign 機制和 ISP 安全性擴展流程有一定關聯,因為驅動程式的安全性也需要透過簽章和驗證機制來確保。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

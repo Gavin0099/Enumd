@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "check-windows-version",
+    "claim": "檢查 Windows 版本的方法是搜尋「winver」並查看作業系統版本。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "requested_slug": "check-windows-version",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "windows-command (confidence: low)",
+    "windows-register-語系改法 (confidence: low)",
+    "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+    "windows-11-core-isolation",
+    "windows-10-h2-driver-移除流程",
+    "check-list-before-release-tool",
+    "2024部門創新提案",
+    "chrome-遠端桌面設定方式",
+    "genesys-logic-sw-3rd-source-code-license-",
+    "git-gitlab",
+    "gl-bin",
+    "hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd",
+    "how-to-generate-system-log",
+    "hp-silent-install-project-support-list",
+    "lenovo-dmc",
+    "linux-usb-hid-description",
+    "mdgg-mask-code-",
+    "multi-isp-user-guide",
+    "notion-使用方式",
+    "outlook-封存失敗如何設定"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 2,
+    "borderline_count": 2,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "21e64f6b-c656-800d-9172-f88647c5d99b",
+          "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+          "title": "🖥️ Windows 雙網卡企業分流設定SOP（乙太公司內網＋Wi-Fi外網）",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網.md",
+          "site_path": "/general/-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網.html",
+          "category": "general",
+          "domain_tags": [
+            "general"
+          ],
+          "task_tags": [
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "21e64f6b-c656-800d-9172-f88647c5d99b",
+          "notion_updated_at": "2026-01-21T09:46:00.000Z",
+          "exported_at": "2026-04-06T13:13:56.350Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "8aed9530-f90e-4883-970f-39cfa2e1b66e",
+          "slug": "windows-11-core-isolation",
+          "title": "Windows 11 Core isolation",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\windows-11-core-isolation.md",
+          "site_path": "/general/windows-11-core-isolation.html",
+          "category": "general",
+          "domain_tags": [
+            "security"
+          ],
+          "task_tags": [
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "8aed9530-f90e-4883-970f-39cfa2e1b66e",
+          "notion_updated_at": "2022-12-13T08:50:00.000Z",
+          "exported_at": "2026-04-06T13:11:52.075Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 2 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "MEDIUM",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 2,
+    "count_at_0_22": 4,
+    "borderline_count": 2,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-15T07-00-57-270Z",
+  "wave_id": 2,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": true
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 1,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 1,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "基於提供的內容邊界,以下是對「Command Line Tool 記錄方法」的綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "要啟用 Command Line Tool 的記錄功能,需要在 `GLHub.ini` 檔案中將 `EnableLog` 參數設定為 `1`。這個檔案位於 Command Line Tool 的安裝目錄中。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "1. 在啟用記錄功能後,執行 Command Line Tool。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "2. 在 Command Line Tool 的安裝目錄中,找到 `Log` 資料夾。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "2. 分析記錄檔的內容,以了解 Command Line Tool 的執行情況。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "在 HP OCI APP 的文件中,有提到一些與 Command Line Tool 記錄相關的資訊:",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "1. Log 的內容可以由使用者自由決定,主要是為了方便後續維護。[HP OCI APP](path/to/hp-oci-app.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "2. 在某些階段一定要有 Log 記錄,例如檢查檔案是否被修改,確定連接的螢幕和韌體版本是否一致,以及錯誤碼的處理。[HP OCI APP](path/to/hp-oci-app.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-logging-method",
+    "claim": "1. 權限最小化 (Sandboxing)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

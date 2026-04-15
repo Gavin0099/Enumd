@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "ecc-key",
+    "claim": "- 將證書或金鑰使用 DER ASN.1 編碼的原始格式儲存",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- 對於私密金鑰而言, DER 格式會將其放置在 `keyhole.key` 檔案的 `08~27` 位元組中 `[DER Format](https://en.wikipedia.org/wiki/X.509#DER_encoding)`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- 將 DER 格式的證書或金鑰使用 Base64 編碼, 並在頭尾加上標示檔案類型的資訊",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- PEM 格式可以更容易地識別和處理金鑰 `[PEM Format](https://en.wikipedia.org/wiki/Privacy-enhanced_Electronic_Mail)`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- `secp521r1` (預設)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- `secp256r1` (又稱 `prime256v1` 或 `NIST P-256`)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "可以使用 OpenSSL 的 `ecparam` 命令來產生特定曲線格式的 ECC 私密金鑰:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "openssl ecparam -out privatekey.key -name prime256v1 -genkey",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "openssl ec -in privatekey.key -pubout > publickey.pub",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "openssl ec -inform DER -in privatekey.der -pubout > publickey.pub",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "2. 在 PEM 和 DER 格式之間轉換:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "openssl ec -inform PEM -in private-key.pem -outform DER -out cert.der",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "openssl ec -pubin -in publickey.pub -outform DER -out cert.der",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "ECC 簽章的格式通常遵循 ASN.1 編碼, 包含 `r` 和 `s` 兩個部分. 以下是一個範例:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "9D AC 93 72 3D 6D B6 27",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "C9 47 37 2C 5F 80 C0 A6",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "C0 28 08 7B BF 6E 86 99",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "26 AD 48 AC DB 7A 46 EE sig_r",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "9B F6 E2 3B 74 C7 CE A3",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "75 A4 BC 2A F9 B1 84 49",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "6D 0F 8F 13 2B 25 40 1C",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "C8 FB C1 F6 F4 BE 81 EE 83 sig_s",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "IKV 使用的是 NIST P-256 曲線, 而 mbedTLS 則使用 `secp256r1` 或 `secp256k1` 曲線. OpenSSL 支援多種曲線, 包括 `secp256r1`、`secp256k1` 和 `prime256v1`.",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "3. 簽章和驗證流程是否正確遵循 ECC 基本運算 (加法和乘法)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "此外, 為了滿足 FIPS 140-2 Level 3 的安全標準, Genesys Logic 採用了基於 ECDSA 演算法和 NIST P-256 曲線的內部簽章系統, 並使用 FIPS L3 認證的 USB eToken 硬體來安全地儲存金鑰.",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

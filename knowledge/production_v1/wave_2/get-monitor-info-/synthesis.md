@@ -1,0 +1,25 @@
+
+# 取得顯示器資訊 (Get Monitor Info)
+
+由於目前市面上顯示器型號眾多,導致 hub 的 PID/VID 可能會與某些型號發生衝突,進而更新到錯誤的型號。為了避免此問題,我們可以透過 Windows API 直接取得顯示器的相關資訊。目前有以下兩種方式可供選擇:
+
+### 透過標準 DDCCI 命令詢問
+[Sample Code](https://genesyslogic.com.tw/GenesysData/SW_Release_New/Monitor/get-monitor-info-.html)
+
+這種方式是直接透過 DDCCI 協定與顯示器溝通,並詢問型號名稱(model name)。不過目前只能取得型號名稱,且每個顯示器下達命令大約需要 2-3 秒的回應時間。如果有 3 台以上的顯示器,總共的回應時間可能會達到 10 秒。
+
+備註: 顯示器 OSD 上顯示的型號名稱就是透過此方式取得的。
+
+### 透過 Regedit 方式詢問資訊
+[Sample Code](https://genesyslogic.com.tw/GenesysData/SW_Release_New/Monitor/get-monitor-info-.html)
+
+這種方式會先確認電腦上有哪些顯示器連接,然後再去讀取對應的 Regedit EDID 資訊 (位於 `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\DISPLAY`)。這種方式查詢速度較快,而且可以取得型號名稱、序號等基本 EDID 資訊。
+
+備註: 顯示器 EDID 資訊通常是由代工廠修改提供的,所以較資淺的韌體工程師可能沒有注意到這一點,導致 EDID 資訊沒有被正確修改。此外,有些顯示器的 EDID 資訊需要解密後才能查看。
+
+1. [Camera 透過我們驗證 code sign](./camera-透過我們驗證-code-sign.html)
+   - 說明 Camera 的 code sign 驗證流程,以及相關的 update 機制。
+2. [Etoken System Code View](./etoken-system-code-view-.html)
+   - 審核 etoken_dongle_server 和 etoken_server 的程式碼,發現存在多處安全性風險,如 SQL 注入、記憶體洩漏等問題。
+3. [HID Code Sign 記錄](./hid-code-sign-記錄.html)
+   - 記錄 HID 韌體更新的相關協定、工具和測試情況,包括 Vendor Command、HID 預設使用 2.0 等。

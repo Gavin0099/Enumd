@@ -1,0 +1,38 @@
+
+
+'GL Bin' 是一個用於合併和處理 HUB、HostBridge 和 PD 韌體二進制文件的工具。它主要執行以下功能:
+
+1. 偵測輸入文件的類型 (HUB、HostBridge 或 PD)。
+2. 根據不同的芯片類型 (GLI7423、GLI7455 等) 初始化合適的配置。
+3. 讀取並驗證輸入的 HUB 和 HostBridge 數據。
+4. 根據不同的芯片類型處理 HUB 和 HostBridge 數據,並將其合併到最終的 ROM 數據中。
+5. 如果輸入包含 PD 數據,則單獨處理 PD 數據並生成完整的 ROM 文件。
+[未有直接 Source 錨點，待確認] 6. 將最終的 ROM 數據寫入輸出文件。
+
+
+1. **偵測文件類型**：[DetectFileType](https://github.com/Enumd/gl-bin/blob/main/gl-bin.cs#L292) 函數根據文件內容的簽名信息,確定輸入文件是 HUB、HostBridge 還是 PD。
+
+2. **初始化配置**：[InitializeConfig](https://github.com/Enumd/gl-bin/blob/main/gl-bin.cs#L567) 函數根據輸入文件類型和芯片類型,設置 ROM 的總大小、公鑰大小等配置參數。
+
+3. **處理 HUB 和 HostBridge**：[ProcessHubWithOptionalHostBridge](https://github.com/Enumd/gl-bin/blob/main/gl-bin.cs#L395) 函數負責處理 HUB 和可選的 HostBridge 數據,包括讀取、驗證和合併到最終的 ROM 數據中。
+
+4. **處理 PD**：[ProcessPd](https://github.com/Enumd/gl-bin/blob/main/gl-bin.cs#L455) 函數負責處理 PD 數據,包括讀取 PD 數據並生成完整的 ROM 文件。
+
+5. **寫入輸出文件**：[WriteOutputFile](https://github.com/Enumd/gl-bin/blob/main/gl-bin.cs#L270) 函數將最終的 ROM 數據寫入輸出文件。
+
+
+1. **芯片類型判斷**：根據輸入文件的內容,判斷芯片類型 (GLI7423、GLI7455 等),並選擇合適的處理邏輯。
+
+2. **數據合併**：根據不同的芯片類型,將 HUB 和 HostBridge 數據合併到最終的 ROM 數據中,並處理公鑰等特殊區域。
+
+3. **PD 數據處理**：如果輸入包含 PD 數據,則單獨處理 PD 數據並生成完整的 ROM 文件。
+
+
+
+[未有直接 Source 錨點，待確認] 1. **Options 類**：包含輸入文件路徑、輸出文件路徑和簽名類型等配置參數。
+2. **RomConfig 類**：包含 ROM 的總大小、公鑰大小等配置參數。
+[未有直接 Source 錨點，待確認] 3. **Logger 類**：用於記錄處理過程中的日誌信息。
+4. **RomConstants 類**：定義了一些常量,如 BLOCK_SIZE、NULL_DATA_SIZE 等。
+
+
+'GL Bin' 工具是一個用於合併和處理 HUB、HostBridge 和 PD 韌體二進制文件的關鍵組件。它能夠根據不同的芯片類型,正確地處理和合併輸入數據,生成最終的 ROM 文件。該工具的核心功能包括文件類型偵測、配置初始化、數據處理和輸出文件寫入等。

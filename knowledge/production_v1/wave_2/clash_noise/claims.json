@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "clash_noise",
+    "claim": "[Synthetic Clash Noise Test](clash_noise.html)是一個合成節點,旨在測試 Sonnet 在遇到不同類別(固件 vs HR)時的紀律。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "clash_noise",
+    "claim": "1. [Synthetic Low Integrity Noise](low_integrity_noise.html)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "clash_noise",
+    "claim": "- [[p32p-30-factory-reset]]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "clash_noise",
+    "claim": "- [[f12-console-log-dump]]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "clash_noise",
+    "claim": "本合成證據內核提供了 \"Synthetic Clash Noise Test\" 的核心主題及其相關概念和上下文。它描述了這個合成節點的目的,即測試 Sonnet 在處理不同類別數據時的表現。此外,它還列出了與此主題相關的其他概念和上下文,如 \"Synthetic Low Integrity Noise\"。然而,由於提供的上下文有限,無法進一步深入探討這些相關概念的細節。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

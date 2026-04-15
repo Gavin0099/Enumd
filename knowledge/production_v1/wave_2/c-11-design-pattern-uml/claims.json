@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "報告書：C++ 11 & Design Pattern & UML",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "C++ 11 引入了許多新的語言特性,包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "1. `auto` 關鍵字 - 可以自動推斷變數類型,減少冗長的類型宣告 [`C++ auto variable tutorial`](https://blog.gtwang.org/programming/cpp-auto-variable-tutorial/)。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "2. 智慧型指標 (Smart Pointer) - 如 `unique_ptr`、`shared_ptr` 和 `weak_ptr`,可以自動管理記憶體生命週期,避免手動釋放記憶體造成的錯誤 [`C++11 Smart Pointer Part 2`](https://kheresy.wordpress.com/2012/03/05/c11_smartpointer_p2/)。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "C++ 11 標準函式庫也引入了許多新特性,例如:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "[Refactoring.Guru](https://refactoring.guru/design-patterns) 是一個很好的設計模式學習資源,提供了各種模式的詳細介紹和範例。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "[UML 教學文章](http://glj8989332.blogspot.com/2018/02/design-pattern-uml.html)提供了 UML 基本概念和常用圖表的介紹。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "1. [C++ 11 新特性介紹](https://medium.com/@tjsw)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "2. [C++ auto 關鍵字教學](https://blog.gtwang.org/programming/cpp-auto-variable-tutorial/)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "3. [C++ 11 Smart Pointer 教學](https://kheresy.wordpress.com/2012/03/05/c11_smartpointer_p2/)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "4. [設計模式與 UML 教學](http://glj8989332.blogspot.com/2018/02/design-pattern-uml.html)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "5. [從 DSA 作業看 C++ 課程不一定會教你的那些事](https://qbane1296.medium.com/從-dsa-作業看-c-課程不一定會教你的那些事-6ff52976ecc4)",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "6. [C++ 11 新特性整理](https://zh.codeprj.com/blog/567c661.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "c-11-design-pattern-uml",
+    "claim": "7. [設計模式與 OOP 基礎觀念](http://glj8989332.blogspot.com/2017/11/design-pattern-oop.html)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

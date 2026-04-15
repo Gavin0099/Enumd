@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "genesys-logic-spec",
+    "claim": "以下是基於提供的內容邊界所合成的「Genesys Logic Spec」文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "genesys-logic-spec",
+    "claim": "PD 組態 (PD Configuration)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "genesys-logic-spec",
+    "claim": "9510 更新流程 (9510 update flow)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "以下是 Bus Hound 簡易說明的文件:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "Bus Hound 是一款可以抓取 USB 傳輸資料的工具。以下是它的主要功能:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **CTL**: 代表 USB control transfer，是工具傳送給 USB 裝置的資料。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **IN**: 代表 USB 裝置傳回來的資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **Run & Stop**: 按下 Run 會持續抓取 USB 裝置的資料，按下 Stop 則會停止抓取。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "選擇 Save 即可儲存抓取到的 USB 裝置資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **Capture Capacity**: 最多可以抓取的大小，如果超過就必須停止抓取並重新開始。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **Max Record Length**: 每個 packet 最多能抓取的資料大小。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **Stop when**: 設定遇到什麼條件會停止抓取。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **Phases to Capture**: 勾選要抓取的資料類型。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "- **Columns to Display**: 勾選要顯示的資訊。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "選擇要抓取的裝置，可以透過 Hardware ID 來識別。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bus-hound-簡易說明",
+    "claim": "以上就是 Bus Hound 的主要功能說明。如需更多資訊，請參考 [HP OCI APP](path/to/hp-oci-app.html) 和 [Clawdbot 自主代理建置與資安防禦全紀錄](path/to/-clawdbot-自主代理建置與資安防禦全紀錄.html) 中的相關內容。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

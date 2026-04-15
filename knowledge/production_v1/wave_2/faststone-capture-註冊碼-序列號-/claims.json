@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "FastStone Capture 是一款強大的螢幕擷取和影像編輯軟體。為了使用該軟體的所有功能,使用者需要輸入有效的註冊碼和序列號。本文將提供兩組可用的註冊資訊供參考。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "以下是兩組可用的 FastStone Capture 註冊碼和序列號:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "1. 使用者名稱: TEAM JiOO",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "註冊碼: CPCWXRVCZW30HMKE8KQQUXW",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "2. 使用者名稱: TEAM_BRAiGHTLiNG_2007",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "註冊碼: XPNMF-ISDYF-LCSED-BPATU",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "請注意,這些註冊資訊可能會隨時過期或失效,建議您在使用時先確認其有效性。如果您需要更多協助,請聯繫 FastStone Capture 的客戶支援團隊。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "在本文件中,我們提到了 Genesys Logic 的韌體簽署和驗證流程 `[Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)`。這是因為 FastStone Capture 的註冊碼和序列號的生成和驗證可能涉及類似的加密和安全機制。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "faststone-capture-註冊碼-序列號-",
+    "claim": "此外,我們也參考了 `[3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)` 和 `[3rd party code signing specification (ECDSA)(EN)](3rd-party-code-signing-specification-ecdsaen-.html)` 中的相關資訊,以了解 code signing 的一般流程和實現方式。",
+    "tier": "Explicit",
+    "evidence_score": 29,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

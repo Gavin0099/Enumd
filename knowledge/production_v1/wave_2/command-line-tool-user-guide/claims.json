@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "command-line-tool-user-guide",
+    "claim": "本指南介紹如何使用命令列工具更新 ThinkVision P49W-30 顯示器的韌體。需要以管理員身份運行命令提示字元，並輸入特定路徑以執行提供的批次檔案來更新 Hub 和 Scaler 韌體。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

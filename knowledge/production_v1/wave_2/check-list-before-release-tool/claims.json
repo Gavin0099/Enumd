@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "1. InBox 驅動程式 (HID) - 預計要支援的晶片為",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "1. AMD (Win8.1、Win10 X86、Win10 X64、Win11)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "1. Intel (Win8.1、Win10 X86、Win10 X64、Win11)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "紅色 + 綠色 : 時間充裕要測試的平台",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "本文件提供了 HID 更新流程、Vendor Command 規範、HID 預設使用 2.0 版本等相關資訊。此外也列出了一些已驗證和待解決的問題，如 HID 會將重抓到的裝置當成不同個、OS 有時無法識別裝置、Scaler update 在 set report 和 write command 時的問題等。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "此文件概述了 HP OCI Tool 的一些短期和中期工作項目，包括 732xk OCI disconnect update error、HP Samus Link - SN Sync Check Tool、DSDK-527 GL_SDK.dll crash 等問題，以及 HP OCI Tool 的後續開發計畫。",
+    "tier": "Explicit",
+    "evidence_score": 24,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "2. **工具測試**: 針對標準 ISP 工具、GL 終端使用者工具、GL 命令列工具、HP 終端使用者工具和 HP 靜默模式更新工具等進行測試。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "check-list-before-release-tool",
+    "claim": "3. **相關內容參考**: 包括 [HID Code Sign 記錄]、[HP OCI Tool 工作彙整]和 [Secure Firmware Recovery] 等文件，提供了更多背景資訊和相關技術細節。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

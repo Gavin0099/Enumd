@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "在 AMD 平台上(包括 Lenovo 平台),如果有安裝 Cisco Webex,在安裝驅動程式時會有機率發生驅動程式安裝失敗的情況。失敗的現象包括:",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "1. 某些 Hub 驅動程式無法正常啟動,導致工具詢問 Hub 資訊時出錯。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "在 TPV 美國 FAE 發現,使用 HP EndUser Tool 更新 E27m 或 E34m Scaler 時會失敗。主要問題為:",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "1. Scaler 更新完成後重置 MCU,會導致驅動程式抓取到的 Hub 設備出錯。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "3. 這個問題似乎是由 Cisco Webex 造成的。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "1. 針對 Cisco Webex 造成的驅動程式安裝失敗問題,可以嘗試以下步驟:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "- 透過命令列方式卸載 Genesys Logic Generic USB Class Filter Driver 和 Evernote 等相關驅動程式。[Command line uninstall driver](driver/command-line-uninstall-driver.html)",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "2. 針對 HP EndUser Tool 更新 Scaler 失敗的問題,可以嘗試以下步驟:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "- 先卸載 Genesys Logic Generic USB Class Filter Driver 等相關驅動程式。[HP ISP Tool 遇到舊driver 移除方式和新driver安裝方式](driver/hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "- 重新啟動系統後,再次嘗試使用 HP ISP Tool 安裝最新的驅動程式。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "1. Cisco Webex 安裝可能會導致 AMD 平台上的驅動程式安裝失敗。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "e27m-e34m-driver-install-fail",
+    "claim": "2. HP EndUser Tool 更新 Scaler 時,如果系統中存在舊版驅動程式,也會導致更新失敗。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]

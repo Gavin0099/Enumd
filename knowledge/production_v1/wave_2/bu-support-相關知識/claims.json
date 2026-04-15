@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "Support Chip 是指用於支援主控制器(MCU)的輔助晶片,通常包含以下功能:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "Support Chip 的具體實現會因應不同的應用場景而有所不同。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "Flash 記憶體是一種非揮發性記憶體,常用於儲存韌體(Firmware)、配置參數等資料。存取 Flash 記憶體需要注意以下事項:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "- 讀取 Flash 資料時,需要確保資料的完整性和正確性 `[Code sign Flow](code-sign/code-sign-flow.html)`",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "- 更新 Flash 資料時,需要遵循安全的更新流程,以防止韌體被破壞 `[HID Code Sign Update Rule](code-sign/hid-code-sign-update-rule.html)`",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "Hub ISP (In-System Programming) Flow 描述了透過 Hub 晶片進行韌體更新的流程,主要包括:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "1. 驗證更新資料的合法性 `[Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "PD ISP (In-System Programming) Flow 描述了透過 PD (Power Delivery) 晶片進行韌體更新的流程,與 Hub ISP Flow 類似,主要包括:",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "Code flow 描述了韌體程式碼的執行流程,包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "Code flow 的設計需要考慮效能、穩定性和安全性等因素,確保韌體能夠正確運行。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "bu-support-相關知識",
+    "claim": "除了 Hub 和 PD 之外,有時還會有其他輔助性的第三方晶片,它們也可能需要進行獨立的韌體更新。第三方晶片的 ISP Flow 通常會遵循類似的步驟:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  }
+]
