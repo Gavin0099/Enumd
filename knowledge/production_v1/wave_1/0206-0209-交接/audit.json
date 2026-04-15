@@ -125,5 +125,14 @@
     "model_used": "claude-3-haiku-20240307",
     "skipped": false
   },
-  "backfilled_at": "2026-04-15T04:00:40.180Z"
+  "backfilled_at": "2026-04-15T04:00:40.180Z",
+  "suppression_decision": {
+    "tier": "SUPPRESS_DERIVED",
+    "node_type": "HANDOFF",
+    "unsupported_ratio": 0.8571428571428571,
+    "derived_count": 7,
+    "reason": "HANDOFF node: 6/7 Derived claims unsupported (86%). Handoff-type sources have misleading keyword overlap.",
+    "suppression_note": "⚠️ Derived-tier claims suppressed: handoff/memo source with high semantic drift. Source-near claims retained.",
+    "removed_count": 7
+  }
 }

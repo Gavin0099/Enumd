@@ -110,5 +110,14 @@
     "model_used": "claude-3-haiku-20240307",
     "skipped": false
   },
-  "backfilled_at": "2026-04-15T04:00:13.185Z"
+  "backfilled_at": "2026-04-15T04:00:13.185Z",
+  "suppression_decision": {
+    "tier": "SUPPRESS_DERIVED",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.75,
+    "derived_count": 4,
+    "reason": "Majority-unsupported Derived tier: 3/4 (75%). Derived claims cannot be collectively trusted as source-derived.",
+    "suppression_note": "⚠️ Derived-tier claims suppressed: majority of Derived claims lacked semantic source support. Source-near claims retained.",
+    "removed_count": 4
+  }
 }

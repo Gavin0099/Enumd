@@ -25,15 +25,24 @@ import { enforceDraft } from "../lib/synthesis-enforcer";
 import { runKalCheck } from "../lib/kal-checker";
 import { runSemanticScoring } from "../lib/semantic-scorer";
 import { extractVerifiedClaims, AtomicClaim } from "../lib/claim-store";
+import {
+    classifyNodeType,
+    evaluateDerivedSuppression,
+    applySuppressionToClaims,
+    SuppressionDecision,
+} from "../lib/tiered-enforcement-policy";
 
 const KNOWLEDGE_DIR = join(process.cwd(), "knowledge");
 const PROD_DIR = join(KNOWLEDGE_DIR, "production_v1");
 
 const waveArg = process.argv.find(a => a.startsWith("--wave="))?.split("=")[1];
-const dryRun = process.argv.includes("--dry-run");
+const dryRun  = process.argv.includes("--dry-run");
+// --force-suppression: re-apply tiered suppression on already-backfilled nodes
+// (does NOT re-run KAL/semantic API calls — only re-classifies + re-filters claims)
+const forceSuppression = process.argv.includes("--force-suppression");
 
 if (!waveArg) {
-    console.error("Usage: npx tsx --env-file .env.local scripts/backfill-wave-audit.ts --wave=<N> [--dry-run]");
+    console.error("Usage: npx tsx --env-file .env.local scripts/backfill-wave-audit.ts --wave=<N> [--dry-run] [--force-suppression]");
     process.exit(1);
 }
 
@@ -80,6 +89,9 @@ interface NodeStat {
     semantic_uncertain: number;
     semantic_unsupported: number;
     semantic_total: number;
+    suppression_tier: string;
+    suppression_removed: number;
+    node_type: string;
     status: "processed" | "skipped_already_done" | "failed";
     error?: string;
 }
@@ -104,14 +116,15 @@ async function run() {
         const sourceXml = readText(join(nodeDir, "source.xml"));
         const audit = JSON.parse(readText(join(nodeDir, "audit.json")) || "{}") as Record<string, any>;
 
-        // Skip if already backfilled (idempotent)
-        if (audit.kal_report) {
+        // Skip if already backfilled (idempotent) — unless --force-suppression
+        if (audit.kal_report && !forceSuppression) {
             console.log(`   ⏭️  Already backfilled — collecting existing data`);
             const existingClaims: AtomicClaim[] = existsSync(join(nodeDir, "claims.json"))
                 ? JSON.parse(readFileSync(join(nodeDir, "claims.json"), "utf8"))
                 : [];
             waveAtomicClaims.push(...existingClaims);
             const sr = audit.semantic_audit ?? {};
+            const existingSupp = audit.suppression_decision ?? {};
             nodeStats.push({
                 slug,
                 topology: String(audit.advisory?.topology_status ?? "?"),
@@ -123,7 +136,72 @@ async function run() {
                 semantic_uncertain: sr.uncertain ?? 0,
                 semantic_unsupported: sr.unsupported ?? 0,
                 semantic_total: sr.total_checked ?? 0,
+                suppression_tier: existingSupp.tier ?? "PASS",
+                suppression_removed: existingSupp.removed_count ?? 0,
+                node_type: existingSupp.node_type ?? "STANDARD",
                 status: "skipped_already_done",
+            });
+            continue;
+        }
+
+        // --force-suppression: re-apply tiered suppression without re-calling APIs
+        if (audit.kal_report && forceSuppression) {
+            console.log(`   🔄 Re-applying tiered suppression (no API calls)`);
+            const { report: enfReport } = enforceDraft(synthesis, sourceXml);
+            const semanticReport = audit.semantic_audit as any;
+            const kalVerdict = audit.kal_report?.verdict ?? "?";
+            const nodeType = classifyNodeType(slug, synthesis, sourceXml, kalVerdict);
+            const suppression: SuppressionDecision = evaluateDerivedSuppression(
+                slug, nodeType, semanticReport, kalVerdict
+            );
+
+            const rawClaims = extractVerifiedClaims(slug, enfReport.verdicts, waveId, String(audit.batch_id ?? "backfill"));
+            const { filtered: nodeClaims, removed_count: suppressedCount } = applySuppressionToClaims(rawClaims, suppression);
+            waveAtomicClaims.push(...nodeClaims);
+
+            if (suppression.tier === "SUPPRESS_DERIVED") {
+                console.log(`   🚫 SUPPRESSION: ${suppression.reason}`);
+            } else if (suppression.tier === "AUDIT_FLAG") {
+                console.log(`   🚩 AUDIT_FLAG: ${suppression.reason}`);
+            } else {
+                console.log(`   ✅ PASS (${nodeType})`);
+            }
+            if (suppressedCount > 0) {
+                console.log(`   📦 CLAIMS: ${nodeClaims.length} retained (${suppressedCount} Derived suppressed)`);
+            } else {
+                console.log(`   📦 CLAIMS: ${nodeClaims.length} verified claims`);
+            }
+
+            audit.suppression_decision = {
+                tier: suppression.tier,
+                node_type: suppression.node_type,
+                unsupported_ratio: suppression.unsupported_ratio,
+                derived_count: suppression.derived_count,
+                reason: suppression.reason,
+                suppression_note: suppression.suppression_note,
+                removed_count: suppressedCount,
+            };
+
+            if (!dryRun) {
+                writeFileSync(join(nodeDir, "audit.json"), JSON.stringify(audit, null, 2));
+                writeFileSync(join(nodeDir, "claims.json"), JSON.stringify(nodeClaims, null, 2));
+            }
+
+            nodeStats.push({
+                slug,
+                topology: String(audit.advisory?.topology_status ?? "?"),
+                trust: String(audit.decision_basis?.pilot_evaluation?.trust_level ?? "UNKNOWN"),
+                noise: String(audit.outcome_metrics?.noise_signal ?? "?"),
+                kal: String(audit.kal_report?.verdict ?? "?"),
+                claims: nodeClaims.length,
+                semantic_supported: semanticReport?.supported ?? 0,
+                semantic_uncertain: semanticReport?.uncertain ?? 0,
+                semantic_unsupported: semanticReport?.unsupported ?? 0,
+                semantic_total: semanticReport?.total_checked ?? 0,
+                suppression_tier: suppression.tier,
+                suppression_removed: suppressedCount,
+                node_type: String(nodeType),
+                status: "processed",
             });
             continue;
         }
@@ -145,12 +223,28 @@ async function run() {
                 console.log(`   ${flag} SEMANTIC: ${semanticReport.supported}/${semanticReport.total_checked} Derived confirmed (${semanticReport.unsupported} unsupported)`);
             }
 
-            // 4. Extract verified claims
-            const nodeClaims = extractVerifiedClaims(slug, report.verdicts, waveId, String(audit.batch_id ?? "backfill"));
-            waveAtomicClaims.push(...nodeClaims);
-            console.log(`   📦 CLAIMS: ${nodeClaims.length} verified claims`);
+            // 4. Tiered suppression policy
+            const nodeType = classifyNodeType(slug, synthesis, sourceXml, kalResult.verdict);
+            const suppression: SuppressionDecision = evaluateDerivedSuppression(
+                slug, nodeType, semanticReport, kalResult.verdict
+            );
+            if (suppression.tier === "SUPPRESS_DERIVED") {
+                console.log(`   🚫 SUPPRESSION: ${suppression.reason}`);
+            } else if (suppression.tier === "AUDIT_FLAG") {
+                console.log(`   🚩 AUDIT_FLAG: ${suppression.reason}`);
+            }
 
-            // 5. Patch audit.json
+            // 5. Extract verified claims, then apply suppression filter
+            const rawClaims = extractVerifiedClaims(slug, report.verdicts, waveId, String(audit.batch_id ?? "backfill"));
+            const { filtered: nodeClaims, removed_count: suppressedCount } = applySuppressionToClaims(rawClaims, suppression);
+            waveAtomicClaims.push(...nodeClaims);
+            if (suppressedCount > 0) {
+                console.log(`   📦 CLAIMS: ${nodeClaims.length} retained (${suppressedCount} Derived suppressed)`);
+            } else {
+                console.log(`   📦 CLAIMS: ${nodeClaims.length} verified claims`);
+            }
+
+            // 6. Patch audit.json
             audit.kal_report = {
                 verdict: kalResult.verdict,
                 passed: kalResult.passed,
@@ -160,6 +254,15 @@ async function run() {
                 questions: kalResult.questions,
             };
             audit.semantic_audit = semanticReport;
+            audit.suppression_decision = {
+                tier: suppression.tier,
+                node_type: suppression.node_type,
+                unsupported_ratio: suppression.unsupported_ratio,
+                derived_count: suppression.derived_count,
+                reason: suppression.reason,
+                suppression_note: suppression.suppression_note,
+                removed_count: suppressedCount,
+            };
             audit.backfilled_at = new Date().toISOString();
 
             if (!dryRun) {
@@ -178,6 +281,9 @@ async function run() {
                 semantic_uncertain: semanticReport.uncertain,
                 semantic_unsupported: semanticReport.unsupported,
                 semantic_total: semanticReport.total_checked,
+                suppression_tier: suppression.tier,
+                suppression_removed: suppressedCount,
+                node_type: String(nodeType),
                 status: "processed",
             });
         } catch (e: any) {
@@ -187,6 +293,7 @@ async function run() {
                 slug, topology: "?", trust: "?", noise: "?", kal: "ERROR",
                 claims: 0, semantic_supported: 0, semantic_uncertain: 0,
                 semantic_unsupported: 0, semantic_total: 0,
+                suppression_tier: "PASS", suppression_removed: 0, node_type: "?",
                 status: "failed", error: e.message,
             });
         }
@@ -204,14 +311,20 @@ async function run() {
     const thinCount    = nodeStats.filter(r => r.kal === "THIN_SYNTHESIS").length;
     const skipCount    = nodeStats.filter(r => r.kal === "SKIPPED").length;
 
+    const suppressedNodes = nodeStats.filter(r => r.suppression_tier === "SUPPRESS_DERIVED").length;
+    const flaggedNodes    = nodeStats.filter(r => r.suppression_tier === "AUDIT_FLAG").length;
+
     let md = `# Wave ${waveId} Manifest\n\n`;
-    md += `> KAL summary: ${convergCount} CONVERGED, ${thinCount} THIN_SYNTHESIS, ${skipCount} SKIPPED, ${failedCount} FAILED\n\n`;
-    md += "| Slug | Topology | Trust | Noise | KAL | Claims | Semantic (S/U/X) | Review |\n";
-    md += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n";
+    md += `> KAL: ${convergCount} CONVERGED | ${thinCount} THIN | ${skipCount} SKIPPED | ${failedCount} FAILED\n`;
+    md += `> Suppression: ${suppressedNodes} SUPPRESS_DERIVED | ${flaggedNodes} AUDIT_FLAG\n\n`;
+    md += "| Slug | Type | KAL | Claims | Semantic (S/U/X) | Suppression | Review |\n";
+    md += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n";
     for (const r of nodeStats) {
-        const kalIcon = r.kal === "CONVERGED" ? "✅" : r.kal === "THIN_SYNTHESIS" ? "⚠️" : r.kal === "SKIPPED" ? "⏭️" : r.kal === "ERROR" ? "❌" : "❓";
-        const semStr = r.semantic_total > 0 ? `${r.semantic_supported}/${r.semantic_uncertain}/${r.semantic_unsupported}` : "—";
-        md += `| ${r.slug} | ${r.topology} | ${r.trust} | ${r.noise} | ${kalIcon} ${r.kal} | ${r.claims} | ${semStr} | [ ] |\n`;
+        const kalIcon  = r.kal === "CONVERGED" ? "✅" : r.kal === "THIN_SYNTHESIS" ? "⚠️" : r.kal === "SKIPPED" ? "⏭️" : r.kal === "ERROR" ? "❌" : "❓";
+        const suppIcon = r.suppression_tier === "SUPPRESS_DERIVED" ? "🚫 SUPPRESS" : r.suppression_tier === "AUDIT_FLAG" ? "🚩 FLAG" : "✅ PASS";
+        const semStr   = r.semantic_total > 0 ? `${r.semantic_supported}/${r.semantic_uncertain}/${r.semantic_unsupported}` : "—";
+        const typeIcon = r.node_type === "HANDOFF" ? "📋" : r.node_type === "FRAGMENTARY" ? "🪟" : "📄";
+        md += `| ${r.slug} | ${typeIcon} ${r.node_type} | ${kalIcon} ${r.kal} | ${r.claims} | ${semStr} | ${suppIcon} | [ ] |\n`;
     }
     if (!dryRun) writeFileSync(join(waveDir, "manifest.md"), md);
 
@@ -229,6 +342,8 @@ async function run() {
     const semUnsup   = nodeStats.reduce((s, r) => s + r.semantic_unsupported, 0);
     const semPct     = (n: number) => semTotal > 0 ? `${((n / semTotal) * 100).toFixed(0)}%` : "—";
 
+    const totalSuppressedClaims = nodeStats.reduce((s, r) => s + r.suppression_removed, 0);
+
     const summary = {
         wave_id: waveId,
         generated_at: new Date().toISOString(),
@@ -239,12 +354,30 @@ async function run() {
             already_done: nodeStats.filter(r => r.status === "skipped_already_done").length,
             failed: failedCount,
         },
+        node_types: {
+            standard: nodeStats.filter(r => r.node_type === "STANDARD").length,
+            handoff: nodeStats.filter(r => r.node_type === "HANDOFF").length,
+            fragmentary: nodeStats.filter(r => r.node_type === "FRAGMENTARY").length,
+        },
         kal: { converged: convergCount, thin_synthesis: thinCount, skipped: skipCount, error: failedCount },
         claims: {
             total_atomic: waveAtomicClaims.length,
             avg_per_node: parseFloat(avgClaims),
+            total_suppressed: totalSuppressedClaims,
             explosion_nodes: claimExplosion.map(r => ({ slug: r.slug, count: r.claims })),
             collapse_nodes: claimCollapse.map(r => ({ slug: r.slug, count: r.claims })),
+        },
+        suppression: {
+            suppress_derived_count: nodeStats.filter(r => r.suppression_tier === "SUPPRESS_DERIVED").length,
+            audit_flag_count: nodeStats.filter(r => r.suppression_tier === "AUDIT_FLAG").length,
+            pass_count: nodeStats.filter(r => r.suppression_tier === "PASS").length,
+            total_derived_claims_removed: totalSuppressedClaims,
+            suppressed_nodes: nodeStats
+                .filter(r => r.suppression_tier === "SUPPRESS_DERIVED")
+                .map(r => ({ slug: r.slug, node_type: r.node_type, removed: r.suppression_removed })),
+            flagged_nodes: nodeStats
+                .filter(r => r.suppression_tier === "AUDIT_FLAG")
+                .map(r => ({ slug: r.slug, node_type: r.node_type, unsupported: r.semantic_unsupported, total: r.semantic_total })),
         },
         semantic: {
             total_checked: semTotal,
@@ -273,10 +406,27 @@ async function run() {
     console.log(`  BACKFILL SUMMARY — Wave ${waveId}${dryRun ? " [DRY RUN]" : ""}`);
     console.log(`${"═".repeat(60)}`);
     console.log(`  Nodes       : ${summary.node_counts.total} total | ${summary.node_counts.processed} processed | ${summary.node_counts.already_done} already done | ${failedCount} failed`);
+    console.log(`  Node Types  : ${summary.node_types.standard} STANDARD | ${summary.node_types.handoff} HANDOFF | ${summary.node_types.fragmentary} FRAGMENTARY`);
     console.log(`\n  KAL Results`);
     console.log(`    CONVERGED     : ${convergCount}`);
     console.log(`    THIN_SYNTHESIS: ${thinCount}`);
     console.log(`    SKIPPED       : ${skipCount}`);
+    console.log(`\n  Tiered Suppression`);
+    console.log(`    SUPPRESS_DERIVED : ${summary.suppression.suppress_derived_count} nodes (${totalSuppressedClaims} Derived claims removed)`);
+    console.log(`    AUDIT_FLAG       : ${summary.suppression.audit_flag_count} nodes`);
+    console.log(`    PASS             : ${summary.suppression.pass_count} nodes`);
+    if (summary.suppression.suppressed_nodes.length > 0) {
+        console.log(`    Suppressed nodes :`);
+        for (const n of summary.suppression.suppressed_nodes) {
+            console.log(`      ${n.slug} [${n.node_type}] — ${n.removed} Derived removed`);
+        }
+    }
+    if (summary.suppression.flagged_nodes.length > 0) {
+        console.log(`    Flagged nodes    :`);
+        for (const n of summary.suppression.flagged_nodes) {
+            console.log(`      ${n.slug} — ${n.unsupported}/${n.total} unsupported`);
+        }
+    }
     console.log(`\n  Atomic Claims`);
     console.log(`    Total         : ${waveAtomicClaims.length}`);
     console.log(`    Avg / node    : ${avgClaims}`);

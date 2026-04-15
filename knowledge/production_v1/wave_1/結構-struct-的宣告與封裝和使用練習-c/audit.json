@@ -94,5 +94,13 @@
     "model_used": "claude-3-haiku-20240307",
     "skipped": false
   },
-  "backfilled_at": "2026-04-15T04:02:44.006Z"
+  "backfilled_at": "2026-04-15T04:02:44.006Z",
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 18,
+    "reason": "Unsupported rate 0% (0/18) below audit threshold.",
+    "removed_count": 0
+  }
 }

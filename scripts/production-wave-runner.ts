@@ -7,6 +7,11 @@ import { enforceDraft } from "../lib/synthesis-enforcer";
 import { runKalCheck } from "../lib/kal-checker";
 import { extractVerifiedClaims, AtomicClaim } from "../lib/claim-store";
 import { runSemanticScoring } from "../lib/semantic-scorer";
+import {
+    classifyNodeType,
+    evaluateDerivedSuppression,
+    applySuppressionToClaims,
+} from "../lib/tiered-enforcement-policy";
 
 /**
  * Enumd Production Wave Runner (v1)
@@ -169,18 +174,26 @@ async function run() {
             }
             // ────────────────────────────────────────────────────────────
 
+            // ─── TIERED SUPPRESSION ──────────────────────────────────────
+            const nodeType = classifyNodeType(node.slug, cleanedDraft, sourceXml, kalResult.verdict);
+            const suppression = evaluateDerivedSuppression(node.slug, nodeType, semanticReport, kalResult.verdict);
+            if (suppression.tier === "SUPPRESS_DERIVED") {
+                console.log(`   🚫 SUPPRESSION: ${suppression.reason}`);
+            } else if (suppression.tier === "AUDIT_FLAG") {
+                console.log(`   🚩 AUDIT_FLAG: ${suppression.reason}`);
+            }
+            // ────────────────────────────────────────────────────────────
+
             // ─── ATOMIC CLAIM STORE ──────────────────────────────────────
-            // Extract verified claims (KEEP, non-Structural) from enforcement
-            // verdicts and persist them for future cross-node querying / RAG.
-            const nodeClaims = extractVerifiedClaims(
-                node.slug,
-                report.verdicts,
-                currentWaveIdx + 1,
-                BATCH_ID
-            );
+            const rawClaims = extractVerifiedClaims(node.slug, report.verdicts, currentWaveIdx + 1, BATCH_ID);
+            const { filtered: nodeClaims, removed_count: suppressedCount } = applySuppressionToClaims(rawClaims, suppression);
             waveAtomicClaims.push(...nodeClaims);
             writeFileSync(join(dest, "claims.json"), JSON.stringify(nodeClaims, null, 2));
-            console.log(`   📦 CLAIMS: ${nodeClaims.length} verified claims stored`);
+            if (suppressedCount > 0) {
+                console.log(`   📦 CLAIMS: ${nodeClaims.length} retained (${suppressedCount} Derived suppressed)`);
+            } else {
+                console.log(`   📦 CLAIMS: ${nodeClaims.length} verified claims stored`);
+            }
             // ────────────────────────────────────────────────────────────
 
             // Inject governance fields
@@ -202,6 +215,15 @@ async function run() {
                 questions: kalResult.questions,
             };
             audit.semantic_audit = semanticReport;
+            audit.suppression_decision = {
+                tier: suppression.tier,
+                node_type: suppression.node_type,
+                unsupported_ratio: suppression.unsupported_ratio,
+                derived_count: suppression.derived_count,
+                reason: suppression.reason,
+                suppression_note: suppression.suppression_note,
+                removed_count: suppressedCount,
+            };
 
             writeFileSync(join(dest, "synthesis.md"), cleanedDraft);
             writeFileSync(join(dest, "audit.json"), JSON.stringify(audit, null, 2));

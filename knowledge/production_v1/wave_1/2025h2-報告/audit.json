@@ -95,5 +95,13 @@
     "skipped": true,
     "skip_reason": "No Derived-tier claims to verify"
   },
-  "backfilled_at": "2026-04-15T04:01:28.808Z"
+  "backfilled_at": "2026-04-15T04:01:28.808Z",
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
+    "removed_count": 0
+  }
 }

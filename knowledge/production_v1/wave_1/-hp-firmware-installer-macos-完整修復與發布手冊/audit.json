@@ -105,5 +105,13 @@
     "model_used": "claude-3-haiku-20240307",
     "skipped": false
   },
-  "backfilled_at": "2026-04-15T04:00:22.970Z"
+  "backfilled_at": "2026-04-15T04:00:22.970Z",
+  "suppression_decision": {
+    "tier": "AUDIT_FLAG",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.25,
+    "derived_count": 8,
+    "reason": "Non-trivial unsupported rate: 2/8 Derived claims (25%). Flagged for priority reviewer sampling.",
+    "removed_count": 0
+  }
 }

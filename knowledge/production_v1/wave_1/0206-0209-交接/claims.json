@@ -1,65 +1,9 @@
 [
   {
     "slug": "0206-0209-交接",
-    "claim": "2. **HP Z27u G3 EndUser Tool & Silent mode tool**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是 HP 筆電的相關工具，可能需要在交接過程中進行相關的操作和測試。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "5. **Camera 透過我們驗證 code sign**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是關於相機韌體 code sign 驗證的流程，可能需要在交接過程中進行相關的確認和測試。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
     "claim": "6. **HID Code Sign 記錄**",
     "tier": "Explicit",
     "evidence_score": 4,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是關於 HID 韌體 code sign 驗證的相關記錄，可能需要在交接過程中進行相關的確認和測試。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "7. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是關於 HP 筆電 CPU3 韌體 code sign 驗證的問題，可能需要在交接過程中進行相關的確認和解決。",
-    "tier": "Derived",
-    "evidence_score": 3,
     "wave_id": 1,
     "batch_id": "batch_2026-04-14T10-52-56-634Z"
   }

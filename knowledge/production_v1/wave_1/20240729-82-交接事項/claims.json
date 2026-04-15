@@ -1,57 +1,9 @@
 [
   {
     "slug": "20240729-82-交接事項",
-    "claim": "1. **HP Z24m ISP Tool 相關事項 @Bernie.Hsieh**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "- 需要確認 HP Z24m ISP Tool 的相關事項",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
     "claim": "- 需要評估 Foxconn 和聯想的 P27u-20、P40w-20 和 T22i-30 機種的 LADM 需求",
     "tier": "Explicit",
     "evidence_score": 4,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "6. **PA248CRV, PA329CRV FW update tool @Vic Chen**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "7. **P27U-20T Billboard FW Update DEMO 成功視頻 @Vic Chen**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "8. **Mac os 一鍵更新支持_聯想 T24v-30&P34w-20 @Bernie.Hsieh**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "- 需要支援聯想 T24v-30 和 P34w-20 機種的 Mac OS 一鍵更新功能",
-    "tier": "Derived",
-    "evidence_score": 2,
     "wave_id": 1,
     "batch_id": "batch_2026-04-14T10-52-56-634Z"
   }

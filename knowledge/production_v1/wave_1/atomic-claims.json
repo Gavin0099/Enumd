@@ -1,37 +1,5 @@
 [
   {
-    "slug": "-generic-usb-filter-driver-",
-    "claim": "App[\"<b>User Mode App</b><br/>OCI Tool / Updater\"]:::inputNode",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "-generic-usb-filter-driver-",
-    "claim": "subgraph Device_Add [\"Device Add Event (裝置新增事件)\"]",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "-generic-usb-filter-driver-",
-    "claim": "- 使用 Visual Studio 2019/2022 開啟 glusbflt.vcxproj 進行編譯。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "-generic-usb-filter-driver-",
-    "claim": "- 📄 filter_control.c: 處理 IOCTL 請求。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
     "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
     "claim": "報告書：Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)",
     "tier": "Derived",
@@ -265,89 +233,9 @@
   },
   {
     "slug": "0206-0209-交接",
-    "claim": "2. **HP Z27u G3 EndUser Tool & Silent mode tool**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是 HP 筆電的相關工具，可能需要在交接過程中進行相關的操作和測試。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "5. **Camera 透過我們驗證 code sign**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是關於相機韌體 code sign 驗證的流程，可能需要在交接過程中進行相關的確認和測試。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
     "claim": "6. **HID Code Sign 記錄**",
     "tier": "Explicit",
     "evidence_score": 4,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是關於 HID 韌體 code sign 驗證的相關記錄，可能需要在交接過程中進行相關的確認和測試。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "7. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0206-0209-交接",
-    "claim": "- 這是關於 HP 筆電 CPU3 韌體 code sign 驗證的問題，可能需要在交接過程中進行相關的確認和解決。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "4. **Evaluation Request: Supporting CFU for Display FW Update via RTOS_USB Hub_Genesys**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "- 需要支援透過 RTOS USB Hub Genesys 進行顯示器韌體更新的功能。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "1. **Camera 透過我們驗證 code sign**",
-    "tier": "Derived",
-    "evidence_score": 2,
     "wave_id": 1,
     "batch_id": "batch_2026-04-14T10-52-56-634Z"
   },
@@ -356,110 +244,6 @@
     "claim": "- 需要處理相機韌體的 code sign 驗證流程，包括生成 ECDSA 金鑰、告知如何擦除相機、如何讀取相機資料等。",
     "tier": "Explicit",
     "evidence_score": 4,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "2. **HID Code Sign 記錄**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "3. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "- 除了 GL3590 有硬體安全模組外，其他 hub chip 沒有，所以必須使用 FW 進行 code sign 驗證。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "- 討論使用 GL3525 作為範本進行驗證，因為 GL3525 有三個 CPU，Hub 更新後可以用其他 CPU 進行 code sign 驗證。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "1. **Camera 透過我們驗證 code sign** 與 **0326-0330 交接** 的關係:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "- 需要處理相機韌體的 code sign 驗證流程，這是 0326-0330 交接的一部分。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "2. **HID Code Sign 記錄** 與 **0326-0330 交接** 的關係:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "3. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題** 與 **0326-0330 交接** 的關係:",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "0326-0330-交接",
-    "claim": "- 討論了 HP 產品的 code sign 驗證問題，這也是 0326-0330 交接的一部分。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "12261230-交接",
-    "claim": "- HP SSDLC (Secure Software Development Life Cycle) 和 SBOM (Software Bill of Materials) 是 HP 公司的安全軟體開發生命週期和軟體清單管理。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "12261230-交接",
-    "claim": "3. **HP Mandatory Firmware Update Strategy Expansion for Future Projects**:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "12261230-交接",
-    "claim": "4. **HP_Display_Firmware_Update_Specification**:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "12261230-交接",
-    "claim": "6. **One key updater tool for GL3590-OTY20**:",
-    "tier": "Derived",
-    "evidence_score": 3,
     "wave_id": 1,
     "batch_id": "batch_2026-04-14T10-52-56-634Z"
   },
@@ -553,57 +337,9 @@
   },
   {
     "slug": "20240729-82-交接事項",
-    "claim": "1. **HP Z24m ISP Tool 相關事項 @Bernie.Hsieh**",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "- 需要確認 HP Z24m ISP Tool 的相關事項",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
     "claim": "- 需要評估 Foxconn 和聯想的 P27u-20、P40w-20 和 T22i-30 機種的 LADM 需求",
     "tier": "Explicit",
     "evidence_score": 4,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "6. **PA248CRV, PA329CRV FW update tool @Vic Chen**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "7. **P27U-20T Billboard FW Update DEMO 成功視頻 @Vic Chen**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "8. **Mac os 一鍵更新支持_聯想 T24v-30&P34w-20 @Bernie.Hsieh**",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 1,
-    "batch_id": "batch_2026-04-14T10-52-56-634Z"
-  },
-  {
-    "slug": "20240729-82-交接事項",
-    "claim": "- 需要支援聯想 T24v-30 和 P34w-20 機種的 Mac OS 一鍵更新功能",
-    "tier": "Derived",
-    "evidence_score": 2,
     "wave_id": 1,
     "batch_id": "batch_2026-04-14T10-52-56-634Z"
   },
