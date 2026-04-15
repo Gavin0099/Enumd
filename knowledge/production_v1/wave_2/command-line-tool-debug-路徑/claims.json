@@ -17,6 +17,22 @@
   },
   {
     "slug": "command-line-tool-debug-路徑",
+    "claim": "[未有直接 Source 錨點，待確認] `E:\\IsptoolRefine2018\\GLHubUpdateTool\\GLHubUpdateTool\\HubFW`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-debug-路徑",
+    "claim": "[未有直接 Source 錨點，待確認] `E:\\IsptoolRefine2018\\GLHubUpdateTool\\GLHubUpdateTool`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-debug-路徑",
     "claim": "在 [Etoken System Code View](code-sign/etoken-system-code-view-.html) 中，提到了一些與命令行工具相關的問題，例如 detach 工作流程、外部命令執行、協定錯位等。這些問題可能會影響到命令行工具的調試。",
     "tier": "Explicit",
     "evidence_score": 13,

@@ -1,6 +1,14 @@
 [
   {
     "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] ECC 私密金鑰有兩種常見的格式:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
     "claim": "- 將證書或金鑰使用 DER ASN.1 編碼的原始格式儲存",
     "tier": "Derived",
     "evidence_score": 2,
@@ -33,7 +41,31 @@
   },
   {
     "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] ECC 金鑰使用的曲線格式有多種選擇, 常見的包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
     "claim": "- `secp521r1` (預設)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `brainpoolP512r1`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `brainpoolP384r1`",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 2,
@@ -44,6 +76,22 @@
     "claim": "- `secp256r1` (又稱 `prime256v1` 或 `NIST P-256`)",
     "tier": "Explicit",
     "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `secp256k1` (Bitcoin 使用的曲線)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `brainpoolP256r1`",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -60,6 +108,14 @@
     "claim": "openssl ecparam -out privatekey.key -name prime256v1 -genkey",
     "tier": "Explicit",
     "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] ECC 金鑰可以在不同格式之間進行轉換, 常見的操作包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -180,6 +236,14 @@
     "claim": "IKV 使用的是 NIST P-256 曲線, 而 mbedTLS 則使用 `secp256r1` 或 `secp256k1` 曲線. OpenSSL 支援多種曲線, 包括 `secp256r1`、`secp256k1` 和 `prime256v1`.",
     "tier": "Explicit",
     "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] 在實作 ECC 金鑰管理和簽章時, 需要注意以下幾點:",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },

@@ -576,46 +576,6 @@
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
   {
-    "slug": "chatgpt-簡介",
-    "claim": "ChatGPT 是一種由 OpenAI 研發的自然語言生成模型，它專門用於聊天機器人和文本生成系統。它的架構包括一個輸入模塊和一個輸出模塊，輸入模塊接收用戶的輸入，並將其轉換為模型能夠理解的形式，輸出模塊則將模型的輸出轉換為人類可以理解的文本。ChatGPT 可以生成高質量的自然語言文本，並根據用戶輸入進行智能回應。",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "chatgpt-簡介",
-    "claim": "- 根據上下文生成相關內容。 ChatGPT具有記憶力，能夠根據對話的上下文，更好地理解和回答問題",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "chatgpt-簡介",
-    "claim": "- 詢問非典型問題：在這個例子裡面，原本Mac 上 USB control 是透過 USB Device Interface 去操作的，我想問chatGPT的問題為可以直接把USB Device Interface 抓到的handle 直接套用HID SetReport handel是否可行",
-    "tier": "Explicit",
-    "evidence_score": 15,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "chatgpt-簡介",
-    "claim": "- 詢問不熟悉功能：在這個例子裡面，Mac UI 寫法已經很久沒寫了，我單純要寫一個UI的控制功能",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "chatgpt-簡介",
-    "claim": "- 錯誤回答：在這個例子裡面，我想要尋找抓取HID全部device的寫法，然後遇到權限問題",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
     "slug": "chatgpt-temp",
     "claim": "1. `run_installer()`: 這個函數會嘗試最多 200 次執行韌體安裝程序。如果安裝過程中出現任何異常,它會捕捉錯誤並打印相關訊息。",
     "tier": "Derived",
@@ -668,6 +628,46 @@
     "claim": "`ChatGPT temp` 是一個用於自動執行 HP 顯示器韌體安裝的 Python 程式碼片段。它與 HP 的韌體更新規範以及可能出現的驅動程式安裝問題密切相關。在使用該程式碼時,需要確保驅動程式的正確安裝,並遵循 HP 的韌體更新要求。",
     "tier": "Explicit",
     "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chatgpt-簡介",
+    "claim": "ChatGPT 是一種由 OpenAI 研發的自然語言生成模型，它專門用於聊天機器人和文本生成系統。它的架構包括一個輸入模塊和一個輸出模塊，輸入模塊接收用戶的輸入，並將其轉換為模型能夠理解的形式，輸出模塊則將模型的輸出轉換為人類可以理解的文本。ChatGPT 可以生成高質量的自然語言文本，並根據用戶輸入進行智能回應。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chatgpt-簡介",
+    "claim": "- 根據上下文生成相關內容。 ChatGPT具有記憶力，能夠根據對話的上下文，更好地理解和回答問題",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chatgpt-簡介",
+    "claim": "- 詢問非典型問題：在這個例子裡面，原本Mac 上 USB control 是透過 USB Device Interface 去操作的，我想問chatGPT的問題為可以直接把USB Device Interface 抓到的handle 直接套用HID SetReport handel是否可行",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chatgpt-簡介",
+    "claim": "- 詢問不熟悉功能：在這個例子裡面，Mac UI 寫法已經很久沒寫了，我單純要寫一個UI的控制功能",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "chatgpt-簡介",
+    "claim": "- 錯誤回答：在這個例子裡面，我想要尋找抓取HID全部device的寫法，然後遇到權限問題",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -1040,6 +1040,182 @@
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
   {
+    "slug": "code-sign-ecc-key",
+    "claim": "報告書：Code sign - ECC key",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "根據提供的內容，Genesys Logic 公司為了滿足韌體安全驗證的需求，建立了一套基於 ECDSA 加密演算法的程式碼簽署與驗證流程。此流程採用 FIPS 140-2 Level 3 認證的 USB eToken 硬體作為金鑰儲存裝置，並搭配自行開發的 SDK 應用程式實現高度客製化的簽署工作流程。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "1. 所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "2. 採用 ECDSA nistp256 加密演算法。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "1. **金鑰生成與佈署**：使用 FIPS L3 認證的 USB eToken 硬體生成 ECDSA 金鑰對，並透過自行開發的金鑰管理系統（KMS）進行安全的金鑰佈署。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html#-genkey-金鑰生成與佈署流程解析)",
+    "tier": "Explicit",
+    "evidence_score": 23,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "2. **檔案簽署**：將韌體映像檔透過 ECDSA 私鑰進行數位簽章，生成帶有簽章資訊的 signed bin 檔案。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html#-sign-file-簽署檔案工作流程)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "3. **簽章驗證**：在韌體更新時，透過 ECDSA 公鑰驗證 signed bin 檔案的合法性。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html#-端到端的程式碼簽署與驗證完整流程)",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "Genesys Logic 提供了兩種程式碼簽署的實作方式：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "1. **使用 OpenSSL**：透過 OpenSSL 命令列工具生成金鑰對、簽署檔案並合併 signed bin 檔案。[`Genesys Logic code sign overview`](/code-sign/code-sign-ecc-key.html#implement--using-openssl-)",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "2. **使用 eToken**：利用 FIPS L3 認證的 USB eToken 硬體儲存私鑰，並搭配自行開發的 SDK 應用程式實現簽署流程。[`3rd party code signing specification (ECDSA)`](/code-sign/3rd-party-code-signing-specification-ecdsa.html#using-etoken)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-ecc-key",
+    "claim": "Genesys Logic 公司建立了一套符合 FIPS 140-2 Level 3 安全標準的程式碼簽署與驗證流程，採用 ECDSA 加密演算法並利用 FIPS L3 認證的 USB eToken 硬體儲存私鑰。此方案不僅滿足了嚴格的安全合規性要求，同時也具備成本效益、可擴展性與災難恢復能力。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "以下是根據提供的內容所撰寫的「Code sign Flow」文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "為了滿足客戶的需求,Genesys Logic 的韌體必須經過合法性驗證。目前的做法是將韌體二進位檔案轉換成雜湊值(hash),然後使用私密金鑰對雜湊值進行數位簽章,產生簽章資訊(Signature)。接著將韌體二進位檔案、簽章資訊和公開金鑰一併傳送給安全模組(Security Module)。安全模組會使用公開金鑰解密簽章資訊,並與自行計算的雜湊值進行比對,以確認韌體二進位檔案的合法性(韌體更新和驗證)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "Genesys Logic 目前使用的 Code Sign 方式有以下幾種:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "2. **Token**：使用 Token 設備進行數位簽章。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "3. **HSM (Hardware Security Module)**：硬體安全模組是一種專門用於保護和管理數位金鑰、執行加密解密以及數位簽章等密碼學功能的實體計算裝置。根據 HP 的規定,Genesys Logic 的 Code Sign 功能至少要達到 FIPS 140-2 Level 3 的安全等級,因此必須使用 Token 或 HSM 來實現。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "目前 Genesys Logic 使用的 Code Sign 演算法為 ECDSA nistp256。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "1. **金鑰生成**：生成 ECDSA nistp256 金鑰對。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "1. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "2. [3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "3. [3rd party code signing specification (ECDSA)(EN)](3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "code-sign-flow",
+    "claim": "以上就是 Genesys Logic 的 Code Sign Flow 相關資訊。如有任何疑問,歡迎隨時與我聯繫。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
     "slug": "code-sign-技術規格文件-整合版",
     "claim": "以下是 Code-Sign 技術規格文件 (整合版) 的綜合報告:",
     "tier": "Explicit",
@@ -1153,62 +1329,6 @@
   },
   {
     "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% Code-Sign Info General Rules Diagram (Final Outline Style - 100% Compatible)",
-    "tier": "Explicit",
-    "evidence_score": 12,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef field fill:transparent,stroke:#60A5FA,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef titleNode fill:transparent,stroke:transparent,font-weight:bold",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef decision fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef rule fill:transparent,stroke:#9CA3AF,stroke-width:2px,stroke-dasharray: 5 5",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef dependency stroke:#9CA3AF,stroke-width:1.5px,stroke-dasharray: 4 4",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef stop fill:transparent,stroke:#F87171,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
     "claim": "style PK_Rules fill:transparent,stroke:#FCD34D,stroke-width:2px",
     "tier": "Explicit",
     "evidence_score": 10,
@@ -1281,54 +1401,6 @@
   },
   {
     "slug": "code-sign-技術規格文件-整合版",
-    "claim": "PK_Rules_Title --> B7",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "B7 -- \"<b>值為 1</b><br/>(無效)\" --> Stop",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "B7 -- \"<b>值為 0</b><br/>(有效)\" --> B6",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "B6 -- \"<b>值為 0</b><br/>(跟隨 FW)\" --> Rule_0",
-    "tier": "Explicit",
-    "evidence_score": 6,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "B6 -- \"<b>值為 1</b><br/>(顯式指定)\" --> B05",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "B05 --> F5 --> F6",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
     "claim": "B6 -.->|\"當 Bit6=1 時才有效\"| B05",
     "tier": "Explicit",
     "evidence_score": 5,
@@ -1377,233 +1449,9 @@
   },
   {
     "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef file fill:transparent,stroke:#10B981,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef process fill:transparent,stroke:#4338CA,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "FW_Orig --> Check_HP --> Calc_HS --> S3",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "FW_Rom --> |供 HP ISP Tool 使用| End((完成))",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "FW_Signed --> |供 HP OCI Tool 使用| End((完成))",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
     "claim": "此模式是當前的主流作法 (FW >= 64K)。Public Key 被嵌入到 FW bin 的內部，這會破壞原始的 checksum-8。因此，最關鍵的步驟是 eToken 必須重新計算並覆蓋 checksum-8。Hash 和 Signature 依然作為外部資料附加。",
     "tier": "Explicit",
     "evidence_score": 18,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% --- 步驟 1: 先定義好所有會用到的樣式 ---",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef critical fill:transparent,stroke:#DC2626,stroke-width:2.5px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef file fill:transparent,stroke:#10B981,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef process fill:transparent,stroke:#4338CA,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% --- 步驟 2: 定義圖形元素 (已移除列表編號) ---",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% --- 步驟 3: 最後定義流程走向 ---",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "FW_Orig --> Check_HP --> Check_Bit7 --\"是\"--> Embed_PK --> Recalc_CS --> Calc_HS --> S3",
-    "tier": "Explicit",
-    "evidence_score": 14,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "FW_Rom_A --> |供 HP ISP Tool 使用| End((完成))",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "FW_Signed_A --> |供 HP OCI Tool 使用| End((完成))",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "Check_Bit7 --\"否\"--> Abort_1((流程中止))",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% eToken Signing Process Flow (Bit6=1) - Final Example-Enhanced Version",
-    "tier": "Explicit",
-    "evidence_score": 10,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% --- 步驟 1: 先定義好所有會用到的樣式 ---",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef condition fill:transparent,stroke:#FBBF24,stroke-width:2.5px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef config fill:transparent,stroke:#10B981,stroke-width:2px,stroke-dasharray: 5 5",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef critical fill:transparent,stroke:#DC2626,stroke-width:2.5px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef file fill:transparent,stroke:#10B981,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "classDef process fill:transparent,stroke:#4338CA,stroke-width:2px",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% --- Stages ---",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-技術規格文件-整合版",
-    "claim": "%% MODIFIED: Added detailed parsing steps inside this node.",
-    "tier": "Explicit",
-    "evidence_score": 9,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -1800,182 +1648,6 @@
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
   {
-    "slug": "code-sign-ecc-key",
-    "claim": "報告書：Code sign - ECC key",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "根據提供的內容，Genesys Logic 公司為了滿足韌體安全驗證的需求，建立了一套基於 ECDSA 加密演算法的程式碼簽署與驗證流程。此流程採用 FIPS 140-2 Level 3 認證的 USB eToken 硬體作為金鑰儲存裝置，並搭配自行開發的 SDK 應用程式實現高度客製化的簽署工作流程。",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "1. 所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
-    "tier": "Explicit",
-    "evidence_score": 20,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "2. 採用 ECDSA nistp256 加密演算法。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
-    "tier": "Explicit",
-    "evidence_score": 19,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "1. **金鑰生成與佈署**：使用 FIPS L3 認證的 USB eToken 硬體生成 ECDSA 金鑰對，並透過自行開發的金鑰管理系統（KMS）進行安全的金鑰佈署。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html#-genkey-金鑰生成與佈署流程解析)",
-    "tier": "Explicit",
-    "evidence_score": 23,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "2. **檔案簽署**：將韌體映像檔透過 ECDSA 私鑰進行數位簽章，生成帶有簽章資訊的 signed bin 檔案。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html#-sign-file-簽署檔案工作流程)",
-    "tier": "Explicit",
-    "evidence_score": 22,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "3. **簽章驗證**：在韌體更新時，透過 ECDSA 公鑰驗證 signed bin 檔案的合法性。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html#-端到端的程式碼簽署與驗證完整流程)",
-    "tier": "Explicit",
-    "evidence_score": 19,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "Genesys Logic 提供了兩種程式碼簽署的實作方式：",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "1. **使用 OpenSSL**：透過 OpenSSL 命令列工具生成金鑰對、簽署檔案並合併 signed bin 檔案。[`Genesys Logic code sign overview`](/code-sign/code-sign-ecc-key.html#implement--using-openssl-)",
-    "tier": "Explicit",
-    "evidence_score": 18,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "2. **使用 eToken**：利用 FIPS L3 認證的 USB eToken 硬體儲存私鑰，並搭配自行開發的 SDK 應用程式實現簽署流程。[`3rd party code signing specification (ECDSA)`](/code-sign/3rd-party-code-signing-specification-ecdsa.html#using-etoken)",
-    "tier": "Explicit",
-    "evidence_score": 22,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-ecc-key",
-    "claim": "Genesys Logic 公司建立了一套符合 FIPS 140-2 Level 3 安全標準的程式碼簽署與驗證流程，採用 ECDSA 加密演算法並利用 FIPS L3 認證的 USB eToken 硬體儲存私鑰。此方案不僅滿足了嚴格的安全合規性要求，同時也具備成本效益、可擴展性與災難恢復能力。",
-    "tier": "Explicit",
-    "evidence_score": 12,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "以下是根據提供的內容所撰寫的「Code sign Flow」文件:",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "為了滿足客戶的需求,Genesys Logic 的韌體必須經過合法性驗證。目前的做法是將韌體二進位檔案轉換成雜湊值(hash),然後使用私密金鑰對雜湊值進行數位簽章,產生簽章資訊(Signature)。接著將韌體二進位檔案、簽章資訊和公開金鑰一併傳送給安全模組(Security Module)。安全模組會使用公開金鑰解密簽章資訊,並與自行計算的雜湊值進行比對,以確認韌體二進位檔案的合法性(韌體更新和驗證)。",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "Genesys Logic 目前使用的 Code Sign 方式有以下幾種:",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "2. **Token**：使用 Token 設備進行數位簽章。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "3. **HSM (Hardware Security Module)**：硬體安全模組是一種專門用於保護和管理數位金鑰、執行加密解密以及數位簽章等密碼學功能的實體計算裝置。根據 HP 的規定,Genesys Logic 的 Code Sign 功能至少要達到 FIPS 140-2 Level 3 的安全等級,因此必須使用 Token 或 HSM 來實現。",
-    "tier": "Explicit",
-    "evidence_score": 14,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "目前 Genesys Logic 使用的 Code Sign 演算法為 ECDSA nistp256。",
-    "tier": "Explicit",
-    "evidence_score": 9,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "1. **金鑰生成**：生成 ECDSA nistp256 金鑰對。",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "1. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
-    "tier": "Explicit",
-    "evidence_score": 13,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "2. [3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)",
-    "tier": "Explicit",
-    "evidence_score": 13,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "3. [3rd party code signing specification (ECDSA)(EN)](3rd-party-code-signing-specification-ecdsaen-.html)",
-    "tier": "Explicit",
-    "evidence_score": 14,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "code-sign-flow",
-    "claim": "以上就是 Genesys Logic 的 Code Sign Flow 相關資訊。如有任何疑問,歡迎隨時與我聯繫。",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
     "slug": "command-line-tool-debug-路徑",
     "claim": "本文件提供了 Command line tool debug 路徑的相關資訊，包括 ini 檔、driver 和 bin 的路徑。這些路徑是用於調試命令行工具的重要參考。",
     "tier": "Explicit",
@@ -1988,6 +1660,22 @@
     "claim": "`E:\\IsptoolRefine2018\\GLHubUpdateTool\\bin\\x86_Debug_HP`",
     "tier": "Derived",
     "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-debug-路徑",
+    "claim": "[未有直接 Source 錨點，待確認] `E:\\IsptoolRefine2018\\GLHubUpdateTool\\GLHubUpdateTool\\HubFW`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "command-line-tool-debug-路徑",
+    "claim": "[未有直接 Source 錨點，待確認] `E:\\IsptoolRefine2018\\GLHubUpdateTool\\GLHubUpdateTool`",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -3017,6 +2705,14 @@
   },
   {
     "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] ECC 私密金鑰有兩種常見的格式:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
     "claim": "- 將證書或金鑰使用 DER ASN.1 編碼的原始格式儲存",
     "tier": "Derived",
     "evidence_score": 2,
@@ -3049,7 +2745,31 @@
   },
   {
     "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] ECC 金鑰使用的曲線格式有多種選擇, 常見的包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
     "claim": "- `secp521r1` (預設)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `brainpoolP512r1`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `brainpoolP384r1`",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 2,
@@ -3060,6 +2780,22 @@
     "claim": "- `secp256r1` (又稱 `prime256v1` 或 `NIST P-256`)",
     "tier": "Explicit",
     "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `secp256k1` (Bitcoin 使用的曲線)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "- [未有直接 Source 錨點，待確認] `brainpoolP256r1`",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -3076,6 +2812,14 @@
     "claim": "openssl ecparam -out privatekey.key -name prime256v1 -genkey",
     "tier": "Explicit",
     "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] ECC 金鑰可以在不同格式之間進行轉換, 常見的操作包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -3196,6 +2940,14 @@
     "claim": "IKV 使用的是 NIST P-256 曲線, 而 mbedTLS 則使用 `secp256r1` 或 `secp256k1` 曲線. OpenSSL 支援多種曲線, 包括 `secp256r1`、`secp256k1` 和 `prime256v1`.",
     "tier": "Explicit",
     "evidence_score": 12,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "ecc-key",
+    "claim": "[未有直接 Source 錨點，待確認] 在實作 ECC 金鑰管理和簽章時, 需要注意以下幾點:",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -3402,6 +3154,238 @@
   {
     "slug": "electron",
     "claim": "4. DLL/Framework 回應查詢/更新，層層回傳至 UI。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "以下是 Etoken System 的綜合 Markdown 報告:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "回應 eTokenClient Tool 的需求，並提供帳號密碼機制管理登入權限。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "提供 GUI 版本 Tool，可以傳送 command 給 eTokenServer Tool 來做 generate key & sign 功能，並傳送 sign 後的 hub bin 檔案回來。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "注意：v2.0.0.2 的版本，要 sign 的檔案需與 exe 放在同資料夾下。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "Etoken System 核心由以下元件組成:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "1. **eToken Server**: 提供帳號密碼管理和 eTokenClient 的需求回應。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "2. **eToken Client**: 提供 GUI 工具，可以傳送指令給 eToken Server 進行金鑰生成和簽章功能。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "eToken Client 會透過 eToken Server 來執行簽章流程，而 eToken Server 則會與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成簽章任務。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "Etoken 系統的技術細節可參考 [eToken 安全簽章系統技術說明](code-sign/etoken-安全簽章系統技術說明.html)文件,其中包括:",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "- 不同簽章演算法 (ECDSA/RSA/RSA + HID) 的組裝規則",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "此外,文件也提到了 Generic USB Filter Driver 的相關技術,包括 ISP (In-System Programming) 模式下如何透過驅動程式與硬體進行通訊。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system",
+    "claim": "Etoken System 是一個完整的簽章解決方案,由 eToken Server 和 eToken Client 兩個主要元件組成。eToken Server 負責帳號密碼管理和簽章請求的處理,eToken Client 則提供 GUI 工具來與 eToken Server 互動。整個簽章流程涉及 Dongle Server 和 GLBin 等其他元件的協作。相關的技術細節可參考 [eToken 安全簽章系統技術說明](code-sign/etoken-安全簽章系統技術說明.html)文件。",
+    "tier": "Explicit",
+    "evidence_score": 24,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "基於提供的內容，我們可以對 'Etoken System Code View' 進行以下綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "1. `etoken_dongle_server`: 負責與安全核心 (Dongle) 進行通訊和協議處理。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "2. `etoken_server`: 協調整個簽章流程，與 Dongle Server 和 GLBin 工具配合完成。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "這三個元件通過特定的通訊協議和流程，共同完成從原始檔案到最終安全簽章檔案 (sig.bin, rom) 的生成。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "根據提供的 Governance Audit 和 Technical Findings，`etoken_dongle_server` 和 `etoken_server` 存在以下主要問題:",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "- 使用 detach 執行緒，生命週期不可控，違反可預測關閉原則。[BLOCKING] `[BLOCKING] Detached worker thread may outlive owner (this)`",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "- 外部命令執行和檔案大小處理缺乏邊界控制，存在資源和執行風險。[BLOCKING] `[BLOCKING] Unbounded memory allocation from peer-provided file size`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "- 協議錯位和卡住風險。[WARNING] `[WARNING] Protocol error opcode mismatch in public-key stage`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "- SQL 注入風險。[BLOCKING] `[BLOCKING] SQL injection 風險（登入授權查詢）`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "- 超時轉換錯誤。[WARNING] `[WARNING] Timeout conversion bug in select()`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "- 硬編碼密碼。[WARNING] `[WARNING] Hardcoded token password in source`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "根據提供的知識庫對比結果，當前系統的風險與已知的 Anti-Patterns/Pitfalls 高度重疊，包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "1. `system()/sub-process hang` 和 `協定失配/卡住` 風險。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "2. 生命週期不可控的 `detach` 執行緒。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "1. 架構設計問題:使用 detach 執行緒，生命週期不可控，違反可預測關閉原則。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "2. 安全性問題:存在 SQL 注入和協議錯位/卡住的風險。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "etoken-system-code-view-",
+    "claim": "這些問題與已知的 Anti-Patterns/Pitfalls 高度重疊,需要進行針對性的修正和改善。",
     "tier": "Derived",
     "evidence_score": 3,
     "wave_id": 2,
@@ -3700,238 +3684,6 @@
     "claim": "3. [`3rd party code signing specification (ECDSA)(EN)`](path/to/3rd-party-code-signing-specification-ecdsaen-.html)：英文版的程式碼簽署規範文件，內容與上一篇相似。",
     "tier": "Explicit",
     "evidence_score": 13,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "以下是 Etoken System 的綜合 Markdown 報告:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "回應 eTokenClient Tool 的需求，並提供帳號密碼機制管理登入權限。",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "提供 GUI 版本 Tool，可以傳送 command 給 eTokenServer Tool 來做 generate key & sign 功能，並傳送 sign 後的 hub bin 檔案回來。",
-    "tier": "Explicit",
-    "evidence_score": 14,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "注意：v2.0.0.2 的版本，要 sign 的檔案需與 exe 放在同資料夾下。",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "Etoken System 核心由以下元件組成:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "1. **eToken Server**: 提供帳號密碼管理和 eTokenClient 的需求回應。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "2. **eToken Client**: 提供 GUI 工具，可以傳送指令給 eToken Server 進行金鑰生成和簽章功能。",
-    "tier": "Explicit",
-    "evidence_score": 6,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "eToken Client 會透過 eToken Server 來執行簽章流程，而 eToken Server 則會與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成簽章任務。",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "Etoken 系統的技術細節可參考 [eToken 安全簽章系統技術說明](code-sign/etoken-安全簽章系統技術說明.html)文件,其中包括:",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "- 不同簽章演算法 (ECDSA/RSA/RSA + HID) 的組裝規則",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "此外,文件也提到了 Generic USB Filter Driver 的相關技術,包括 ISP (In-System Programming) 模式下如何透過驅動程式與硬體進行通訊。",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system",
-    "claim": "Etoken System 是一個完整的簽章解決方案,由 eToken Server 和 eToken Client 兩個主要元件組成。eToken Server 負責帳號密碼管理和簽章請求的處理,eToken Client 則提供 GUI 工具來與 eToken Server 互動。整個簽章流程涉及 Dongle Server 和 GLBin 等其他元件的協作。相關的技術細節可參考 [eToken 安全簽章系統技術說明](code-sign/etoken-安全簽章系統技術說明.html)文件。",
-    "tier": "Explicit",
-    "evidence_score": 24,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "基於提供的內容，我們可以對 'Etoken System Code View' 進行以下綜合報告:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "1. `etoken_dongle_server`: 負責與安全核心 (Dongle) 進行通訊和協議處理。",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "2. `etoken_server`: 協調整個簽章流程，與 Dongle Server 和 GLBin 工具配合完成。",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "這三個元件通過特定的通訊協議和流程，共同完成從原始檔案到最終安全簽章檔案 (sig.bin, rom) 的生成。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "根據提供的 Governance Audit 和 Technical Findings，`etoken_dongle_server` 和 `etoken_server` 存在以下主要問題:",
-    "tier": "Explicit",
-    "evidence_score": 8,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "- 使用 detach 執行緒，生命週期不可控，違反可預測關閉原則。[BLOCKING] `[BLOCKING] Detached worker thread may outlive owner (this)`",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "- 外部命令執行和檔案大小處理缺乏邊界控制，存在資源和執行風險。[BLOCKING] `[BLOCKING] Unbounded memory allocation from peer-provided file size`",
-    "tier": "Explicit",
-    "evidence_score": 10,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "- 協議錯位和卡住風險。[WARNING] `[WARNING] Protocol error opcode mismatch in public-key stage`",
-    "tier": "Explicit",
-    "evidence_score": 10,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "- SQL 注入風險。[BLOCKING] `[BLOCKING] SQL injection 風險（登入授權查詢）`",
-    "tier": "Explicit",
-    "evidence_score": 6,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "- 超時轉換錯誤。[WARNING] `[WARNING] Timeout conversion bug in select()`",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "- 硬編碼密碼。[WARNING] `[WARNING] Hardcoded token password in source`",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "根據提供的知識庫對比結果，當前系統的風險與已知的 Anti-Patterns/Pitfalls 高度重疊，包括:",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "1. `system()/sub-process hang` 和 `協定失配/卡住` 風險。",
-    "tier": "Explicit",
-    "evidence_score": 6,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "2. 生命週期不可控的 `detach` 執行緒。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "1. 架構設計問題:使用 detach 執行緒，生命週期不可控，違反可預測關閉原則。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "2. 安全性問題:存在 SQL 注入和協議錯位/卡住的風險。",
-    "tier": "Derived",
-    "evidence_score": 2,
-    "wave_id": 2,
-    "batch_id": "batch_2026-04-15T07-00-57-270Z"
-  },
-  {
-    "slug": "etoken-system-code-view-",
-    "claim": "這些問題與已知的 Anti-Patterns/Pitfalls 高度重疊,需要進行針對性的修正和改善。",
-    "tier": "Derived",
-    "evidence_score": 3,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },
@@ -4444,6 +4196,14 @@
     "claim": "references = https://github.com/.../SecurityFixes.yaml",
     "tier": "Explicit",
     "evidence_score": 6,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "[未有直接 Source 錨點，待確認] \"dependencies\": [",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 2,
     "batch_id": "batch_2026-04-15T07-00-57-270Z"
   },

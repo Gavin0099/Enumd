@@ -46,6 +46,10 @@ const SANITIZATION_PATTERNS: RegExp[] = [
     /^\s*-->/,                                                    // Mermaid edge continuation
     /^(graph|flowchart)\s+(TD|LR|RL|BT|TB)\b/,                   // Mermaid graph declaration
     /^(sequenceDiagram|classDiagram|gantt|pie|erDiagram)\b/,      // Mermaid diagram type
+    /^%%/,                                                        // Mermaid comment (%% text)
+    /^classDef\s+\w/,                                             // Mermaid CSS class (classDef name fill:...)
+    /^[A-Za-z_]\w*\s+-->/,                                       // Mermaid edge (NodeId --> NodeId)
+    /^[A-Za-z_]\w*\s+--\s*[">]/,                                 // Mermaid labeled edge (NodeId -- "label")
 ];
 
 function isSanitized(text: string): boolean {

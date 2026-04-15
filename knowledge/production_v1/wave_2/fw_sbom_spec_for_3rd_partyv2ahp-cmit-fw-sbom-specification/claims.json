@@ -305,6 +305,14 @@
   },
   {
     "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+    "claim": "[未有直接 Source 錨點，待確認] \"dependencies\": [",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 2,
+    "batch_id": "batch_2026-04-15T07-00-57-270Z"
+  },
+  {
+    "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
     "claim": "\"ref\": \"bps-fw/MyComponent\",",
     "tier": "Derived",
     "evidence_score": 3,

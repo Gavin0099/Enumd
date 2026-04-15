@@ -120,17 +120,25 @@ function classifyLine(
     // LLM-generated flowcharts/sequence diagrams must NOT enter claim tiers.
     // They share keywords with source content, producing misleading Derived hits.
     //
-    //   :::className       → node class annotation  (App["..."]:::inputNode)
-    //   subgraph [...]     → subgraph block opener
-    //   graph TD / flowchart LR → graph type declaration
-    //   sequenceDiagram etc.   → diagram type keywords
-    //   --> NodeId         → edge continuation line
+    //   :::className              → node class annotation (App["..."]:::inputNode)
+    //   subgraph [...]            → subgraph block opener
+    //   graph TD / flowchart LR   → graph type declaration
+    //   sequenceDiagram etc.      → diagram type keywords
+    //   --> NodeId                → edge continuation (starts with -->)
+    //   classDef name fill:...    → Mermaid CSS class definition
+    //   %% comment                → Mermaid comment line
+    //   NodeId --> NodeId         → edge between named nodes (PascalCase/snake_case)
+    //   NodeId -- "label" -->     → labeled edge
     if (
         trimmed.includes(":::") ||
         /^subgraph[\s\[]/.test(trimmed) ||
         /^(graph|flowchart)\s+(TD|LR|RL|BT|TB)\b/.test(trimmed) ||
         /^(sequenceDiagram|classDiagram|gantt|pie|erDiagram)\b/.test(trimmed) ||
-        /^\s*-->/.test(trimmed)
+        /^\s*-->/.test(trimmed) ||
+        /^%%/.test(trimmed) ||
+        /^classDef\s+\w/.test(trimmed) ||
+        /^[A-Za-z_]\w*\s+-->/.test(trimmed) ||
+        /^[A-Za-z_]\w*\s+--\s*[">]/.test(trimmed)
     ) {
         return "Structural";
     }
