@@ -35,16 +35,16 @@ function extractClaims(md: string): string[] {
         .filter(s => s.length > 5 && !s.startsWith("#") && !s.startsWith("!["));
 }
 
-function findEvidence(claim: string, xml: string): { line: number, text: string } | null {
+function findEvidence(claim: string, xml: string): { line: number, text: string, score: number } | null {
     // Strip enforcer prefix before matching
     const cleanClaim = claim.replace(/^\[未有直接 Source 錨點，待確認\]\s*/, "").trim();
-    
+
     // Simple keyword matching for evidence
     const keywords = cleanClaim.split(/[\s,()\[\]「」：:、。.！？\-–_|#*`]/).filter(w => w.length >= 2);
     const xmlLines = xml.split("\n");
-    
+
     let bestMatch = { line: -1, text: "", score: 0 };
-    
+
     for (let i = 0; i < xmlLines.length; i++) {
         let score = 0;
         for (const kw of keywords) {
@@ -54,8 +54,8 @@ function findEvidence(claim: string, xml: string): { line: number, text: string 
             bestMatch = { line: i + 1, text: xmlLines[i].trim(), score };
         }
     }
-    
-    return bestMatch.score > 0 ? { line: bestMatch.line, text: bestMatch.text } : null;
+
+    return bestMatch.score > 0 ? { line: bestMatch.line, text: bestMatch.text, score: bestMatch.score } : null;
 }
 
 function classifyClaim(claim: string, evidenceScore: number): { tier: string, risk: string } {
@@ -114,7 +114,7 @@ function classifyClaim(claim: string, evidenceScore: number): { tier: string, ri
     }
 
     if (evidenceScore > 3) return { tier: "Explicit", risk: "LOW" };
-    if (evidenceScore >= 1) return { tier: "Derived", risk: "MID" };
+    if (evidenceScore >= 2) return { tier: "Derived", risk: "MID" }; // raised from 1 → 2: single-token hits are too noisy
     return { tier: "Inferred", risk: "HIGH" };
 }
 
@@ -139,9 +139,13 @@ async function run() {
         }
 
         const synthesis = readFileSync(join(nodeDir, "synthesis.md"), "utf8");
-        const sourceXml = existsSync(join(nodeDir, "source.xml")) 
-            ? readFileSync(join(nodeDir, "source.xml"), "utf8") 
+        const sourceXml = existsSync(join(nodeDir, "source.xml"))
+            ? readFileSync(join(nodeDir, "source.xml"), "utf8")
             : "";
+        const auditJson = existsSync(join(nodeDir, "audit.json"))
+            ? JSON.parse(readFileSync(join(nodeDir, "audit.json"), "utf8"))
+            : null;
+        const enfReport = auditJson?.enforcement_report ?? null;
         
         workbook += `---\n\n### Node: ${slug}\n\n`;
         workbook += `[Synthesis](${slug}/synthesis.md) | [Audit](${slug}/audit.json) | [Source XML](${slug}/source.xml)\n\n`;
@@ -155,7 +159,7 @@ async function run() {
 
         for (const claim of claims) {
             const evidence = findEvidence(claim, sourceXml);
-            const score = evidence ? evidence.line : 0; // use presence of match as signal
+            const score = evidence ? evidence.score : 0; // keyword-match count, not line number
             const classification = classifyClaim(claim, score);
             
             let enforcement = "✅ PASSED";
@@ -172,10 +176,21 @@ async function run() {
             workbook += `| ${truncatedClaim} | ${truncatedEvidence} | ${classification.tier} | ${classification.risk} | ${enforcement} |\n`;
         }
 
+        // Enforcement report summary (from audit.json)
+        let enfSummary = "";
+        if (enfReport) {
+            const total = enfReport.total_lines ?? 0;
+            const removed = enfReport.removed ?? 0;
+            const downgraded = enfReport.downgraded ?? 0;
+            const removalRate = total > 0 ? ((removed / total) * 100).toFixed(0) : "0";
+            const isClean = enfReport.is_clean ?? (removed === 0 && downgraded === 0);
+            enfSummary = `\n> **LLM Draft Stats**: ${total} lines → removed ${removed} (${removalRate}%), downgraded ${downgraded}. is_clean: ${isClean ? "✅" : "⚠️ false (hallucinations were filtered before this output)"}`;
+        }
+
         if (blockerCount > 0) {
-            workbook += `\n> [!CAUTION]\n> **ENFORCEMENT FAILED**: ${blockerCount} unanchored claims detected. This node MUST be purged or downgraded before release.\n\n`;
+            workbook += `\n> [!CAUTION]\n> **ENFORCEMENT FAILED**: ${blockerCount} unanchored claims detected. This node MUST be purged or downgraded before release.${enfSummary}\n\n`;
         } else {
-            workbook += `\n> [!IMPORTANT]\n> **ENFORCEMENT PASSED**: Component is 100% anchored or correctly scoped.\n\n`;
+            workbook += `\n> [!IMPORTANT]\n> **ENFORCEMENT PASSED**: Final output is 100% anchored or correctly scoped.${enfSummary}\n\n`;
         }
 
         workbook += "\n";

@@ -2,9 +2,13 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join } from "path";
 import { execSync } from "child_process";
 import * as crypto from "crypto";
+import Anthropic from "@anthropic-ai/sdk";
 import { KnowledgeQueryEngine } from "../lib/knowledge-query";
 import { SynthesisContextBuilder } from "../lib/synthesis-context";
 import { enforceDraft } from "../lib/synthesis-enforcer";
+import { runKalCheck } from "../lib/kal-checker";
+import { extractVerifiedClaims, AtomicClaim } from "../lib/claim-store";
+import { runSemanticScoring } from "../lib/semantic-scorer";
 
 /**
  * Enumd Production Wave Runner (v1)
@@ -19,6 +23,13 @@ const WAVE_SIZE = 50;
 
 async function run() {
     console.log("🚀 Initializing Enumd Production Wave Runner (v1)...");
+
+    const apiKey = process.env.ANTHROPIC_API_KEY;
+    if (!apiKey) {
+        console.error("Missing ANTHROPIC_API_KEY. Please check .env.local");
+        process.exit(1);
+    }
+    const anthropic = new Anthropic({ apiKey });
 
     // 1. Snapshot Environment (Reproducibility Contract)
     const gitHash = execSync("git rev-parse HEAD").toString().trim();
@@ -40,7 +51,7 @@ async function run() {
 
     // 2. Inventory & Wave Splitting
     const engine = new KnowledgeQueryEngine(join(KNOWLEDGE_DIR, "nodes.json"), join(KNOWLEDGE_DIR, "edges.json"));
-    const allNodes = JSON.parse(readFileSync(join(KNOWLEDGE_DIR, "nodes.json"), "utf8"));
+    const allNodes: { slug: string }[] = JSON.parse(readFileSync(join(KNOWLEDGE_DIR, "nodes.json"), "utf8"));
     const sortedNodes = allNodes.sort((a, b) => a.slug.localeCompare(b.slug));
     
     const waves = [];
@@ -75,6 +86,7 @@ async function run() {
 
     // 4. Execution
     const manifest = [];
+    const waveAtomicClaims: AtomicClaim[] = [];
     const builder = new SynthesisContextBuilder(engine);
 
     for (let i = 0; i < currentNodes.length; i++) {
@@ -105,6 +117,45 @@ async function run() {
             }
             // ────────────────────────────────────────────────────────────
 
+            // ─── KAL CHECK ──────────────────────────────────────────────
+            // Self-questioning pass: can the synthesis answer basic questions
+            // about the node? Catches nodes that passed enforcement but are
+            // still too sparse to be informative.
+            const kalResult = await runKalCheck(node.slug, cleanedDraft, anthropic);
+            if (kalResult.verdict === "SKIPPED") {
+                console.log(`   ⏭️  KAL: Skipped — ${kalResult.skip_reason}`);
+            } else if (kalResult.verdict === "CONVERGED") {
+                console.log(`   ✅ KAL: ${kalResult.passed}/${kalResult.total} answered → CONVERGED`);
+            } else {
+                console.log(`   ⚠️  KAL: ${kalResult.passed}/${kalResult.total} answered → THIN_SYNTHESIS`);
+            }
+            // ────────────────────────────────────────────────────────────
+
+            // ─── SEMANTIC EVIDENCE AUDIT ────────────────────────────────
+            // Post-enforcement pass: asks Claude whether each "Derived"
+            // tier claim (borderline keyword hits) is semantically backed
+            // by the source XML. Non-blocking — results stored in audit.json.
+            const semanticReport = await runSemanticScoring(report.verdicts, sourceXml, anthropic);
+            if (!semanticReport.skipped) {
+                const flag = semanticReport.unsupported > 0 ? "⚠️ " : "✅";
+                console.log(`   ${flag} SEMANTIC: ${semanticReport.supported}/${semanticReport.total_checked} Derived claims confirmed (${semanticReport.unsupported} unsupported)`);
+            }
+            // ────────────────────────────────────────────────────────────
+
+            // ─── ATOMIC CLAIM STORE ──────────────────────────────────────
+            // Extract verified claims (KEEP, non-Structural) from enforcement
+            // verdicts and persist them for future cross-node querying / RAG.
+            const nodeClaims = extractVerifiedClaims(
+                node.slug,
+                report.verdicts,
+                currentWaveIdx + 1,
+                BATCH_ID
+            );
+            waveAtomicClaims.push(...nodeClaims);
+            writeFileSync(join(dest, "claims.json"), JSON.stringify(nodeClaims, null, 2));
+            console.log(`   📦 CLAIMS: ${nodeClaims.length} verified claims stored`);
+            // ────────────────────────────────────────────────────────────
+
             // Inject governance fields
             audit.batch_id = BATCH_ID;
             audit.wave_id = currentWaveIdx + 1;
@@ -115,6 +166,15 @@ async function run() {
                 total_lines: report.original_claim_count,
                 is_clean: report.is_clean,
             };
+            audit.kal_report = {
+                verdict: kalResult.verdict,
+                passed: kalResult.passed,
+                total: kalResult.total,
+                convergence_rate: kalResult.convergence_rate,
+                skip_reason: kalResult.skip_reason,
+                questions: kalResult.questions,
+            };
+            audit.semantic_audit = semanticReport;
 
             writeFileSync(join(dest, "synthesis.md"), cleanedDraft);
             writeFileSync(join(dest, "audit.json"), JSON.stringify(audit, null, 2));
@@ -124,23 +184,32 @@ async function run() {
                 slug: node.slug,
                 topology: audit.advisory.topology_status,
                 trust: audit.decision_basis?.pilot_evaluation?.trust_level || "UNKNOWN",
-                noise: audit.outcome_metrics.noise_signal
+                noise: audit.outcome_metrics.noise_signal,
+                kal: kalResult.verdict,
+                claims: nodeClaims.length,
             });
         } catch (e: any) {
             console.error(`  ❌ Failed: ${e.message}`);
         }
     }
 
-    // 5. Manifest generation
+    // 5. Wave-level Atomic Claim Store
+    writeFileSync(join(waveDir, "atomic-claims.json"), JSON.stringify(waveAtomicClaims, null, 2));
+    console.log(`\n📦 Atomic Claims: ${waveAtomicClaims.length} total verified claims written to atomic-claims.json`);
+
+    // 6. Manifest generation
+    const thinNodes = manifest.filter(m => m.kal === "THIN_SYNTHESIS").length;
     let manifestMd = `# Wave ${currentWaveIdx + 1} Manifest\n\n`;
-    manifestMd += "| Slug | Topology | Trust | Noise | Review |\n";
-    manifestMd += "| :--- | :--- | :--- | :--- | :--- |\n";
+    manifestMd += `> KAL summary: ${manifest.length - thinNodes} CONVERGED, ${thinNodes} THIN_SYNTHESIS, ${manifest.filter(m => m.kal === "SKIPPED").length} SKIPPED\n\n`;
+    manifestMd += "| Slug | Topology | Trust | Noise | KAL | Claims | Review |\n";
+    manifestMd += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n";
     for (const m of manifest) {
-        manifestMd += `| ${m.slug} | ${m.topology} | ${m.trust} | ${m.noise} | [ ] |\n`;
+        const kalIcon = m.kal === "CONVERGED" ? "✅" : m.kal === "THIN_SYNTHESIS" ? "⚠️" : "⏭️";
+        manifestMd += `| ${m.slug} | ${m.topology} | ${m.trust} | ${m.noise} | ${kalIcon} ${m.kal} | ${m.claims} | [ ] |\n`;
     }
     writeFileSync(join(waveDir, "manifest.md"), manifestMd);
 
-    console.log(`\n✅ Wave ${currentWaveIdx + 1} Complete. Manifest written to ${waveDir}`);
+    console.log(`✅ Wave ${currentWaveIdx + 1} Complete. Manifest written to ${waveDir}`);
 }
 
 run();
