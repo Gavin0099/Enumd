@@ -61,5 +61,54 @@
     "downgraded": 0,
     "total_lines": 199,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "THIN_SYNTHESIS",
+    "passed": 0,
+    "total": 1,
+    "convergence_rate": 0,
+    "questions": [
+      {
+        "question": "[KAL parse error]",
+        "verdict": "UNANSWERABLE",
+        "justification": "Failed to parse KAL JSON response. Raw: {\n  \"questions\": [\n    {\n      \"question\": \"What are some of the software tools and utilities mentioned in the synthesis"
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 8,
+    "supported": 3,
+    "uncertain": 0,
+    "unsupported": 5,
+    "unsupported_claims": [
+      {
+        "claim": "- 提到了 Lenovo P27QD-40 的 Daisy Chain 功能。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything related to Lenovo P27QD-40 or its Daisy Chain functionality."
+      },
+      {
+        "claim": "- 提到了 Mac 上的 Lenovo 一鍵更新工具。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention a Lenovo one-click update tool for Mac."
+      },
+      {
+        "claim": "- 提到了 HP OCI Tool 適用於 738pu WOA 的工具。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention an HP OCI Tool for the 738pu WOA."
+      },
+      {
+        "claim": "- 提到了 HP ISP 工具的新 UI。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention an HP ISP tool with a new UI."
+      },
+      {
+        "claim": "- 提到了 HP OCI 工具適用於 Windows、Mac 和 Linux 平台。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention an HP OCI tool for Windows, Mac, and Linux platforms."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:26.272Z"
 }

@@ -1,0 +1,118 @@
+{
+  "wave_id": 1,
+  "generated_at": "2026-04-15T04:03:01.360Z",
+  "dry_run": false,
+  "node_counts": {
+    "total": 47,
+    "processed": 47,
+    "already_done": 0,
+    "failed": 0
+  },
+  "kal": {
+    "converged": 28,
+    "thin_synthesis": 7,
+    "skipped": 12,
+    "error": 0
+  },
+  "claims": {
+    "total_atomic": 394,
+    "avg_per_node": 8.4,
+    "explosion_nodes": [],
+    "collapse_nodes": [
+      {
+        "slug": "-clawdbot-自主代理建置與資安防禦全紀錄",
+        "count": 0
+      },
+      {
+        "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+        "count": 1
+      },
+      {
+        "slug": "新人參考資料",
+        "count": 2
+      }
+    ]
+  },
+  "semantic": {
+    "total_checked": 182,
+    "supported": 119,
+    "uncertain": 8,
+    "unsupported": 45,
+    "supported_pct": "65%",
+    "uncertain_pct": "4%",
+    "unsupported_pct": "25%",
+    "nodes_with_unsupported": [
+      {
+        "slug": "-generic-usb-filter-driver-",
+        "unsupported": 3,
+        "total": 4
+      },
+      {
+        "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+        "unsupported": 2,
+        "total": 8
+      },
+      {
+        "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+        "unsupported": 2,
+        "total": 5
+      },
+      {
+        "slug": "-lenovo-display-daisy-chain-issue",
+        "unsupported": 2,
+        "total": 2
+      },
+      {
+        "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+        "unsupported": 1,
+        "total": 1
+      },
+      {
+        "slug": "0206-0209-交接",
+        "unsupported": 6,
+        "total": 7
+      },
+      {
+        "slug": "0326-0330-交接",
+        "unsupported": 5,
+        "total": 10
+      },
+      {
+        "slug": "12261230-交接",
+        "unsupported": 4,
+        "total": 4
+      },
+      {
+        "slug": "2021-今年重點目標",
+        "unsupported": 2,
+        "total": 2
+      },
+      {
+        "slug": "20240729-82-交接事項",
+        "unsupported": 6,
+        "total": 6
+      },
+      {
+        "slug": "2024部門創新提案",
+        "unsupported": 1,
+        "total": 1
+      },
+      {
+        "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+        "unsupported": 1,
+        "total": 6
+      },
+      {
+        "slug": "2025-工作會報",
+        "unsupported": 5,
+        "total": 8
+      },
+      {
+        "slug": "研發投扺專案資料列印流程",
+        "unsupported": 5,
+        "total": 15
+      }
+    ]
+  },
+  "failed_nodes": []
+}

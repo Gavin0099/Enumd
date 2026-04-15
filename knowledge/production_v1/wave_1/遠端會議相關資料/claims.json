@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "本文件彙整了 Genesys Logic 公司內部使用的各種遠端會議工具與連線方式。這些工具包括 Webex、Microsoft Teams、Zoom 和 Google Meet 等。文中提供了各種會議連結、會議號碼、密碼等詳細資訊,供公司同仁參考使用。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- 加入連結：https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m29d2bc2e2091e2e8eca048a86548fe53",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- 加入連結：https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m6693d7ba1f44ba416ce3385108f7019a",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- 會議號碼：423 539 478 818",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/92436304484?pwd=YWIxZzdPbUhUdFZEVjg1bjE3Yll6QT09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/96120515387?pwd=VU5PbmlHWXd6TUlyRzI5QStxWThoQT09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/98505965223?pwd=b1Rua2tTNWNReTMyU0Rkb0E5OHVXdz09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/93508365211?pwd=b2p5bkVLZ3BjaC81elJrcWRpSkcwZz09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/95219966918?pwd=NWFjbzJQVzJFbERxU0phaDU4Wkppdz09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/ftz-wuby-xao",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/eav-pxwk-csw",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/jso-taqw-apo",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/nht-wyis-amt",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "1. [`遠端會議相關資料`](./遠端會議相關資料.html)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "2. [`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](./code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "3. [`3rd party code signing specification (ECDSA)`](./code-sign/3rd-party-code-signing-specification-ecdsa.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "4. [`3rd party code signing specification (ECDSA)(EN)`](./code-sign/3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

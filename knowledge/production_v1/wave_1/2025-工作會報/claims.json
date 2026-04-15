@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 GL Bin Tool 的使用。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 Lenovo P27QD-40 的 Daisy Chain 功能。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 Mac 上的 Lenovo 一鍵更新工具。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 再次提到了 GL Bin Tool。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 Code Sign 規格的整理和討論。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 HP OCI Tool 適用於 738pu WOA 的工具。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 HP ISP 工具的新 UI。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 HP OCI 工具適用於 Windows、Mac 和 Linux 平台。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

@@ -61,5 +61,64 @@
     "downgraded": 0,
     "total_lines": 108,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What is the process for printing data related to the R&D investment project?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides a step-by-step process for printing data related to the R&D investment project, including opening the weekly report, selecting the relevant year, and exporting the web page to print."
+      },
+      {
+        "question": "What issues have been encountered when using the Edge browser to access the process?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that there are issues when using the Edge browser, and recommends using the IE mode instead."
+      },
+      {
+        "question": "What are the key concerns or issues identified with the etoken_dongle_server and etoken_server components?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides a detailed analysis of the architectural, security, and testing issues identified with the etoken_dongle_server and etoken_server components, including concerns about thread lifecycle, external command execution, and lack of failure path testing."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 15,
+    "supported": 10,
+    "uncertain": 0,
+    "unsupported": 5,
+    "unsupported_claims": [
+      {
+        "claim": "- Vendor Command 第二碼",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about Vendor Command second byte"
+      },
+      {
+        "claim": "- 檢查不同 OS 平台（ex：Mac, Linux, Chromebook）。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention checking different OS platforms"
+      },
+      {
+        "claim": "- 2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention any issues with the device not being recognized on the OS or showing an exclamation mark in the device manager"
+      },
+      {
+        "claim": "- 2021/11/05 程式閃退",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention any program crashes"
+      },
+      {
+        "claim": "- Google 在 ISP 相關。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything related to Google or ISP"
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:02:35.499Z"
 }

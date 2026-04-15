@@ -61,5 +61,29 @@
     "downgraded": 0,
     "total_lines": 3,
     "is_clean": true
-  }
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 1,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 1,
+    "unsupported_claims": [
+      {
+        "claim": "本提案包括將工作文件上傳至 AI 進行訓練、使用 host bridge 讓沒有 AI 的電腦也能使用 AI 功能、升降桌以及跨平台 Web UI 介面等創新點子。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about uploading work documents to AI for training, using host bridge to allow computers without AI to use AI functions, height-adjustable desks, or cross-platform web UI interfaces."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:06.432Z"
 }

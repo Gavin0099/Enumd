@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "App[\"<b>User Mode App</b><br/>OCI Tool / Updater\"]:::inputNode",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "subgraph Device_Add [\"Device Add Event (裝置新增事件)\"]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "- 使用 Visual Studio 2019/2022 開啟 glusbflt.vcxproj 進行編譯。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "- 📄 filter_control.c: 處理 IOCTL 請求。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

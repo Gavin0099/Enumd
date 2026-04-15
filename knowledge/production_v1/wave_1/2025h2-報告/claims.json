@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "2025h2-報告",
+    "claim": "一、深化 HP 戰略合作: 從被動接收規格轉變為擁有話語權的核心技術夥伴,確保明年新機種規格與我方方案高度相容,並建立客戶對團隊技術能力的實質依賴。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "二、解決 WOA 平台相容性: 主動投入底層分析,精確釐清 WOA 環境下的失效根本原因,並提供具體技術指引,要求並協助第三方廠商修正其 DLL,成功完成系統整合,確保產品生命週期。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "三、軟體產品標準化: 導入 AI 輔助設計與跨平台架構,解決資源分散與體驗不足的現況挑戰,提升二線客戶產品價值。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "四、擴大 ASUS 業務份額: 成功將 ASUS 自有 UI 整合至我方雙平台底層架構,驗證系統具備支援一線品牌客製化的穩定性與彈性。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "五、強化資安合規: 全面重構數位簽章系統 (Etoken)以符合 HP 與 Lenovo 提高的資安開發生命週期 (SSDLC) 標準,消除驗收失敗風險。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "六、流程變革: 導入「規格先行」機制 (Spec-First Approach),消除技術灰色地帶,大幅降低跨部門溝通成本與重工風險。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

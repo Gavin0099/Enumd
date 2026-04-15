@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- Start Address: 0x8000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- Start Address: 0x8000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- Start Address: 0xA000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "1. Apple Header String",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "2. Checksum - Apple Header String + 後續資料的累加值",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "3. Serial Number data",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "4. Container ID data",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "1. [Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- 韌體更新需要進行合法性驗證,通常使用 OpenSSL、Token 或 HSM 等方式進行程式碼簽章。Genesys Logic 目前使用 ECDSA nistp256 演算法進行簽章。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "2. [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "3. [HP Monitor Code Sign Update Flow](code-sign/hp-monitor-code-sign-update-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- 記錄了 HP 顯示器韌體更新的相關流程,包括 HP HW Check Code Signed、HP SW Check Code Signed、HP Code Signed Slave 和 HP Hub Check Code Signed 等不同驗證模式。",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

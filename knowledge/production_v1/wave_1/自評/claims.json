@@ -1,0 +1,170 @@
+[
+  {
+    "slug": "自評",
+    "claim": "- 能根據部屬的特性進行個性化管理，讓每個人發揮所長。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 時時刻刻強調文件的重要性，確保資訊清晰且不遺漏。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 部屬太多可能會忽略了某些部屬的需求或遇到的困難。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對BU的需求時會詳細詢問，並討論出一個共識來提供給客戶Tool。[Adam]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 針對BU的需求，皆能及時的完成。[Vic]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對客戶需求，皆能盡力完成，惟一些相關知識還不夠了解，還需要花時間去熟悉。[Standy]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 跨平台CLI tool (Adamkit)。[Adam]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 今年正面對轉換期，有花了很多時間把原本的code 轉換過去CLI tool，目前主流Tool 已經慢慢移轉過去。[Adam]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 在面對members 因為客戶的緊急需求所修改的code 不太符合目標品質時，還是能在緊急性和品質中找一個平衡點。[Adam]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 有成功打通electron，讓electron ui可以對hub 下 command，惟UI優化還需要多花一點心力。[Bernie]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 做為先期的debug tool，有把需要的功能做出來，讓部門或是BU可以花費更少時間debug。[Bernie]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 因為客戶特殊的需求，所以需要根據客戶的定製作特定UI，在Windows 和 Mac 皆有把對應的需求做好。[Bernie]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 因為別的需求比較緊急，還沒有花太多心力在裡面。[Bernie]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 花費了很多時間在建構自動化測試環境和其開發，對未來的下一個目標奠定了好的基礎。[Vic]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 對於members Git & GitLab的問題，皆能耐心的回應，也花費不少時間做出大家需要的文件。[Vic]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 能根據部屬的特性進行個性化管理，讓每個人發揮所長。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 時時刻刻強調文件的重要性，確保資訊清晰且不遺漏。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 部屬太多可能會忽略了某些部屬的需求或遇到的困難。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對BU的需求時會詳細詢問，並討論出一個共識來提供給客戶Tool。[Adam]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 針對BU的需求，皆能及時的完成。[Vic]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對客戶需求，皆能盡力完成，惟一些相關知識還不夠了解，還需要花時間去熟悉。[Standy]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

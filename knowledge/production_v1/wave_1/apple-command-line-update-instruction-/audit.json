@@ -61,5 +61,38 @@
     "downgraded": 0,
     "total_lines": 52,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What are the key components of the Apple command line update tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text describes the key components of the Apple command line update tool, including the Apple header string, checksum, serial number data, and container ID data."
+      },
+      {
+        "question": "What are the different firmware update flows mentioned in the synthesis?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text mentions the GL3523 FW Update Note, GL3590 FW update Note, and Mac Command Line Tool Update Note, which describe the different firmware update flows."
+      },
+      {
+        "question": "What are the code signing requirements for the firmware update process?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions that the firmware update requires code signing, typically using OpenSSL, Token, or HSM, and that Genesys Logic uses the ECDSA nistp256 algorithm, but it does not provide complete details on the code signing requirements."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 7,
+    "supported": 7,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:46.803Z"
 }

@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "在新的架構中,我們需要導入 MT9052 MCU 的更新功能。這需要在現有的程式碼中進行一些修改和設定,以支援這個新的 chip update 方式。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "1. 在 `GlModel.cpp` 中,找到 `FW_INDICATE_NAME` 並進行相關設定,以指示 MT9052 的 update 功能。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "2. 在 `SupportCtrl.h` 中,加入需要 update 的 `.h` 檔案。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "3. 在 `MT905xMcuCtrl.h` 中,要繼承 `IspCtrl` 介面。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "4. 在 `IspCtrlManager.cpp` 的 `AcquireIspCtrl` 函數中,加入判斷條件,以導入 MT9052 update 功能。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "5. 在 `GLHubUpdateTool.cpp` 的 `ManualUpdateFwNew` 函數中,透過上述設定,即可導向 MT9052 MCU 的 update 流程。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "6. 在 `DeviceAgent.cpp` 的 `UpdateFw` 和 `IspFlash` 函數中,加入 MT9052 相關的處理邏輯。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "7. 在 `MT905xMcuCtrl.cpp` 的 `Isp` 函數中,實作 MT9052 MCU 的 update 功能。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 除了 GL3590 有 hw security module 之外,其他 hub chip 是沒有的,因此必須使用 fw 做 code sign 驗證。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 在某些情況下,計算 sha256 的 hash 值會斷線,以及 rsa2048 簽章驗證會出現問題。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 需要注意一些步驟,例如必須用 U3 來跑、public key 和 signature 要做 reverse 等。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 包含了 GenesysLogic Hub 的 Vendor Command、Hub Configuration 和 PD Configuration 等相關規格。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 其中提到了 GL3590 ISP Class 和 GL3525 FW 及 Flash Configuration 等內容,可能與 MT9052 update 有關。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 介紹了 RTK Scaler 的數位簽章驗證流程,包括 SW 和 HW 兩種方式。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 可能與 MT9052 update 的簽章驗證有相似之處。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "通過上述步驟,我們可以在新的架構中成功導入 MT9052 MCU 的 update 功能。需要注意的是,這個功能的實現需要與其他相關的程式碼和規格進行配合,例如 code sign 驗證等。在實際開發過程中,可能還需要進一步的調整和優化。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

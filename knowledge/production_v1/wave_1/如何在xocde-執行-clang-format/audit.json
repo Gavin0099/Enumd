@@ -61,5 +61,39 @@
     "downgraded": 0,
     "total_lines": 52,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "How do I install clang-format on my system?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides instructions for installing clang-format using Homebrew."
+      },
+      {
+        "question": "What version of clang-format should I use?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that you should use version 12 or higher of clang-format."
+      },
+      {
+        "question": "How do I use clang-format in Xcode?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides step-by-step instructions for using clang-format in Xcode, including creating an Automator service and applying it to selected code."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 10,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": true,
+    "skip_reason": "JSON parse failed. Raw: {\n  \"results\": [\n    { \"index\": 1, \"verdict\": \"SUPPORTED\", \"reason\": \"The source document mentions installing clang-form"
+  },
+  "backfilled_at": "2026-04-15T04:02:04.860Z"
 }

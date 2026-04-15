@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "之前的同事基本上都是配合硬體開發軟體，並沒有純軟體出生，或是說對軟體沒有熱烈喜好。Adam進來後補足了這一塊，在請Adam修改對應功能時，他開發時間會比較久，所以會趁開發時，也會把對應的程式碼做重構(refactor)。發現這樣的現象後，也開始調整給Adam的工作，讓他可以開發比較長期的需求，並根據自己調整重構的比例：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "- 導入程式碼審查(code review)機制",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "- 三平台(Linux, Mac, Windows)底層共用程式碼",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "- 增加Diagnostic Tool讓開發驗證可以更快速找到問題點",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "判斷dll-是-x86-還是-x64",
+    "claim": "使用 `dumpbin.exe /headers GLHubAPI.dll` 命令可以判斷 DLL 是 x86 還是 x64 架構。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

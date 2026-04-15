@@ -61,5 +61,69 @@
     "downgraded": 0,
     "total_lines": 32,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What needs to be confirmed regarding the HP Z24m ISP Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the HP Z24m ISP Tool-related matters need to be confirmed."
+      },
+      {
+        "question": "What needs to be evaluated for the Foxconn and Lenovo P27u-20, P40w-20, and T22i-30 models regarding LADM requirements?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the LADM requirements for the Foxconn and Lenovo P27u-20, P40w-20, and T22i-30 models need to be evaluated."
+      },
+      {
+        "question": "What needs to be confirmed regarding the IIYAMA GB3290QSU-B1 new model?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the circuit of the IIYAMA GB3290QSU-B1 new model needs to be confirmed."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 6,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 6,
+    "unsupported_claims": [
+      {
+        "claim": "1. **HP Z24m ISP Tool 相關事項 @Bernie.Hsieh**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about HP Z24m ISP Tool."
+      },
+      {
+        "claim": "- 需要確認 HP Z24m ISP Tool 的相關事項",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about HP Z24m ISP Tool."
+      },
+      {
+        "claim": "6. **PA248CRV, PA329CRV FW update tool @Vic Chen**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about PA248CRV, PA329CRV FW update tool."
+      },
+      {
+        "claim": "7. **P27U-20T Billboard FW Update DEMO 成功視頻 @Vic Chen**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about P27U-20T Billboard FW Update DEMO."
+      },
+      {
+        "claim": "8. **Mac os 一鍵更新支持_聯想 T24v-30&P34w-20 @Bernie.Hsieh**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about Mac OS one-click update support for Lenovo T24v-30 and P34w-20."
+      },
+      {
+        "claim": "- 需要支援聯想 T24v-30 和 P34w-20 機種的 Mac OS 一鍵更新功能",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain any information about Mac OS one-click update support for Lenovo T24v-30 and P34w-20."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:05.321Z"
 }

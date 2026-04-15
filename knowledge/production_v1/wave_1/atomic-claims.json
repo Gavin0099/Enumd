@@ -1,0 +1,3154 @@
+[
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "App[\"<b>User Mode App</b><br/>OCI Tool / Updater\"]:::inputNode",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "subgraph Device_Add [\"Device Add Event (裝置新增事件)\"]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "- 使用 Visual Studio 2019/2022 開啟 glusbflt.vcxproj 進行編譯。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-generic-usb-filter-driver-",
+    "claim": "- 📄 filter_control.c: 處理 IOCTL 請求。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "報告書：Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "Genesys Logic 為了滿足 HP Code Signing 的安全要求，設計了一套完整的韌體簽署與驗證架構。此架構的核心目標是確保所有簽署操作都符合 FIPS 140-2 Level 3 的安全標準，並採用 ECDSA nistp256 加密演算法。在滿足嚴格安全合規性的前提下，Genesys Logic 還需要建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "Genesys Logic 選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」作為最終方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "1. FIPS L3 認證的 USB eToken 硬體，用於安全儲存金鑰。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "1. 在 KMS 系統中生成 ECDSA nistp256 金鑰對。 `[Code sign - ECC key](code-sign-ecc-key.html)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "1. 使用 SDK 應用程式從 eToken 中讀取私鑰。 `[3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+    "claim": "4. 在裝置啟動時，驗證韌體映像檔的合法性。 `[3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html)`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "**問題**：程式無法送出 USB Vendor Command，被 macOS Hardened Runtime 攔截。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "- 在 Xcode 的 Build Settings 中，確認 `com.apple.security.device.usb` 權限已正確設定。[Xcode Build Settings](https://developer.apple.com/documentation/security/hardened_runtime)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "**問題**：安裝包 (.pkg) 若無正確簽章，使用者雙擊會被阻擋（顯示「無法打開」）。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "**解法**：使用 Developer ID Installer 憑證簽署並公證。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "productsign --sign \"Developer ID Installer: Genesys Logic, INC. (Y995R99UYP)\" ./HP_727pm_FirmwareInstaller.pkg ./HP_727pm_FirmwareInstaller_Signed.pkg",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "xcrun notarytool store-credentials \"HP_Installer_Profile\" --apple-id \"你的AppleID@email.com\" --team-id \"Y995R99UYP\" --password \"abcd-efgh-ijkl-mnop\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "xcrun notarytool submit ./HP_727pm_FirmwareInstaller_Signed.pkg --keychain-profile \"HP_Installer_Profile\" --wait",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "1. 確認 USB 權限已正確設定，可以透過 `codesign` 指令驗證。[Xcode Project Settings](https://developer.apple.com/documentation/security/hardened_runtime)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+    "claim": "3. 確認 PKG 檔案已使用 Developer ID Installer 憑證正確簽署。[productsign](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 建立 [Data Inventory Document](https://www.sans.org/white-papers/33193/) 以詳細列出系統中處理的所有資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [SAST (Static Application Security Testing)](https://owasp.org/www-community/controls/Static_Code_Analysis) 以識別程式碼中的安全漏洞。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [SCA (Software Composition Analysis)](https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html) 以識別使用的第三方軟體元件並生成 SBOM (Software Bill of Materials)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [Fuzzing](https://owasp.org/www-community/Fuzzing) 以發現程式碼中的潛在缺陷和漏洞。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [DAST (Dynamic Application Security Testing)](https://owasp.org/www-community/controls/Dynamic_Analysis_Security_Testing) 以識別運行時的安全問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 實作 [Code Signing Verification](https://docs.microsoft.com/en-us/windows/win32/seccrypto/cryptography-tools) 以驗證軟體簽名。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 實作 Corruption/Recovery 的事件記錄 (Logging)。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "根據提供的上下文資訊,客戶在使用 Lenovo 顯示器的 Daisy Chain 功能時,透過 One Key Update Tool 進行韌體更新時會出現更新失敗的問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "1. 請 RTK 修改 Scaler Update Tool 的作法,在呼叫 i2c 指令後,不要再執行 Enable Suspend 的動作。 [`Lenovo Display Daisy Chain issue`]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "1. 關於 HP OCI APP 的最新 SDK 文件 v2.6,提供了一些相關的參考資訊,包括 Device DLL 的功能、檔案簽章驗證、韌體更新流程等。 [`HP OCI APP`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "根據提供的上下文資訊,Lenovo 顯示器 Daisy Chain 韌體更新問題的初步解決方案是修改 Scaler Update Tool 的作法,避免在更新後立即執行 Enable Suspend 動作。後續可能還需要進一步分析 USBView 日誌,並參考相關的 SDK 文件和安全性考量,以確保問題的徹底解決。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+    "claim": "- Wi-Fi：接外網（例：手機熱點、家用 AP、其他非公司網段）",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-投影片大綱從餵指令到定規則",
+    "claim": "本投影片大綱介紹了從「餵指令」到「定規則」的方法,讓 AI 不再每次都重頭理解專案。主要探討了 AI 只看到部分上下文的問題,以及重複解釋導致的記憶污染和臨時拼裝架構。最後提出了「插件式治理」的解決方案,透過核心檔案同步底線,避免重複解釋。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "2. **HP Z27u G3 EndUser Tool & Silent mode tool**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "- 這是 HP 筆電的相關工具，可能需要在交接過程中進行相關的操作和測試。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "5. **Camera 透過我們驗證 code sign**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "- 這是關於相機韌體 code sign 驗證的流程，可能需要在交接過程中進行相關的確認和測試。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "6. **HID Code Sign 記錄**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "- 這是關於 HID 韌體 code sign 驗證的相關記錄，可能需要在交接過程中進行相關的確認和測試。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "7. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0206-0209-交接",
+    "claim": "- 這是關於 HP 筆電 CPU3 韌體 code sign 驗證的問題，可能需要在交接過程中進行相關的確認和解決。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "4. **Evaluation Request: Supporting CFU for Display FW Update via RTOS_USB Hub_Genesys**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "- 需要支援透過 RTOS USB Hub Genesys 進行顯示器韌體更新的功能。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "1. **Camera 透過我們驗證 code sign**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "- 需要處理相機韌體的 code sign 驗證流程，包括生成 ECDSA 金鑰、告知如何擦除相機、如何讀取相機資料等。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "2. **HID Code Sign 記錄**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "3. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "- 除了 GL3590 有硬體安全模組外，其他 hub chip 沒有，所以必須使用 FW 進行 code sign 驗證。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "- 討論使用 GL3525 作為範本進行驗證，因為 GL3525 有三個 CPU，Hub 更新後可以用其他 CPU 進行 code sign 驗證。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "1. **Camera 透過我們驗證 code sign** 與 **0326-0330 交接** 的關係:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "- 需要處理相機韌體的 code sign 驗證流程，這是 0326-0330 交接的一部分。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "2. **HID Code Sign 記錄** 與 **0326-0330 交接** 的關係:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "3. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題** 與 **0326-0330 交接** 的關係:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "0326-0330-交接",
+    "claim": "- 討論了 HP 產品的 code sign 驗證問題，這也是 0326-0330 交接的一部分。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "12261230-交接",
+    "claim": "- HP SSDLC (Secure Software Development Life Cycle) 和 SBOM (Software Bill of Materials) 是 HP 公司的安全軟體開發生命週期和軟體清單管理。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "12261230-交接",
+    "claim": "3. **HP Mandatory Firmware Update Strategy Expansion for Future Projects**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "12261230-交接",
+    "claim": "4. **HP_Display_Firmware_Update_Specification**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "12261230-交接",
+    "claim": "6. **One key updater tool for GL3590-OTY20**:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021-今年重點目標",
+    "claim": "2021 年的重點目標是整合 HP Enduser Tool、 General Enduser Tool 和 Standard ISP Tool 成為新的架構。在此過程中需要事先規劃好要測試的 HP Display Model 以及各種 code sign 方式，並在每週四的例會中檢視進度。[`目標是年底將 HP Enduser Tool、 General Enduser Tool、Standard ISP Tool 整合成新架構， 並且需事先規劃好，要測試哪些 HP Display Model、包含各種code sign方式； 將在每週四例會檢視進度。`]",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021-今年重點目標",
+    "claim": "3. 嘗試加入 SPD Log（一個較完整的開源 LOG 系統），取代原有的 LOG 系統。[`試著加入 SPD Log （Open source 中較完整的 LOG系統） ，取代原本的 LOG 系統。`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021-今年重點目標",
+    "claim": "- 使用 draw.io 繪製流程圖。[`流程圖可使用draw IO繪製。`]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021-今年重點目標",
+    "claim": "在整合工具的過程中，需要了解 Genesys Logic Firmware 的安全簽署和驗證流程（Code Signing）。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021-今年重點目標",
+    "claim": "Genesys Logic 設計了一套內部簽署系統，使用 FIPS L3 認證的 USB eToken 硬體作為金鑰儲存，並搭配自行開發的 SDK 應用程式。[`我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021-今年重點目標",
+    "claim": "此外，也可以參考 3rd party code signing specification (ECDSA) 的相關文件，了解 Genesys Logic 的程式碼簽署和驗證流程。[`3rd party code signing specification (ECDSA)`]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "1. **Code Review**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 當其他部門提出需求時，需要有正式的規格說明文件(SPEC)，並進行 review 動作。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 利用相關軟體，讓大家了解目前 BU 需求的優先順序。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 關於 Hub & PD 相關工作，規劃 Wiki 資訊，讓新人比較容易上手。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 目標與關鍵成果(OKR)管理方式。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "1. **HP Z24m ISP Tool 相關事項 @Bernie.Hsieh**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "- 需要確認 HP Z24m ISP Tool 的相關事項",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "- 需要評估 Foxconn 和聯想的 P27u-20、P40w-20 和 T22i-30 機種的 LADM 需求",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "6. **PA248CRV, PA329CRV FW update tool @Vic Chen**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "7. **P27U-20T Billboard FW Update DEMO 成功視頻 @Vic Chen**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "8. **Mac os 一鍵更新支持_聯想 T24v-30&P34w-20 @Bernie.Hsieh**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "20240729-82-交接事項",
+    "claim": "- 需要支援聯想 T24v-30 和 P34w-20 機種的 Mac OS 一鍵更新功能",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2024部門創新提案",
+    "claim": "本提案包括將工作文件上傳至 AI 進行訓練、使用 host bridge 讓沒有 AI 的電腦也能使用 AI 功能、升降桌以及跨平台 Web UI 介面等創新點子。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "以下為 2025 5/19~5/23 交接事項的綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "1. Richelieu Issue @Adam.Chen",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "2. Lenovo P27QD-40 @Standy Huang",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "3. Lenovo Mac One Key Update tool @Bernie.Hsieh",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "4. GLBin @Adam.Chen",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "5. HP Silent mode bat檔修改 @Adam.Chen",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "6. GenX AMD 7P Dragon Range Hub",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "1. [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "2. [Etoken System Code View](code-sign/etoken-system-code-view-.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 連線工作流程使用 detach 且無生命週期收斂,違反可預測關閉原則",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 檔案大小與外部命令執行缺乏邊界控制,存在資源與執行風險",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- SQL 注入風險、shutdown race / UAF 風險、OOM/卡死風險",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "3. [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- HID update flow",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- Vendor Command 第二碼",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 驗證 USB LOGO 問題",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- FW UPD 已經是 open source 了,但 SW 目前 Build 不起來,無法測試",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 檢查不同 OS 平台（ex：mac, linux, chrome book）",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "1. **Richelieu Issue @Adam.Chen**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "2. **Lenovo P27QD-40 @Standy Huang**",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 Lenovo P27QD-40 的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "3. **Lenovo Mac One Key Update tool @Bernie.Hsieh**",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 Lenovo Mac One Key Update tool 的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "4. **GLBin @Adam.Chen**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "5. **HP Silent mode bat檔修改 @Adam.Chen**",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 HP Silent mode bat檔修改的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "6. **GenX AMD 7P Dragon Range Hub**",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 GenX AMD 7P Dragon Range Hub 的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "在交接過程中,需要仔細瞭解上述各個重點,並確保能夠順利處理相關的技術和流程問題。同時,也需要注意與 [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)、[Etoken System Code View](code-sign/etoken-system-code-view-.html) 和 [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html) 等相關的背景知識,以確保交接過程中能夠順利進行。",
+    "tier": "Explicit",
+    "evidence_score": 30,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "本文件解釋了軟體組成清單 (Software Bill of Materials, SBOM) 的定義以及為何需要更新 2021 年的標準。SBOM 是軟體安全與供應鏈風險管理的關鍵基石，它是一份「巢狀清單 (nested inventory)」，即構成軟體應用程式與系統的成分表。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "自 2021 年以來，隨著軟體生產者、選擇者 (Choosers) 與維運者 (Operators) 的需求增加，SBOM 工具已顯著成熟。專家合作與實踐創新推動了技術現狀的進步。本文件依據 OMB M-22-18 備忘錄進行更新，旨在反映當前的實作成熟度。它更新了美國機構生成或請求 SBOM 時的基準資料欄位、實踐與流程。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 是實現軟體組件透明化的關鍵步驟，能照亮供應鏈，讓組織能做出基於風險的決策。作為「成分表」，SBOM 為組織提供數據，這些數據可轉化為洞察，用以緩解可能危害系統安全的風險。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "有效的共享機制必須是機器可讀 (machine-processable) 且可擴展的。SBOM 模型透過捕捉機器可讀格式的數據，支援自動化分析、共享與管理。SBOM 數據可以對應到其他數據源（如資安公告或組織內部的「核准/未核准」軟體資料庫），以改善安全開發與漏洞管理等優先事項。SBOM 無法解決所有的軟體安全與供應鏈問題，但它是實現「風險導向決策」的必要步驟。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "本文件適用於機構獲取或開發的軟體及其組件，明確包含複雜系統如 AI 或 SaaS。雖然這些系統可能需要「額外要素」才能獲得完整的透明度，但它們的 SBOM 仍必須包含本文件規定的最低要素。這些最低要素並非創造新的聯邦要求，而是「細化/優化」聯邦政府應如何生成與請求 SBOM。資料管理、儲存實踐以及精確的編碼細節不在本報告範圍內。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "1. **SBOM 作者 (SBOM Author)**: 創建該組件 SBOM 資料的實體名稱。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "2. **軟體生產者 (Software Producer)**: 創建、定義和識別元件的實體名稱。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "3. **軟體組件資訊 (Software Component Information)**: 包括組件名稱、版本、識別碼、雜湊值、授權條款以及依賴關係。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 具有大致的層次結構；軟體由組件 (components) 組成，每個組件可能有子組件，以此類推。每個組件都應該有自己的 SBOM 來捕捉其子組件和依賴關係層次。這些資料欄位適用於每個組件，且必須依賴工具和定義好的格式來達成機器可讀性。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 的核心是一個一致、統一的結構，用於理解構成軟體的組件。這些欄位的目標是提供足夠的識別資訊，以便在軟體供應鏈中追蹤組件，並將其對應到其他有用的資料來源（如漏洞資料庫或授權資料庫）。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 作者是指創建該組件 SBOM 資料的實體名稱，與「軟體生產者 (Software Producer)」不同，後者是指製造該軟體組件的人。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "軟體生產者是指創建、定義和識別元件的實體名稱。這是一個可讀的字串，用於識別軟體元件的原始製造商或發起者。這讓組織了解生產者資訊，並識別安全問題的聯絡窗口。此欄位應允許記錄多個條目。對於開源軟體，若無明確慣例，作者應使用原始專案或維護組織名稱。如果沒有明確的軟體生產者指示，SBOM 作者必須明確標示該元件為「來源不明 (unknown provenance)」。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "元件名稱是軟體生產者分配給軟體元件的名稱，這是人類可讀的名稱，與「軟體識別碼 (Software Identifiers)」不同。資料格式應允許記錄多個條目，以捕捉別名 (alternate names)。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "元件版本是軟體生產者用來指定軟體變更的識別碼。它捕捉軟體版本，使組織能識別特定的程式碼交付 (code delivery)。如果生產者未提供版本號，SBOM 作者可以用檔案建立日期來代替。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "軟體識別碼用於識別元件或作為相關資料庫查詢鍵值。必須包含至少一個識別碼，偏好使用 CPE (Common Platform Enumeration) 和 PURL (Package Uniform Resource Locators)。也可包含 UUID、組織特定 ID、Commit Hashes，以及內在識別碼 (intrinsic identifiers) 如 OmniBOR 和 SWHID。如果有多個識別碼（無論格式相同或不同），作者應全部列出。",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "元件雜湊值是取自軟體元件的加密雜湊值。如果 SBOM 作者無法取得原始元件的檔案（Artifact），則不應填寫此欄位。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "工具名稱是 SBOM 作者用來生成 SBOM 的工具名稱。若使用了多個工具（例如一個用於生成，另一個用於豐富化數據），應列出所有使用到的工具及其數據來源。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "時間戳記是 SBOM 數據最近一次更新的日期與時間。必須符合 ISO 8601 格式。若生成後未再修改，則填入生成時間。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "生成情境說明 SBOM 是在軟體生命週期的哪個階段生成的。可分為開發、測試、部署等階段。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "為了處理大量數據與跨組織邊界的需求，自動化是必須的。目前業界公認的兩大主流格式是 SPDX 和 CycloneDX，它們都是開放、國際化、機器可讀且人可讀的標準。SBOM 的相容性原則是支援這些主流格式，並隨時關注新興標準的發展。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 必須透過政策與合約整合進開發流程中。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 應涵蓋所有已知的軟體組件，包括開源、商用和自製的組件。對於無法確定來源的組件，應標示為「來源不明」。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "SBOM 應該能夠隨時因應軟體的變更而更新，並維持與原始 SBOM 的一致性。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "雲端與 SaaS 系統的 SBOM 面臨的主要挑戰是如何捕捉動態變化的組件以及多租戶環境下的共享組件。建議方向是探索基於事件的 SBOM 更新機制，並研究如何在多租戶環境中共享 SBOM 資訊。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+    "claim": "AI 系統也是軟體，因此適用最低 SBOM 要素。但 AI 系統包含許多傳統 SBOM 無法捕捉的元件（如模型權重、訓練數據），這些元件對關鍵基礎設施的風險管理至關重要。未來需要擴展 SBOM 規範以涵蓋 AI 系統的特殊需求。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 GL Bin Tool 的使用。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 Lenovo P27QD-40 的 Daisy Chain 功能。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 Mac 上的 Lenovo 一鍵更新工具。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 再次提到了 GL Bin Tool。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 Code Sign 規格的整理和討論。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 HP OCI Tool 適用於 738pu WOA 的工具。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 HP ISP 工具的新 UI。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-工作會報",
+    "claim": "- 提到了 HP OCI 工具適用於 Windows、Mac 和 Linux 平台。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "一、深化 HP 戰略合作: 從被動接收規格轉變為擁有話語權的核心技術夥伴,確保明年新機種規格與我方方案高度相容,並建立客戶對團隊技術能力的實質依賴。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "二、解決 WOA 平台相容性: 主動投入底層分析,精確釐清 WOA 環境下的失效根本原因,並提供具體技術指引,要求並協助第三方廠商修正其 DLL,成功完成系統整合,確保產品生命週期。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "三、軟體產品標準化: 導入 AI 輔助設計與跨平台架構,解決資源分散與體驗不足的現況挑戰,提升二線客戶產品價值。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "四、擴大 ASUS 業務份額: 成功將 ASUS 自有 UI 整合至我方雙平台底層架構,驗證系統具備支援一線品牌客製化的穩定性與彈性。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "五、強化資安合規: 全面重構數位簽章系統 (Etoken)以符合 HP 與 Lenovo 提高的資安開發生命週期 (SSDLC) 標準,消除驗收失敗風險。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025h2-報告",
+    "claim": "六、流程變革: 導入「規格先行」機制 (Spec-First Approach),消除技術灰色地帶,大幅降低跨部門溝通成本與重工風險。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "報告書：3rd party code signing specification (ECDSA)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "本報告書旨在概述 Genesys Logic 針對第三方韌體程式碼簽署所採用的 ECDSA 規範。Genesys Logic 為滿足安全性要求，必須對所有韌體程式碼進行合法性驗證。本文將詳細介紹 Genesys Logic 的程式碼簽署流程、實作方式以及相關技術細節。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "Genesys Logic 採用簽署二進位檔案的方式來驗證韌體程式碼的合法性。整個簽署流程包括以下步驟：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "1. 簽署 (Sign)：使用 ECDSA 私鑰對韌體二進位檔案進行數位簽章。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "2. 驗證 (Verify)：在韌體更新前，先使用 ECDSA 公鑰驗證二進位檔案的數位簽章是否合法。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "Genesys Logic 提供了多種實作方式來完成程式碼簽署，包括使用 OpenSSL 工具和 eToken 硬體安全模組。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "1. 使用 OpenSSL 生成 ECDSA 私鑰和公鑰。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "1. 使用 FIPS 140-2 Level 3 認證的 eToken 硬體安全模組生成 ECDSA 私鑰。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "1. [`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "2. [`3rd-party-code-signing-specification-ecdsaen-`](/code-sign/3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsa",
+    "claim": "3. [`code-sign-ecc-key`](/code-sign/code-sign-ecc-key.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "報告書：3rd party code signing specification (ECDSA)(EN)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "本報告書旨在概述 Genesys Logic 針對第三方韌體代碼簽署所制定的 ECDSA 規範。Genesys Logic 要求所有韌體更新必須經過簽署驗證流程，以確保韌體的完整性和安全性。本報告將深入探討相關的實作細節和技術要求。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 的韌體簽署流程必須符合以下核心要求：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "1. 採用 ECDSA (Elliptic Curve Digital Signature Algorithm) nistp256 加密演算法，以滿足 FIPS 140-2 Level 3 的安全標準。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "2. 建立一套兼具成本效益、可擴展性和災難恢復能力的內部簽署系統。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "3. 將私密金鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中，並透過自行開發的 SDK 應用程式進行簽署操作。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 的韌體簽署流程包括以下步驟：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "1. **簽署 (Sign)**: 使用 ECDSA 私鑰對韌體二進位檔案進行數位簽章。[`3rd-party-code-signing-specification-ecdsa`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "2. **驗證 (Verify)**: 在韌體更新前，使用 ECDSA 公鑰驗證二進位檔案的數位簽章是否合法。[`3rd-party-code-signing-specification-ecdsa`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 提供了以下兩種實作方式供開發者參考：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "1. **使用 OpenSSL**: 利用 OpenSSL 工具套件進行 ECDSA 金鑰生成、簽署和驗證。[`3rd-party-code-signing-specification-ecdsa`, `code-sign-ecc-key`]",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "2. **使用 eToken**: 將 ECDSA 私鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中，並透過自行開發的 SDK 應用程式進行簽署操作。[`3rd-party-code-signing-specification-ecdsa`]",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 針對第三方韌體代碼簽署制定了嚴格的 ECDSA 規範，以確保韌體的完整性和安全性。開發者可以參考上述兩種實作方式，根據實際需求選擇合適的技術路徑。無論採用哪種方式，都必須確保私密金鑰的安全性，並嚴格遵守 FIPS 140-2 Level 3 的安全標準。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "HP E24i EndUser Tool 在更新新版的 scaler (TSUM_R2) 時，會認為是最新版本而直接跳過不更新。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "這樣可以確保無論 scaler chip 是 TSUM_CD 還是 TSUM_R2，都能正確地判斷 scaler firmware 的版本。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "HP E24i 的 scaler chip 從原本的 TSUM_CD 改為 TSUM_R2。這款機型在 2019 年推出時，scaler 的 SW 版本 (packet version) 並不支援 TSUM_R2。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "當初判斷新舊 update 流程是透過 ini 設定檔中的參數。但現在新舊版 chip 混合使用，我們無法再單純依賴 ini 參數來判斷。後來我們想到一個辦法，就是不管 TSUM_CD 還是 TSUM_R2，都直接去取得 Firmware Packet Version，因為它有回傳碼可以用來判斷。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "不過在修改完程式碼後，我們只驗證了 TSUM_CD chip，導致出現了這個 bug。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "除了針對不同 scaler chip 進行驗證以外，我們還需要建立一份 Release Tool 的檢查清單 (Check list)，確保在發佈前能全面檢查各項功能。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "永久對策為建立 Release Tool 的檢查清單。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "我們已經建立了 Release Tool 的檢查清單,並確保在發佈前能完整執行。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+    "claim": "我們將 Release Tool 的檢查清單納入標準作業流程,確保未來每次發佈前都必須執行。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- Start Address: 0x8000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- Start Address: 0x8000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- Start Address: 0xA000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "1. Apple Header String",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "2. Checksum - Apple Header String + 後續資料的累加值",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "3. Serial Number data",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "4. Container ID data",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "1. [Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- 韌體更新需要進行合法性驗證,通常使用 OpenSSL、Token 或 HSM 等方式進行程式碼簽章。Genesys Logic 目前使用 ECDSA nistp256 演算法進行簽章。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "2. [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "3. [HP Monitor Code Sign Update Flow](code-sign/hp-monitor-code-sign-update-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "apple-command-line-update-instruction-",
+    "claim": "- 記錄了 HP 顯示器韌體更新的相關流程,包括 HP HW Check Code Signed、HP SW Check Code Signed、HP Code Signed Slave 和 HP Hub Check Code Signed 等不同驗證模式。",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "交叉評核作業",
+    "claim": "- **Adam**：技術能力強,樂於協助團隊成員解決問題,在需求分析時可以多與大家分享心得。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "交叉評核作業",
+    "claim": "- **Standy**：開發了不錯的Diagnostic Tool,並重整了HP OCI Tool的UI,讓後續開發更加順利。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "交叉評核作業",
+    "claim": "- **Nick**：在Hub Auto Test和Mars的規劃上都能夠很好地回答疑問,並制定出後續的工作計畫。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "判斷dll-是-x86-還是-x64",
+    "claim": "使用 `dumpbin.exe /headers GLHubAPI.dll` 命令可以判斷 DLL 是 x86 還是 x64 架構。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "取消使用 stdafx.h include 方式",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "在現代 C++ 專案中，已不再需要使用 `stdafx.h` 作為預編譯標頭檔。取而代之的是在各個 `.h` 檔案中直接 `include` 所需的頭檔案。這樣可以避免底層程式碼過度依賴 `stdafx.h`，進而提高程式碼的模組化和可維護性。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "為了避免在專案組建時出現 \"unexpected end of file while looking for precompiled header. Did you forget to add '#include \"stdafx.h\"' to your source?\" 的錯誤，需要進行以下設定變更:",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "1. 清除 Precompiled Header 設定 `[Properties > C++ > Precompiled Header > Clean]`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "2. 調整 Preprocessor Definitions 和 Precompiled Headers 設定 `[Properties > C/C++ > Preprocessor]`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "3. 調整 Additional Dependencies 和 Ignore Specific Default Libraries 設定 `[Properties > Linker > Input]`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "目前底層程式碼已經不再需要 `stdafx.h` 這個預編譯標頭檔。取而代之的是在各個 `.h` 檔案中直接 `include` 所需的頭檔案。這樣可以避免底層程式碼過度依賴 `stdafx.h`，進而提高程式碼的模組化和可維護性。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "\"unexpected end of file while looking for precompiled header. Did you forget to add '#include \"stdafx.h\"' to your source?\"",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "1. 清除 Precompiled Header 設定 `[Properties > C++ > Precompiled Header > Clean]`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "2. 調整 Preprocessor Definitions 和 Precompiled Headers 設定 `[Properties > C/C++ > Preprocessor]`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Debug 模式: `Preprocrss Definitions : %(PreprocessorDefinitions)`，`Precompiled Headers : 清空`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Release 模式: `Preprocrss Definitions : %(PreprocessorDefinitions)`，`Precompiled Headers : 清空`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "3. 調整 Additional Dependencies 和 Ignore Specific Default Libraries 設定 `[Properties > Linker > Input]`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Debug 模式: `Additional Dependencies : Nafxcwd.lib;libcmtd.lib;%(AdditionalDependencies)`，`Ignore Specific Default Libaries: Nafxcwd.lib;libcmtd.lib`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Release 模式: `Additional Dependencies : Nafxcw.lib;libcmt.lib;%(AdditionalDependencies)`，`Ignore Specific Default Libaries:Nafxcw.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)`",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "1. [取消使用stdafx.h include 方式](https://genesyslogic.com.tw/general/取消使用stdafxh-include-方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "2. [HID Code Sign 記錄](https://genesyslogic.com.tw/code-sign/hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "3. [HP OCI APP](https://genesyslogic.com.tw/mac/hp-oci-app.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "4. [HP OCI DLL](https://genesyslogic.com.tw/mac/hp-oci-dll.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "以下是如何在 Mac 上透過 WireShark 抓取 USB 訊號的完整 Markdown 報告:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "1. 前往 [WireShark 官網](https://www.wireshark.org/)下載對應版本的 WireShark。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "2. 確認是否開啟 System Integrity Protection (SIP)。如果開啟的話，無法在 WireShark 中抓取 USB 訊號。可以使用以下命令檢查 SIP 狀態:",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "3. 如果 SIP 未被停用，需要進入 macOS Recovery Mode 並執行以下命令來關閉 SIP:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "5. 因為每台電腦的 USB 設備不同，需要找到以 `XHC` 開頭的設備。以下是一個範例:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "1. 開啟 WireShark 並選擇相應的設備。如果遇到無法捕獲的問題，需要安裝 `chmodbpf.pkg`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "2. 選擇 `XHC20` 設備開始捕獲 USB 訊號。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "3. 如果要過濾特定的 USB 設備，可以使用以下 WireShark 過濾器:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "usb.device_address == 3",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "5. 更多 WireShark 過濾器參數可以參考[官方文檔](https://www.wireshark.org/docs/wsug_html_chunked/ChWorkDisplayFilterSection.html)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "透過以上步驟,您就可以在 Mac 上使用 WireShark 成功地捕獲 USB 訊號並進行分析了。如果在過程中遇到任何問題,可以參考相關的[命令行卸載驅動程序](https://example.com/driver/command-line-uninstall-driver.html)和[E27m & E34m 驅動程序安裝失敗](https://example.com/driver/e27m-e34m-driver-install-fail.html)等資訊。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "首先需要確保您的系統上已安裝 clang-format。clang-format 是 Clang 專案的一部分，可以透過以下方式安裝:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "1. 使用 Homebrew 安裝:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "brew install clang-format",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "- 在 `Command Line Tools` 下拉選單中選擇您安裝的 Xcode 版本",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "- 這將自動安裝 clang-format",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "確保您使用的 clang-format 版本為 12 或更高版本。您可以透過以下命令檢查版本:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "clang-format --version",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "1. 開啟 Automator 應用程式",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "clang-format -i \"$@\"",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "6. 儲存服務，並命名為 `clang-format`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "1. 在專案根目錄中建立一個名為 `.clang-format` 的檔案，並在其中定義您的 clang-format 設定。您可以參考 [clang-format 文件](https://clang.llvm.org/docs/ClangFormatStyleOptions.html) 來設定格式。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "3. 右鍵點擊選取的程式碼，並在 `Services` 選單中選擇 `clang-format`。這將使用您在 Automator 中建立的服務來格式化選取的程式碼。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "透過這些步驟，您就可以在 Xcode 中輕鬆地使用 clang-format 來格式化您的程式碼了。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "工作目標",
+    "claim": "工作目標包括分配工作、管理 BU 需求以及撰寫工作文件。分配工作時需要提供相關資訊、了解成員特性、與成員和 BU 討論解決方案,並在完成重要需求時留存文件。管理 BU 需求時需要建立默契並抓好緩衝。工作文件撰寫則建議在 Git-Lab 或 Notion 上持續新增並讓大家主動參與。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新人參考資料",
+    "claim": "- 第一天可能 Z槽、GitLab、SVN 還未開通，等 MIS 完成設定後會寄信通知。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新人參考資料",
+    "claim": "- 本文件提供了 Code-Sign 的核心設計原則、情境定義、6-Byte 設定區塊規格、FW 規劃與工具鏈流程等詳細資訊。這些內容對於理解新人在開發環境中如何處理 Code-Sign 相關事項非常重要。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "在新的架構中,我們需要導入 MT9052 MCU 的更新功能。這需要在現有的程式碼中進行一些修改和設定,以支援這個新的 chip update 方式。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "1. 在 `GlModel.cpp` 中,找到 `FW_INDICATE_NAME` 並進行相關設定,以指示 MT9052 的 update 功能。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "2. 在 `SupportCtrl.h` 中,加入需要 update 的 `.h` 檔案。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "3. 在 `MT905xMcuCtrl.h` 中,要繼承 `IspCtrl` 介面。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "4. 在 `IspCtrlManager.cpp` 的 `AcquireIspCtrl` 函數中,加入判斷條件,以導入 MT9052 update 功能。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "5. 在 `GLHubUpdateTool.cpp` 的 `ManualUpdateFwNew` 函數中,透過上述設定,即可導向 MT9052 MCU 的 update 流程。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "6. 在 `DeviceAgent.cpp` 的 `UpdateFw` 和 `IspFlash` 函數中,加入 MT9052 相關的處理邏輯。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "7. 在 `MT905xMcuCtrl.cpp` 的 `Isp` 函數中,實作 MT9052 MCU 的 update 功能。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 除了 GL3590 有 hw security module 之外,其他 hub chip 是沒有的,因此必須使用 fw 做 code sign 驗證。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 在某些情況下,計算 sha256 的 hash 值會斷線,以及 rsa2048 簽章驗證會出現問題。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 需要注意一些步驟,例如必須用 U3 來跑、public key 和 signature 要做 reverse 等。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 包含了 GenesysLogic Hub 的 Vendor Command、Hub Configuration 和 PD Configuration 等相關規格。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 其中提到了 GL3590 ISP Class 和 GL3525 FW 及 Flash Configuration 等內容,可能與 MT9052 update 有關。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 介紹了 RTK Scaler 的數位簽章驗證流程,包括 SW 和 HW 兩種方式。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "- 可能與 MT9052 update 的簽章驗證有相似之處。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "新架構導入新的chip-updatemt9052-方式",
+    "claim": "通過上述步驟,我們可以在新的架構中成功導入 MT9052 MCU 的 update 功能。需要注意的是,這個功能的實現需要與其他相關的程式碼和規格進行配合,例如 code sign 驗證等。在實際開發過程中,可能還需要進一步的調整和優化。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "物件導向分析與設計(Object-Oriented Analysis and Design, OOAD)是一種軟體開發方法論,它以物件為中心,將系統分解為一組相互作用的物件。物件導向分析與設計通常使用統一建模語言(Unified Modeling Language, UML)來描述和設計系統。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Use Case Diagram](general/物件導向分析與uml.html#use-case-diagram)`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Activity Diagram](general/物件導向分析與uml.html#activity-diagram)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Key Abstractions](general/物件導向分析與uml.html#key-abstractions)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Domain Model](general/物件導向分析與uml.html#domain-model)`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Interaction Diagrams](general/物件導向分析與uml.html#interaction-diagrams)`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[圖形取代文字](http://www.codedata.com.tw/java/michael)`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[需求分析, 架構, Design, Implement](general/物件導向分析與uml.html)`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "目前市面上有多種UML建模工具,如[Visual Paradigm](https://online.visual-paradigm.com/tw/)等,可以輔助開發人員進行物件導向分析與設計。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "在某些電腦上，check box、list item、close button等UI元件會出現顯示問題，如下圖所示。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "問題出現的原因是，在Windows Display Setting中，如果將「文字、應用程式和其他項目的大小」設定為100%以上，就會導致此問題發生。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "修改BCG API中的`EnableVisualManagerStyle`函數，將其參數從`TRUE, TRUE`改為`FALSE, TRUE`。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "EnableVisualManagerStyle(FALSE, TRUE);",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "這樣做雖然可以解決UI顯示問題，但是UI將無法套用Visual Manager Style。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "1. 在某些電腦上，如果Windows Display Setting中的「文字、應用程式和其他項目的大小」設定為100%以上，使用Bcgcontrolbar套用UI時會出現顯示問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+    "claim": "2. 解決方案是修改BCG API中的`EnableVisualManagerStyle`函數，將其參數從`TRUE, TRUE`改為`FALSE, TRUE`。但這樣做會導致UI無法套用Visual Manager Style。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "之前的同事基本上都是配合硬體開發軟體，並沒有純軟體出生，或是說對軟體沒有熱烈喜好。Adam進來後補足了這一塊，在請Adam修改對應功能時，他開發時間會比較久，所以會趁開發時，也會把對應的程式碼做重構(refactor)。發現這樣的現象後，也開始調整給Adam的工作，讓他可以開發比較長期的需求，並根據自己調整重構的比例：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "- 導入程式碼審查(code review)機制",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "- 三平台(Linux, Mac, Windows)底層共用程式碼",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+    "claim": "- 增加Diagnostic Tool讓開發驗證可以更快速找到問題點",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "3. 勾選所有 2020 年的週報，按下匯出網頁",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "2. 告知如何清除 Camera 的方式 - 驗證失敗時需要清除",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "3. 告知如何讀取 Camera 資料 - Hub 安全模型必須能讀取到更新的資料才能計算雜湊值",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "5. 下圖為 Hub Code Sign 驗證流程，驗證 code sign 應該可以由工具控制，韌體不需要太多改動，但還是需要俊太確認",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 架構: 不通過。連線工作流程使用 detach 且無生命週期收斂，違反可預測關閉原則。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 原生安全性: 不通過。檔案大小與外部命令執行缺乏邊界控制，存在資源與執行風險。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 測試完整性: 不通過。看不到針對失敗路徑（超大輸入、shutdown race、協定錯位）的測試證據。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "6. [建議] 原始碼中硬編碼的 token 密碼",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 檢查了 03_knowledge_base.md 中的 4 個反模式/陷阱。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 結果: 發現衝突 (特別是 system()/子程序掛起與協定失配/卡住風險已命中)。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 架構: Release 組態已移除 OFFLINE_TEST，這點較前版改善；但連線工作執行緒仍採 detach，生命週期不可控，違反可預測性。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 原生安全性: 未發現新的 pointer free 錯誤；但外部命令執行與檔案大小處理缺乏邊界，仍有高風險。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 測試完整性: 看不到對失敗路徑（超大 file size、thread shutdown race、SQL 注入字串）的測試鎖定證據。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "2. [警告] detach 執行緒捕獲 this，存在 shutdown race / UAF 風險",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "3. [警告] Dongle 管理同樣使用 detach，生命週期不可驗證",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "4. [警告] 檔案大小由對端提供且未設上限，可能 OOM/卡死",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "5. [警告] 對 Dongle 端取檔同樣無大小上限",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "6. [警告] DB 密碼硬編碼在程式碼",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 檢查了 03_knowledge_base.md 中的 4 個反模式/陷阱 (含 system()/子程序卡死、流程卡住類型)。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 結果: 發現衝突 (當前風險與既有 anti-pattern 高度重疊)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- Vendor Command 第二碼",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- `file:///\\\\genesyslogic.com.tw\\GenesysData\\SW_Release_New\\Hub\\HID\\Tool`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 請 SE 確認各 OS 有沒有自動喚醒 device。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- HID 驗證 USB LOGO 問題。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 整理 chip function list，用表格列出各 chip 機制的不同。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- Tool 在 Chromebook 上應該可以直接執行、更新，SW 會再討論如何測試、驗證。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- SW 需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 檢查不同 OS 平台（ex：Mac, Linux, Chromebook）。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/05 HID 會把重抓到的 device 當成不同個",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/05 Scaler update 在 write command 時速度慢",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/05 程式閃退",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- 2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- Google 在 ISP 相關。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "- HP ISP Tool (HID) 預設只使用 2.0",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "研發投扺專案資料列印流程",
+    "claim": "2021/12/17 HP ISP Tool",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "結構 struct 的宣告與封裝和使用練習 c#",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "[StructLayout(LayoutKind.Sequential)]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public struct Message",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint MsgId;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint DLC;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint Interval;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint Handle;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "[MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public byte[] Data;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `MsgId`: 一個 32 位元的無符號整數,代表訊息 ID。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `DLC`: 一個 32 位元的無符號整數,代表資料長度。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `Interval`: 一個 32 位元的無符號整數,代表訊息間隔。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `Handle`: 一個 32 位元的無符號整數,代表訊息處理句柄。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `Data`: 一個長度為 64 的 byte 陣列,代表訊息資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "`[StructLayout(LayoutKind.Sequential)]` 屬性確保了結構成員在記憶體中的佈局順序與宣告順序一致。`[MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]` 屬性則指定了 `Data` 成員的大小為 64 個 byte。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "struct Message {",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int MsgId;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int DLC;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int Interval;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int Handle;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned char Data[64];",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "為了在 C# 與 C++ 之間傳遞 `Message` 結構,我們需要使用 .NET 的 `Marshal` 類別來進行封裝和解封裝。以下是一個示例:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "Message frame = new Message();",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.MsgId = (uint)MsgId;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.DLC = (uint)Dlc;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.Interval = (uint)Interval;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.Data = new byte[64];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "int rawsize = Marshal.SizeOf(frame);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "IntPtr frameBuffer = Marshal.AllocHGlobal(rawsize);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "Marshal.StructureToPtr(frame, frameBuffer, false);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "在這個例子中,我們首先建立了一個 `Message` 結構的實例,並設置了它的成員值。接下來,我們使用 `Marshal.SizeOf()` 方法獲取了結構的大小,並使用 `Marshal.AllocHGlobal()` 方法在非托管記憶體中分配了一塊空間。最後,我們使用 `Marshal.StructureToPtr()` 方法將 `Message` 結構的內容複製到了非托管記憶體中。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "通過這種方式,我們就可以將 C# 中的 `Message` 結構傳遞給 C++ 中的函式了。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "在本文中,我們學習了如何在 C# 中使用 `struct` 關鍵字來宣告結構,以及如何使用 .NET 的 `Marshal` 類別來封裝和解封裝結構,以便在 C# 和 C++ 之間進行資料交換。這種技術在需要與非托管程式碼互操作的情況下非常有用。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自動化測試",
+    "claim": "在面對客戶 USB 問題時，常需要透過錄製 USB 訊號或 I2C 訊號來分析問題點。如果透過人工方式抓取這些 log 會耗費很多人力。透過自動化測試的方式來抓取對應的 log，讓工具反覆測試來找出問題點，會是一種比較好的測試方式。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自動化測試",
+    "claim": "目前的想法是透過 Python 來串接各種工具。目前找到的 I2C 和 USB Trace 工具都有提供 Python API，至於 Bus Hound 可能需要透過 WinAuto 的方式來實作功能。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自動化測試",
+    "claim": "透過 Main 來決定要開啟哪些功能，透過簡單的參數設定就可以讓使用者決定要錄製哪些 log。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自動化測試",
+    "claim": "總之，這個自動化測試的核心在於能夠透過 Python 整合各種工具的功能，讓使用者能夠更有效率地分析 USB 和 I2C 問題。關鍵在於能否順利串接各工具的 API，並設計出一個簡單易用的使用者介面。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 能根據部屬的特性進行個性化管理，讓每個人發揮所長。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 時時刻刻強調文件的重要性，確保資訊清晰且不遺漏。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 部屬太多可能會忽略了某些部屬的需求或遇到的困難。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對BU的需求時會詳細詢問，並討論出一個共識來提供給客戶Tool。[Adam]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 針對BU的需求，皆能及時的完成。[Vic]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對客戶需求，皆能盡力完成，惟一些相關知識還不夠了解，還需要花時間去熟悉。[Standy]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 跨平台CLI tool (Adamkit)。[Adam]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 今年正面對轉換期，有花了很多時間把原本的code 轉換過去CLI tool，目前主流Tool 已經慢慢移轉過去。[Adam]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 在面對members 因為客戶的緊急需求所修改的code 不太符合目標品質時，還是能在緊急性和品質中找一個平衡點。[Adam]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 有成功打通electron，讓electron ui可以對hub 下 command，惟UI優化還需要多花一點心力。[Bernie]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 做為先期的debug tool，有把需要的功能做出來，讓部門或是BU可以花費更少時間debug。[Bernie]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 因為客戶特殊的需求，所以需要根據客戶的定製作特定UI，在Windows 和 Mac 皆有把對應的需求做好。[Bernie]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 因為別的需求比較緊急，還沒有花太多心力在裡面。[Bernie]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 花費了很多時間在建構自動化測試環境和其開發，對未來的下一個目標奠定了好的基礎。[Vic]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 對於members Git & GitLab的問題，皆能耐心的回應，也花費不少時間做出大家需要的文件。[Vic]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 能根據部屬的特性進行個性化管理，讓每個人發揮所長。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 時時刻刻強調文件的重要性，確保資訊清晰且不遺漏。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 部屬太多可能會忽略了某些部屬的需求或遇到的困難。[Jason]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對BU的需求時會詳細詢問，並討論出一個共識來提供給客戶Tool。[Adam]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 針對BU的需求，皆能及時的完成。[Vic]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "自評",
+    "claim": "- 面對客戶需求，皆能盡力完成，惟一些相關知識還不夠了解，還需要花時間去熟悉。[Standy]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "本文件彙整了 Genesys Logic 公司內部使用的各種遠端會議工具與連線方式。這些工具包括 Webex、Microsoft Teams、Zoom 和 Google Meet 等。文中提供了各種會議連結、會議號碼、密碼等詳細資訊,供公司同仁參考使用。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- 加入連結：https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m29d2bc2e2091e2e8eca048a86548fe53",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- 加入連結：https://genesyslogic.webex.com/genesyslogic/j.php?MTID=m6693d7ba1f44ba416ce3385108f7019a",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- 會議號碼：423 539 478 818",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/92436304484?pwd=YWIxZzdPbUhUdFZEVjg1bjE3Yll6QT09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/96120515387?pwd=VU5PbmlHWXd6TUlyRzI5QStxWThoQT09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/98505965223?pwd=b1Rua2tTNWNReTMyU0Rkb0E5OHVXdz09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/93508365211?pwd=b2p5bkVLZ3BjaC81elJrcWRpSkcwZz09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- https://hp.zoom.us/j/95219966918?pwd=NWFjbzJQVzJFbERxU0phaDU4Wkppdz09",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/ftz-wuby-xao",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/eav-pxwk-csw",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/jso-taqw-apo",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "- meet.google.com/nht-wyis-amt",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "1. [`遠端會議相關資料`](./遠端會議相關資料.html)",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "2. [`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](./code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "3. [`3rd party code signing specification (ECDSA)`](./code-sign/3rd-party-code-signing-specification-ecdsa.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "遠端會議相關資料",
+    "claim": "4. [`3rd party code signing specification (ECDSA)(EN)`](./code-sign/3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

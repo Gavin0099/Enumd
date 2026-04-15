@@ -61,5 +61,69 @@
     "downgraded": 0,
     "total_lines": 24,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What is the HP Z27u G3 EndUser Tool & Silent mode tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the HP Z27u G3 EndUser Tool & Silent mode tool is a tool related to HP laptops that may need to be operated and tested during the handover process."
+      },
+      {
+        "question": "What is the GL3523 FW 燒錄問題?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions the GL3523 FW 燒錄問題, but does not provide any details about what the problem is."
+      },
+      {
+        "question": "What is the process for verifying the camera firmware code sign?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the camera firmware code sign verification process may need to be confirmed and tested during the handover process."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 7,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 6,
+    "unsupported_claims": [
+      {
+        "claim": "2. **HP Z27u G3 EndUser Tool & Silent mode tool**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about HP Z27u G3 EndUser Tool & Silent mode tool."
+      },
+      {
+        "claim": "- 這是 HP 筆電的相關工具，可能需要在交接過程中進行相關的操作和測試。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about HP laptops or related tools."
+      },
+      {
+        "claim": "5. **Camera 透過我們驗證 code sign**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about camera firmware code sign verification."
+      },
+      {
+        "claim": "- 這是關於相機韌體 code sign 驗證的流程，可能需要在交接過程中進行相關的確認和測試。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about camera firmware code sign verification."
+      },
+      {
+        "claim": "7. **HP Hemi(Z34c) CPU3 Code Sign 驗證問題**",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about HP Hemi(Z34c) CPU3 Code Sign verification."
+      },
+      {
+        "claim": "- 這是關於 HP 筆電 CPU3 韌體 code sign 驗證的問題，可能需要在交接過程中進行相關的確認和解決。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about HP Hemi(Z34c) CPU3 Code Sign verification."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:00:40.180Z"
 }

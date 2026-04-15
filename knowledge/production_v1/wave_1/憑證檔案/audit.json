@@ -333,5 +333,24 @@
     "downgraded": 0,
     "total_lines": 3,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "backfilled_at": "2026-04-15T04:02:04.866Z"
 }

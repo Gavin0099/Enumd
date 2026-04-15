@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "報告書：3rd party code signing specification (ECDSA)(EN)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "本報告書旨在概述 Genesys Logic 針對第三方韌體代碼簽署所制定的 ECDSA 規範。Genesys Logic 要求所有韌體更新必須經過簽署驗證流程，以確保韌體的完整性和安全性。本報告將深入探討相關的實作細節和技術要求。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 的韌體簽署流程必須符合以下核心要求：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "1. 採用 ECDSA (Elliptic Curve Digital Signature Algorithm) nistp256 加密演算法，以滿足 FIPS 140-2 Level 3 的安全標準。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "2. 建立一套兼具成本效益、可擴展性和災難恢復能力的內部簽署系統。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "3. 將私密金鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中，並透過自行開發的 SDK 應用程式進行簽署操作。[`-genesys-logic-firmware-安全簽署與驗證流程-code-signing-`]",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 的韌體簽署流程包括以下步驟：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "1. **簽署 (Sign)**: 使用 ECDSA 私鑰對韌體二進位檔案進行數位簽章。[`3rd-party-code-signing-specification-ecdsa`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "2. **驗證 (Verify)**: 在韌體更新前，使用 ECDSA 公鑰驗證二進位檔案的數位簽章是否合法。[`3rd-party-code-signing-specification-ecdsa`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 提供了以下兩種實作方式供開發者參考：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "1. **使用 OpenSSL**: 利用 OpenSSL 工具套件進行 ECDSA 金鑰生成、簽署和驗證。[`3rd-party-code-signing-specification-ecdsa`, `code-sign-ecc-key`]",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "2. **使用 eToken**: 將 ECDSA 私鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中，並透過自行開發的 SDK 應用程式進行簽署操作。[`3rd-party-code-signing-specification-ecdsa`]",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "3rd-party-code-signing-specification-ecdsaen-",
+    "claim": "Genesys Logic 針對第三方韌體代碼簽署制定了嚴格的 ECDSA 規範，以確保韌體的完整性和安全性。開發者可以參考上述兩種實作方式，根據實際需求選擇合適的技術路徑。無論採用哪種方式，都必須確保私密金鑰的安全性，並嚴格遵守 FIPS 140-2 Level 3 的安全標準。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

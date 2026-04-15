@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "物件導向分析與設計(Object-Oriented Analysis and Design, OOAD)是一種軟體開發方法論,它以物件為中心,將系統分解為一組相互作用的物件。物件導向分析與設計通常使用統一建模語言(Unified Modeling Language, UML)來描述和設計系統。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Use Case Diagram](general/物件導向分析與uml.html#use-case-diagram)`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Activity Diagram](general/物件導向分析與uml.html#activity-diagram)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Key Abstractions](general/物件導向分析與uml.html#key-abstractions)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Domain Model](general/物件導向分析與uml.html#domain-model)`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[Interaction Diagrams](general/物件導向分析與uml.html#interaction-diagrams)`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[圖形取代文字](http://www.codedata.com.tw/java/michael)`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "`[需求分析, 架構, Design, Implement](general/物件導向分析與uml.html)`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "物件導向分析與uml",
+    "claim": "目前市面上有多種UML建模工具,如[Visual Paradigm](https://online.visual-paradigm.com/tw/)等,可以輔助開發人員進行物件導向分析與設計。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

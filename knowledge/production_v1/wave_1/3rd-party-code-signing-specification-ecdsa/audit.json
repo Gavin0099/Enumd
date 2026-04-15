@@ -61,5 +61,38 @@
     "downgraded": 0,
     "total_lines": 34,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What is the purpose of the Genesys Logic code signing specification?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the purpose of the report is to outline Genesys Logic's ECDSA specification for third-party firmware code signing to meet security requirements."
+      },
+      {
+        "question": "What are the main steps in Genesys Logic's code signing process?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text describes the main steps in Genesys Logic's code signing process as signing the binary file using an ECDSA private key, and verifying the digital signature using the ECDSA public key before firmware updates."
+      },
+      {
+        "question": "What are the two implementation methods for Genesys Logic's code signing process?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that Genesys Logic provides two implementation methods: using OpenSSL to generate the ECDSA keys, and using an eToken hardware security module to generate the ECDSA private key and sign the binary files."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 4,
+    "supported": 4,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:33.764Z"
 }

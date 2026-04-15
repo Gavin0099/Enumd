@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "交叉評核作業",
+    "claim": "- **Adam**：技術能力強,樂於協助團隊成員解決問題,在需求分析時可以多與大家分享心得。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "交叉評核作業",
+    "claim": "- **Standy**：開發了不錯的Diagnostic Tool,並重整了HP OCI Tool的UI,讓後續開發更加順利。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "交叉評核作業",
+    "claim": "- **Nick**：在Hub Auto Test和Mars的規劃上都能夠很好地回答疑問,並制定出後續的工作計畫。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

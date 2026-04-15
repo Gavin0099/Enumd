@@ -61,5 +61,38 @@
     "downgraded": 0,
     "total_lines": 26,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What encryption algorithm does Genesys Logic's firmware signing process use?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that Genesys Logic's firmware signing process uses the ECDSA (Elliptic Curve Digital Signature Algorithm) nistp256 encryption algorithm."
+      },
+      {
+        "question": "How does Genesys Logic store the private key used for firmware signing?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that Genesys Logic stores the private key securely in a FIPS L3 certified USB eToken hardware, and uses a self-developed SDK application to perform the signing operation."
+      },
+      {
+        "question": "What are the two implementation options provided by Genesys Logic for firmware signing?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the two implementation options provided by Genesys Logic: using OpenSSL for ECDSA key generation, signing, and verification, and using the eToken hardware for secure private key storage and signing."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 3,
+    "supported": 3,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:37.765Z"
 }

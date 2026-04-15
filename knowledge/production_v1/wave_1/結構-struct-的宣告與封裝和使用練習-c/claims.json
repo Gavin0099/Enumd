@@ -1,0 +1,266 @@
+[
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "結構 struct 的宣告與封裝和使用練習 c#",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "[StructLayout(LayoutKind.Sequential)]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public struct Message",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint MsgId;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint DLC;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint Interval;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public uint Handle;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "[MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "public byte[] Data;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `MsgId`: 一個 32 位元的無符號整數,代表訊息 ID。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `DLC`: 一個 32 位元的無符號整數,代表資料長度。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `Interval`: 一個 32 位元的無符號整數,代表訊息間隔。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `Handle`: 一個 32 位元的無符號整數,代表訊息處理句柄。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "- `Data`: 一個長度為 64 的 byte 陣列,代表訊息資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "`[StructLayout(LayoutKind.Sequential)]` 屬性確保了結構成員在記憶體中的佈局順序與宣告順序一致。`[MarshalAs(UnmanagedType.ByValArray, SizeConst = 64)]` 屬性則指定了 `Data` 成員的大小為 64 個 byte。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "struct Message {",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int MsgId;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int DLC;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int Interval;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned int Handle;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "unsigned char Data[64];",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "為了在 C# 與 C++ 之間傳遞 `Message` 結構,我們需要使用 .NET 的 `Marshal` 類別來進行封裝和解封裝。以下是一個示例:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "Message frame = new Message();",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.MsgId = (uint)MsgId;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.DLC = (uint)Dlc;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.Interval = (uint)Interval;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "frame.Data = new byte[64];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "int rawsize = Marshal.SizeOf(frame);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "IntPtr frameBuffer = Marshal.AllocHGlobal(rawsize);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "Marshal.StructureToPtr(frame, frameBuffer, false);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "在這個例子中,我們首先建立了一個 `Message` 結構的實例,並設置了它的成員值。接下來,我們使用 `Marshal.SizeOf()` 方法獲取了結構的大小,並使用 `Marshal.AllocHGlobal()` 方法在非托管記憶體中分配了一塊空間。最後,我們使用 `Marshal.StructureToPtr()` 方法將 `Message` 結構的內容複製到了非托管記憶體中。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "通過這種方式,我們就可以將 C# 中的 `Message` 結構傳遞給 C++ 中的函式了。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "結構-struct-的宣告與封裝和使用練習-c",
+    "claim": "在本文中,我們學習了如何在 C# 中使用 `struct` 關鍵字來宣告結構,以及如何使用 .NET 的 `Marshal` 類別來封裝和解封裝結構,以便在 C# 和 C++ 之間進行資料交換。這種技術在需要與非托管程式碼互操作的情況下非常有用。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

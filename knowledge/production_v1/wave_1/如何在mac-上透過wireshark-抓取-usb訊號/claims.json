@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "以下是如何在 Mac 上透過 WireShark 抓取 USB 訊號的完整 Markdown 報告:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "1. 前往 [WireShark 官網](https://www.wireshark.org/)下載對應版本的 WireShark。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "2. 確認是否開啟 System Integrity Protection (SIP)。如果開啟的話，無法在 WireShark 中抓取 USB 訊號。可以使用以下命令檢查 SIP 狀態:",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "3. 如果 SIP 未被停用，需要進入 macOS Recovery Mode 並執行以下命令來關閉 SIP:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "5. 因為每台電腦的 USB 設備不同，需要找到以 `XHC` 開頭的設備。以下是一個範例:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "1. 開啟 WireShark 並選擇相應的設備。如果遇到無法捕獲的問題，需要安裝 `chmodbpf.pkg`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "2. 選擇 `XHC20` 設備開始捕獲 USB 訊號。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "3. 如果要過濾特定的 USB 設備，可以使用以下 WireShark 過濾器:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "usb.device_address == 3",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "5. 更多 WireShark 過濾器參數可以參考[官方文檔](https://www.wireshark.org/docs/wsug_html_chunked/ChWorkDisplayFilterSection.html)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+    "claim": "透過以上步驟,您就可以在 Mac 上使用 WireShark 成功地捕獲 USB 訊號並進行分析了。如果在過程中遇到任何問題,可以參考相關的[命令行卸載驅動程序](https://example.com/driver/command-line-uninstall-driver.html)和[E27m & E34m 驅動程序安裝失敗](https://example.com/driver/e27m-e34m-driver-install-fail.html)等資訊。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

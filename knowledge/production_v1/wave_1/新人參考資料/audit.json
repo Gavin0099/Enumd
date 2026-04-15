@@ -61,5 +61,39 @@
     "downgraded": 0,
     "total_lines": 28,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "THIN_SYNTHESIS",
+    "passed": 1,
+    "total": 3,
+    "convergence_rate": 0.3333333333333333,
+    "questions": [
+      {
+        "question": "What is the purpose of the 'new employee reference materials' topic?",
+        "verdict": "UNANSWERABLE",
+        "justification": "The synthesis text does not provide any information about the purpose or context of the 'new employee reference materials' topic."
+      },
+      {
+        "question": "What are the steps for setting up a development environment on Windows?",
+        "verdict": "UNANSWERABLE",
+        "justification": "The synthesis text does not contain any information about setting up a development environment on Windows."
+      },
+      {
+        "question": "What is the purpose of the Code-Sign technical specification document?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the Code-Sign technical specification document provides detailed information on the core design principles, use cases, 6-Byte configuration block specifications, FW planning, and tool chain processes, which are important for understanding how new employees should handle Code-Sign related matters in their development environment."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "backfilled_at": "2026-04-15T04:02:07.321Z"
 }

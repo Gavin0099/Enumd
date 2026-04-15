@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 建立 [Data Inventory Document](https://www.sans.org/white-papers/33193/) 以詳細列出系統中處理的所有資料。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [SAST (Static Application Security Testing)](https://owasp.org/www-community/controls/Static_Code_Analysis) 以識別程式碼中的安全漏洞。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [SCA (Software Composition Analysis)](https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html) 以識別使用的第三方軟體元件並生成 SBOM (Software Bill of Materials)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [Fuzzing](https://owasp.org/www-community/Fuzzing) 以發現程式碼中的潛在缺陷和漏洞。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 執行 [DAST (Dynamic Application Security Testing)](https://owasp.org/www-community/controls/Dynamic_Analysis_Security_Testing) 以識別運行時的安全問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 實作 [Code Signing Verification](https://docs.microsoft.com/en-us/windows/win32/seccrypto/cryptography-tools) 以驗證軟體簽名。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+    "claim": "- [SW] 實作 Corruption/Recovery 的事件記錄 (Logging)。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

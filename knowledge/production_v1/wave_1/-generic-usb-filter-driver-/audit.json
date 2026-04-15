@@ -61,5 +61,54 @@
     "downgraded": 0,
     "total_lines": 272,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What are the key features of the Generic USB Filter Driver?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the key feature of the driver as 'Multi-Mode Operation'."
+      },
+      {
+        "question": "What is the purpose of the In-System Programming (ISP) mode of the driver?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides a detailed explanation of the ISP mode, including its core architecture, workflow, and key code analysis."
+      },
+      {
+        "question": "What are the proposed changes for the WDK Modernization Plan of the driver?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text outlines the proposed changes, including code security and safety improvements, INF configuration updates, and build system changes."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 4,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 3,
+    "unsupported_claims": [
+      {
+        "claim": "App[\"<b>User Mode App</b><br/>OCI Tool / Updater\"]:::inputNode",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about an 'App' or 'User Mode App' or 'OCI Tool / Updater'."
+      },
+      {
+        "claim": "subgraph Device_Add [\"Device Add Event (裝置新增事件)\"]",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about a 'Device Add Event'."
+      },
+      {
+        "claim": "- 使用 Visual Studio 2019/2022 開啟 glusbflt.vcxproj 進行編譯。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not contain information about using Visual Studio 2019/2022 to compile the glusbflt.vcxproj project."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:00:13.185Z"
 }

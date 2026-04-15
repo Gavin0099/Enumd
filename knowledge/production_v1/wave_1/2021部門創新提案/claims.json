@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "2021部門創新提案",
+    "claim": "1. **Code Review**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 當其他部門提出需求時，需要有正式的規格說明文件(SPEC)，並進行 review 動作。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 利用相關軟體，讓大家了解目前 BU 需求的優先順序。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 關於 Hub & PD 相關工作，規劃 Wiki 資訊，讓新人比較容易上手。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2021部門創新提案",
+    "claim": "- 目標與關鍵成果(OKR)管理方式。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

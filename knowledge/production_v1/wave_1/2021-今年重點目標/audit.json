@@ -61,5 +61,49 @@
     "downgraded": 0,
     "total_lines": 24,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What are the key goals for 2021?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text clearly states that the key goals for 2021 are to integrate HP Enduser Tool, General Enduser Tool, and Standard ISP Tool into a new architecture, and to plan and test HP Display Models and code signing methods, with progress reviewed in weekly meetings."
+      },
+      {
+        "question": "What is the plan for the logging system?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the plan is to try to replace the existing logging system with the more complete open-source SPD Log system."
+      },
+      {
+        "question": "What is the process for Genesys Logic Firmware code signing and verification?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides details on Genesys Logic's internal code signing system using FIPS L3 certified USB eTokens and a custom SDK, as well as the option to reference 3rd party ECDSA code signing specifications."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 2,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 2,
+    "unsupported_claims": [
+      {
+        "claim": "- 使用 draw.io 繪製流程圖。[`流程圖可使用draw IO繪製。`]",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention using draw.io to create flowcharts."
+      },
+      {
+        "claim": "此外，也可以參考 3rd party code signing specification (ECDSA) 的相關文件，了解 Genesys Logic 的程式碼簽署和驗證流程。[`3rd party code signing specification (ECDSA)`]",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention 3rd party code signing specification (ECDSA) or Genesys Logic's code signing and verification process."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:00:55.789Z"
 }

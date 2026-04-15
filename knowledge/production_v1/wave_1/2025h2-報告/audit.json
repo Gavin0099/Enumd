@@ -61,5 +61,39 @@
     "downgraded": 0,
     "total_lines": 15,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What is the purpose of the 2025h2-報告?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text outlines several strategic initiatives, but does not explicitly state the overall purpose of the 2025h2-報告."
+      },
+      {
+        "question": "What is the current status of the HP strategic cooperation?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the goal is to transform from a passive receiver of specifications to a core technology partner with a voice, ensuring high compatibility with the company's solutions and establishing the team's technical capabilities as a key dependency for the customer."
+      },
+      {
+        "question": "What is the current status of the software product standardization effort?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the goal is to introduce AI-assisted design and cross-platform architecture to address the challenges of scattered resources and insufficient user experience, in order to increase the product value for second-tier customers."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "backfilled_at": "2026-04-15T04:01:28.808Z"
 }

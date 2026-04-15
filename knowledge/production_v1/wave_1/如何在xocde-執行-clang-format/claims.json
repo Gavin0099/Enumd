@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "首先需要確保您的系統上已安裝 clang-format。clang-format 是 Clang 專案的一部分，可以透過以下方式安裝:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "1. 使用 Homebrew 安裝:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "brew install clang-format",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "- 在 `Command Line Tools` 下拉選單中選擇您安裝的 Xcode 版本",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "- 這將自動安裝 clang-format",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "確保您使用的 clang-format 版本為 12 或更高版本。您可以透過以下命令檢查版本:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "clang-format --version",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "1. 開啟 Automator 應用程式",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "clang-format -i \"$@\"",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "6. 儲存服務，並命名為 `clang-format`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "1. 在專案根目錄中建立一個名為 `.clang-format` 的檔案，並在其中定義您的 clang-format 設定。您可以參考 [clang-format 文件](https://clang.llvm.org/docs/ClangFormatStyleOptions.html) 來設定格式。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "3. 右鍵點擊選取的程式碼，並在 `Services` 選單中選擇 `clang-format`。這將使用您在 Automator 中建立的服務來格式化選取的程式碼。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "如何在xocde-執行-clang-format",
+    "claim": "透過這些步驟，您就可以在 Xcode 中輕鬆地使用 clang-format 來格式化您的程式碼了。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

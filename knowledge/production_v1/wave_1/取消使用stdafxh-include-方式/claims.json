@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "取消使用 stdafx.h include 方式",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "在現代 C++ 專案中，已不再需要使用 `stdafx.h` 作為預編譯標頭檔。取而代之的是在各個 `.h` 檔案中直接 `include` 所需的頭檔案。這樣可以避免底層程式碼過度依賴 `stdafx.h`，進而提高程式碼的模組化和可維護性。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "為了避免在專案組建時出現 \"unexpected end of file while looking for precompiled header. Did you forget to add '#include \"stdafx.h\"' to your source?\" 的錯誤，需要進行以下設定變更:",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "1. 清除 Precompiled Header 設定 `[Properties > C++ > Precompiled Header > Clean]`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "2. 調整 Preprocessor Definitions 和 Precompiled Headers 設定 `[Properties > C/C++ > Preprocessor]`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "3. 調整 Additional Dependencies 和 Ignore Specific Default Libraries 設定 `[Properties > Linker > Input]`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "目前底層程式碼已經不再需要 `stdafx.h` 這個預編譯標頭檔。取而代之的是在各個 `.h` 檔案中直接 `include` 所需的頭檔案。這樣可以避免底層程式碼過度依賴 `stdafx.h`，進而提高程式碼的模組化和可維護性。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "\"unexpected end of file while looking for precompiled header. Did you forget to add '#include \"stdafx.h\"' to your source?\"",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "1. 清除 Precompiled Header 設定 `[Properties > C++ > Precompiled Header > Clean]`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "2. 調整 Preprocessor Definitions 和 Precompiled Headers 設定 `[Properties > C/C++ > Preprocessor]`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Debug 模式: `Preprocrss Definitions : %(PreprocessorDefinitions)`，`Precompiled Headers : 清空`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Release 模式: `Preprocrss Definitions : %(PreprocessorDefinitions)`，`Precompiled Headers : 清空`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "3. 調整 Additional Dependencies 和 Ignore Specific Default Libraries 設定 `[Properties > Linker > Input]`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Debug 模式: `Additional Dependencies : Nafxcwd.lib;libcmtd.lib;%(AdditionalDependencies)`，`Ignore Specific Default Libaries: Nafxcwd.lib;libcmtd.lib`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "- Release 模式: `Additional Dependencies : Nafxcw.lib;libcmt.lib;%(AdditionalDependencies)`，`Ignore Specific Default Libaries:Nafxcw.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)`",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "1. [取消使用stdafx.h include 方式](https://genesyslogic.com.tw/general/取消使用stdafxh-include-方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "2. [HID Code Sign 記錄](https://genesyslogic.com.tw/code-sign/hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "3. [HP OCI APP](https://genesyslogic.com.tw/mac/hp-oci-app.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "取消使用stdafxh-include-方式",
+    "claim": "4. [HP OCI DLL](https://genesyslogic.com.tw/mac/hp-oci-dll.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

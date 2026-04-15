@@ -1,0 +1,258 @@
+[
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "以下為 2025 5/19~5/23 交接事項的綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "1. Richelieu Issue @Adam.Chen",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "2. Lenovo P27QD-40 @Standy Huang",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "3. Lenovo Mac One Key Update tool @Bernie.Hsieh",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "4. GLBin @Adam.Chen",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "5. HP Silent mode bat檔修改 @Adam.Chen",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "6. GenX AMD 7P Dragon Range Hub",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "1. [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "2. [Etoken System Code View](code-sign/etoken-system-code-view-.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 連線工作流程使用 detach 且無生命週期收斂,違反可預測關閉原則",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 檔案大小與外部命令執行缺乏邊界控制,存在資源與執行風險",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- SQL 注入風險、shutdown race / UAF 風險、OOM/卡死風險",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "3. [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- HID update flow",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- Vendor Command 第二碼",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 驗證 USB LOGO 問題",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- FW UPD 已經是 open source 了,但 SW 目前 Build 不起來,無法測試",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 檢查不同 OS 平台（ex：mac, linux, chrome book）",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "1. **Richelieu Issue @Adam.Chen**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "2. **Lenovo P27QD-40 @Standy Huang**",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 Lenovo P27QD-40 的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "3. **Lenovo Mac One Key Update tool @Bernie.Hsieh**",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 Lenovo Mac One Key Update tool 的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "4. **GLBin @Adam.Chen**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "5. **HP Silent mode bat檔修改 @Adam.Chen**",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 HP Silent mode bat檔修改的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "6. **GenX AMD 7P Dragon Range Hub**",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "- 需要瞭解 GenX AMD 7P Dragon Range Hub 的相關情況,並確保在交接過程中能夠順利處理。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "2025-519523-交接事項",
+    "claim": "在交接過程中,需要仔細瞭解上述各個重點,並確保能夠順利處理相關的技術和流程問題。同時,也需要注意與 [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)、[Etoken System Code View](code-sign/etoken-system-code-view-.html) 和 [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html) 等相關的背景知識,以確保交接過程中能夠順利進行。",
+    "tier": "Explicit",
+    "evidence_score": 30,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]

@@ -61,5 +61,44 @@
     "downgraded": 0,
     "total_lines": 124,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What are the three main categories of the minimum elements for an SBOM?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the three main categories of the minimum elements for an SBOM: SBOM Author, Software Producer, and Software Component Information."
+      },
+      {
+        "question": "What are the key challenges in creating SBOMs for cloud and SaaS systems?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the main challenges for cloud and SaaS systems are capturing the dynamic changes in components and sharing SBOM information in a multi-tenant environment, and suggests exploring event-based SBOM update mechanisms and ways to share SBOM information in multi-tenant environments."
+      },
+      {
+        "question": "What are the special requirements for creating SBOMs for AI software systems?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions that AI systems contain many components that traditional SBOMs cannot capture, such as model weights and training data, which are important for critical infrastructure risk management. It states that future SBOM specifications need to be expanded to cover the special requirements of AI systems, but does not provide details on what those special requirements are."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 6,
+    "supported": 5,
+    "uncertain": 0,
+    "unsupported": 1,
+    "unsupported_claims": [
+      {
+        "claim": "元件雜湊值是取自軟體元件的加密雜湊值。如果 SBOM 作者無法取得原始元件的檔案（Artifact），則不應填寫此欄位。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about component hashes being derived from the software component artifacts. It only states that the component hash field should be filled if the SBOM author can obtain the original component artifact."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:01:20.221Z"
 }

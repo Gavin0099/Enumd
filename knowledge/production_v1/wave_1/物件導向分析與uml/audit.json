@@ -61,5 +61,38 @@
     "downgraded": 0,
     "total_lines": 47,
     "is_clean": false
-  }
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What is object-oriented analysis and design (OOAD)?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text defines OOAD as a software development methodology that focuses on objects and decomposes the system into a set of interacting objects."
+      },
+      {
+        "question": "What are the key UML diagrams used in OOAD?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the key UML diagrams used in OOAD, including Use Case Diagram, Activity Diagram, Class Diagram, and Interaction Diagrams."
+      },
+      {
+        "question": "What is the typical process for OOAD?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions the general OOAD process (requirements analysis, architecture, design, implementation) but does not provide a detailed description of the steps."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 1,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "backfilled_at": "2026-04-15T04:02:15.667Z"
 }

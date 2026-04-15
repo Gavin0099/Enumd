@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "根據提供的上下文資訊,客戶在使用 Lenovo 顯示器的 Daisy Chain 功能時,透過 One Key Update Tool 進行韌體更新時會出現更新失敗的問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "1. 請 RTK 修改 Scaler Update Tool 的作法,在呼叫 i2c 指令後,不要再執行 Enable Suspend 的動作。 [`Lenovo Display Daisy Chain issue`]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "1. 關於 HP OCI APP 的最新 SDK 文件 v2.6,提供了一些相關的參考資訊,包括 Device DLL 的功能、檔案簽章驗證、韌體更新流程等。 [`HP OCI APP`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  },
+  {
+    "slug": "-lenovo-display-daisy-chain-issue",
+    "claim": "根據提供的上下文資訊,Lenovo 顯示器 Daisy Chain 韌體更新問題的初步解決方案是修改 Scaler Update Tool 的作法,避免在更新後立即執行 Enable Suspend 動作。後續可能還需要進一步分析 USBView 日誌,並參考相關的 SDK 文件和安全性考量,以確保問題的徹底解決。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 1,
+    "batch_id": "batch_2026-04-14T10-52-56-634Z"
+  }
+]
