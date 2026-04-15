@@ -40,9 +40,11 @@ const dryRun  = process.argv.includes("--dry-run");
 // --force-suppression: re-apply tiered suppression on already-backfilled nodes
 // (does NOT re-run KAL/semantic API calls — only re-classifies + re-filters claims)
 const forceSuppression = process.argv.includes("--force-suppression");
+// --node=<slug>: process only a single node (full API run — ignores idempotent skip)
+const nodeFilter = process.argv.find(a => a.startsWith("--node="))?.split("=")[1];
 
 if (!waveArg) {
-    console.error("Usage: npx tsx --env-file .env.local scripts/backfill-wave-audit.ts --wave=<N> [--dry-run] [--force-suppression]");
+    console.error("Usage: npx tsx --env-file .env.local scripts/backfill-wave-audit.ts --wave=<N> [--dry-run] [--force-suppression] [--node=<slug>]");
     process.exit(1);
 }
 
@@ -99,8 +101,18 @@ interface NodeStat {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 async function run() {
-    const nodeDirs = getNodeDirs(waveDir);
-    console.log(`\n🔄 Backfilling Wave ${waveId} audit data (${nodeDirs.length} nodes)${dryRun ? " [DRY RUN]" : ""}...`);
+    const allNodeDirs = getNodeDirs(waveDir);
+    // --node filter: targeted single-node re-run (bypasses idempotent skip, always runs full API)
+    const nodeDirs = nodeFilter
+        ? allNodeDirs.filter(d => d === nodeFilter)
+        : allNodeDirs;
+
+    if (nodeFilter && nodeDirs.length === 0) {
+        console.error(`Node '${nodeFilter}' not found in wave_${waveId}. Check slug spelling.`);
+        process.exit(1);
+    }
+
+    console.log(`\n🔄 Backfilling Wave ${waveId} audit data (${nodeDirs.length}${nodeFilter ? ` — targeted: ${nodeFilter}` : ""} nodes)${dryRun ? " [DRY RUN]" : ""}...`);
     console.log(`   KAL + Semantic + Claims — no re-synthesis\n`);
 
     const waveAtomicClaims: AtomicClaim[] = [];
@@ -116,8 +128,8 @@ async function run() {
         const sourceXml = readText(join(nodeDir, "source.xml"));
         const audit = JSON.parse(readText(join(nodeDir, "audit.json")) || "{}") as Record<string, any>;
 
-        // Skip if already backfilled (idempotent) — unless --force-suppression
-        if (audit.kal_report && !forceSuppression) {
+        // Skip if already backfilled (idempotent) — unless --force-suppression or --node
+        if (audit.kal_report && !forceSuppression && !nodeFilter) {
             console.log(`   ⏭️  Already backfilled — collecting existing data`);
             const existingClaims: AtomicClaim[] = existsSync(join(nodeDir, "claims.json"))
                 ? JSON.parse(readFileSync(join(nodeDir, "claims.json"), "utf8"))
@@ -145,7 +157,8 @@ async function run() {
         }
 
         // --force-suppression: re-apply tiered suppression without re-calling APIs
-        if (audit.kal_report && forceSuppression) {
+        // (--node bypasses this path and falls through to full API run below)
+        if (audit.kal_report && forceSuppression && !nodeFilter) {
             console.log(`   🔄 Re-applying tiered suppression (no API calls)`);
             const { report: enfReport } = enforceDraft(synthesis, sourceXml);
             const semanticReport = audit.semantic_audit as any;
@@ -302,6 +315,24 @@ async function run() {
     // ── Write outputs ─────────────────────────────────────────────────────────
 
     if (!dryRun) {
+        if (nodeFilter) {
+            // Targeted single-node run: merge into existing atomic-claims.json rather
+            // than replacing it (which would wipe all other nodes' claims).
+            const existingClaimsPath = join(waveDir, "atomic-claims.json");
+            const existing: AtomicClaim[] = existsSync(existingClaimsPath)
+                ? JSON.parse(readFileSync(existingClaimsPath, "utf8"))
+                : [];
+            const merged = [
+                ...existing.filter(c => c.slug !== nodeFilter),
+                ...waveAtomicClaims,
+            ];
+            writeFileSync(existingClaimsPath, JSON.stringify(merged, null, 2));
+            console.log(`   🔀 Merged atomic-claims.json: ${existing.filter(c => c.slug !== nodeFilter).length} existing + ${waveAtomicClaims.length} updated = ${merged.length} total`);
+            // Skip manifest + summary rewrites for targeted runs — they'd be incomplete.
+            // Run --force-suppression after a --node run to rebuild wave-level aggregates.
+            console.log(`   ℹ️  Skipping manifest + summary rewrite (targeted run). Run --force-suppression to rebuild.`);
+            return;
+        }
         writeFileSync(join(waveDir, "atomic-claims.json"), JSON.stringify(waveAtomicClaims, null, 2));
     }
 

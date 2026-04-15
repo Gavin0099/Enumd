@@ -1,6 +1,6 @@
 {
   "wave_id": 1,
-  "generated_at": "2026-04-15T05:44:43.721Z",
+  "generated_at": "2026-04-15T06:42:38.217Z",
   "dry_run": false,
   "node_counts": {
     "total": 47,
@@ -20,9 +20,9 @@
     "error": 0
   },
   "claims": {
-    "total_atomic": 361,
+    "total_atomic": 363,
     "avg_per_node": 7.7,
-    "total_suppressed": 33,
+    "total_suppressed": 29,
     "explosion_nodes": [],
     "collapse_nodes": [
       {
@@ -31,7 +31,7 @@
       },
       {
         "slug": "-generic-usb-filter-driver-",
-        "count": 0
+        "count": 2
       },
       {
         "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
@@ -60,16 +60,11 @@
     ]
   },
   "suppression": {
-    "suppress_derived_count": 5,
+    "suppress_derived_count": 4,
     "audit_flag_count": 3,
-    "pass_count": 39,
-    "total_derived_claims_removed": 33,
+    "pass_count": 40,
+    "total_derived_claims_removed": 29,
     "suppressed_nodes": [
-      {
-        "slug": "-generic-usb-filter-driver-",
-        "node_type": "STANDARD",
-        "removed": 4
-      },
       {
         "slug": "0206-0209-交接",
         "node_type": "HANDOFF",
@@ -113,18 +108,18 @@
     ]
   },
   "semantic": {
-    "total_checked": 182,
-    "supported": 119,
-    "uncertain": 8,
-    "unsupported": 45,
-    "supported_pct": "65%",
-    "uncertain_pct": "4%",
-    "unsupported_pct": "25%",
+    "total_checked": 180,
+    "supported": 118,
+    "uncertain": 9,
+    "unsupported": 43,
+    "supported_pct": "66%",
+    "uncertain_pct": "5%",
+    "unsupported_pct": "24%",
     "nodes_with_unsupported": [
       {
         "slug": "-generic-usb-filter-driver-",
-        "unsupported": 3,
-        "total": 4
+        "unsupported": 1,
+        "total": 2
       },
       {
         "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",

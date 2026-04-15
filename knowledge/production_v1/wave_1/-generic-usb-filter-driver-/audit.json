@@ -74,50 +74,39 @@
         "justification": "The synthesis text lists the key feature of the driver as 'Multi-Mode Operation'."
       },
       {
-        "question": "What is the purpose of the In-System Programming (ISP) mode of the driver?",
+        "question": "How does the In-System Programming (ISP) mode work in the Generic USB Filter Driver?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text provides a detailed explanation of the ISP mode, including its core architecture, workflow, and key code analysis."
+        "justification": "The synthesis text provides a detailed explanation of the ISP mode, including the core architecture, workflow, and key code analysis."
       },
       {
-        "question": "What are the proposed changes for the WDK Modernization Plan of the driver?",
+        "question": "What are the proposed changes for the WDK Modernization Plan of the Generic USB Filter Driver?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text outlines the proposed changes, including code security and safety improvements, INF configuration updates, and build system changes."
+        "justification": "The synthesis text outlines the proposed changes, including code security and safety, INF configuration, and build system updates."
       }
     ]
   },
   "semantic_audit": {
-    "total_checked": 4,
-    "supported": 1,
-    "uncertain": 0,
-    "unsupported": 3,
+    "total_checked": 2,
+    "supported": 0,
+    "uncertain": 1,
+    "unsupported": 1,
     "unsupported_claims": [
-      {
-        "claim": "App[\"<b>User Mode App</b><br/>OCI Tool / Updater\"]:::inputNode",
-        "verdict": "UNSUPPORTED",
-        "reason": "The source document does not mention anything about an 'App' or 'User Mode App' or 'OCI Tool / Updater'."
-      },
-      {
-        "claim": "subgraph Device_Add [\"Device Add Event (裝置新增事件)\"]",
-        "verdict": "UNSUPPORTED",
-        "reason": "The source document does not mention anything about a 'Device Add Event'."
-      },
       {
         "claim": "- 使用 Visual Studio 2019/2022 開啟 glusbflt.vcxproj 進行編譯。",
         "verdict": "UNSUPPORTED",
-        "reason": "The source document does not contain information about using Visual Studio 2019/2022 to compile the glusbflt.vcxproj project."
+        "reason": "The source document does not mention anything about using Visual Studio 2019/2022 or compiling the glusbflt.vcxproj project."
       }
     ],
     "model_used": "claude-3-haiku-20240307",
     "skipped": false
   },
-  "backfilled_at": "2026-04-15T04:00:13.185Z",
+  "backfilled_at": "2026-04-15T06:41:52.952Z",
   "suppression_decision": {
-    "tier": "SUPPRESS_DERIVED",
+    "tier": "PASS",
     "node_type": "STANDARD",
-    "unsupported_ratio": 0.75,
-    "derived_count": 4,
-    "reason": "Majority-unsupported Derived tier: 3/4 (75%). Derived claims cannot be collectively trusted as source-derived.",
-    "suppression_note": "⚠️ Derived-tier claims suppressed: majority of Derived claims lacked semantic source support. Source-near claims retained.",
-    "removed_count": 4
+    "unsupported_ratio": 0.5,
+    "derived_count": 2,
+    "reason": "Unsupported rate 50% (1/2) below audit threshold.",
+    "removed_count": 0
   }
 }

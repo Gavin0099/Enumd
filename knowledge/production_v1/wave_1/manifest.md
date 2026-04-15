@@ -1,12 +1,12 @@
 # Wave 1 Manifest
 
 > KAL: 28 CONVERGED | 7 THIN | 12 SKIPPED | 0 FAILED
-> Suppression: 5 SUPPRESS_DERIVED | 3 AUDIT_FLAG
+> Suppression: 4 SUPPRESS_DERIVED | 3 AUDIT_FLAG
 
 | Slug | Type | KAL | Claims | Semantic (S/U/X) | Suppression | Review |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | -clawdbot-自主代理建置與資安防禦全紀錄 | 📄 STANDARD | ✅ CONVERGED | 0 | — | ✅ PASS | [ ] |
-| -generic-usb-filter-driver- | 📄 STANDARD | ✅ CONVERGED | 0 | 1/0/3 | 🚫 SUPPRESS | [ ] |
+| -generic-usb-filter-driver- | 📄 STANDARD | ✅ CONVERGED | 2 | 0/1/1 | ✅ PASS | [ ] |
 | -genesys-logic-firmware-安全簽署與驗證流程-code-signing- | 🪟 FRAGMENTARY | ⚠️ THIN_SYNTHESIS | 7 | 4/0/0 | ✅ PASS | [ ] |
 | -hp-firmware-installer-macos-完整修復與發布手冊 | 📄 STANDARD | ✅ CONVERGED | 9 | 5/1/2 | 🚩 FLAG | [ ] |
 | -hp-sdlc-master-compliance-checklist-2025-edition | 📄 STANDARD | ✅ CONVERGED | 7 | 2/1/2 | 🚩 FLAG | [ ] |

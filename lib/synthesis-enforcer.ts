@@ -116,6 +116,26 @@ function classifyLine(
         return "Structural";
     }
 
+    // ── Mermaid diagram syntax ─────────────────────────────────────────────
+    // LLM-generated flowcharts/sequence diagrams must NOT enter claim tiers.
+    // They share keywords with source content, producing misleading Derived hits.
+    //
+    //   :::className       → node class annotation  (App["..."]:::inputNode)
+    //   subgraph [...]     → subgraph block opener
+    //   graph TD / flowchart LR → graph type declaration
+    //   sequenceDiagram etc.   → diagram type keywords
+    //   --> NodeId         → edge continuation line
+    if (
+        trimmed.includes(":::") ||
+        /^subgraph[\s\[]/.test(trimmed) ||
+        /^(graph|flowchart)\s+(TD|LR|RL|BT|TB)\b/.test(trimmed) ||
+        /^(sequenceDiagram|classDiagram|gantt|pie|erDiagram)\b/.test(trimmed) ||
+        /^\s*-->/.test(trimmed)
+    ) {
+        return "Structural";
+    }
+    // ──────────────────────────────────────────────────────────────────────
+
     // Inline markdown links (e.g. "Text [Link](url)")
     // DO NOT bypass as Structural anymore. If the line has text, it must be anchored.
     // However, if the line is JUST the link (already caught above), it stays structural.
