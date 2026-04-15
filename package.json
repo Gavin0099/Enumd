@@ -17,7 +17,9 @@
     "review:synthesis": "tsx --env-file .env.local scripts/review-synthesis.ts",
     "compare:synthesis": "tsx --env-file .env.local scripts/compare-synthesis.ts",
     "build-index": "tsx --env-file .env.local scripts/build-index.ts",
-    "check-stale": "tsx --env-file .env.local scripts/check-stale.ts"
+    "check-stale": "tsx --env-file .env.local scripts/check-stale.ts",
+    "backfill:audit": "tsx --env-file .env.local scripts/backfill-wave-audit.ts",
+    "query": "tsx --env-file .env.local scripts/query.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.2",

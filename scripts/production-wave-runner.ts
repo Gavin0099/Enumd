@@ -51,9 +51,24 @@ async function run() {
 
     // 2. Inventory & Wave Splitting
     const engine = new KnowledgeQueryEngine(join(KNOWLEDGE_DIR, "nodes.json"), join(KNOWLEDGE_DIR, "edges.json"));
-    const allNodes: { slug: string }[] = JSON.parse(readFileSync(join(KNOWLEDGE_DIR, "nodes.json"), "utf8"));
+    const rawNodes: { slug: string }[] = JSON.parse(readFileSync(join(KNOWLEDGE_DIR, "nodes.json"), "utf8"));
+
+    // Deduplicate by slug before wave splitting — nodes.json may contain
+    // duplicate entries from merged exports. Processing duplicates wastes
+    // API calls and produces no additional output (mkdirSync is idempotent).
+    const seenSlugs = new Set<string>();
+    const allNodes = rawNodes.filter(n => {
+        if (seenSlugs.has(n.slug)) return false;
+        seenSlugs.add(n.slug);
+        return true;
+    });
+    const dedupedCount = rawNodes.length - allNodes.length;
+    if (dedupedCount > 0) {
+        console.log(`   ⚠️  Deduplication: removed ${dedupedCount} duplicate slugs (${rawNodes.length} → ${allNodes.length} unique nodes)`);
+    }
+
     const sortedNodes = allNodes.sort((a, b) => a.slug.localeCompare(b.slug));
-    
+
     const waves = [];
     for (let i = 0; i < sortedNodes.length; i += WAVE_SIZE) {
         waves.push(sortedNodes.slice(i, i + WAVE_SIZE));
@@ -61,7 +76,7 @@ async function run() {
 
     const waveIndexArg = process.argv.find(a => a.startsWith("--wave="))?.split("=")[1];
     if (!waveIndexArg) {
-        console.log(`\nInventory: ${allNodes.length} nodes Split into ${waves.length} waves.`);
+        console.log(`\nInventory: ${allNodes.length} unique nodes (${dedupedCount} dupes removed) → ${waves.length} waves`);
         console.log("Usage: npx tsx scripts/production-wave-runner.ts --wave=[1-8]");
         process.exit(0);
     }
