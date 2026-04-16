@@ -20,6 +20,129 @@ import { computeDomainAdvisory } from "../lib/domain-advisory";
  */
 
 const KNOWLEDGE_DIR = join(process.cwd(), "knowledge");
+
+// ─── Governance Report Emitter ────────────────────────────────────────────────
+// Emits governance_report.json per wave run for integration with
+// ai-governance-framework as an external domain governance producer.
+// Schema: knowledge/production_v1/mapping-spec.md §5
+// ─────────────────────────────────────────────────────────────────────────────
+interface GovernanceNodeData {
+    slug: string;
+    suppression_tier: string;
+    node_type: string;
+    kal_verdict: string;
+    retained_claims: number;
+    explicit_claims: number;
+    derived_claims: number;
+    suppressed_claim_count: number;
+    advisory_risk_level: string;
+    advisory_signals: string[];
+    corpus_overlap_score: number;
+}
+
+function buildGovernanceReport(params: {
+    runType: "production_wave" | "probe";
+    waveId: number;
+    batchId: string;
+    govNodes: GovernanceNodeData[];
+    waveTotalNodes: number;
+    waveDir: string;
+}): object {
+    const { runType, waveId, batchId, govNodes, waveTotalNodes, waveDir } = params;
+
+    const suppressed = govNodes.filter(n => n.suppression_tier === "SUPPRESS_DERIVED").length;
+    const flagged    = govNodes.filter(n => n.suppression_tier === "AUDIT_FLAG").length;
+    const passed     = govNodes.filter(n => n.suppression_tier === "PASS").length;
+
+    const totalClaims          = govNodes.reduce((s, n) => s + n.retained_claims, 0);
+    const explicitClaims       = govNodes.reduce((s, n) => s + n.explicit_claims, 0);
+    const derivedClaims        = govNodes.reduce((s, n) => s + n.derived_claims, 0);
+    const suppressedClaimCount = govNodes.reduce((s, n) => s + n.suppressed_claim_count, 0);
+
+    const kalCounts: Record<string, number> = {};
+    for (const n of govNodes) {
+        kalCounts[n.kal_verdict] = (kalCounts[n.kal_verdict] || 0) + 1;
+    }
+
+    const signalCounts: Record<string, number> = {};
+    for (const n of govNodes) {
+        for (const sig of n.advisory_signals) {
+            signalCounts[sig] = (signalCounts[sig] || 0) + 1;
+        }
+    }
+
+    const nodeSignals = govNodes
+        .filter(n => n.advisory_risk_level !== "NONE")
+        .map(n => ({
+            slug: n.slug,
+            risk_level: n.advisory_risk_level,
+            signals: n.advisory_signals,
+            corpus_overlap_score: n.corpus_overlap_score,
+            // advisory_only: this field must not be interpreted as enforcement action
+            // by the framework. See mapping-spec §6.4 and §9.
+            decision_distance: "advisory_only",
+        }));
+
+    return {
+        producer: "enumd",
+        artifact_type: "governance_report",
+        schema_version: "1.0",
+        run_type: runType,
+        run_id: `wave-${waveId}`,
+        batch_id: batchId,
+        domain: "usb_windows_firmware",
+        semantic_scope: "enumd-specific",
+        instrumentation_version: "slice1-v1",
+        calibration_profile: {
+            name: "production_v1",
+            overlap_thresholds: { low_overlap: 0.40 },
+            notes: [
+                "Thresholds calibrated on Enumd production_v1 corpus (297 nodes, 6 waves).",
+                "Not domain-general. Do not treat as framework defaults.",
+            ],
+        },
+        summary: {
+            total_nodes: govNodes.length,
+            wave_total_nodes: waveTotalNodes,
+            total_claims: totalClaims,
+            explicit_claims: explicitClaims,
+            derived_claims: derivedClaims,
+            suppressed_claim_count: suppressedClaimCount,
+            suppressed_nodes: suppressed,
+            audit_flagged_nodes: flagged,
+            passed_nodes: passed,
+        },
+        // Field name is "synthesis_verdicts", not "enforcement", to avoid
+        // false equivalence with the framework's enforcement action vocabulary.
+        // Enumd SUPPRESS_DERIVED / AUDIT_FLAG / PASS are synthesis-layer outcomes.
+        // See mapping-spec §6.3 and §9.2.
+        enforcement: {
+            policy: "tiered-enforcement-policy-v1",
+            synthesis_verdicts: {
+                SUPPRESS_DERIVED: suppressed,
+                AUDIT_FLAG: flagged,
+                PASS: passed,
+            },
+        },
+        kal_summary: {
+            CONVERGED:       kalCounts["CONVERGED"]       || 0,
+            THIN_SYNTHESIS:  kalCounts["THIN_SYNTHESIS"]  || 0,
+            SKIPPED:         kalCounts["SKIPPED"]         || 0,
+        },
+        advisory: {
+            // Signal counts and per-node signals are advisory_only.
+            // They do not represent framework enforcement decisions.
+            signal_counts: signalCounts,
+            node_signals: nodeSignals,
+        },
+        raw_artifacts: {
+            wave_dir: waveDir,
+            audit_json_pattern: join(waveDir, "{slug}", "audit.json"),
+            atomic_claims_path: join(waveDir, "atomic-claims.json"),
+        },
+        generated_at: new Date().toISOString(),
+    };
+}
 const PROD_DIR = join(KNOWLEDGE_DIR, "production_v1");
 mkdirSync(PROD_DIR, { recursive: true });
 
@@ -140,6 +263,7 @@ async function run() {
     // 4. Execution
     const manifest = [];
     const waveAtomicClaims: AtomicClaim[] = [];
+    const govNodes: GovernanceNodeData[] = [];
 
     for (let i = 0; i < nodesToProcess.length; i++) {
         const node = nodesToProcess[i];
@@ -258,6 +382,22 @@ async function run() {
             );
             // ─────────────────────────────────────────────────────────────
 
+            // ─── GOVERNANCE REPORT COLLECTOR ────────────────────────────
+            govNodes.push({
+                slug: node.slug,
+                suppression_tier: suppression.tier,
+                node_type: suppression.node_type,
+                kal_verdict: kalResult.verdict,
+                retained_claims: nodeClaims.length,
+                explicit_claims: nodeClaims.filter(c => c.tier === "Explicit").length,
+                derived_claims: nodeClaims.filter(c => c.tier === "Derived").length,
+                suppressed_claim_count: suppressedCount,
+                advisory_risk_level: audit.domain_advisory.risk_level,
+                advisory_signals: [...audit.domain_advisory.signals],
+                corpus_overlap_score: audit.domain_advisory.corpus_overlap_score,
+            });
+            // ─────────────────────────────────────────────────────────────
+
             writeFileSync(join(dest, "synthesis.md"), cleanedDraft);
             writeFileSync(join(dest, "audit.json"), JSON.stringify(audit, null, 2));
             writeFileSync(join(dest, "source.xml"), sourceXml);
@@ -292,8 +432,20 @@ async function run() {
                 generated_at: new Date().toISOString(),
             };
             writeFileSync(join(waveDir, "probe-report.json"), JSON.stringify(probeReport, null, 2));
+
+            const probeGovReport = buildGovernanceReport({
+                runType: "probe",
+                waveId: currentWaveIdx + 1,
+                batchId: BATCH_ID,
+                govNodes,
+                waveTotalNodes: currentNodes.length,
+                waveDir,
+            });
+            writeFileSync(join(waveDir, "governance_report.json"), JSON.stringify(probeGovReport, null, 2));
+
             console.log(`\n🔬 Probe complete: ${nodesToProcess.length}/${currentNodes.length} nodes processed.`);
             console.log(`   Report → ${join(waveDir, "probe-report.json")}`);
+            console.log(`   📋 Governance → ${join(waveDir, "governance_report.json")}`);
             console.log(`   ⚠️  Wave ${currentWaveIdx + 1} not yet complete — manifest and atomic-claims deferred.`);
             return;
         }
@@ -302,6 +454,18 @@ async function run() {
 
     writeFileSync(join(waveDir, "atomic-claims.json"), JSON.stringify(waveAtomicClaims, null, 2));
     console.log(`\n📦 Atomic Claims: ${waveAtomicClaims.length} total verified claims written to atomic-claims.json`);
+
+    // ─── GOVERNANCE REPORT (full wave) ───────────────────────────────────────
+    const govReport = buildGovernanceReport({
+        runType: "production_wave",
+        waveId: currentWaveIdx + 1,
+        batchId: BATCH_ID,
+        govNodes,
+        waveTotalNodes: currentNodes.length,
+        waveDir,
+    });
+    writeFileSync(join(waveDir, "governance_report.json"), JSON.stringify(govReport, null, 2));
+    console.log(`📋 Governance Report: governance_report.json written`);
 
     // 6. Manifest generation
     const thinNodes = manifest.filter(m => m.kal === "THIN_SYNTHESIS").length;
