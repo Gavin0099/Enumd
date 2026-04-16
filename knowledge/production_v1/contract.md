@@ -1,0 +1,92 @@
+# Production v1 — Acceptance Contract
+
+> This contract defines the hard boundaries of the production_v1 baseline.
+> It is NOT a description of features. It defines what this baseline allows,
+> what must never appear, and which metrics govern comparison against v2.
+>
+> Purpose: prevent future "improvement" that only improves visible numbers
+> without addressing the underlying failure modes.
+
+---
+
+## 1. What This Baseline Allows (Known Limitations)
+
+These are NOT regressions. They are accepted behaviors of v1.
+
+| # | Allowed Limitation | Rationale |
+| :- | :--- | :--- |
+| L1 | SUPPRESS_DERIVED may fire on SOP/procedure documents | Procedural over-inference is an inherent LLM behavior on this doc type; suppression is the correct v1 response |
+| L2 | AUDIT_FLAG may fire on list/reference documents (command lists, error code tables) | Paraphrase mismatch with keyword-based scorer; not hallucination, but unconfirmable in v1 |
+| L3 | HANDOFF nodes are fully suppressed at Derived tier | Source context too sparse for meaningful synthesis; this is correct behavior |
+| L4 | Claim density varies from ~1 to ~126 per node | Large spec documents legitimately produce more claims; outliers are explainable |
+| L5 | AUDIT_FLAG rate plateaus at 4–6% | Structural floor caused by list/reference doc type distribution; not a scorer failure |
+| L6 | Some STANDARD nodes may trigger SUPPRESS if unsupported ratio ≥ 50% | Legitimate semantic decision — not a pipeline fault |
+
+---
+
+## 2. What Must Never Appear (Regression Criteria)
+
+Any of the following in a future run indicates a regression, not a limitation.
+
+| # | Regression Condition | Threshold | Signal Source |
+| :- | :--- | :--- | :--- |
+| R1 | **Control group suppression** | Any SUPPRESS on known-clean, Windows-centric technical docs | `suppression_decision.tier` + manual slug classification |
+| R2 | **Parser noise re-entry** | Any Mermaid syntax, CLI invocation, or protocol data in `claims.json` | SANITIZATION_PATTERNS miss; spot-check synthesis.md |
+| R3 | **AUDIT_FLAG type expansion** | New document types triggering AUDIT_FLAG that weren't flagged in v1 | Compare AUDIT_FLAG slug list across runs |
+| R4 | **Explicit coverage collapse** | Explicit / Derived ratio drops below 65% / 35% wave-wide | `byTier` in atomic-claims.json |
+| R5 | **Enforcement removal rate spike** | `enforcement_report.removed > 50%` of total lines in a non-probe wave | audit.json per node |
+| R6 | **KAL THIN_SYNTHESIS expansion** | THIN rate > 15% in a wave with normal graph context | manifest.md KAL summary |
+
+---
+
+## 3. Core Comparison Metrics for v2
+
+When comparing v2 against this baseline, use ONLY these metrics.
+Do not use aggregate averages to claim improvement.
+
+| Metric | v1 Baseline Value | How to Measure |
+| :--- | :--- | :--- |
+| **SUPPRESS rate by doc type** | HANDOFF: ~80%; SOP: ~5%; list/reference: 0% (but AUDIT_FLAG); spec: 0% | Segment `suppression_decision` by doc-type classification |
+| **Control group SUPPRESS count** | 0/6 (Wave 6 probe) | Designated control slugs (Windows technical docs) |
+| **Explicit / Derived ratio** | 70–72% / 28–30% | `atomic-claims.json` tier distribution |
+| **AUDIT_FLAG type distribution** | list/reference: 3; Windows feature: 1; procedure: 1 (v1 total) | Categorize AUDIT_FLAG slugs by doc type |
+| **Normalized claim density** | 14–16 avg (excl. nodes >50 claims) | Compute from atomic-claims.json |
+| **Paraphrase-type AUDIT_FLAG rate** | ~4–6% (inferred structural floor) | Requires doc-type classification to segment from hallucination flags |
+
+**Improvement is only real if:**
+- Control group remains at 0 SUPPRESS
+- Domain-segmented SUPPRESS rate improves for a specific error mode
+- AUDIT_FLAG type distribution changes in an explainable direction (e.g., list/reference flags decrease after embedding scorer)
+
+**Improvement is not real if:**
+- Overall AUDIT_FLAG rate drops but list/reference doc behavior is unchanged
+- Average density drops because more nodes are suppressed (not because claims are better)
+- Wave-level aggregate metrics improve while per-domain behavior is uninspected
+
+---
+
+## 4. What v1 Is and Is Not
+
+| v1 Is | v1 Is Not |
+| :--- | :--- |
+| A verifiable, auditable, replayable baseline | A universally correct knowledge base |
+| A system with known, typed, controlled failure modes | A system with zero errors |
+| A foundation for domain-segmented comparison | A production truth for cross-domain inference |
+| Windows-centric domain — validated | Cross-domain — validated only for absence of systemic bias |
+
+**Precise definition:**
+> `production_v1` is a frozen, reproducible baseline with a known error model.
+> It establishes the verifiable minimum: every retained claim passed enforcement
+> and semantic scoring. It does not guarantee that all correct claims were retained,
+> nor that retained claims are perfectly accurate — only that they are traceable.
+
+---
+
+## 5. v2 Entry Criteria
+
+Do not begin v2 implementation until:
+
+- [ ] error-model.md detectability gaps (⚠️ and ❌ rows) have at least one measurement proposal each
+- [ ] A synthetic benchmark exists for error mode #7 (scorer keyword dependency) and #8 (saturation)
+- [ ] The first v2 slice is scoped to a single error mode with a verifiable hypothesis
+- [ ] This contract is reviewed and accepted as the comparison ground truth
