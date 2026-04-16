@@ -12,6 +12,7 @@ import {
     evaluateDerivedSuppression,
     applySuppressionToClaims,
 } from "../lib/tiered-enforcement-policy";
+import { computeDomainAdvisory } from "../lib/domain-advisory";
 
 /**
  * Enumd Production Wave Runner (v1)
@@ -243,6 +244,19 @@ async function run() {
                 suppression_note: suppression.suppression_note,
                 removed_count: suppressedCount,
             };
+
+            // ─── DOMAIN ADVISORY (verdict-neutral instrumentation) ───────
+            audit.domain_advisory = computeDomainAdvisory(
+                node.slug,
+                sourceXml,
+                nodeClaims,
+                {
+                    tier: suppression.tier,
+                    unsupported_ratio: suppression.unsupported_ratio,
+                    derived_count: suppression.derived_count,
+                }
+            );
+            // ─────────────────────────────────────────────────────────────
 
             writeFileSync(join(dest, "synthesis.md"), cleanedDraft);
             writeFileSync(join(dest, "audit.json"), JSON.stringify(audit, null, 2));

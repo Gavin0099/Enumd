@@ -1,0 +1,355 @@
+{
+  "generated_at": "2026-04-16T06:47:01.326Z",
+  "instrumentation_version": "1.0",
+  "nodes_processed": 23,
+  "suppress_without_signal_count": 2,
+  "signal_without_suppress_count": 8,
+  "domain_advisory_by_type": {
+    "domain_misalignment_risk": 13,
+    "paraphrase_mismatch_suspected": 2
+  },
+  "suppressed_count": 9,
+  "signaled_count": 15,
+  "suppress_without_signal": [
+    {
+      "slug": "sw文件撰寫sop",
+      "group": "procedure_suppressed",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0.9330586080586082
+    },
+    {
+      "slug": "windows-11-core-isolation",
+      "group": "windows_flag",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.779861111111111
+    }
+  ],
+  "signal_without_suppress": [
+    {
+      "slug": "saleae-logic-i2c-tool-使用說明",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "zeroplus_lap-i2c-訊號錄製方式",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "xcode-architecture-設定",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "vibe-coding",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "ssdlc-",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "teledyne-lecroy-python安裝和測試方式",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "outlook-封存失敗如何設定",
+      "group": "cross_domain_pass",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    }
+  ],
+  "all_results": [
+    {
+      "wave": 5,
+      "slug": "lenovo-dmc",
+      "group": "cross_domain_suppressed",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8361852622183757,
+      "claim_count": 19
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-one-key-update-tool-",
+      "group": "cross_domain_suppressed",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8350583759674669,
+      "claim_count": 11
+    },
+    {
+      "wave": 5,
+      "slug": "linux-usb-hid-description",
+      "group": "cross_domain_suppressed",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.6212157287157287,
+      "claim_count": 8
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-offline-update-flow-",
+      "group": "cross_domain_flag",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8114451931209662,
+      "claim_count": 22
+    },
+    {
+      "wave": 5,
+      "slug": "linux-mac-共code-",
+      "group": "cross_domain_flag",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.7282877253465488,
+      "claim_count": 31
+    },
+    {
+      "wave": 6,
+      "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6652263374485595,
+      "claim_count": 9
+    },
+    {
+      "wave": 6,
+      "slug": "saleae-logic-i2c-tool-使用說明",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.682719241542771,
+      "claim_count": 13
+    },
+    {
+      "wave": 6,
+      "slug": "zeroplus_lap-i2c-訊號錄製方式",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.6395477207977208,
+      "claim_count": 6
+    },
+    {
+      "wave": 6,
+      "slug": "xcode-architecture-設定",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.975,
+      "claim_count": 4
+    },
+    {
+      "wave": 6,
+      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.762037037037037,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "vibe-coding",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8171729611384784,
+      "claim_count": 29
+    },
+    {
+      "wave": 6,
+      "slug": "ssdlc-",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8845238095238096,
+      "claim_count": 24
+    },
+    {
+      "wave": 6,
+      "slug": "teledyne-lecroy-python安裝和測試方式",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.7866966366966367,
+      "claim_count": 9
+    },
+    {
+      "wave": 6,
+      "slug": "outlook-封存失敗如何設定",
+      "group": "cross_domain_pass",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.875,
+      "claim_count": 4
+    },
+    {
+      "wave": 6,
+      "slug": "sw文件撰寫sop",
+      "group": "procedure_suppressed",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9330586080586082,
+      "claim_count": 39
+    },
+    {
+      "wave": 6,
+      "slug": "tri-code-command-list",
+      "group": "list_ref_flag",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "LOW",
+      "signals": [
+        "paraphrase_mismatch_suspected"
+      ],
+      "corpus_overlap_score": 0.7157738095238094,
+      "claim_count": 7
+    },
+    {
+      "wave": 6,
+      "slug": "vendor-oci-error-code-",
+      "group": "list_ref_flag",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "LOW",
+      "signals": [
+        "paraphrase_mismatch_suspected"
+      ],
+      "corpus_overlap_score": 0.7883145514097886,
+      "claim_count": 126
+    },
+    {
+      "wave": 6,
+      "slug": "windows-11-core-isolation",
+      "group": "windows_flag",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.779861111111111,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "sc-query-to-determine-the-driver-mode",
+      "group": "windows_control",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7120471014492754,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "secure-firmware-recovery",
+      "group": "windows_control",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9504347553128041,
+      "claim_count": 41
+    },
+    {
+      "wave": 6,
+      "slug": "tool-sign-flow",
+      "group": "windows_control",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7758422518839185,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "usb-device-class",
+      "group": "windows_control",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5290316661423927,
+      "claim_count": 17
+    },
+    {
+      "wave": 6,
+      "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+      "group": "windows_control",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6774531024531024,
+      "claim_count": 21
+    }
+  ]
+}
