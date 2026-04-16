@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "此文件描述了如何使用 HP_ISPTool.exe 軟體來更新 HP ISP Tool Hub 的韌體。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 開啟 HP_ISPTool.exe 軟體。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 按下「Enter PASSWORD」按鈕，並輸入密碼「GENESYS6104」。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 輸入正確密碼後，即可進行更新。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 選擇 Hub Firmware 並選擇 Hub Rom 檔案，然後開始 ISP 更新。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 您可以看到更新成功的訊息。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 開啟 HP_ISPTool.exe 軟體。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 選擇 Hub Firmware 並選擇 Hub sig bin 檔案，然後開始 ISP 更新。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 您可以看到更新成功的訊息。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 開啟 HP_ISPTool.exe 軟體。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 選擇 Scaler Firmware 並選擇 Scaler bin 檔案，然後開始 ISP 更新。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "1. 您可以看到更新成功的訊息。[`HP ISP Tool Hub Update Flow(HID)`](./hp-isp-tool-hub-update-flowhid.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-hub-update-flowhid",
+    "claim": "此更新流程涉及到 Camera 的 code sign 驗證以及 Genesys Logic 的 code sign 流程。相關的文件可參考以下連結:",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

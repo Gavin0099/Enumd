@@ -1,0 +1,152 @@
+{
+  "requested_slug": "hub-auto-test-",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 38,
+    "downgraded": 7,
+    "total_lines": 93,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What is the purpose of the Mars testing stage for the Hub ISP functionality?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the CLI tools are deployed on Mars, and the Mars testing stage is used to test the Hub ISP functionality to ensure it is working properly before pushing code to Git."
+      },
+      {
+        "question": "What are the issues with the etoken_dongle_server and etoken_server code?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides detailed information about the architectural and testing issues with the etoken_dongle_server and etoken_server code, including concerns about detached threads, lack of lifecycle control, security vulnerabilities, and missing failure path testing."
+      },
+      {
+        "question": "What is the current code signing algorithm used by Genesys Logic?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the current code signing algorithm used by Genesys Logic is ECDSA nistp256."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 14,
+    "supported": 4,
+    "uncertain": 1,
+    "unsupported": 9,
+    "unsupported_claims": [
+      {
+        "claim": "1. 告知如何清除 Camera 的方式 - 驗證失敗需要清除",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about how to erase the Camera or that verification failure requires erasing the Camera."
+      },
+      {
+        "claim": "1. 告知如何讀取 Camera 資料 - Hub 安全模型必須能讀取更新的資料才能計算雜湊值",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about how to read Camera data or that the Hub security model must be able to read the update data to calculate the hash."
+      },
+      {
+        "claim": "1. [建議] 源碼中硬編碼的 Token 密碼",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about hardcoded Token passwords in the source code."
+      },
+      {
+        "claim": "- 結果: 發現衝突(特別是 system()/子進程掛起和協定失配/卡住風險已命中)。",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about discovering conflicts, especially related to system()/subprocess hanging and protocol mismatches/blocking risks."
+      },
+      {
+        "claim": "1. [阻塞] SQL 注入風險(登入授權查詢)",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about SQL injection risks (login authorization queries)."
+      },
+      {
+        "claim": "1. [警告] detach 執行緒捕獲 this,存在關閉競爭/使用後釋放風險",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about detaching threads capturing 'this', which could lead to closing race/use-after-free risks."
+      },
+      {
+        "claim": "1. [警告] 檔案大小由對端提供且未設上限,可能 OOM/卡死",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about file size being provided by the other end without a limit, which could lead to OOM/deadlock."
+      },
+      {
+        "claim": "1. [警告] 對 Dongle 端取檔同樣無大小上限",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about taking files from the Dongle without a size limit."
+      },
+      {
+        "claim": "1. [警告] DB 密碼硬編碼在程式碼",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about hardcoded DB passwords in the source code."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "SUPPRESS_DERIVED",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.6428571428571429,
+    "derived_count": 14,
+    "reason": "Majority-unsupported Derived tier: 9/14 (64%). Derived claims cannot be collectively trusted as source-derived.",
+    "suppression_note": "⚠️ Derived-tier claims suppressed: majority of Derived claims lacked semantic source support. Source-near claims retained.",
+    "removed_count": 14
+  }
+}

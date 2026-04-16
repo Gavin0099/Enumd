@@ -1,0 +1,210 @@
+[
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "關鍵結論：無論是否導入 CFU，macOS 工具都必須自行維護；CFU 的核心價值在於解決 Windows Driver 綁定問題，以及讓 Linux 透過 `[fwupd](https://github.com/fwupd/fwupd)` 原生整合。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- Windows 提供完整的 CFU Host Stack",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- Linux 透過 `[fwupd](https://github.com/fwupd/fwupd)` 提供部分支援",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- macOS 僅提供 USB/HID transport API，不支援 CFU",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "macOS 目前不支援 CFU (Component Firmware Update)。CFU 為 Microsoft 所定義的裝置韌體更新協議，其 Host 端實作由 Windows 系統內建 Driver `hidcfu.sys` 提供。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- Apple 未提供任何 CFU Host Driver",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- macOS 未提供 CFU Firmware Update Framework",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- 公開文件中未出現 Apple 支援 CFU 的相關資訊",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "因此若裝置需在 macOS 上進行 CFU 更新，所有 CFU Host Protocol 邏輯必須由廠商自行實作於 Application 層。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "macOS 的 `IOKit` / `IOHIDManager` 僅提供 HID 傳輸能力，如 `IOHIDDeviceSetReport`、`IOHIDDeviceGetReport` 和 `IOHIDDeviceRegisterInputReportCallback`。其功能僅為 Host ↔ HID Report 的資料交換，並未提供：",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- CFU protocol state machine",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- Firmware update orchestration",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- Retry / sequencing / error recovery",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "- Firmware package 管理",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "因此在 macOS 上，SW RD 必須自行實作完整的 CFU Host Logic。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "在 macOS 上進行 CFU 更新時，Application 必須負責以下邏輯：",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "1. **HID Report 封裝**：依 FW 端 HID Descriptor 定義，手動組裝 HID Output Report、控制 Report 長度和管理 Sequence Number。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "2. **Offer 狀態管理**：處理 `FIRMWARE_UPDATE_OFFER`，並解析 FW 回傳的狀態，如 `ACCEPT`、`BUSY`、`REJECT` 和 `SKIP`。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "3. **序列控制（Stop-and-Wait）**：CFU 協議採用 Stop-and-Wait 模型，macOS App 必須自行處理 Async callback、Packet ordering 和 Timeout control。",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "4. **錯誤恢復**：當傳輸中斷時，macOS 系統不會自動重試，Application 必須自行實作 timeout retry、transaction restart 和 offer 重新發起。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "Windows CFU 更新流程：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "hidcfu.sys (Kernel Driver)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "Vendor Application",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "CFU Host Logic (User Space)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "關鍵差異在於 Windows 的 CFU 實作位於系統內核層，而 macOS 則必須由應用程式自行實作。這意味著 macOS 的 Host Response Timing 可能受到 GCD scheduling、Thread priority、Application workload 和 USB stack latency 的影響。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+    "claim": "由於 macOS 的 CFU Host 實作位於 User Space Application，其 Host Response Timing 可能受到多方面因素影響。因此在 FW 狀態機設計時，Timeout 設計不應假設 Windows `hidcfu.sys` Driver 的穩定 timing 行為。建議 FW Timeout 容忍值應能容忍 User-space scheduling latency、Host application jitter 和跨平台 Host 實作差異，以確保 Windows / macOS Host 皆可正常完成更新流程。",
+    "tier": "Explicit",
+    "evidence_score": 36,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

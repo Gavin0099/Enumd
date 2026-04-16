@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "hp-hub-code-sign-bin-format",
+    "claim": "報告書：HP Hub Code Sign Bin 格式",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-hub-code-sign-bin-format",
+    "claim": "本報告旨在概述 HP Hub 韌體簽署二進位檔案格式的相關資訊。根據提供的上下文邊界,我們將聚焦於 GL3590 (7423, 7504) 和 GL3590-50 (7524) 兩種 bin 格式的詳細說明。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-hub-code-sign-bin-format",
+    "claim": "GL3590 (7423, 7504) bin 檔案格式包含以下主要元素:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-hub-code-sign-bin-format",
+    "claim": "- 簽章資訊採用 ECDSA nistp256 加密演算法,符合 FIPS 140-2 Level 3 安全標準。[`Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)`](/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 23,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-hub-code-sign-bin-format",
+    "claim": "GL3590-50 (7524) bin 檔案格式與 GL3590 (7423, 7504) 類似,同樣包含檔案頭、簽章資訊和韌體映像。不同之處在於,GL3590-50 (7524) 可能會有額外的加密保護機制。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-hub-code-sign-bin-format",
+    "claim": "[`3rd party code signing specification (ECDSA)`](/code-sign/3rd-party-code-signing-specification-ecdsa.html) 和 [`3rd party code signing specification (ECDSA)(EN)`](/code-sign/3rd-party-code-signing-specification-ecdsaen-.html) 兩篇文章提供了更多關於 Genesys Logic 韌體簽署流程的細節,包括簽署、驗證等步驟的實作方法。",
+    "tier": "Explicit",
+    "evidence_score": 31,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

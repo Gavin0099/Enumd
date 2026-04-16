@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "1. 開始 —> 右鍵 —> 電腦管理",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "4. 如果有找到，則查看 Driver—> Driver Details 是否有 glusbflt.sys",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "5. 觀察 File version 的版本",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "使用 `sc query` 指令可以得到 driver 的狀態資訊:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `sc query glusbflt`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `RUNNING`: 已插上 GL Hub 且已安裝 driver",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `STOPPABLE`: 未插上 GL Hub 但已安裝 driver",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `[SC] EnumQueryServicesStatus:OpenService FAILED 1060`: 未安裝 driver",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `sc query glusbfltservice`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `RUNNING`: 已安裝 device filter driver",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- `[SC] EnumQueryServicesStatus:OpenService FAILED 1060`: 未安裝 device filter driver",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "可以使用提供的 reg 檔案來移除 class filter driver 的註冊表參數。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "可以在 `C:\\Windows\\System32\\GlHubFltService.exe` 上右鍵查看 Product Version 來得知 device filter driver 的版本。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "1. class filter driver 先安裝，device filter driver 後安裝",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "2. device filter driver 先安裝，class filter driver 後安裝",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "不管是 3.11 或 3.13 版本，整個 root hub 都會掛掉，需要使用滑鼠控制。桌機和筆電有不同的處理方式。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-除錯方式",
+    "claim": "- 建議使用內建的 USB HID driver 進行韌體更新，而非自行開發專屬 driver",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

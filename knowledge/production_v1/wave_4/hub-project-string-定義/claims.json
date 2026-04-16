@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "hub-project-string-定義",
+    "claim": "Hub Project String 定義用於識別 Hub 專案。它由 16 碼組成，包含資料長度、14 Bytes 的資料以及 1 碼 CRC 檢查碼。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

@@ -1,0 +1,128 @@
+{
+  "requested_slug": "hp-qc-tool-",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式 (confidence: low)",
+    "hp-oci-tool-工作彙整 (confidence: low)",
+    "hp-oci-tool-現行架構解析 (confidence: low)",
+    "hp-enduser-tool-debug-sop (confidence: low)",
+    "hp-isp-tool-update-速度問題 (confidence: low)",
+    "hp-silent-mode-tool- (confidence: low)",
+    "hp-command-line-tool-user-guide (confidence: low)",
+    "hp-end-user-tool-packing-user-guide (confidence: low)",
+    "hp-isp-tool-hub-update-flow (confidence: low)",
+    "hp-isp-tool-hub-update-flowhid (confidence: low)",
+    "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final- (confidence: low)"
+  ],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 12,
+    "downgraded": 3,
+    "total_lines": 63,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What are the main features of the HP QC Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides a detailed overview of the HP QC Tool's features, including its command-line interface, ability to test a single monitor, and the use of a configuration file named 'QCTool.ini'."
+      },
+      {
+        "question": "What are the main security threats and mitigation strategies for the HP QC Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text outlines the main security threats, such as code and firmware integrity, unsafe external data handling, and sensitive information disclosure, and describes the corresponding mitigation strategies."
+      },
+      {
+        "question": "What are the two main packaging methods for the HP End User Tool?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions two packaging methods for the HP End User Tool, but does not provide any details about them."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 8,
+    "supported": 6,
+    "uncertain": 0,
+    "unsupported": 2,
+    "unsupported_claims": [
+      {
+        "claim": "在 HP QC Tool 的設計中，存在以下幾個主要的安全威脅領域及其對應的緩解措施:",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention any security threats or mitigation measures for the HP QC Tool."
+      },
+      {
+        "claim": "- 提供 script 作客製化設定",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention providing a script for customized settings."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "AUDIT_FLAG",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.25,
+    "derived_count": 8,
+    "reason": "Non-trivial unsupported rate: 2/8 Derived claims (25%). Flagged for priority reviewer sampling.",
+    "removed_count": 0
+  }
+}

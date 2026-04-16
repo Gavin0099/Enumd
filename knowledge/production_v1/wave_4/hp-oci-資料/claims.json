@@ -1,0 +1,170 @@
+[
+  {
+    "slug": "hp-oci-資料",
+    "claim": "'HP OCI 資料' 是與 HP 顯示器韌體更新相關的一系列文件和資源。主要包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "1. HP E24m Realtek OCI package (V1.0.1.1) - HP 提供的 OCI 軟體套件。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "2. HP OCI Study 文件 (JasonTY) - 由 JasonTY 撰寫的 HP OCI 相關研究文件。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "3. HP OCI Spec & SDK - HP 提供的 OCI 規格和 SDK。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "4. HP OCI 文件 (Doc) - HP 提供的 OCI 相關文件。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "5. HP OCI User Guide (Doc) - HP 提供的 OCI 使用者指南。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "1. [HID Code Sign 記錄](hid-code-sign-記錄.html) - 記錄了 HID 韌體更新的相關協議、工具和測試。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "2. [HP OCI DLL](hp-oci-dll.html) - 描述了 HP 定義的 DLL 格式及其在韌體更新流程中的使用。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "3. [HP_Display_Firmware_Update_Specification](hp_display_firmware_update_specification.html) - 詳細規範了 HP 顯示器韌體更新的各項要求和測試標準。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "1. **HP E24m Realtek OCI package (V1.0.1.1)**: 這是 HP 提供的 OCI 軟體套件,用於更新 HP 顯示器的韌體。 `[HP OCI Spec & SDK]`",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "2. **HP OCI Study 文件 (JasonTY)**: 這是由 JasonTY 撰寫的 HP OCI 相關研究文件,提供了對 OCI 技術的深入分析。 `[HP OCI Study 文件(JasonTY)]`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "3. **HP OCI Spec & SDK**: HP 提供的 OCI 規格和 SDK,為開發者提供了與 OCI 技術交互的相關資訊和工具。 `[HP OCI Spec & SDK]`",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "4. **HP OCI 文件 (Doc)**: HP 提供的 OCI 相關文件,涵蓋了 OCI 技術的各個方面。 `[HP OCI 文件 (Doc)]`",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "5. **HP OCI User Guide (Doc)**: HP 提供的 OCI 使用者指南,為使用者提供了如何使用 OCI 技術的相關說明。 `[HP OCI User Guide (Doc)]`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "1. [HID Code Sign 記錄](hid-code-sign-記錄.html)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "- 記錄了 HID 韌體更新的相關協議、工具和測試,與 'HP OCI 資料' 中的更新流程和工具有關。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "2. [HP OCI DLL](hp-oci-dll.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "- 描述了 HP 定義的 DLL 格式及其在韌體更新流程中的使用,與 'HP OCI 資料' 中的更新實現有關。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "3. [HP_Display_Firmware_Update_Specification](hp_display_firmware_update_specification.html)",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "- 詳細規範了 HP 顯示器韌體更新的各項要求和測試標準,與 'HP OCI 資料' 中的更新流程和測試有關。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-資料",
+    "claim": "'HP OCI 資料' 是 HP 顯示器韌體更新相關的一系列文件和資源,涵蓋了更新協議、工具和測試、執行中的問題和待討論事項,以及已驗證和解決的問題。它與 HID Code Sign 記錄、HP OCI DLL 和 HP 顯示器韌體更新規格等相關主題有密切關係,提供了全面的上下文和補充資訊。這些資源對於開發者和使用者了解和使用 HP 顯示器韌體更新技術都非常重要。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

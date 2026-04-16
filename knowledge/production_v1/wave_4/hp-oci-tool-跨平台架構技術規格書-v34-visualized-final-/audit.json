@@ -1,0 +1,113 @@
+{
+  "requested_slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hp-oci-tool-ui-flow (confidence: low)",
+    "hp-oci-tool-工作彙整 (confidence: low)",
+    "hp-oci-app (confidence: low)",
+    "mac-oci-tool- (confidence: low)",
+    "hp-enduser-tool- (confidence: low)",
+    "hp-qc-tool- (confidence: low)"
+  ],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 92,
+    "downgraded": 2,
+    "total_lines": 343,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What is the purpose of the HP OCI Tool cross-platform architecture specification?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the purpose is to refactor the existing WPF (.NET 4.6.1) tool to a .NET 8 cross-platform architecture, ensuring consistency and stability of the core business logic and native interop layer across Windows, Linux, and macOS."
+      },
+      {
+        "question": "What is the layered architecture of the HP OCI Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text describes the layered architecture, including the UI Presentation Layer, Core Business Layer, and Native Implementation Layer, and the dependencies between them."
+      },
+      {
+        "question": "What are the engineering hard rules defined for the HP OCI Tool project?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text outlines three engineering hard rules: Struct definition specifications, Calling Convention, and a prohibition on runtime unload of native libraries."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 32,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": true,
+    "skip_reason": "JSON parse failed. Raw: {\n  \"results\": [\n    { \"index\": 1, \"verdict\": \"SUPPORTED\", \"reason\": \"The source document shows that the NativeProxy cla"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
+    "removed_count": 0
+  }
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "hp-security-spec-",
+    "claim": "以下是基於提供的內容所撰寫的 HP Security Spec 文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 使用 Code Sign Tool 搭配 PKCS#11 協議與 HSM 溝通 [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- HSM 使用內部私鑰產生 Signature（簽章） [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 同時匯出對應的 Public Key（公鑰） [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 最終將 firmware.bin、Signature 與 Public Key 一併封裝，作為更新映像 [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "Update Tool 在下發前，將簽章資訊解構並送往 Hub:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 將封裝 bin 中的三項資訊拆開 [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 透過不同通道或分段，傳送給目標裝置（Hub） [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "Hub 端的硬體驗章模組（例如 Secure Boot Module）負責驗證:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 對比 firmware.bin 的 Hash 與 Signature 是否一致 [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 確認 Public Key 是否正確對應 Signature [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 簽章驗證成功：允許 firmware 寫入更新流程 [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- 驗證失敗：拒絕更新，避免惡意或未授權映像導入 [`Firmware Code Signing 與驗章流程說明`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "為了符合如 HP 等大客戶在 Secure Delivery 與 Code Signing 的要求，企業在執行韌體／工具／安裝檔簽章時，需配合公開信任的 CA（Certificate Authority）發行憑證，並確保:",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- ✅ 私鑰安全（例如儲存在 eToken 或 HSM 中） [`CA 認證：韌體簽章與企業應用概論`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- ✅ 簽章過程可稽核（Log 記錄、MFA 控制） [`CA 認證：韌體簽章與企業應用概論`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec-",
+    "claim": "- ✅ 憑證具備完整的 CA 信任鏈（包含 Root/Intermediate） [`CA 認證：韌體簽章與企業應用概論`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

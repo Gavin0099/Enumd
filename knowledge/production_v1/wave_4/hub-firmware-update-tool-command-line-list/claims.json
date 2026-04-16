@@ -1,0 +1,682 @@
+[
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /di",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /du",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /d",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /e",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /v",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "格式: Hub {id} [{last_update_fw_time}]({fw_vision})",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 [201906271529](9305)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 02 [201906271603](4164)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/ms=1&hub=HubFW/GL3523_OV5S1_TPV_HP_E243dV2_L1_FW6005sig.bin \"",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "\"/ms=2&hub:1=HubFW/GL3523_HP_E243dV2_L2AHub_FW6012sig_U132.bin \"",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "載入 GL3523 bin 檔案成功。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在更新韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "載入 GL3523 bin 檔案成功。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 02 正在更新韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "PanelType=BBM1**/XVM1*1",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "BinFiles=HP_E243d_PanelBOEMV238FHM_N20_BBM121_20180925_BD_715G9927_M0C_Service.bin/HPN_E324_SAM_LSM315DP01-Q01_1H1DP1TYPE-C_XVM111_20190316_9038_Factory.bin",
+    "tier": "Explicit",
+    "evidence_score": 21,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "MStar_Scaler=MST9U",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "例如,PanelType 有 2 種類型 (BBM1**/XVM1*1),則 BinFiles 必須有 2 個對應的 bin 檔。如果程式偵測到 scaler 類型是 XVM121,則會使用第二個 bin 檔 (HPN_E324_SAM_LSM315DP01-Q01_1H1DP1TYPE-C_XVM111_20190316_9038_Factory.bin) 來更新 scaler。",
+    "tier": "Explicit",
+    "evidence_score": 21,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /su",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "[Scalar] 寫入資料----100%",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "[Scalar] 驗證資料----100%",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/req=1&setup=c072000600000100\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/req=1&setup=4073000600000100&data=01\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /i",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "格式: Hub {id} {device_path} (USB\\VID_{vid}&PID_{pid}&REV_{rev})",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 \\\\?\\usb#vid_05e3&pid_0625#5&4eb3c84&0&17#{f18a0e88-c30c-11d0-8815-00a0c906bed8} (USB\\VID_05E3&PID_0625&REV_9405)",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /c",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "格式: Hub {id} ({chip_id})",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 (359010) is GL3590-OV1S1 hub",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /va",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "格式: Hub {id} [{fw_type}]({fw_vision})...",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /vb",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "格式 {file_name} [{chip_id}]({fw_vision})",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "GL3523_Dell_Uno_L1Hub_FW8818.bin [352310](8818)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "GL3523_OV3S1_Dell_Uno_L2Hub_FW8819.bin [352310](8819)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /er=1",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在清除.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "比較資料----1024/1024(100%)。比較資料完成。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /u",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在更新韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/mu=1&hub=HubFW\\GL3590-OV1S1_Hub(Std-UPB)_FW9405.bin\"",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在更新韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/dmp=1&hub=aaa.bin\"",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在轉存韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/rebb=1\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Billboard 01 正在重設.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Billboard 01 重設成功。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /re=1",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在重設.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/mr=1&hub=HubFW\\GL3590-OV1S1_Hub(Std-UPB)_FW9405.bin\"",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在合併韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 合併檔案[GL3590_Hub_9405.rom]完成。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe /sv",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Scaler 韌體版本為 RIM070。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/eb=1\"",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe \"/bb=1&pd=GL9510_Standard_Dongle_FW121_bb_withoutreconnect.bin\"",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "更新 billboard 1 韌體。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Hub 01 正在更新韌體.....",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "Return_Value = 0x00000000",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": ">GLHubUpdateToolCli.exe",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-firmware-update-tool-command-line-list",
+    "claim": "[Hub Firmware Update Tool : Command Line List](hub",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

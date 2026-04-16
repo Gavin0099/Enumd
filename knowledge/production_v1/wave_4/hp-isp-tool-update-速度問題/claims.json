@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "根據提供的上下文資訊，可以歸納出 'HP ISP Tool update 速度問題' 的核心問題如下:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "1. **Write 時間過長**: 每次 Write 操作都需要 11~15 ms 的 Flash write delay time，導致整體 Update 時間過長。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "2. **Sleep 時間過長**: 程式碼中某些地方加入了過長的 Sleep 時間，拖慢了 Update 的速度。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "3. **初始化動作效率低**: Update Hub 前需要執行新架構的 initial 動作，可能導致效率降低。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "1. **減少 Write 時間**: 可以考慮優化 Flash write 機制，降低每次 Write 的延遲時間。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "2. **縮短 Sleep 時間**: 檢查程式碼中的 Sleep 時間，並盡可能縮短或移除不必要的延遲。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-update-速度問題",
+    "claim": "3. **優化初始化動作**: 檢查 Update Hub 前的 initial 動作，看是否可以簡化或改善其效率。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

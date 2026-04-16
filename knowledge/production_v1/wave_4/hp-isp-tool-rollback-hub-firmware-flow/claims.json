@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "本文件描述了使用 HP ISP Tool 回復 hub 韌體的流程。主要步驟如下:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. 開啟 `HP_ISPTool.exe`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. 確認 hub Index 為 0，按下 Erase Flash",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. 確認 Erase Success 訊息後，勾選 USB Hub -> Open(`GL3523_ONY1_Wistron_HP_Z43s_L1Hub_FW5407.bin`) -> Start ISP",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. 確認 update completed 後，斷電一段時間",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. 重複上述步驟，將 hub Index 設為 1，並使用 `GL3523_OV5S1_Wistron_HP_Z43s_L2Hub_FW5415.bin` 進行韌體更新",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. 透過 Device Manager 或 UsbView 確認韌體是否已回復至先前版本",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. **Code Sign 驗證流程** `[Code sign Flow](code-sign/code-sign-flow.html)`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 可使用 OpenSSL、Token 或 HSM 等方式進行 Code Sign",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "2. **GL Hub Code Sign Recovery Flow** `[GL Hub Code Sign Recovery Flow](hub/gl-hub-code-sign-recovery-flow.html)`",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 描述了不同 GL Hub 晶片在韌體回復時的優先順序和處理流程",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 包括 GL3523、GL3525 和 GL3590 等晶片的回復案例",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "3. **Camera 透過我們驗證 Code Sign** `[Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 提供了 Camera 韌體更新時的 Code Sign 驗證流程",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 可參考 Hub 的 Code Sign 驗證流程進行整合",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "1. **開啟 HP_ISPTool.exe**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 啟動 HP ISP Tool 軟體，用於執行 hub 韌體回復操作",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "2. **確認 hub Index 為 0，按下 Erase Flash**",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 確認 hub 索引為 0，並執行 Erase Flash 操作以清除現有韌體",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "3. **確認 Erase Success 訊息後，勾選 USB Hub -> Open -> Start ISP**",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 確認 Erase 操作成功後，選擇 USB Hub 選項",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 開啟 `GL3523_ONY1_Wistron_HP_Z43s_L1Hub_FW5407.bin` 韌體檔案",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 執行 Start ISP 操作以更新 hub 韌體",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "4. **確認 update completed 後，斷電一段時間**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "5. **重複上述步驟，將 hub Index 設為 1，並使用 `GL3523_OV5S1_Wistron_HP_Z43s_L2Hub_FW5415.bin` 進行韌體更新**",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 重複步驟 2-4，將 hub Index 設為 1，並使用不同的韌體檔案進行更新",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "6. **透過 Device Manager 或 UsbView 確認韌體是否已回復至先前版本**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+    "claim": "- 使用 Device Manager 或 UsbView 等工具檢查 hub 韌體版本是否已回復至預期版本",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

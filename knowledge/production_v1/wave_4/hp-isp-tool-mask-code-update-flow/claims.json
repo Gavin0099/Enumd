@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "首先需要確認 HP ISP Tool 讀取的 Hub 版本是否為 Mask Code。這可以在 HP ISP Tool 介面中查看。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "如果確認 Hub 版本為 Mask Code，則需要輸入密碼 \"GENESYS6104\" 才能進行更新。在 HP ISP Tool 介面中按下 \"Enter PASSWORD\" 按鈕，並輸入正確的密碼。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "輸入正確密碼後，即可進行 Hub Firmware 的更新。具體步驟如下:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "1. 選擇要更新的 Hub Bin 檔案。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "更新完成後，HP ISP Tool 會顯示 \"Update correct\" 的訊息，表示更新成功。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "1. [Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "- 介紹了 Camera 的 code sign 驗證流程。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "2. [Code sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "- 概述了 Genesys Logic 的 code sign 流程。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "3. [GL Hub Code Sign Recovery Flow](hub/gl-hub-code-sign-recovery-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-isp-tool-mask-code-update-flow",
+    "claim": "以上就是 HP ISP Tool Mask Code Update Flow 的完整文件。如果您有任何其他問題或需求，請隨時告知。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

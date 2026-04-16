@@ -1,0 +1,106 @@
+{
+  "requested_slug": "hp-monitor-test-flow",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 3,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 8,
+    "downgraded": 4,
+    "total_lines": 57,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What is the priority order for loading boot code in the GL3523 hub?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the priority order for loading boot code in the GL3523 hub is that Area 1 has the highest priority, and the boot code will not load the firmware from Area 2 unless Area 1 is a Mask Code."
+      },
+      {
+        "question": "What are the steps involved in the GL3590 hub recovery case?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text outlines the steps involved in the GL3590 hub recovery case, including ensuring both areas have firmware, updating the area with the older firmware version, and updating Area 1 when the versions are the same."
+      },
+      {
+        "question": "What are the different types of firmware verification performed for the HP monitor?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text describes three types of firmware verification: Firmware Verify (high-level verification through the Scaler), Software Verify (low-level verification through tools), and Genesys Verify (hardware-based verification through the GL3590 hub)."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
+    "removed_count": 0
+  }
+}

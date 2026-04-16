@@ -1,0 +1,263 @@
+{
+  "requested_slug": "hub-project-string-定義",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "project-string (confidence: low)",
+    "hub-hid-get-string-descriptor-status (confidence: low)",
+    "hub-driver- (confidence: low)",
+    "hub-2020工作事項 (confidence: low)",
+    "hub-driver-判斷方式",
+    "hub-driver-除錯方式",
+    "hub-auto-test-",
+    "hub-chip-資訊",
+    "hub-fw-bug",
+    "hub-mp-tool",
+    "camera-透過我們驗證-code-sign",
+    "code-sign-概述",
+    "etoken-system",
+    "gl-hub-code-sign-recovery-flow",
+    "hid-code-sign-記錄",
+    "hp-hemiz34c-cpu3-code-sign-驗證問題",
+    "hp-hub-code-sign-bin-format",
+    "hp-monitor-code-sign-update-flow",
+    "lenovo-code-sign-交握流程",
+    "e27m-e34m-driver-install-fail"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 4,
+    "borderline_count": 6,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "1699ec4e-fb36-4a8d-abca-46cb1063b59f",
+          "slug": "hub-driver-判斷方式",
+          "title": "Hub  driver 判斷方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-driver-判斷方式.md",
+          "site_path": "/hub/hub-driver-判斷方式.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "security"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "1699ec4e-fb36-4a8d-abca-46cb1063b59f",
+          "notion_updated_at": "2022-12-13T08:48:00.000Z",
+          "exported_at": "2026-04-06T13:11:29.138Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "0fc75da2-455d-449b-b551-e802938b793f",
+          "slug": "hub-driver-除錯方式",
+          "title": "Hub Driver 除錯方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-driver-除錯方式.md",
+          "site_path": "/hub/hub-driver-除錯方式.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "spec"
+          ],
+          "authority_level": "source",
+          "notion_id": "0fc75da2-455d-449b-b551-e802938b793f",
+          "notion_updated_at": "2022-12-13T08:48:00.000Z",
+          "exported_at": "2026-04-06T13:11:36.158Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "861f648a-8971-4a30-a315-a98910da02ea",
+          "slug": "hub-auto-test-",
+          "title": "Hub Auto Test ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-auto-test-.md",
+          "site_path": "/hub/hub-auto-test-.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "mac",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "build",
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "derived",
+          "notion_id": "861f648a-8971-4a30-a315-a98910da02ea",
+          "notion_updated_at": "2026-01-21T09:48:00.000Z",
+          "exported_at": "2026-04-06T13:10:41.666Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "0410ad52-7519-4d66-9cda-58078a8858ab",
+          "slug": "hub-chip-資訊",
+          "title": "Hub Chip 資訊",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-chip-資訊.md",
+          "site_path": "/hub/hub-chip-資訊.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "0410ad52-7519-4d66-9cda-58078a8858ab",
+          "notion_updated_at": "2026-01-21T11:29:00.000Z",
+          "exported_at": "2026-04-06T13:10:04.493Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "11964f6b-c656-8082-b5ab-df201c5e1ed8",
+          "slug": "hub-fw-bug",
+          "title": "Hub Fw bug",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-fw-bug.md",
+          "site_path": "/hub/hub-fw-bug.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "build",
+            "sop",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "11964f6b-c656-8082-b5ab-df201c5e1ed8",
+          "notion_updated_at": "2024-11-13T10:51:00.000Z",
+          "exported_at": "2026-04-06T13:19:18.281Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "5376eed8-60b2-4ef5-a079-bf96c132e6f3",
+          "slug": "hub-mp-tool",
+          "title": "Hub MP Tool",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-mp-tool.md",
+          "site_path": "/hub/hub-mp-tool.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "5376eed8-60b2-4ef5-a079-bf96c132e6f3",
+          "notion_updated_at": "2020-05-21T01:26:00.000Z",
+          "exported_at": "2026-04-06T13:09:58.031Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 4 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 4,
+    "count_at_0_22": 10,
+    "borderline_count": 6,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": true
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

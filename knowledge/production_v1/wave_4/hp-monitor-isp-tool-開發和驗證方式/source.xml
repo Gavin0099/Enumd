@@ -1,0 +1,325 @@
+<context_boundaries>
+<core_topic id="hp-monitor-isp-tool-開發和驗證方式" title="HP Monitor ISP Tool 開發和驗證方式" path="/monitor/hp-monitor-isp-tool-開發和驗證方式.html">
+
+目前 Hp Monitor ISP Tool 有三個
+### HP ISP Tool : 
+工程用ISP Tool ，提供量產前工程師驗證用，工程師可以自行選擇要update的 fw，並看到比較詳細的資訊
+### HP EndUser Tool:
+提供給終端客戶update的 Tool ，只要一個按鍵就可以更新，要update 的 bin檔和包裝流程主要由代工廠設定，我們只提供folder，如何設定和包裝的文件可以參考下面連結
+HP End User Tool Packing User Guide 
+### HP Command Line Tool:
+提供給公司做統一性update fw 的 Tool ，MIS 可以透過此Tool對公司每一台 Monitor 做 update fw 的動作。
+## HP Monitor 治具 Update 方式
+當Tool Update Scaler 失敗時，有機率會讓 Scaler 掛掉，因為Hub是透過Scaler 提供電源的，Scaler 掛掉之後Hub便偵測不到，這時候就必須透過治具Update才能回復，下圖為治具圖片，必須接上Hdmi和 USB2.0線才可以Update。
+High & low Level update 方式不一樣
+### low Level:
+1.開啟HP_ISP_Tool_(RD_Version)_V1.1.12.
+2.Connect —> Read —> Select Update Data (要選擇dual版本的Scaler Fw)
+3.選擇完檔案後—> Auto --> Ctrl + Alt + O (密碼:80336647)
+4.Erase Device —> All Chip，Pub Key Form Mnt 勾選取消 —> Run
+### High Level:
+1.開啟ISP_Tool(v5.0.3)_Beta
+2.Connect —> Read —> Select Update Data (要選擇dual版本的Scaler Fw)
+3. Auto—> Erase Device : All Chip —> Run
+## HP Monitor開發時常遇到的問題
+### DDC / CI command 不通 (Display Data Channel Command Interface)
+現象:Scaler Level & Scaler Fw Version 都抓到錯誤的值
+解法:
+         1.勾出i2c 訊號量測傳輸資料是否正常
+         2.和MTK Fw 提供相關的資料請他們提供新版 Scaler Fw
+### Scaler Update fail
+現象: 在 update scaler 時，有機率會 update fail
+解法:統一用USB2.0 update，這個問題主要是Hub fw 和 Scaler fw i2c clock 的問題
+### 如何判斷update Sclaer 資料或是 offset 是否正常
+現象:update 完Scaler 有可能會出現
+        1. Scaler Fw Version不對
+        2.update後偵測不到Hub —> 代表Scaler update失敗，無法從boot code 開機
+ 解法:
+         1.透過MTK ISP Tool 和 治具，先dump Scaler 資料 ，connect —> Load 
+         2. 確認好 start & End Addr —> Run
+         3.dump 出來的 SpiFlash.bin就可以跟原本的Scaler Fw Bin 做比較
+### Low Level Load Scaler Fw bin 驗證失敗
+現象:low Level Scaler 驗證是透過Tool 驗證，有時開啟Scaler Bin檔會顯示驗證失敗，如下圖
+ 解法:
+1.開啟ISP Tool 時，先透過Bus Hound 觀察 c0 a4 06 00 00 00 20 00 (抓取Scaler Public Key Vendor command)
+成功: public key 基本上都是英文和數字組成，所以不會有非ASCII的值出現
+失敗: 紅框部份為非ASCII 值，代表抓到的public key是錯誤的
+2.public key 抓取成功後，如果驗證Scaler bin檔還是失敗，可以手動下 command 驗證看看
+   在HP ISP Tool 同一個路徑下有 rsa_decrypt.exe ，下 command 可以手動驗證 此 scaler bin檔是否合法，command 如下
+```c
+rsa_decrypt.exe  "Scaler File Name"
+```
+成功的話會出現
+失敗的話會出現
+此方法可以驗證抓到的Scaler public key 是否符合
+
+</core_topic>
+  <related_context>
+    <related id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+    
+    ## 1. 系統概述
+    本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+    ---
+    ## 2. 系統架構圖
+    此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+    ---
+    ## 3. 詳細處理流程
+    整個流程可分為三個主要階段：
+    ---
+    ## 4. 流程視覺化圖表
+    4.1 循序圖 (Sequence Diagram)
+    4.2 流程圖 (Flowchart)
+    ---
+    ## 5. 演算法特定規則
+    在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+    ---
+    ## 6. 各晶片韌體格式詳解
+    ---
+    ## 7. 晶片格式總覽表
+    ## GLBinTool Commands
+    ---
+    ### ⚙️ WIP 階段
+    ```c
+    glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+    ```
+    用途
+    將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+    在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+    輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+    必要參數 
+    - i, --input → 原始 Bin 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個原始 Bin 檔
+    回傳
+    -  回傳 Output 檔案數量，若為 0 則為 Fail
+    特殊狀況
+    -  case A in 才需要放 public key 進去
+    ---
+    ### 🔑 SIGN 階段
+    ```c
+    glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+    ```
+    用途
+    計算 wip.bin 的 Hash，產生 Signed bin 檔。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出 sig 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    - f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+    特殊狀況
+    -  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+    ---
+    ### 📦 ROM 階段
+    ```c
+    glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+    ```
+    用途
+    依晶片演算法，組裝最終檔案 rom。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出檔案
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    ---
+    ## 測試Chip & bin 檔
+    
+    </related>
+    <related id="hp-monitor-code-sign-update-flow" title="HP Monitor Code Sign Update Flow" path="/code-sign/hp-monitor-code-sign-update-flow.html">
+    
+    ### ISP Tool 與 Hub Firmware 初始化交握機制
+    目的是確認：
+    1. ISP Tool 是否通過 Hub Firmware 的認證。
+    1. Hub Firmware 是否通過 ISP Tool 的認證。
+    流程如下
+    - 使用bcdDevice 和ToolString 裡面的Firmware Info Tool String 來當參數
+    - 取出 bcdDevice 的兩個位元組並做 XOR 運算。
+    - Firmware Info Tool String 會 Random 產生一組 Start Range 和 Stop Range ，然後跟bcdDevice  產生出來的值再做XOR
+    - uValue：範圍組合，將 Stop 放高位、Start 放低位。
+    - uIndex：將 XOR 結果放高位，加上固定值 0x01。
+    - 使用 uValue 和 uIndex 傳送至 Hub Firmware 進行驗證。如果返回值 uRetVal != 1，表示驗證失敗。
+    ## 概述
+    目前驗證方式有分四種方式 ，可以透過Dynamic Tool String  裡面的The 3rd Party Vendor Support  HP Proprietary 參數來判斷 ，如下圖
+    - HP Hw Check Code Signed
+    因為GL3523沒有Security Module ，所以必須透過scaler 驗證 code sign
+    - HP Sw Check Code Signed
+    GL3523 使用，在此模式下連scaler 都沒有Security Module ，所以必須透過Tool 來驗證code sign
+    - HP Code Signed Slave
+    此模式下必然會有兩層以上的Hub ，另外一層Hub 會是HP Hw Check Code Signed
+    or  HP Hub Check Code Signed ，兩種方式驗證方法不一樣
+    - HP Hub Check Code Signed (ECDSA)
+    主要為GL3590 驗證方式，因為GL3590 有Security Module ，可以自己(Hub)做驗證
+    ---
+    ## HP Hw Check Code Signed update Flow
+    update前會傳送public key 給 hub ，當update到最後兩筆資料時會傳送 hash & signature給Hub ，讓Hub 傳送給 scaler ，由scaler驗證是否成功，失敗的話最後兩筆資料就不update ，這樣的話 update data不完整，hub boot 起來就不會跑這一塊，成功的話繼續update流程，可以參考下圖流程
+    Send Hash & Signature 和 Get Hub authorization 可參考下圖做法
+    ---
+    ## HP Sw Check Code Signed
+    在load bin file時就會送給 解密Tool 做驗證，驗證失敗就不做update ，成功的話就正常update
+    詳細作法可參考下圖。
+    ---
+    ## HP Code Signed Slave
+    會根據另外一層Hub的code signed mode來決定 code signed flow
+    - HP Hw Check Code Signed update Flow
+    驗證方式類似 ，只是在Send Hash & Signature 和 Get Hub authorization 這邊是送到HP Hw Check Code Signed的那層Hub給scaler 做驗證
+    - HP Hub Check Code Signed 
+    會在HP Hub Check Code Signed 一併說明
+    
+    ---
+    ## HP Hub Check Code Signed (ECDSA)
+    有兩種方式，驗證方式都是會傳給有Security Module 的Hub做驗證，只是流程不一樣
+    ### 原本Hub 就有Security Module (GL3590)
+    ```plain text
+    1.	40 ac 00 00  00 00 00 00 : Enable SHA256 Engine
+    2.	c0 a2 00 00  00 00 40 00
+    3.	c0 a2 00 00  40 00 40 00
+    4.	……
+    5.	c0 a2 00 00  c0 8f 40 00
+    6.	40 ac 0b 04  09 00 00 00 : Send Hash Length : 4K
+    7.	40 ac 0b 00  00 00 20 00 : Send Hash Data
+    8.	c0 ac 0b 02  00 00 20 00 : Read Digested Data for test 
+    9.	c0 ac 0c 02  00 00 40 00 : Read Signature     for test 
+    10.	c0 ac 0c 01  00 00 40 00 : Read  Public Key   for test 
+    11.	c0 ac 0b 00  00 00 01 00 : fw return hash comparision result
+    12.	40 ac 00 00  00 00 00 00 : Enable SHA256 Engine
+    13.	c0 a2 00 00  00 00 40 00
+    14.	c0 a2 00 00  40 00 40 00
+    15.	……
+    16.	c0 a2 00 00  c0 8f 40 00
+    17.	40 ac 0b 04  09 00 00 00 : Send signature Length : 4K
+    18.	40 ac 0c 02  00 ff 00 00 : Provide fw public key
+    19.	40 ac 0c 01  00 00 40 00 : send signature data
+    20.	c0 ac 0c 01  00 00 40 00 : Read  Public Key   for test 
+    21.	c0 ac 0b 02  00 00 20 00 : Read Digested Data for test 
+    22.	c0 ac 0c 02  00 00 40 00 : Read Signature     for test 
+    23.	c0 ac 0c 00  00 00 01 00: fw return hash comparision result
+    ```
+    ### 原本Hub 沒有Security Module(GL3523)
+    流程跟GL3590 驗證方式差不多，不一樣的地方為，當update 後 ，要把data送到有Security Module的Hub(GL3590) 做驗證，所以除了第一步是傳給GL3523 update data之外，其他command都是傳給GL3590
+    -
+    ### 原本PD沒有Security Module(GL9511)
+    hash 應該是不用驗，所以去掉此步驟，其他跟GL3523驗證方式差不多，當update 後 ，要把data送到有Security Module的Hub(GL3590) 做驗證，所以除了第一步是傳給GL3523 update data之外，其他command都是傳給GL3590
+    
+    </related>
+    <related id="hp-rtk-scaler-code-sign" title="HP RTK Scaler Code Sign" path="/code-sign/hp-rtk-scaler-code-sign.html">
+    
+    RTK的燒錄流程, 每個Scaler大同小異, 除了Disable Flash Hardware Write Protection需要下的參數不同以外, 最大的差別在於數位簽章的部分, 此章節只針對數位簽章的流程作介紹
+    RTK的數位簽章, 分為HW與SW兩種, 一種Scaler只會有一種Code Sign方式
+    如何判斷是哪一種方式, RTK有設計指令可以去問Code Sign種類, 但並沒有將這個功能加到所有的Scaler當中, 因此目前程式只能先用INI方式來強制指定
+    閱讀此章節前, 請先參考以下文件大致了解整個燒錄的流程
+    https://www.notion.so/Bu5-Spec-82cc386663974de58c65b57ea7ebffc0#1ff6387a0f6649e3a50c034cf23f2584
+    或是整理過的流程介紹
+    https://www.notion.so/HP-RTK-Scaler-Update-Flow-10a0786c41b5483e8426bf5a03ed1365
+    快速連結
+    如何判斷SW或是HW Code Sign
+    程式INI說明
+    Bin檔說明
+    SW Key
+    HW Key
+    燒錄流程說明
+    ---
+    # 如何判斷SW或是HW Code Sign
+    目前是用Scaler FW的檔名, 配合INI的設定, 來決定走HW還是SW的流程, 以下為INI的內容
+    [Scaler]
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    CodeSign Type 0:None, 1: HW, 2:SW
+    [RTD2778]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    [RTD2798]
+    NewDifferBank=1
+    CodeSign=1
+    HwWpGpio=0x1064
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xfe54
+    HwWpPinReserved=0xfe
+    HwWpPinValue=0x01
+    不同的Scaler Type會有不同的Code Sign方式, 解除Write Protect的參數也不相同, 因此這些資訊必須事先定義在INI內
+    RtkSupportModel=E24m,E27m,E34m
+    程式會根據Scaler Bin檔檔名, 去抓對應的設定
+    例如Scaler Bin為E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    程式會抓到檔名開頭的E24M, 並且在INI內找到對應的Scaler Type
+    E24m=RTD2778
+    程式再去[RTD2778]內將對應的設定全部讀入 (下圖紅框, CodeSign=2, 就會走SW驗證的流程)
+    ---
+    # 程式INI說明
+    上述的例子, 只適用於HP ISP Tool, 因為HP ISP Tool不會知道使用者選了哪一個Scaler的FW
+    因此只能在使用者選了Scaler FW之後, 再經由檔名去找到對應的設定
+    但如果是HP Enduser Tool, 因為一包只會更新一種Scaler, 所以不用在INI內設定這一段
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    直接在Scaler的section內設定即可, 例如現在要燒RTD2778, INI的內容為
+    [Scaler]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    ---
+    # Bin檔說明
+    簡單來說, SW驗證的簽章與bin檔不同檔案, HW驗證的簽章與bin檔同一個檔案
+    SW驗證: 會有兩個檔案, 檔名相同只有副檔名不同, 一個是.bin, 一個是.bin.sig
+    .bin是正常的Bin檔不包含簽章, .bin.sig為簽章內容, 以E24m為例有以下兩個檔案
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    HW驗證: 只會有一個檔案, 包含了簽章在內, 副檔名是.bin.sig, 例如E34m的bin檔為E34M_TPM340Y1_2H012_21B_715GC248_M0A_XVT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    上圖為RTK文件的內容, 其中Bank就是Block, 一個Bank的大小定義是64KB, 因此一個RTK的Scaler Bin檔, 大小一定是64KB的倍數
+    如果需要做數位簽章驗證, 則會將相關的內容放在最後一個Bank, 例如檔案大小為1245184, 總共會有1245184 / 65536 = 19個bank, 則65536 X 18 = 1179648 = 0x120000開始會存放簽章相關資料
+    以下介紹每個欄位內容
+    Header: 目前拿到的FW, Header都是ZSTR這個字串, 但不確定RTK以後的案子會不會都是一樣, 需要再與RTK做確認
+    Version: 目前拿到的FW, 內容都是0, 還不確定有什麼作用
+    User Type: 目前拿到的FW, 內容不太一樣, 有的都是0, 還不確定有什麼作用
+    Key Length: Key的長度, 算法為KeyBuf[0] + (KeyBuf[1] << 8) + (KeyBuf[2] << 16) + (KeyBuf[3] <<24)
+    例如四個Byte依序為0x04,0x03,0x00,0x00, 則長度為0x304
+    Signature Length: Signature的長度, 算法與KeyLength相同, 如果為SW驗證, Signature Length = 0, 因為Signature會在另一個檔案 (SW驗證的簽章長度為0, 這一點RTK文件內並沒有提到)
+    Key Data: 接在Signature Length後面, 長度由Key Length取得
+    Signature Data: 接在Key Data後面, 只有HW驗證的檔案才會有signature
+    ---
+    # SW Key
+    有兩種Key會從流程中得到
+    1. 從Flash得到的Key (以下簡稱Flash Key), 取得方式: 文件的4.13.7 Get Current Key Address, 先取得Key的位址後, 再用4.19.1 Get Current Verify Key from Flash的方法得到Key
+    1. 從Bin檔得到的Key (以下簡稱Bin Key), 取得方式: 文件的4.12 Extract FW/Key/Signature, 就是上面Bin檔的說明
+    Flash Key: 用RTK提供的DLL來驗證簽章 (.bin.sig的內容), 不用寫進Flash
+    Bin Key: 流程當中的Next Verify Key, 需要寫進Flash (4.18 Write Next Verify Key For New Differ Bank), 而寫到Flash的位址請參考 (4.13.6 Get Next Verify Key Address取得)
+    ---
+    # HW Key
+    與SW比較, HW的流程相對簡單, Key和簽章都是從Bin檔讀出來, 然後寫到Flash某特定的位置後, 讓Scaler自己去做驗證即可
+    Key: 從Bin檔讀出來, 寫入flash的位置為4.13.6 Get Next Verify Key Address
+    簽章: 從Bin檔讀出來, 寫入flash的位置為4.13.7 Get Signature Address
+    ---
+    # 燒錄流程說明
+    ## HW驗證
+    燒錄流程最後兩個步驟分別是Reset MCU與New Differ Bank After ISP
+    下了Reset MCU之後會造成Hub斷電, 此時FW會去進行簽章的驗證, 而驗證的時間與Bin檔的大小相關, 
+    因此程式需要在Reset MCU後Delay夠久的時間(*1), 讓FW去做驗證. 而New Differ Bank After ISP就是下指令去取得驗證的結果, 驗證結果成功, 才是完成整個燒錄流程
+    New Differ Bank After ISP會失敗的原因
+    (*1)RTK提供的公式是 Bank數 X 1.5 + 3 = Delay秒數, 例如Bin檔有10個Bank, 就需Delay 10 X 1.5 + 3 = 18秒, 但後來經過實驗, 這個時間不夠, 應該要 Bank數 X 1.5 + 10 比較保險
+    
+    </related>
+  </related_context>
+</context_boundaries>

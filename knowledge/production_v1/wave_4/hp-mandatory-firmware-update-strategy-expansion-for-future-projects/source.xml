@@ -1,0 +1,202 @@
+<context_boundaries>
+<core_topic id="hp-mandatory-firmware-update-strategy-expansion-for-future-projects" title="HP Mandatory Firmware Update Strategy Expansion for Future Projects" path="/general/hp-mandatory-firmware-update-strategy-expansion-for-future-projects.html">
+
+# 專案技術需求概要
+### 1. 策略背景：韌體更新 (FW Update) 需求擴展
+為滿足更廣泛的客戶需求，HP 將擴展韌體更新的支援能力，並將這些要求列為未來所有（明年開始）新專案的強制性標準。
+此擴展的重點是增加對 macOS 和 Linux (HP Thin Client) 的支援，並導入 RTOS (內部 MCU) 的雲端更新架構。
+### 2. 總體作業系統支援 (依據 FW 規格)
+韌體更新工具 (Firmware Update Tool) 需支援的作業系統如下：
+- 強制支援 (Mandatory):
+- 依 HP 需求支援 (By Request):
+- ODM / IC 供應商責任 (RFQ 階段):
+---
+### 3. 詳細規格：Linux 支援 (For HP Thin Client)
+- 3.1. 專案範圍:
+- 3.2. 硬體架構:
+- 3.3. 軟體架構與交付:
+- 3.4. 介面 (Interface):
+- 3.5. OS 版本與相依性:
+- 3.6. 權限需求:
+---
+### 4. 詳細規格：macOS 支援
+- 4.1. 專案範圍:
+- 4.2. 開發與交付流程:
+- 4.3. 介面 (Interface):
+---
+### 5. 詳細規格：RTOS 支援 (內部 MCU 專案)
+此需求涉及一個在特定顯示器中內建 MCU 的新架構。
+- 5.1. 專案概述:
+- 5.2. 核心硬體與時程:
+- 5.3. 關鍵功能 1: 雲端更新流程 (HP Poly Cloud)
+- 5.4. 關鍵功能 2: 硬體更新架構 (Disconnect Update)
+- 5.5. 關鍵功能 3: USB 角色 (OTG/DRP)
+
+</core_topic>
+  <related_context>
+    <related id="hid-code-sign-update-rule" title="HID Code Sign Update Rule" path="/code-sign/hid-code-sign-update-rule.html">
+    
+    ## Protocol
+    - 驗證方式只存在GLbinTool 以及 FW本身，ISP Tool只有做update data 動作
+    - 不同Model 不能互燒
+    - Flash 內沒有 signature 時，在ISP時要先用 Vender command 送。
+    - Vendor Command 
+    - 不能 run 的 code 不能留在裡面。
+    ## HP ISP Flow
+    - 說明
+    - HID Code Sign Bin Format
+    - HID Code Sign Bin Format (GL9511)
+    ### Version 2.0
+    - ISP Command ：Tool 會指定 Address 與長度並將整份檔案送下去，FW 需自己分析各資料位置。
+    ## 驗證方式
+    - 驗證 Public Key & Signature
+    
+    </related>
+    <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
+    
+    ### Update Protocol
+    - HID update flow
+    - Vendor Command 第二碼
+    - HID 預設只使用 2.0
+    ### Tool & Test
+    - file:///\\genesyslogic.com.tw\GenesysData\SW_Release_New\Hub\HID\Tool
+    - 驗證
+    ### 執行中
+    - Release Tool
+    - 請SE確認各OS有沒有自動喚醒 device。
+    - HID 驗證 USB LOGO 問題。
+    - 整理 chip function list，用表格列出各 chip 機制的不同。
+    HID 速度問題。
+    - FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。
+    ### 待討讑
+    - GL3590
+    - Tool 在 chrome book上應該可以直接執行、更新，SW 會再討論如何測試、驗證。
+    - SW需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。
+    - 檢查不同 OS 平台（ex：mac, linux, chrome book）。
+    ### 已驗證 & 解決
+    2021/11/05 HID 會把重抓到的 device 當成不同個
+    2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號
+    2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題
+    2021/11/05 Scaler update 在 write command 時速度慢
+    2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）
+    2021/11/05 程式閃退
+    2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）
+    2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。
+    Google 在 ISP 相關。
+    HP ISP Tool ( HID ) 預設只使用 2.0
+    ### 會議記錄
+    2021/12/17 HP ISP Tool
+    
+    </related>
+    <related id="hp-rtk-scaler-code-sign" title="HP RTK Scaler Code Sign" path="/code-sign/hp-rtk-scaler-code-sign.html">
+    
+    RTK的燒錄流程, 每個Scaler大同小異, 除了Disable Flash Hardware Write Protection需要下的參數不同以外, 最大的差別在於數位簽章的部分, 此章節只針對數位簽章的流程作介紹
+    RTK的數位簽章, 分為HW與SW兩種, 一種Scaler只會有一種Code Sign方式
+    如何判斷是哪一種方式, RTK有設計指令可以去問Code Sign種類, 但並沒有將這個功能加到所有的Scaler當中, 因此目前程式只能先用INI方式來強制指定
+    閱讀此章節前, 請先參考以下文件大致了解整個燒錄的流程
+    https://www.notion.so/Bu5-Spec-82cc386663974de58c65b57ea7ebffc0#1ff6387a0f6649e3a50c034cf23f2584
+    或是整理過的流程介紹
+    https://www.notion.so/HP-RTK-Scaler-Update-Flow-10a0786c41b5483e8426bf5a03ed1365
+    快速連結
+    如何判斷SW或是HW Code Sign
+    程式INI說明
+    Bin檔說明
+    SW Key
+    HW Key
+    燒錄流程說明
+    ---
+    # 如何判斷SW或是HW Code Sign
+    目前是用Scaler FW的檔名, 配合INI的設定, 來決定走HW還是SW的流程, 以下為INI的內容
+    [Scaler]
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    CodeSign Type 0:None, 1: HW, 2:SW
+    [RTD2778]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    [RTD2798]
+    NewDifferBank=1
+    CodeSign=1
+    HwWpGpio=0x1064
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xfe54
+    HwWpPinReserved=0xfe
+    HwWpPinValue=0x01
+    不同的Scaler Type會有不同的Code Sign方式, 解除Write Protect的參數也不相同, 因此這些資訊必須事先定義在INI內
+    RtkSupportModel=E24m,E27m,E34m
+    程式會根據Scaler Bin檔檔名, 去抓對應的設定
+    例如Scaler Bin為E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    程式會抓到檔名開頭的E24M, 並且在INI內找到對應的Scaler Type
+    E24m=RTD2778
+    程式再去[RTD2778]內將對應的設定全部讀入 (下圖紅框, CodeSign=2, 就會走SW驗證的流程)
+    ---
+    # 程式INI說明
+    上述的例子, 只適用於HP ISP Tool, 因為HP ISP Tool不會知道使用者選了哪一個Scaler的FW
+    因此只能在使用者選了Scaler FW之後, 再經由檔名去找到對應的設定
+    但如果是HP Enduser Tool, 因為一包只會更新一種Scaler, 所以不用在INI內設定這一段
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    直接在Scaler的section內設定即可, 例如現在要燒RTD2778, INI的內容為
+    [Scaler]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    ---
+    # Bin檔說明
+    簡單來說, SW驗證的簽章與bin檔不同檔案, HW驗證的簽章與bin檔同一個檔案
+    SW驗證: 會有兩個檔案, 檔名相同只有副檔名不同, 一個是.bin, 一個是.bin.sig
+    .bin是正常的Bin檔不包含簽章, .bin.sig為簽章內容, 以E24m為例有以下兩個檔案
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    HW驗證: 只會有一個檔案, 包含了簽章在內, 副檔名是.bin.sig, 例如E34m的bin檔為E34M_TPM340Y1_2H012_21B_715GC248_M0A_XVT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    上圖為RTK文件的內容, 其中Bank就是Block, 一個Bank的大小定義是64KB, 因此一個RTK的Scaler Bin檔, 大小一定是64KB的倍數
+    如果需要做數位簽章驗證, 則會將相關的內容放在最後一個Bank, 例如檔案大小為1245184, 總共會有1245184 / 65536 = 19個bank, 則65536 X 18 = 1179648 = 0x120000開始會存放簽章相關資料
+    以下介紹每個欄位內容
+    Header: 目前拿到的FW, Header都是ZSTR這個字串, 但不確定RTK以後的案子會不會都是一樣, 需要再與RTK做確認
+    Version: 目前拿到的FW, 內容都是0, 還不確定有什麼作用
+    User Type: 目前拿到的FW, 內容不太一樣, 有的都是0, 還不確定有什麼作用
+    Key Length: Key的長度, 算法為KeyBuf[0] + (KeyBuf[1] << 8) + (KeyBuf[2] << 16) + (KeyBuf[3] <<24)
+    例如四個Byte依序為0x04,0x03,0x00,0x00, 則長度為0x304
+    Signature Length: Signature的長度, 算法與KeyLength相同, 如果為SW驗證, Signature Length = 0, 因為Signature會在另一個檔案 (SW驗證的簽章長度為0, 這一點RTK文件內並沒有提到)
+    Key Data: 接在Signature Length後面, 長度由Key Length取得
+    Signature Data: 接在Key Data後面, 只有HW驗證的檔案才會有signature
+    ---
+    # SW Key
+    有兩種Key會從流程中得到
+    1. 從Flash得到的Key (以下簡稱Flash Key), 取得方式: 文件的4.13.7 Get Current Key Address, 先取得Key的位址後, 再用4.19.1 Get Current Verify Key from Flash的方法得到Key
+    1. 從Bin檔得到的Key (以下簡稱Bin Key), 取得方式: 文件的4.12 Extract FW/Key/Signature, 就是上面Bin檔的說明
+    Flash Key: 用RTK提供的DLL來驗證簽章 (.bin.sig的內容), 不用寫進Flash
+    Bin Key: 流程當中的Next Verify Key, 需要寫進Flash (4.18 Write Next Verify Key For New Differ Bank), 而寫到Flash的位址請參考 (4.13.6 Get Next Verify Key Address取得)
+    ---
+    # HW Key
+    與SW比較, HW的流程相對簡單, Key和簽章都是從Bin檔讀出來, 然後寫到Flash某特定的位置後, 讓Scaler自己去做驗證即可
+    Key: 從Bin檔讀出來, 寫入flash的位置為4.13.6 Get Next Verify Key Address
+    簽章: 從Bin檔讀出來, 寫入flash的位置為4.13.7 Get Signature Address
+    ---
+    # 燒錄流程說明
+    ## HW驗證
+    燒錄流程最後兩個步驟分別是Reset MCU與New Differ Bank After ISP
+    下了Reset MCU之後會造成Hub斷電, 此時FW會去進行簽章的驗證, 而驗證的時間與Bin檔的大小相關, 
+    因此程式需要在Reset MCU後Delay夠久的時間(*1), 讓FW去做驗證. 而New Differ Bank After ISP就是下指令去取得驗證的結果, 驗證結果成功, 才是完成整個燒錄流程
+    New Differ Bank After ISP會失敗的原因
+    (*1)RTK提供的公式是 Bank數 X 1.5 + 3 = Delay秒數, 例如Bin檔有10個Bank, 就需Delay 10 X 1.5 + 3 = 18秒, 但後來經過實驗, 這個時間不夠, 應該要 Bank數 X 1.5 + 10 比較保險
+    
+    </related>
+  </related_context>
+</context_boundaries>

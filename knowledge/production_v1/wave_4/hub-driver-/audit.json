@@ -1,0 +1,605 @@
+{
+  "requested_slug": "hub-driver-",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "driver-刪除方式 (confidence: low)",
+    "hub-driver-debugging-method-csr (confidence: low)",
+    "hub-driver-判斷方式 (confidence: low)",
+    "hub-driver-除錯方式 (confidence: low)",
+    "hub-2020工作事項 (confidence: low)",
+    "glhub-driver-instruction (confidence: low)",
+    "hub-auto-test- (confidence: low)",
+    "hub-chip-資訊 (confidence: low)",
+    "hub-fw-bug (confidence: low)",
+    "hub-mp-tool (confidence: low)",
+    "-generic-usb-filter-driver- (confidence: low)",
+    "command-line-uninstall-driver (confidence: low)",
+    "hub-project-string-定義 (confidence: low)",
+    "hid-code-sign-記錄",
+    "e27m-e34m-driver-install-fail",
+    "sc-query-to-determine-the-driver-mode",
+    "windows-10-h2-driver-移除流程",
+    "gl-hub-software-development-kit",
+    "gli7524-hub-isp-update-too",
+    "hp-isp-tool-hub-update-flow"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 13,
+    "borderline_count": 18,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "f01a9f3e-ae43-4404-901e-e1631d35d2e3",
+          "slug": "hid-code-sign-記錄",
+          "title": "HID Code Sign 記錄",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\hid-code-sign-記錄.md",
+          "site_path": "/code-sign/hid-code-sign-記錄.html",
+          "category": "code-sign",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "code-sign",
+            "mac",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "code-sign",
+            "build",
+            "release",
+            "spec",
+            "sop",
+            "log"
+          ],
+          "authority_level": "reference",
+          "notion_id": "f01a9f3e-ae43-4404-901e-e1631d35d2e3",
+          "notion_updated_at": "2026-01-21T09:13:00.000Z",
+          "exported_at": "2026-04-06T13:20:08.565Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "e0d783dd-c982-42a5-b0fa-34ba7a053682",
+          "slug": "e27m-e34m-driver-install-fail",
+          "title": "E27m & E34m Driver install fail",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\driver\\e27m-e34m-driver-install-fail.md",
+          "site_path": "/driver/e27m-e34m-driver-install-fail.html",
+          "category": "driver",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "e0d783dd-c982-42a5-b0fa-34ba7a053682",
+          "notion_updated_at": "2024-11-15T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:11:48.317Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "e08705d0-f901-4499-80c1-430a36887e50",
+          "slug": "sc-query-to-determine-the-driver-mode",
+          "title": "SC query to determine the driver mode",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\driver\\sc-query-to-determine-the-driver-mode.md",
+          "site_path": "/driver/sc-query-to-determine-the-driver-mode.html",
+          "category": "driver",
+          "domain_tags": [
+            "hub",
+            "driver"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "spec"
+          ],
+          "authority_level": "source",
+          "notion_id": "e08705d0-f901-4499-80c1-430a36887e50",
+          "notion_updated_at": "2022-12-13T08:49:00.000Z",
+          "exported_at": "2026-04-06T13:11:38.951Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "a08a2c94-2911-4f90-a9b9-33626ad0dd4e",
+          "slug": "windows-10-h2-driver-移除流程",
+          "title": "Windows 10 H2 driver 移除流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\driver\\windows-10-h2-driver-移除流程.md",
+          "site_path": "/driver/windows-10-h2-driver-移除流程.html",
+          "category": "driver",
+          "domain_tags": [
+            "hub",
+            "driver"
+          ],
+          "task_tags": [
+            "install",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "a08a2c94-2911-4f90-a9b9-33626ad0dd4e",
+          "notion_updated_at": "2022-12-13T08:49:00.000Z",
+          "exported_at": "2026-04-06T13:11:46.631Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "8549ca6d-3a91-4f07-81ec-69fec19cd106",
+          "slug": "gl-hub-software-development-kit",
+          "title": "GL Hub Software Development Kit",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\gl-hub-software-development-kit.md",
+          "site_path": "/hub/gl-hub-software-development-kit.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "build",
+            "release",
+            "spec",
+            "log"
+          ],
+          "authority_level": "derived",
+          "notion_id": "8549ca6d-3a91-4f07-81ec-69fec19cd106",
+          "notion_updated_at": "2026-01-21T09:53:00.000Z",
+          "exported_at": "2026-04-06T13:10:44.429Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1b564f6b-c656-80c8-b125-d35151dd559e",
+          "slug": "gli7524-hub-isp-update-too",
+          "title": "GLI7524 Hub ISP update too",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\gli7524-hub-isp-update-too.md",
+          "site_path": "/hub/gli7524-hub-isp-update-too.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "1b564f6b-c656-80c8-b125-d35151dd559e",
+          "notion_updated_at": "2025-03-13T10:15:00.000Z",
+          "exported_at": "2026-04-06T13:18:26.217Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "c448560a-d04d-444e-9bc5-70ec143296cf",
+          "slug": "hp-isp-tool-hub-update-flow",
+          "title": "HP ISP Tool Hub Update Flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hp-isp-tool-hub-update-flow.md",
+          "site_path": "/hub/hp-isp-tool-hub-update-flow.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "c448560a-d04d-444e-9bc5-70ec143296cf",
+          "notion_updated_at": "2026-01-21T09:28:00.000Z",
+          "exported_at": "2026-04-06T13:15:37.224Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "9ad74f8a-7db3-478f-965b-a6cf0c470788",
+          "slug": "hub-firmware-update-tool-command-line-list",
+          "title": "Hub Firmware Update Tool : Command Line List",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-firmware-update-tool-command-line-list.md",
+          "site_path": "/hub/hub-firmware-update-tool-command-line-list.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "firmware-update",
+            "release"
+          ],
+          "authority_level": "source",
+          "notion_id": "9ad74f8a-7db3-478f-965b-a6cf0c470788",
+          "notion_updated_at": "2026-01-21T09:53:00.000Z",
+          "exported_at": "2026-04-06T13:10:13.593Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "31b64f6b-c656-81d2-9d52-d6c472df308e",
+          "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+          "title": "Hub FW Update 策略技術評估 — CFU 導入分析",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-fw-update-策略技術評估-cfu-導入分析.md",
+          "site_path": "/hub/hub-fw-update-策略技術評估-cfu-導入分析.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "mac",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "build",
+            "spec"
+          ],
+          "authority_level": "source",
+          "notion_id": "31b64f6b-c656-81d2-9d52-d6c472df308e",
+          "notion_updated_at": "2026-03-10T05:46:00.000Z",
+          "exported_at": "2026-04-06T13:20:03.841Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "19164f6b-c656-8013-90e4-ff783a98c341",
+          "slug": "hub-virtual-device-stress-test-",
+          "title": "Hub virtual device stress test ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-virtual-device-stress-test-.md",
+          "site_path": "/hub/hub-virtual-device-stress-test-.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "sop"
+          ],
+          "authority_level": "derived",
+          "notion_id": "19164f6b-c656-8013-90e4-ff783a98c341",
+          "notion_updated_at": "2026-01-21T09:36:00.000Z",
+          "exported_at": "2026-04-06T13:18:54.222Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2d364f6b-c656-80ac-8d07-e89d18a5b836",
+          "slug": "12261230-交接",
+          "title": "1226/1230 交接",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\12261230-交接.md",
+          "site_path": "/general/12261230-交接.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "spec"
+          ],
+          "authority_level": "source",
+          "notion_id": "2d364f6b-c656-80ac-8d07-e89d18a5b836",
+          "notion_updated_at": "2026-01-21T09:22:00.000Z",
+          "exported_at": "2026-04-06T13:19:43.145Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "33ed0366-33ad-4b39-87c6-700c6e7bb8d3",
+          "slug": "debug-前客戶取得需求資訊",
+          "title": "Debug 前客戶取得需求資訊",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\debug-前客戶取得需求資訊.md",
+          "site_path": "/general/debug-前客戶取得需求資訊.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "debug",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "33ed0366-33ad-4b39-87c6-700c6e7bb8d3",
+          "notion_updated_at": "2026-01-21T09:28:00.000Z",
+          "exported_at": "2026-04-06T13:18:36.968Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1ff76cd4-55cb-4678-afab-2becb11ad1d9",
+          "slug": "drawio-相關連結",
+          "title": "Draw.io 相關連結",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\drawio-相關連結.md",
+          "site_path": "/general/drawio-相關連結.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "code-sign",
+            "monitor",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "code-sign",
+            "spec",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "1ff76cd4-55cb-4678-afab-2becb11ad1d9",
+          "notion_updated_at": "2026-01-21T09:41:00.000Z",
+          "exported_at": "2026-04-06T13:10:28.782Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1f164f6b-c656-8056-9297-d483c45380a5",
+          "slug": "richelieu-issue-description",
+          "title": "Richelieu Issue description",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\richelieu-issue-description.md",
+          "site_path": "/general/richelieu-issue-description.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "firmware-update",
+            "debug",
+            "spec",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "1f164f6b-c656-8056-9297-d483c45380a5",
+          "notion_updated_at": "2026-01-21T09:37:00.000Z",
+          "exported_at": "2026-04-06T13:13:53.051Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "23a64f6b-c656-8058-8616-d84e28bbaec8",
+          "slug": "vibe-coding",
+          "title": "Vibe coding",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\vibe-coding.md",
+          "site_path": "/general/vibe-coding.html",
+          "category": "general",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "spec",
+            "sop",
+            "log"
+          ],
+          "authority_level": "source",
+          "notion_id": "23a64f6b-c656-8058-8616-d84e28bbaec8",
+          "notion_updated_at": "2025-07-24T10:55:00.000Z",
+          "exported_at": "2026-04-06T13:17:55.219Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "757eb512-ba9c-4b25-90d7-d248a961557a",
+          "slug": "hp-monitor-rtk-audio-update-fail-原因",
+          "title": "HP Monitor RTK Audio update fail 原因",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-monitor-rtk-audio-update-fail-原因.md",
+          "site_path": "/monitor/hp-monitor-rtk-audio-update-fail-原因.html",
+          "category": "monitor",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "monitor",
+            "security"
+          ],
+          "task_tags": [
+            "install",
+            "debug"
+          ],
+          "authority_level": "source",
+          "notion_id": "757eb512-ba9c-4b25-90d7-d248a961557a",
+          "notion_updated_at": "2026-01-21T09:29:00.000Z",
+          "exported_at": "2026-04-06T13:16:03.606Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "631cc8a7-c735-4165-9f54-47786ad93458",
+          "slug": "command-line-tool-instructions",
+          "title": "Command Line Tool Instructions",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\command-line-tool-instructions.md",
+          "site_path": "/tools/command-line-tool-instructions.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "spec",
+            "config"
+          ],
+          "authority_level": "reference",
+          "notion_id": "631cc8a7-c735-4165-9f54-47786ad93458",
+          "notion_updated_at": "2024-05-21T02:00:00.000Z",
+          "exported_at": "2026-04-06T13:17:53.703Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "50e29f0b-1f94-4208-9863-5420a12a09f1",
+          "slug": "standard-isp-tool-roll-back-flow",
+          "title": "Standard ISP Tool Roll Back Flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\standard-isp-tool-roll-back-flow.md",
+          "site_path": "/tools/standard-isp-tool-roll-back-flow.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "driver",
+            "tools"
+          ],
+          "task_tags": [
+            "install",
+            "firmware-update",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "50e29f0b-1f94-4208-9863-5420a12a09f1",
+          "notion_updated_at": "2025-07-15T03:06:00.000Z",
+          "exported_at": "2026-04-06T13:13:52.683Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 13 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 13,
+    "count_at_0_22": 31,
+    "borderline_count": 18,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": true
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 1,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 1,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

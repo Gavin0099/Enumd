@@ -1,0 +1,11 @@
+<context_boundaries>
+<core_topic id="hub-project-string-定義" title="Hub Project String 定義" path="/hub/hub-project-string-定義.html">
+
+- 用途
+- 需求
+- 位址
+- 規則：共 16 碼，第 1 碼為資料長度 + 14 Bytes 的資料 + 最後 1 碼CRC
+- 範例
+
+</core_topic>
+</context_boundaries>

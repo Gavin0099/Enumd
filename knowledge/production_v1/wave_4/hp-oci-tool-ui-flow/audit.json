@@ -1,0 +1,106 @@
+{
+  "requested_slug": "hp-oci-tool-ui-flow",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 3,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 44,
+    "downgraded": 2,
+    "total_lines": 243,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What are the main functionalities of the HP OCI Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the main functionalities of the HP OCI Tool include checking the version or updating the firmware of HP displays."
+      },
+      {
+        "question": "What are the three main stages of the HP OCI Tool's workflow?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text outlines the three main stages of the HP OCI Tool's workflow: initialization and pre-checks, loading configurations and hardware, and executing the update."
+      },
+      {
+        "question": "What are the key security threats and mitigation measures identified for the HP OCI Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text provides a detailed threat model and corresponding mitigation measures, including threats related to malicious CLI input, file integrity, XML parsing, and firmware updates."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 14,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": true,
+    "skip_reason": "JSON parse failed. Raw: {\n  \"results\": [\n    { \"index\": 1, \"verdict\": \"SUPPORTED\", \"reason\": \"The source document clearly states that the entire"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
+    "removed_count": 0
+  }
+}

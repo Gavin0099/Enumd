@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "hub-auto-test-",
+    "claim": "每次將程式碼推送到 Git 時,我們需要確保程式碼不會影響 ISP 流程,導致更新失敗。由於目前 CLI 工具已部署在 Mars 上,我們可以利用 Mars 測試階段來測試 Hub ISP 功能是否正常。在每個分支推送或合併請求時,自動執行測試。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- Mars 測試輸入和輸出介面 @Adam.Chen @Vic Chen",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 在測試機上測試尚未成功,ISP 和重置會失敗,找不到裝置,但初始時有找到裝置,在 Windows 下 @Vic Chen",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "1. HSM (Hardware Security Module) - 硬體安全模組是一種物理計算裝置,用於保護和管理數位金鑰,執行數位簽章、強身份驗證和其他密碼功能。根據 HP 規定,需要符合 FIPS 140-2 Level 3 或以上,因此至少需要使用 Token 來實現程式碼簽署功能。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "目前 Genesys Logic 使用的程式碼簽署演算法為 ECDSA nistp256。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 架構: 不合格。連線工作流程使用 detach 且無生命週期收斂,違反可預測關閉原則。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 測試完整性: 不合格。看不到針對失敗路徑(超大輸入、shutdown race、協定錯位)的測試證據。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 檢查了 03_knowledge_base.md 中的 4 個反模式/陷阱。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 架構: 發行組態已移除 OFFLINE_TEST,這是改善;但連線工作執行緒仍採 detach,生命週期不可控,違反可預測性。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 測試完整性: 看不到對失敗路徑(超大檔案大小、執行緒關閉競爭、SQL 注入字串)的測試鎖定證據。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "1. [警告] Dongle 管理同樣使用 detach,生命週期不可驗證",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-auto-test-",
+    "claim": "- 檢查了 03_knowledge_base.md 中的 4 個反模式/陷阱(含 system()/子進程卡死、流程卡住類型)。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

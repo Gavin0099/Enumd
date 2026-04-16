@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "hp-security-spec",
+    "claim": "以下是基於提供的內容所撰寫的 HP Security Spec 文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "由開發端使用具備 HSM 保護的私鑰，對 firmware 進行數位簽章：",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 使用 [Code Sign Tool](security/hp-security-spec.html#🧩-1-簽章階段code-signing) 搭配 PKCS#11 協議與 HSM 溝通。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- HSM 使用內部私鑰產生 Signature（簽章）。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 同時匯出對應的 Public Key（公鑰）。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 最終將 firmware.bin、Signature 與 Public Key 一併封裝，作為更新映像。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "Update Tool 在下發前，將簽章資訊解構並送往 Hub：",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 將封裝 bin 中的三項資訊拆開：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "Hub 端的硬體驗章模組（例如 Secure Boot Module）負責驗證：",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 對比 firmware.bin 的 Hash 與 Signature 是否一致。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 確認 Public Key 是否正確對應 Signature。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 簽章驗證成功：允許 firmware 寫入更新流程。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 驗證失敗：拒絕更新，避免惡意或未授權映像導入。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "為了符合如 HP 等大客戶在 Secure Delivery 與 Code Signing 的要求，企業在執行韌體／工具／安裝檔簽章時，需配合公開信任的 CA（Certificate Authority）發行憑證，並確保：",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- ✅ 私鑰安全（例如儲存在 eToken 或 HSM 中）",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- ✅ 簽章過程可稽核（Log 記錄、MFA 控制）",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- ✅ 憑證具備完整的 CA 信任鏈（包含 Root/Intermediate）",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- EV Cert 買斷 ≠ 可重複簽多組 key：每組私鑰/公鑰都需要一組 cert 簽章。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- Bulk 合約 ≠ Intermediate CA：Bulk 是由 CA 控制簽發，只是價格比較便宜。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- Intermediate CA 最大優勢是自主性與可擴展性，但代價是：初期投入大、管理負擔高。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "這份標準文件由 CA/Browser Forum 所支持，目的是：",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "使用 HSM（Hardware Security Module）是實作強化數位簽章與金鑰管理的重要基礎，以下為供應商簽章安全相關的必要條件：",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "根據 HP 的 Firmware 安全交付規範：",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 所有供應商必須使用 HSM 保護私鑰（含使用 EV Cert、Bulk Cert 或內部 Intermediate CA）",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 使用的金鑰與簽章流程，需符合 CA/B Forum 與 CA Security Council Minimum Requirements v1.1",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- 簽章前的檔案必須經過惡意程式掃描（Malware Scan）",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- ✅ 儲存金鑰與簽章操作必須整合 HSM 與 MFA 控制",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-security-spec",
+    "claim": "- ✅ 應設計完整的 key rotation / revocation 機制",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

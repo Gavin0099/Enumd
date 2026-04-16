@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "HubDriverInstaller.exe 是一款命令列工具，專門用於安裝和卸載設備篩選驅動程式。它具有自動偵測舊版或損壞驅動程式的功能，確保安裝過程乾淨穩定。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "HubDriverInstaller.exe [command]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "HubDriverInstaller.exe -u",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "GL Driver:2.4.0.0",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "Uninstalling device filter driver, please wait...",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "...............Uninstall driver done!",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "HubDriverInstaller.exe -i",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "Installing device filter driver, please wait...",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "GL Driver:2.4.0.0",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "Install driver done!",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "HubDriverInstaller 使用者指南是 HP End User Tool Packing 使用者指南 [`HP End User Tool Packing User Guide`](/tools/hp-end-user-tool-packing-user-guide.html) 的一部分。它提供了 HP 終端使用者工具包的安裝和打包說明。",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "此外，HubDriverInstaller 也與 eToken 安全簽章系統 [`eToken 安全簽章系統技術說明`](/code-sign/etoken-安全簽章系統技術說明.html) 相關聯。eToken 系統負責管理簽章流程,確保驅動程式安全性。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hubdriverinstaller-user-guide",
+    "claim": "總之,HubDriverInstaller 是 HP 終端使用者工具包的一個重要組件,它依賴於 eToken 簽章系統來確保驅動程式的安全性和完整性。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

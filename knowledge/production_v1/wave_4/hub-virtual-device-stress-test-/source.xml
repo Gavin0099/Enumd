@@ -1,0 +1,399 @@
+<context_boundaries>
+<core_topic id="hub-virtual-device-stress-test-" title="Hub virtual device stress test " path="/hub/hub-virtual-device-stress-test-.html">
+
+# USB 測試工具需求概述
+本工具的目標是驗證 IC 7518，並擴展至其他 IC，確保不同 Win USB 裝置 的穩定性與數據傳輸正確性。
+---
+## 1. 測試範圍與挑戰
+### 測試目標
+- 先驗證 IC 7518，後續擴展至其他 IC。
+- 自動偵測 所有 Win USB 裝置，並支援 同時測試多個裝置。
+### 挑戰點
+- 不同 IC 可能有不同的 Virtual Device 結構與 Endpoint 配置，工具需能適應變化。
+- 測試過程中需處理 Interrupt、Bulk、Control 類型的數據傳輸，確保裝置穩定運行。
+---
+## 2. 支援的 Endpoint 類型
+工具需支援以下 4 種 USB 端點 (Endpoint) 測試：
+- Interrupt IN
+- Interrupt OUT
+- Bulk IN
+- Bulk OUT
+---
+## 3. IC 7518 的 Virtual Device 結構
+IC 7518 內建 兩種 Virtual Device，各自的 Endpoint 配置如下：
+---
+## 4. 測試內容與流程
+### (A) Endpoint 資料比對
+- 目標：驗證 Interrupt IN/OUT 端點是否能正確傳輸數據。
+- 測試方式：
+### (B) EP0 Setup Command 測試
+- 目標：在 R/W 測試進行時，隨機插入 EP0 setup command，確認不同端點是否相互影響。
+- 測試方式：
+### (C) Reset & Enumeration 測試
+- 目標：驗證在 R/W 過程中，執行裝置 Reset & Enumeration 是否影響數據傳輸。
+- 測試方式：
+---
+## 5. 工具的核心功能
+為了確保測試全面性與準確性，工具需具備以下能力：
+- 自動偵測所有 Win USB 裝置，支援 同時測試多個裝置。
+- 針對不同 Virtual Device (e.g., USB-C Bridge、HID)，執行 Interrupt IN/OUT 測試並比對數據。
+- 隨機插入 EP0 setup command（包含 GET & SET），模擬實際應用環境並測試端點穩定性。
+- 執行不定時 Reset & Enumeration 測試，確保裝置可正常重置並恢復運作。
+- 可擴展支援不同 IC 型號，適應各種 Virtual Device 與 Endpoint 配置。
+```mermaid
+graph TD;
+    A[開始測試] --> B[偵測所有 Win USB 裝置]
+    B --> C{有找到裝置?}
+    C -- 否 --> D[結束測試]
+    C -- 是 --> E[初始化裝置]
+
+    E --> F[開始 R/W 測試]
+    F --> G[發送 Interrupt OUT]
+    G --> H[等待 FW 回傳 Interrupt IN]
+    H --> I{比對資料是否正確?}
+    I -- 否 --> J[記錄錯誤 & 重新測試]
+    I -- 是 --> K[資料比對成功]
+
+    K --> L[隨機插入 EP0 Setup Command]
+    L --> M{執行 GET/SET 測試}
+    M -- 失敗 --> J
+    M -- 成功 --> N[繼續測試]
+
+    N --> O[不定時 Reset Device]
+    O --> P[重新 Enumeration]
+    P --> Q{Enumeration 成功?}
+    Q -- 否 --> J
+    Q -- 是 --> F[繼續 R/W 測試]
+
+    J --> R[記錄錯誤 & 產生報告]
+    R --> D[結束測試]
+
+```
+AOAI
+
+</core_topic>
+  <related_context>
+    <related id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+    
+    ## 1. 系統概述
+    本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+    ---
+    ## 2. 系統架構圖
+    此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+    ---
+    ## 3. 詳細處理流程
+    整個流程可分為三個主要階段：
+    ---
+    ## 4. 流程視覺化圖表
+    4.1 循序圖 (Sequence Diagram)
+    4.2 流程圖 (Flowchart)
+    ---
+    ## 5. 演算法特定規則
+    在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+    ---
+    ## 6. 各晶片韌體格式詳解
+    ---
+    ## 7. 晶片格式總覽表
+    ## GLBinTool Commands
+    ---
+    ### ⚙️ WIP 階段
+    ```c
+    glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+    ```
+    用途
+    將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+    在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+    輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+    必要參數 
+    - i, --input → 原始 Bin 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個原始 Bin 檔
+    回傳
+    -  回傳 Output 檔案數量，若為 0 則為 Fail
+    特殊狀況
+    -  case A in 才需要放 public key 進去
+    ---
+    ### 🔑 SIGN 階段
+    ```c
+    glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+    ```
+    用途
+    計算 wip.bin 的 Hash，產生 Signed bin 檔。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出 sig 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    - f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+    特殊狀況
+    -  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+    ---
+    ### 📦 ROM 階段
+    ```c
+    glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+    ```
+    用途
+    依晶片演算法，組裝最終檔案 rom。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出檔案
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    ---
+    ## 測試Chip & bin 檔
+    
+    </related>
+    <related id="-generic-usb-filter-driver-" title=" Generic USB Filter Driver " path="/driver/-generic-usb-filter-driver-.html">
+    
+    > 💡 簡介
+    ## 📑 專案概述 (Overview)
+    此專案包含核心驅動程式 (Kernel Driver) 與相關的安裝檔案 (.inf)。驅動程式會掛載 (Attach) 在目標 USB 裝置的驅動程式堆疊 (Driver Stack) 上，攔截並處理 PnP (Plug and Play) 與 Power 事件，同時提供 Control Device Object (CDO) 供使用者模式 (User-Mode) 的應用程式進行通訊。
+    ### 🔑 核心功能 (Key Features)
+    - 🛡️ 裝置過濾 (Device Filtering)
+    - ⚙️ 多模式運作 (Multi-Mode Operation)
+    - 📡 IOCTL 通訊介面
+    ---
+    ## 🏗️ 系統架構 (System Architecture)
+    下圖展示了 User Mode Application 與 Kernel Mode Driver 之間的互動架構。
+    ```mermaid
+    flowchart TD
+        %% --- 1. 定義樣式 (Class Definitions) ---
+        classDef titleNode fill:transparent,stroke:transparent,font-weight:bold
+        classDef inputNode fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef keyNode fill:transparent,stroke:#34D399,stroke-width:2.5px
+        classDef processNode fill:transparent,stroke:#F87171,stroke-width:2.5px
+    
+        %% --- 2. 圖表結構 (Chart Structure) ---
+        
+        %% === 使用者模式區塊 (User Mode) ===
+        subgraph User_Mode ["User Mode (使用者模式)"]
+            direction TB
+            App["<b>User Mode App</b><br/>OCI Tool / Updater"]:::inputNode
+            IOCTL["<b>DeviceIoControl</b><br/>GL_IOCTL_xxx"]:::inputNode
+        end
+    
+        %% === 核心模式區塊 (Kernel Mode) ===
+        subgraph Kernel_Mode ["Kernel Mode (核心模式)"]
+            direction TB
+            CDO["<b>Control Device Object</b><br/>CDO: \Device\glusbflt"]:::keyNode
+            
+            subgraph Driver_Stack ["Driver Stack"]
+                direction TB
+                FiDO["<b>Filter Device Object</b><br/>GLUsbFlt.sys"]:::processNode
+                PDO["<b>Physical Device Object</b><br/>USB Hub / Compound"]:::processNode
+            end
+            
+            WDF["<b>WDF Framework</b><br/>Windows Driver Framework"]:::keyNode
+        end
+    
+        %% --- 3. 連接線與邏輯 (Connections) ---
+        App -->|"Opens Handle<br/>開啟控制代碼"| CDO
+        App -->|"Sends IOCTL<br/>發送控制指令"| CDO
+        CDO -.->|"Forward/Process<br/>轉發或處理"| FiDO
+        FiDO -->|"Filter/Pass-through<br/>過濾或放行"| PDO
+        FiDO -->|"Identify Device<br/>識別裝置"| WDF
+    ```
+    ---
+    ## 💾 ISP Mode 詳細技術說明 (In-System Programming)
+    > 💡 核心概念
+    ### 1. ISP 核心架構與路徑
+    在 ISP 模式下，驅動程式扮演「橋樑」的角色。以下圖表展示了指令如何從 User Mode 穿透驅動層到達硬體。
+    ```mermaid
+    flowchart TD
+        %% --- 1. 定義樣式 ---
+        classDef inputNode fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef keyNode fill:transparent,stroke:#34D399,stroke-width:2.5px
+        classDef processNode fill:transparent,stroke:#F87171,stroke-width:2.5px
+        classDef hwNode fill:transparent,stroke:#60A5FA,stroke-width:2.5px
+    
+        %% --- 2. 架構層級 ---
+        subgraph User_Mode ["User Mode (應用層)"]
+            direction TB
+            App["<b>ISP Tool</b><br/>Firmware Updater"]:::inputNode
+            IOCTL["<b>IOCTL Interface</b><br/>DeviceIoControl"]:::inputNode
+        end
+    
+        subgraph Kernel_Mode ["Kernel Mode (核心層)"]
+            direction TB
+            Driver["<b>GLUSBFLT.SYS</b><br/>Filter Driver"]:::keyNode
+            FDO["<b>Filter Device Object</b><br/>處理 IOCTL Request"]:::processNode
+            PDO["<b>Physical Device Object</b><br/>USB Bus Driver"]:::processNode
+        end
+    
+        subgraph Hardware ["Hardware (硬體層)"]
+            HubChip["<b>Hub MCU</b><br/>Genesys Logic Chip"]:::hwNode
+        end
+    
+        %% --- 3. 傳輸路徑 ---
+        App -->|"Sends Command<br/>發送指令"| IOCTL
+        IOCTL -->|"GL_IOCTL_VENDOR_REQUEST<br/>傳遞請求"| Driver
+        Driver -->|"WDF Request<br/>轉換格式"| FDO
+        FDO -->|"USB URB<br/>USB 請求區塊"| PDO
+        PDO -->|"USB Bus<br/>匯流排傳輸"| HubChip
+    ```
+    ### 2. ISP 工作流程 (Workflow)
+    驅動程式如何識別裝置並建立通訊通道？
+    ```mermaid
+    flowchart TD
+        %% --- 樣式定義 ---
+        classDef inputNode fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef processNode fill:transparent,stroke:#F87171,stroke-width:2.5px
+        classDef keyNode fill:transparent,stroke:#34D399,stroke-width:2.5px
+    
+        %% --- 流程步驟 ---
+        Start(["<b>Device Plugged In</b><br/>裝置插入"]):::inputNode
+        
+        subgraph Initialization ["Phase 1: Filtering & Attachment"]
+            CheckID["<b>Check Hardware ID</b><br/>檢查 VID/PID"]:::processNode
+            Decision{"<b>Target Device?</b><br/>是否為 Hub?"}:::processNode
+            Attach["<b>Attach Filter</b><br/>掛載驅動 (filter.c)"]:::keyNode
+            Skip["<b>Skip Device</b><br/>忽略非目標裝置"]:::processNode
+        end
+    
+        subgraph Communication ["Phase 2: Communication"]
+            CreateCDO["<b>Create Control Channel</b><br/>建立 Sideband CDO"]:::keyNode
+            Enum["<b>Enumeration</b><br/>GL_IOCTL_ENUM_DEVICES"]:::inputNode
+            VendorCmd["<b>Vendor Request</b><br/>GL_IOCTL_USB_VENDOR_REQUEST"]:::inputNode
+            HardwareAction["<b>Flash Update</b><br/>韌體燒錄/讀寫"]:::processNode
+        end
+    
+        %% --- 連接 ---
+        Start --> CheckID
+        CheckID --> Decision
+        Decision -- "No (Mouse/KB)" --> Skip
+        Decision -- "Yes (Genesys/Belkin)" --> Attach
+        Attach --> CreateCDO
+        CreateCDO --> Enum
+        Enum --> VendorCmd
+        VendorCmd --> HardwareAction
+    ```
+    ### 3. ISP 關鍵程式碼分析
+    ### 4. ISP 安全性與限制
+    > ⚠️ 無狀態保存 (Stateless Design)
+    ---
+    ## 🔄 驅動程式初始化流程 (Initialization Flow)
+    當系統偵測到新裝置時，DriverEntry 註冊的回呼函數 FilterEvtDeviceAdd 會被觸發。
+    ```mermaid
+    flowchart TD
+        %% --- 1. 定義樣式 ---
+        classDef titleNode fill:transparent,stroke:transparent,font-weight:bold
+        classDef inputNode fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef keyNode fill:transparent,stroke:#34D399,stroke-width:2.5px
+        classDef processNode fill:transparent,stroke:#F87171,stroke-width:2.5px
+    
+        %% --- 2. 流程結構 ---
+        Start(["<b>DriverEntry</b><br/>驅動程式進入點"]):::inputNode 
+        --> Init["<b>Init Config</b><br/>初始化 WDF 設定"]:::inputNode
+        --> Register["<b>Register Callback</b><br/>註冊 EvtDeviceAdd"]:::inputNode
+        
+        subgraph Device_Add ["Device Add Event (裝置新增事件)"]
+            direction TB
+            EvtAdd["<b>EvtDeviceAdd</b><br/>觸發新增裝置"]:::inputNode 
+            --> queryID["<b>Query HWID</b><br/>查詢硬體識別碼"]:::processNode
+            --> CheckSkip{"<b>Skip Logic?</b><br/>檢查排除邏輯"}:::processNode
+            
+            CheckSkip -- "Yes (PCI, RootHub)" --> RetSuccess["<b>Return Success</b><br/>不掛載 Filter"]:::keyNode
+            CheckSkip -- "No (Target Hub)" --> CreateDev["<b>Create Device</b><br/>建立 FiDO"]:::keyNode
+            
+            CreateDev --> RegPnP["<b>Register PnP</b><br/>註冊回呼"]:::processNode
+            --> AddColl["<b>Add Collection</b><br/>加入清單"]:::processNode
+            --> CreateCDO{"<b>First Device?</b><br/>首個裝置?"}:::processNode
+            
+            CreateCDO -- Yes --> InitCDO["<b>Create CDO</b><br/>建立控制物件"]:::keyNode
+            CreateCDO -- No --> End(["<b>Finish</b><br/>完成"]):::keyNode
+            InitCDO --> End
+        end
+    ```
+    ---
+    ## 📟 IOCTL 命令列表 (IOCTL Commands)
+    定義於 filter_ioctl.h 中的主要控制碼：
+    ---
+    ## 🚀 WDK Modernization Plan (WDK 現代化計畫)
+    > 🎯 目標 (Goal)
+    ### ⚠️ 使用者審查事項 (User Review Required)
+    > ❗ IMPORTANT: Build System Change
+    > 🚨 WARNING: KMDF Version Upgrade
+    ### 🛠️ 遷移架構圖 (Migration Architecture)
+    ```mermaid
+    flowchart TD
+        %% --- 1. 定義樣式 ---
+        classDef legacyNode fill:transparent,stroke:#9CA3AF,stroke-width:2.5px,stroke-dasharray: 5 5
+        classDef actionNode fill:transparent,stroke:#FBBF24,stroke-width:2.5px
+        classDef modernNode fill:transparent,stroke:#34D399,stroke-width:2.5px
+    
+        %% --- 2. 圖表結構 ---
+        subgraph Legacy_State ["Legacy Environment<br/>(舊環境)"]
+            direction TB
+            OldBuild["<b>Legacy Build</b><br/>sources + makefile"]:::legacyNode
+            OldAPI["<b>Unsafe APIs</b><br/>NonPagedPool / sprintf"]:::legacyNode
+            OldWDF["<b>KMDF 1.9</b><br/>Windows 7 Support"]:::legacyNode
+        end
+    
+        subgraph Migration_Actions ["Migration Process<br/>(遷移過程)"]
+            direction TB
+            ActBuild["<b>Create Project</b><br/>glusbflt.vcxproj"]:::actionNode
+            ActSec["<b>Security Hardening</b><br/>Use Safe String/Pool"]:::actionNode
+            ActUp["<b>Update INF</b><br/>Set Version to 1.25"]:::actionNode
+        end
+    
+        subgraph Modern_State ["Modern Standard<br/>(新標準)"]
+            direction TB
+            NewBuild["<b>MSBuild System</b><br/>VS2019 / VS2022"]:::modernNode
+            NewAPI["<b>Secure Code</b><br/>NX Pool / RtlStringCch"]:::modernNode
+            NewWDF["<b>KMDF 1.25</b><br/>Win10 1809+ / Win11"]:::modernNode
+        end
+    
+        %% --- 3. 連接邏輯 ---
+        OldBuild --> ActBuild --> NewBuild
+        OldAPI --> ActSec --> NewAPI
+        OldWDF --> ActUp --> NewWDF
+    ```
+    ### 📋 變更細節 (Proposed Changes)
+    ### 1. Code Security & Safety [Safe]
+    替換 utility.c 與 filter_control.c 中已棄用或不安全的函數。
+    - 🔒 Memory Allocation: 將 NonPagedPool 替換為 NonPagedPoolNx (No-Execute)，防止代碼注入攻擊。
+    - 🛡️ String Handling: 將 sprintf, strcpy 替換為 RtlStringCchPrintfA, RtlStringCchCopyA。
+    ### 2. INF Configuration [Safe]
+    - 📄 glusbflt.inf: 將 KmdfLibraryVersion 設定更新為 1.25。
+    ### 3. Build System [NEW]
+    - 🆕 glusbflt.vcxproj: 建立標準 KMDF Driver 專案結構，包含所有原始碼並設定 ARM64/x64 編譯配置。
+    ---
+    ## 🛠️ 編譯與安裝 (Build and Install)
+    ### 🔨 編譯環境
+    - WDK (Windows Driver Kit): 安裝支援 KMDF 1.x 的 WDK。
+    - 使用 Visual Studio 2019/2022 開啟 glusbflt.vcxproj 進行編譯。
+    ### 📦 安裝方式
+    1. 進入 isp_x64\install。
+    1. 右鍵點擊 glusbflt.inf 並選擇 安裝 (Install)。
+    1. 或使用 devcon:Bash
+    ---
+    ## 📂 檔案結構 (File Structure)
+    - 📄 filter.c: 驅動程式進入點與裝置新增邏輯。
+    - 📄 filter_ioctl.h: 定義 IOCTL Control Codes。
+    - 📄 filter_control.c: 處理 IOCTL 請求。
+    - 📄 filter_fdo.c: 處理 PnP 與 Power 事件。
+    - ⚙️ glusbflt.vcxproj: (New) MSBuild 專案檔。
+    - 📁 isp_x64/: Binary 與 INF 輸出目錄。
+    
+    </related>
+    <related id="gl-hubdriver-v163-測試流程" title="GL HubDriver v1.63 測試流程" path="/driver/gl-hubdriver-v163-測試流程.html">
+    
+    1. 沒安裝driver時，
+    1. 安裝舊版device filter driver 
+    1. 安裝舊版device filter driver 
+    1. 安裝class filter driver 
+    1. 同時安裝class & device filter driver
+    
+    </related>
+  </related_context>
+</context_boundaries>

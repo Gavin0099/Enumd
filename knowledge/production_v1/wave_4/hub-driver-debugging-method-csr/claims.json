@@ -1,0 +1,106 @@
+[
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "1. 開始 —> 右鍵 —> 電腦管理",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "4. 如果有找到的話 驅動程式 —> 驅動程式詳細資料 看是否有 `glusbflt.sys`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "Obtains and displays information about the specified service, driver, type of service, or type of driver。",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- RUNNING: 有插上 GL Hub，有安裝驅動程式",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- STOPPABLE: 未插上 GL Hub，有安裝驅動程式",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- [SC] EnumQueryServicesStatus:OpenService FAILED 1060: 未安裝驅動程式",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- RUNNING: 有安裝 device filter driver",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- [SC] EnumQueryServicesStatus:OpenService FAILED 1060: 未安裝 device filter driver",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "以上方法可用於判斷 Hub Driver 的安裝狀態和運作情況。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- 提供了更詳細的 Class & Device Filter driver 判斷方式和 SC query 判斷驅動程式方式。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- 另外也介紹了 Class filter driver reg 移除方式、判斷 device filter driver 版本，以及 class & device filter driver 安裝互相影響的情況。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "- 更詳細地解釋了 `sc query glusbflt` 和 `sc query glusbfltservice` 的用途。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hub-driver-debugging-method-csr",
+    "claim": "總之，上述方法可用於判斷 Hub Driver 的安裝狀態和運作情況。如果需要更深入的除錯或疑難排解，可參考相關內容。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

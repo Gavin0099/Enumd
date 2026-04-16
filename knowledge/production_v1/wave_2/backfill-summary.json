@@ -1,0 +1,102 @@
+{
+  "wave_id": 2,
+  "generated_at": "2026-04-15T07:55:59.977Z",
+  "dry_run": false,
+  "node_counts": {
+    "total": 50,
+    "processed": 50,
+    "already_done": 0,
+    "failed": 0
+  },
+  "node_types": {
+    "standard": 39,
+    "handoff": 0,
+    "fragmentary": 11
+  },
+  "kal": {
+    "converged": 39,
+    "thin_synthesis": 7,
+    "skipped": 4,
+    "error": 0
+  },
+  "claims": {
+    "total_atomic": 693,
+    "avg_per_node": 13.9,
+    "total_suppressed": 0,
+    "explosion_nodes": [],
+    "collapse_nodes": []
+  },
+  "suppression": {
+    "suppress_derived_count": 0,
+    "audit_flag_count": 2,
+    "pass_count": 48,
+    "total_derived_claims_removed": 0,
+    "suppressed_nodes": [],
+    "flagged_nodes": [
+      {
+        "slug": "flutter",
+        "node_type": "STANDARD",
+        "unsupported": 2,
+        "total": 8
+      },
+      {
+        "slug": "gitlab-ee-wiki-",
+        "node_type": "STANDARD",
+        "unsupported": 2,
+        "total": 5
+      }
+    ]
+  },
+  "semantic": {
+    "total_checked": 207,
+    "supported": 160,
+    "uncertain": 8,
+    "unsupported": 10,
+    "supported_pct": "77%",
+    "uncertain_pct": "4%",
+    "unsupported_pct": "5%",
+    "nodes_with_unsupported": [
+      {
+        "slug": "chatgpt-簡介",
+        "unsupported": 1,
+        "total": 2
+      },
+      {
+        "slug": "cli-command-line-list",
+        "unsupported": 1,
+        "total": 1
+      },
+      {
+        "slug": "command-line-tool-logging-method",
+        "unsupported": 1,
+        "total": 3
+      },
+      {
+        "slug": "flutter",
+        "unsupported": 2,
+        "total": 8
+      },
+      {
+        "slug": "git-gitlab",
+        "unsupported": 1,
+        "total": 2
+      },
+      {
+        "slug": "gitlab-ee-wiki-",
+        "unsupported": 2,
+        "total": 5
+      },
+      {
+        "slug": "gl-bin",
+        "unsupported": 1,
+        "total": 9
+      },
+      {
+        "slug": "gl-bin-tool",
+        "unsupported": 1,
+        "total": 18
+      }
+    ]
+  },
+  "failed_nodes": []
+}

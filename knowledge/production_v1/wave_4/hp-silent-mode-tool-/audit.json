@@ -1,0 +1,460 @@
+{
+  "requested_slug": "hp-silent-mode-tool-",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hp-oci-tool-工作彙整 (confidence: low)",
+    "hp-oci-tool-現行架構解析 (confidence: low)",
+    "hp-enduser-tool- (confidence: low)",
+    "hp-enduser-tool-包裝流程 (confidence: low)",
+    "hp-qc-tool- (confidence: low)",
+    "hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式 (confidence: low)",
+    "hp-oci-tool-ui-flow (confidence: low)",
+    "hp-end-user-tool-封裝方式 (confidence: low)",
+    "hp-enduser-tool-debug-sop (confidence: low)",
+    "hp-isp-tool-update-速度問題 (confidence: low)",
+    "hp-monitor-isp-tool-開發和驗證方式 (confidence: low)",
+    "hp-command-line-tool-logging-method (confidence: low)",
+    "hp-command-line-tool-user-guide (confidence: low)",
+    "hp-end-user-tool-packing-user-guide (confidence: low)",
+    "hp-silent-install-project-support-list (confidence: low)",
+    "hp-isp-tool-hub-update-flow (confidence: low)",
+    "hp-isp-tool-hub-update-flowhid (confidence: low)",
+    "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final- (confidence: low)",
+    "how-to-grab-hp-command-tool-log- (confidence: low)",
+    "how-to-grab-hp-enduser-tool-log- (confidence: low)"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 27,
+    "borderline_count": 15,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "2da64f6b-c656-80b0-84e0-d0635256c4a0",
+          "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+          "title": "HP Enterprise Firmware Stress Tool - Technical Specification (Rev 9.0 GA)",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.md",
+          "site_path": "/general/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html",
+          "category": "general",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "2da64f6b-c656-80b0-84e0-d0635256c4a0",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:23:37.005Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "7f714fb2-9cdb-4291-a148-6450a41decaa",
+          "slug": "hp-oci-app",
+          "title": "HP OCI APP",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\hp-oci-app.md",
+          "site_path": "/mac/hp-oci-app.html",
+          "category": "mac",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "7f714fb2-9cdb-4291-a148-6450a41decaa",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:24:27.783Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "8270008a-fd31-4371-b274-544b757e8e3b",
+          "slug": "hp-oci-dll",
+          "title": "HP OCI DLL",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\hp-oci-dll.md",
+          "site_path": "/mac/hp-oci-dll.html",
+          "category": "mac",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "8270008a-fd31-4371-b274-544b757e8e3b",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:24:23.784Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "ae4ded26-3533-4ae4-9385-2fc3bbc0c158",
+          "slug": "hp-oci-資料",
+          "title": "HP OCI 資料",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\hp-oci-資料.md",
+          "site_path": "/mac/hp-oci-資料.html",
+          "category": "mac",
+          "domain_tags": [],
+          "task_tags": [],
+          "authority_level": "unknown",
+          "notion_id": "ae4ded26-3533-4ae4-9385-2fc3bbc0c158",
+          "notion_updated_at": "FORCE_REFRESH",
+          "exported_at": "2026-04-06T11:24:21.882Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "26464f6b-c656-803e-881a-e42f4b8aa570",
+          "slug": "asus-update-tool-",
+          "title": "ASUS Update Tool ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\asus-update-tool-.md",
+          "site_path": "/tools/asus-update-tool-.html",
+          "category": "tools",
+          "domain_tags": [
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "spec",
+            "sop"
+          ],
+          "authority_level": "derived",
+          "notion_id": "26464f6b-c656-803e-881a-e42f4b8aa570",
+          "notion_updated_at": "2026-01-21T09:57:00.000Z",
+          "exported_at": "2026-04-06T13:14:30.955Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "19264f6b-c656-8041-942e-d62539051408",
+          "slug": "gl-bin-tool",
+          "title": "GL Bin Tool",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\gl-bin-tool.md",
+          "site_path": "/tools/gl-bin-tool.html",
+          "category": "tools",
+          "domain_tags": [
+            "code-sign",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "code-sign",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "19264f6b-c656-8041-942e-d62539051408",
+          "notion_updated_at": "2025-02-14T07:23:00.000Z",
+          "exported_at": "2026-04-06T13:11:02.591Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "1baf9822-7bc8-4fab-b0ce-e0474e843f6d",
+          "slug": "gl-diagnostic-tool",
+          "title": "GL Diagnostic Tool",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\gl-diagnostic-tool.md",
+          "site_path": "/tools/gl-diagnostic-tool.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "1baf9822-7bc8-4fab-b0ce-e0474e843f6d",
+          "notion_updated_at": "2026-01-21T09:49:00.000Z",
+          "exported_at": "2026-04-06T13:10:48.321Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "22a64f6b-c656-8093-8fae-febf566f921f",
+          "slug": "hp-security-spec-",
+          "title": "HP Security Spec ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\security\\hp-security-spec-.md",
+          "site_path": "/security/hp-security-spec-.html",
+          "category": "security",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "code-sign",
+            "spec",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "22a64f6b-c656-8093-8fae-febf566f921f",
+          "notion_updated_at": "2026-01-21T09:37:00.000Z",
+          "exported_at": "2026-04-06T13:15:11.529Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "22d64f6b-c656-8076-a1ef-dd24eb66154e",
+          "slug": "hp-security-spec",
+          "title": "HP Security Spec",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\security\\hp-security-spec.md",
+          "site_path": "/security/hp-security-spec.html",
+          "category": "security",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "firmware",
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "code-sign",
+            "spec",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "22d64f6b-c656-8076-a1ef-dd24eb66154e",
+          "notion_updated_at": "2026-01-21T09:37:00.000Z",
+          "exported_at": "2026-04-06T13:15:13.398Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "ca94a4db-8286-48e5-9ab3-f72e882be226",
+          "slug": "ikv-tool-相關mail資料",
+          "title": "IKV Tool & 相關mail資料",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\ikv-tool-相關mail資料.md",
+          "site_path": "/tools/ikv-tool-相關mail資料.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools"
+          ],
+          "task_tags": [
+            "log"
+          ],
+          "authority_level": "reference",
+          "notion_id": "ca94a4db-8286-48e5-9ab3-f72e882be226",
+          "notion_updated_at": "2026-01-21T09:33:00.000Z",
+          "exported_at": "2026-04-06T13:18:01.475Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "d985df35-1916-4205-8049-c98274cd4e78",
+          "slug": "tool-sign-flow",
+          "title": "Tool Sign flow",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\tool-sign-flow.md",
+          "site_path": "/tools/tool-sign-flow.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools",
+            "security"
+          ],
+          "task_tags": [
+            "code-sign",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "d985df35-1916-4205-8049-c98274cd4e78",
+          "notion_updated_at": "2025-07-15T03:03:00.000Z",
+          "exported_at": "2026-04-06T13:13:23.285Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "5376eed8-60b2-4ef5-a079-bf96c132e6f3",
+          "slug": "hub-mp-tool",
+          "title": "Hub MP Tool",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\hub\\hub-mp-tool.md",
+          "site_path": "/hub/hub-mp-tool.html",
+          "category": "hub",
+          "domain_tags": [
+            "hub",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "5376eed8-60b2-4ef5-a079-bf96c132e6f3",
+          "notion_updated_at": "2020-05-21T01:26:00.000Z",
+          "exported_at": "2026-04-06T13:09:58.031Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "21164f6b-c656-8018-bef4-ff9eb1b89139",
+          "slug": "mac-eep-tool",
+          "title": "Mac EEP Tool",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\mac-eep-tool.md",
+          "site_path": "/mac/mac-eep-tool.html",
+          "category": "mac",
+          "domain_tags": [
+            "mac",
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "21164f6b-c656-8018-bef4-ff9eb1b89139",
+          "notion_updated_at": "2025-06-13T02:04:00.000Z",
+          "exported_at": "2026-04-06T13:18:32.117Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "9601f1bb-65ae-438f-8447-1ab7ca3638d2",
+          "slug": "mac-oci-tool-",
+          "title": "MAC OCI Tool ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\mac-oci-tool-.md",
+          "site_path": "/mac/mac-oci-tool-.html",
+          "category": "mac",
+          "domain_tags": [
+            "hub",
+            "code-sign",
+            "mac",
+            "firmware",
+            "sdk",
+            "tools"
+          ],
+          "task_tags": [
+            "code-sign",
+            "build",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "9601f1bb-65ae-438f-8447-1ab7ca3638d2",
+          "notion_updated_at": "2026-01-21T09:57:00.000Z",
+          "exported_at": "2026-04-06T13:12:37.488Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "4d1c7989-dbe8-486c-941b-5e7f51a0f963",
+          "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+          "title": "8D report for E22 G4/E23 G4/E24 G4/E24i G4 HP EndUser Tool",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool.md",
+          "site_path": "/tools/8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool.html",
+          "category": "tools",
+          "domain_tags": [
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "debug",
+            "release",
+            "sop",
+            "config"
+          ],
+          "authority_level": "deprecated",
+          "notion_id": "4d1c7989-dbe8-486c-941b-5e7f51a0f963",
+          "notion_updated_at": "2022-03-15T09:29:00.000Z",
+          "exported_at": "2026-04-06T13:17:44.206Z"
+        },
+        "score": 0.23076923076923078,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 27 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 27,
+    "count_at_0_22": 42,
+    "borderline_count": 15,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": true
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

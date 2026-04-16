@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "hp-oci-app",
+    "claim": "以下是基於提供的內容所撰寫的 HP OCI APP 文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "1. **Device DLL 功能**:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- Device DLL 主要用於與 DMC (Device Management Controller) 進行通訊。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 如果產品本身沒有 Device DLL, 可以不需要設定。[R] [新版本文件 v2.6 說明]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "2. **檢查 HP 簽章**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 在 OCI 包裝完成後, 會由代工廠送給 HP 進行簽章。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 您可以開會討論如何檢查 HP 簽章過的 DLL。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 您目前自己開發的工具是如何對 Exe/DLL/Sys 檔案進行 Sha2 簽章的? 是否也透過 HP 進行簽章?[GL] 您目前的工具沒有經過 HP 簽章, 只有對自己的檔案進行 Sha2 簽章。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 可參考 p7.4.5 Return Codes 部分了解錯誤碼。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 接著依序呼叫 HPFI_Initialize(), HPFI_GetPackagedFirmwareInfo(), HPFI_GetInstalledFirmwareInfo(), HPFI_Install(), HPFI_Finalize() 等 API, 列出對應的狀態。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "4. **Stage Firmware 功能**:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "1. **UpgradeCode 作用**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 您目前沒有 RPOS 裝置, 所以不需要支援這個功能。[R]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 在 RPOS 時需要設定, 但在其他類型的產品中可以不用設定。您目前的 Kronos 產品也沒有實作這部分。[R]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- PowerButtonSensitivity, DMCDisplayName, DMCVersion, AllowedValue 等功能是針對 Hook docking 產品使用的, 您目前的產品不需要實作。[R]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "2. **FW Status 與 Tool Update Status 描述不一致**:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- Kronos_OCI_v1.0.0.14 的描述與文件中有些許差異, 可能缺少一些 Status 資訊。例如: Installed version is newer and Out to date。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "3. **Log 位置及 Debug Log 開啟**:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "- 目前文件中沒有限制 Log 的位置, 以及如何開啟 Debug Log。可以由您自行決定。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-app",
+    "claim": "4. **所有檔案都有 .hpsign 的處理**:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

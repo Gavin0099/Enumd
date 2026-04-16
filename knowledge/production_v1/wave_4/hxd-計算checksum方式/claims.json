@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "hxd-計算checksum方式",
+    "claim": "Hxd 可以計算檔案的 checksum。使用者需要載入要計算 checksum 的檔案，選擇 Checksum-16 選項，然後 Hxd 會顯示計算出的 checksum 值，供使用者與檔案最後兩個位元組進行比較。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

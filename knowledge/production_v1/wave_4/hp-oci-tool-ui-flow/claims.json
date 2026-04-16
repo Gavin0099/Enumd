@@ -1,0 +1,322 @@
+[
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "HP OCI Tool 是一款用於更新 HP 顯示器韌體的工具。其主要功能包括:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "整個流程由三大階段組成:初始化與前置檢查、載入設定與硬體、以及執行更新。每個階段都有相應的檢查和驗證步驟，確保工具能安全可靠地運行。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "下面是 HP OCI Tool 的完整流程圖:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P1([\"解析 CLI 參數\"])",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P2([\"檢查是否已有執行中的 App\"])",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P3([\"初始化 Logger\"])",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P4([\"執行 dxdiag 並儲存系統資訊\"])",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P5([\"驗證必要檔案完整性\"])",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P6([\"載入 HPFICfgList.xml\"])",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P7([\"驗證 HPFICfgList.xml 數值\"])",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P8([\"載入 GlOciDll_Device.dll\"])",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P9([\"查詢 Hub Token\"])",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P11([\"初始化單螢幕更新流程\"])",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P12([\"初始化多螢幕更新流程\"])",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P_Execute_Update[(\"根據 -s, -ni, empty<br/>執行對應的更新模式\")]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P_CV_ReadVersion([\"讀取 DLL/檔案版本資訊\"])",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P_Exit_Success[(\"✅ 成功結束\")]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P_Exit_Error[(\"❌ 記錄錯誤並結束\")]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "D1[[HPFICfgList.xml]]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "D2[[SystemInfo.txt]]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "D4[[Hub Device]]",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "User -- CLI 參數 --> P1",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "除了正常的功能流程外，我們還需要考慮可能出現的安全威脅,並提出相應的緩解措施。下面是 HP OCI Tool 的威脅建模圖:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P1([\"解析 CLI 參數\"])",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P_Exit_Success[(\"✅ 成功結束\")]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P_Exit_Error[(\"❌ 記錄錯誤並結束\")]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "User -- CLI 參數 --> P1",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P2([\"檢查 App 實例\"]) --> P3([\"初始化 Logger\"])",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P6([\"載入 HPFICfgList.xml\"]) --> P8([\"載入 GlOciDll_Device.dll\"])",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "P10([\"判斷螢幕數量\"]) --> P_Execute_Update[(\"執行對應更新模式\")]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "1. **程式碼與韌體完整性** (最高優先級)",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 威脅: 攻擊者替換核心檔案 (如 GlOciDll_Device.dll) 為惡意版本。 `[T_Files]`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 緩解: 驗證所有檔案的數位簽章。 `[M_Files]`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 緩解: 刷寫韌體前驗證簽章。 `[M_Firmware]`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 威脅: 攻擊者透過 CLI 參數或 XML 設定檔提供惡意輸入。 `[T_Cli]`, `[T_Xml]`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 緩解: 淨化所有 CLI 輸入。 `[M_Cli]`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 緩解: 安全地解析 XML (禁用 XXE)。 `[M_Xml]`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 威脅: SystemInfo.txt 檔案可能被其他惡意軟體讀取。 `[T_Info]`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "- 緩解: 保護輸出檔案 (設定權限)。 `[M_Info]`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-ui-flow",
+    "claim": "這些威脅與緩解措施的對應關係,確保 HP OCI Tool 在面對各種攻擊手段時都有完善的防禦機制。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "此系統採用 Store and Forward (儲存後轉發) 機制，以解決 USB 傳輸不穩定導致的 I2C 時序問題。其更新流程分為兩個階段:",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. **Phase 1 (Upload)**: PC 端工具 (Tool) 透過 USB (建議使用 HID Interrupt Out) 將完整的 Bin 檔案和 (PD/Scaler 資訊) 下載至 Hub Flash 中。[`HP Project: Store & Forward FW Update Specification`](./hp-project-store-forward-fw-update-specification.html)",
+    "tier": "Explicit",
+    "evidence_score": 29,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "2. **Phase 2 (Internal Update)**: Tool 發送指令啟動 FW，由 Hub FW 負責執行圖一 (PD) 和圖二 (Scaler) 的實際寫入流程。[`HP Project: Store & Forward FW Update Specification`](./hp-project-store-forward-fw-update-specification.html)",
+    "tier": "Explicit",
+    "evidence_score": 27,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "HubFlash -.-> |\"2. 讀取資料\"| HubFW",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "此流程整合了 Tool 的控制邏輯與 FW 的內部運作（對應圖一與圖二）。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool 將 PD Bin、Scaler Bin 和 (PD/Scaler 資訊) 完整寫入 Hub Flash 的指定位址。[`HP Project: Store & Forward FW Update Specification`](./hp-project-store-forward-fw-update-specification.html)",
+    "tier": "Explicit",
+    "evidence_score": 25,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool: 發送 `HID_CMD_Enable_PD_OnlineSpeedUp` 指令。[`HID Command Protocol (Reference)`](./hp-project-store-forward-fw-update-specification.html#hid-command-protocol-reference)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Hub FW (執行圖一紅框邏輯):[`HP Project: Store & Forward FW Update Specification`](./hp-project-store-forward-fw-update-specification.html)",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool (Polling): 每 500ms 發送 `Get_Update_Status` 指令。[`HID Command Protocol (Reference)`](./hp-project-store-forward-fw-update-specification.html#hid-command-protocol-reference)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. 進入 ISP Mode -> Disable Write Protect。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool: 發送 `HID_CMD_Enable_Scaler_OnlineSpeedUp` 指令。[`HID Command Protocol (Reference)`](./hp-project-store-forward-fw-update-specification.html#hid-command-protocol-reference)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Hub FW (執行圖二紅框邏輯):[`HP Project: Store & Forward FW Update Specification`](./hp-project-store-forward-fw-update-specification.html)",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool (Polling): 每 500ms 發送 `Get_Update_Status` 指令。[`HID Command Protocol (Reference)`](./hp-project-store-forward-fw-update-specification.html#hid-command-protocol-reference)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "當 FW 內部的 Retry (圖一紅框) 或 Verify (圖二紅框) 失敗並回報 ERROR 時，Tool 介入救援:",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool: 解析 `Get_Update_Status` 回傳的 Error Address。[`HID Command Protocol (Reference)`](./hp-project-store-forward-fw-update-specification.html#hid-command-protocol-reference)",
+    "tier": "Explicit",
+    "evidence_score": 22,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool: 主動對 Target (PD/Scaler) 發送指令，Erase 該失敗的 Sector。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Tool: 發送 `Restore_Address` 指令:[`HID Command Protocol (Reference)`](./hp-project-store-forward-fw-update-specification.html#hid-command-protocol-reference)",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "1. Hub FW: 更新內部的 Write Pointer，從指定位置繼續執行寫入。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "這張圖展示了 Tool 與 FW 的互動，包含錯誤救援迴圈。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "Start((\"Start\")) --> P1",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "Action -.-> Wait",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- `HID_CMD_Enable_PD_OnlineSpeedUp`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- `HID_CMD_Enable_Scaler_OnlineSpeedUp`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- `Restore_Address`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- `Get_Update_Status`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- 0x01 / 0x10 (ENABLE): FW 忙碌中 (正在跑圖一/圖二的 Loop)。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- 0x04 / 0x40 (ERROR): 發生錯誤 (Retry 失敗)，等待 Tool 救援。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-project-store-forward-fw-update-specification",
+    "claim": "- 0x08 / 0x80 (DONE): 更新成功。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

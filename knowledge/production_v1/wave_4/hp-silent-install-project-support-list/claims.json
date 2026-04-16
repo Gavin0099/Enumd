@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "根據提供的內容邊界,我們可以總結出 'HP silent install project support list' 的核心主題如下:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "此外,這個專案還與 Etoken 安全簽章系統相關聯。Etoken 系統提供了以下功能:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 使用 Proxmox 登入管理",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 現行版本為 eToken Server v4.0",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 響應 eTokenClient Tool 的需求",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 將簽章後的 hub bin 檔案傳回",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "此外,還有一個 `Generic USB Filter Driver` 的相關內容,主要包括:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 核心驅動程式 (Kernel Driver) 和相關安裝檔案 (.inf)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 可以掛載在目標 USB 裝置的驅動程式堆疊上,攔截和處理 PnP 和 Power 事件",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 當系統偵測到新裝置時,DriverEntry 註冊的回呼函數 FilterEvtDeviceAdd 會被觸發",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "- 定義於 filter_ioctl.h 中的主要控制碼",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-silent-install-project-support-list",
+    "claim": "總之,這個 HP 靜默安裝專案支援清單與 Etoken 安全簽章系統和 Generic USB Filter Driver 密切相關,共同構成了一個完整的軟硬體部署和更新解決方案。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

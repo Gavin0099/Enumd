@@ -1,0 +1,157 @@
+{
+  "requested_slug": "hp-monitor-scaler-chip-資料",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "hp-oci-資料 (confidence: low)",
+    "hp-monitor-scaler-chip- (confidence: low)",
+    "hp-monitor-2023-schedule- (confidence: low)",
+    "hp-monitor-2025-schedule- (confidence: low)",
+    "hp-monitor-test-flow (confidence: low)",
+    "hp-rtk-scaler-code-sign (confidence: low)",
+    "hp-monitor-isp-tool-開發和驗證方式 (confidence: low)",
+    "hp-monitor-code-sign-update-flow (confidence: low)",
+    "hp-good-place-524pu-scaler-update-fail (confidence: low)",
+    "hp-monitor-rtk-audio-update-fail-原因 (confidence: low)",
+    "hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式",
+    "monitor-開案內容",
+    "hp-oci-app",
+    "hp-oci-dll",
+    "hp-enduser-tool-",
+    "hp-qc-tool-",
+    "hp-security-spec-",
+    "hp-security-spec",
+    "hub-chip-資訊",
+    "get-monitor-info-"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 10,
+    "borderline_count": 2,
+    "best_borderline_score": 0.2727272727272727,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "27864f6b-c656-8015-8529-c55bb347b447",
+          "slug": "hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式",
+          "title": "HP E24mv G4 EndUser Tool scaler 新舊chip 判斷方式",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式.md",
+          "site_path": "/monitor/hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式.html",
+          "category": "monitor",
+          "domain_tags": [
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "deprecated",
+          "notion_id": "27864f6b-c656-8015-8529-c55bb347b447",
+          "notion_updated_at": "2025-09-24T01:56:00.000Z",
+          "exported_at": "2026-04-06T13:14:00.795Z"
+        },
+        "score": 0.2727272727272727,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "8a82e2d6-bb6a-41d7-99b4-9145563b2967",
+          "slug": "monitor-開案內容",
+          "title": "Monitor 開案內容",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\monitor-開案內容.md",
+          "site_path": "/monitor/monitor-開案內容.html",
+          "category": "monitor",
+          "domain_tags": [
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [
+            "sop"
+          ],
+          "authority_level": "reference",
+          "notion_id": "8a82e2d6-bb6a-41d7-99b4-9145563b2967",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:17:07.995Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 10 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 10,
+    "count_at_0_22": 12,
+    "borderline_count": 2,
+    "best_score": 0.2727272727272727,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 0,
+    "total_lines": 3,
+    "is_clean": true
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "requested_slug": "hp-oci-tool-工作彙整",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 3,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-03-38-828Z",
+  "wave_id": 4,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 7,
+    "downgraded": 1,
+    "total_lines": 40,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "THIN_SYNTHESIS",
+    "passed": 1,
+    "total": 3,
+    "convergence_rate": 0.3333333333333333,
+    "questions": [
+      {
+        "question": "What is the issue with the OCI disconnect update error?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions the OCI disconnect update error but does not provide details on the issue."
+      },
+      {
+        "question": "What is the purpose of the HP Samus Link - SN Sync Check Tool?",
+        "verdict": "UNANSWERABLE",
+        "justification": "The synthesis text does not provide any information about the purpose of the HP Samus Link - SN Sync Check Tool."
+      },
+      {
+        "question": "What is the request for the PA27UCGE display firmware update?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that there is a request for Windows/Mac OKU tools to support the firmware update for the PA27UCGE display."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 7,
+    "supported": 7,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 7,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

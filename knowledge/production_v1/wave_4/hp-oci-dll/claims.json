@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "hp-oci-dll",
+    "claim": "[HP OCI DLL](hp-oci-dll.html) 是由 HP 定義的 DLL 格式，會由 HP 提供的 Windows 應用程式 HPFirmwareInstaller 呼叫，以進行韌體更新流程。HP 提供了相關的 SDK 和官方文件 (最新版本 2.4)，可以用來了解 HP OCI DLL 的使用方式。",
+    "tier": "Explicit",
+    "evidence_score": 21,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "[HP OCI DLL](hp-oci-dll.html) 可以透過 Configuration Manager 的設定來建構不同版本的 DLL 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "HP 提供了 [GL OCI Class Diagram](hp-oci-dll.html) 作為 DLL 的規格說明。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "在 [Etoken System Code View](etoken-system-code-view-.html) 中，我們可以看到 etoken_dongle_server 和 etoken_server 的安全審核結果。這些系統與 HP OCI DLL 可能有相關的安全考量,例如:",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "1. [BLOCKING] Detached worker thread may outlive owner (this)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "2. [BLOCKING] Unbounded memory allocation from peer-provided file size",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "3. [WARNING] Protocol error opcode mismatch in public-key stage",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "4. [WARNING] system() execution path with externally-derived parameters",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "5. [WARNING] Timeout conversion bug in select()",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "6. [SUGGESTION] Hardcoded token password in source",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "在 [eToken 安全簽章系統技術說明](etoken-安全簽章系統技術說明.html) 中,我們可以了解到 eToken 系統的整體架構和處理流程,這可能與 HP OCI DLL 的功能和設計有關聯。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-dll",
+    "claim": "此外, [HID Code Sign 記錄](hid-code-sign-記錄.html) 提供了 HID 韌體更新協議和工具的相關資訊,也可能與 HP OCI DLL 的使用情境有所關聯。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

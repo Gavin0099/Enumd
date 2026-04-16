@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "基於提供的內容邊界,我們可以總結出 'HP Monitor RTK Audio update fail 原因' 的核心問題如下:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "1. **Realtek RTK Audio Driver (rtsupx) 的角色與更新行為**:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "- rtsupx 是 Realtek 提供的 USB 驅動程式,用於支援相機、Hub 和音訊設備。 `[Realtek_RtsUpx_Security_Advisory_Report.pdf](https://www.realtek.com/images/safe-report/Realtek_RtsUpx_Security_Advisory_Report.pdf)`",
+    "tier": "Explicit",
+    "evidence_score": 21,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "- 這是造成 'HP Monitor RTK Audio update fail' 的根本原因。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "- 可以透過手動執行 `sc stop rtsupx` 和 `sc delete rtsupx` 來刪除 rtsupx 驅動程式。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "- 在 AMD 平台上,如果安裝了 Cisco Webex,可能會導致某些 Hub 驅動程式安裝失敗。 `[E27m & E34m Driver install fail](driver/e27m-e34m-driver-install-fail.html)`",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "- 可以使用 `sc query` 命令來確認驅動程式的安裝狀態。 `[SC query to determine the driver mode](driver/sc-query-to-determine-the-driver-mode.html)`",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "- HP 要求使用內建驅動程式(如 USB HID 驅動程式)進行韌體更新,以避免相容性問題。 `[HP DISPLAY FIRMWARE SPECIFICATION V1.1](general/hp-display-firmware-specification-v11.html)`",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-monitor-rtk-audio-update-fail-原因",
+    "claim": "總之,造成 'HP Monitor RTK Audio update fail' 的主要原因是相機更新後未能正確移除 rtsupx 驅動程式,導致下次音訊更新失敗。解決方案是手動刪除 rtsupx 驅動程式,並遵循 HP 的韌體更新規範來設計更新工具。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "為滿足更廣泛的客戶需求，HP 將擴展韌體更新的支援能力，並將這些要求列為未來所有（明年開始）新專案的強制性標準。此擴展的重點是增加對 macOS 和 Linux (HP Thin Client) 的支援，並導入 RTOS (內部 MCU) 的雲端更新架構。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "韌體更新工具 (Firmware Update Tool) 需支援的作業系統如下：",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 強制支援 (Mandatory):",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 依 HP 需求支援 (By Request):",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- Linux (HP Thin Client)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- ODM / IC 供應商責任 (RFQ 階段):",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 支援 HP Thin Client 產品線的韌體更新。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 基於 x86 或 ARM 架構的 HP Thin Client 裝置。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 支援 Debian 10/11 或 Ubuntu 20.04/22.04 LTS 版本。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 相依性包含 Qt 5.x 以及 libusb-1.0-0 等常見 Linux 函式庫。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 支援 macOS 作業系統的韌體更新。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 使用 Swift/Objective-C 開發，並通過 Apple 的 Gatekeeper 驗證。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "此需求涉及一個在特定顯示器中內建 MCU 的新架構。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 在顯示器內部集成一個基於 RTOS 的 MCU 控制器。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- 韌體更新工具需支援透過 HP Poly Cloud 平台進行遠端韌體更新。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+    "claim": "- MCU 控制器需支援 USB On-The-Go (OTG) 或 Dual Role Port (DRP) 功能。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

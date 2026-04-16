@@ -1,0 +1,1178 @@
+[
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "以下是根據提供的內容所合成的 HP OCI Tool 跨平台架構技術規格書 (v3.4 - Visualized Final) 的 Markdown 報告:",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "將現有 WPF (.NET 4.6.1) 工具重構為 .NET 8 跨平台架構，確保核心業務邏輯與原生互通層 (Native Interop) 在 Windows、Linux 與 macOS 上的一致性與穩定性。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "採用 Clean Architecture 變體，強制分離「業務邏輯」與「原生互通細節」。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy -.->|P/Invoke| WinDLL",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy -.->|P/Invoke| LinSO",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "描述 NativeProxy 如何安全載入並驗證原生函式庫。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "participant App as Application",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "participant Proxy as NativeProxy",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "participant Loader as NativeLibrary",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "participant DLL as Native DLL/SO",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "App->>Proxy: Initialize(libPath)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "rect rgb(240, 240, 240)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Note over Proxy: 1. 檔案與載入檢查",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy->>Proxy: File.Exists?",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy->>Loader: TryLoad(libPath)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy-->>App: Throw BadImageFormatException<br/>(With Arch/OS/RID info)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "rect rgb(220, 255, 220)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Note over Proxy: 2. 握手驗證 (Handshake)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy->>DLL: HPFI_InterfaceVersion()",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "DLL-->>Proxy: version (int)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy-->>App: Throw NotSupportedException",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy->>DLL: HPFI_Initialize()",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "DLL-->>Proxy: result (int)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "alt Result != SUCCESS",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy-->>App: Throw InvalidOperationException",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Proxy-->>App: Ready",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "本專案採用 Monorepo 結構，所有專案皆位於同一解決方案 (.sln) 下。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   └── 📂 HP.OCI.Core/                 # [核心層] .NET Standard 2.0 / .NET 8",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       ├── 📂 Native/                  # [Native Interop]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       │   ├── NativeDataTypes.cs      # Structs & Enums [`[Title](path)`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       │   └── NativeDelegates.cs      # Delegate Definitions [`[Title](path)`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       ├── 📂 Services/",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       │   ├── NativeProxy.cs          # Native Library Loader & Wrapper [`[Title](path)`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       │   └── FirmwareService.cs      # Async Business Logic",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       └── 📂 ViewModels/              # ReactiveUI ViewModels",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   ├── 📂 HP.OCI.Avalonia/             # [GUI] Windows & macOS",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   │   ├── 📂 Views/",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   │   ├── App.axaml",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   │   └── Program.cs",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   └── 📂 HP.OCI.Console/              # [CLI] Linux Console",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       ├── Program.cs                  # Phase 0 Verification Script",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       └── InteractiveMode.cs",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "├── 📂 03_Tests/",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   └── 📂 HP.OCI.IntegrationTests/     # [Tests]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│       └── NativeInteropTests.cs       # Struct Size & Linkage Verification",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "└── 📂 lib/                             # [Native Libraries] (Copy to Output)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "│   └── HP.FirmwareInstall.dll",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "└── 📂 linux-x64/",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "└── libGlOciDll.so",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Solution[HP.OCI.Tool.sln]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Core[HP.OCI.Core.csproj]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "NativeFiles[NativeDataTypes.cs<br/>NativeDelegates.cs<br/>NativeProxy.cs]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Avalonia[HP.OCI.Avalonia.csproj]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Console[HP.OCI.Console.csproj]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Tests[HP.OCI.IntegrationTests.csproj]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Core --- NativeFiles",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "class Core,NativeFiles core;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "class Avalonia,Console ui;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- `NativeDataTypes.cs`: 定義原生資料類型，如 `HPFI_FIRMWARE_INFO_X64` 結構。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- `NativeDelegates.cs`: 定義原生函式庫的委派類型，如 `HPFI_InterfaceVersionDelegate`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- `NativeProxy.cs`: 實現原生函式庫的安全載入、初始化和包裝。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- Packing: 必須標註 `[StructLayout(LayoutKind.Sequential, Pack = 1)]`。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- CharSet: `HPFI_FIRMWARE_INFO` 必須使用 `CharSet.Unicode`。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- String: 使用 `[MarshalAs(UnmanagedType.ByValTStr, SizeConst = N)]`。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- x64/x86: `cbSize` 欄位需區分 `ulong` (64-bit) 與 `uint` (32-bit)。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- 策略: 使用預設 `CallingConvention.Winapi`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- 定義: Windows = `StdCall`, Linux/macOS = `Cdecl`。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- 驗證: 必須通過 Phase 0 驗證。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- 強制執行: 移除所有 `FreeLibrary` / `NativeLibrary.Free` 呼叫。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "- 原因: 防止 Driver 狀態殘留導致崩潰。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "using System.Runtime.InteropServices;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "namespace HP.OCI.Core.Native",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public enum HPFI_RESULT : int",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "HPFI_RESULT_SUCCESS = 0,",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "// ... 其他 enum ...",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "HPFI_RESULT_FAILED = 8",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "[StructLayout(LayoutKind.Sequential, Pack = 1)]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public struct HPFI_FIRMWARE_VERSION",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public int major; public int minor; public int build; public int revision;",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public override string ToString() => $\"{major}.{minor}.{build}.{revision}\";",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "[StructLayout(LayoutKind.Sequential, Pack = 1)]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public struct HPFI_FIRMWARE_DATE",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public int year; public int month; public int day;",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public override string ToString() => $\"{year:D4}-{month:D2}-{day:D2}\";",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "// x64 定義 (size_t = 8 bytes)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "[StructLayout(LayoutKind.Sequential, Pack = 1, CharSet = CharSet.Unicode)]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public struct HPFI_FIRMWARE_INFO_X64",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public ulong cbSize;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public string szName;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public HPFI_RESULT result;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public HPFI_FIRMWARE_VERSION version;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public HPFI_FIRMWARE_DATE date;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 1024)]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public string szErrMsg;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public int bForceInstall;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public static HPFI_FIRMWARE_INFO_X64 Create() =>",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "new HPFI_FIRMWARE_INFO_X64 { cbSize = (ulong)Marshal.SizeOf<HPFI_FIRMWARE_INFO_X64>() };",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "// x86 定義略 (參考 cbSize 為 uint)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "using System.Runtime.InteropServices;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "namespace HP.OCI.Core.Native",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "// 使用預設 CallingConvention (Winapi)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public delegate int HPFI_InterfaceVersionDelegate();",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public delegate int HPFI_InitializeDelegate(ref IntPtr ppV);",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public delegate void HPFI_FinalizeDelegate(IntPtr pV);",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public delegate void HPFI_GetPackagedFirmwareInfoDelegate_X64(ref HPFI_FIRMWARE_INFO_X64 pFi);",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "// ... 其他 Delegates ...",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "using System.IO;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "using System.Runtime.InteropServices;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "using HP.OCI.Core.Native;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "namespace HP.OCI.Core.Services",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public class NativeProxy : IDisposable",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private IntPtr _handle;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private IntPtr _context;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private bool _isX64;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private HPFI_InterfaceVersionDelegate _interfaceVersion;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private HPFI_InitializeDelegate _initialize;",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private HPFI_GetPackagedFirmwareInfoDelegate_X64 _getPackagedInfo_X64;",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public void Initialize(string libPath)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "throw new FileNotFoundException($\"Lib not found: {libPath}\");",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "var info = new FileInfo(libPath);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "throw new BadImageFormatException(",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "$\"Load failed. Path: {libPath}, Size: {info.Length}, \" +",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "$\"OS: {RuntimeInformation.OSDescription}, Arch: {RuntimeInformation.ProcessArchitecture}\");",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_isX64 = IntPtr.Size == 8;",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private void BindFunctions()",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_interfaceVersion = LoadFunc<HPFI_InterfaceVersionDelegate>(\"HPFI_InterfaceVersion\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_initialize = LoadFunc<HPFI_InitializeDelegate>(\"HPFI_Initialize\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_getPackagedInfo_X64 = LoadFunc<HPFI_GetPackagedFirmwareInfoDelegate_X64>(\"HPFI_GetPackagedFirmwareInfo\");",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private void PerformHandshake()",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "int version = _interfaceVersion();",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_context = IntPtr.Zero;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "int result = _initialize(ref _context);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public HPFI_FIRMWARE_INFO_X64 GetPackagedFirmwareInfo()",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "var info = HPFI_FIRMWARE_INFO_X64.Create();",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_getPackagedInfo_X64(ref info);",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public void Dispose()",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "// [Rule 4.3] No Runtime Unload",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "LibPtr = IntPtr.Zero;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "_isDisposed = true;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "private T LoadFunc<T>(string name) where T : Delegate",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "return Marshal.GetDelegateForFunctionPointer<T>(addr);",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "throw new EntryPointNotFoundException(name);",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "public static void VerifyEnvironment(string libPath)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Console.WriteLine($\"=== Verifying {libPath} ===\");",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "int size = Marshal.SizeOf<HPFI_FIRMWARE_INFO_X64>();",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  },
+  {
+    "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+    "claim": "Console.WriteLine($\"Struct Size (x64): {size} (Expected ~2604)\");",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 4,
+    "batch_id": "batch_2026-04-16T02-03-38-828Z"
+  }
+]

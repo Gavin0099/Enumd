@@ -1,0 +1,12 @@
+<context_boundaries>
+<core_topic id="hxd-計算checksum方式" title="Hxd 計算checksum方式" path="/general/hxd-計算checksum方式.html">
+
+1.載入要計算checksum的sum檔
+2.從 0x00 - 0x 7FFD (以GL3590為例)
+3.分析—>驗證碼
+4.選擇Checksum-16
+5.確定後就可以顯示出checksum，這時就可以跟最後兩個byte 做比較
+Hxd檔案
+
+</core_topic>
+</context_boundaries>
