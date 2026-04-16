@@ -90,3 +90,76 @@ Do not begin v2 implementation until:
 - [ ] A synthetic benchmark exists for error mode #7 (scorer keyword dependency) and #8 (saturation)
 - [ ] The first v2 slice is scoped to a single error mode with a verifiable hypothesis
 - [ ] This contract is reviewed and accepted as the comparison ground truth
+
+### Exploratory Slice Exception
+
+When a failure mode is classified ⚠️ or ❌ **and** no direct measurement can be defined
+in advance, an **instrumentation-only slice** is permitted without satisfying the full
+entry criteria above.
+
+Rules for an instrumentation slice:
+1. **Verdict-neutral:** The slice must not change suppression decisions, claim counts,
+   or any existing output. It only adds observable signals to artifacts.
+2. **Signal-first:** The goal is to produce a new observable — not to improve a metric.
+   The metric is defined *after* observing signal behavior.
+3. **Bounded:** One slice = one failure mode. No scope creep into optimization.
+4. **Grounded exit:** The slice ends when signal behavior is stable enough to define
+   a measurement. That measurement then becomes a standard v2 entry criterion.
+
+This exception exists because some problems require instrumentation before measurement
+is possible. Locking those out would conflate "unknown" with "non-existent."
+
+---
+
+## 6. v2 Slice 1 — Cross-domain Misalignment Instrumentation
+
+**Target error modes:** #6 (node-specific cross-domain suppression), #7 (scorer keyword dependency)
+
+**Hypothesis:** When a node is suppressed or flagged and its content is cross-domain
+relative to the source XML corpus, the suppression may be a keyword-matching gap rather
+than semantic hallucination. Currently this is silent — the audit shows SUPPRESS/FLAG but
+gives no signal about *why*.
+
+**Scope:** Add advisory signals to `audit.json`. No routing changes. No threshold changes.
+
+### Advisory Schema (to add to audit.json)
+
+```typescript
+domain_advisory?: {
+    risk_level: "NONE" | "LOW" | "MODERATE" | "HIGH";
+    signals: Array<
+        | "domain_misalignment_risk"      // node domain differs from corpus majority
+        | "low_semantic_overlap"           // keyword hit rate below corpus baseline
+        | "external_tool_context_gap"      // node references tool not in source graph
+        | "paraphrase_mismatch_suspected"  // AUDIT_FLAG on list/reference doc type
+    >;
+    corpus_overlap_score: number;          // keyword hit rate vs. corpus median
+    note: string;
+}
+```
+
+**Success criterion:** After instrumentation replay, it is possible to distinguish:
+- "SUPPRESS because hallucination" → advisory shows `NONE` or `LOW`
+- "SUPPRESS because keyword gap" → advisory shows `MODERATE` or `HIGH` + signal
+
+**Failure criterion:** Advisory fires indiscriminately on both suppress-types, or never
+fires when suppression occurs. Either outcome is informative — both constrain v2 design.
+
+### Replay Observation Checklist
+
+Run adversarial replay (20 nodes minimum) with this node mix:
+- Lenovo-specific (3+) — known suppress in Wave 5
+- Linux/macOS (2+) — cross-platform content
+- External tools / methodology (3+) — probe-confirmed PASS in Wave 6
+- Windows-centric control (5+) — should show NONE advisory
+- List/reference docs (3+) — expected AUDIT_FLAG + paraphrase signal
+
+For each node, record:
+- [ ] Did advisory fire? At what `risk_level`?
+- [ ] If SUPPRESS occurred, did advisory fire with `domain_misalignment_risk` or `low_semantic_overlap`?
+- [ ] If PASS occurred, did advisory correctly show `NONE`?
+- [ ] False positive rate: advisory fires on Windows-control nodes?
+- [ ] False negative rate: SUPPRESS fires without any advisory signal?
+
+The `suppress-without-signal` count is the most important outcome metric.
+A high count means the advisory is not finding what we thought it would.
