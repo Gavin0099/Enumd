@@ -1,81 +1,285 @@
 {
-  "generated_at": "2026-04-16T06:47:01.326Z",
+  "generated_at": "2026-04-16T06:53:01.868Z",
   "instrumentation_version": "1.0",
-  "nodes_processed": 23,
-  "suppress_without_signal_count": 2,
-  "signal_without_suppress_count": 8,
+  "nodes_processed": 297,
+  "suppress_without_signal_count": 22,
+  "signal_without_suppress_count": 27,
   "domain_advisory_by_type": {
-    "domain_misalignment_risk": 13,
+    "low_semantic_overlap": 3,
+    "domain_misalignment_risk": 33,
+    "external_tool_context_gap": 2,
     "paraphrase_mismatch_suspected": 2
   },
-  "suppressed_count": 9,
-  "signaled_count": 15,
+  "suppressed_count": 31,
+  "signaled_count": 36,
   "suppress_without_signal": [
     {
+      "slug": "0206-0209-交接",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 1
+    },
+    {
+      "slug": "0326-0330-交接",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0.5
+    },
+    {
+      "slug": "12261230-交接",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0
+    },
+    {
+      "slug": "20240729-82-交接事項",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0.3333333333333333
+    },
+    {
+      "slug": "研發投扺專案資料列印流程",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.8295896464646464
+    },
+    {
+      "slug": "flutter",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.7022408963585435
+    },
+    {
+      "slug": "gitlab-ee-wiki-",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.5330629174746823
+    },
+    {
+      "slug": "gl-hubdriver-v163-測試流程",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0.42546296296296293
+    },
+    {
+      "slug": "gl3590-hostbridge-code-sign",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.8223418841220698
+    },
+    {
+      "slug": "how-to-capture-standard-isp-tool-log",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.8891774891774893
+    },
+    {
+      "slug": "how-to-generate-system-log",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.9470834117573247
+    },
+    {
+      "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.5698103483817769
+    },
+    {
+      "slug": "hp-enduser-tool-",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.7221414600724947
+    },
+    {
+      "slug": "hp-enduser-tool-debug-sop",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.8044287198017036
+    },
+    {
+      "slug": "hp-enduser-tool-包裝流程",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0.8466429647350701
+    },
+    {
+      "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.8756616469022485
+    },
+    {
+      "slug": "hp_display_firmware_update_specification",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.9967320261437909
+    },
+    {
+      "slug": "hp-qc-tool-",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.7653209513073005
+    },
+    {
+      "slug": "hp-security-spec",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "corpus_overlap": 0.9888888888888889
+    },
+    {
+      "slug": "hub-auto-test-",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "corpus_overlap": 0.6147232032100453
+    },
+    {
       "slug": "sw文件撰寫sop",
-      "group": "procedure_suppressed",
+      "group": "full_wave",
       "suppression_tier": "SUPPRESS_DERIVED",
       "corpus_overlap": 0.9330586080586082
     },
     {
       "slug": "windows-11-core-isolation",
-      "group": "windows_flag",
+      "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
       "corpus_overlap": 0.779861111111111
     }
   ],
   "signal_without_suppress": [
     {
-      "slug": "saleae-logic-i2c-tool-使用說明",
-      "group": "cross_domain_pass",
+      "slug": "-lenovo-display-daisy-chain-issue",
+      "group": "full_wave",
+      "risk_level": "HIGH",
+      "signals": [
+        "low_semantic_overlap",
+        "domain_misalignment_risk",
+        "external_tool_context_gap"
+      ]
+    },
+    {
+      "slug": "lenovo-code-sign-交握流程",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ]
     },
     {
-      "slug": "zeroplus_lap-i2c-訊號錄製方式",
-      "group": "cross_domain_pass",
+      "slug": "lenovo-command-line-tool-update-flow",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ]
     },
     {
-      "slug": "xcode-architecture-設定",
-      "group": "cross_domain_pass",
+      "slug": "lenovo-daisy-chain-update-flow-",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ]
     },
     {
-      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-      "group": "cross_domain_pass",
+      "slug": "lenovo-fwupdatetool",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ]
     },
     {
-      "slug": "vibe-coding",
-      "group": "cross_domain_pass",
+      "slug": "lenovo-ldcc-update-tool-",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ]
     },
     {
-      "slug": "ssdlc-",
-      "group": "cross_domain_pass",
+      "slug": "lenovo-monitor-firmware-update-specification-v01",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ]
     },
     {
-      "slug": "teledyne-lecroy-python安裝和測試方式",
-      "group": "cross_domain_pass",
+      "slug": "lenovo-monitor-i2c-info",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "lenovo-spec-",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "lenovo-update-debug-flow-",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "lenovo-討論",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "lenovo-需求",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "mac-oci-demo-flow",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "mac-oci-dll-import-方式",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "mac-oci-tool-",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "mac-usb-20-eep-tool-開發簡介",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
@@ -83,7 +287,79 @@
     },
     {
       "slug": "outlook-封存失敗如何設定",
-      "group": "cross_domain_pass",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "saleae-logic-i2c-tool-使用說明",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "ssdlc-",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "teledyne-lecroy-python安裝和測試方式",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "vibe-coding",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "xcode-architecture-設定",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ]
+    },
+    {
+      "slug": "zeroplus_lap-i2c-訊號錄製方式",
+      "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
@@ -92,9 +368,2055 @@
   ],
   "all_results": [
     {
+      "wave": 1,
+      "slug": "-clawdbot-自主代理建置與資安防禦全紀錄",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "-generic-usb-filter-driver-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.2777777777777778,
+      "claim_count": 2
+    },
+    {
+      "wave": 1,
+      "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.29667116509221775,
+      "claim_count": 7
+    },
+    {
+      "wave": 1,
+      "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "HIGH",
+      "signals": [
+        "low_semantic_overlap",
+        "domain_misalignment_risk",
+        "external_tool_context_gap"
+      ],
+      "corpus_overlap_score": 0.2561252668708809,
+      "claim_count": 9
+    },
+    {
+      "wave": 1,
+      "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "LOW",
+      "signals": [
+        "low_semantic_overlap"
+      ],
+      "corpus_overlap_score": 0.2527149321266969,
+      "claim_count": 7
+    },
+    {
+      "wave": 1,
+      "slug": "-lenovo-display-daisy-chain-issue",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "HIGH",
+      "signals": [
+        "low_semantic_overlap",
+        "domain_misalignment_risk",
+        "external_tool_context_gap"
+      ],
+      "corpus_overlap_score": 0.2322954822954823,
+      "claim_count": 4
+    },
+    {
+      "wave": 1,
+      "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.2857142857142857,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "-投影片大綱從餵指令到定規則",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.4,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "0206-0209-交接",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 1,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "0326-0330-交接",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "12261230-交接",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "2021-今年重點目標",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.3702387653626043,
+      "claim_count": 6
+    },
+    {
+      "wave": 1,
+      "slug": "2021部門創新提案",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8200000000000001,
+      "claim_count": 5
+    },
+    {
+      "wave": 1,
+      "slug": "20240729-82-交接事項",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.3333333333333333,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "2024部門創新提案",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.13333333333333333,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "2025-519523-交接事項",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9221354166666668,
+      "claim_count": 32
+    },
+    {
+      "wave": 1,
+      "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7863910533910533,
+      "claim_count": 25
+    },
+    {
+      "wave": 1,
+      "slug": "2025-工作會報",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.3888392857142857,
+      "claim_count": 8
+    },
+    {
+      "wave": 1,
+      "slug": "2025h2-報告",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8342592592592593,
+      "claim_count": 6
+    },
+    {
+      "wave": 1,
+      "slug": "3rd-party-code-signing-specification-ecdsa",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7177489177489178,
+      "claim_count": 11
+    },
+    {
+      "wave": 1,
+      "slug": "3rd-party-code-signing-specification-ecdsaen-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.724534821903243,
+      "claim_count": 13
+    },
+    {
+      "wave": 1,
+      "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5825654202847187,
+      "claim_count": 9
+    },
+    {
+      "wave": 1,
+      "slug": "ai-協作開發框架定義規則的開發模式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "apple-command-line-update-instruction-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8868055555555555,
+      "claim_count": 12
+    },
+    {
+      "wave": 1,
+      "slug": "世界上最快樂的工作",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "交叉評核作業",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.557142857142857,
+      "claim_count": 3
+    },
+    {
+      "wave": 1,
+      "slug": "克服團隊領導的五大障礙-會議記錄",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "共好會議",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "判斷dll-是-x86-還是-x64",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6666666666666666,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "取消使用stdafxh-include-方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8417777398040555,
+      "claim_count": 19
+    },
+    {
+      "wave": 1,
+      "slug": "各家ui",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5198345771875184,
+      "claim_count": 11
+    },
+    {
+      "wave": 1,
+      "slug": "如何在xocde-執行-clang-format",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.553306342780027,
+      "claim_count": 13
+    },
+    {
+      "wave": 1,
+      "slug": "工作目標",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.3888888888888889,
+      "claim_count": 1
+    },
+    {
+      "wave": 1,
+      "slug": "憑證檔案",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "新人參考資料",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8076923076923077,
+      "claim_count": 2
+    },
+    {
+      "wave": 1,
+      "slug": "新架構導入新的chip-updatemt9052-方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7041278166278165,
+      "claim_count": 16
+    },
+    {
+      "wave": 1,
+      "slug": "物件導向分析與uml",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7700396825396826,
+      "claim_count": 9
+    },
+    {
+      "wave": 1,
+      "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6547619047619048,
+      "claim_count": 7
+    },
+    {
+      "wave": 1,
+      "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7625,
+      "claim_count": 4
+    },
+    {
+      "wave": 1,
+      "slug": "研發投扺專案資料列印流程",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8295896464646464,
+      "claim_count": 40
+    },
+    {
+      "wave": 1,
+      "slug": "結構-struct-的宣告與封裝和使用練習-c",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8557664557664556,
+      "claim_count": 33
+    },
+    {
+      "wave": 1,
+      "slug": "自動化測試",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.50625,
+      "claim_count": 4
+    },
+    {
+      "wave": 1,
+      "slug": "自評",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 1,
+      "claim_count": 21
+    },
+    {
+      "wave": 1,
+      "slug": "軟體一組會議記錄",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "軟體品質",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 1,
+      "slug": "遠端會議相關資料",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9400560224089636,
+      "claim_count": 17
+    },
+    {
+      "wave": 2,
+      "slug": "bu-support-相關知識",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5580613830613831,
+      "claim_count": 11
+    },
+    {
+      "wave": 2,
+      "slug": "bu5-support-update-chip-類型",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6666666666666666,
+      "claim_count": 1
+    },
+    {
+      "wave": 2,
+      "slug": "bus-hound-簡易說明",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7003607503607504,
+      "claim_count": 13
+    },
+    {
+      "wave": 2,
+      "slug": "c-11-design-pattern-uml",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7531676773273412,
+      "claim_count": 14
+    },
+    {
+      "wave": 2,
+      "slug": "c-使用c產生的dll-問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7091873404373402,
+      "claim_count": 12
+    },
+    {
+      "wave": 2,
+      "slug": "camera-透過我們驗證-code-sign",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7857026301298747,
+      "claim_count": 21
+    },
+    {
+      "wave": 2,
+      "slug": "chatgpt-temp",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6590882193284784,
+      "claim_count": 7
+    },
+    {
+      "wave": 2,
+      "slug": "chatgpt-簡介",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 1,
+      "claim_count": 5
+    },
+    {
+      "wave": 2,
+      "slug": "check-list-before-release-tool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7723214285714285,
+      "claim_count": 8
+    },
+    {
+      "wave": 2,
+      "slug": "check-windows-version",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.4,
+      "claim_count": 1
+    },
+    {
+      "wave": 2,
+      "slug": "chrome-遠端桌面設定方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7302308802308801,
+      "claim_count": 11
+    },
+    {
+      "wave": 2,
+      "slug": "clash_noise",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8280701754385964,
+      "claim_count": 5
+    },
+    {
+      "wave": 2,
+      "slug": "cli-command-line-list",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6756332518641517,
+      "claim_count": 9
+    },
+    {
+      "wave": 2,
+      "slug": "cmake-設定方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.45576821326821326,
+      "claim_count": 12
+    },
+    {
+      "wave": 2,
+      "slug": "code-sign-ecc-key",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8130530060069702,
+      "claim_count": 11
+    },
+    {
+      "wave": 2,
+      "slug": "code-sign-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7676254523848107,
+      "claim_count": 11
+    },
+    {
+      "wave": 2,
+      "slug": "code-sign-技術規格文件-整合版",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9888888888888888,
+      "claim_count": 30
+    },
+    {
+      "wave": 2,
+      "slug": "code-sign-概述",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6750763125763126,
+      "claim_count": 18
+    },
+    {
+      "wave": 2,
+      "slug": "code-sign-資源",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5647435897435897,
+      "claim_count": 6
+    },
+    {
+      "wave": 2,
+      "slug": "command-line-tool-debug-路徑",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7720853492912316,
+      "claim_count": 6
+    },
+    {
+      "wave": 2,
+      "slug": "command-line-tool-instructions",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7271696557410843,
+      "claim_count": 14
+    },
+    {
+      "wave": 2,
+      "slug": "command-line-tool-logging-method",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6699074074074074,
+      "claim_count": 9
+    },
+    {
+      "wave": 2,
+      "slug": "command-line-tool-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.3333333333333333,
+      "claim_count": 1
+    },
+    {
+      "wave": 2,
+      "slug": "command-line-uninstall-driver",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7303676217961932,
+      "claim_count": 21
+    },
+    {
+      "wave": 2,
+      "slug": "debug-前客戶取得需求資訊",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6862529831279831,
+      "claim_count": 12
+    },
+    {
+      "wave": 2,
+      "slug": "discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8734031491384432,
+      "claim_count": 12
+    },
+    {
+      "wave": 2,
+      "slug": "drawio-相關連結",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7166119888342112,
+      "claim_count": 27
+    },
+    {
+      "wave": 2,
+      "slug": "driver-刪除方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8993506493506493,
+      "claim_count": 11
+    },
+    {
+      "wave": 2,
+      "slug": "e22e24i-1st-2nd-scalar-update-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7970843121937771,
+      "claim_count": 7
+    },
+    {
+      "wave": 2,
+      "slug": "e27m-e34m-driver-install-fail",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6487103174603175,
+      "claim_count": 12
+    },
+    {
+      "wave": 2,
+      "slug": "ecc-key",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6994172494172495,
+      "claim_count": 33
+    },
+    {
+      "wave": 2,
+      "slug": "electron",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8268518518518518,
+      "claim_count": 24
+    },
+    {
+      "wave": 2,
+      "slug": "etoken-system",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7303893002422415,
+      "claim_count": 12
+    },
+    {
+      "wave": 2,
+      "slug": "etoken-system-code-view-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7382480264833206,
+      "claim_count": 17
+    },
+    {
+      "wave": 2,
+      "slug": "etoken-安全簽章系統技術說明",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9932150484041719,
+      "claim_count": 37
+    },
+    {
+      "wave": 2,
+      "slug": "faststone-capture-註冊碼-序列號-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.745444642503466,
+      "claim_count": 9
+    },
+    {
+      "wave": 2,
+      "slug": "flutter",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7022408963585435,
+      "claim_count": 17
+    },
+    {
+      "wave": 2,
+      "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9817927170868348,
+      "claim_count": 49
+    },
+    {
+      "wave": 2,
+      "slug": "genesys-logic-3rd-party-code-signing-specification-ecdsa-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7161340828185347,
+      "claim_count": 10
+    },
+    {
+      "wave": 2,
+      "slug": "genesys-logic-spec",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7833333333333333,
+      "claim_count": 3
+    },
+    {
+      "wave": 2,
+      "slug": "genesys-logic-sw-3rd-source-code-license-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6239705319308899,
+      "claim_count": 18
+    },
+    {
+      "wave": 2,
+      "slug": "genesyslogic-integrates-sdk-specification",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8904134381025138,
+      "claim_count": 14
+    },
+    {
+      "wave": 2,
+      "slug": "get-monitor-info-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5859203927385747,
+      "claim_count": 11
+    },
+    {
+      "wave": 2,
+      "slug": "git-command-list",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 1,
+      "claim_count": 7
+    },
+    {
+      "wave": 2,
+      "slug": "git-gitlab",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7204081632653061,
+      "claim_count": 7
+    },
+    {
+      "wave": 2,
+      "slug": "gitlab-ee-wiki-",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5330629174746823,
+      "claim_count": 10
+    },
+    {
+      "wave": 2,
+      "slug": "gl-3590-ecdsa-code-驗證",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9559420289855073,
+      "claim_count": 15
+    },
+    {
+      "wave": 2,
+      "slug": "gl-bin",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5185414189905333,
+      "claim_count": 17
+    },
+    {
+      "wave": 2,
+      "slug": "gl-bin-tool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7657931221398714,
+      "claim_count": 45
+    },
+    {
+      "wave": 2,
+      "slug": "gl-diagnostic-tool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 3,
+      "slug": "gl-enduser-tool-architecture-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7777541698497581,
+      "claim_count": 12
+    },
+    {
+      "wave": 3,
+      "slug": "gl-enduser-tool-for-electron",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9749404761904762,
+      "claim_count": 50
+    },
+    {
+      "wave": 3,
+      "slug": "gl-enduser-tool-instruction",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7406746031746032,
+      "claim_count": 8
+    },
+    {
+      "wave": 3,
+      "slug": "gl-enduser-tool-merge-bin-head-format",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8281979458450046,
+      "claim_count": 17
+    },
+    {
+      "wave": 3,
+      "slug": "gl-hub-code-sign-recovery-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6738816738816739,
+      "claim_count": 20
+    },
+    {
+      "wave": 3,
+      "slug": "gl-hub-software-development-kit",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6630555555555555,
+      "claim_count": 20
+    },
+    {
+      "wave": 3,
+      "slug": "gl-hubdriver-v163-測試流程",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.42546296296296293,
+      "claim_count": 6
+    },
+    {
+      "wave": 3,
+      "slug": "gl-mac-bundle-id-結論",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7952561327561326,
+      "claim_count": 12
+    },
+    {
+      "wave": 3,
+      "slug": "gl3590-code-sign-flow-hub-hostbridge",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8394318181818181,
+      "claim_count": 8
+    },
+    {
+      "wave": 3,
+      "slug": "gl3590-gl9510-code-sign",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8004550693063056,
+      "claim_count": 18
+    },
+    {
+      "wave": 3,
+      "slug": "gl3590-hostbridge-code-sign",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8223418841220698,
+      "claim_count": 20
+    },
+    {
+      "wave": 3,
+      "slug": "gl3590-s-cmd-line-tool-for-windows",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6056974391902622,
+      "claim_count": 11
+    },
+    {
+      "wave": 3,
+      "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 1,
+      "claim_count": 68
+    },
+    {
+      "wave": 3,
+      "slug": "glbin-tool-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8253625274561235,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "gldualbankfwtesttool-說明文件",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5718865767111381,
+      "claim_count": 18
+    },
+    {
+      "wave": 3,
+      "slug": "glhub-driver-instruction",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6231481481481481,
+      "claim_count": 9
+    },
+    {
+      "wave": 3,
+      "slug": "glhubupdatetoolcli-req-command-description",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9424216345903091,
+      "claim_count": 83
+    },
+    {
+      "wave": 3,
+      "slug": "gli7524-hub-isp-update-too",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9729591836734693,
+      "claim_count": 42
+    },
+    {
+      "wave": 3,
+      "slug": "glitw-vpn-client-操作說明",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.42857142857142855,
+      "claim_count": 1
+    },
+    {
+      "wave": 3,
+      "slug": "helper-utility-librarydll",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7201384085999472,
+      "claim_count": 13
+    },
+    {
+      "wave": 3,
+      "slug": "hid-code-sign-update-rule",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8324503286162951,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "hid-code-sign-記錄",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9053526813743531,
+      "claim_count": 25
+    },
+    {
+      "wave": 3,
+      "slug": "hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8480810855810856,
+      "claim_count": 52
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-bound-target-device",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8518939393939393,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-capture-standard-isp-tool-log",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8891774891774893,
+      "claim_count": 11
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-generate-system-log",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9470834117573247,
+      "claim_count": 46
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-grab-debugview-log",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.48373015873015873,
+      "claim_count": 6
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-grab-hp-command-tool-log-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6233333333333333,
+      "claim_count": 5
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-grab-hp-enduser-tool-log-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7917748917748917,
+      "claim_count": 11
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-grab-hp-isp-tool-log",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.720806623931624,
+      "claim_count": 8
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-grab-isp-tool-log-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8758194186765617,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-grab-log",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7819444444444444,
+      "claim_count": 8
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5698103483817769,
+      "claim_count": 7
+    },
+    {
+      "wave": 3,
+      "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.48333333333333334,
+      "claim_count": 6
+    },
+    {
+      "wave": 3,
+      "slug": "hp-534pm-fail-log",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7462045362045361,
+      "claim_count": 15
+    },
+    {
+      "wave": 3,
+      "slug": "hp-549pm-dump-hub-flash-sop",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6813686585745408,
+      "claim_count": 12
+    },
+    {
+      "wave": 3,
+      "slug": "hp-724-pu-firmware-更新流程與-ini-設定說明文件",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8428138528138527,
+      "claim_count": 20
+    },
+    {
+      "wave": 3,
+      "slug": "hp-command-line-tool-logging-method",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8527537938252223,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "hp-command-line-tool-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6153846153846154,
+      "claim_count": 1
+    },
+    {
+      "wave": 3,
+      "slug": "hp-display-firmware-specification-v11",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5793816137566138,
+      "claim_count": 12
+    },
+    {
+      "wave": 3,
+      "slug": "hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7,
+      "claim_count": 1
+    },
+    {
+      "wave": 3,
+      "slug": "hp-end-user-tool-packing-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9498299319727892,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "hp-end-user-tool-封裝方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7916666666666667,
+      "claim_count": 14
+    },
+    {
+      "wave": 3,
+      "slug": "hp-enduser-tool-",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7221414600724947,
+      "claim_count": 29
+    },
+    {
+      "wave": 3,
+      "slug": "hp-enduser-tool-debug-sop",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8044287198017036,
+      "claim_count": 16
+    },
+    {
+      "wave": 3,
+      "slug": "hp-enduser-tool-包裝流程",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8466429647350701,
+      "claim_count": 12
+    },
+    {
+      "wave": 3,
+      "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8756616469022485,
+      "claim_count": 42
+    },
+    {
+      "wave": 3,
+      "slug": "hp-good-place-524pu-scaler-update-fail",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6694623684852012,
+      "claim_count": 12
+    },
+    {
+      "wave": 3,
+      "slug": "hp-hemiz34c-cpu3-code-sign-驗證問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7153660065424772,
+      "claim_count": 17
+    },
+    {
+      "wave": 3,
+      "slug": "hp_display_firmware_update_specification",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9967320261437909,
+      "claim_count": 51
+    },
+    {
+      "wave": 4,
+      "slug": "hp-hub-code-sign-bin-format",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.76491848991849,
+      "claim_count": 6
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-hub-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9265246449456976,
+      "claim_count": 19
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-hub-update-flowhid",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8407941410229738,
+      "claim_count": 13
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-mask-code-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7108225108225108,
+      "claim_count": 11
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7139030612244897,
+      "claim_count": 28
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-rollback-hub-firmware-flowu32",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7933621933621934,
+      "claim_count": 21
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-special-case-update-method",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5972222222222222,
+      "claim_count": 5
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-update-hub-firmware-flowz24m",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7122557997557997,
+      "claim_count": 20
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-update-速度問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5818942961800104,
+      "claim_count": 7
+    },
+    {
+      "wave": 4,
+      "slug": "hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8382127192982456,
+      "claim_count": 8
+    },
+    {
+      "wave": 4,
+      "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7359036796536796,
+      "claim_count": 16
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-2023-schedule-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5,
+      "claim_count": 1
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-2025-schedule-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-code-sign-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9259867016399692,
+      "claim_count": 48
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-isp-tool-開發和驗證方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7895143663526019,
+      "claim_count": 32
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-rtk-audio-update-fail-原因",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7741390513320338,
+      "claim_count": 9
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-scaler-chip-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8,
+      "claim_count": 1
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-scaler-chip-資料",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6666666666666666,
+      "claim_count": 1
+    },
+    {
+      "wave": 4,
+      "slug": "hp-monitor-test-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8296254073284969,
+      "claim_count": 26
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-app",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.708478776125835,
+      "claim_count": 20
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-dll",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8767644392644391,
+      "claim_count": 12
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-tool-ui-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9101785714285713,
+      "claim_count": 40
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-tool-工作彙整",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6634559884559885,
+      "claim_count": 11
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-tool-現行架構解析",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6666666666666666,
+      "claim_count": 3
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9903277183889428,
+      "claim_count": 147
+    },
+    {
+      "wave": 4,
+      "slug": "hp-oci-資料",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7949252756511472,
+      "claim_count": 21
+    },
+    {
+      "wave": 4,
+      "slug": "hp-project-store-forward-fw-update-specification",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9610303717446573,
+      "claim_count": 28
+    },
+    {
+      "wave": 4,
+      "slug": "hp-qc-tool-",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7653209513073005,
+      "claim_count": 30
+    },
+    {
+      "wave": 4,
+      "slug": "hp-rtk-scaler-code-sign",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6726686507936508,
+      "claim_count": 16
+    },
+    {
+      "wave": 4,
+      "slug": "hp-scheduled-update-flow-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.777579365079365,
+      "claim_count": 18
+    },
+    {
+      "wave": 4,
+      "slug": "hp-security-spec",
+      "group": "full_wave",
+      "suppression_tier": "AUDIT_FLAG",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9888888888888889,
+      "claim_count": 28
+    },
+    {
+      "wave": 4,
+      "slug": "hp-security-spec-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9840336134453781,
+      "claim_count": 17
+    },
+    {
+      "wave": 4,
+      "slug": "hp-silent-install-project-support-list",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6698412698412698,
+      "claim_count": 12
+    },
+    {
+      "wave": 4,
+      "slug": "hp-silent-mode-tool-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7777777777777778,
+      "claim_count": 1
+    },
+    {
+      "wave": 4,
+      "slug": "hub-2020工作事項",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7015194681861348,
+      "claim_count": 9
+    },
+    {
+      "wave": 4,
+      "slug": "hub-auto-test-",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6147232032100453,
+      "claim_count": 12
+    },
+    {
+      "wave": 4,
+      "slug": "hub-chip-資訊",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 4,
+      "slug": "hub-driver-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5,
+      "claim_count": 1
+    },
+    {
+      "wave": 4,
+      "slug": "hub-driver-debugging-method-csr",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7520604395604396,
+      "claim_count": 13
+    },
+    {
+      "wave": 4,
+      "slug": "hub-driver-判斷方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6970238095238095,
+      "claim_count": 4
+    },
+    {
+      "wave": 4,
+      "slug": "hub-driver-除錯方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8030758457229045,
+      "claim_count": 17
+    },
+    {
+      "wave": 4,
+      "slug": "hub-firmware-update-tool-command-line-list",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9160177404295051,
+      "claim_count": 85
+    },
+    {
+      "wave": 4,
+      "slug": "hub-fw-bug",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7494129820546824,
+      "claim_count": 26
+    },
+    {
+      "wave": 4,
+      "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.931697081168718,
+      "claim_count": 26
+    },
+    {
+      "wave": 4,
+      "slug": "hub-hid-get-string-descriptor-status",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6612433862433861,
+      "claim_count": 6
+    },
+    {
+      "wave": 4,
+      "slug": "hub-mp-tool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5807292707292708,
+      "claim_count": 25
+    },
+    {
+      "wave": 4,
+      "slug": "hub-project-string-定義",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5714285714285714,
+      "claim_count": 1
+    },
+    {
+      "wave": 4,
+      "slug": "hub-virtual-device-stress-test-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8617484367484366,
+      "claim_count": 22
+    },
+    {
+      "wave": 4,
+      "slug": "hubdriverinstaller-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8782051282051282,
+      "claim_count": 13
+    },
+    {
+      "wave": 4,
+      "slug": "hxd-計算checksum方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5384615384615384,
+      "claim_count": 1
+    },
+    {
+      "wave": 5,
+      "slug": "ikv-tool-相關mail資料",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7676666666666667,
+      "claim_count": 10
+    },
+    {
+      "wave": 5,
+      "slug": "inno-setup-script",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7766666666666667,
+      "claim_count": 25
+    },
+    {
+      "wave": 5,
+      "slug": "io-data-安全性與開發規範清單-security-development-requirements",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.652260101010101,
+      "claim_count": 12
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-code-sign-交握流程",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.9250032840722497,
+      "claim_count": 25
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-command-line-tool-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8193310422961123,
+      "claim_count": 14
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-daisy-chain-update-flow-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 1,
+      "claim_count": 38
+    },
+    {
       "wave": 5,
       "slug": "lenovo-dmc",
-      "group": "cross_domain_suppressed",
+      "group": "full_wave",
       "suppression_tier": "SUPPRESS_DERIVED",
       "risk_level": "LOW",
       "signals": [
@@ -105,32 +2427,56 @@
     },
     {
       "wave": 5,
-      "slug": "lenovo-one-key-update-tool-",
-      "group": "cross_domain_suppressed",
-      "suppression_tier": "SUPPRESS_DERIVED",
+      "slug": "lenovo-fwupdatetool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ],
-      "corpus_overlap_score": 0.8350583759674669,
-      "claim_count": 11
+      "corpus_overlap_score": 0.7790573805279689,
+      "claim_count": 17
     },
     {
       "wave": 5,
-      "slug": "linux-usb-hid-description",
-      "group": "cross_domain_suppressed",
-      "suppression_tier": "SUPPRESS_DERIVED",
+      "slug": "lenovo-ldcc-update-tool-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ],
-      "corpus_overlap_score": 0.6212157287157287,
-      "claim_count": 8
+      "corpus_overlap_score": 0.8577008928571429,
+      "claim_count": 32
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-monitor-firmware-update-specification-v01",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.633568868407578,
+      "claim_count": 5
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-monitor-i2c-info",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8077667430608608,
+      "claim_count": 17
     },
     {
       "wave": 5,
       "slug": "lenovo-offline-update-flow-",
-      "group": "cross_domain_flag",
+      "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
       "risk_level": "LOW",
       "signals": [
@@ -141,8 +2487,68 @@
     },
     {
       "wave": 5,
+      "slug": "lenovo-one-key-update-tool-",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8350583759674669,
+      "claim_count": 11
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-spec-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.6774588256355173,
+      "claim_count": 7
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-update-debug-flow-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.6228937728937729,
+      "claim_count": 12
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-討論",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.4854575163398693,
+      "claim_count": 4
+    },
+    {
+      "wave": 5,
+      "slug": "lenovo-需求",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.595288392163392,
+      "claim_count": 24
+    },
+    {
+      "wave": 5,
       "slug": "linux-mac-共code-",
-      "group": "cross_domain_flag",
+      "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
       "risk_level": "LOW",
       "signals": [
@@ -152,103 +2558,341 @@
       "claim_count": 31
     },
     {
-      "wave": 6,
-      "slug": "tvsuthinkvantage-system-update-fwupdate需求",
-      "group": "cross_domain_pass",
+      "wave": 5,
+      "slug": "linux-usb-hid-description",
+      "group": "full_wave",
+      "suppression_tier": "SUPPRESS_DERIVED",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.6212157287157287,
+      "claim_count": 8
+    },
+    {
+      "wave": 5,
+      "slug": "log分類",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "NONE",
       "signals": [],
-      "corpus_overlap_score": 0.6652263374485595,
-      "claim_count": 9
+      "corpus_overlap_score": 0.373015873015873,
+      "claim_count": 3
     },
     {
-      "wave": 6,
-      "slug": "saleae-logic-i2c-tool-使用說明",
-      "group": "cross_domain_pass",
+      "wave": 5,
+      "slug": "low_integrity_noise",
+      "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
-      "corpus_overlap_score": 0.682719241542771,
-      "claim_count": 13
-    },
-    {
-      "wave": 6,
-      "slug": "zeroplus_lap-i2c-訊號錄製方式",
-      "group": "cross_domain_pass",
-      "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
-      "corpus_overlap_score": 0.6395477207977208,
-      "claim_count": 6
-    },
-    {
-      "wave": 6,
-      "slug": "xcode-architecture-設定",
-      "group": "cross_domain_pass",
-      "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
-      "corpus_overlap_score": 0.975,
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5814935064935065,
       "claim_count": 4
     },
     {
-      "wave": 6,
-      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-      "group": "cross_domain_pass",
+      "wave": 5,
+      "slug": "mac-command-line-tool-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 5,
+      "slug": "mac-conan-clang-tidy-設定方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7312489979156646,
+      "claim_count": 9
+    },
+    {
+      "wave": 5,
+      "slug": "mac-eep-tool",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 5,
+      "slug": "mac-framework",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9425694444444443,
+      "claim_count": 40
+    },
+    {
+      "wave": 5,
+      "slug": "mac-hub-update-tool-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.78406362545018,
+      "claim_count": 14
+    },
+    {
+      "wave": 5,
+      "slug": "mac-oci-demo-flow",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ],
-      "corpus_overlap_score": 0.762037037037037,
+      "corpus_overlap_score": 0.9342355175688507,
+      "claim_count": 6
+    },
+    {
+      "wave": 5,
+      "slug": "mac-oci-dll-import-方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.9495761743432551,
+      "claim_count": 42
+    },
+    {
+      "wave": 5,
+      "slug": "mac-oci-tool-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.7583577407441044,
+      "claim_count": 22
+    },
+    {
+      "wave": 5,
+      "slug": "mac-packages-installation-file-process",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7949847771276344,
+      "claim_count": 14
+    },
+    {
+      "wave": 5,
+      "slug": "mac-packages-installation-file-processcn",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7055512835118098,
       "claim_count": 12
     },
     {
-      "wave": 6,
-      "slug": "vibe-coding",
-      "group": "cross_domain_pass",
+      "wave": 5,
+      "slug": "mac-ui-客制化修改-以hostbridge-為例",
+      "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
-      "corpus_overlap_score": 0.8171729611384784,
-      "claim_count": 29
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8184289910296102,
+      "claim_count": 19
     },
     {
-      "wave": 6,
-      "slug": "ssdlc-",
-      "group": "cross_domain_pass",
+      "wave": 5,
+      "slug": "mac-usb-20-eep-tool-開發簡介",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ],
-      "corpus_overlap_score": 0.8845238095238096,
-      "claim_count": 24
+      "corpus_overlap_score": 0.9719780219780219,
+      "claim_count": 78
     },
     {
-      "wave": 6,
-      "slug": "teledyne-lecroy-python安裝和測試方式",
-      "group": "cross_domain_pass",
+      "wave": 5,
+      "slug": "mac-權限問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7951618556881715,
+      "claim_count": 11
+    },
+    {
+      "wave": 5,
+      "slug": "mac-顯示-framework-name-方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5714285714285714,
+      "claim_count": 1
+    },
+    {
+      "wave": 5,
+      "slug": "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "LOW",
       "signals": [
         "domain_misalignment_risk"
       ],
-      "corpus_overlap_score": 0.7866966366966367,
+      "corpus_overlap_score": 0.8980696386946387,
+      "claim_count": 52
+    },
+    {
+      "wave": 5,
+      "slug": "mbedtls-source-code",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7874118165784831,
+      "claim_count": 18
+    },
+    {
+      "wave": 5,
+      "slug": "mdgg-mask-code-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8125,
+      "claim_count": 1
+    },
+    {
+      "wave": 5,
+      "slug": "merge-code-tool-help",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9791497060153775,
+      "claim_count": 67
+    },
+    {
+      "wave": 5,
+      "slug": "mfc-ui-因為windwos-縮放比例導致ui錯位解決方法",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5770833333333333,
+      "claim_count": 4
+    },
+    {
+      "wave": 5,
+      "slug": "monitor-debug-參考資料",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.756388807516627,
+      "claim_count": 21
+    },
+    {
+      "wave": 5,
+      "slug": "monitor-開案內容",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8430082469904007,
+      "claim_count": 18
+    },
+    {
+      "wave": 5,
+      "slug": "monitorvcp",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.593460363785567,
       "claim_count": 9
+    },
+    {
+      "wave": 5,
+      "slug": "mt9052",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 5,
+      "slug": "mtk-3rd-send-usb-hub-isp-event",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6666666666666666,
+      "claim_count": 1
+    },
+    {
+      "wave": 5,
+      "slug": "mtk-scaler-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8175973877893056,
+      "claim_count": 26
+    },
+    {
+      "wave": 5,
+      "slug": "multi-isp-user-guide",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0,
+      "claim_count": 0
+    },
+    {
+      "wave": 5,
+      "slug": "notion-使用方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.854099025974026,
+      "claim_count": 8
+    },
+    {
+      "wave": 5,
+      "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6107903029632905,
+      "claim_count": 10
+    },
+    {
+      "wave": 5,
+      "slug": "osdmanager",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9883720930232558,
+      "claim_count": 43
     },
     {
       "wave": 6,
       "slug": "outlook-封存失敗如何設定",
-      "group": "cross_domain_pass",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "LOW",
       "signals": [
@@ -259,8 +2903,204 @@
     },
     {
       "wave": 6,
+      "slug": "p32p-30-reset-scaler-command",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8571428571428571,
+      "claim_count": 1
+    },
+    {
+      "wave": 6,
+      "slug": "pd-typec",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.721179797169704,
+      "claim_count": 28
+    },
+    {
+      "wave": 6,
+      "slug": "pd-詢問事項",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5884615384615385,
+      "claim_count": 5
+    },
+    {
+      "wave": 6,
+      "slug": "project-string",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5555555555555556,
+      "claim_count": 1
+    },
+    {
+      "wave": 6,
+      "slug": "ps196-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8106829573934838,
+      "claim_count": 18
+    },
+    {
+      "wave": 6,
+      "slug": "realtek-scaler-isp-tool-開發流程",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9468518518518518,
+      "claim_count": 45
+    },
+    {
+      "wave": 6,
+      "slug": "richelieu-issue-description",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.826954816017316,
+      "claim_count": 16
+    },
+    {
+      "wave": 6,
+      "slug": "ricktek-7880-pd-update-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8079670329670329,
+      "claim_count": 10
+    },
+    {
+      "wave": 6,
+      "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.501984126984127,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "rtk-camera-dll問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.58843537414966,
+      "claim_count": 14
+    },
+    {
+      "wave": 6,
+      "slug": "saleae-logic-i2c-tool-使用說明",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.682719241542771,
+      "claim_count": 13
+    },
+    {
+      "wave": 6,
+      "slug": "sc-query-to-determine-the-driver-mode",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7120471014492754,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "sd-reader-sample-code-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5134707796732253,
+      "claim_count": 16
+    },
+    {
+      "wave": 6,
+      "slug": "secure-firmware-recovery",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9504347553128041,
+      "claim_count": 41
+    },
+    {
+      "wave": 6,
+      "slug": "srs-crd-輔助工具入口介面-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9733333333333333,
+      "claim_count": 25
+    },
+    {
+      "wave": 6,
+      "slug": "ssdlc-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8845238095238096,
+      "claim_count": 24
+    },
+    {
+      "wave": 6,
+      "slug": "standard-isp-tool-roll-back-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.672744271807571,
+      "claim_count": 9
+    },
+    {
+      "wave": 6,
+      "slug": "sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 1,
+      "claim_count": 24
+    },
+    {
+      "wave": 6,
+      "slug": "sw272u-抓取log方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6196820175438597,
+      "claim_count": 16
+    },
+    {
+      "wave": 6,
       "slug": "sw文件撰寫sop",
-      "group": "procedure_suppressed",
+      "group": "full_wave",
       "suppression_tier": "SUPPRESS_DERIVED",
       "risk_level": "NONE",
       "signals": [],
@@ -269,8 +3109,72 @@
     },
     {
       "wave": 6,
+      "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9894359270095383,
+      "claim_count": 68
+    },
+    {
+      "wave": 6,
+      "slug": "target-device-ini-產生器-測試",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.9542410714285714,
+      "claim_count": 16
+    },
+    {
+      "wave": 6,
+      "slug": "teledyne-lecroy-python安裝和測試方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.7866966366966367,
+      "claim_count": 9
+    },
+    {
+      "wave": 6,
+      "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8150413398091416,
+      "claim_count": 17
+    },
+    {
+      "wave": 6,
+      "slug": "tool-sign-flow",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7758422518839185,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "tri-code-command-line-tool-command-line-list",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8486134453781515,
+      "claim_count": 17
+    },
+    {
+      "wave": 6,
       "slug": "tri-code-command-list",
-      "group": "list_ref_flag",
+      "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
       "risk_level": "LOW",
       "signals": [
@@ -281,8 +3185,98 @@
     },
     {
       "wave": 6,
+      "slug": "tricode-ptester",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6666666666666666,
+      "claim_count": 1
+    },
+    {
+      "wave": 6,
+      "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6652263374485595,
+      "claim_count": 9
+    },
+    {
+      "wave": 6,
+      "slug": "u27m-scaler-update速度",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8108848667672198,
+      "claim_count": 17
+    },
+    {
+      "wave": 6,
+      "slug": "uac-permission-setting-method",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.40657894736842104,
+      "claim_count": 4
+    },
+    {
+      "wave": 6,
+      "slug": "usb-device-class",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.5290316661423927,
+      "claim_count": 17
+    },
+    {
+      "wave": 6,
+      "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7688272430184196,
+      "claim_count": 20
+    },
+    {
+      "wave": 6,
+      "slug": "usb30影響配對問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.7221543162719635,
+      "claim_count": 11
+    },
+    {
+      "wave": 6,
+      "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.6774531024531024,
+      "claim_count": 21
+    },
+    {
+      "wave": 6,
+      "slug": "usbview-grab-the-log",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8041476239618655,
+      "claim_count": 7
+    },
+    {
+      "wave": 6,
       "slug": "vendor-oci-error-code-",
-      "group": "list_ref_flag",
+      "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
       "risk_level": "LOW",
       "signals": [
@@ -293,8 +3287,72 @@
     },
     {
       "wave": 6,
+      "slug": "vibe-coding",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.8171729611384784,
+      "claim_count": 29
+    },
+    {
+      "wave": 6,
+      "slug": "visual-studio-2017-administrator-設定方式",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8063341750841749,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "visusal-stdio-sdk-設定",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8293650793650793,
+      "claim_count": 14
+    },
+    {
+      "wave": 6,
+      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.762037037037037,
+      "claim_count": 12
+    },
+    {
+      "wave": 6,
+      "slug": "w25x21cl-rdid問題",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8075215884777013,
+      "claim_count": 22
+    },
+    {
+      "wave": 6,
+      "slug": "windows-10-h2-driver-移除流程",
+      "group": "full_wave",
+      "suppression_tier": "PASS",
+      "risk_level": "NONE",
+      "signals": [],
+      "corpus_overlap_score": 0.8349747474747474,
+      "claim_count": 6
+    },
+    {
+      "wave": 6,
       "slug": "windows-11-core-isolation",
-      "group": "windows_flag",
+      "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
       "risk_level": "NONE",
       "signals": [],
@@ -303,53 +3361,57 @@
     },
     {
       "wave": 6,
-      "slug": "sc-query-to-determine-the-driver-mode",
-      "group": "windows_control",
+      "slug": "windows-command",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "NONE",
       "signals": [],
-      "corpus_overlap_score": 0.7120471014492754,
-      "claim_count": 12
+      "corpus_overlap_score": 0.5,
+      "claim_count": 1
     },
     {
       "wave": 6,
-      "slug": "secure-firmware-recovery",
-      "group": "windows_control",
+      "slug": "windows-register-語系改法",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "NONE",
       "signals": [],
-      "corpus_overlap_score": 0.9504347553128041,
-      "claim_count": 41
+      "corpus_overlap_score": 0.7065934065934065,
+      "claim_count": 7
     },
     {
       "wave": 6,
-      "slug": "tool-sign-flow",
-      "group": "windows_control",
+      "slug": "xcode-architecture-設定",
+      "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "NONE",
-      "signals": [],
-      "corpus_overlap_score": 0.7758422518839185,
-      "claim_count": 12
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.975,
+      "claim_count": 4
     },
     {
       "wave": 6,
-      "slug": "usb-device-class",
-      "group": "windows_control",
+      "slug": "z24ng3-scaler-update-時間",
+      "group": "full_wave",
       "suppression_tier": "PASS",
       "risk_level": "NONE",
       "signals": [],
-      "corpus_overlap_score": 0.5290316661423927,
-      "claim_count": 17
+      "corpus_overlap_score": 0.65625,
+      "claim_count": 1
     },
     {
       "wave": 6,
-      "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
-      "group": "windows_control",
+      "slug": "zeroplus_lap-i2c-訊號錄製方式",
+      "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "NONE",
-      "signals": [],
-      "corpus_overlap_score": 0.6774531024531024,
-      "claim_count": 21
+      "risk_level": "LOW",
+      "signals": [
+        "domain_misalignment_risk"
+      ],
+      "corpus_overlap_score": 0.6395477207977208,
+      "claim_count": 6
     }
   ]
 }
