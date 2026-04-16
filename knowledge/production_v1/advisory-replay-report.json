@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-04-16T06:53:01.868Z",
+  "generated_at": "2026-04-16T07:00:01.052Z",
   "instrumentation_version": "1.0",
   "nodes_processed": 297,
   "suppress_without_signal_count": 22,
-  "signal_without_suppress_count": 27,
+  "signal_without_suppress_count": 5,
   "domain_advisory_by_type": {
-    "low_semantic_overlap": 3,
-    "domain_misalignment_risk": 33,
-    "external_tool_context_gap": 2,
+    "low_semantic_overlap": 7,
+    "domain_misalignment_risk": 6,
+    "external_tool_context_gap": 3,
     "paraphrase_mismatch_suspected": 2
   },
   "suppressed_count": 31,
-  "signaled_count": 36,
+  "signaled_count": 14,
   "suppress_without_signal": [
     {
       "slug": "0206-0209-交接",
@@ -148,221 +148,43 @@
   ],
   "signal_without_suppress": [
     {
+      "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "group": "full_wave",
+      "risk_level": "LOW",
+      "signals": [
+        "low_semantic_overlap"
+      ]
+    },
+    {
       "slug": "-lenovo-display-daisy-chain-issue",
       "group": "full_wave",
-      "risk_level": "HIGH",
+      "risk_level": "LOW",
       "signals": [
-        "low_semantic_overlap",
-        "domain_misalignment_risk",
-        "external_tool_context_gap"
+        "low_semantic_overlap"
       ]
     },
     {
-      "slug": "lenovo-code-sign-交握流程",
+      "slug": "2021-今年重點目標",
       "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
-        "domain_misalignment_risk"
+        "low_semantic_overlap"
       ]
     },
     {
-      "slug": "lenovo-command-line-tool-update-flow",
+      "slug": "2025-工作會報",
       "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
-        "domain_misalignment_risk"
+        "low_semantic_overlap"
       ]
     },
     {
-      "slug": "lenovo-daisy-chain-update-flow-",
+      "slug": "log分類",
       "group": "full_wave",
       "risk_level": "LOW",
       "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-fwupdatetool",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-ldcc-update-tool-",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-monitor-firmware-update-specification-v01",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-monitor-i2c-info",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-spec-",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-update-debug-flow-",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-討論",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "lenovo-需求",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "mac-oci-demo-flow",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "mac-oci-dll-import-方式",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "mac-oci-tool-",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "mac-usb-20-eep-tool-開發簡介",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "outlook-封存失敗如何設定",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "saleae-logic-i2c-tool-使用說明",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "ssdlc-",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "teledyne-lecroy-python安裝和測試方式",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "vibe-coding",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "xcode-architecture-設定",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ]
-    },
-    {
-      "slug": "zeroplus_lap-i2c-訊號錄製方式",
-      "group": "full_wave",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
+        "low_semantic_overlap"
       ]
     }
   ],
@@ -392,8 +214,10 @@
       "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "NONE",
-      "signals": [],
+      "risk_level": "LOW",
+      "signals": [
+        "low_semantic_overlap"
+      ],
       "corpus_overlap_score": 0.29667116509221775,
       "claim_count": 7
     },
@@ -402,11 +226,10 @@
       "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
       "group": "full_wave",
       "suppression_tier": "AUDIT_FLAG",
-      "risk_level": "HIGH",
+      "risk_level": "MODERATE",
       "signals": [
         "low_semantic_overlap",
-        "domain_misalignment_risk",
-        "external_tool_context_gap"
+        "domain_misalignment_risk"
       ],
       "corpus_overlap_score": 0.2561252668708809,
       "claim_count": 9
@@ -428,11 +251,9 @@
       "slug": "-lenovo-display-daisy-chain-issue",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "HIGH",
+      "risk_level": "LOW",
       "signals": [
-        "low_semantic_overlap",
-        "domain_misalignment_risk",
-        "external_tool_context_gap"
+        "low_semantic_overlap"
       ],
       "corpus_overlap_score": 0.2322954822954823,
       "claim_count": 4
@@ -492,8 +313,10 @@
       "slug": "2021-今年重點目標",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "NONE",
-      "signals": [],
+      "risk_level": "LOW",
+      "signals": [
+        "low_semantic_overlap"
+      ],
       "corpus_overlap_score": 0.3702387653626043,
       "claim_count": 6
     },
@@ -552,8 +375,10 @@
       "slug": "2025-工作會報",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "NONE",
-      "signals": [],
+      "risk_level": "LOW",
+      "signals": [
+        "low_semantic_overlap"
+      ],
       "corpus_overlap_score": 0.3888392857142857,
       "claim_count": 8
     },
@@ -2382,10 +2207,8 @@
       "slug": "lenovo-code-sign-交握流程",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.9250032840722497,
       "claim_count": 25
     },
@@ -2394,10 +2217,8 @@
       "slug": "lenovo-command-line-tool-update-flow",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8193310422961123,
       "claim_count": 14
     },
@@ -2406,10 +2227,8 @@
       "slug": "lenovo-daisy-chain-update-flow-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 1,
       "claim_count": 38
     },
@@ -2418,9 +2237,10 @@
       "slug": "lenovo-dmc",
       "group": "full_wave",
       "suppression_tier": "SUPPRESS_DERIVED",
-      "risk_level": "LOW",
+      "risk_level": "MODERATE",
       "signals": [
-        "domain_misalignment_risk"
+        "domain_misalignment_risk",
+        "external_tool_context_gap"
       ],
       "corpus_overlap_score": 0.8361852622183757,
       "claim_count": 19
@@ -2430,10 +2250,8 @@
       "slug": "lenovo-fwupdatetool",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.7790573805279689,
       "claim_count": 17
     },
@@ -2442,10 +2260,8 @@
       "slug": "lenovo-ldcc-update-tool-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8577008928571429,
       "claim_count": 32
     },
@@ -2454,10 +2270,8 @@
       "slug": "lenovo-monitor-firmware-update-specification-v01",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.633568868407578,
       "claim_count": 5
     },
@@ -2466,10 +2280,8 @@
       "slug": "lenovo-monitor-i2c-info",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8077667430608608,
       "claim_count": 17
     },
@@ -2490,9 +2302,10 @@
       "slug": "lenovo-one-key-update-tool-",
       "group": "full_wave",
       "suppression_tier": "SUPPRESS_DERIVED",
-      "risk_level": "LOW",
+      "risk_level": "MODERATE",
       "signals": [
-        "domain_misalignment_risk"
+        "domain_misalignment_risk",
+        "external_tool_context_gap"
       ],
       "corpus_overlap_score": 0.8350583759674669,
       "claim_count": 11
@@ -2502,10 +2315,8 @@
       "slug": "lenovo-spec-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.6774588256355173,
       "claim_count": 7
     },
@@ -2514,10 +2325,8 @@
       "slug": "lenovo-update-debug-flow-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.6228937728937729,
       "claim_count": 12
     },
@@ -2526,10 +2335,8 @@
       "slug": "lenovo-討論",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.4854575163398693,
       "claim_count": 4
     },
@@ -2538,10 +2345,8 @@
       "slug": "lenovo-需求",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.595288392163392,
       "claim_count": 24
     },
@@ -2562,9 +2367,10 @@
       "slug": "linux-usb-hid-description",
       "group": "full_wave",
       "suppression_tier": "SUPPRESS_DERIVED",
-      "risk_level": "LOW",
+      "risk_level": "MODERATE",
       "signals": [
-        "domain_misalignment_risk"
+        "domain_misalignment_risk",
+        "external_tool_context_gap"
       ],
       "corpus_overlap_score": 0.6212157287157287,
       "claim_count": 8
@@ -2574,8 +2380,10 @@
       "slug": "log分類",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "NONE",
-      "signals": [],
+      "risk_level": "LOW",
+      "signals": [
+        "low_semantic_overlap"
+      ],
       "corpus_overlap_score": 0.373015873015873,
       "claim_count": 3
     },
@@ -2644,10 +2452,8 @@
       "slug": "mac-oci-demo-flow",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.9342355175688507,
       "claim_count": 6
     },
@@ -2656,10 +2462,8 @@
       "slug": "mac-oci-dll-import-方式",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.9495761743432551,
       "claim_count": 42
     },
@@ -2668,10 +2472,8 @@
       "slug": "mac-oci-tool-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.7583577407441044,
       "claim_count": 22
     },
@@ -2710,10 +2512,8 @@
       "slug": "mac-usb-20-eep-tool-開發簡介",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.9719780219780219,
       "claim_count": 78
     },
@@ -2742,10 +2542,8 @@
       "slug": "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8980696386946387,
       "claim_count": 52
     },
@@ -2894,10 +2692,8 @@
       "slug": "outlook-封存失敗如何設定",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.875,
       "claim_count": 4
     },
@@ -3006,10 +2802,8 @@
       "slug": "saleae-logic-i2c-tool-使用說明",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.682719241542771,
       "claim_count": 13
     },
@@ -3058,10 +2852,8 @@
       "slug": "ssdlc-",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8845238095238096,
       "claim_count": 24
     },
@@ -3080,10 +2872,8 @@
       "slug": "sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 1,
       "claim_count": 24
     },
@@ -3132,10 +2922,8 @@
       "slug": "teledyne-lecroy-python安裝和測試方式",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.7866966366966367,
       "claim_count": 9
     },
@@ -3144,10 +2932,8 @@
       "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8150413398091416,
       "claim_count": 17
     },
@@ -3290,10 +3076,8 @@
       "slug": "vibe-coding",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.8171729611384784,
       "claim_count": 29
     },
@@ -3322,10 +3106,8 @@
       "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.762037037037037,
       "claim_count": 12
     },
@@ -3384,10 +3166,8 @@
       "slug": "xcode-architecture-設定",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.975,
       "claim_count": 4
     },
@@ -3406,10 +3186,8 @@
       "slug": "zeroplus_lap-i2c-訊號錄製方式",
       "group": "full_wave",
       "suppression_tier": "PASS",
-      "risk_level": "LOW",
-      "signals": [
-        "domain_misalignment_risk"
-      ],
+      "risk_level": "NONE",
+      "signals": [],
       "corpus_overlap_score": 0.6395477207977208,
       "claim_count": 6
     }

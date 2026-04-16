@@ -73,12 +73,10 @@ const LIST_REFERENCE_DOC_PATTERNS: RegExp[] = [
 // Minimum claims to compute a meaningful overlap score
 const MIN_CLAIMS_FOR_OVERLAP = 3;
 
-// Corpus overlap threshold — below this, claims are weakly keyword-anchored
-// relative to the average v1 node. Tuned conservatively to avoid over-signaling.
-const LOW_OVERLAP_THRESHOLD = 0.28;
-
-// External tool context gap: cross-domain slug + source overlap even lower
-const CONTEXT_GAP_THRESHOLD = 0.35;
+// Corpus overlap threshold — below this, claims are weakly keyword-anchored.
+// Set above corpus p10 (0.39) to catch genuinely sparse nodes without
+// over-firing on the high-overlap majority (corpus median 0.75).
+const LOW_OVERLAP_THRESHOLD = 0.40;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Corpus Overlap Scorer
@@ -126,15 +124,26 @@ export function computeDomainAdvisory(
     }
 
     // Signals 2 & 3: domain_misalignment_risk + external_tool_context_gap
-    // Check slug against cross-domain patterns.
+    //
+    // Calibration finding (all-waves, 297 nodes): slug-pattern matching alone
+    // over-signals — 27 cross-domain PASS nodes received domain_misalignment_risk
+    // despite synthesizing correctly. The signal only becomes actionable when
+    // suppression/flag evidence is also present, indicating the cross-domain
+    // content caused a scoring failure rather than a legitimate synthesis outcome.
+    //
+    // Rule: fire only when cross-domain slug + adverse verdict.
+    // Signal gradation:
+    //   domain_misalignment_risk  — cross-domain + any adverse verdict (AUDIT_FLAG or SUPPRESS_DERIVED)
+    //   external_tool_context_gap — cross-domain + full suppression (SUPPRESS_DERIVED only)
+    //                               indicates keyword gap likely caused the suppression
     const isCrossDomain = CROSS_DOMAIN_SLUG_PATTERNS.some(p => p.test(slug));
-    if (isCrossDomain) {
+    const isSuppressed = suppression.tier === "SUPPRESS_DERIVED" || suppression.tier === "AUDIT_FLAG";
+    if (isCrossDomain && isSuppressed) {
         signals.push("domain_misalignment_risk");
 
-        // If source XML also doesn't provide much context for this domain
-        // (i.e., the cross-domain content is not meaningfully represented
-        // in the corpus), escalate to external_tool_context_gap.
-        if (corpus_overlap_score < CONTEXT_GAP_THRESHOLD) {
+        // Escalate: full suppression on cross-domain node is the strongest
+        // indicator that keyword dependency caused the failure (not hallucination).
+        if (suppression.tier === "SUPPRESS_DERIVED") {
             signals.push("external_tool_context_gap");
         }
     }
