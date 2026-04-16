@@ -41,15 +41,26 @@ const MIN_CLAIM_LENGTH = 10;
  * Extend this list if new code/config noise patterns are observed.
  */
 const SANITIZATION_PATTERNS: RegExp[] = [
-    /:::\w/,                                                      // Mermaid node class (:::inputNode)
-    /^subgraph[\s\[]/,                                            // Mermaid subgraph block
-    /^\s*-->/,                                                    // Mermaid edge continuation
-    /^(graph|flowchart)\s+(TD|LR|RL|BT|TB)\b/,                   // Mermaid graph declaration
-    /^(sequenceDiagram|classDiagram|gantt|pie|erDiagram)\b/,      // Mermaid diagram type
-    /^%%/,                                                        // Mermaid comment (%% text)
-    /^classDef\s+\w/,                                             // Mermaid CSS class (classDef name fill:...)
-    /^[A-Za-z_]\w*\s+-->/,                                       // Mermaid edge (NodeId --> NodeId)
-    /^[A-Za-z_]\w*\s+--\s*[">]/,                                 // Mermaid labeled edge (NodeId -- "label")
+    // ── Mermaid (all waves) ─────────────────────────────────────────────────
+    /:::\w/,                                                      // node class annotation (:::inputNode)
+    /^subgraph[\s\[]/,                                            // subgraph block
+    /^\s*-->/,                                                    // edge continuation
+    /^(graph|flowchart)\s+(TD|LR|RL|BT|TB)\b/,                   // graph declaration
+    /^(sequenceDiagram|classDiagram|gantt|pie|erDiagram)\b/,      // diagram type
+    /^%%/,                                                        // comment
+    /^classDef\s+\w/,                                             // CSS class definition
+    /^[A-Za-z_]\w*\s+-->/,                                       // edge (NodeId --> NodeId)
+    /^[A-Za-z_]\w*\s+--\s*[">]/,                                 // labeled edge
+    /^style\s+\w+\s+fill:/,                                       // inline node style
+    /^[A-Za-z_]\w*[\{\[\(]["<]/,                                  // node with HTML label (shapes)
+    /^class\s+[\w,]+\s+\w+$/,                                     // batch class assignment
+    /^linkStyle\s+[\d,\s]+\w/,                                    // link style override
+    // ── Operational fragments ───────────────────────────────────────────────
+    /^\w+\.exe\s+"[\/\-]/,                                        // CLI invocation (Tool.exe "/flag=...")
+    /^\$[A-Za-z_]\w*\s*=/,                                        // PowerShell variable assignment
+    /^\(\d+\)\s+\w/,                                              // USB device enumeration "(52) Device"
+    /^\d+\.\d+\s+(OUT|IN|SETUP|SPLIT)\b/,                         // protocol capture data
+    /^Device\s+Phase\s+Data/,                                     // capture log table header
 ];
 
 function isSanitized(text: string): boolean {

@@ -138,7 +138,39 @@ function classifyLine(
         /^%%/.test(trimmed) ||
         /^classDef\s+\w/.test(trimmed) ||
         /^[A-Za-z_]\w*\s+-->/.test(trimmed) ||
-        /^[A-Za-z_]\w*\s+--\s*[">]/.test(trimmed)
+        /^[A-Za-z_]\w*\s+--\s*[">]/.test(trimmed) ||
+        // ── Mermaid wave-3 additions ──────────────────────────────────────
+        // style NodeId fill:...   → inline node style override
+        /^style\s+\w+\s+fill:/.test(trimmed) ||
+        // NodeId{"<b>...</b>"}    → diamond node with HTML label
+        // NodeId["<b>...</b>"]    → rect node with HTML label
+        // NodeId("<b>...</b>")    → round node with HTML label
+        // Matches: identifier immediately followed by {", [" or ("
+        /^[A-Za-z_]\w*[\{\[\(]["<]/.test(trimmed) ||
+        // class NodeA,NodeB className → batch class assignment
+        /^class\s+[\w,]+\s+\w+$/.test(trimmed) ||
+        // linkStyle 7,8 dependency → link style override
+        /^linkStyle\s+[\d,\s]+\w/.test(trimmed)
+    ) {
+        return "Structural";
+    }
+    // ──────────────────────────────────────────────────────────────────────
+
+    // ── Operational fragments (CLI / raw data) ────────────────────────────
+    // These are valid document content but are NOT semantic claims.
+    // They cannot be verified against source XML in a meaningful way.
+    //
+    //   Tool.exe "/flag=..."     → CLI invocation line (entire line is a command)
+    //   $Variable = ...          → PowerShell variable assignment
+    //   (52) Device Name         → USB device ID enumeration line
+    //   50.0  OUT    40 ab ...   → raw protocol capture data
+    //   Device  Phase  Data ...  → table header row in a capture log
+    if (
+        /^\w+\.exe\s+"[\/\-]/.test(trimmed) ||
+        /^\$[A-Za-z_]\w*\s*=/.test(trimmed) ||
+        /^\(\d+\)\s+\w/.test(trimmed) ||
+        /^\d+\.\d+\s+(OUT|IN|SETUP|SPLIT)\b/.test(trimmed) ||
+        /^Device\s+Phase\s+Data/.test(trimmed)
     ) {
         return "Structural";
     }
