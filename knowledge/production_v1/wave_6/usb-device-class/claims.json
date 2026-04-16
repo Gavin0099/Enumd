@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "usb-device-class",
+    "claim": "1. **Human Interface Device (HID)**: 包括滑鼠、鍵盤、遊戲搖桿等人機介面裝置。主機接收來自這些裝置的輸入資料,並快速反應以提供良好的使用者體驗。HID 裝置使用定義好的資料結構,稱為「報告(Report)」,來交換資料。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "2. **Physical Interface Device (PID)**: 定義了產生力回饋的輸入裝置,如遊戲搖桿。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "3. **Monitor Control**: 定義顯示器的使用者控制和電源管理功能。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "4. **Power Device**: 定義了 UPS 和可監控電池的功能。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "5. **Point of Sale (POS)**: 定義條碼機、秤重裝置和磁帶讀卡機等 POS 裝置的功能。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "a. 所有資料交換都儲存在固定長度的結構,稱為「報告(Report)」,主機透過控制傳輸或中斷傳輸來要求或接收報告。[`HID Device Capabilities`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "b. HID 裝置必須有一個中斷 IN 端點,用來送出輸入報告(Input Reports)。[`HID Device Capabilities`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "c. 一個 HID 裝置最多只能有一個中斷 IN 和 OUT 端點,除非是複合性裝置(Composite Device)。[`HID Device Capabilities`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "d. 中斷 IN 端點送資料給主機的時間是不可預期的,主機必須透過輪詢(Polling)或 USB 3.0 SuperSpeed 的 ERDY 交易封包來獲取資料。[`HID Device Capabilities`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "e. 資料交換的速率有差異:慢速和中斷端點最高 800 byte/s,全速端點最高 64 KByte/s,預設機能介面端點最高 64 KByte/s。[`HID Device Capabilities`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "HID 裝置使用「報告(Report)」來交換資料,報告可能是簡單的位元緩衝區,也可能是複雜的項目組合。報告敘述表格(Report Description)會告知主機和裝置通信所需的資訊:",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "- Logical Minimum & Logical Maximum,指定報告數值範圍",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "- Report Size 資料傳輸的位元數",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "- Report Count 報告含有的資料項目數目",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "- 指定是輸入(0x81)、輸出(0x91)或特徵報告(0xB1)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "1. **控制傳輸**: 提供 6 個類別相依的專屬命令。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "[`HID Device Capabilities`]",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  }
+]

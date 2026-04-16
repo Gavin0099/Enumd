@@ -1,0 +1,586 @@
+<context_boundaries>
+<core_topic id="secure-firmware-recovery" title="Secure Firmware Recovery" path="/general/secure-firmware-recovery.html">
+
+### OCP 安全韌體恢復 (Secure Firmware Recovery) 規範詳解
+---
+### 1. 總覽與目的 (Executive Summary)
+本文件是由 Open Compute Project (OCP) 發布的一份技術規範，旨在為資料中心硬體建立一套標準化、安全且可靠的韌體恢復機制。
+其核心目標是：當一個裝置（如網卡、SSD、加速卡）的韌體損壞、無回應或被惡意竄改時，平台管理者（如 BMC）能夠透過一個獨立於主作業系統的低階通道（Side-band channel），強制該裝置進入恢復模式，並將其恢復到一個已知、可信的安全狀態。
+此規範基於 NIST SP 800-193《平台韌體彈性指南》 的三大支柱：
+- 保護 (Protection): 透過安全啟動 (Secure Boot) 和金鑰管理來保護韌體。
+- 偵測 (Detection): 透過平台證明 (Attestation) 來偵測韌體的完整性。
+- 恢復 (Recovery): 本文件的核心，定義了如何從偵測到的問題中恢復。
+### 1.1 系統全景架構圖 (System Overview)
+```mermaid
+flowchart TB
+classDef host     fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#111
+classDef platform fill:#dbeafe,stroke:#1d4ed8,stroke-width:2px,color:#111
+classDef agent    fill:#fff1a6,stroke:#a16207,stroke-width:2px,color:#111
+classDef bus      fill:#cffafe,stroke:#0891b2,stroke-width:2px,color:#0b1a1f
+classDef device   fill:#bbf7d0,stroke:#15803d,stroke-width:2px,color:#0b1a1f
+
+subgraph HOST ["Host 主機域"]
+  RC["CPU / PCIe Root Complex"]:::host
+  OS["Host OS"]:::host
+end
+
+subgraph PLATFORM ["PA-RoT / BMC 平台管理域"]
+  BMC["BMC (PA-RoT)"]:::platform
+  RA["Recovery Agent"]:::agent
+end
+
+subgraph MGMT ["正常管理匯流排"]
+  PLDM["PLDM for FW Update<br/>(over MCTP)"]:::bus
+  SPDM["SPDM Measurements"]:::bus
+  MGMT_BUS["Device Mgmt Backplane<br/>(聚合中繼)"]:::bus
+end
+
+subgraph REC ["Recovery Bus<br/>SMBus 0xD2（獨立位址）"]
+  RBUS["Recovery Interface"]:::bus
+end
+
+subgraph DEVS ["AC-RoT Devices 裝置群"]
+  DEV_BUS["Device Fabric<br/>(裝置內部管理匯流排)"]:::bus
+  subgraph NICG ["NIC"]
+    NIC["NIC Device"]:::device
+  end
+  subgraph SSDG ["SSD"]
+    SSD["SSD Device"]:::device
+  end
+  subgraph ACCG ["Accelerator"]
+    ACC["Accelerator Device"]:::device
+  end
+end
+
+RA --> BMC
+BMC --> PLDM
+BMC --> SPDM
+BMC --> RBUS
+RC --- OS
+OS -->|功能/資料| DEV_BUS
+
+PLDM --> MGMT_BUS
+SPDM --> MGMT_BUS
+MGMT_BUS --> DEV_BUS
+
+RBUS --> DEV_BUS
+
+DEV_BUS --> NIC
+DEV_BUS --> SSD
+DEV_BUS --> ACC
+
+```
+---
+### 2. 關鍵角色與術語 (Key Roles & Terminology)
+- AC-RoT (Active Component Root of Trust): 主動元件信任根。指需要被恢復的裝置，例如一個 PCIe 卡。它本身具備安全啟動和證明能力。
+- PA-RoT (Platform Active Root of Trust): 平台主動信任根。通常是平台上的管理控制器，如 BMC (Baseboard Management Controller)。
+- RA (Recovery Agent): 恢復代理。通常是 PA-RoT (BMC) 內部的一個軟體模組，負責推送映像檔並協調恢復流程。
+韌體映像檔類型 (Firmware Image Types):
+- A/B Image (營運映像檔): 裝置正常運行時使用的韌體，採用 A/B 分區以支援不中斷更新。
+- C-Image (恢復映像檔): 最小化韌體，用於啟動裝置並接收新的 A/B Image。
+- 關鍵資料 (Critical Data): 裝置身份憑證、金鑰清單、安全配置等必須持久存在的資料。
+```mermaid
+flowchart LR
+    %% --- 類別樣式定義 (Class Definitions) ---
+    classDef manifest fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px,color:#111
+    classDef boot fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#111
+    classDef cimg fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+    classDef ab fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#111
+    classDef policy fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#111
+
+    %% --- 節點定義與主要啟動流程 (Node Definitions & Main Boot Flow) ---
+    KM[Key Manifest<br/>金鑰清單] --> BL[Boot Loader<br/>啟動載入程式]
+    BL --> CIMG[C-Image<br/>恢復映像檔]
+    BL --> AB[A/B Operational Images<br/>A/B 營運映像檔]
+
+    %% --- 子圖：定義安全策略區塊 (Subgraph for Security Policy) ---
+    subgraph S_POLICY [Policy / 策略]
+        direction TB
+        AR[Anti-rollback Counter<br/>防回滾計數器]
+        SB[Secure Boot Keys<br/>安全啟動金鑰]
+    end
+
+    %% --- 關係：策略如何強制驗證其他元件 (Relationships: Policy Enforcement) ---
+    S_POLICY -. Enforced Validation<br/>強制驗證 .-> KM
+    S_POLICY -. Enforced Validation<br/>強制驗證 .-> BL
+    S_POLICY -. Enforced Validation<br/>強制驗證 .-> CIMG
+    S_POLICY -. Enforced Validation<br/>強制驗證 .-> AB
+
+    %% --- 將樣式套用到對應的節點 (Apply Classes to Nodes) ---
+    class KM manifest
+    class BL boot
+    class CIMG cimg
+    class AB ab
+    class AR,SB policy
+```
+---
+### 3. 恢復觸發條件與場景 (Recovery Triggers & Scenarios)
+觸發條件：
+1. 平台偵測異常（Attestation 測量值不符）。
+1. 裝置自我偵測（安全啟動失敗、防回滾錯誤、關鍵資料損壞）。
+1. 裝置無回應（無法透過 MCTP 溝通）。
+1. 強制恢復（由管理者策略或維護需求觸發）。
+使用場景：
+- 正常更新： 僅韌體升級，不動用此恢復機制。
+- 帶有關鍵資料的恢復： 重寫韌體，身份保持不變。
+- 不帶關鍵資料的恢復： 必須重新配置裝置身份與安全參數。
+⚠️ 安全提醒：強制恢復 (Forced Recovery) 隱含信任 PA-RoT/RA，若被濫用可能造成 拒絕服務 (DoS)，因為攻擊者可反覆觸發裝置重置。
+```mermaid
+flowchart TD
+    %% === 類別樣式 ===
+    classDef startend fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#111
+    classDef decision fill:#fef9c3,stroke:#eab308,stroke-width:2px
+    classDef process fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+    classDef action fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+    classDef stop fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+
+    %% === 節點 ===
+    A([Start / 開始]):::startend --> B{Trigger Source? / 觸發來源?}:::decision
+    B -->|Platform attestation mismatch / 平台證明不符| C[Query DEVICE_STATUS / 查詢狀態]:::process
+    B -->|Device self-detect failure / 裝置自檢失敗| C
+    B -->|Device unresponsive / 裝置無回應| D[Write DEVICE_RESET / 寫入強制恢復]:::action
+    B -->|Operator policy forced / 管理者強制| D
+
+    C --> E{Status? / 狀態判斷}:::decision
+    E -->|Healthy / 健康| Z([Stop / 結束]):::stop
+    E -->|Error / 錯誤| F[Plan Recovery / 規劃恢復]:::process
+    E -->|Recovery Mode / 恢復模式| G[Proceed to Image Loading / 進入映像載入]:::action
+
+    D --> G
+    F --> G
+
+    G --> H{C-Image source? / 恢復映像來源?}:::decision
+    H -->|Push via IMI / 透過 IMI 推送| I[INDIRECT_CTRL / INDIRECT_DATA]:::process
+    H -->|Local persistent / 使用本地 C-Image| J[Select persistent C-Image / 選擇內建映像]:::action
+
+    I --> K[RECOVERY_CTRL → Reboot to C-Image / 重啟進入 C-Image]:::action
+    J --> K
+    K --> L[PLDM/MCTP minimal stack / 寫入 A/B 韌體]:::process
+    L --> M[Reboot to A/B & attest / 重啟並驗證]:::process
+    M --> N{Attestation pass? / 驗證通過？}:::decision
+    N -->|Yes / 通過| Z
+    N -->|No / 失敗| F
+
+```
+---
+### 4. 恢復流程詳解 (Recovery Process Flow)
+1. 偵測 (Detection) → PA-RoT 判斷 AC-RoT 不健康。
+1. 狀態查詢 (Status Check) → RA 讀取 DEVICE_STATUS。
+1. 進入恢復模式 (Entering Recovery) → 可透過 DEVICE_RESET 觸發。
+1. 載入恢復映像檔 (Image Loading) → Push C-Image 或選擇本地 C-Image。
+1. 啟動恢復映像檔 (Activation) → RECOVERY_CTRL 控制重啟並執行 C-Image。
+1. 執行恢復 (Recovery Execution) → 推送完整的 A/B Image。
+1. 完成與驗證 (Completion & Verification) → 重啟後由 Attestation 驗證健康狀態。
+```mermaid
+stateDiagram-v2
+    %% 狀態樣式定義
+    state "Healthy\\n健康" as Healthy
+    state "Error / 錯誤" as Error
+    state "Recovery Mode\\n恢復模式" as RecoveryMode
+    state "Recovery Pending\\n等待啟動恢復" as RecoveryPending
+    state "Running Recovery Image\\n執行恢復映像" as RunningRecoveryImage
+    state "Fatal Error / 致命錯誤" as FatalError
+
+    [*] --> Healthy
+    Healthy --> Error: Attestation fail / 自檢失敗
+    Healthy --> RecoveryMode: Forced Recovery (DEVICE_RESET flag)
+    Error --> RecoveryMode: DETECTED & RECOVERY_REQUIRED
+    RecoveryMode --> RecoveryPending: RECOVERY_CTRL 選擇/推送 C-Image
+    RecoveryPending --> RunningRecoveryImage: Reboot into C-Image
+    RunningRecoveryImage --> Healthy: A/B 更新成功，驗證通過
+    RunningRecoveryImage --> Error: 更新或驗證失敗
+    Error --> FatalError: 無法恢復 (HW / Policy)
+    FatalError --> [*]
+
+    %% 顏色套用
+    classDef good fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+    classDef warn fill:#fef9c3,stroke:#eab308,stroke-width:2px
+    classDef bad fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+    classDef process fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+
+    class Healthy good
+    class RecoveryMode,RecoveryPending,RunningRecoveryImage process
+    class Error warn
+    class FatalError bad
+
+```
+狀態碼 (DEVICE_STATUS):
+---
+### 5. 恢復原因碼 (Recovery Reason Codes)
+✅ = 可恢復 ｜ ❌ = 無法恢復 ｜ ◐ = 視情況需返廠
+```mermaid
+flowchart LR
+    %% === 樣式 ===
+    classDef ok fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+    classDef maybe fill:#fff7ed,stroke:#f59e0b,stroke-width:2px,color:#111
+    classDef no fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#111
+    classDef legend fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#111
+
+    %% === 可恢復 (綠) ===
+    subgraph G1 [可恢復 Recoverable]
+        direction TB
+        ROK["0x5 Key Manifest 遺失/毀損<br/>0x6 Key Manifest 驗證失敗<br/>0x7 Key Manifest 防回滾錯誤<br/>0x8 Boot Loader 遺失/毀損<br/>0x9 Boot Loader 驗證失敗<br/>0xA Boot Loader 防回滾錯誤<br/>0xB 主韌體遺失/毀損<br/>0xC 主韌體驗證失敗<br/>0xD 主韌體防回滾錯誤<br/>0xE Recovery 韌體遺失/毀損<br/>0xF Recovery 韌體驗證失敗<br/>0x10 Recovery 韌體防回滾錯誤<br/>0x11 強制恢復"]:::ok
+    end
+
+    %% === 條件式 (橘) ===
+    subgraph G2 [條件式 Conditional]
+        direction TB
+        RMAYBE["0x2 軟體錯誤（可嘗試恢復）<br/>0x3 自我測試失敗<br/>0x4 關鍵資料毀損/遺失"]:::maybe
+    end
+
+    %% === 不可恢復 (紅) ===
+    subgraph G3 [不可恢復 Unrecoverable]
+        direction TB
+        RNO["0x1 硬體錯誤（需返廠/RMA）"]:::no
+    end
+
+    %% 排版連結（純為左右並排，無語意）
+    G1 --- G2 --- G3
+
+    %% === 圖例 ===
+    L1(["可恢復"]):::ok --- L2(["條件式"]):::maybe --- L3(["不可恢復"]):::no
+
+```
+### 5.1 Mermaid：錯誤處理與可恢復性決策圖
+> 說明：將「恢復原因碼」對應到實際路徑（可恢復／需重新供應／返廠）與驗證收斂。綠＝可恢復；橘＝條件式（需再供應）；紅＝返廠；藍＝流程節點；灰＝起訖。
+```mermaid
+flowchart TD
+%% === 類別樣式（Classes） ===
+classDef startend fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#111
+classDef recover fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+classDef conditional fill:#fff7ed,stroke:#f59e0b,stroke-width:2px
+classDef rma fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+classDef process fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+classDef decision fill:#fef9c3,stroke:#eab308,stroke-width:2px
+
+
+%% === 節點（Nodes） ===
+A([錯誤偵測
+Error detected])
+B{恢復原因碼
+Recovery Reason Code}
+C[採用 C-Image 進行恢復
+Proceed Recovery via C-Image]
+D{是否具備重新供應路徑？
+Has re-provision path?}
+E[送廠 / 安全 RMA
+Return to vendor / secure RMA]
+F[透過 PLDM/MCTP 更新 A/B
+Update A/B via PLDM/MCTP]
+G{Attestation 是否通過？
+Attestation pass?}
+H([Healthy
+恢復完成])
+
+
+%% === 連線（Edges） ===
+A --> B
+B -->|Key Manifest / Boot / Auth / Anti-rollback issues| C
+B -->|Critical Data lost（關鍵資料遺失）| D
+B -->|HW Fault（硬體故障）| E
+
+
+D -->|Yes / 是| C
+D -->|No / 否| E
+
+
+C --> F
+F --> G
+G -->|Pass / 通過| H
+G -->|Fail / 未通過| A
+
+
+%% === 套用樣式（Apply Classes） ===
+class A,H startend
+class B,D,G decision
+class C recover
+class F process
+class E rma
+```
+---
+### 6. 恢復介面協定 (Recovery Interface Protocol)
+### 6.1 傳輸層 (Transport Layer)
+- 物理介面: SMBus/I2C。
+- 拓撲: 支援共享或獨立地址（建議 0xD2 獨立地址，因為更安全且不會與 MCTP 衝突）。
+- 協定: 使用 SMBus 的塊讀寫命令，每個命令有 8-bit 命令碼 (Command Code)。
+- 在共享模式下，若 MCTP 與 Recovery 同時使用 0xD4，可能導致裝置誤判管理封包，進而失敗。
+```mermaid
+flowchart TB
+    %% === 樣式定義 ===
+    classDef platform fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px,color:#111
+    classDef agent fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#111
+    classDef bus fill:#f3f4f6,stroke:#9ca3af,stroke-width:2px,color:#111
+    classDef device fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+    classDef warn fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#111
+    classDef good fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+
+    %% === 共享模式 ===
+    subgraph Shared ["共享模式 (0xD4)<br/>可能與 MCTP 衝突 ❌"]
+        direction TB
+        BMC1["PA-RoT / BMC<br/>平台主動信任根"]:::platform
+        RA1["Recovery Agent<br/>恢復代理"]:::agent
+        BUS1["I2C / SMBus<br/>匯流排 (位址 0xD4 共用)"]:::warn
+        D1["AC-RoT Device #1"]:::device
+        D2["AC-RoT Device #2"]:::device
+
+        BMC1 --> BUS1
+        RA1 --> BMC1
+        BUS1 --> D1
+        BUS1 --> D2
+    end
+
+    %% === 獨立模式 ===
+    subgraph Independent ["獨立模式 (0xD2)<br/>OCP 推薦 ✅"]
+        direction TB
+        BMC2["PA-RoT / BMC<br/>平台主動信任根"]:::platform
+        RA2["Recovery Agent<br/>恢復代理"]:::agent
+        BUS2["I2C / SMBus<br/>匯流排 (位址 0xD2 獨立)"]:::good
+        D3["AC-RoT Device #1"]:::device
+        D4["AC-RoT Device #2"]:::device
+
+        BMC2 --> BUS2
+        RA2 --> BMC2
+        BUS2 --> D3
+        BUS2 --> D4
+    end
+
+```
+### 6.2 間接記憶體介面 (Indirect Memory Interface - IMI)
+- 功能: 用於推送 C-Image，採用視窗化方式存取 AC-RoT 內部記憶體空間。
+- 步驟:
+- CMS 類型: Code CMS（存放映像）、Log CMS（偵錯日誌）、Vendor Defined CMS。
+### 6.3 主要命令時序圖 (Key Commands Sequence)
+```mermaid
+sequenceDiagram
+    participant RA as Recovery Agent
+    participant AC as AC-RoT Device
+
+    RA->>AC: Read PROT_CAP (探索能力)
+    AC-->>RA: 回報能力 (支援 Push C-Image)
+
+    loop 輪詢狀態
+        RA->>AC: Read DEVICE_STATUS
+        AC-->>RA: 回報狀態 (例如: 0x2 Error, Reason=0x9 Auth Fail)
+    end
+
+    RA->>AC: Write DEVICE_RESET (強制下次開機進入恢復模式)
+    note right of AC: 裝置重啟並進入恢復模式
+
+    RA->>AC: Read DEVICE_STATUS
+    AC-->>RA: 回報狀態 (0x3 Recovery Mode)
+
+    RA->>AC: Write INDIRECT_CTRL (選擇 Code CMS, offset=0)
+    AC-->>RA: 確認
+
+    loop 推送 C-Image 數據塊
+        RA->>AC: Write INDIRECT_DATA (Chunk n)
+        AC-->>RA: 確認
+    end
+
+    RA->>AC: Write RECOVERY_CTRL (啟動 C-Image)
+    note right of AC: 裝置重啟並執行 C-Image
+
+    RA->>AC: Read DEVICE_STATUS
+    AC-->>RA: 回報狀態 (0x5 Running Recovery Image)
+
+    note over RA,AC: 此時 RA 可用最小化 MCTP/PLDM 推送 A/B 映像
+
+```
+### 6.2.1 C-Image 最小功能需求  (Minimal Requirements for C-Image)
+C-Image 的設計目標是「讓裝置在最小化環境下仍能被恢復」，因此即使它功能有限，也必須具備以下基本能力：
+- 支援最小化 MCTP/PLDM 協定堆疊
+- 能接收並驗證 A/B Image
+- 能回報狀態與錯誤碼
+- 最小化安全信任鏈延續
+### 6.3 主要命令 (Key Commands)
+- PROT_CAP (能力發現)
+- DEVICE_ID (裝置身份)
+- DEVICE_STATUS (狀態回報)
+- DEVICE_RESET (重置/進入恢復模式)
+- RECOVERY_CTRL (選擇/啟動 C-Image)
+- INDIRECT_CTRL / INDIRECT_DATA (推送映像檔)
+- 錯誤處理: 若命令不支援、參數錯誤、長度錯誤或校驗錯誤，必須在 DEVICE_STATUS 中回報。
+---
+### 7. 安全威脅模型與對抗策略 (Security Threat Model & Countermeasures)
+---
+### 8. 實作細節與最佳實踐 (Implementation Details & Best Practices)
+- C-Image 設計：
+- RA (BMC 端) 設計：
+- 合規性要求：
+---
+### 9. 與其他規範的關聯性 (Relation to Other Specifications)
+---
+### 8. 結論 (Conclusion)
+
+</core_topic>
+  <related_context>
+    <related id="etoken-system-code-view-" title="Etoken System Code View " path="/code-sign/etoken-system-code-view-.html">
+    
+    ## etoken_dongle_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: 不通過。連線工作流程使用 detach 且無生命週期收斂，違反可預測關閉原則。
+    - Native Safety: 不通過。檔案大小與外部命令執行缺乏邊界控制，存在資源與執行風險。
+    - Test Integrity: 不通過。看不到針對失敗路徑（超大輸入、shutdown race、協定錯位）的測試證據。
+    ### Technical Findings
+    1. [BLOCKING] Detached worker thread may outlive owner (this)
+    1. [BLOCKING] Unbounded memory allocation from peer-provided file size
+    1. [WARNING] Protocol error opcode mismatch in public-key stage
+    1. [WARNING] system() execution path with externally-derived parameters
+    1. [WARNING] Timeout conversion bug in select()
+    1. [SUGGESTION] Hardcoded token password in source
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md.
+    - Result: Conflict Found (特別是 system()/sub-process hang 與協定失配/卡住風險已命中)。
+    ## etoken_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: Release 組態已移除 OFFLINE_TEST，這點較前版改善；但連線工作執行緒仍採 detach，生命週期不可控，違反可預測性。
+    - Native Safety: 未發現新的 pointer free 錯誤；但外部命令執行與檔案大小處理缺乏邊界，仍有高風險。
+    - Test Integrity: 看不到對失敗路徑（超大 file size、thread shutdown race、SQL 注入字串）的測試鎖定證據。
+    ### Technical Findings
+    1. [BLOCKING] SQL injection 風險（登入授權查詢）
+    1. [WARNING] detach 執行緒捕獲 this，存在 shutdown race / UAF 風險
+    1. [WARNING] Dongle 管理同樣使用 detach，生命週期不可驗證
+    1. [WARNING] 檔案大小由對端提供且未設上限，可能 OOM/卡死
+    1. [WARNING] 對 Dongle 端取檔同樣無大小上限
+    1. [WARNING] DB 密碼硬編碼在程式碼
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md（含 system()/子程序卡死、流程卡住類型）。
+    - Result: Conflict Found（當前風險與既有 anti-pattern 高度重疊）。
+    
+    </related>
+    <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
+    
+    ### Update Protocol
+    - HID update flow
+    - Vendor Command 第二碼
+    - HID 預設只使用 2.0
+    ### Tool & Test
+    - file:///\\genesyslogic.com.tw\GenesysData\SW_Release_New\Hub\HID\Tool
+    - 驗證
+    ### 執行中
+    - Release Tool
+    - 請SE確認各OS有沒有自動喚醒 device。
+    - HID 驗證 USB LOGO 問題。
+    - 整理 chip function list，用表格列出各 chip 機制的不同。
+    HID 速度問題。
+    - FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。
+    ### 待討讑
+    - GL3590
+    - Tool 在 chrome book上應該可以直接執行、更新，SW 會再討論如何測試、驗證。
+    - SW需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。
+    - 檢查不同 OS 平台（ex：mac, linux, chrome book）。
+    ### 已驗證 & 解決
+    2021/11/05 HID 會把重抓到的 device 當成不同個
+    2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號
+    2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題
+    2021/11/05 Scaler update 在 write command 時速度慢
+    2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）
+    2021/11/05 程式閃退
+    2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）
+    2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。
+    Google 在 ISP 相關。
+    HP ISP Tool ( HID ) 預設只使用 2.0
+    ### 會議記錄
+    2021/12/17 HP ISP Tool
+    
+    </related>
+    <related id="hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga" title="HP Enterprise Firmware Stress Tool - Technical Specification (Rev 9.0 GA)" path="/general/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html">
+    
+    Project Name: Cross-Platform Display Firmware Update Stress Harness
+    Version: Rev 9.0 (Gold / General Availability)
+    Standard: HP Display Firmware Update Spec (Item 1.4 & 1.2)
+    Core Philosophy: Fault Tolerant, Observable, Reproducible, Liability-Aware.
+    ---
+    ## 1. 核心架構原則 (Core Architecture Principles)
+    1. Process Control (進程控制): 嚴禁使用 subprocess.run。必須使用 subprocess.Popen 以支援即時的中止 (Abort) 與漸進式殺除 (Kill Escalation)。
+    1. Result State Machine (結果狀態機): 結果不再是二元對立，固定為 5 種狀態：PASS, FAIL, WARNING, TIMEOUT, UNKNOWN。
+    1. Session Verdict (會話結算): 測試結束後，必須產出單一的 Session 級別判定 (Pass/Fail/Warning)，以供 CI/CD 或驗收報告使用。
+    1. Contradiction Handling (矛盾處理): 當 Exit Code 與 Log 內容矛盾時，採用「防禦性悲觀」策略（視為 WARNING 或 FAIL）。
+    1. Evidence Retention (證據保全): 失敗、超時或狀態不明的 Log 檔案 絕對禁止刪除。
+    ---
+    ## 2. 模組詳細規格 (Module Specifications)
+    ### 2.1 Log Parser & Result Logic (logic/log_parser.py)
+    目標: 將非結構化的 Log 文本轉換為結構化的測試結果。
+    - Result States (Enum):
+    - Regex Patterns (Configurable):
+    - Strict Mode Policy:
+    ---
+    ### 2.2 Tool Adapter (logic/tool_adapter.py)
+    目標: 封裝 OCI Tool 的異質性，提供統一的執行與生命週期管理。
+    - Process Execution Model:
+    - Kill Escalation Strategy (當觸發 Abort 或 Timeout 時):
+    - Liability Disclaimer (責任邊界定義):
+    - Contradiction Logic (矛盾升級規則):
+    執行完畢後，比對 exit_code 與 log_parse_result：
+    - Command Construction:
+    - Log Retention Policy:
+    ---
+    ### 2.3 Platform Manager (utils/platform_manager.py)
+    目標: 處理 OS 差異，確保測試環境合規。
+    - Linux Sleep Inhibit Strategy:
+    ---
+    ### 2.4 Harness Logic & Features (logic/test_runner.py)
+    目標: 處理測試流程控制、干擾模擬與結果結算。
+    - Session Verdict Logic (Session 結算規則):
+    - Display Interference (Cross-Platform Strategy):
+    - Timer Accuracy:
+    ---
+    ### 2.5 Data Persistence (logic/logger.py)
+    目標: 確保所有測試數據可追溯、可除錯。
+    - JSONL Stream (logs/session_{id}.jsonl):
+    - Session Summary (logs/session_{id}_summary.json):
+    - Sanitization (脫敏):
+    ---
+    ### 2.6 Version Detection (logic/version_detector.py)
+    目標: 可靠地抓取 OCI Tool 版本。
+    - Configurable Search Paths:
+    - Method:
+    ---
+    ### 2.7 底層工具功能需求與映射 (OCI Tool Functional Profile)
+    目標: 定義 Harness 如何呼叫底層 OCI Tool (FirmwareInstaller.exe)。
+    ### A. 核心指令映射表 (Command Mapping)
+    ### B. OCI Tool 行為規範 (Behavioral Requirements)
+    1. Exit Code 可靠性: 嚴重錯誤時必須回傳非 0。若回傳 0 但 Log Error，Harness 視為 FAIL。
+    1. Log 完整性: Log 內容必須包含明確的 "Success" 或 "Error" 關鍵字。
+    1. 並發鎖定: OCI Tool 應處理單一實例鎖定。Harness 也會實作 Thread Lock。
+    ---
+    ## 3. UI 介面與控制項詳細定義 (UI Controls & Layout Definition)
+    本章節定義 GUI 的具體佈局與功能映射，開發者必須嚴格參照提供的下圖 進行刻畫。
+    ### 3.1 介面佈局概覽 (Layout Overview)
+    視窗主要分為三個區域：
+    1. 左側資訊欄 (Side Panel): 顯示版本資訊。
+    1. 右側主操作區 (Main Content): 包含韌體來源、測試場景、執行參數。
+    1. 底部狀態區 (Status Area): 顯示當前進度與回傳碼。
+    ---
+    ### 3.2 詳細控制項規格 (Control Specifications)
+    ### A. OCI Firmware Package Folder (頂部區域)
+    用於設定 A/B Test 的韌體來源。
+    ### B. Tool Version (左側面板)
+    顯示相關工具的版本資訊，用於環境確認。
+    ### C. Execution Control (右上方)
+    控制測試的強度與頻率。
+    ### D. Test Scenarios (中間左側 - 核心測試選項)
+    勾選以啟用特定的壓力測試邏輯。
+    ### E. Time Accuracy Check Setting (中間下方 - 進階設定)
+    預設隱藏，點擊 "..." 後顯示。
+    ### F. Feedback Area (右下角)
+    即時顯示測試狀態。
+    ---
+    ## 4. 給 Antigravity (AI Agent) 的執行指令 (Prompt)
+    請複製以下方塊中的內容，這是針對 AI 優化的指令集：
+    > "請依照 Technical Specification (Rev 9.0 GA) 建立一個 PySide6 專案。
+    Connected fw update stress:
+    Disconnected fw update stress:
+    UI的部分:
+    
+    </related>
+  </related_context>
+</context_boundaries>

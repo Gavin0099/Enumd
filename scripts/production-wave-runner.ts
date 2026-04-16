@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync } from "fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join } from "path";
 import { execSync } from "child_process";
 import * as crypto from "crypto";
@@ -104,6 +104,25 @@ async function run() {
     const waveDir = join(PROD_DIR, `wave_${currentWaveIdx + 1}`);
     mkdirSync(waveDir, { recursive: true });
 
+    // Probe mode: --probe-slugs=slug1,slug2,... runs a filtered subset of the
+    // current wave. Semantics are IDENTICAL to a full wave run — same pipeline,
+    // same enforcement, same scoring. Only the node set is narrowed.
+    // The manifest and atomic-claims.json are NOT written until the full wave
+    // completes; a probe-report.json is written instead.
+    const probeSlugsArg = process.argv.find(a => a.startsWith("--probe-slugs="))?.split("=")[1];
+    const probeSlugs = probeSlugsArg ? new Set(probeSlugsArg.split(",")) : null;
+    const nodesToProcess = probeSlugs
+        ? currentNodes.filter(n => probeSlugs.has(n.slug))
+        : currentNodes;
+
+    if (probeSlugs) {
+        const notFound = [...probeSlugs].filter(s => !currentNodes.some(n => n.slug === s));
+        if (notFound.length > 0) {
+            console.warn(`⚠️  Probe slugs not in wave ${currentWaveIdx + 1} pool: ${notFound.join(", ")}`);
+        }
+        console.log(`\n🔬 PROBE MODE: ${nodesToProcess.length}/${currentNodes.length} nodes selected from wave ${currentWaveIdx + 1}`);
+    }
+
     // 3. Lockfile Creation
     const lockfile = {
         batch_id: BATCH_ID,
@@ -121,9 +140,9 @@ async function run() {
     const manifest = [];
     const waveAtomicClaims: AtomicClaim[] = [];
 
-    for (let i = 0; i < currentNodes.length; i++) {
-        const node = currentNodes[i];
-        console.log(`\n[${i + 1}/${currentNodes.length}] Producing: ${node.slug}...`);
+    for (let i = 0; i < nodesToProcess.length; i++) {
+        const node = nodesToProcess[i];
+        console.log(`\n[${i + 1}/${nodesToProcess.length}] Producing: ${node.slug}...`);
         
         const dest = join(waveDir, node.slug);
         mkdirSync(dest, { recursive: true });
@@ -242,7 +261,31 @@ async function run() {
         }
     }
 
-    // 5. Wave-level Atomic Claim Store
+    // 5. Wave-level Atomic Claim Store + Manifest
+    // In probe mode: write probe-report.json only; skip atomic-claims.json and
+    // manifest.md until the full wave completes.
+    if (probeSlugs) {
+        const allComplete = currentNodes.every(n => existsSync(join(waveDir, n.slug, "audit.json")));
+        if (!allComplete) {
+            const probeReport = {
+                probe_mode: true,
+                wave_id: currentWaveIdx + 1,
+                probe_slugs: [...probeSlugs].sort(),
+                nodes_processed: nodesToProcess.length,
+                wave_total: currentNodes.length,
+                atomic_claims_this_run: waveAtomicClaims.length,
+                results: manifest,
+                generated_at: new Date().toISOString(),
+            };
+            writeFileSync(join(waveDir, "probe-report.json"), JSON.stringify(probeReport, null, 2));
+            console.log(`\n🔬 Probe complete: ${nodesToProcess.length}/${currentNodes.length} nodes processed.`);
+            console.log(`   Report → ${join(waveDir, "probe-report.json")}`);
+            console.log(`   ⚠️  Wave ${currentWaveIdx + 1} not yet complete — manifest and atomic-claims deferred.`);
+            return;
+        }
+        // All nodes done — fall through to write full manifest
+    }
+
     writeFileSync(join(waveDir, "atomic-claims.json"), JSON.stringify(waveAtomicClaims, null, 2));
     console.log(`\n📦 Atomic Claims: ${waveAtomicClaims.length} total verified claims written to atomic-claims.json`);
 

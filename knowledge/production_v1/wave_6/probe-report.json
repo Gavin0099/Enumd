@@ -1,0 +1,147 @@
+{
+  "probe_mode": true,
+  "wave_id": 6,
+  "probe_slugs": [
+    "outlook-封存失敗如何設定",
+    "saleae-logic-i2c-tool-使用說明",
+    "sc-query-to-determine-the-driver-mode",
+    "secure-firmware-recovery",
+    "ssdlc-",
+    "teledyne-lecroy-python安裝和測試方式",
+    "tool-sign-flow",
+    "tvsuthinkvantage-system-update-fwupdate需求",
+    "usb-device-class",
+    "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "vibe-coding",
+    "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+    "windows-command",
+    "xcode-architecture-設定",
+    "zeroplus_lap-i2c-訊號錄製方式"
+  ],
+  "nodes_processed": 15,
+  "wave_total": 50,
+  "atomic_claims_this_run": 166,
+  "results": [
+    {
+      "slug": "outlook-封存失敗如何設定",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 3
+    },
+    {
+      "slug": "saleae-logic-i2c-tool-使用說明",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "THIN_SYNTHESIS",
+      "claims": 9
+    },
+    {
+      "slug": "sc-query-to-determine-the-driver-mode",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 15
+    },
+    {
+      "slug": "secure-firmware-recovery",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 23
+    },
+    {
+      "slug": "ssdlc-",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 28
+    },
+    {
+      "slug": "teledyne-lecroy-python安裝和測試方式",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "THIN_SYNTHESIS",
+      "claims": 10
+    },
+    {
+      "slug": "tool-sign-flow",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 6
+    },
+    {
+      "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 7
+    },
+    {
+      "slug": "usb-device-class",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 17
+    },
+    {
+      "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 10
+    },
+    {
+      "slug": "vibe-coding",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 8
+    },
+    {
+      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 12
+    },
+    {
+      "slug": "windows-command",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "SKIPPED",
+      "claims": 0
+    },
+    {
+      "slug": "xcode-architecture-設定",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 9
+    },
+    {
+      "slug": "zeroplus_lap-i2c-訊號錄製方式",
+      "topology": "STABLE_AT_A",
+      "trust": "HUMAN_REVIEW",
+      "noise": "HIGH",
+      "kal": "CONVERGED",
+      "claims": 9
+    }
+  ],
+  "generated_at": "2026-04-16T03:51:37.469Z"
+}

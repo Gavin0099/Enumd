@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "根據提供的內容,以下是對於 'TVSU(ThinkVantage System Update) FWUpdate需求' 的文件合成報告:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "- TVSU的安裝檔是透過 [InnoSetup](https://jrsoftware.org/isinfo.php) 進行封裝。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "- TVSU需要檢查筆記本電腦的電源電量,如果電量低於25%則需要顯示錯誤訊息。[`[TVSU(ThinkVantage System Update) FWUpdate需求]`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "- TVSU是透過XML設定檔來決定要更新哪個版本的固件。[`[TVSU(ThinkVantage System Update) FWUpdate需求]`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "- TVSU使用硬體ID(hw_id)來決定要更新的裝置。[`[TVSU(ThinkVantage System Update) FWUpdate需求]`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "- TVSU是以命令列工具的形式提供,不會顯示圖形使用者介面。[`[TVSU(ThinkVantage System Update) FWUpdate需求]`]",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+    "claim": "- 取消、退出或Esc按鍵是由TVSU自行實作。[`[TVSU(ThinkVantage System Update) FWUpdate需求]`]",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  }
+]

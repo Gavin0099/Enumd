@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "tool-sign-flow",
+    "claim": "根據提供的內容,Tool Sign 流程可以概括如下:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tool-sign-flow",
+    "claim": "- 客戶申請憑證後,會收到一個 `.cer` 或 `.pfx` 格式的憑證檔案。[Tool Sign flow](tool-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tool-sign-flow",
+    "claim": "- 雙擊憑證檔案,可以將憑證匯入系統。輸入申請時的密碼後,即可完成匯入。[Tool Sign flow](tool-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tool-sign-flow",
+    "claim": "- 使用 Visual Studio 內建的簽署功能。[Tool Sign flow](tool-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tool-sign-flow",
+    "claim": "- 使用命令列工具進行簽署。[Tool Sign flow](tool-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "tool-sign-flow",
+    "claim": "此外,在 [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html) 中,我們可以看到 Genesys Logic 為了滿足 HP Code Signing 安全要求,設計了一套基於 FIPS 140-2 Level 3 標準的內部韌體簽署與驗證架構。這個架構採用 ECDSA nistp256 加密演算法,並使用 FIPS L3 認證的 USB eToken 硬體來安全地儲存金鑰。這種方案不僅符合嚴格的安全合規性,還具有成本效益、可擴展性和災難恢復能力。",
+    "tier": "Explicit",
+    "evidence_score": 30,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  }
+]

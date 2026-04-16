@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "以下是基於提供的內容邊界所合成的 USB3.1 Ch10 Hub, Host Downstream Port, 和 Device Upstream Port 規格文件:",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "本章節說明了支援 Enhanced SuperSpeed（USB 3.x）與 USB 2.0 的 USB Hub 架構要求，並定義下列幾項核心功能與差異:",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "3. Enhanced SuperSpeed Hub 描述",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "- 設計 USB hub 的開發者需同時參照:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "1. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "- 說明了 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "- 這與 USB Hub 設計的安全要求和驗證流程有關。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "2. [3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html) 和 [3rd party code signing specification (ECDSA)(EN)](3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 27,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "- 提供了第三方程式碼簽署的規範和實作細節，包括使用 ECDSA 演算法。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+    "claim": "總之，本章節的 USB Hub 設計必須參考上述相關文件中的安全合規性要求和實作方法,以確保 USB Hub 韌體的完整性和可信賴性。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  }
+]

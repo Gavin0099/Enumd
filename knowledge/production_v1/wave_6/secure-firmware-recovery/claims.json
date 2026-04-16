@@ -1,0 +1,186 @@
+[
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "本文件是由 Open Compute Project (OCP) 發布的一份技術規範，旨在為資料中心硬體建立一套標準化、安全且可靠的韌體恢復機制。其核心目標是當裝置的韌體損壞、無回應或被惡意竄改時，平台管理者能夠透過一個獨立於主作業系統的低階通道，強制該裝置進入恢復模式，並將其恢復到一個已知、可信的安全狀態。此規範基於 NIST SP 800-193 的三大支柱：保護、偵測和恢復。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- AC-RoT (Active Component Root of Trust): 需要被恢復的裝置，如 PCIe 卡。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- PA-RoT (Platform Active Root of Trust): 平台管理控制器，如 BMC。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- RA (Recovery Agent): 位於 PA-RoT 內部的軟體模組，負責推送映像檔並協調恢復流程。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 韌體映像檔類型: A/B Image (營運映像)、C-Image (恢復映像)、關鍵資料 (身份憑證、金鑰等)。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "1. 偵測 → PA-RoT 判斷 AC-RoT 不健康。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "2. 狀態查詢 → RA 讀取 DEVICE_STATUS。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "3. 進入恢復模式 → 透過 DEVICE_RESET 觸發。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "4. 載入恢復映像檔 → Push C-Image 或選擇本地 C-Image。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "5. 啟動恢復映像檔 → RECOVERY_CTRL 控制重啟並執行 C-Image。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "6. 執行恢復 → 推送完整的 A/B Image。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "7. 完成與驗證 → 重啟後由 Attestation 驗證健康狀態。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 可恢復: 如金鑰清單、啟動載入程式、韌體等問題。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 條件式: 如軟體錯誤、關鍵資料毀損。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 物理介面: SMBus/I2C。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 拓撲: 支援共享或獨立地址（建議 0xD2 獨立地址）。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 協定: 使用 SMBus 的塊讀寫命令。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "- 功能: 用於推送 C-Image，採用視窗化方式存取 AC-RoT 內部記憶體空間。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "1. 探索能力 → 讀取 PROT_CAP。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "2. 查詢狀態 → 讀取 DEVICE_STATUS。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "3. 強制進入恢復模式 → 寫入 DEVICE_RESET。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "4. 推送 C-Image → 寫入 INDIRECT_CTRL/INDIRECT_DATA。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "secure-firmware-recovery",
+    "claim": "5. 啟動 C-Image → 寫入 RECOVERY_CTRL。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  }
+]

@@ -1,0 +1,256 @@
+{
+  "requested_slug": "windows-command",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 0,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [
+    "tri-code-command-line-tool-command-line-list (confidence: low)",
+    "check-windows-version (confidence: low)",
+    "git-command-list (confidence: low)",
+    "windows-register-語系改法 (confidence: low)",
+    "command-line-uninstall-driver (confidence: low)",
+    "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網 (confidence: low)",
+    "cli-command-line-list (confidence: low)",
+    "command-line-tool-instructions (confidence: low)",
+    "tri-code-command-list (confidence: low)",
+    "windows-11-core-isolation (confidence: low)",
+    "glhubupdatetoolcli-req-command-description (confidence: low)",
+    "windows-10-h2-driver-移除流程",
+    "command-line-tool-debug-路徑",
+    "command-line-tool-logging-method",
+    "command-line-tool-user-guide",
+    "apple-command-line-update-instruction-",
+    "p32p-30-reset-scaler-command",
+    "hp-command-line-tool-logging-method",
+    "hp-command-line-tool-user-guide",
+    "lenovo-command-line-tool-update-flow"
+  ],
+  "total_context_edges": 0,
+  "topology_signature": {
+    "high_score_count": 11,
+    "borderline_count": 6,
+    "best_borderline_score": 0.25,
+    "gap_detected": false,
+    "borderline_neighbors": [
+      {
+        "node": {
+          "id": "a08a2c94-2911-4f90-a9b9-33626ad0dd4e",
+          "slug": "windows-10-h2-driver-移除流程",
+          "title": "Windows 10 H2 driver 移除流程",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\driver\\windows-10-h2-driver-移除流程.md",
+          "site_path": "/driver/windows-10-h2-driver-移除流程.html",
+          "category": "driver",
+          "domain_tags": [
+            "hub",
+            "driver"
+          ],
+          "task_tags": [
+            "install",
+            "sop"
+          ],
+          "authority_level": "source",
+          "notion_id": "a08a2c94-2911-4f90-a9b9-33626ad0dd4e",
+          "notion_updated_at": "2022-12-13T08:49:00.000Z",
+          "exported_at": "2026-04-06T13:11:46.631Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "5a11a0a8-2f43-49f8-a6aa-7dda54268704",
+          "slug": "command-line-tool-debug-路徑",
+          "title": "Command line tool debug 路徑",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\command-line-tool-debug-路徑.md",
+          "site_path": "/tools/command-line-tool-debug-路徑.html",
+          "category": "tools",
+          "domain_tags": [
+            "driver",
+            "tools"
+          ],
+          "task_tags": [
+            "debug",
+            "config"
+          ],
+          "authority_level": "reference",
+          "notion_id": "5a11a0a8-2f43-49f8-a6aa-7dda54268704",
+          "notion_updated_at": "2023-12-01T07:06:00.000Z",
+          "exported_at": "2026-04-06T13:17:06.569Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "2d982720-b3c5-4541-bab1-d781b44eeb8c",
+          "slug": "command-line-tool-logging-method",
+          "title": "Command Line Tool logging method",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\command-line-tool-logging-method.md",
+          "site_path": "/tools/command-line-tool-logging-method.html",
+          "category": "tools",
+          "domain_tags": [
+            "tools"
+          ],
+          "task_tags": [
+            "log",
+            "config"
+          ],
+          "authority_level": "deprecated",
+          "notion_id": "2d982720-b3c5-4541-bab1-d781b44eeb8c",
+          "notion_updated_at": "2026-01-21T09:26:00.000Z",
+          "exported_at": "2026-04-06T13:14:17.785Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "23264f6b-c656-8094-93d5-fb1994d575f0",
+          "slug": "command-line-tool-user-guide",
+          "title": "Command Line Tool User Guide",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\tools\\command-line-tool-user-guide.md",
+          "site_path": "/tools/command-line-tool-user-guide.html",
+          "category": "tools",
+          "domain_tags": [
+            "hub",
+            "monitor",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "23264f6b-c656-8094-93d5-fb1994d575f0",
+          "notion_updated_at": "2025-07-16T10:02:00.000Z",
+          "exported_at": "2026-04-06T13:13:07.269Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "0eb4902f-b770-4aad-bb23-fc2a8d818570",
+          "slug": "apple-command-line-update-instruction-",
+          "title": "Apple Command line update Instruction ",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\mac\\apple-command-line-update-instruction-.md",
+          "site_path": "/mac/apple-command-line-update-instruction-.html",
+          "category": "mac",
+          "domain_tags": [
+            "hub",
+            "mac",
+            "firmware",
+            "tools"
+          ],
+          "task_tags": [
+            "firmware-update",
+            "sop",
+            "log",
+            "config"
+          ],
+          "authority_level": "source",
+          "notion_id": "0eb4902f-b770-4aad-bb23-fc2a8d818570",
+          "notion_updated_at": "2026-01-21T09:27:00.000Z",
+          "exported_at": "2026-04-06T13:12:45.855Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      },
+      {
+        "node": {
+          "id": "08ce2fa9-dce3-4ad5-91db-60ba5b6af5ec",
+          "slug": "p32p-30-reset-scaler-command",
+          "title": "P32p-30 Reset Scaler command",
+          "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\monitor\\p32p-30-reset-scaler-command.md",
+          "site_path": "/monitor/p32p-30-reset-scaler-command.html",
+          "category": "monitor",
+          "domain_tags": [
+            "monitor",
+            "tools"
+          ],
+          "task_tags": [],
+          "authority_level": "source",
+          "notion_id": "08ce2fa9-dce3-4ad5-91db-60ba5b6af5ec",
+          "notion_updated_at": "2026-01-21T09:31:00.000Z",
+          "exported_at": "2026-04-06T13:17:49.527Z"
+        },
+        "score": 0.25,
+        "type": "same_domain"
+      }
+    ]
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 11 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 11,
+    "count_at_0_22": 17,
+    "borderline_count": 6,
+    "best_score": 0.25,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 0,
+    "context_edge_count": 0,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "sparse"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T03-48-40-717Z",
+  "wave_id": 6,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 0,
+    "downgraded": 1,
+    "total_lines": 3,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "SKIPPED",
+    "passed": 0,
+    "total": 0,
+    "convergence_rate": 0,
+    "skip_reason": "Synthesis flagged as thin context (structural disclaimer present or too short)",
+    "questions": []
+  },
+  "semantic_audit": {
+    "total_checked": 0,
+    "supported": 0,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "FRAGMENTARY",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
+    "removed_count": 0
+  }
+}

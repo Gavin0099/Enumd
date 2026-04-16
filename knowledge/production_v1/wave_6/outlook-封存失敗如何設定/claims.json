@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "outlook-封存失敗如何設定",
+    "claim": "1. 在 Outlook 中，進入「資訊」>「帳戶和社交網路設定」>「變更」。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "outlook-封存失敗如何設定",
+    "claim": "2. 在「要離線保留的郵件」選項中，選擇「全部」。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  },
+  {
+    "slug": "outlook-封存失敗如何設定",
+    "claim": "此外，如果您仍然遇到 Outlook 封存失敗的問題，可能需要進一步檢查 Outlook 帳戶設定、網路連線狀況或是 Outlook 軟體本身的問題。建議您可以參考 Microsoft 的相關支援文件或是尋求專業人士的協助。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+  }
+]
