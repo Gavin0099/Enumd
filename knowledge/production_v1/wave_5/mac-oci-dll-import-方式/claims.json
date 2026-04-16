@@ -1,0 +1,338 @@
+[
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "基於提供的內容邊界,我們可以總結 'Mac OCI Dll Import 方式' 的核心概念如下:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "可以參考 [Architecture](https://drive.google.com/file/d/1KSYwzoopvsl-HRUqD2QXZiN32apqsFeA/view?usp=sharing) 文件中的相關內容。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "HP OCI Tool 有兩種主要的動態庫載入方式:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "1. **Load dynamic Library 方式**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "2. **NSBundle 方式**",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "由於上一種方式需要 import framework 的 header,因此無法動態載入 framework。NSBundle 方式可以解決這個問題:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSString* dlPath = [NSString stringWithFormat: @\"%@/GlOciDll_Hub_L1.framework\", str];",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSBundle *HubL1 = [NSBundle bundleWithPath:dlPath];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSBundle *myFrameworkBundle = [[NSBundle alloc] initWithPath:dlPath];",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "Class HubL1Class = NSClassFromString(@\"HPFI_API\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSLog(@\"Unable to load class\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "SEL selector = NSSelectorFromString(@\"HPFI_InterfaceVersion\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "IMP imp = [HubL1Class methodForSelector:selector];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "int (*func)(Class, SEL) = (int (*)(Class,SEL))imp;",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "int  returnCode =  func(HubL1Class,selector);",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "除了 NSBundle 方式,另一種動態載入 framework 的方式是使用 NSInvocation:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSString *str = [[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent];",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSString* hubL1Path = [NSString stringWithFormat: @\"%@/GlOciDll_Hub_L1.framework\", str];",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSBundle *HubL1 = [NSBundle bundleWithPath:hubL1Path];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "void **hubVvp = nullptr;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "Class hubL1Test = NSClassFromString(@\"HPFI_API_HUB_L1\");",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "SEL hubinit = NSSelectorFromString(@\"HPFI_Initialize:\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSMethodSignature *hubSignatureInit = [hubL1Test methodSignatureForSelector:hubinit];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSInvocation *hubInvocationInit = [NSInvocation invocationWithMethodSignature:hubSignatureInit];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "[hubInvocationInit setArgument:&hubVvp atIndex:2];",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "[hubInvocationInit retainArguments];",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "hubInvocationInit.selector = hubinit;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "hubInvocationInit.target = hubL1Test;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "[hubInvocationInit invoke];",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "SEL hubSel = NSSelectorFromString(@\"HPFI_GetPackagedFirmwareInfo:\");",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSMethodSignature *hubSignature = [hubL1Test methodSignatureForSelector:hubSel];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "HPFI_FIRMWARE_INFO *ppi = new (HPFI_FIRMWARE_INFO) ;",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "ppi->cbSize = sizeof(HPFI_FIRMWARE_INFO);",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "NSInvocation *hubInvocation = [NSInvocation invocationWithMethodSignature:hubSignature];",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "[hubInvocation setArgument:&ppi atIndex:2];",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "[hubInvocation retainArguments];",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "hubInvocation.selector = hubSel;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "hubInvocation.target = hubL1Test;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "[hubInvocation invoke];",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "- 由於此 framework 是要動態讓 Tool 執行的,因此 Mach-o Type 需要設定為 dynamic Library。其他設定可參考 [Architecture](https://drive.google.com/file/d/1KSYwzoopvsl-HRUqD2QXZiN32apqsFeA/view?usp=sharing) 文件。",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "- 其他 framework 是包在 OCI Dll 裡面,因此 Mach-o Type 可以設定為 static Library。其他設定可參考 [Architecture](https://drive.google.com/file/d/1KSYwzoopvsl-HRUqD2QXZiN32apqsFeA/view?usp=sharing) 文件。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-oci-dll-import-方式",
+    "claim": "要解決 macOS 應用程序加載動態框架的簽名問題,需要採取以下步驟:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

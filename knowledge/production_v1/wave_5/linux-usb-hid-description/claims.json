@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "Linux 系統中的 USB HID (Human Interface Device) 描述是一種用於描述 USB 設備的人機介面特性的機制。它提供了一種標準化的方式來定義 USB 設備如何與操作系統和應用程式進行交互。本文將概述 Linux 中 USB HID 描述的相關知識。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "Linux 系統可以透過 `hidraw` 內核子系統來存取和解析 USB HID 描述資訊。以下是一個示例程式碼 `[Linux USB HID Description Example](linux-usb-hid-description.html)`，演示了如何使用 `ioctl()` 系統呼叫來讀取 USB 設備的 HID 報告描述:",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "int result = ioctl(fd, HIDIOCGRDESC, &rpt_desc);",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "std::cerr << \"[ERROR] ioctl failed, errno = \" << errcode << \" (\" << strerror(errcode) << \")\" << std::endl;",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "HID 報告描述使用一種稱為 HID 描述語言的格式來定義設備的功能。它由一系列 HID 項目組成,每個項目描述了一個特定的功能。常見的 HID 項目包括:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "- 描述了 Camera 設備的 code sign 驗證流程,與 HID 設備的 code sign 驗證有一定關聯。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "- 記錄了 HID 設備的 code sign 驗證過程,提供了 HID 設備更新流程的相關資訊。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-usb-hid-description",
+    "claim": "Linux 系統中的 USB HID 描述提供了一種標準化的方式來定義 USB 設備的人機介面特性。開發人員可以使用 `hidraw` 子系統來存取和解析 HID 報告描述,從而正確地與 USB 設備進行交互。本文概述了 Linux USB HID 描述的相關知識,並與一些相關的程式碼安全性問題進行了關聯。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

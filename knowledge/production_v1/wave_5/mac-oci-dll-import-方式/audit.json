@@ -1,0 +1,111 @@
+{
+  "requested_slug": "mac-oci-dll-import-方式",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-45-58-973Z",
+  "wave_id": 5,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 17,
+    "downgraded": 1,
+    "total_lines": 83,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 2,
+    "total": 3,
+    "convergence_rate": 0.6666666666666666,
+    "questions": [
+      {
+        "question": "What are the two main dynamic library loading methods used by the HP OCI Tool?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists the two main dynamic library loading methods used by the HP OCI Tool: Load dynamic Library and NSBundle."
+      },
+      {
+        "question": "What is the reason for using the NSBundle method instead of the Load dynamic Library method?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the NSBundle method is used to solve the problem of the Load dynamic Library method, which requires importing the framework's header and cannot dynamically load the framework."
+      },
+      {
+        "question": "What steps are required to resolve the code signing issue when loading dynamic frameworks on macOS?",
+        "verdict": "PARTIAL",
+        "justification": "The synthesis text mentions that steps are required to resolve the code signing issue when loading dynamic frameworks on macOS, but it does not provide the specific steps."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 13,
+    "supported": 12,
+    "uncertain": 0,
+    "unsupported": 1,
+    "unsupported_claims": [
+      {
+        "claim": "要解決 macOS 應用程序加載動態框架的簽名問題,需要採取以下步驟:",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention the steps to solve the macOS application dynamic framework loading signature problem."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.07692307692307693,
+    "derived_count": 13,
+    "reason": "Unsupported rate 8% (1/13) below audit threshold.",
+    "removed_count": 0
+  }
+}

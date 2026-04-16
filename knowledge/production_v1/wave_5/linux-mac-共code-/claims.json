@@ -1,0 +1,250 @@
+[
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- Neville 提供的 Mac 原始碼可以成功建置並進行除錯 ([Neville's Mac Source Code](path/to/neville-mac-source-code))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 分析 Linux 和 Mac 之間的差異",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 嘗試使用這份程式碼與原有的 Mac 框架整合以取得 GitHub FW 版本資訊",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 統一 Linux 和 Mac 的資料夾結構",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 透過 CMake 產生 Xcode 專案檔 ([CMake Integration](path/to/cmake-integration))",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 建置成 Framework 或 DLL 檔案供其他 Mac GUI 工具使用 ([Framework/DLL Build](path/to/framework-dll-build))",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "1. 製作 DLL ([DLL](path/to/dll))",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- Hub FW Update CLI ([Hub FW Update CLI UML](path/to/hub-fw-update-cli-uml))",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "1. CodeSign -> Hub 底下只有 .h 檔案 ([CodeSign -> Hub](path/to/codesign-hub))",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "1. CodeSign -> Scaler 底下只有 .h 檔案 ([CodeSign -> Scaler](path/to/codesign-scaler))",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "1. CodeSign -> CodeSignVerify 沒有 .h 檔案 ([CodeSign -> CodeSignVerify](path/to/codesign-codesignverify))",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "1. Scaler 資料夾只有 .h 檔案 ([Scaler Folder](path/to/scaler-folder))",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "本節將說明 Linux & Mac 共用程式碼與其他相關主題之間的關係。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 產生 ECDSA 金鑰並簽署 ([Generate ECDSA Key and Sign](path/to/generate-ecdsa-key-and-sign))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 告知如何清除 Camera 的方式 - 驗證失敗時需要清除 ([Erase Camera](path/to/erase-camera))",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 告知如何讀取 Camera 資料 - Hub 安全模型必須能讀取更新資料才能計算雜湊值 ([Read Camera Data](path/to/read-camera-data))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 可以改成告知我們所有的更新流程以及相對應的文件，讓我們控制整個更新過程 ([Update Flow and Documentation](path/to/update-flow-and-documentation))",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 下圖為 Hub Code Sign 驗證流程，驗證 Code Sign 應該由工具控制，韌體不需要做任何改變，但仍需要俊太確認 ([Hub Code Sign Verification Flow](path/to/hub-code-sign-verification-flow))",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- Genesys Logic 的 Code Sign 概述",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 將韌體 bin 資料、簽章和公鑰傳送給安全模組，讓安全模組使用公鑰解密簽章並產生雜湊值，再與韌體 bin 資料產生的雜湊值進行比對，以決定韌體 bin 是否合法 ([Firmware Update and Verification](path/to/firmware-update-and-verification))",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- Code Sign 的方法有以下幾種:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- OpenSSL ([OpenSSL](path/to/openssl))",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- Token ([Token](path/to/token))",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- HSM (Hardware Security Module) ([HSM](path/to/hsm))",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 根據 HP 規定，需要符合 FIPS 140-2 Level 3 以上的標準，因此至少需要使用 Token 來實現 Code Sign 功能 ([FIPS 140-2 Level 3](path/to/fips-140-2-level-3))",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- Genesys Logic 目前使用的 Code Sign 演算法為 ECDSA nistp256 ([ECDSA nistp256](path/to/ecdsa-nistp256))",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 當 Flash 內沒有簽章時，在 ISP 時需要先使用廠商指令送入 ([Signature Handling](path/to/signature-handling))",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 不能執行的程式碼不能留在裡面 ([Executable Code](path/to/executable-code))",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- HP ISP 流程說明 ([HP ISP Flow](path/to/hp-isp-flow))",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- HID Code Sign Bin 格式 ([HID Code Sign Bin Format](path/to/hid-code-sign-bin-format))",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "linux-mac-共code-",
+    "claim": "- 驗證方式: 驗證公鑰和簽章 ([Verification Process](path/to/verification-process-2))",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

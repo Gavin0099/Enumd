@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "mtk-3rd-send-usb-hub-isp-event",
+    "claim": "本文描述了在更新 MTK 設備時如何進入和退出 Hub ISP Tool。具體包括 M24、Z34C 和 Z24m G3 三種型號的操作步驟。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

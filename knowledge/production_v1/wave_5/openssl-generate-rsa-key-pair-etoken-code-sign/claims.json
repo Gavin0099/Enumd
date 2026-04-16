@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "本文件介紹如何使用 OpenSSL 工具產生 RSA 金鑰對,並將私鑰匯入 Etoken 硬體安全模組進行程式碼簽署。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "openssl genrsa -out private.pem 2048",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "openssl rsa -in private.pem -pubout -out public.pem",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "這樣就會產生一個 2048 位元的 RSA 私鑰 `private.pem` 和公鑰 `public.pem`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "接下來,我們需要將私鑰和公鑰證書匯出為 PKCS#12 格式,以便後續匯入 Etoken:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "openssl pkcs12 -export -in public.pem -inkey private.pem -out private.p12 -name \"My Code Signing Key\"",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "這個命令會產生一個 `private.p12` 檔案,其中包含私鑰和公鑰證書。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "現在我們可以將 `private.p12` 檔案匯入 Etoken 硬體安全模組中。這樣就可以使用 Etoken 上的私鑰進行程式碼簽署了。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "需要注意的是,匯入 Etoken 後,會多出一個額外的證書。這是因為 Etoken 會自動加入其自身的根證書。我們可以參考 [解決問題 - SSL/TLS 5](https://leoyeh.me/2017/08/13/%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C-SSL-TLS-5/) 和 [PKI 數位憑證格式轉換筆記](https://blog.miniasp.com/post/2018/04/21/PKI-Digital-Certificate-Format-Convertion-Notes) 這兩篇文章,了解不同憑證格式的轉換方法。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+    "claim": "完成上述步驟後,我們就可以使用 Etoken 上的私鑰對程式碼進行數位簽署了。具體的簽署流程可以參考 [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html) 和 [3rd party code signing specification (ECDSA)](3rd-party-code-signing-specification-ecdsa.html) 這兩篇文章。",
+    "tier": "Explicit",
+    "evidence_score": 27,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

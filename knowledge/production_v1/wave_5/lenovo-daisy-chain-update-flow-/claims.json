@@ -1,0 +1,306 @@
+[
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "此流程描述了 Host、MC、Scalar 0 和 Scalar 1 之間的互動操作，實現對菊鏈模式下所有監視器的韌體（FW）更新。過程主要包括設置緩衝區、確認準備狀態、傳輸韌體封包以及完成通知。[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令：`CMD_DDCCI : CE A9 00`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 執行方式：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令：`CMD_DDCCI : CE A9 01`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 執行方式：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令：`CMD_DDCCI : CE A9 02`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 執行方式：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 執行方式：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令：`CMD_DDCCI : CE A9 03`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 執行方式：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令：`DDCCI : CE A7`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 執行方式：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 目標：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令行為：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 步驟描述：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 指令行為：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 逐級傳輸：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 關鍵資訊：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 用途：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "1. 初始化緩衝區：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "1. 確認監視器準備狀態：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "1. 啟動韌體包緩存：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "1. 完成韌體包緩存：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- USB 裝置管理：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 菊鏈傳輸協商：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "Host Tool 使用輸入參數 IN1 和返回數據 RET，透過 CE A9 01 指令來判斷監視器是否已準備好進行韌體更新。根據準備結果，進一步執行韌體包的緩存與傳輸操作。[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- Host Tool 從系統中檢索可用監視器的清單，包括 1 到 N 的所有監視器。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 確定監視器是否符合韌體更新的條件：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- IN1 的生成：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "- 操作：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "1. IN1 的用途：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-daisy-chain-update-flow-",
+    "claim": "1. RET 的作用：[`/general/lenovo-daisy-chain-update-flow-.html`]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

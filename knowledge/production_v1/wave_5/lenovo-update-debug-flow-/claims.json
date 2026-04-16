@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "根據提供的上下文邊界，Lenovo Update Debug Flow 的核心步驟如下:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "1. 刪除位於 `thinkvision_p49w_30_fw1_5_tool_1_0\\pkg\\Monitor\\Genesys` 下的 `TargetDevice.ini` 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "以下是從提供的相關內容中歸納出的與 Lenovo Update Debug Flow 相關的重要資訊:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- 告知如何清除 Camera 的方式 - 驗證失敗時需要清除",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- 告知如何讀取 Camera 資料 - 必須能夠讀取更新資料才能計算雜湊值",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- `etoken_dongle_server` 程式碼審查發現多項高風險問題，包括執行緒生命週期不可控、外部命令執行與檔案大小處理缺乏邊界控制等。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- `etoken_server` 程式碼審查發現 SQL 注入風險、執行緒生命週期不可控、檔案大小處理缺乏邊界控制等問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- Vendor Command 第二碼",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "1. **Lenovo Update Debug Flow**:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- 與 Camera 更新流程及驗證有關，需要了解如何清除 Camera、讀取更新資料等。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- 與 Etoken 系統程式碼審查結果有關，需要注意執行緒生命週期、外部命令執行、檔案大小處理等潛在風險。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-update-debug-flow-",
+    "claim": "- 與 HID 更新流程、工具與測試有關，需要了解 HID 的相關機制、正在進行的工作項目以及待討論的議題。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

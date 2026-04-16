@@ -1,0 +1,473 @@
+<context_boundaries>
+<core_topic id="macos-mdm-與-full-disk-access-fda-權限管理實作說明" title="macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明" path="/mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html">
+
+## 1. 執行摘要 (Executive Summary)
+本文件提供一套標準作業程序 (SOP)，說明如何透過 Apple MDM (行動裝置管理) 框架，集中且自動化地為企業內部的 macOS 裝置授予應用程式（如內部更新工具）所需的 完全磁碟存取權限 (Full Disk Access, FDA)。
+此方法完全符合 Apple 官方規範 與 國際資安標準，取代耗時且易出錯的人工設定，確保企業 合規性、一致性與安全性。
+---
+## 2. 背景：為何需要 MDM？
+- Apple 的安全設計 (TCC)
+- 企業挑戰
+- Apple 官方解法
+---
+## 3. 解決方案架構
+### 3.1 核心角色
+1. IT/MIS 管理端 (策略制定者)
+1. MDM 雲端平台 (政策執行者)
+1. Apple 基礎服務 (生態系基礎)
+1. 受管控 macOS 裝置 (政策接收者)
+### 3.2 架構關係圖
+```mermaid
+graph LR
+    classDef svc fill:#e0f2fe,stroke:#3b82f6,color:#111
+    classDef comp fill:#dcfce7,stroke:#16a34a,color:#111
+    classDef sys fill:#ffe4e6,stroke:#ec4899,color:#111
+    classDef mgmt fill:#f3f4f6,stroke:#6b7280,color:#111
+    classDef cloud fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+
+    subgraph IT["IT/MIS 管理端 (策略制定)"]
+        A["建立 PPPC Profile"]:::mgmt
+        B["指派給裝置群組"]:::mgmt
+        C["監控合規報表"]:::mgmt
+    end
+
+    subgraph MDM["MDM 雲端 (政策執行)"]
+        D["配置文件存儲"]:::cloud
+        E["裝置合規性評估"]:::cloud
+        F["命令下發"]:::cloud
+    end
+
+    subgraph Apple["Apple 基礎服務"]
+        G["ABM/ASM (裝置註冊)"]:::svc
+        H["APNs (推播服務)"]:::svc
+    end
+
+    subgraph Mac["受管控 macOS 裝置"]
+        I["MDM Agent"]:::comp
+        J["目標應用程式 (Update Tool)"]:::comp
+        K["TCC 機制"]:::sys
+        L["TCC.db 授權資料庫"]:::sys
+    end
+
+    A --> D
+    B --> E
+    D --> F
+    E --> F
+    F --> H
+    H --> I
+    I --> L
+    J --> K
+    K --> L
+    L --> K
+    K --> J
+    I --> E
+    E --> C
+    G -.-> I
+
+```
+## 4. 標準部署流程 (SOP)
+此流程確保 FDA 權限能順利且無干擾地部署到所有裝置。
+```mermaid
+flowchart TB
+  %% 樣式
+  classDef it fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#004d40
+  classDef cloud fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+  classDef mac fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#e65100
+  classDef risk fill:#ffebee,stroke:#c62828,stroke-width:2px,color:#b71c1c
+
+  %% 先定義所有節點（含樣式）
+  A[開始]:::it
+  B[裝置須在 ABM 註冊<br>並受監督]:::it
+  C[取得目標 App 的 Bundle ID<br>與 Code Requirement]:::it
+  D[在 MDM 平台建立<br>PPPC Profile]:::it
+  E[指派 Profile<br>至裝置群組]:::it
+  F[MDM 透過 APNs<br>下發設定]:::cloud
+  G[裝置接收並安裝 Profile,<br>TCC.db 更新]:::mac
+  H[安裝目標 App,<br>建議 Profile 之後]:::mac
+  I[App 執行需要<br>FDA 的操作]:::mac
+  J[TCC 機制自動授權]:::mac
+  K[狀態回傳 MDM]:::mac
+  L[IT 稽核與合規檢查]:::mac
+  M[完成]:::mac
+
+  R1[注意：Code Requirement 錯誤<br>將導致授權無效]:::risk
+  R2[注意：App 先於 Profile 安裝<br>可能首次彈窗]:::risk
+
+  %% 再寫所有邊（不要在同一行定義節點）
+  A --> B
+  B --> C
+  C --> D
+  D --> E
+  E --> F
+  F --> G
+  G --> H
+  H --> I
+  I --> J
+  J --> K
+  K --> L
+  L --> M
+
+  D -.-> R1
+  H -.-> R2
+```
+---
+## 5. 關鍵設定：PPPC 描述檔詳解
+以下是 PPPC 描述檔中授權 FDA 的核心 XML 片段。
+```java
+<dict>
+  <key>PayloadType</key>
+  <string>com.apple.TCC.configuration-profile-policy</string>
+  <key>Services</key>
+  <dict>
+    <key>SystemPolicyAllFiles</key>
+    <array>
+      <dict>
+        <key>Authorization</key>
+        <string>Allow</string>
+        <key>Identifier</key>
+        <string>com.company.hubFwUpdaterCLI</string>
+        <key>IdentifierType</key>
+        <string>bundleID</string>
+        <key>CodeRequirement</key>
+        <string>identifier "com.company.hubFwUpdaterCLI" and anchor apple generic and certificate leaf[subject.OU] = "TEAMID1234"</string>
+      </dict>
+    </array>
+  </dict>
+</dict>
+
+```
+### 設定檔欄位詳解
+### 欄位解析
+---
+## 6. 測試驗證
+- 測試條件：受監督的 Mac，已透過 MDM 下發 Profile。
+- 驗證方式：
+---
+## 7. 稽核與維運
+---
+## 8. 合規性對應
+- Apple 官方：《MDM Protocol Reference》
+- NIST：SP 800-53 → AC-6 Least Privilege, CM-6 Configuration Settings
+- ISO 27001：A.9.2 使用者存取管理
+- 企業資安政策：支援集中控管，滿足審計追蹤需求
+---
+## 9. 結論
+1. 唯一合法路徑：FDA 權限無法透過腳本或安裝包靜默開啟，必須依循 MDM + PPPC。
+1. 安全與合規並重：此流程符合 Apple 與 NIST/ISO 標準。
+1. 最佳實踐：先下發 Profile，再安裝 App；持續監控與驗證。
+---
+### 附錄 A：設定自動化裝置註冊 (Apple Business Manager)
+本附錄詳細說明如何完成「自動化裝置註冊 (Automated Device Enrollment, ADE)」的 foundational setup，以確保所有公司裝置都能被 MDM 強制納管並進入「受監督」模式。
+### 核心概念：數位出生證明
+ADE 流程等同於為公司裝置辦理「數位出生證明」。裝置出廠時，其序號就被 Apple 登記為貴公司資產。當裝置首次開機連網，它會自動向您指定的 MDM 伺服器報到並接受管理，實現 零接觸部署 (Zero-Touch Deployment)。
+### 階段一：準備工作 (Prerequisites)
+1. 鄧白氏環球編碼 (D-U-N-S Number)：用於驗證企業身份，可免費申請。
+1. 有效的 MDM 解決方案：如 Jamf, Microsoft Intune, Meraki 等。
+1. 從授權通路購買裝置：採購時提供您的 Apple 客戶編號或經銷商編號，裝置序號將自動匯入您的 ABM 帳戶。
+### 階段二：設定流程
+步驟 1：註冊 Apple Business Manager (ABM)
+1. 前往 business.apple.com 進行註冊。
+1. 填寫公司資訊及 D-U-N-S 編碼。
+1. 等待 Apple 審核驗證，可能需要數天。
+步驟 2：將 MDM 伺服器連結至 ABM
+1. 從 MDM 平台：下載伺服器公鑰 (.pem 或 .cer)。
+1. 在 ABM 網站：前往「設定」>「裝置管理設定」>「加入 MDM 伺服器」，上傳剛才下載的公鑰。
+1. 從 ABM 網站：下載 ABM 產生的伺服器代號 (.p7m)。
+1. 回到 MDM 平台：上傳剛才下載的伺服器代號，完成雙向信任連結。
+步驟 3：在 ABM 中指派裝置
+1. 設定預設規則：在 ABM「設定」中，將所有新購裝置預設指派給您的 MDM 伺服器。
+1. 手動指派：對於已存在的裝置，手動選取並指派給 MDM 伺服器。
+步驟 4：在 MDM 中設定「註冊描述檔」
+1. 在 MDM 平台中建立一個「註冊描述檔 (Enrollment Profile)」。
+1. 關鍵設定：
+### 階段三：使用者體驗
+設定完成後，新員工拿到未拆封的 Mac：
+1. 開機、連網。
+1. 裝置自動聯繫 Apple，螢幕出現無法跳過的「遠端管理」畫面。
+1. 使用者確認後，MDM 開始自動下發所有公司設定、應用程式與安全策略。
+1. 進入桌面時，裝置已完全配置好並處於受管狀態。
+### 流程圖總結
+```mermaid
+flowchart TD
+    %% --- 風格定義 (Style Definitions) ---
+    classDef prep fill:#e0f7fa,stroke:#00838f,stroke-width:2px,color:#004d40
+    classDef tech fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#1b5e20
+    classDef itAction fill:#fff3e0,stroke:#ef6c00,stroke-width:2px,color:#e65100
+    classDef user fill:#f3e8ff,stroke:#6d28d9,stroke-width:2px,color:#4c1d95
+
+    %% --- 流程圖定義 (Chart Definition) ---
+    subgraph "Phase 1: 準備與註冊"
+        A["向鄧白氏申請 D-U-N-S 編碼"]:::prep
+        B["在 business.apple.com 註冊 ABM 帳號"]:::prep
+        C["等待 Apple 驗證通過"]:::prep
+    end
+
+    subgraph "Phase 2: 建立 MDM 信任連結"
+        D["從 MDM 下載公鑰"]:::tech
+        E["在 ABM 上傳公鑰"]:::tech
+        F["從 ABM 下載伺服器代號"]:::tech
+        G["在 MDM 上傳伺服器代號<br>完成連結"]:::tech
+    end
+
+    subgraph "Phase 3: 指派與設定"
+        H["IT 向授權經銷商<br>採購裝置"]:::itAction
+        I["裝置序號自動出現在 ABM"]:::itAction
+        J["在 ABM 中將裝置<br>指派給 MDM 伺服器"]:::itAction
+        K["在 MDM 中設定註冊描述檔<br>(強制監督、不可移除、略過步驟)"]:::itAction
+    end
+
+    subgraph "Phase 4: 使用者零接觸開機"
+        L["使用者開機並連網"]:::user
+        M["裝置自動聯繫 Apple"]:::user
+        N["Apple 引導裝置<br>至公司 MDM"]:::user
+        O["螢幕顯示『遠端管理』<br>強制註冊"]:::user
+        P["MDM 自動下發所有設定<br>部署完成!"]:::user
+    end
+
+    %% --- 流程連接 (Connections) ---
+    A --> B --> C
+    D --> E --> F --> G
+    H --> I --> J --> K
+    L --> M --> N --> O --> P
+
+    C -- "驗證完成後" --> D
+    G -- "連結建立後" --> H
+    K -- "設定完成後" --> L
+```
+
+</core_topic>
+  <related_context>
+    <related id="etoken-system-code-view-" title="Etoken System Code View " path="/code-sign/etoken-system-code-view-.html">
+    
+    ## etoken_dongle_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: 不通過。連線工作流程使用 detach 且無生命週期收斂，違反可預測關閉原則。
+    - Native Safety: 不通過。檔案大小與外部命令執行缺乏邊界控制，存在資源與執行風險。
+    - Test Integrity: 不通過。看不到針對失敗路徑（超大輸入、shutdown race、協定錯位）的測試證據。
+    ### Technical Findings
+    1. [BLOCKING] Detached worker thread may outlive owner (this)
+    1. [BLOCKING] Unbounded memory allocation from peer-provided file size
+    1. [WARNING] Protocol error opcode mismatch in public-key stage
+    1. [WARNING] system() execution path with externally-derived parameters
+    1. [WARNING] Timeout conversion bug in select()
+    1. [SUGGESTION] Hardcoded token password in source
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md.
+    - Result: Conflict Found (特別是 system()/sub-process hang 與協定失配/卡住風險已命中)。
+    ## etoken_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: Release 組態已移除 OFFLINE_TEST，這點較前版改善；但連線工作執行緒仍採 detach，生命週期不可控，違反可預測性。
+    - Native Safety: 未發現新的 pointer free 錯誤；但外部命令執行與檔案大小處理缺乏邊界，仍有高風險。
+    - Test Integrity: 看不到對失敗路徑（超大 file size、thread shutdown race、SQL 注入字串）的測試鎖定證據。
+    ### Technical Findings
+    1. [BLOCKING] SQL injection 風險（登入授權查詢）
+    1. [WARNING] detach 執行緒捕獲 this，存在 shutdown race / UAF 風險
+    1. [WARNING] Dongle 管理同樣使用 detach，生命週期不可驗證
+    1. [WARNING] 檔案大小由對端提供且未設上限，可能 OOM/卡死
+    1. [WARNING] 對 Dongle 端取檔同樣無大小上限
+    1. [WARNING] DB 密碼硬編碼在程式碼
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md（含 system()/子程序卡死、流程卡住類型）。
+    - Result: Conflict Found（當前風險與既有 anti-pattern 高度重疊）。
+    
+    </related>
+    <related id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+    
+    ## 1. 系統概述
+    本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+    ---
+    ## 2. 系統架構圖
+    此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+    ---
+    ## 3. 詳細處理流程
+    整個流程可分為三個主要階段：
+    ---
+    ## 4. 流程視覺化圖表
+    4.1 循序圖 (Sequence Diagram)
+    4.2 流程圖 (Flowchart)
+    ---
+    ## 5. 演算法特定規則
+    在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+    ---
+    ## 6. 各晶片韌體格式詳解
+    ---
+    ## 7. 晶片格式總覽表
+    ## GLBinTool Commands
+    ---
+    ### ⚙️ WIP 階段
+    ```c
+    glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+    ```
+    用途
+    將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+    在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+    輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+    必要參數 
+    - i, --input → 原始 Bin 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個原始 Bin 檔
+    回傳
+    -  回傳 Output 檔案數量，若為 0 則為 Fail
+    特殊狀況
+    -  case A in 才需要放 public key 進去
+    ---
+    ### 🔑 SIGN 階段
+    ```c
+    glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+    ```
+    用途
+    計算 wip.bin 的 Hash，產生 Signed bin 檔。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出 sig 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    - f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+    特殊狀況
+    -  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+    ---
+    ### 📦 ROM 階段
+    ```c
+    glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+    ```
+    用途
+    依晶片演算法，組裝最終檔案 rom。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出檔案
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    ---
+    ## 測試Chip & bin 檔
+    
+    </related>
+    <related id="hp-rtk-scaler-code-sign" title="HP RTK Scaler Code Sign" path="/code-sign/hp-rtk-scaler-code-sign.html">
+    
+    RTK的燒錄流程, 每個Scaler大同小異, 除了Disable Flash Hardware Write Protection需要下的參數不同以外, 最大的差別在於數位簽章的部分, 此章節只針對數位簽章的流程作介紹
+    RTK的數位簽章, 分為HW與SW兩種, 一種Scaler只會有一種Code Sign方式
+    如何判斷是哪一種方式, RTK有設計指令可以去問Code Sign種類, 但並沒有將這個功能加到所有的Scaler當中, 因此目前程式只能先用INI方式來強制指定
+    閱讀此章節前, 請先參考以下文件大致了解整個燒錄的流程
+    https://www.notion.so/Bu5-Spec-82cc386663974de58c65b57ea7ebffc0#1ff6387a0f6649e3a50c034cf23f2584
+    或是整理過的流程介紹
+    https://www.notion.so/HP-RTK-Scaler-Update-Flow-10a0786c41b5483e8426bf5a03ed1365
+    快速連結
+    如何判斷SW或是HW Code Sign
+    程式INI說明
+    Bin檔說明
+    SW Key
+    HW Key
+    燒錄流程說明
+    ---
+    # 如何判斷SW或是HW Code Sign
+    目前是用Scaler FW的檔名, 配合INI的設定, 來決定走HW還是SW的流程, 以下為INI的內容
+    [Scaler]
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    CodeSign Type 0:None, 1: HW, 2:SW
+    [RTD2778]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    [RTD2798]
+    NewDifferBank=1
+    CodeSign=1
+    HwWpGpio=0x1064
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xfe54
+    HwWpPinReserved=0xfe
+    HwWpPinValue=0x01
+    不同的Scaler Type會有不同的Code Sign方式, 解除Write Protect的參數也不相同, 因此這些資訊必須事先定義在INI內
+    RtkSupportModel=E24m,E27m,E34m
+    程式會根據Scaler Bin檔檔名, 去抓對應的設定
+    例如Scaler Bin為E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    程式會抓到檔名開頭的E24M, 並且在INI內找到對應的Scaler Type
+    E24m=RTD2778
+    程式再去[RTD2778]內將對應的設定全部讀入 (下圖紅框, CodeSign=2, 就會走SW驗證的流程)
+    ---
+    # 程式INI說明
+    上述的例子, 只適用於HP ISP Tool, 因為HP ISP Tool不會知道使用者選了哪一個Scaler的FW
+    因此只能在使用者選了Scaler FW之後, 再經由檔名去找到對應的設定
+    但如果是HP Enduser Tool, 因為一包只會更新一種Scaler, 所以不用在INI內設定這一段
+    RtkSupportModel=E24m,E27m,E34m
+    E24m=RTD2778
+    E27m=RTD2788
+    E34m=RTD2798
+    直接在Scaler的section內設定即可, 例如現在要燒RTD2778, INI的內容為
+    [Scaler]
+    NewDifferBank=1
+    CodeSign=2
+    HwWpGpio=0x102a
+    HwWpGpioReserved=0xf8
+    HwWpGpioValue=0x01
+    HwWpPin=0xffe2
+    HwWpPinReserved=0xfb
+    HwWpPinValue=0x04
+    ---
+    # Bin檔說明
+    簡單來說, SW驗證的簽章與bin檔不同檔案, HW驗證的簽章與bin檔同一個檔案
+    SW驗證: 會有兩個檔案, 檔名相同只有副檔名不同, 一個是.bin, 一個是.bin.sig
+    .bin是正常的Bin檔不包含簽章, .bin.sig為簽章內容, 以E24m為例有以下兩個檔案
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin
+    E24M_G4_M238HCA_LCZ_C2_715GC248_M0A_BIT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    HW驗證: 只會有一個檔案, 包含了簽章在內, 副檔名是.bin.sig, 例如E34m的bin檔為E34M_TPM340Y1_2H012_21B_715GC248_M0A_XVT001_V0.0.0.5_20210426_DigitalSign_User.bin.sig
+    上圖為RTK文件的內容, 其中Bank就是Block, 一個Bank的大小定義是64KB, 因此一個RTK的Scaler Bin檔, 大小一定是64KB的倍數
+    如果需要做數位簽章驗證, 則會將相關的內容放在最後一個Bank, 例如檔案大小為1245184, 總共會有1245184 / 65536 = 19個bank, 則65536 X 18 = 1179648 = 0x120000開始會存放簽章相關資料
+    以下介紹每個欄位內容
+    Header: 目前拿到的FW, Header都是ZSTR這個字串, 但不確定RTK以後的案子會不會都是一樣, 需要再與RTK做確認
+    Version: 目前拿到的FW, 內容都是0, 還不確定有什麼作用
+    User Type: 目前拿到的FW, 內容不太一樣, 有的都是0, 還不確定有什麼作用
+    Key Length: Key的長度, 算法為KeyBuf[0] + (KeyBuf[1] << 8) + (KeyBuf[2] << 16) + (KeyBuf[3] <<24)
+    例如四個Byte依序為0x04,0x03,0x00,0x00, 則長度為0x304
+    Signature Length: Signature的長度, 算法與KeyLength相同, 如果為SW驗證, Signature Length = 0, 因為Signature會在另一個檔案 (SW驗證的簽章長度為0, 這一點RTK文件內並沒有提到)
+    Key Data: 接在Signature Length後面, 長度由Key Length取得
+    Signature Data: 接在Key Data後面, 只有HW驗證的檔案才會有signature
+    ---
+    # SW Key
+    有兩種Key會從流程中得到
+    1. 從Flash得到的Key (以下簡稱Flash Key), 取得方式: 文件的4.13.7 Get Current Key Address, 先取得Key的位址後, 再用4.19.1 Get Current Verify Key from Flash的方法得到Key
+    1. 從Bin檔得到的Key (以下簡稱Bin Key), 取得方式: 文件的4.12 Extract FW/Key/Signature, 就是上面Bin檔的說明
+    Flash Key: 用RTK提供的DLL來驗證簽章 (.bin.sig的內容), 不用寫進Flash
+    Bin Key: 流程當中的Next Verify Key, 需要寫進Flash (4.18 Write Next Verify Key For New Differ Bank), 而寫到Flash的位址請參考 (4.13.6 Get Next Verify Key Address取得)
+    ---
+    # HW Key
+    與SW比較, HW的流程相對簡單, Key和簽章都是從Bin檔讀出來, 然後寫到Flash某特定的位置後, 讓Scaler自己去做驗證即可
+    Key: 從Bin檔讀出來, 寫入flash的位置為4.13.6 Get Next Verify Key Address
+    簽章: 從Bin檔讀出來, 寫入flash的位置為4.13.7 Get Signature Address
+    ---
+    # 燒錄流程說明
+    ## HW驗證
+    燒錄流程最後兩個步驟分別是Reset MCU與New Differ Bank After ISP
+    下了Reset MCU之後會造成Hub斷電, 此時FW會去進行簽章的驗證, 而驗證的時間與Bin檔的大小相關, 
+    因此程式需要在Reset MCU後Delay夠久的時間(*1), 讓FW去做驗證. 而New Differ Bank After ISP就是下指令去取得驗證的結果, 驗證結果成功, 才是完成整個燒錄流程
+    New Differ Bank After ISP會失敗的原因
+    (*1)RTK提供的公式是 Bank數 X 1.5 + 3 = Delay秒數, 例如Bin檔有10個Bank, 就需Delay 10 X 1.5 + 3 = 18秒, 但後來經過實驗, 這個時間不夠, 應該要 Bank數 X 1.5 + 10 比較保險
+    
+    </related>
+  </related_context>
+</context_boundaries>

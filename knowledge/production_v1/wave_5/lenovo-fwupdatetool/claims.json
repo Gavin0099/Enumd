@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "Lenovo 的顯示器型號 T27q-20 和 T24i-2L 使用了不同的 scaler 晶片 (MTK 和 RTK)，而同一個 scaler 晶片下又可能使用不同的面板，每個面板所需的韌體 (FW) 也不相同。如果使用原始的命令列工具 (Command Line Tool)，需要為每種組合準備一個專屬的工具，而且螢幕外觀都一樣，很難分辨要使用哪一個工具。因此 Lenovo 希望能夠提供一個單一的工具，可以同時更新各種不同的組合。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "Lenovo 的顯示器可以透過 DDCCI 協定獲取一些資訊，其中包括料號 (Part Number)。每一個不同的面板都會有不同的料號，不同面板的料號不會相同。因此可以利用料號的方式來決定要更新的韌體資訊。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- MStar_Scaler: 這部分一定要設定，但可以隨意指定，只要讓程式有讀到東西，否則在 ISP 之前就會出現錯誤。真正的晶片設定會在另一個檔案中進行。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- CheckPartNumber: 設為 1 才會開啟使用 Part Number 燒錄的功能。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- I2cWriteLength: 此為 RTK 專用，指定每一次 Write 最多寫多少。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- [RTDxxxx]: RTK Scaler 的設定，與其他工具設定都一樣，只要有用到的 Scaler Chip 都要設定在 GLHub.ini 中。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- [XXX.XXXXX.XXXX]: 料號，長度固定為 14，格式的說明在上方投影片 Page7 有詳細介紹。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- BinFile: Bin 檔案路徑。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- IspStartAddress: 燒錄在 flash 內的開始位置。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- Flag1, Flag2: UserFlag 的值，通常是 0xAA55。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- FlagAddress: UserFlag 燒錄的位置。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "- ScalerChip: RTK 或 MTK 的 Scaler chip type，如果是 RTK 的 Scaler，設定的內容需要在 GLHub.ini 內有對應的設定。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "1. Command Line Tool 下 `/pu` 開始流程，會從 `GLHubUpdateTool_Lenovo.cpp` 的 `ManualUpdateScalerByPartNumber()` 開始。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "2. 先詢問料號，函式為 `RealtekScalerCtrl` 和 `CMStarScalerCtrl` class 內的 `GetPartNumber()`，程式會顯示問到的料號。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "3. 根據料號去 `PartNumber.ini` 內找對應的 Section，如果沒找到，顯示錯誤訊息並結束程式。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "4. 找到對應的料號後，進入 `RealtekScalerCtrl` 和 `CMStarScalerCtrl` 的 `Isp()` 內。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "lenovo-fwupdatetool",
+    "claim": "5. 兩個 class 都會呼叫 `ReadIniSetting()`，在 `ReadIniSetting()` 後需要根據 `PartNumber.ini` 的內容讀取燒錄的資訊。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

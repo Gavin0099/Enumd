@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "log分類",
+    "claim": "在軟體開發過程中，開發人員通常會在程式碼中加入大量的 log 訊息以協助除錯和監控系統行為。然而，過多的 log 訊息可能會造成以下問題：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "log分類",
+    "claim": "因此，在開發過程中應該謹慎地管理 log 訊息的輸出，避免產生不必要的 log。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "log分類",
+    "claim": "總之，log 分類是軟體開發中一個重要的課題。開發人員應該謹慎管理 log 訊息的輸出，提高 log 的可讀性和可理解性，並盡量解決無法確定呼叫者的問題。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

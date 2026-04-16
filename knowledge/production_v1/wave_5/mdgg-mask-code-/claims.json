@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "mdgg-mask-code-",
+    "claim": "Chip_3311_1-2.ROM 包含 vendor command。Chip_3364_1-2-3.ROM 和 Chip_3462_1-2-1.ROM 似乎在重試同一個 64 byte 的資料。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

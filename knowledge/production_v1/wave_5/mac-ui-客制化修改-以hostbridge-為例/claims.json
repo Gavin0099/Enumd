@@ -1,0 +1,154 @@
+[
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "本專案的 Git 位置位於 `http://crd-sw.genesyslogic.com.tw:8081/CRD/SW/USBHub/HostBridge/Mac/Standard`。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "1. 複製專案並包含子模組: `git clone --recursive \"http://crd-sw.genesyslogic.com.tw:8081/CRD/SW/USBHub/HostBridge/Mac/Standard\"`",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "2. 建立新分支: `git branch wip/GavinWu/ModifyTheMacCmakeEnvironment`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "3. 切換到 master 分支: `git switch master`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "4. 檢查目前狀態: `git status`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "5. 還原到上一個 commit: `git reset --hard`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "6. 清除未追蹤的檔案: `git clean -d -xf`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "7. 新增所有變更: `git add .`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "8. 提交變更: `git commit -m \"add PKG Targus setting file\"`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "9. 推送變更: `git push`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "10. 新增子模組: `git submodule add \"http://gli-gitlab.genesyslogic.com.tw:8081/CRD/SW/USBHub/HostBridge/Mac/SRC.git\" APP`",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "1. 新增 APP Target",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "2. 在 Project List 中會產生對應的資料夾 (以 Test 為例)",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "3. 由於 HostBridge 並沒有 MainMenu UI，所以要把 MainMenu.xib 刪除",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "4. 由於主要的程式碼都在 HostBridge Target 裡面，為了因應不同客戶要修改不同的 UI，所以把 HostBridge 裡面的 AppDelegate 原始碼複製一份到 Test 裡面的 AppDelegate",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "5. General、Signing & Capabilities、Info 和 Build Phases 都要按照 HostBridge 的設定",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "1. 修改 `build.sh` 檔案",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "1. 修改 `_gitlab-ci.yml` 檔案",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-ui-客制化修改-以hostbridge-為例",
+    "claim": "3. 在 GitHub 專案的 Setting > CI/CD > General pipelines 中，將 `_gitlab-ci.yml` 檔案放在專案最上層資料夾，GitHub 就會自動進行建置",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

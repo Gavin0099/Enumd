@@ -1,0 +1,680 @@
+<context_boundaries>
+<core_topic id="mac-eep-tool" title="Mac EEP Tool" path="/mac/mac-eep-tool.html">
+
+```swift
+import SwiftUI
+struct DraggableArea: NSViewRepresentable {
+    func makeNSView(context: Context) -> DraggableNSView {
+        return DraggableNSView()
+    }
+    func updateNSView(_ nsView: DraggableNSView, context: Context) {}
+
+    class DraggableNSView: NSView {
+        override func mouseDown(with event: NSEvent) {
+            if let window = AppDelegate.sharedWindow {
+                window.performDrag(with: event)
+            }
+        }
+    }
+}
+struct MouseDownDraggableView: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSView {
+        let view = NSView()
+        view.wantsLayer = true
+        // 透明，可互動
+        view.layer?.backgroundColor = NSColor.clear.cgColor
+        // mouseDown callback
+        view.addGestureRecognizer(NSClickGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleClick)))
+        return view
+    }
+
+    func updateNSView(_ nsView: NSView, context: Context) {}
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+
+    class Coordinator: NSObject {
+        @objc func handleClick() {
+            if let window = AppDelegate.sharedWindow {
+                let mouseLocation = NSEvent.mouseLocation
+                let event = NSEvent.mouseEvent(
+                    with: .leftMouseDown,
+                    location: mouseLocation,
+                    modifierFlags: [],
+                    timestamp: ProcessInfo.processInfo.systemUptime,
+                    windowNumber: window.windowNumber,
+                    context: nil,
+                    eventNumber: 0,
+                    clickCount: 1,
+                    pressure: 1
+                )
+                if let event = event {
+                    window.performDrag(with: event)
+                }
+            }
+        }
+    }
+}
+struct TitleBarView: View {
+    var body: some View {
+        ZStack {
+            HStack {
+                Text("Lenovo monitor firmware service tool")
+                    .font(.system(size: 22, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.leading, 16)
+                Spacer()
+            }
+            DraggableArea() // 疊在最上層
+        }
+        .frame(height: 40)
+        .background(Color(red: 0.19, green: 0.51, blue: 0.91))
+        .clipped()
+        // 或 .contentShape(Rectangle()) 讓整個區域可拖曳
+    }
+}
+
+
+
+struct BlueOutlineButton: View {
+    let title: String
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 14)
+                    .fill(Color(red: 0.12, green: 0.55, blue: 0.94))
+                RoundedRectangle(cornerRadius: 14)
+                    .stroke(Color(red: 0.21, green: 0.54, blue: 1.0), lineWidth: 4)
+                Text(title)
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 36)
+            }
+            .frame(height: 44)
+        }
+        .buttonStyle(PlainButtonStyle())
+        .focusable(false)
+    }
+}
+struct TableHeaderText: View {
+    let text: String
+    let width: CGFloat
+    var color: Color = .black   // 預設黑色
+
+    var body: some View {
+        Text(text)
+            .font(.system(size: 15, weight: .bold))
+            .foregroundColor(color)
+            .frame(width: width, height: 32, alignment: .leading)
+            .padding(.leading, 4)
+    }
+}
+struct ContentView: View {
+    @State private var versionOutput = "01.00"
+    @State private var devices: [DeviceItem] = [
+        .init(name: "USB HUB 1", comID: "HB0", asIs: "8045", toBe: "8045", status: ""),
+        .init(name: "PD", comID: "PD0", asIs: "0.33", toBe: "0.33.0.0", status: ""),
+        .init(name: "Scaler", comID: "SC0", asIs: "L0.7", toBe: "L0.7", status: "")
+    ]
+
+    var body: some View {
+        ZStack {
+            Color(.sRGB, red: 0.88, green: 0.89, blue: 0.92).ignoresSafeArea()
+            VStack(spacing: 0) {
+                TitleBarView()
+                HStack(spacing: 0) {
+                    // 左灰底寬度（更窄）
+                    LeftPanelView(versionOutput: versionOutput)
+                        .frame(width: 270)
+                        .background(Color(.sRGB, white: 0.85, opacity: 1.0))
+
+                    VStack(spacing: 0) {
+                        RightPanelView(devices: devices)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        BottomButtonBar()
+                            .frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.white)
+                }
+
+            }
+            .frame(width: 1100, height: 600)
+        }
+    }
+}
+
+
+
+
+
+
+// MARK: - Left Panel
+
+struct LeftPanelView: View {
+    let versionOutput: String
+    var body: some View {
+        VStack(spacing: 0) {
+            // 白色 General 資訊區塊
+            VStack(alignment: .leading, spacing: 14) {
+                Text("General")
+                    .font(.system(size: 21, weight: .bold))
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.gray.opacity(0.32))
+                    .padding(.vertical, 2)
+                Group {
+                    HStack { Text("MTM:").bold(); Text("General") }
+                    HStack { Text("SN:").bold(); Text("General") }
+                    HStack { Text("Hardware:").bold(); Text("General") }
+                    HStack { Text("All Version:").bold(); Text(versionOutput) }
+                }
+                .font(.system(size: 16))
+            }
+            .padding(14) // 內部白匡的內距
+            .background(Color.clear)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 2)
+            )
+            .padding(.horizontal, 18) // 關鍵：白匡左右各留灰邊
+            .padding(.top, 36)        // <--- **這一行是重點，加上這個讓白框往下移**
+
+            Spacer()
+
+            BlueOutlineButton(title: "Read Me") {
+                // action
+            }
+            .frame(height: 52)
+            .padding(.horizontal, 18) // 按鈕左右也各留灰邊
+            .padding(.bottom, 24)
+        }
+        .frame(width: 260)
+        .frame(maxHeight: .infinity)
+        .background(Color(.sRGB, white: 0.85, opacity: 1.0))
+
+        .frame(width: 260)
+        .frame(maxHeight: .infinity)
+        .background(Color(.sRGB, white: 0.85, opacity: 1.0))
+    }
+}
+
+
+
+
+
+
+// MARK: - Right Panel
+
+struct RightPanelView: View {
+    let devices: [DeviceItem]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // ATTENTION 區塊，置中
+            HStack(spacing: 12) {
+                Spacer()
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .resizable()
+                    .frame(width: 48, height: 48)
+                    .foregroundColor(.black)
+                Text("ATTENTION")
+                    .font(.title2).bold()
+                Spacer()
+            }
+            .padding(.top, 16)
+            
+            // 左對齊說明文字 & 字體加大
+            Text("""
+                DO NOT turn off the display or remove USB cable until monitor reboot.
+                DO NOT turn off or sleep the computer during firmware update.
+                """)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(.black)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            // --------- 表格外框 ----------
+            ZStack(alignment: .topLeading) {
+                RoundedRectangle(cornerRadius: 3)
+                    .stroke(Color.gray.opacity(0.38), lineWidth: 1)
+                    .background(Color.white.cornerRadius(3))
+                VStack(spacing: 0) {
+                    // header
+                    HStack(spacing: 0) {
+                        TableHeaderText(text: "Com", width: 140 , color: .white) // 這裡可加寬到140
+                        Divider().frame(width: 1, height: 32).background(Color.white)
+                        TableHeaderText(text: "Com ID", width: 100, color: .white)
+                        Divider().frame(width: 1, height: 32).background(Color.white)
+                        TableHeaderText(text: "As Is", width: 100, color: .white)
+                        Divider().frame(width: 1, height: 32).background(Color.white)
+                        TableHeaderText(text: "To Be", width: 120, color: .white)
+                        Divider().frame(width: 1, height: 32).background(Color.white)
+                        TableHeaderText(text: "Updating Status", width: 180, color: .white)
+                        Spacer()
+                    }
+                    .background(Color(.sRGB, white: 0.63, opacity: 1.0))
+
+
+                    // 資料列
+                    ForEach(devices) { item in
+                        HStack(spacing: 0) {
+                            TableCellText(text: item.name, width: 140)
+                            TableCellText(text: item.comID, width: 100)
+                            TableCellText(text: item.asIs, width: 100)
+                            TableCellText(text: item.toBe, width: 120)
+                            TableCellText(text: item.status, width: 180)
+                            Spacer()
+                        }
+                        .frame(height: 28)
+                    }
+                }
+            }
+            // 讓表格**自動撐滿**可用空間，不用固定寬度
+            .frame(maxWidth: .infinity, minHeight: 140, alignment: .leading)
+            .padding(.top, 4)
+            .padding(.bottom, 8)
+            // --------- 表格外框結束 ----------
+
+            Spacer()
+        }
+        .padding(.leading, 32)
+        .padding(.trailing, 32)
+        .padding(.top, 18)
+        .padding(.bottom, 0)
+        .background(Color.white)
+    }
+}
+
+// MARK: - Bottom Button Bar
+
+struct BottomButtonBar: View {
+    var body: some View {
+        HStack(spacing: 32) {
+            Spacer()
+            BlueOutlineButton(title: "Update") {
+                // Update 動作
+            }
+            .frame(width: 220)
+            
+            BlueOutlineButton(title: "Exit") {
+                NSApplication.shared.terminate(nil) // 關閉 app
+            }
+            .frame(width: 220)
+            Spacer()
+        }
+        .padding(.vertical, 18)
+    }
+}
+
+
+
+
+
+
+// MARK: - Table Cell Helpers
+
+
+
+struct TableCellText: View {
+    let text: String
+    let width: CGFloat
+    var body: some View {
+        Text(text)
+            .font(.system(size: 15))
+            .frame(width: width, height: 28, alignment: .leading)
+            .padding(.leading, 4)
+    }
+}
+
+// MARK: - DeviceItem
+
+struct DeviceItem: Identifiable {
+    let id = UUID()
+    var name: String
+    var comID: String
+    var asIs: String
+    var toBe: String
+    var status: String
+}
+
+#Preview {
+    ContentView()
+}
+
+```
+```swift
+import SwiftUI
+
+struct DraggableArea: NSViewRepresentable {
+    func makeNSView(context: Context) -> DraggableNSView {
+        return DraggableNSView()
+    }
+    func updateNSView(_ nsView: DraggableNSView, context: Context) {}
+
+    class DraggableNSView: NSView {
+        override func mouseDown(with event: NSEvent) {
+            if let window = AppDelegate.sharedWindow {
+                window.performDrag(with: event)
+            }
+        }
+    }
+}
+
+extension Color {
+    static let mac_bg        = Color(.sRGB, white: 0.98, opacity: 1.0)       // 近系統白
+    static let mac_card      = Color(.sRGB, white: 1.0, opacity: 0.80)        // 淡白半透明
+    static let mac_border    = Color(.sRGB, white: 0.89, opacity: 1.0)        // 蘋果灰
+    static let mac_header    = Color(.sRGB, white: 0.90, opacity: 1.0)        // 面板 header
+    static let mac_shadow    = Color(.sRGB, white: 0.78, opacity: 1.0)        // 陰影灰
+    static let mac_blue      = Color(red: 0.13, green: 0.52, blue: 1.00)      // 蘋果藍
+    static let mac_textMain  = Color(.sRGB, white: 0.13, opacity: 1.0)        // 幾乎黑
+    static let mac_textGray  = Color(.sRGB, white: 0.40, opacity: 1.0)        // 灰字
+    static let mac_btnGray   = Color(.sRGB, white: 0.96, opacity: 1.0)        // 按鈕灰底
+    static let mac_btnStroke = Color(.sRGB, white: 0.82, opacity: 1.0)        // 按鈕灰線
+}
+
+struct TitleBarView: View {
+    var body: some View {
+        ZStack {
+            HStack {
+                Text("Lenovo monitor firmware service tool")
+                    .font(.system(size: 22, weight: .bold))
+                    .foregroundColor(.mac_textMain)
+                    .padding(.leading, 16)
+                Spacer()
+            }
+            DraggableArea()
+        }
+        .frame(height: 40)
+        .background(BlurView(style: .sidebar)) // <-- 這裡重點
+        .overlay(
+            Rectangle()
+                .frame(height: 1)
+                .foregroundColor(Color.mac_border), alignment: .bottom
+        )
+        .clipped()
+    }
+}
+
+
+struct BlueOutlineButton: View {
+    let title: String
+    let action: () -> Void
+    @State private var hovering = false
+
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundColor(hovering ? .white : .mac_textMain)
+                .padding(.horizontal, 36)
+                .frame(height: 44)
+                .background(
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 14)
+                            .fill(hovering ? Color.mac_blue : Color.mac_btnGray)
+                        RoundedRectangle(cornerRadius: 14)
+                            .stroke(hovering ? Color.mac_blue : Color.mac_btnStroke, lineWidth: 2)
+                    }
+                )
+        }
+        .buttonStyle(PlainButtonStyle())
+        .onHover { hover in hovering = hover }
+        .focusable(false)
+        .animation(.easeInOut(duration: 0.16), value: hovering)
+    }
+}
+
+struct TableHeaderText: View {
+    let text: String
+    let width: CGFloat
+    var color: Color = .mac_textMain
+    var body: some View {
+        Text(text)
+            .font(.system(size: 15, weight: .bold))
+            .foregroundColor(color)
+            .frame(width: width, height: 32, alignment: .leading)
+            .padding(.leading, 4)
+    }
+}
+
+struct ContentView: View {
+    @State private var versionOutput = "01.00"
+    @State private var devices: [DeviceItem] = [
+        .init(name: "USB HUB 1", comID: "HB0", asIs: "8045", toBe: "8045", status: ""),
+        .init(name: "PD", comID: "PD0", asIs: "0.33", toBe: "0.33.0.0", status: ""),
+        .init(name: "Scaler", comID: "SC0", asIs: "L0.7", toBe: "L0.7", status: "")
+    ]
+
+    var body: some View {
+        ZStack {
+            Color.mac_bg.ignoresSafeArea()
+            VStack(spacing: 0) {
+                TitleBarView()
+                HStack(spacing: 0) {
+                    LeftPanelView(versionOutput: versionOutput)
+                        .frame(width: 270)
+                        .background(Color.mac_bg)
+
+                    VStack(spacing: 0) {
+                        RightPanelView(devices: devices)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        BottomButtonBar()
+                            .frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.mac_bg)
+                }
+            }
+            .frame(width: 1100, height: 600)
+        }
+    }
+}
+
+// MARK: - Left Panel
+
+struct LeftPanelView: View {
+    let versionOutput: String
+    var body: some View {
+        VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("General")
+                    .font(.system(size: 21, weight: .bold))
+                    .foregroundColor(.mac_textMain)
+                Rectangle()
+                    .frame(height: 1)
+                    .foregroundColor(Color.mac_border)
+                    .padding(.vertical, 2)
+                Group {
+                    HStack { Text("MTM:").bold().foregroundColor(.mac_textMain); Text("General").foregroundColor(.mac_textGray) }
+                    HStack { Text("SN:").bold().foregroundColor(.mac_textMain); Text("General").foregroundColor(.mac_textGray) }
+                    HStack { Text("Hardware:").bold().foregroundColor(.mac_textMain); Text("General").foregroundColor(.mac_textGray) }
+                    HStack { Text("All Version:").bold().foregroundColor(.mac_textMain); Text(versionOutput).foregroundColor(.mac_textGray) }
+                }
+                .font(.system(size: 16))
+            }
+            .padding(14)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.mac_card)
+                    .shadow(color: Color.mac_shadow.opacity(0.2), radius: 8, x: 0, y: 4)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.mac_border, lineWidth: 1)
+            )
+            .padding(.horizontal, 18)
+            .padding(.top, 36)
+
+            Spacer()
+
+            BlueOutlineButton(title: "Read Me") {
+                // action
+            }
+            .frame(height: 52)
+            .padding(.horizontal, 18)
+            .padding(.bottom, 24)
+        }
+        .frame(width: 260)
+        .frame(maxHeight: .infinity)
+        .background(Color.mac_bg)
+    }
+}
+
+// MARK: - Right Panel
+
+struct RightPanelView: View {
+    let devices: [DeviceItem]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(spacing: 12) {
+                Spacer()
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .resizable()
+                    .frame(width: 48, height: 48)
+                    .foregroundColor(.mac_blue)
+                Text("ATTENTION")
+                    .font(.title2).bold()
+                    .foregroundColor(.mac_textMain)
+                Spacer()
+            }
+            .padding(.top, 16)
+
+            Text("""
+                DO NOT turn off the display or remove USB cable until monitor reboot.
+                DO NOT turn off or sleep the computer during firmware update.
+                """)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(.mac_textMain)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            ZStack(alignment: .topLeading) {
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.mac_border, lineWidth: 1)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color.mac_card)
+                            .shadow(color: Color.mac_shadow.opacity(0.13), radius: 7, x: 0, y: 2)
+                    )
+                VStack(spacing: 0) {
+                    // header
+                    HStack(spacing: 0) {
+                        TableHeaderText(text: "Com", width: 140 , color: .mac_textMain)
+                        Divider().frame(width: 1, height: 32).background(Color.mac_border)
+                        TableHeaderText(text: "Com ID", width: 100, color: .mac_textMain)
+                        Divider().frame(width: 1, height: 32).background(Color.mac_border)
+                        TableHeaderText(text: "As Is", width: 100, color: .mac_textMain)
+                        Divider().frame(width: 1, height: 32).background(Color.mac_border)
+                        TableHeaderText(text: "To Be", width: 120, color: .mac_textMain)
+                        Divider().frame(width: 1, height: 32).background(Color.mac_border)
+                        TableHeaderText(text: "Updating Status", width: 180, color: .mac_textMain)
+                        Spacer()
+                    }
+                    .background(Color.mac_header)
+
+                    ForEach(devices) { item in
+                        HStack(spacing: 0) {
+                            TableCellText(text: item.name, width: 140)
+                            TableCellText(text: item.comID, width: 100)
+                            TableCellText(text: item.asIs, width: 100)
+                            TableCellText(text: item.toBe, width: 120)
+                            TableCellText(text: item.status, width: 180)
+                            Spacer()
+                        }
+                        .frame(height: 28)
+                        .background(Color.mac_card)
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, minHeight: 140, alignment: .leading)
+            .padding(.top, 4)
+            .padding(.bottom, 8)
+
+            Spacer()
+        }
+        .padding(.leading, 32)
+        .padding(.trailing, 32)
+        .padding(.top, 18)
+        .padding(.bottom, 0)
+        .background(Color.mac_bg)
+    }
+}
+
+// MARK: - Bottom Button Bar
+
+struct BottomButtonBar: View {
+    var body: some View {
+        HStack(spacing: 32) {
+            Spacer()
+            BlueOutlineButton(title: "Update") {
+                // Update 動作
+            }
+            .frame(width: 220)
+
+            BlueOutlineButton(title: "Exit") {
+                NSApplication.shared.terminate(nil)
+            }
+            .frame(width: 220)
+            Spacer()
+        }
+        .padding(.vertical, 18)
+    }
+}
+
+// MARK: - Table Cell Helpers
+
+struct TableCellText: View {
+    let text: String
+    let width: CGFloat
+    var body: some View {
+        Text(text)
+            .font(.system(size: 15))
+            .foregroundColor(.mac_textMain)
+            .frame(width: width, height: 28, alignment: .leading)
+            .padding(.leading, 4)
+            .background(Color.mac_card)
+    }
+}
+
+// MARK: - DeviceItem
+
+struct DeviceItem: Identifiable {
+    let id = UUID()
+    var name: String
+    var comID: String
+    var asIs: String
+    var toBe: String
+    var status: String
+}
+
+// macOS System blur，mac13+ 可用，若用舊 mac 可去掉 BlurView
+import AppKit
+
+struct BlurView: NSViewRepresentable {
+    let style: NSVisualEffectView.Material
+    func makeNSView(context: Context) -> NSVisualEffectView {
+        let view = NSVisualEffectView()
+        view.material = style
+        view.state = .active
+        view.blendingMode = .withinWindow
+        return view
+    }
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
+}
+
+
+
+
+#Preview {
+    ContentView()
+}
+
+```
+
+</core_topic>
+</context_boundaries>

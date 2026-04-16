@@ -1,0 +1,62 @@
+<context_boundaries>
+<core_topic id="lenovo-spec-" title="Lenovo spec " path="/general/lenovo-spec-.html">
+
+1. The Tool itself must be compatible with Windows, ARM(WOA?), and Mac OS systems.
+1. Security process flow
+1. 
+1.
+
+</core_topic>
+  <related_context>
+    <related id="-genesys-logic-firmware-安全簽署與驗證流程-code-signing-" title=" Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) " path="/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html">
+    
+    本文件旨在闡述 Genesys Logic 為滿足 HP Code Signing 安全要求所設計的韌體簽署與驗證架構。
+    - 核心要求：所有簽署操作必須符合 FIPS 140-2 Level 3 安全標準，並採用 ECDSA nistp256 加密演算法。
+    - 挑戰：在滿足嚴格安全合規性的前提下，建立一套兼具成本效益、可擴展性與災難恢復能力的內部簽署系統。
+    - 最終方案：我們選擇採用「經 FIPS L3 認證的 USB eToken 硬體，並搭配自行開發的 SDK 應用程式」方案。此方案將金鑰安全地儲存在防竄改硬體中，同時透過自研的金鑰管理系統（KMS）實現高度客製化的簽署流程與嚴格的稽核管控。
+    ---
+    ## 💡 簡介 (Introduction)
+    ---
+    ## 🔑 Code Signing 資源與實作方案 (含 FIPS 合規要求)
+    ---
+    ## 🏛️ eToken 簽署系統架構解析
+    ---
+    ## 🔑 Genkey 金鑰生成與佈署流程解析
+    ---
+    ## 📜 Sign File 簽署檔案工作流程
+    ---
+    ## 🔄 端到端的程式碼簽署與驗證完整流程
+    ---
+    ## 🚀 程式碼簽署與驗證流程 (Boot Code Verify)
+    ---
+    ## eToken 集中式管理與安全存取服務平台(未來架構)
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsa" title="3rd party code signing specification (ECDSA)" path="/code-sign/3rd-party-code-signing-specification-ecdsa.html">
+    
+    ## Genesys Logic code sign overview
+    - 因應需求，firmware 都必須要驗證合法性。
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verify
+    ### Implement
+    ### Using OpenSSL
+    ### Using eToken
+    
+    </related>
+    <related id="3rd-party-code-signing-specification-ecdsaen-" title="3rd party code signing specification (ECDSA)(EN) " path="/code-sign/3rd-party-code-signing-specification-ecdsaen-.html">
+    
+    ## Genesys Logic code sign overview
+    - Firmware must be verified before updating to flash.
+    - Signed bin file format
+    ## Flow
+    - Sign
+    - Verification
+    ### Implementation
+    ### Using OpenSSL
+    ### Store the Private key
+    
+    </related>
+  </related_context>
+</context_boundaries>

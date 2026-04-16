@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "notion-使用方式",
+    "claim": "相信大家都有用過很多線上的筆記軟體，如 OneNote、Google Doc、Evernote 等。我選擇使用 Notion 的原因有幾點:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "1. 使用 Markdown 格式，可以很好地與 GitLab 等工具整合。[Notion 使用方式](./general/notion-使用方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "2. 支援多種格式，使用上具有很高的彈性。[Notion 使用方式](./general/notion-使用方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "3. 提供許多可套用的模板。[Notion 使用方式](./general/notion-使用方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "4. 有多種不同的使用方式，可滿足各種需求。[Notion 使用方式](./general/notion-使用方式.html)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "🔗 [Code-Sign 技術規格文件 (整合版)](./code-sign/code-sign-技術規格文件-整合版.html)",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "🔗 [Etoken System Code View](./code-sign/etoken-system-code-view-.html)",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "notion-使用方式",
+    "claim": "🔗 [eToken 安全簽章系統技術說明](./code-sign/etoken-安全簽章系統技術說明.html)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

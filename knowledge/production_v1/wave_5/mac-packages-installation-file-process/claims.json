@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "以下是關於 'Mac packages installation file process' 的綜合報告:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "[Packages](http://s.sudre.free.fr/Software/files/Packages.dmg) 是一款適用於 Mac OS X 10.5 或更高版本的安裝包製作和分發工具。它為軟體開發人員和管理員提供了強大而靈活的功能,可以方便地打包和部署應用程式或插件。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "1. 開啟 Packages 應用程式或直接執行 HP OCI Tool.pkgproj 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "3. 設定 Project Name (預設為 'HP OCI Tool')和 Project Directory (build 輸出位置)。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "5. 在 'Payload' 中設定好安裝路徑 (Application → HP_OCI_Tool)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "6. 如需修改檔案,可在 HP_OCI_Tool 資料夾上右鍵選擇 'Add Files'。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "8. 出現 'Build Succeeded' 訊息後,在 build 資料夾中即可找到生成的 .pkg 安裝檔。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "請參考 [HP OCI Tool Packages sample setting](#hp-oci-tool-packages-sample-setting)。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "1. [eToken 安全簽章系統技術說明](etoken-安全簽章系統技術說明.html):",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "- 介紹了 eToken 系統如何從原始二進位檔案開始,經過簽章和封裝等步驟生成安全的 sig.bin 和 rom 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "2. [HID Code Sign 記錄](hid-code-sign-記錄.html):",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "3. [HP OCI APP](hp-oci-app.html):",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "- 介紹了 HP OCI 應用程式的相關功能和 XML 設定。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "mac-packages-installation-file-process",
+    "claim": "- 這與 Mac 軟體安裝包的製作過程中,如何將應用程式打包和部署到 Mac 系統上有一定的關聯。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

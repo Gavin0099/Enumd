@@ -1,0 +1,137 @@
+<context_boundaries>
+<core_topic id="lenovo-code-sign-交握流程" title="Lenovo Code Sign 交握流程" path="/code-sign/lenovo-code-sign-交握流程.html">
+
+## 演算法
+### 所需參數
+1. Session Key
+1. Model name(LNV_T24I40_0000)
+1. CRC 演算法
+### 演算法流程
+1. Host PC(Uniupdate Tool) 傳送 Session Key 給 Monitor Controller(Hub)
+1. Monitor Controller(Hub) 使用 Session Key & Model name 透過 crc function 產生一組 signature
+1. Monitor Controller(Hub) 傳送計算好的signature 給 Host PC 驗證
+1. Host PC(Uniupdate Tool) 也使用 Session Key & Model name 算好signature 給Monitor Controller(Hub) 驗證
+1. 如果Host PC(Uniupdate Tool) 和 Monitor Controller(Hub) 都驗證 signature 成功就代表交握成功
+## 備註
+1. 使用Model name的交握可以確定CRC計算能力的一致性，以及Update的目標裝置是否正確。
+1. Lenovo Uniupdate流程中，取得session key之後的每筆command，Tool都會計算CRC signature，Hub FW也可依照接收到的signature及ultra data(FW bin data)來驗算signature，以此可以確保Command及FW bin檔傳送時的安全性。
+1. Hub都是燒錄在非running bank的那一塊。EX: 現在run bank1，就update FW在bank 2。
+1. Hub燒錄時，要可以判斷bonding和check sum等等，並依此回應是否燒錄成功
+1. Hub會加入nack error code來標記ISP Fail在哪個階段，目前僅做為內部使用
+
+</core_topic>
+  <related_context>
+    <related id="camera-透過我們驗證-code-sign" title="Camera 透過我們驗證 code sign" path="/code-sign/camera-透過我們驗證-code-sign.html">
+    
+    ### Camera
+    1. generate ecdsa key & sign ecdsa key
+    1. 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+    1. 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+    1.  2 , 3點 可以改成 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update 
+    1. 下圖為Hub Code Sign 驗證 flow ，驗證code sign 應該Tool 就可以控制，FW 應該不用改甚麼，但是還是要麻煩俊太確認看看
+    
+    </related>
+    <related id="code-sign-flow" title="Code sign Flow" path="/code-sign/code-sign-flow.html">
+    
+    ## Genesys Logic code sign overview
+    因應客戶的需求，firmware 都必須要驗證合法性，目前做法是把bin檔做成hash，然後 用 private key 對 hash 做sign的動作產生signature(deliver signed firmware) 
+    把 firmware bin data & signature & public key 傳送給security module，讓 security module透過 public key 對 signature做解密，產生hash ，然後再用firmware bin data 產生一組 hash ，互相做比對，來決定firmware bin是否合法(firmware update and verification)。
+    code sign 的做法有下面幾種
+    1. OpenSSL
+    會把generate 出來的key pair 放在電腦裡面，deliver signed firmware 也是在電腦裡面完成的
+    1. Token
+    1. HSM (Hardware security module)
+    A hardware security module (HSM) is a physical computing device that safeguards and manages digital keys, performs encryption and decryption functions for digital signatures, strong authentication and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a computer or network server. A hardware security module contains one or more secure cryptoprocessor chips
+    但是根據HP 規定要符合fips 140-2 level 3 以上，所以至少要用Token來達成code sign 功能
+    fips 140-2 level 3
+    > **Note:** In addition to the tamper-evident physical security mechanisms required at Security Level 2, Security Level 3 attempts to prevent the intruder from gaining access to CSPs held within the cryptographic module. Physical security mechanisms required at Security Level 3 are intended to have a high probability of detecting and responding to attempts at physical access, use or modification of the cryptographic module. The physical security mechanisms may include the use of strong enclosures and tamper-detection/response circuitry that zeroes all plaintext CSPs when the removable covers/doors of the cryptographic module are opened.
+    目前Genesys Logic 使用的 code sign 演算法為Ecdsa nistp256
+    ## Genesys Logic CodeSign flow
+    1. generate key
+    1. deliver signed firmware
+    sign的動作如下，先把Data轉成hash 檔，然後透過eToken or Smart Card裡面的 Private key 轉成 signatute 
+    1. firmware update and verification
+    
+    </related>
+    <related id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+    
+    ## 1. 系統概述
+    本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+    ---
+    ## 2. 系統架構圖
+    此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+    ---
+    ## 3. 詳細處理流程
+    整個流程可分為三個主要階段：
+    ---
+    ## 4. 流程視覺化圖表
+    4.1 循序圖 (Sequence Diagram)
+    4.2 流程圖 (Flowchart)
+    ---
+    ## 5. 演算法特定規則
+    在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+    ---
+    ## 6. 各晶片韌體格式詳解
+    ---
+    ## 7. 晶片格式總覽表
+    ## GLBinTool Commands
+    ---
+    ### ⚙️ WIP 階段
+    ```c
+    glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+    ```
+    用途
+    將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+    在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+    輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+    必要參數 
+    - i, --input → 原始 Bin 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個原始 Bin 檔
+    回傳
+    -  回傳 Output 檔案數量，若為 0 則為 Fail
+    特殊狀況
+    -  case A in 才需要放 public key 進去
+    ---
+    ### 🔑 SIGN 階段
+    ```c
+    glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+    ```
+    用途
+    計算 wip.bin 的 Hash，產生 Signed bin 檔。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出 sig 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    - f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+    特殊狀況
+    -  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+    ---
+    ### 📦 ROM 階段
+    ```c
+    glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+    ```
+    用途
+    依晶片演算法，組裝最終檔案 rom。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出檔案
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    ---
+    ## 測試Chip & bin 檔
+    
+    </related>
+  </related_context>
+</context_boundaries>

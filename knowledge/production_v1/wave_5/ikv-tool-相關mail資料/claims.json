@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "報告書：IKV Tool & 相關 mail 資料",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "IKV (Integrated Key Validation) Tool 是 Genesys Logic 內部開發的一款用於韌體簽署與驗證的工具。它是 [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](./code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html) 方案的關鍵組件之一。",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "本報告將根據提供的上下文邊界,綜合介紹 IKV Tool 的相關資訊,包括 SVN 倉庫路徑、相關郵件以及其他相關文件。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "IKV Tool 的 SVN 倉庫路徑為：",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "`https://gli-cse.genesyslogic.com.tw/svn/storage/Users/JasonWu/IsptoolRefine2018/IKV`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "根據提供的上下文,與 IKV Tool 相關的文件包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "1. [Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](./code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "2. [3rd party code signing specification (ECDSA)](./code-sign/3rd-party-code-signing-specification-ecdsa.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "3. [3rd party code signing specification (ECDSA)(EN)](./code-sign/3rd-party-code-signing-specification-ecdsaen-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "ikv-tool-相關mail資料",
+    "claim": "以上文件都與 IKV Tool 及其所在的韌體簽署與驗證流程相關。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

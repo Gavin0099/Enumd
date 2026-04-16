@@ -1,0 +1,20 @@
+<context_boundaries>
+<core_topic id="low_integrity_noise" title="Synthetic Low Integrity Noise" path="/synthetic/low_integrity_noise.html">
+
+This node is linked to several low-integrity nodes to test if Sonnet ignores the garbage or synthesizes it.
+
+- Related to: [[p32p-30-factory-reset]]
+- Related to: [[f12-console-log-dump]]
+
+</core_topic>
+  <related_context>
+    <related id="clash_noise" title="Synthetic Clash Noise Test" path="/synthetic/clash_noise.html">
+    
+    This is a synthetic node designed to test Sonnet's discipline when encountering disparate categories (Firmware vs HR).
+    
+    - Related to: [[mt9052]]
+    - Related to: [[2021部門創新提案]]
+    
+    </related>
+  </related_context>
+</context_boundaries>

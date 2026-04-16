@@ -1,0 +1,13 @@
+<context_boundaries>
+<core_topic id="mdgg-mask-code-" title="MDGG Mask code " path="/general/mdgg-mask-code-.html">
+
+## Chip_3311_1-2.ROM
+有 vendor command 寫進去
+
+## Chip_3364_1-2-3.ROM
+感覺在retry 同一筆 64byte 
+## Chip_3462_1-2-1.ROM
+感覺在retry 同一筆 64byte
+
+</core_topic>
+</context_boundaries>

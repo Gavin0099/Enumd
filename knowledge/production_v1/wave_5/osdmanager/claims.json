@@ -1,0 +1,346 @@
+[
+  {
+    "slug": "osdmanager",
+    "claim": "- 全域熱鍵監聽: 即使應用程式在背景執行,也能夠捕捉使用者設定的熱鍵。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- 自訂熱鍵設定: 提供圖形化介面,讓使用者可以輕鬆地修改、設定不同 OSD 功能對應的鍵盤熱鍵。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- HID 指令發送: 監聽到熱鍵後,程式會發送對應的 HID (Human Interface Device) 指令來觸發硬體功能。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- 系統托盤圖示: 應用程式常駐於系統托盤,方便使用者隨時存取設定或結束程式。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- 操作提示通知: 當熱鍵觸發功能時,會顯示短暫的提示訊息,告知使用者當前操作。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "本專案採用 MVVM (Model-View-ViewModel) 設計模式,結構清晰,易於維護和擴展。[`/general/osdmanager.html`]",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "MW <.->|Data Binding<br>資料綁定| HEVM",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "HEVM -.->|Updates<br>更新| MW",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "HEVM -.->|Load/Save<br>讀取/儲存設定| JSON",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "B -- 否 --> D[\"初始化 ViewModel\"];",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class Start start;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class A,D,E,F,G process;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class B decision;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class H background;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class C,End endNode;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "C -- 是 --> D[\"通知 HotkeyEditorViewModel\"];",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class B,C decision;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class D,E,F,G,H process;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class A,B,C,E,L start;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class D,F,G,H,J,K,M process;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class I decision;",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "class End background;",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- .NET Framework 4.6.1 或更高版本",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 使用 Visual Studio 2019 或更高版本開啟 OSDManager.sln 檔案。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 還原 NuGet 套件 (MaterialDesignThemes, log4net, Google.Protobuf)。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 將 GL_SDK.dll 放置於正確的路徑。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 編譯專案以生成 HotkeyManager.exe。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 執行 HotkeyManager.exe，程式將會常駐於系統托盤。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "專案內包含 PowerShell 腳本 (HotkeyBuildInstaller.ps1) 與 Inno Setup 腳本 (hp_hitkey_manager.iss)，用於自動化建立安裝程式。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 確保已安裝 Inno Setup 6。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. 執行 Package/HotkeyBuildInstaller.ps1 腳本,它將會自動編譯並打包成安裝檔。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- 執行功能: 在背景執行時,按下您設定的熱鍵組合即可觸發對應的 OSD 功能。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- 編輯設定: 在系統托盤找到 \"Hotkey Manager\" 圖示,雙擊或按右鍵選擇 \"Edit\" 即可開啟設定視窗。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "- 結束程式: 在系統托盤圖示上按右鍵選擇 \"Exit\"。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "本專案目前僅支援 Windows 平台,如需移植至 macOS,需要執行以下主要步驟:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "1. **階段一：專案設定與環境準備 (無變動)**",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "此階段目標不變:建立一個新的、可用於 macOS 開發的跨平台專案。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "2. **階段二：UI 介面層遷移 (View) (無變動)**",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "目標是使用 Avalonia XAML 重建您的使用者介面。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "3. **階段三：程式碼遷移 (ViewModel & Model) (無變動)**",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "4. **階段四：平台特定功能重寫 (關鍵階段 - 已簡化)**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "這是變動最大,也是因為您有 .dylib 而變得簡單許多的部分。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "osdmanager",
+    "claim": "5. **階段五：建置、測試與部署 (無變動)**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

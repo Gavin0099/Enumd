@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "low_integrity_noise",
+    "claim": "1. `[[p32p-30-factory-reset]]`: 一個與工廠重置相關的低完整性節點。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "low_integrity_noise",
+    "claim": "2. `[[f12-console-log-dump]]`: 一個與 F12 控制台日誌轉儲相關的低完整性節點。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "low_integrity_noise",
+    "claim": "`[[clash_noise]]`: 這是一個合成的噪音測試節點,旨在測試 Sonnet 在處理不同類別(固件 vs. HR)的資訊時的紀律性。這個節點與以下兩個節點相關聯:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  },
+  {
+    "slug": "low_integrity_noise",
+    "claim": "2. `[[2021部門創新提案]]`: 一個與 2021 年部門創新提案相關的節點。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 5,
+    "batch_id": "batch_2026-04-16T02-45-58-973Z"
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "requested_slug": "low_integrity_noise",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 1,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 1,
+  "topology_signature": {
+    "high_score_count": 1,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": true,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "ISOLATED",
+    "recommended_policy": "A",
+    "reason": "No context found in the 0.22-0.3 window. Lowering threshold won't resolve this topology gap."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "ISOLATED",
+    "count_at_0_3": 1,
+    "count_at_0_22": 1,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 1,
+    "context_edge_count": 1,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T02-45-58-973Z",
+  "wave_id": 5,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 5,
+    "downgraded": 4,
+    "total_lines": 23,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What is the purpose of the 'low_integrity_noise' topic?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that 'low_integrity_noise' is a core topic used to test the Sonnet system's performance in handling low-integrity information."
+      },
+      {
+        "question": "What are the related low-integrity nodes associated with 'low_integrity_noise'?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text lists two related low-integrity nodes: '[[p32p-30-factory-reset]]' and '[[f12-console-log-dump]]'."
+      },
+      {
+        "question": "How does the 'clash_noise' node relate to 'low_integrity_noise'?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the 'clash_noise' node is a synthetic noise test node that aims to test Sonnet's discipline in handling information of different categories (firmware vs. HR), and it is associated with two other nodes: '[[mt9052]]' and '[[2021部門創新提案]]'."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 1,
+    "supported": 1,
+    "uncertain": 0,
+    "unsupported": 0,
+    "unsupported_claims": [],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "PASS",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0,
+    "derived_count": 1,
+    "reason": "Unsupported rate 0% (0/1) below audit threshold.",
+    "removed_count": 0
+  }
+}

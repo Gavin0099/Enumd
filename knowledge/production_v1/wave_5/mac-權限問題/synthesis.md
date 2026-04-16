@@ -1,0 +1,26 @@
+
+
+在 Mac 系統中，對於存取檔案有嚴格的規定。不同使用者存取資料都有限制，因此如果要在 Mac App 存取檔案，需要有相關的設定。
+
+
+[App Sandbox](https://developer.apple.com/documentation/security/app_sandbox) 有相關設定可以讓使用者要存取哪些位置，或是設定一些共用的資料夾可以存取。其中包括 User Selected File 功能。
+
+### MPAuthorization
+透過「隱私權與安全性」裡面的「完全存取磁碟」的方式，可以讓 app 存取到磁碟的全部資料。但是這個功能開啟後會與 App Sandbox 衝突，所以在使用此程式碼時要把 App Sandbox 選項關閉:
+
+    MPFullDiskAccessAuthorizer *fullDiskAccessAuthorizer = [[MPFullDiskAccessAuthorizer alloc] init];
+        [fullDiskAccessAuthorizer requestAuthorizationWithCompletion:nil];
+
+
+在自己電腦上 build 好後，有時拿到別台電腦不能執行，原因有下面幾點:
+
+### Build Active Architecture Only
+因為 Mac CPU 有兩種 Intel 和 ARM 架構，如果 Build Active Architecture Only 沒有設定為 No，會導致 build 出來的 app 在其他 CPU 架構的電腦上無法執行。
+
+Mac app 透過 AirDrop 或是其他方式傳送到別台電腦時，有可能 Owner & Group 會被修改，導致 app 無法讀取同一個資料夾的檔案，會讓 app 的狀態錯誤。目前的解決方案是透過 Packages 修改 app 的 Owner & Group，讓 app 可以正常執行。
+
+- [HID Code Sign 記錄](hid-code-sign-記錄.html)：記錄了 HID 更新流程、工具測試等相關資訊。
+- [HP OCI APP](hp-oci-app.html)：介紹了 HP OCI APP 的相關設定和功能。
+- [HP OCI DLL](hp-oci-dll.html)：說明了 HP 定義的 DLL 格式及其呼叫方式。
+
+[未有直接 Source 錨點，待確認] 以上就是關於 Mac 權限問題的綜合報告。如果提供的內容不足以回答更廣泛的概念，我會明確指出證據內核缺乏相關資料。
