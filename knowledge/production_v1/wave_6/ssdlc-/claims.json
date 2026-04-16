@@ -1,11 +1,11 @@
 [
   {
     "slug": "ssdlc-",
-    "claim": "SSDLC（Secure Software Development Life Cycle）包含以下必備的核心功能和面向：",
+    "claim": "SSDLC（Secure Software Development Life Cycle）是一個涵蓋軟體開發全生命週期的安全方法論。其核心功能/面向包括:",
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -13,7 +13,7 @@
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -21,15 +21,15 @@
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "3. 安全程式碼檢測 (SAST / Static Analysis)",
+    "claim": "3. 安全程式碼檢測 (SAST / Static Analysis) `[SAST 工具比較表](./ssdlc-.html#sast-工具比較表)`",
     "tier": "Explicit",
-    "evidence_score": 4,
+    "evidence_score": 9,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -37,7 +37,7 @@
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -45,7 +45,7 @@
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -53,7 +53,7 @@
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -61,7 +61,7 @@
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -69,15 +69,15 @@
     "tier": "Derived",
     "evidence_score": 3,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "9. 自動化整合 (CI/CD Pipeline Integration)",
+    "claim": "9. 自動化整合 (CI/CD Pipeline Integration) `[與 GitLab CI/CD 整合度比較](./ssdlc-.html#與-gitlab-cicd-整合度比較)`",
     "tier": "Explicit",
-    "evidence_score": 4,
+    "evidence_score": 10,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -85,7 +85,7 @@
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -93,7 +93,7 @@
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
@@ -101,126 +101,94 @@
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "3. 工具面：選擇與企業需求和 GitLab CI/CD 整合度高的 SAST 工具，如 SonarQube（付費版）和 PVS-Studio。",
-    "tier": "Explicit",
-    "evidence_score": 6,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "- 選擇與企業需求和 GitLab CI/CD 整合度高的 SAST 工具",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "- 根據團隊規模和預算，選擇 SonarQube（付費版）、PVS-Studio 或企業級工具如 Coverity、Klocwork 等",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "總之，「SSDLC」強調的是在整個軟體生命週期持續關注安全，需要制度、流程和工具三位一體的配合。企業只有在這三個層面同時建立起來，才能真正落實並長期維護 SSDLC 的有效性。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "在一個有 50 位左右研發人員（SW + FW）的團隊情境下，若要比較全面地導入 SSDLC，常見會需要以下角色：",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "1. 資安負責人 / Security Lead",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "2. Security Engineer / Security Champion",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "3. DevOps / CI/CD 負責人",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "ssdlc-",
-    "claim": "4. 軟體架構師 / 系統設計師",
+    "claim": "2. 流程面: 分階段導入合適的檢測/防禦技術",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "7. IT / Infra / 運維",
+    "claim": "3. 工具面: 持續培養團隊的安全意識與技能",
     "tier": "Derived",
-    "evidence_score": 3,
+    "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "8. 管理 / Compliance / 風控 (視產業需求)",
-    "tier": "Explicit",
-    "evidence_score": 4,
+    "claim": "1. 制度面: 建立明確的安全策略、分工與責任,並獲得管理層支持。",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "在導入規劃和 PoC 階段，通常需要 1-3 個月的時間，主要投入人員包括資安負責人、Security Engineer 和 DevOps 負責人。",
+    "claim": "3. 工具面: 選擇合適的 SAST、SCA、DAST 等工具,並與 CI/CD 流程整合。",
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "在正式建置和流程調整階段，需要 3-6 個月的時間，會擴大參與範圍，涉及開發團隊、QA 和 IT 等多個部門。",
+    "claim": "以一個 50 人左右的研發團隊為例,SSDLC 導入的人力成本可分為以下三個階段:",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "在長期維運和文化落地階段，需要持續投入，主要人員包括資安負責人、Security Engineer 和 DevOps 負責人。",
+    "claim": "1. 導入規劃 & PoC 階段 (1-3 個月):",
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "ssdlc-",
-    "claim": "2. DevOps 工程師：1-2 人",
-    "tier": "Derived",
-    "evidence_score": 2,
+    "claim": "- 主要投入人員: 資安負責人、Security Engineer、DevOps 負責人、軟體架構師",
+    "tier": "Explicit",
+    "evidence_score": 7,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ssdlc-",
+    "claim": "2. 正式建置 & 流程調整階段 (3-6 個月):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ssdlc-",
+    "claim": "- 主要投入人員: 同上,但會擴大參與範圍",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ssdlc-",
+    "claim": "3. 長期維運 & 文化落地 (持續):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ssdlc-",
+    "claim": "- 主要投入人員: 資安負責人、Security Engineer、DevOps 工程師、開發團隊",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   }
 ]

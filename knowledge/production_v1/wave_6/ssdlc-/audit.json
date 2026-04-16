@@ -53,13 +53,13 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-16T03-48-40-717Z",
+  "batch_id": "batch_2026-04-16T05-37-42-990Z",
   "wave_id": 6,
   "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
   "enforcement_report": {
-    "removed": 21,
-    "downgraded": 6,
-    "total_lines": 78,
+    "removed": 9,
+    "downgraded": 9,
+    "total_lines": 62,
     "is_clean": false
   },
   "kal_report": {
@@ -69,43 +69,38 @@
     "convergence_rate": 0.6666666666666666,
     "questions": [
       {
-        "question": "What are the core functions and aspects of SSDLC?",
+        "question": "What are the core functions or aspects of SSDLC?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text lists the 12 core functions and aspects of SSDLC."
+        "justification": "The synthesis text lists 12 core functions/aspects of SSDLC, including secure requirements management, threat modeling, security testing, and integration with CI/CD pipelines."
       },
       {
-        "question": "What are the common pain points enterprises face when implementing SSDLC and how can they be addressed?",
+        "question": "What are the common pain points enterprises face when implementing SSDLC, and how can they be addressed?",
         "verdict": "PARTIAL",
-        "justification": "The synthesis text mentions some common pain points enterprises face, such as establishing a clear security strategy and policy, integrating suitable detection and defense technologies, and optimizing the development process, but it does not provide a comprehensive list of pain points and corresponding solutions."
+        "justification": "The synthesis text mentions some common pain points, such as establishing a clear security strategy and policy, gradually introducing appropriate security tools, and cultivating security awareness and skills. However, it does not provide a comprehensive list of pain points and corresponding solutions."
       },
       {
-        "question": "What are the key roles and the timeline for a 50-person R&D team to effectively implement SSDLC?",
+        "question": "What are the key considerations for enterprises to effectively implement SSDLC?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text provides details on the key roles (security lead, security engineer, DevOps, architects, IT, and management) and the timeline (1-3 months for planning and PoC, 3-6 months for implementation and process adjustment, and ongoing maintenance) for a 50-person R&D team to implement SSDLC."
+        "justification": "The synthesis text states that enterprises need to achieve a balance in the institutional, process, and tool dimensions to effectively implement SSDLC, including establishing a clear security strategy, integrating appropriate security tools into the development lifecycle, and continuously cultivating security awareness and skills."
       }
     ]
   },
   "semantic_audit": {
     "total_checked": 8,
-    "supported": 7,
+    "supported": 0,
     "uncertain": 0,
-    "unsupported": 1,
-    "unsupported_claims": [
-      {
-        "claim": "2. DevOps 工程師：1-2 人",
-        "verdict": "UNSUPPORTED",
-        "reason": "The source document does not mention a specific number of 'DevOps engineers' required for SSDLC implementation."
-      }
-    ],
+    "unsupported": 0,
+    "unsupported_claims": [],
     "model_used": "claude-3-haiku-20240307",
-    "skipped": false
+    "skipped": true,
+    "skip_reason": "JSON parse failed. Raw: {\n  \"results\": [\n    { \"index\": 1, \"verdict\": \"SUPPORTED\", \"reason\": \"The source document mentions 'Compliance & Reporti"
   },
   "suppression_decision": {
     "tier": "PASS",
     "node_type": "STANDARD",
-    "unsupported_ratio": 0.125,
-    "derived_count": 8,
-    "reason": "Unsupported rate 13% (1/8) below audit threshold.",
+    "unsupported_ratio": 0,
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
     "removed_count": 0
   }
 }

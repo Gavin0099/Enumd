@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "報告書：USB Hub Firmware（8051 / Keil C51）AI 開發前先期確認 Checklist",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "1. [`USB_HUB_FW_CHECKLIST.md`](./USB_HUB_FW_CHECKLIST.md)：列出專案中不可猜測的輸入事實，作為後續設計的基礎。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "2. [`TOPOLOGY.md`](./TOPOLOGY.md)：記錄多晶片拓樸、Port Mapping 和 Access Path 等關鍵架構資訊。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "3. [`HUB_PROFILE_SCHEMA.md`](./HUB_PROFILE_SCHEMA.md)：定義 Host-visible Profile 和 Schema 契約，確保與上位機介面的一致性。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "1. [`USB_HUB_ARCHITECTURE.md`](./USB_HUB_ARCHITECTURE.md)：描述整體架構邊界，包括 Flash Safety 和 Protocol Rules 等關鍵設計。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "2. [`AGENTS.md`](./AGENTS.md)：列出 AI 行為的限制條件、No-Assumption 原則和 Guardrails，確保系統安全性。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "1. [`USB_IF_INTEGRATION_PLAN.md`](./USB_IF_INTEGRATION_PLAN.md)：制定 USB-IF 導入策略，包括優先順序和衝突處理機制。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "2. [`USB_HUB_CLASS_REQUESTS_REF.md`](./USB_HUB_CLASS_REQUESTS_REF.md)：提供 Hub Class Requests 的受控參考。",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "3. [`USB_HUB_PORT_STATUS_BITS_REF.md`](./USB_HUB_PORT_STATUS_BITS_REF.md)：提供 Port Status 和 Change Bits 的受控參考。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "1. [`WORKFLOW.md`](./WORKFLOW.md)：定義變更流程、Gate 機制和 Review Path。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "2. [`TRACEABILITY_MATRIX.md`](./TRACEABILITY_MATRIX.md)：建立從 Fact 到 Architecture、Agent 和 Validation 的可追溯性矩陣。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "3. PR / MR Templates：提供 Review Gate 和 Hard Stops 的模板。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "1. `Validation Evidence`：包括 Map、Overlay、Enumeration 和 Host Trace 等驗證證據。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "2. [`memory/02_project_facts.md`](./memory/02_project_facts.md)：記錄已確認的專案事實。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "3. [`memory/03_decisions.md`](./memory/03_decisions.md)：記錄架構決策和衝突升級結果。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "4. [`memory/04_validation_log.md`](./memory/04_validation_log.md)：記錄驗證過程和風險證據。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "2. 架構邊界層 (L2) 根據 L1 的事實，定義整體架構設計，包括 Flash Safety 和 Protocol Rules。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "3. 受控標準層 (L3) 提供 USB-IF 導入策略和相關標準的受控參考。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "4. 執行與審查層 (L4) 建立變更流程、可追溯性和 Review Gate，確保設計品質。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+    "claim": "整體架構遵循「從事實到驗證」的設計原則，確保 USB Hub Firmware 的安全性和可靠性。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

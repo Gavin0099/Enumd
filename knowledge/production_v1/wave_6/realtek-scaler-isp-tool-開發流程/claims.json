@@ -1,0 +1,362 @@
+[
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2325AR :[HP]E244",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2525AR :[Philips]242B1TS",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2522T-CG :[ELO]ET2402",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2536R :[ASUS]C624WQ",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2556QR-CG :[Philips]255P1FN",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2718Q :[ASUS]XG27UQ",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2785R-CG :[Philips]325B1L",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2785T-CG :[iiyama]XUB2493",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2788M :[Philips]256P1",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- RTD2795T-CG :[iiyama]XUB2893",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "1. 將電路圖交給Hub FW team",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "1. SW team使用MultiIspTool專案：根據ISP flow的流程做Coding。(已完成)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "1. 修改GLHub.ini內容",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- 根據Hub FW設定單次I2C寫入的資料長度，RTK的scaler支援最大256 bytes。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- Hub HW I2C 能傳送的長度目前是255；可設定0x80以利整除。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- 設定FW寫入的起始位置。因應有boot code及user code的機種。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- 設定讀取FW version。scaler沒有直接讀取版本的命令，需透過讀取binary檔以及flash。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "Tool讀flash的位置為FwUserCodeAddress + FwVersionAddress。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "- 設定FW indicator。特殊寫入數值到FW指定位置。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "Tool會讀取包含該offset資料的flash sector，修改該值再回寫。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "額外的disable Flash SW WP設定，使用JEDEC_ID作為Section name",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "necessary to set GPIO to make WP pin high to disable flash hardware write protection.",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "Specific settings can be confirmed with the technical contact window of Realtek.",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "此範例使用RTD2785T-CG。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x9Fa-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-0x10a-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x29a-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-S-0x95a-[ucReadValue]n-P",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x9Fa-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-0x10a-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x29a-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-[ucValue]a-P\\<ucValue = ucReadValue & 0xF0 | 0x01>",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x9Fa-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-0xFEa-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x19a-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-S-0x95a-[ucReadValue]n-P",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x9Fa-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-0xFEa-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF4a-0x19a-P",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "S-0x94a-0xF5a-[ucValue]a-P\\<ucValue = ucReadValue & 0xFE | 0x01>",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "根據提供的上下文,可以總結出Realtek Scaler ISP Tool的開發流程如下:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "1. 客戶提供電路圖,交給Hub FW team處理。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "2. SW team使用MultiIspTool專案,根據ISP flow的流程進行Coding。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "3. 修改GLHub.ini內容,包括I2C寫入長度、FW寫入位置、FW版本讀取、FW指標設定等。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "realtek-scaler-isp-tool-開發流程",
+    "claim": "4. 針對不同型號的Scaler IC,需要設定Disable Flash SW/HW Write Protection的相關參數。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

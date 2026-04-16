@@ -1,0 +1,28 @@
+
+# SD Reader Sample Code 
+
+此程式碼示範了如何在 macOS 環境下使用 IOKit 框架與 USB 裝置介面，來與 SD 讀卡機進行通訊並發送自訂的 Vendor Command。
+
+1. 使用 `IOServiceMatching` 和 `IOServiceGetMatchingServices` 找到連接的 USB 裝置。
+2. 透過 `IOCreatePlugInInterfaceForService` 和 `QueryInterface` 取得 USB 裝置的介面。
+3. 呼叫 `send_vendor_command` 函數，向 USB 裝置發送自訂的 Vendor Command。
+
+1. `send_vendor_command` 函數:
+   - 設定 USB 控制傳輸的參數，包括 `bmRequestType`、`bRequest`、`wValue`、`wIndex` 和 `wLength`。[`IOUSBDevRequest`](https://developer.apple.com/documentation/iokit/iousbdevrequest)
+   - 使用 `DeviceRequest` 方法發送控制傳輸到 USB 裝置。[`IOUSBDeviceInterface`](https://developer.apple.com/documentation/iokit/iousbdeviceinterface)
+
+   - 使用 `IOServiceMatching` 建立 USB 裝置的搜尋字典。[`IOServiceMatching`](https://developer.apple.com/documentation/iokit/1557114-ioservicematching)
+   - 呼叫 `IOServiceGetMatchingServices` 尋找匹配的 USB 裝置。[`IOServiceGetMatchingServices`](https://developer.apple.com/documentation/iokit/1557113-ioservicegetmatchingservices)
+   - 透過 `IOCreatePlugInInterfaceForService` 和 `QueryInterface` 取得 USB 裝置的介面。[`IOCreatePlugInInterfaceForService`](https://developer.apple.com/documentation/iokit/1557112-iocreatePlugininterfaceforservice), [`IOUSBDeviceInterface`](https://developer.apple.com/documentation/iokit/iousbdeviceinterface)
+   - 呼叫 `send_vendor_command` 向 USB 裝置發送自訂的 Vendor Command。
+
+[未有直接 Source 錨點，待確認] 1. **IOKit 框架**: macOS 提供的底層 I/O 套件，用於存取硬體裝置。
+2. **USB 裝置介面**: 透過 `IOUSBDeviceInterface` 與 USB 裝置進行通訊。
+3. **Vendor Command**: 自訂的 USB 控制傳輸命令，用於與特定裝置交互。
+
+1. 確保系統已安裝 IOKit 和 USB 相關的開發套件。
+3. 程式會自動搜索並連接 USB 裝置，然後發送自訂的 Vendor Command。
+
+[未有直接 Source 錨點，待確認] 1. [IOKit 框架文件](https://developer.apple.com/documentation/iokit)
+2. [IOUSBDeviceInterface 文件](https://developer.apple.com/documentation/iokit/iousbdeviceinterface)
+[未有直接 Source 錨點，待確認] 3. [USB 控制傳輸文件](https://developer.apple.com/documentation/iokit/iousbdevrequest)

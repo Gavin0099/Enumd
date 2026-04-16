@@ -1,0 +1,546 @@
+[
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "USB Log Explorer 是一個基於瀏覽器 (Client-side WASM) 的高效能日誌分析工具。它專門解決傳統 Text Log 難以閱讀 Vendor Command 的痛點，透過 Context-Aware Parsing 還原 USB 通訊語意，並利用虛擬捲動技術流暢展示數十萬行日誌。",
+    "tier": "Explicit",
+    "evidence_score": 21,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Vendor Command Awareness: 將晦澀的 HID Report Hex 還原為具體的 ISP, I2C, PD 語意。 `[Constants & Enums](./system-design-specification-v31-usb-log-explorer-antigravity-edition-.html#31-constants--enums)`",
+    "tier": "Explicit",
+    "evidence_score": 25,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "2. No Guessing (不猜測): Replay Binary 匯出時，若 payload 不連續或中斷，直接捨棄該 Frame，確保資料正確性。 `[Replay Export 合約 (Strict Contract)](./system-design-specification-v31-usb-log-explorer-antigravity-edition-.html#7-replay-export-合約-strict-contract)`",
+    "tier": "Explicit",
+    "evidence_score": 26,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "3. Performance First: 採用虛擬渲染 (Virtual Rendering)，確保在瀏覽器中能秒開 50MB+ 的文字檔。 `[虛擬列表 (Virtual Scrolling) 核心機制](./system-design-specification-v31-usb-log-explorer-antigravity-edition-.html#52-虛擬列表-virtual-scrolling-核心機制)`",
+    "tier": "Explicit",
+    "evidence_score": 24,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "4. Privacy: 全程本地執行 (Local Execution)，無伺服器上傳。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "系統資料結構嚴格區分三個層次，UI 渲染與匯出邏輯需依此為準：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 定義: Log 中標示 _HidSetFeatureReport 或 _HidGetFeatureReport 的行。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 功能: 確立事件發生的時間 (Timestamp)、執行緒 (Thread) 與方向。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 狀態: 即使沒有 Payload，事件依然存在。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 定義: 從 Payload 前 8 bytes (Setup Packet) 解析出的五元組：(bmRequestType, bRequest, wValue, wIndex, wLength)。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 屬性: 包含 SemanticConfidence (FULL/PARTIAL)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- UI 行為: 只要 Meta 存在，UI 必須顯示對應的 Semantic Pill (e.g., ISP_WRITE). `[視覺編碼 (Visual Coding) - Semantic Pills](./system-design-specification-v31-usb-log-explorer-antigravity-edition-.html#53-視覺編碼-visual-coding---semantic-pills)`",
+    "tier": "Explicit",
+    "evidence_score": 26,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 定義: Log 中緊隨 HDR 之後的 Hex Dump 行。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- UI 行為: 預設摺疊/隱藏，僅在使用者勾選 \"Show Hex Dump\" 或匯出 Bin 時使用。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "from enum import IntFlag, auto, StrEnum",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "class LogTags(IntFlag):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "HUB = auto()      # 包含 Hub 關鍵字",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "SCALER = auto()   # 包含 Scalar/ISP 關鍵字",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "PD = auto()       # 包含 PD 關鍵字",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "HID_HDR = auto()  # Event Row",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "HID_RAW = auto()  # Payload Row",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "ERROR = auto()    # Error Highlight",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "class CmdFamily(StrEnum):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "SECURITY = \"SEC\"",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "class ReplayPolicy(StrEnum):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "CAUTION = \"CAUTION\"     # UI 需顯示紅框 (e.g., Erase)",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "FORBIDDEN = \"FORBIDDEN\" # 禁止匯出",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "class SemanticConfidence(StrEnum):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "FULL = \"FULL\"          # 完整 8-byte setup packet",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "PARTIAL = \"PARTIAL\"    # 截斷",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "INFERRED = \"INFERRED\"  # 文字推論",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "class VendorCmd:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "bmRequestType: int",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "name: str          # e.g. \"GL_REQUEST_ISP_WRITE\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "sub_op: str        # e.g. \"FLASH_ERASE\"",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "family: CmdFamily",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "replay_policy: ReplayPolicy",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "confidence: SemanticConfidence",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "\"\"\"單行 Log 結構 (Memory Optimized)\"\"\"",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "timestamp: float | None",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "vendor_cmd: VendorCmd | None = None",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "raw_payload: bytes | None = None",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "解析器需內建 Lookup Logic，將 bRequest + wValue 映射至語意。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- ISP (Critical):",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- I2C: 0x78~0x7B (Novatek/MTK I2C).",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- PD: 0xB4/0xB5 (Realtek PD Read/Write).",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- Security: 0xA4 (CS_SIGN - FORBIDDEN for replay).",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- Root: flex flex-col h-screen bg-gray-50",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- Header (H: ~50px):",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- Body: flex flex-1 overflow-hidden",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "為解決 DOM 效能瓶頸，必須實作 VirtualTable Class。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 渲染邏輯 (on_scroll):",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "使用 _render_pill 函數在 Message 前方插入標籤。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- Style: inline-flex px-1.5 rounded border text-[9px] font-bold mr-2 uppercase",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 使用 Regex 快速提取 Timestamp, Thread, Level, Raw Message。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Tagging: 標記 HID_HDR (_HidSetFeature...), HID_RAW (Hex Regex).",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "匯出 usb_tx.bin 時，每個 Frame 必須通過檢查：",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. 必須有 HID_HDR (SetFeature)。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. vendor_cmd.replay_policy != FORBIDDEN。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Payload 連續性: 緊隨 Header 後的 HID_RAW 行必須連續 (Offset 000, 010, 020...) 且無中斷。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Error Handling: 若 Payload 不完整，整筆捨棄，不得匯出部分資料。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 效能: 10MB Log 解析 < 3秒；Filter 切換 < 100ms。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 相容性: 支援 Chrome / Edge (Chromium based)。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "- 狀態: 無狀態設計 (Stateless)，F5 刷新後清空記憶體。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Rendering Test: 載入 50MB Log，快速捲動 Scrollbar，畫面不應卡頓或白屏 (驗證 Virtual Table)。 `[虛擬列表 (Virtual Scrolling) 核心機制](./system-design-specification-v31-usb-log-explorer-antigravity-edition-.html#52-虛擬列表-virtual-scrolling-核心機制)`",
+    "tier": "Explicit",
+    "evidence_score": 25,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Semantic Test: 載入包含 0x83 0x01 的 Log，應顯示紅色的 [ISP: FLASH_ERASE] 標籤。 `[視覺編碼 (Visual Coding) - Semantic Pills](./system-design-specification-v31-usb-log-explorer-antigravity-edition-.html#53-視覺編碼-visual-coding---semantic-pills)`",
+    "tier": "Explicit",
+    "evidence_score": 26,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "1. Filter Test: 勾選 \"Hide HID Hex Dump\"，所有 Hex 行應消失，且 Scrollbar 高度應自動重新計算縮短。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+    "claim": "Disconnected fw update stress:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

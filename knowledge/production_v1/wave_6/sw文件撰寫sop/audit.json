@@ -1,0 +1,157 @@
+{
+  "requested_slug": "sw文件撰寫sop",
+  "selected_core_count": 1,
+  "selected_dependency_count": 0,
+  "selected_related_count": 3,
+  "dropped_low_integrity_nodes": [],
+  "dropped_duplicate_nodes": [],
+  "dropped_below_score_nodes": [],
+  "total_context_edges": 6,
+  "topology_signature": {
+    "high_score_count": 50,
+    "borderline_count": 0,
+    "best_borderline_score": 0,
+    "gap_detected": false,
+    "borderline_neighbors": []
+  },
+  "advisory": {
+    "topology_status": "STABLE_AT_A",
+    "recommended_policy": "A",
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
+  },
+  "snapshot_profile": {
+    "core_count": 1,
+    "dependency_count": 0,
+    "related_count": 3,
+    "context_edge_count": 6,
+    "has_low_integrity_core": false,
+    "max_dependency_depth": 0,
+    "context_class": "related_only"
+  },
+  "outcome_metrics": {
+    "source_diversity": 2,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
+  "model_used": "claude-3-haiku-20240307",
+  "batch_id": "batch_2026-04-16T05-37-42-990Z",
+  "wave_id": 6,
+  "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
+  "enforcement_report": {
+    "removed": 58,
+    "downgraded": 2,
+    "total_lines": 240,
+    "is_clean": false
+  },
+  "kal_report": {
+    "verdict": "CONVERGED",
+    "passed": 3,
+    "total": 3,
+    "convergence_rate": 1,
+    "questions": [
+      {
+        "question": "What are the key steps in the process of writing SW documents?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text outlines the key steps, including discussing in meetings, assigning reviewers, using Word format and GitLab, and regularly reviewing the document list."
+      },
+      {
+        "question": "Where should the SW documents be stored and linked?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text states that the documents should be written in Word format and the links should be set in GitLab, or the documents can be directly written in GitLab."
+      },
+      {
+        "question": "What information should be included in the document list?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text specifies that the document list should include the author, start time, and end time."
+      }
+    ]
+  },
+  "semantic_audit": {
+    "total_checked": 16,
+    "supported": 6,
+    "uncertain": 0,
+    "unsupported": 10,
+    "unsupported_claims": [
+      {
+        "claim": "- Vendor Command 第二碼",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about Vendor Command second byte."
+      },
+      {
+        "claim": "- A/B Image (營運映像檔)",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about A/B Image (operational image)."
+      },
+      {
+        "claim": "- C-Image (恢復映像檔)",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about C-Image (recovery image)."
+      },
+      {
+        "claim": "- 關鍵資料 (Critical Data)",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about Critical Data."
+      },
+      {
+        "claim": "1. 平台偵測異常（Attestation 測量值不符）",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about platform detecting anomalies (Attestation measurement mismatch)."
+      },
+      {
+        "claim": "2. 裝置自我偵測（安全啟動失敗、防回滾錯誤、關鍵資料損壞）",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about device self-detection (secure boot failure, rollback error, critical data corruption)."
+      },
+      {
+        "claim": "3. 裝置無回應（無法透過 MCTP 溝通）",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about device non-responsive (unable to communicate through MCTP)."
+      },
+      {
+        "claim": "- 正常更新：僅韌體升級，不動用此恢復機制",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about normal updates: only firmware upgrade, not using this recovery mechanism."
+      },
+      {
+        "claim": "- 帶有關鍵資料的恢復：重寫韌體，身份保持不變",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about recovery with critical data: rewrite firmware, identity remains unchanged."
+      },
+      {
+        "claim": "- 不帶關鍵資料的恢復：必須重新配置裝置身份與安全參數",
+        "verdict": "UNSUPPORTED",
+        "reason": "The source document does not mention anything about recovery without critical data: must reconfigure device identity and security parameters."
+      }
+    ],
+    "model_used": "claude-3-haiku-20240307",
+    "skipped": false
+  },
+  "suppression_decision": {
+    "tier": "SUPPRESS_DERIVED",
+    "node_type": "STANDARD",
+    "unsupported_ratio": 0.625,
+    "derived_count": 16,
+    "reason": "Majority-unsupported Derived tier: 10/16 (63%). Derived claims cannot be collectively trusted as source-derived.",
+    "suppression_note": "⚠️ Derived-tier claims suppressed: majority of Derived claims lacked semantic source support. Source-near claims retained.",
+    "removed_count": 16
+  }
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "slug": "ps196-update-flow",
+    "claim": "以下是基於提供的內容所撰寫的 PS196 Update Flow 文件:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "PS196 是一款 I2C 從設備，其 I2C 從設備地址為 `0x10`。PS196 內部有兩個 SPI FIFO，分別位於 `0x3c` 和 `0x40` 頁地址。在進行韌體更新時，需要先檢查哪個 FIFO 可用，然後選擇一個 FIFO 來下載韌體檔案。",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "執行 `Write_Protect_Top_Off()` 函數來關閉寫保護。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "執行 `Check_FIFO_Status()` 函數來檢查 FIFO 狀態，並選擇一個可用的 FIFO 進行後續操作。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "執行 `Erase_Uni(0x000000)` 函數來擦除 SPI ROM。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "1. 初始化 FIFO0: `Spi_FIFO0_Init()`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "2. 寫入使能 FIFO0: `Write_Enable_FIFO0()`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "3. 檢查 BUSY 狀態: `BUSY_STATUS = Rdsr_FIFO0() & 0x01`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "4. 清除 RDSR 狀態: `Rdsr_Clr_FIFO0()`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "5. 寫入韌體資料: `res =Spi_FIFO0_Write(0x000100, data)`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "6. 檢查 BUSY 狀態: `BUSY_STATUS = Rdsr_FIFO0() & 0x01`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "7. 清除 RDSR 狀態: `Rdsr_Clr_FIFO0()`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "1. 從 FIFO0 讀取 0x000000 ~ 0x000100 的資料: `Spi_FIFO0_Read(0x000000, 0x100)`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "2. 從 FIFO0 讀取 0x000100 ~ 0x000200 的資料: `Spi_FIFO0_Read(0x000100, 0x100)`",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "3. 從 FIFO0 讀取 0x000200 ~ 0x000300 的資料: `Spi_FIFO0_Read(0x000200, 0x100)`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "- [`Camera 透過我們驗證 code sign`](code-sign/camera-透過我們驗證-code-sign.html)：介紹 Camera 的 code sign 驗證流程。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "- [`Code sign Flow`](code-sign/code-sign-flow.html)：介紹 Genesys Logic 的 code sign 流程。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "ps196-update-flow",
+    "claim": "- [`GL Hub Code Sign Recovery Flow`](hub/gl-hub-code-sign-recovery-flow.html)：介紹 GL3523、GL3525 和 GL3590 的 code sign 恢復流程。",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

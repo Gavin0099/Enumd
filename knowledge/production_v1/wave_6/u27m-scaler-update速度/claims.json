@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "`[U27m Scaler Update速度](u27m-scaler-update速度.html)`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "本文件探討了 U27m Scaler 韌體更新的速度優化過程。主要包括以下幾個關鍵點:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "1. **Scaler bin Size**: 1536260 bytes",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "3. **RTK Hub Update 時間**",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- RTK Hub Update 時間 = 1236000 / 240 = 5150 ms",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 原先做法是先等 5 ms 再確認 Flash 是否 Ready",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 現在改為直接確認 Flash 是否 Ready，若沒有 Ready 再等 300 us 後再確認一次",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 寫入一個 Sector (4K Bytes) 需要寫 16 次,約 80 ms,共 380 個 Sector,可以節省約 30 秒",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "2. **Erase 後 Blank Check 優化**:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 原先 Erase 完會檢查是否 Flash 資料都被清空 (Blank Check)",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 現在可以省略這個步驟,因為每個 Sector 都有 Retry 機制,Erase、Write、Read、Verify,如果 Verify 錯誤就會重新 Erase",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 讀取一個 Sector (4K Bytes) 大約 230 ms,1.5 MB 大約 380 個 Sector,可以節省約 88 秒",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 原先時間: 14:13:36.223",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 優化後時間: 14:09:36.152",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- Genesys Logic (GL) Scaler: 1536260 bytes / 237 s = 6482.1 bytes/s",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- RTK Hub: 1236000 bytes / 240 s = 5150 bytes/s",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "u27m-scaler-update速度",
+    "claim": "- 速度比: 6482.1 / 5150 = 1.258 倍",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

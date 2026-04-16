@@ -1,0 +1,51 @@
+
+# PD + TYPEC 核心主題報告
+
+「PD + TYPEC」是一個涉及 USB Type-C 連接標準和電源交涉協定 (Power Delivery, PD) 的核心主題。它描述了 USB Type-C 連接的各種狀態和行為，以及 PD 協定在這些狀態下的運作過程。
+
+## 2. USB Type-C 連接狀態
+USB Type-C 連接器有以下幾種狀態 [`4.5.2.1 Connection State Diagrams`]:
+[未有直接 Source 錨點，待確認] 1. **Source**: 提供電源的裝置。
+[未有直接 Source 錨點，待確認] 2. **Sink**: 接收電源的裝置。
+3. **Sink with Accessory Support**: 帶有配件支援的接收端裝置。
+4. **DRP (Dual Role Port)**: 可以作為 Source 或 Sink 的雙向端口。
+5. **DRP with Accessory and Try.SRC Support**: 帶有配件和 Try.SRC 支援的雙向端口。
+6. **DRP with Accessory and Try.SNK Support**: 帶有配件和 Try.SNK 支援的雙向端口。
+
+## 3. 電源交涉協定 (PD) 運作概述
+PD 協定定義了 Source 和 Sink 設備之間的電源交涉過程 [`2.6 Operational overview`]:
+
+### 3.1 Source 行為
+1. **At Attach (no PD Connection or Contract)**: 在連接時，Source 會提供 5V 電源。
+2. **Before PD Connection (no PD Connection or PD Contract)**: Source 會等待 Sink 發起 PD 連接。
+3. **Establishing PD Connection (no PD Connection or Contract)**: Source 和 Sink 會交換 PD 功能訊息以建立 PD 連接。
+4. **Establishing Explicit Contract (PD Connection but no Explicit Contract or Implicit Contract after a Power Role Swap or Fast Role Swap)**: Source 和 Sink 會協商電源參數以建立明確的電源合約。
+5. **During PD Connection (Explicit Contract - PE_SRC_Ready State)**: Source 會根據合約提供電源。
+
+1. **At Attach (no PD Connection or Contract)**: 在連接時，Sink 會等待 Source 提供 5V 電源。
+2. **Before PD Connection (no PD Connection or PD Contract)**: Sink 會發起 PD 連接。
+3. **Establishing PD Connection (no PD Connection or Contract)**: Source 和 Sink 會交換 PD 功能訊息以建立 PD 連接。
+4. **Establishing Explicit Contract (PD Connection but no Explicit Contract or Implicit Contract after a Power Role Swap or Fast Role Swap)**: Source 和 Sink 會協商電源參數以建立明確的電源合約。
+5. **During PD Connection (Explicit Contract - PE_SRC_Ready State)**: Sink 會根據合約接收電源。
+
+## 4. PD 協定架構概述 [`ch2.7 Architectural Overview`]
+1. **Type-C 腳位功能**: Type-C 連接器的每個腳位在正反插時會有不同的功能。
+2. **廠商命令與 PD 流程**: 廠商命令 (如 billboard、SPI、I2C) 會對應到 PD 協定的特定流程。
+3. **角色與模式**: Source、Sink、DFP、UFP、DRD 和 Alternate Mode 是 PD 協定中的不同角色和模式。
+4. **BMC 編碼**: PD 協定使用 Biphase Mark Code (BMC) 編碼方式進行資料傳輸。
+
+## 5. PD 協定訊息格式 [`ch6.Protocol Layer`]
+[未有直接 Source 錨點，待確認] PD 協定中有三種主要的訊息格式:
+
+每種訊息格式都有自己的標頭結構 [`6.2.1.1 Message Header`, `6.2.1.2 Extended Message Header`]。
+
+## 6. PD 協定狀態和狀態報告 [`ch9.States and Status Reporting`]
+[未有直接 Source 錨點，待確認] PD 協定定義了多種狀態和狀態報告機制:
+1. **PD 軟體堆疊**: 包括 Policy Engine、Protocol Layer 和 PHY Layer。
+2. **電源規則**: 定義了 Source 和 Sink 設備之間的電源交涉規則。
+
+- [`/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html`] Genesys Logic 韌體安全簽署與驗證流程
+- [`/code-sign/3rd-party-code-signing-specification-ecdsa.html`] 第三方程式碼簽署規範 (ECDSA)
+- [`/code-sign/3rd-party-code-signing-specification-ecdsaen-.html`] 第三方程式碼簽署規範 (ECDSA) (英文版)
+
+以上就是針對「PD + TYPEC」核心主題的詳細報告。報告中引用了相關的 XML 節點,以確保知識來源的可追溯性。如果您有任何其他問題,歡迎隨時詢問。

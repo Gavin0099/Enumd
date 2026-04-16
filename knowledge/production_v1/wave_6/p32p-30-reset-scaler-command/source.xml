@@ -1,0 +1,9 @@
+<context_boundaries>
+<core_topic id="p32p-30-reset-scaler-command" title="P32p-30 Reset Scaler command" path="/monitor/p32p-30-reset-scaler-command.html">
+
+- 使用 GLHubUpdateToolCli_1.50.0.0_P32p-30 此版本 ，按照下面command 順序下，就可以把scaler reset 
+- Enter ISP 
+- Reset Mcu
+
+</core_topic>
+</context_boundaries>

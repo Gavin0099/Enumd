@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "以下是根據提供的內容所撰寫的 'usbview Grab the log' 文件:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "1. 在 usbview 工具中，選擇 `File` > `Save As (txt)` 即可將 USB 裝置資訊儲存為文字檔案。[usbview Grab the log](./general/usbview-grab-the-log.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "- 在命令列工具中以系統管理員身分執行 `getLog.bat` 指令。執行後會在 `DebugFolder` 資料夾中產生兩個文字檔案，請將這兩個檔案提供給我們進行分析。[How to grab log](./general/how-to-grab-log.html)",
+    "tier": "Explicit",
+    "evidence_score": 12,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "- 在 DebugView 中，選擇 `File` > `Save as` 即可將記錄檔儲存為文字檔案。[How To Grab DebugView Log](./general/how-to-grab-debugview-log.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "- 我們採用 FIPS 140-2 Level 3 安全標準,並使用 ECDSA nistp256 加密演算法進行韌體簽署。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "- 我們開發了自有的金鑰管理系統(KMS),將金鑰安全地儲存在 FIPS L3 認證的 USB eToken 硬體中,並透過嚴格的稽核管控機制確保簽署流程的安全性。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usbview-grab-the-log",
+    "claim": "- 整個簽署與驗證流程涵蓋從金鑰生成、檔案簽署到最終的開機驗證,確保韌體的完整性。[Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing)](./code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html)",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "整合眾多的CRD Tool ，提供一個統一的入口介面，方便使用者執行其所需要的CRD輔助工具。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "以下為CRD Home Menu的實作要點:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "1. 根據設定檔案 `config.json` 載入所有CRD Tool的相關資訊。`[SRS - CRD 輔助工具入口介面](./srs-crd-輔助工具入口介面-.html)`",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Version\": \"1.0.0.0\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Categorys\" : [\"Configuration\",\"Hub\"],",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Name\": \"Eep header export tool\",",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Introduction\": \"Eep header export tool\",",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Path\": \"../Tool/EepHeaderExportTool.exe\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Version\": \"1.0.0.0\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Category\": \"Configuration\",",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Name\": \"GL3520QC Tool\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Introduction\": \"Standard tool\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Path\": \"../Tool/GL_SS_HUB_ISP.exe\",",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Version\": \"1.0.0.0\",",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "\"Category\": \"Hub\",",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "3. 針對每一個CRD Tool提供名稱、工具內容簡述、工具類別。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "4. 對CRD Tool 進行分類，方便使用者尋找。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "5. 提供搜尋CRD Tool的功能，搜尋項目包括工具名稱、簡述、類別。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "- Category Tab Control UI",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "- Data Page control UI",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "- CRD Tool Detail: 顯示全部Tool的資訊",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "Bin\\               ---> CRD Home Menu 相關DLL",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "Tool\\              ---> CRD Tool 集合",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "Config\\            ---> CRD Home Menu的config.json 與 config.db",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "srs-crd-輔助工具入口介面-",
+    "claim": "Log\\               ---> CRD Home Menu的Log",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "Teledyne LeCroy USB Protocol Suite(USB Trace)的安裝路徑為:",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "`Z:\\SW_Release_New\\Hub\\USBProtocolSuiteSW8.58_B3745_BETA-EV_USBComplianceSuiteSW5.25_B0956-EV\\USBProtocolSuiteSW8.58_B3745_BETA-EV.exe`",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "`\\\\gli-data2.genesyslogic.com.tw\\GenesysData\\Laboratory\\Software\\LeCroy\\USB`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "此外,也可以參考 [net_python_api_reference.pdf](https://cdn.teledynelecroy.com/files/manuals/net_python_api_reference.pdf) 了解相關的 Python API 參考文件。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "LeCroy 機器可以透過 USB-B 或 USB-C 介面連接。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "使用 LeCroy 機器進行 USB 錄製前,需要先進行相關的設定。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "在分析 LeCroy 錄製的 Log 時,可以先關閉以下一些資訊:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "1. `Hide USB 3.2 Traffic` - 如果只需要查看 USB 2.0 的資訊,可以隱藏 USB 3.2 的流量。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "2. `Hide Device`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "3. `Hide USB 2 Nak's`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "5. `Hide miscellaneous packets`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "可以將 `View USB 4 Operation Level` 設定為觀看 USB 4 的操作層級。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "1. `Search -> Find`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "2. `Packets -> Data Pattern -> Data`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "Teledyne LeCroy USB Protocol Suite(USB Trace)可能與 [eToken 安全簽章系統技術說明](etoken-安全簽章系統技術說明.html)中提到的簽章流程有關,因為 USB 協議是簽章系統中的一個重要環節。但本文件中並未提供足夠的證據來說明二者之間的具體關係。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "Teledyne LeCroy USB Protocol Suite(USB Trace)可能與 [HID Code Sign 記錄](hid-code-sign-記錄.html)中提到的 HID 更新流程有關,因為 USB 協議是 HID 更新的一個重要部分。但本文件中並未提供足夠的證據來說明二者之間的具體關係。",
+    "tier": "Explicit",
+    "evidence_score": 19,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+    "claim": "Teledyne LeCroy USB Protocol Suite(USB Trace)可能需要透過 [Command line uninstall driver](command-line-uninstall-driver.html)中提到的方式來卸載相關的驅動程式。但本文件中並未提供足夠的證據來說明二者之間的具體關係。",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

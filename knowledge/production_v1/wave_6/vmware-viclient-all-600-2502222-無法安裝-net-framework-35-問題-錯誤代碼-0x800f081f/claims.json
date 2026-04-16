@@ -1,11 +1,19 @@
 [
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-    "claim": "在安裝 VMware-viclient-all-6.0.0-2502222 時,出現無法安裝 .Net Framework 3.5 的問題,錯誤代碼為 0x800F081F。這個錯誤通常是由於 Windows Update 所需的檔案已損壞或遺失所造成。",
+    "claim": "在安裝 VMware-viclient-all-6.0.0-2502222 時，使用者遇到無法安裝 .Net Framework 3.5 的問題，並出現錯誤代碼 0x800F081F。",
     "tier": "Explicit",
-    "evidence_score": 9,
+    "evidence_score": 7,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+    "claim": "錯誤代碼 0x800F081F 表示 Windows Update 所需的檔案已損壞或遺失。這可能是由於系統環境或其他因素造成的。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
@@ -13,7 +21,7 @@
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
@@ -21,7 +29,7 @@
     "tier": "Explicit",
     "evidence_score": 10,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
@@ -29,15 +37,15 @@
     "tier": "Derived",
     "evidence_score": 3,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-    "claim": "通過這個步驟,應該可以解決 VMware-viclient-all-6.0.0-2502222 無法安裝 .Net Framework 3.5 的問題。",
+    "claim": "3. 完成上述步驟後,再次嘗試安裝 VMware-viclient-all-6.0.0-2502222 應該就能成功安裝 .Net Framework 3.5 了。",
     "tier": "Explicit",
-    "evidence_score": 7,
+    "evidence_score": 6,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
@@ -45,23 +53,23 @@
     "tier": "Explicit",
     "evidence_score": 11,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-    "claim": "- 在 AMD 平台上,如果安裝了 Cisco Webex,可能會導致某些 Hub 驅動程式無法正常安裝。",
+    "claim": "- 在 AMD 平台上安裝 Cisco Webex 時,可能會導致 driver 安裝失敗。",
     "tier": "Explicit",
-    "evidence_score": 5,
+    "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-    "claim": "- 在 HP 平台上,使用 HP EndUser Tool 更新 E27m 或 E34m Scaler 時,也可能會遇到驅動程式安裝失敗的問題。",
+    "claim": "- 在使用 HP EndUser Tool 更新 E27m 或 E34m Scaler 時,也可能會遇到類似的問題。",
     "tier": "Explicit",
-    "evidence_score": 10,
+    "evidence_score": 7,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
@@ -69,15 +77,15 @@
     "tier": "Explicit",
     "evidence_score": 15,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-    "claim": "- 可以使用 `sc query` 命令來確認驅動程式是否已安裝,以及服務是否正在運行。",
+    "claim": "- 可以使用 `sc query` 命令來確認驅動程式的安裝狀態。",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
@@ -85,14 +93,6 @@
     "tier": "Explicit",
     "evidence_score": 11,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
-    "claim": "這些相關問題可能與 VMware-viclient-all-6.0.0-2502222 無法安裝 .Net Framework 3.5 的問題存在一定的關聯,值得進一步探討。",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   }
 ]

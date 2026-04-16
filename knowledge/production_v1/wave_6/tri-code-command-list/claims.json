@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "tri-code-command-list",
+    "claim": "7. `isp`: 進行 ISP 韌體更新。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "tri-code-command-list",
+    "claim": "8. `ispcs`: 對 ISP 韌體進行簽章。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "tri-code-command-list",
+    "claim": "9. `request`: 向控制管道發送 USB 設定封包。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "tri-code-command-list",
+    "claim": "10. `reset`: 重置裝置。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "tri-code-command-list",
+    "claim": "11. `status`: 顯示裝置狀態。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "tri-code-command-list",
+    "claim": "12. `system`: 執行系統操作。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "tri-code-command-list",
+    "claim": "此外,本文件還提到了 Code-Sign 技術規格文件[Code-Sign 技術規格文件 (整合版)](path:/code-sign/code-sign-技術規格文件-整合版.html)和 eToken 安全簽章系統技術說明[eToken 安全簽章系統技術說明](path:/code-sign/etoken-安全簽章系統技術說明.html)兩個相關文件,它們對 Code-Sign 機制和工具鏈流程有更深入的介紹。",
+    "tier": "Explicit",
+    "evidence_score": 25,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

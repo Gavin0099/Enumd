@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "以下是基於提供的內容邊界所合成的「Visusal Stdio SDK 設定」文件:",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "在 Visual Studio 中,您可以透過以下步驟來設定 include 與 link 路徑:",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "1. 進入 `View` -> `Other Windows` -> `Property Manager`",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "2. 選擇 `Microsoft.cpp.Win32.user` 屬性頁",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "- `Include Directories`: 需要包含 `$(VC_IncludePath)` 和 `$(WindowsSDK_IncludePath)`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "- `Library Directories`: 需要包含 `$(VC_LibraryPath_x86)` 和 `$(WindowsSDK_LibraryPath_x86)`",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "在設定 Visual Studio SDK 時,也需要考慮其他相關的技術規格和整合要求,例如:",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "1. [Code-Sign 技術規格文件 (整合版)][code-sign-技術規格文件-整合版]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "2. [Etoken System Code View][etoken-system-code-view-]",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "- 此文件審核了 Etoken 系統的程式碼,發現了一些安全性和可靠性方面的問題,這些問題也可能影響到 SDK 的整合和部署。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "3. [Etoken 安全簽章系統技術說明][etoken-安全簽章系統技術說明]",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "[code-sign-技術規格文件-整合版]: /code-sign/code-sign-技術規格文件-整合版.html",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "[etoken-system-code-view-]: /code-sign/etoken-system-code-view-.html",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visusal-stdio-sdk-設定",
+    "claim": "[etoken-安全簽章系統技術說明]: /code-sign/etoken-安全簽章系統技術說明.html",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

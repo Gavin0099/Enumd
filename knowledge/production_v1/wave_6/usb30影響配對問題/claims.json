@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "USB3.0 技術的引入導致了一些 USB 裝置配對問題,主要包括:",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "1. **USB Container ID Capability Descriptor 衝突**：同時插入兩個 hub 會發生合併錯誤,因為它們回報的 USB Container ID Capability Descriptor 是相同的。過去 ISP 工具都是使用這種方式來識別裝置。[Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 23,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "2. **Companion Device 錯誤**：USB xHCI host controller 回報的 Companion Device 互相指向對方,導致工具無法正確識別裝置。[Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 16,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "3. **Port Location 不對稱**：PCB 電路設計導致 USB 樹拓撲中 L1/L2 裝置的位置不對稱,工具無法正確識別裝置。[Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "1. **USB Container ID Capability Descriptor 衝突**：",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "- 使用 mask code 或透過燒錄器燒錄的方式來修改 FW,使得回報的 USB Container ID Capability Descriptor 不同。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "- 使用 code sign 的方式來確保 FW 的合法性。[Camera 透過我們驗證 code sign](code-sign/camera-透過我們驗證-code-sign.html)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "2. **Companion Device 錯誤**：",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "- 過去曾經使用 Companion Device 的方式來識別裝置,但後來發現 host 回報的資訊有錯誤,因此不再使用這種方式。[Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "- 遇到 USB 樹拓撲中 L1/L2 裝置位置不對稱的問題時,曾經嘗試使用更複雜的方式來合併 hub,但後來放棄,改為直接使用 USB2 來解決。[Code Sign Flow](code-sign/code-sign-flow.html)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb30影響配對問題",
+    "claim": "USB3.0 的引入帶來了一些新的配對問題,主要包括 USB Container ID Capability Descriptor 衝突、Companion Device 錯誤以及 Port Location 不對稱等。針對這些問題,可以採取 mask code、燒錄器燒錄、code sign 等方式來解決。同時也可以放棄使用 Companion Device 的方式,改為直接使用 USB2 來規避問題。",
+    "tier": "Explicit",
+    "evidence_score": 15,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

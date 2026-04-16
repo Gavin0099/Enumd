@@ -1,0 +1,176 @@
+<context_boundaries>
+<core_topic id="sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰" title="SunplusCamera.dll (x86) 在 Windows on ARM (ARM64) 平台上執行時因 0xc0000417 錯誤而崩潰" path="/sdk/sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰.html">
+
+### 1. 問題摘要 (Executive Summary)
+我們發現，camera 的 x86 版本 SunplusCamera.dll (v9.2010.6.1) 在 Windows 11 on ARM (ARM64) 的 x86 模擬層 (WoW) 中執行時，會發生致命的應用程式崩潰。
+根本原因在於，該 x86 DLL 未能偵測到其正在 ARM64 作業系統上運行。它嘗試以適用於原生 x86/x64 系統的方式與底層驅動程式進行通訊，導致 API 呼叫失敗並返回無效參數。這個無效參數最終被傳遞給 C 執行階段 (CRT) 的安全函式，引發了無法恢復的 0xc0000417 (STATUS_INVALID_CRUNTIME_PARAMETER) 例外。
+此問題反映出該 DLL 在架構上缺乏對跨架構執行環境的適應能力。
+---
+### 2. 環境詳情 (Environment Details)
+- 作業系統 (OS): Microsoft Windows 11 Pro on ARM (ARM64)
+- 硬體平台 (Hardware): ARM64 架構裝置
+- 主應用程式 (Host Application): HPFwUpdate.exe (x86 架構)
+- 錯誤模組 (Faulting Module): SunplusCamera.dll (x86 架構)
+- 錯誤模組版本 (Version): 9.2010.6.1
+- 執行情境 (Execution Context): x86 應用程式透過 Windows on ARM 的 WoW (Windows on Windows) 模擬層，動態載入並執行 x86 DLL。
+---
+### 3. 重現步驟與現象 (Steps to Reproduce & Observed Behavior)
+1. 在 Windows 11 on ARM 環境中，執行我們的 x86 應用程式 HPFwUpdate.exe。
+1. 應用程式透過 LoadLibrary 動態載入 SunplusCamera.dll，此步驟成功。
+1. 應用程式呼叫 SunplusCamera.dll 導出的 Initialize() 函式。
+1. 結果： 在呼叫 Initialize() 的瞬間，主應用程式立即崩潰。
+應用程式日誌記錄 (Application Log):
+```java
+2025-11-05 15:10:24 [GLHubDLL] CheckSunplusCameraExistAndGetVersion() ..
+2025-11-05 15:10:24 [GLHubDLL] sunplusCamera.LoadDll Success ..
+2025-11-05 15:10:24 [GLHubDLL] TRYING: Calling sunplusCamera.Initialize() ...
+// <--- Application crashes immediately after this line
+```
+---
+### 4. 根本原因分析 (Root Cause Analysis)
+Windows 事件檢視器 (Event Viewer) 記錄:
+- 錯誤的應用程式名稱 (Faulting application name): HPFwUpdate.exe
+- 錯誤的模組名稱 (Faulting module name): SunplusCamera.dll
+- 例外狀況代碼 (Exception code): 0xc0000417
+分析結論：
+1. 架構感知缺失： SunplusCamera.dll (x86) 在其 Initialize() 函式中，似乎預設自己運行在原生的 x86/x64 Windows 環境。它缺乏必要的邏輯來檢測自己是否正透過 WoW 模擬層在 ARM64 系統上運行。
+1. 跨架構通訊失敗： 我們推測 Initialize() 會嘗試與底層的攝影機驅動程式 (.sys) 進行通訊。在 ARM64 系統上，驅動程式必須是原生 ARM64 版本。一個未經設計的 x86 DLL 直接嘗試與 ARM64 驅動程式互動，其使用的 API（如 SetupDi 系列函式或 CreateFile）很可能因此失敗，並回傳 NULL 或無效的控制代碼。
+1. 觸發 CRT 致命錯誤： 該 DLL 的程式碼未能檢查上述 API 呼叫的回傳值。它將這個 NULL 指標直接傳遞給了後續的 C 執行階段 (CRT) 安全函式（例如 memcpy_s, wcscpy_s 等），違反了這些函式的參數要求，從而觸發了 0xc0000417 致命例外，導致整個應用程式崩潰。
+核心問題： 一個理想的 x86 DLL 應具備「環境感知」能力。它應該在執行關鍵操作前，先判斷作業系統的底層架構。如果檢測到是 ARM64，它應該知道如何正確地與對應的 ARM64 驅動程式通訊，或者在無法支援時回傳失敗，而不是直接崩潰。
+
+</core_topic>
+  <related_context>
+    <related id="camera-透過我們驗證-code-sign" title="Camera 透過我們驗證 code sign" path="/code-sign/camera-透過我們驗證-code-sign.html">
+    
+    ### Camera
+    1. generate ecdsa key & sign ecdsa key
+    1. 告知如何Erase Camera 的方式 —> verify fail 要 erase 掉
+    1. 告知如何 Read Camera data —> hub security model 必須要 read 到 update 的 data 才可以算出hash
+    1.  2 , 3點 可以改成 告知我們所有的 update flow 以及相對應的文件，讓我們控制整個update 
+    1. 下圖為Hub Code Sign 驗證 flow ，驗證code sign 應該Tool 就可以控制，FW 應該不用改甚麼，但是還是要麻煩俊太確認看看
+    
+    </related>
+    <related id="etoken-system-code-view-" title="Etoken System Code View " path="/code-sign/etoken-system-code-view-.html">
+    
+    ## etoken_dongle_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: 不通過。連線工作流程使用 detach 且無生命週期收斂，違反可預測關閉原則。
+    - Native Safety: 不通過。檔案大小與外部命令執行缺乏邊界控制，存在資源與執行風險。
+    - Test Integrity: 不通過。看不到針對失敗路徑（超大輸入、shutdown race、協定錯位）的測試證據。
+    ### Technical Findings
+    1. [BLOCKING] Detached worker thread may outlive owner (this)
+    1. [BLOCKING] Unbounded memory allocation from peer-provided file size
+    1. [WARNING] Protocol error opcode mismatch in public-key stage
+    1. [WARNING] system() execution path with externally-derived parameters
+    1. [WARNING] Timeout conversion bug in select()
+    1. [SUGGESTION] Hardcoded token password in source
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md.
+    - Result: Conflict Found (特別是 system()/sub-process hang 與協定失配/卡住風險已命中)。
+    ## etoken_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: Release 組態已移除 OFFLINE_TEST，這點較前版改善；但連線工作執行緒仍採 detach，生命週期不可控，違反可預測性。
+    - Native Safety: 未發現新的 pointer free 錯誤；但外部命令執行與檔案大小處理缺乏邊界，仍有高風險。
+    - Test Integrity: 看不到對失敗路徑（超大 file size、thread shutdown race、SQL 注入字串）的測試鎖定證據。
+    ### Technical Findings
+    1. [BLOCKING] SQL injection 風險（登入授權查詢）
+    1. [WARNING] detach 執行緒捕獲 this，存在 shutdown race / UAF 風險
+    1. [WARNING] Dongle 管理同樣使用 detach，生命週期不可驗證
+    1. [WARNING] 檔案大小由對端提供且未設上限，可能 OOM/卡死
+    1. [WARNING] 對 Dongle 端取檔同樣無大小上限
+    1. [WARNING] DB 密碼硬編碼在程式碼
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md（含 system()/子程序卡死、流程卡住類型）。
+    - Result: Conflict Found（當前風險與既有 anti-pattern 高度重疊）。
+    
+    </related>
+    <related id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+    
+    ## 1. 系統概述
+    本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+    ---
+    ## 2. 系統架構圖
+    此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+    ---
+    ## 3. 詳細處理流程
+    整個流程可分為三個主要階段：
+    ---
+    ## 4. 流程視覺化圖表
+    4.1 循序圖 (Sequence Diagram)
+    4.2 流程圖 (Flowchart)
+    ---
+    ## 5. 演算法特定規則
+    在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+    ---
+    ## 6. 各晶片韌體格式詳解
+    ---
+    ## 7. 晶片格式總覽表
+    ## GLBinTool Commands
+    ---
+    ### ⚙️ WIP 階段
+    ```c
+    glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+    ```
+    用途
+    將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+    在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+    輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+    必要參數 
+    - i, --input → 原始 Bin 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個原始 Bin 檔
+    回傳
+    -  回傳 Output 檔案數量，若為 0 則為 Fail
+    特殊狀況
+    -  case A in 才需要放 public key 進去
+    ---
+    ### 🔑 SIGN 階段
+    ```c
+    glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+    ```
+    用途
+    計算 wip.bin 的 Hash，產生 Signed bin 檔。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出 sig 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    - f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+    特殊狀況
+    -  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+    ---
+    ### 📦 ROM 階段
+    ```c
+    glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+    ```
+    用途
+    依晶片演算法，組裝最終檔案 rom。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出檔案
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    ---
+    ## 測試Chip & bin 檔
+    
+    </related>
+  </related_context>
+</context_boundaries>

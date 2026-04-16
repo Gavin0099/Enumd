@@ -1,138 +1,138 @@
 [
   {
     "slug": "usb-device-class",
-    "claim": "1. **Human Interface Device (HID)**: 包括滑鼠、鍵盤、遊戲搖桿等人機介面裝置。主機接收來自這些裝置的輸入資料,並快速反應以提供良好的使用者體驗。HID 裝置使用定義好的資料結構,稱為「報告(Report)」,來交換資料。",
-    "tier": "Explicit",
-    "evidence_score": 11,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "2. **Physical Interface Device (PID)**: 定義了產生力回饋的輸入裝置,如遊戲搖桿。",
-    "tier": "Explicit",
-    "evidence_score": 4,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "3. **Monitor Control**: 定義顯示器的使用者控制和電源管理功能。",
+    "claim": "USB 裝置類別是一種將具有相似功能的 USB 裝置歸類到同一類別的機制。當許多裝置具有相似的屬性或行為時，它們會被定義為一個類別，並遵循相同的協定。這樣可以簡化主機端對這些裝置的管理和支援。",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "usb-device-class",
-    "claim": "4. **Power Device**: 定義了 UPS 和可監控電池的功能。",
+    "claim": "1. **人機介面裝置 (Human Interface Device, HID)**: 包括滑鼠、鍵盤、遊戲搖桿等輸入裝置。主機端接收這些裝置的輸入資料，如按鍵或滑鼠移動，並快速做出反應，使用者才不會感到延遲。HID 裝置使用定義好的資料結構 (報告, Report) 進行資料傳輸。報告中包含用途標籤 (Usage), 告知主機如何使用接收到的資料。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "2. **實體介面裝置 (Physical Interface Device, PID)**: 定義了產生力回饋的輸入裝置, 如遊戲搖桿。",
     "tier": "Explicit",
     "evidence_score": 4,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "usb-device-class",
-    "claim": "5. **Point of Sale (POS)**: 定義條碼機、秤重裝置和磁帶讀卡機等 POS 裝置的功能。",
-    "tier": "Explicit",
-    "evidence_score": 7,
+    "claim": "3. **顯示器控制 (Monitor Control)**: 定義了顯示器的使用者控制和電源管理功能。",
+    "tier": "Derived",
+    "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "usb-device-class",
-    "claim": "a. 所有資料交換都儲存在固定長度的結構,稱為「報告(Report)」,主機透過控制傳輸或中斷傳輸來要求或接收報告。[`HID Device Capabilities`]",
+    "claim": "4. **電源裝置 (Power Device)**: 定義了 UPS 和可監控電池的功能。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "5. **銷售點裝置 (Point of Sale, POS)**: 定義了條碼掃描器、電子秤和磁卡讀取器等銷售點裝置。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "1. **控制傳輸 (Control Transfer)**: 用於傳輸特徵報告 (Feature Report)。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "2. **中斷傳輸 (Interrupt Transfer)**: 用於傳輸輸入報告 (Input Report) 和輸出報告 (Output Report)。中斷傳輸擁有頻寬保證,特別適用於需要定期讀取資料或低延遲的情況。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "2. HID 裝置必須至少有一個中斷 IN 端點,用於送出輸入報告。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "3. 一個 HID 裝置最多只能有一個中斷 IN 端點和一個中斷 OUT 端點,除非是複合性裝置。",
     "tier": "Explicit",
     "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "usb-device-class",
-    "claim": "b. HID 裝置必須有一個中斷 IN 端點,用來送出輸入報告(Input Reports)。[`HID Device Capabilities`]",
+    "claim": "4. 中斷 IN 端點送資料給主機的時間是不可預期的,主機無法提前知道使用者何時操作裝置。主機可以透過輪詢 (Polling) 或 USB 3.0 SuperSpeed 的 ERDY 交易封包來獲取資料。",
     "tier": "Explicit",
-    "evidence_score": 8,
+    "evidence_score": 5,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "usb-device-class",
-    "claim": "c. 一個 HID 裝置最多只能有一個中斷 IN 和 OUT 端點,除非是複合性裝置(Composite Device)。[`HID Device Capabilities`]",
+    "claim": "- 慢速和中斷端點: 最高 800 Byte/s",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "HID 裝置使用報告 (Report) 來交換資料。報告可能是簡單的位元緩衝區,也可能是複雜的項目組合,具有指定的功能和單元。報告描述表格 (Report Description) 提供了 HID 裝置送收資料的相關訊息,包括:",
     "tier": "Explicit",
     "evidence_score": 9,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   },
   {
     "slug": "usb-device-class",
-    "claim": "d. 中斷 IN 端點送資料給主機的時間是不可預期的,主機必須透過輪詢(Polling)或 USB 3.0 SuperSpeed 的 ERDY 交易封包來獲取資料。[`HID Device Capabilities`]",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "e. 資料交換的速率有差異:慢速和中斷端點最高 800 byte/s,全速端點最高 64 KByte/s,預設機能介面端點最高 64 KByte/s。[`HID Device Capabilities`]",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "HID 裝置使用「報告(Report)」來交換資料,報告可能是簡單的位元緩衝區,也可能是複雜的項目組合。報告敘述表格(Report Description)會告知主機和裝置通信所需的資訊:",
-    "tier": "Explicit",
-    "evidence_score": 7,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "- Logical Minimum & Logical Maximum,指定報告數值範圍",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "- Report Size 資料傳輸的位元數",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "- Report Count 報告含有的資料項目數目",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "- 指定是輸入(0x81)、輸出(0x91)或特徵報告(0xB1)",
-    "tier": "Explicit",
-    "evidence_score": 5,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "1. **控制傳輸**: 提供 6 個類別相依的專屬命令。",
-    "tier": "Derived",
-    "evidence_score": 3,
-    "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
-  },
-  {
-    "slug": "usb-device-class",
-    "claim": "[`HID Device Capabilities`]",
+    "claim": "報告描述表格會告知主機和裝置在通訊時需要知道的需求。主機在列舉時會發送 Get Description 請求來獲取組態表格。",
     "tier": "Derived",
     "evidence_score": 2,
     "wave_id": 6,
-    "batch_id": "batch_2026-04-16T03-48-40-717Z"
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "[USB HID Usage Tables](https://www.usb.org/document-library/hid-usage-tables-112)文件提供了不同 Usage Page 的數值定義,包括通用桌面控制、遊戲控制、字母數字顯示等。如果是廠商自定義的 Usage Page,則會在 0xFF00 ~ 0xFFFF 範圍內。",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "1. 控制傳輸命令: 提供 6 個類別相依的專屬命令。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "usb-device-class",
+    "claim": "總之, USB 裝置類別是一種將具有相似功能的 USB 裝置歸類到同一類別的機制,以簡化主機端的管理和支援。其中,人機介面裝置 (HID) 是最常見的一種類別,它定義了輸入裝置、顯示器控制、電源管理等功能,並使用報告 (Report) 進行資料交換。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
   }
 ]

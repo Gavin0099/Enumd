@@ -1,0 +1,571 @@
+<context_boundaries>
+<core_topic id="sw文件撰寫sop" title="SW文件撰寫SOP" path="/general/sw文件撰寫sop.html">
+
+### 簡介
+為避免該整理的文件沒整理到或是整理好的文件沒有放到固定位置導致過幾年後找不到，在這邊定下基本的說明
+1. 開會討論過後的文件要記得編寫，下面會列出該寫的文件的check list
+1. 編寫好的文件要指定相關工作者review 
+1. 文件最好寫成word 且有把連結設定在GitLab上 or 直接寫在GitLab上面
+1. 每次開會會討論是否有要新增的文件或是check list 文件已經寫好的
+1. check list 加上 作者 開始時間和結束時間
+### 文件編寫check List
+
+</core_topic>
+  <related_context>
+    <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
+    
+    ### Update Protocol
+    - HID update flow
+    - Vendor Command 第二碼
+    - HID 預設只使用 2.0
+    ### Tool & Test
+    - file:///\\genesyslogic.com.tw\GenesysData\SW_Release_New\Hub\HID\Tool
+    - 驗證
+    ### 執行中
+    - Release Tool
+    - 請SE確認各OS有沒有自動喚醒 device。
+    - HID 驗證 USB LOGO 問題。
+    - 整理 chip function list，用表格列出各 chip 機制的不同。
+    HID 速度問題。
+    - FW UPD 已經是 open source 了，但 SW 目前 Build 不起來，無法測試。
+    ### 待討讑
+    - GL3590
+    - Tool 在 chrome book上應該可以直接執行、更新，SW 會再討論如何測試、驗證。
+    - SW需要討論一下 ISP tool 在燒錄時，需要明顯提示是使用 filter driver 還是 HID。
+    - 檢查不同 OS 平台（ex：mac, linux, chrome book）。
+    ### 已驗證 & 解決
+    2021/11/05 HID 會把重抓到的 device 當成不同個
+    2021/11/05 OS 有時認不到裝置，裝置管理員上顯示驚嘆號
+    2021/11/05 Scaler update 在 set report 時 ，會有 data 沒有傳下去的問題
+    2021/11/05 Scaler update 在 write command 時速度慢
+    2021/11/05 驗證資料時出錯（ISP_ERR_VERIFY_DEVICE）
+    2021/11/05 程式閃退
+    2021/11/08 驗證資料時出錯（ISP_ERR_SEND_COMMAND）
+    2021/11/19 請 MTK 導入 Hardware CRC 的機制（被拒絕）。
+    Google 在 ISP 相關。
+    HP ISP Tool ( HID ) 預設只使用 2.0
+    ### 會議記錄
+    2021/12/17 HP ISP Tool
+    
+    </related>
+    <related id="secure-firmware-recovery" title="Secure Firmware Recovery" path="/general/secure-firmware-recovery.html">
+    
+    ### OCP 安全韌體恢復 (Secure Firmware Recovery) 規範詳解
+    ---
+    ### 1. 總覽與目的 (Executive Summary)
+    本文件是由 Open Compute Project (OCP) 發布的一份技術規範，旨在為資料中心硬體建立一套標準化、安全且可靠的韌體恢復機制。
+    其核心目標是：當一個裝置（如網卡、SSD、加速卡）的韌體損壞、無回應或被惡意竄改時，平台管理者（如 BMC）能夠透過一個獨立於主作業系統的低階通道（Side-band channel），強制該裝置進入恢復模式，並將其恢復到一個已知、可信的安全狀態。
+    此規範基於 NIST SP 800-193《平台韌體彈性指南》 的三大支柱：
+    - 保護 (Protection): 透過安全啟動 (Secure Boot) 和金鑰管理來保護韌體。
+    - 偵測 (Detection): 透過平台證明 (Attestation) 來偵測韌體的完整性。
+    - 恢復 (Recovery): 本文件的核心，定義了如何從偵測到的問題中恢復。
+    ### 1.1 系統全景架構圖 (System Overview)
+    ```mermaid
+    flowchart TB
+    classDef host     fill:#fef3c7,stroke:#b45309,stroke-width:2px,color:#111
+    classDef platform fill:#dbeafe,stroke:#1d4ed8,stroke-width:2px,color:#111
+    classDef agent    fill:#fff1a6,stroke:#a16207,stroke-width:2px,color:#111
+    classDef bus      fill:#cffafe,stroke:#0891b2,stroke-width:2px,color:#0b1a1f
+    classDef device   fill:#bbf7d0,stroke:#15803d,stroke-width:2px,color:#0b1a1f
+    
+    subgraph HOST ["Host 主機域"]
+      RC["CPU / PCIe Root Complex"]:::host
+      OS["Host OS"]:::host
+    end
+    
+    subgraph PLATFORM ["PA-RoT / BMC 平台管理域"]
+      BMC["BMC (PA-RoT)"]:::platform
+      RA["Recovery Agent"]:::agent
+    end
+    
+    subgraph MGMT ["正常管理匯流排"]
+      PLDM["PLDM for FW Update<br/>(over MCTP)"]:::bus
+      SPDM["SPDM Measurements"]:::bus
+      MGMT_BUS["Device Mgmt Backplane<br/>(聚合中繼)"]:::bus
+    end
+    
+    subgraph REC ["Recovery Bus<br/>SMBus 0xD2（獨立位址）"]
+      RBUS["Recovery Interface"]:::bus
+    end
+    
+    subgraph DEVS ["AC-RoT Devices 裝置群"]
+      DEV_BUS["Device Fabric<br/>(裝置內部管理匯流排)"]:::bus
+      subgraph NICG ["NIC"]
+        NIC["NIC Device"]:::device
+      end
+      subgraph SSDG ["SSD"]
+        SSD["SSD Device"]:::device
+      end
+      subgraph ACCG ["Accelerator"]
+        ACC["Accelerator Device"]:::device
+      end
+    end
+    
+    RA --> BMC
+    BMC --> PLDM
+    BMC --> SPDM
+    BMC --> RBUS
+    RC --- OS
+    OS -->|功能/資料| DEV_BUS
+    
+    PLDM --> MGMT_BUS
+    SPDM --> MGMT_BUS
+    MGMT_BUS --> DEV_BUS
+    
+    RBUS --> DEV_BUS
+    
+    DEV_BUS --> NIC
+    DEV_BUS --> SSD
+    DEV_BUS --> ACC
+    
+    ```
+    ---
+    ### 2. 關鍵角色與術語 (Key Roles & Terminology)
+    - AC-RoT (Active Component Root of Trust): 主動元件信任根。指需要被恢復的裝置，例如一個 PCIe 卡。它本身具備安全啟動和證明能力。
+    - PA-RoT (Platform Active Root of Trust): 平台主動信任根。通常是平台上的管理控制器，如 BMC (Baseboard Management Controller)。
+    - RA (Recovery Agent): 恢復代理。通常是 PA-RoT (BMC) 內部的一個軟體模組，負責推送映像檔並協調恢復流程。
+    韌體映像檔類型 (Firmware Image Types):
+    - A/B Image (營運映像檔): 裝置正常運行時使用的韌體，採用 A/B 分區以支援不中斷更新。
+    - C-Image (恢復映像檔): 最小化韌體，用於啟動裝置並接收新的 A/B Image。
+    - 關鍵資料 (Critical Data): 裝置身份憑證、金鑰清單、安全配置等必須持久存在的資料。
+    ```mermaid
+    flowchart LR
+        %% --- 類別樣式定義 (Class Definitions) ---
+        classDef manifest fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px,color:#111
+        classDef boot fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#111
+        classDef cimg fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+        classDef ab fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#111
+        classDef policy fill:#ede9fe,stroke:#7c3aed,stroke-width:2px,color:#111
+    
+        %% --- 節點定義與主要啟動流程 (Node Definitions & Main Boot Flow) ---
+        KM[Key Manifest<br/>金鑰清單] --> BL[Boot Loader<br/>啟動載入程式]
+        BL --> CIMG[C-Image<br/>恢復映像檔]
+        BL --> AB[A/B Operational Images<br/>A/B 營運映像檔]
+    
+        %% --- 子圖：定義安全策略區塊 (Subgraph for Security Policy) ---
+        subgraph S_POLICY [Policy / 策略]
+            direction TB
+            AR[Anti-rollback Counter<br/>防回滾計數器]
+            SB[Secure Boot Keys<br/>安全啟動金鑰]
+        end
+    
+        %% --- 關係：策略如何強制驗證其他元件 (Relationships: Policy Enforcement) ---
+        S_POLICY -. Enforced Validation<br/>強制驗證 .-> KM
+        S_POLICY -. Enforced Validation<br/>強制驗證 .-> BL
+        S_POLICY -. Enforced Validation<br/>強制驗證 .-> CIMG
+        S_POLICY -. Enforced Validation<br/>強制驗證 .-> AB
+    
+        %% --- 將樣式套用到對應的節點 (Apply Classes to Nodes) ---
+        class KM manifest
+        class BL boot
+        class CIMG cimg
+        class AB ab
+        class AR,SB policy
+    ```
+    ---
+    ### 3. 恢復觸發條件與場景 (Recovery Triggers & Scenarios)
+    觸發條件：
+    1. 平台偵測異常（Attestation 測量值不符）。
+    1. 裝置自我偵測（安全啟動失敗、防回滾錯誤、關鍵資料損壞）。
+    1. 裝置無回應（無法透過 MCTP 溝通）。
+    1. 強制恢復（由管理者策略或維護需求觸發）。
+    使用場景：
+    - 正常更新： 僅韌體升級，不動用此恢復機制。
+    - 帶有關鍵資料的恢復： 重寫韌體，身份保持不變。
+    - 不帶關鍵資料的恢復： 必須重新配置裝置身份與安全參數。
+    ⚠️ 安全提醒：強制恢復 (Forced Recovery) 隱含信任 PA-RoT/RA，若被濫用可能造成 拒絕服務 (DoS)，因為攻擊者可反覆觸發裝置重置。
+    ```mermaid
+    flowchart TD
+        %% === 類別樣式 ===
+        classDef startend fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#111
+        classDef decision fill:#fef9c3,stroke:#eab308,stroke-width:2px
+        classDef process fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+        classDef action fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+        classDef stop fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+    
+        %% === 節點 ===
+        A([Start / 開始]):::startend --> B{Trigger Source? / 觸發來源?}:::decision
+        B -->|Platform attestation mismatch / 平台證明不符| C[Query DEVICE_STATUS / 查詢狀態]:::process
+        B -->|Device self-detect failure / 裝置自檢失敗| C
+        B -->|Device unresponsive / 裝置無回應| D[Write DEVICE_RESET / 寫入強制恢復]:::action
+        B -->|Operator policy forced / 管理者強制| D
+    
+        C --> E{Status? / 狀態判斷}:::decision
+        E -->|Healthy / 健康| Z([Stop / 結束]):::stop
+        E -->|Error / 錯誤| F[Plan Recovery / 規劃恢復]:::process
+        E -->|Recovery Mode / 恢復模式| G[Proceed to Image Loading / 進入映像載入]:::action
+    
+        D --> G
+        F --> G
+    
+        G --> H{C-Image source? / 恢復映像來源?}:::decision
+        H -->|Push via IMI / 透過 IMI 推送| I[INDIRECT_CTRL / INDIRECT_DATA]:::process
+        H -->|Local persistent / 使用本地 C-Image| J[Select persistent C-Image / 選擇內建映像]:::action
+    
+        I --> K[RECOVERY_CTRL → Reboot to C-Image / 重啟進入 C-Image]:::action
+        J --> K
+        K --> L[PLDM/MCTP minimal stack / 寫入 A/B 韌體]:::process
+        L --> M[Reboot to A/B & attest / 重啟並驗證]:::process
+        M --> N{Attestation pass? / 驗證通過？}:::decision
+        N -->|Yes / 通過| Z
+        N -->|No / 失敗| F
+    
+    ```
+    ---
+    ### 4. 恢復流程詳解 (Recovery Process Flow)
+    1. 偵測 (Detection) → PA-RoT 判斷 AC-RoT 不健康。
+    1. 狀態查詢 (Status Check) → RA 讀取 DEVICE_STATUS。
+    1. 進入恢復模式 (Entering Recovery) → 可透過 DEVICE_RESET 觸發。
+    1. 載入恢復映像檔 (Image Loading) → Push C-Image 或選擇本地 C-Image。
+    1. 啟動恢復映像檔 (Activation) → RECOVERY_CTRL 控制重啟並執行 C-Image。
+    1. 執行恢復 (Recovery Execution) → 推送完整的 A/B Image。
+    1. 完成與驗證 (Completion & Verification) → 重啟後由 Attestation 驗證健康狀態。
+    ```mermaid
+    stateDiagram-v2
+        %% 狀態樣式定義
+        state "Healthy\\n健康" as Healthy
+        state "Error / 錯誤" as Error
+        state "Recovery Mode\\n恢復模式" as RecoveryMode
+        state "Recovery Pending\\n等待啟動恢復" as RecoveryPending
+        state "Running Recovery Image\\n執行恢復映像" as RunningRecoveryImage
+        state "Fatal Error / 致命錯誤" as FatalError
+    
+        [*] --> Healthy
+        Healthy --> Error: Attestation fail / 自檢失敗
+        Healthy --> RecoveryMode: Forced Recovery (DEVICE_RESET flag)
+        Error --> RecoveryMode: DETECTED & RECOVERY_REQUIRED
+        RecoveryMode --> RecoveryPending: RECOVERY_CTRL 選擇/推送 C-Image
+        RecoveryPending --> RunningRecoveryImage: Reboot into C-Image
+        RunningRecoveryImage --> Healthy: A/B 更新成功，驗證通過
+        RunningRecoveryImage --> Error: 更新或驗證失敗
+        Error --> FatalError: 無法恢復 (HW / Policy)
+        FatalError --> [*]
+    
+        %% 顏色套用
+        classDef good fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+        classDef warn fill:#fef9c3,stroke:#eab308,stroke-width:2px
+        classDef bad fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+        classDef process fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+    
+        class Healthy good
+        class RecoveryMode,RecoveryPending,RunningRecoveryImage process
+        class Error warn
+        class FatalError bad
+    
+    ```
+    狀態碼 (DEVICE_STATUS):
+    ---
+    ### 5. 恢復原因碼 (Recovery Reason Codes)
+    ✅ = 可恢復 ｜ ❌ = 無法恢復 ｜ ◐ = 視情況需返廠
+    ```mermaid
+    flowchart LR
+        %% === 樣式 ===
+        classDef ok fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+        classDef maybe fill:#fff7ed,stroke:#f59e0b,stroke-width:2px,color:#111
+        classDef no fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#111
+        classDef legend fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#111
+    
+        %% === 可恢復 (綠) ===
+        subgraph G1 [可恢復 Recoverable]
+            direction TB
+            ROK["0x5 Key Manifest 遺失/毀損<br/>0x6 Key Manifest 驗證失敗<br/>0x7 Key Manifest 防回滾錯誤<br/>0x8 Boot Loader 遺失/毀損<br/>0x9 Boot Loader 驗證失敗<br/>0xA Boot Loader 防回滾錯誤<br/>0xB 主韌體遺失/毀損<br/>0xC 主韌體驗證失敗<br/>0xD 主韌體防回滾錯誤<br/>0xE Recovery 韌體遺失/毀損<br/>0xF Recovery 韌體驗證失敗<br/>0x10 Recovery 韌體防回滾錯誤<br/>0x11 強制恢復"]:::ok
+        end
+    
+        %% === 條件式 (橘) ===
+        subgraph G2 [條件式 Conditional]
+            direction TB
+            RMAYBE["0x2 軟體錯誤（可嘗試恢復）<br/>0x3 自我測試失敗<br/>0x4 關鍵資料毀損/遺失"]:::maybe
+        end
+    
+        %% === 不可恢復 (紅) ===
+        subgraph G3 [不可恢復 Unrecoverable]
+            direction TB
+            RNO["0x1 硬體錯誤（需返廠/RMA）"]:::no
+        end
+    
+        %% 排版連結（純為左右並排，無語意）
+        G1 --- G2 --- G3
+    
+        %% === 圖例 ===
+        L1(["可恢復"]):::ok --- L2(["條件式"]):::maybe --- L3(["不可恢復"]):::no
+    
+    ```
+    ### 5.1 Mermaid：錯誤處理與可恢復性決策圖
+    > 說明：將「恢復原因碼」對應到實際路徑（可恢復／需重新供應／返廠）與驗證收斂。綠＝可恢復；橘＝條件式（需再供應）；紅＝返廠；藍＝流程節點；灰＝起訖。
+    ```mermaid
+    flowchart TD
+    %% === 類別樣式（Classes） ===
+    classDef startend fill:#f3f4f6,stroke:#9ca3af,stroke-width:1px,color:#111
+    classDef recover fill:#dcfce7,stroke:#16a34a,stroke-width:2px
+    classDef conditional fill:#fff7ed,stroke:#f59e0b,stroke-width:2px
+    classDef rma fill:#fee2e2,stroke:#ef4444,stroke-width:2px
+    classDef process fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px
+    classDef decision fill:#fef9c3,stroke:#eab308,stroke-width:2px
+    
+    
+    %% === 節點（Nodes） ===
+    A([錯誤偵測
+    Error detected])
+    B{恢復原因碼
+    Recovery Reason Code}
+    C[採用 C-Image 進行恢復
+    Proceed Recovery via C-Image]
+    D{是否具備重新供應路徑？
+    Has re-provision path?}
+    E[送廠 / 安全 RMA
+    Return to vendor / secure RMA]
+    F[透過 PLDM/MCTP 更新 A/B
+    Update A/B via PLDM/MCTP]
+    G{Attestation 是否通過？
+    Attestation pass?}
+    H([Healthy
+    恢復完成])
+    
+    
+    %% === 連線（Edges） ===
+    A --> B
+    B -->|Key Manifest / Boot / Auth / Anti-rollback issues| C
+    B -->|Critical Data lost（關鍵資料遺失）| D
+    B -->|HW Fault（硬體故障）| E
+    
+    
+    D -->|Yes / 是| C
+    D -->|No / 否| E
+    
+    
+    C --> F
+    F --> G
+    G -->|Pass / 通過| H
+    G -->|Fail / 未通過| A
+    
+    
+    %% === 套用樣式（Apply Classes） ===
+    class A,H startend
+    class B,D,G decision
+    class C recover
+    class F process
+    class E rma
+    ```
+    ---
+    ### 6. 恢復介面協定 (Recovery Interface Protocol)
+    ### 6.1 傳輸層 (Transport Layer)
+    - 物理介面: SMBus/I2C。
+    - 拓撲: 支援共享或獨立地址（建議 0xD2 獨立地址，因為更安全且不會與 MCTP 衝突）。
+    - 協定: 使用 SMBus 的塊讀寫命令，每個命令有 8-bit 命令碼 (Command Code)。
+    - 在共享模式下，若 MCTP 與 Recovery 同時使用 0xD4，可能導致裝置誤判管理封包，進而失敗。
+    ```mermaid
+    flowchart TB
+        %% === 樣式定義 ===
+        classDef platform fill:#e0f2fe,stroke:#3b82f6,stroke-width:2px,color:#111
+        classDef agent fill:#fef9c3,stroke:#eab308,stroke-width:2px,color:#111
+        classDef bus fill:#f3f4f6,stroke:#9ca3af,stroke-width:2px,color:#111
+        classDef device fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+        classDef warn fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#111
+        classDef good fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#111
+    
+        %% === 共享模式 ===
+        subgraph Shared ["共享模式 (0xD4)<br/>可能與 MCTP 衝突 ❌"]
+            direction TB
+            BMC1["PA-RoT / BMC<br/>平台主動信任根"]:::platform
+            RA1["Recovery Agent<br/>恢復代理"]:::agent
+            BUS1["I2C / SMBus<br/>匯流排 (位址 0xD4 共用)"]:::warn
+            D1["AC-RoT Device #1"]:::device
+            D2["AC-RoT Device #2"]:::device
+    
+            BMC1 --> BUS1
+            RA1 --> BMC1
+            BUS1 --> D1
+            BUS1 --> D2
+        end
+    
+        %% === 獨立模式 ===
+        subgraph Independent ["獨立模式 (0xD2)<br/>OCP 推薦 ✅"]
+            direction TB
+            BMC2["PA-RoT / BMC<br/>平台主動信任根"]:::platform
+            RA2["Recovery Agent<br/>恢復代理"]:::agent
+            BUS2["I2C / SMBus<br/>匯流排 (位址 0xD2 獨立)"]:::good
+            D3["AC-RoT Device #1"]:::device
+            D4["AC-RoT Device #2"]:::device
+    
+            BMC2 --> BUS2
+            RA2 --> BMC2
+            BUS2 --> D3
+            BUS2 --> D4
+        end
+    
+    ```
+    ### 6.2 間接記憶體介面 (Indirect Memory Interface - IMI)
+    - 功能: 用於推送 C-Image，採用視窗化方式存取 AC-RoT 內部記憶體空間。
+    - 步驟:
+    - CMS 類型: Code CMS（存放映像）、Log CMS（偵錯日誌）、Vendor Defined CMS。
+    ### 6.3 主要命令時序圖 (Key Commands Sequence)
+    ```mermaid
+    sequenceDiagram
+        participant RA as Recovery Agent
+        participant AC as AC-RoT Device
+    
+        RA->>AC: Read PROT_CAP (探索能力)
+        AC-->>RA: 回報能力 (支援 Push C-Image)
+    
+        loop 輪詢狀態
+            RA->>AC: Read DEVICE_STATUS
+            AC-->>RA: 回報狀態 (例如: 0x2 Error, Reason=0x9 Auth Fail)
+        end
+    
+        RA->>AC: Write DEVICE_RESET (強制下次開機進入恢復模式)
+        note right of AC: 裝置重啟並進入恢復模式
+    
+        RA->>AC: Read DEVICE_STATUS
+        AC-->>RA: 回報狀態 (0x3 Recovery Mode)
+    
+        RA->>AC: Write INDIRECT_CTRL (選擇 Code CMS, offset=0)
+        AC-->>RA: 確認
+    
+        loop 推送 C-Image 數據塊
+            RA->>AC: Write INDIRECT_DATA (Chunk n)
+            AC-->>RA: 確認
+        end
+    
+        RA->>AC: Write RECOVERY_CTRL (啟動 C-Image)
+        note right of AC: 裝置重啟並執行 C-Image
+    
+        RA->>AC: Read DEVICE_STATUS
+        AC-->>RA: 回報狀態 (0x5 Running Recovery Image)
+    
+        note over RA,AC: 此時 RA 可用最小化 MCTP/PLDM 推送 A/B 映像
+    
+    ```
+    ### 6.2.1 C-Image 最小功能需求  (Minimal Requirements for C-Image)
+    C-Image 的設計目標是「讓裝置在最小化環境下仍能被恢復」，因此即使它功能有限，也必須具備以下基本能力：
+    - 支援最小化 MCTP/PLDM 協定堆疊
+    - 能接收並驗證 A/B Image
+    - 能回報狀態與錯誤碼
+    - 最小化安全信任鏈延續
+    ### 6.3 主要命令 (Key Commands)
+    - PROT_CAP (能力發現)
+    - DEVICE_ID (裝置身份)
+    - DEVICE_STATUS (狀態回報)
+    - DEVICE_RESET (重置/進入恢復模式)
+    - RECOVERY_CTRL (選擇/啟動 C-Image)
+    - INDIRECT_CTRL / INDIRECT_DATA (推送映像檔)
+    - 錯誤處理: 若命令不支援、參數錯誤、長度錯誤或校驗錯誤，必須在 DEVICE_STATUS 中回報。
+    ---
+    ### 7. 安全威脅模型與對抗策略 (Security Threat Model & Countermeasures)
+    ---
+    ### 8. 實作細節與最佳實踐 (Implementation Details & Best Practices)
+    - C-Image 設計：
+    - RA (BMC 端) 設計：
+    - 合規性要求：
+    ---
+    ### 9. 與其他規範的關聯性 (Relation to Other Specifications)
+    ---
+    ### 8. 結論 (Conclusion)
+    
+    </related>
+    <related id="2025-minimum-elements-for-a-software-bill-of-materials-sbom" title="2025 Minimum Elements for a
+    Software Bill of Materials (SBOM)" path="/general/2025-minimum-elements-for-a-software-bill-of-materials-sbom.html">
+    
+    ### 簡介 (Introduction)
+    這一節解釋了 SBOM 的定義以及為何需要更新 2021 年的標準。
+    - SBOM 的定義： SBOM 是軟體安全與供應鏈風險管理的關鍵基石 。它是一份「巢狀清單 (nested inventory)」，即構成軟體應用程式與系統的成分表 。
+    - 歷史背景： NTIA 在 2021 年發布了最初的《SBOM 最低要素》，反映了當時的技術成熟度與社群意識 。
+    - 技術演進： 自 2021 年以來，隨著軟體生產者、選擇者 (Choosers) 與維運者 (Operators) 的需求增加，SBOM 工具已顯著成熟 。專家合作與實踐創新推動了技術現狀的進步 。
+    - 更新目的： 本文件依據 OMB M-22-18 備忘錄進行更新，旨在反映當前的實作成熟度 。它更新了美國機構生成或請求 SBOM 時的基準資料欄位、實踐與流程 。
+    ### 為何需要 SBOM：增強透明度與安全性 (Why SBOM: Enhancing Transparency and Security)
+    這一節闡述了 SBOM 的核心價值與運作邏輯。
+    - 提升透明度： SBOM 是實現軟體組件透明化的關鍵步驟，能照亮供應鏈，讓組織能做出基於風險的決策 。
+    - 風險緩解： 作為「成分表」，SBOM 為組織提供數據，這些數據可轉化為洞察，用以緩解可能危害系統安全的風險 。
+    - 機器可讀與可擴展性： 有效的共享機制必須是機器可讀 (machine-processable) 且可擴展的 。SBOM 模型透過捕捉機器可讀格式的數據，支援自動化分析、共享與管理 。
+    - 整合應用： SBOM 數據可以對應到其他數據源（如資安公告或組織內部的「核准/未核准」軟體資料庫），以改善安全開發與漏洞管理等優先事項 。
+    - 定位： SBOM 無法解決所有的軟體安全與供應鏈問題，但它是實現「風險導向決策」的必要步驟 。
+    ### 為何需要最低要素：大規模驅動安全性 (Why Minimum Elements: Driving Security at Scale)
+    這一節解釋了為什麼不能只依靠自定義標準，而必須建立統一的「底線」。
+    - 建立基準： 最低要素規定了 SBOM 應達到的技術與實踐基準 。
+    - 手動處理不可行： 機構使用的軟體數量過於龐大，無法透過人工流程有效地評估與緩解風險 。
+    - 國家安全風險： 鑑於軟體在關鍵基礎設施中的作用，未被追蹤與管理的軟體將對國家安全構成威脅 。
+    - 統一需求： 上述條件強調了美國各機構之間需要一個通用的 SBOM 數據基準 。
+    - 促進共享： 統一的期望有助於機構將 SBOM 數據應用於安全實踐，並促進機構間的資訊共享 。
+    - 全球共識： 這不僅限於美國政府；全球軟體生態系統與從業人員都已認識到 SBOM 在提升透明度上的價值，並推動了其採用與技術實作 。隨著採用率擴大，協調各界對 SBOM 的期望變得越來越重要 。
+    ### 範圍 (Scope)
+    這一節界定了這份文件適用於哪些類型的軟體，以及哪些細節不在討論範圍內。
+    - 適用對象： 適用於機構獲取或開發的軟體及其組件，明確包含：
+    - 複雜系統的處理： 雖然 AI 或 SaaS 等複雜系統可能需要「額外要素」才能獲得完整的透明度，但它們的 SBOM 仍必須包含 本文件規定的最低要素 。至於那些針對特定軟體類型的「額外要素」，則不在本文件範圍內 。
+    - 規範性質： 這些最低要素並非創造新的聯邦要求，而是「細化/優化」聯邦政府應如何生成與請求 SBOM 。
+    - 排除項目： 資料管理 (Data management)、儲存實踐 (Storage practices) 以及精確的編碼細節 (Precise encoding details) 不在本報告範圍內 。
+    ### 最低要素概觀 (Minimum Elements Overview)
+    - 演進的方法： 最低要素旨在捕捉技術與功能運作，並隨著時間推移，未來的規範將納入更多細節與技術進步 。
+    - 三大類別： 最低要素分為以下三類 ：
+    ### SBOM 的結構邏輯 (Structure of an SBOM)
+    - 層次結構： SBOM 具有大致的層次結構；軟體由組件 (components) 組成，每個組件可能有子組件，以此類推 。
+    - 組件類型：
+    - 遞迴要求： 每個組件都應該有自己的 SBOM 來捕捉其子組件和依賴關係層次 。
+    - 機器可讀： 這些資料欄位適用於每個組件，且必須依賴工具和定義好的格式來達成機器可讀性 。
+    ### 資料欄位總論 (Data Fields)
+    - 核心目標： SBOM 的核心是一個一致、統一的結構，用於理解構成軟體的組件 。
+    - 用途： 這些欄位的目標是提供足夠的識別資訊，以便在軟體供應鏈中追蹤組件，並將其對應到其他有用的資料來源（如漏洞資料庫或授權資料庫）。
+    ### SBOM 作者 (SBOM Author) - 重大更新
+    - 定義： 創建該組件 SBOM 資料的實體名稱 。
+    - 區別： 此欄位與「軟體生產者 (Software Producer)」不同，後者是指製造該軟體組件的人 。
+    - 邏輯情境：
+    ### 軟體生產者 (Software Producer) - 重大更新
+    - 定義： 創建、定義和識別元件的實體名稱 。
+    - 內容： 這是一個可讀的字串，用於識別軟體元件的原始製造商或發起者 。
+    - 目的： 讓組織了解生產者資訊，並識別安全問題的聯絡窗口 。
+    - 多重紀錄： 此欄位應允許記錄多個條目 。
+    - 開源軟體處理： 開源專案的命名慣例可能有所不同（依據套件管理器或專案組織）。若無明確慣例，作者應使用原始專案或維護組織名稱 。
+    - 來源不明處理： 如果沒有明確的軟體生產者指示，SBOM 作者必須明確標示該元件為「來源不明 (unknown provenance)」，以承認其缺乏可追溯性 。
+    - 變更背景： 此欄位取代了舊版的「供應商名稱 (Supplier Name)」，因為舊名稱容易與軟體分銷商混淆 。
+    ### 元件名稱 (Component Name) - 微幅更新
+    - 定義： 軟體生產者分配給軟體元件的名稱 。
+    - 區別： 這是人類可讀的名稱，與「軟體識別碼 (Software Identifiers)」不同 。
+    - 別名支援： 資料格式應允許記錄多個條目，以捕捉別名 (alternate names) 。
+    ### 元件版本 (Component Version) - 重大更新
+    - 定義： 軟體生產者用來指定軟體變更的識別碼 。
+    - 功能： 捕捉軟體版本，使組織能識別特定的程式碼交付 (code delivery) 。
+    - Fallback 機制： 如果生產者未提供版本號，SBOM 作者可以用檔案建立日期來代替 。
+    ### 軟體識別碼 (Software Identifiers) - 重大更新
+    - 定義： 用於識別元件或作為相關資料庫查詢鍵值的識別碼 。
+    - 要求： 必須包含至少一個識別碼 。
+    - 首選格式： 偏好使用 CPE (Common Platform Enumeration) 和 PURL (Package Uniform Resource Locators) 。
+    - 其他格式： 也可包含 UUID、組織特定 ID、Commit Hashes，以及內在識別碼 (intrinsic identifiers) 如 OmniBOR 和 SWHID 。
+    - 完整性： 如果有多個識別碼（無論格式相同或不同），作者應全部列出 。
+    ### 元件雜湊值 (Component Hash) - 新增
+    - 定義： 取自軟體元件的加密雜湊值 。
+    - 限制： 如果 SBOM 作者無法取得原始元件的檔案（Artifact），則不應填寫此欄位。
+    ### License (New)（授權條款 - 新增）
+    - 定義： 軟體元件的使用授權規範。
+    - 要求：
+    ### Dependency Relationship (Major Update)（依賴關係 - 重大更新）
+    - 定義： 描述元件之間的關係（例如：軟體 X 包含元件 Y，或元件 A 大部分衍生自元件 B）。
+    - 功能：
+    ### Tool Name (New)（工具名稱 - 新增）
+    - 定義： SBOM 作者用來生成 SBOM 的工具名稱。
+    - 細節： 若使用了多個工具（例如一個用於生成，另一個用於豐富化數據），應列出所有使用到的工具及其數據來源。
+    ### Timestamp (Minor Update)（時間戳記 - 微幅更新）
+    - 定義： SBOM 數據最近一次更新的日期與時間。
+    - 標準： 必須符合 ISO 8601 格式。若生成後未再修改，則填入生成時間。
+    ### Generation Context (New)（生成情境 - 新增）
+    - 定義： 說明 SBOM 是在軟體生命週期的哪個階段生成的。
+    - 分類：
+    ### Automation Support（自動化支援）
+    - 核心需求： 為了處理大量數據與跨組織邊界的需求，自動化是必須的。
+    - 標準格式： 目前業界公認的兩大主流格式（開放、國際化、機器可讀且人可讀）：
+    - 相容性原則：
+    ### Practices and Processes（實務與流程）
+    SBOM 必須透過政策與合約整合進開發流程中。
+    - Frequency (Minor Update) - 更新頻率：
+    - Coverage (Major Update) - 覆蓋範圍：
+    - Known Unknowns (Major Update) - 已知的未知：
+    - Distribution and Delivery (Minor Update) - 分發與交付：
+    - Accommodation of Updates (Major Update) - 更新的適應性：
+    ### SBOM 未來領域與挑戰摘要
+    ### Cloud and SaaS (雲端與軟體即服務)
+    - 挑戰：
+    - 建議方向：
+    ### AI Software Systems (AI 軟體系統)
+    - 現狀： AI 也是軟體，因此適用最低 SBOM 要素。
+    - 盲點： AI 系統包含許多傳統 SBOM 無法捕捉的元件（如模型權重、訓練數據）。這些元件對關鍵基礎設施的風險管理至關重要。
+    
+    </related>
+  </related_context>
+</context_boundaries>

@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "project-string",
+    "claim": "Project String 用於記錄項目資訊，由 16 碼組成，第 1 碼表示資料長度，其餘 15 Bytes 為實際資料。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

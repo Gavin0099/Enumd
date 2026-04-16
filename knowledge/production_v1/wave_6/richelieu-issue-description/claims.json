@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "客戶目前使用的 Dock 裝置採用兩層 Hub 串接架構，並透過燒錄器進行 Hub 韌體更新。然而，在燒錄過程中未能正確處理每層 Hub 的 Container ID，導致兩層 Hub 擁有相同的 Container ID。這造成 Windows 系統將兩層 Hub 下方連接的 SSD 或 HDD 裝置全部誤判為掛載於上層（L1）Hub 底下，進而導致設備辨識錯誤或操作異常。",
+    "tier": "Explicit",
+    "evidence_score": 17,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "1. 燒錄器在更新 Hub 韌體時，未能個別處理每層 Hub 的 Container ID，導致兩層 Hub 擁有相同的 Container ID。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "2. 在此情況下，Windows 系統將兩層 Hub 下方連接的 SSD 或 HDD 裝置全部誤判為掛載於上層（L1）Hub 底下，造成設備辨識錯誤或操作異常。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "3. 客戶嘗試使用 standard ISP 工具進行更新後，系統即可正確辨識各層 Hub 的 Container ID 並回復正常。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "客戶希望我們提供一套包含 command line 工具及 PowerShell 腳本的解決方案，用以協助在更新後自動修正 Container ID，避免此類識別問題再次發生。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "1. 在客戶的 CMD 視窗中，路徑中的反斜線 `\\` 被顯示為日圓符號 `¥`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "2. 執行時發生錯誤代碼 `-1073741819`。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "將執行階段程式庫設定從 `/MD` 改為 `/MT`。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "- `/MD`（多執行緒 DLL）: 程式在執行時會依賴外部的 `MSVCP140.dll` / `MSVCP140D.dll` 等 C++ runtime DLL。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "- 問題: 若使用 debug DLL (`MSVCP140D.dll`)，部署到沒有安裝 Debug Runtime 的機器上，會導致 crash。",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "- `/MT`（多執行緒靜態連結）: 將 C++ runtime library 直接編譯進可執行檔中。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "- 好處: 避免外部相依性，提升穩定性並簡化部署。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "1. 客戶目前使用的兩層 Hub 串接架構在燒錄韌體更新時，未能正確處理每層 Hub 的 Container ID，導致設備辨識錯誤。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "2. 使用 standard ISP 工具進行更新可解決此問題。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "3. 我們將提供包含 command line 工具及 PowerShell 腳本的解決方案，協助客戶自動修正 Container ID。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "richelieu-issue-description",
+    "claim": "4. 在部署工具至客戶工廠端時，發現 `/MD` 設定導致 crash 問題，將其改為 `/MT` 可解決。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

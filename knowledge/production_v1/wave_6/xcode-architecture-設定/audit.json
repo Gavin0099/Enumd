@@ -53,13 +53,13 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-16T03-48-40-717Z",
+  "batch_id": "batch_2026-04-16T05-37-42-990Z",
   "wave_id": 6,
   "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
   "enforcement_report": {
-    "removed": 5,
+    "removed": 1,
     "downgraded": 0,
-    "total_lines": 30,
+    "total_lines": 16,
     "is_clean": false
   },
   "kal_report": {
@@ -69,37 +69,38 @@
     "convergence_rate": 1,
     "questions": [
       {
-        "question": "What is the difference in Xcode architecture settings between Debug and Release modes?",
+        "question": "What is the difference between the Debug and Release settings for the Xcode Architecture?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text explains that in Debug mode, the architecture is set to compile only for the current connected device, while in Release mode it should be set to No to support a wider range of devices."
+        "justification": "The synthesis text clearly explains the difference between the Debug and Release settings for the Xcode Architecture."
       },
       {
-        "question": "What is required to build for both ARM64 and x86_64 architectures?",
+        "question": "What is the recommended setting for the Xcode Architecture in Release mode?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text states that to support both ARM64 and x86_64 architectures, the build needs to be done on an M1 Mac."
+        "justification": "The synthesis text states that the recommended setting for the Xcode Architecture in Release mode is 'No'."
       },
       {
-        "question": "How can the 'segmentation fault: 11' error be addressed?",
+        "question": "How can one resolve the 'segmentation fault: 11' error when building on an M1 Mac?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text suggests setting the 'Apple Clang - Code Generation --> Optimization Level' to 'None' as a potential solution to the 'segmentation fault: 11' error."
+        "justification": "The synthesis text provides a solution to the 'segmentation fault: 11' error, which is to set the 'Apple Clang - Code Generation --> Optimization Level' to 'None'."
       }
     ]
   },
   "semantic_audit": {
-    "total_checked": 3,
-    "supported": 3,
+    "total_checked": 0,
+    "supported": 0,
     "uncertain": 0,
     "unsupported": 0,
     "unsupported_claims": [],
-    "model_used": "claude-3-haiku-20240307",
-    "skipped": false
+    "model_used": "none",
+    "skipped": true,
+    "skip_reason": "No Derived-tier claims to verify"
   },
   "suppression_decision": {
     "tier": "PASS",
     "node_type": "STANDARD",
     "unsupported_ratio": 0,
-    "derived_count": 3,
-    "reason": "Unsupported rate 0% (0/3) below audit threshold.",
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
     "removed_count": 0
   }
 }

@@ -53,53 +53,54 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-16T03-48-40-717Z",
+  "batch_id": "batch_2026-04-16T05-37-42-990Z",
   "wave_id": 6,
   "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
   "enforcement_report": {
-    "removed": 3,
+    "removed": 48,
     "downgraded": 1,
-    "total_lines": 50,
+    "total_lines": 220,
     "is_clean": false
   },
   "kal_report": {
     "verdict": "CONVERGED",
-    "passed": 2,
+    "passed": 3,
     "total": 3,
-    "convergence_rate": 0.6666666666666666,
+    "convergence_rate": 1,
     "questions": [
       {
-        "question": "What are the key roles and terminology defined in the secure-firmware-recovery specification?",
+        "question": "What are the key roles and terminology defined in the secure firmware recovery specification?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text provides a section on 'Key Roles & Terminology' that defines the AC-RoT, PA-RoT, RA, and different firmware image types."
+        "justification": "The synthesis text provides a clear definition of the key roles and terminology, including AC-RoT, PA-RoT, RA, A/B Image, C-Image, and Critical Data."
       },
       {
-        "question": "What are the main steps in the secure-firmware-recovery process flow?",
+        "question": "What are the main triggers and scenarios for invoking the secure firmware recovery process?",
         "verdict": "ANSWERABLE",
-        "justification": "The synthesis text includes a section on 'Recovery Process Flow' that outlines the 7 main steps in the recovery process."
+        "justification": "The synthesis text lists the main triggers for secure firmware recovery, including platform attestation mismatch, device self-detection of failures, device unresponsiveness, and operator-forced recovery."
       },
       {
-        "question": "What are the security threat models and countermeasures addressed in the specification?",
-        "verdict": "PARTIAL",
-        "justification": "The synthesis text mentions a section on 'Security Threat Model & Countermeasures' but does not provide any details about the specific threats or countermeasures."
+        "question": "What are the potential security concerns with the forced recovery mechanism?",
+        "verdict": "ANSWERABLE",
+        "justification": "The synthesis text explicitly warns that the forced recovery mechanism implies trust in the PA-RoT/RA, and if abused, could lead to a denial-of-service attack by repeatedly triggering device resets."
       }
     ]
   },
   "semantic_audit": {
-    "total_checked": 5,
-    "supported": 5,
+    "total_checked": 8,
+    "supported": 0,
     "uncertain": 0,
     "unsupported": 0,
     "unsupported_claims": [],
     "model_used": "claude-3-haiku-20240307",
-    "skipped": false
+    "skipped": true,
+    "skip_reason": "JSON parse failed. Raw: {\n  \"results\": [\n    { \"index\": 1, \"verdict\": \"SUPPORTED\", \"reason\": \"The source document provides a detailed overview o"
   },
   "suppression_decision": {
     "tier": "PASS",
     "node_type": "STANDARD",
     "unsupported_ratio": 0,
-    "derived_count": 5,
-    "reason": "Unsupported rate 0% (0/5) below audit threshold.",
+    "derived_count": 0,
+    "reason": "No Derived-tier claims checked; semantic scorer skipped",
     "removed_count": 0
   }
 }

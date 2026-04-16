@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "windows-10-h2-driver-移除流程",
+    "claim": "1. 開啟 `GL Driver Installation_v1.70.exe` 安裝程式。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "windows-10-h2-driver-移除流程",
+    "claim": "2. 選擇 `Remove Driver Ver 1.x` 以移除舊版驅動程式。[`GL Driver Installation_v1.70.exe`]",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "windows-10-h2-driver-移除流程",
+    "claim": "3. 拔除 Hub 裝置,並重新開機電腦。[`GL Driver Installation_v1.70.exe`]",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "windows-10-h2-driver-移除流程",
+    "claim": "4. 再次開啟 `GL Driver Installation_v1.70.exe` 安裝程式。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "windows-10-h2-driver-移除流程",
+    "claim": "5. 選擇 `Update Driver Ver 1.7` 以安裝新版驅動程式。[`GL Driver Installation_v1.70.exe`]",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "windows-10-h2-driver-移除流程",
+    "claim": "通過上述步驟,可以順利移除舊版驅動程式,並更新至新版本 `GL Driver Installation_v1.70.exe`。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

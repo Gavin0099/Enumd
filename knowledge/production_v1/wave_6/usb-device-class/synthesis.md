@@ -1,49 +1,58 @@
 
 ## 1. USB 裝置類別概述
 
-[未有直接 Source 錨點，待確認] USB 裝置可以分類為不同的類別,以定義相同功能或行為的裝置所使用的協定。這些類別包括:
+USB 裝置類別是一種將具有相似功能的 USB 裝置歸類到同一類別的機制。當許多裝置具有相似的屬性或行為時，它們會被定義為一個類別，並遵循相同的協定。這樣可以簡化主機端對這些裝置的管理和支援。
 
-1. **Human Interface Device (HID)**: 包括滑鼠、鍵盤、遊戲搖桿等人機介面裝置。主機接收來自這些裝置的輸入資料,並快速反應以提供良好的使用者體驗。HID 裝置使用定義好的資料結構,稱為「報告(Report)」,來交換資料。
+## 2. 常見的 USB 裝置類別
 
-2. **Physical Interface Device (PID)**: 定義了產生力回饋的輸入裝置,如遊戲搖桿。
+[未有直接 Source 錨點，待確認] 以下是一些常見的 USB 裝置類別:
 
-3. **Monitor Control**: 定義顯示器的使用者控制和電源管理功能。
+1. **人機介面裝置 (Human Interface Device, HID)**: 包括滑鼠、鍵盤、遊戲搖桿等輸入裝置。主機端接收這些裝置的輸入資料，如按鍵或滑鼠移動，並快速做出反應，使用者才不會感到延遲。HID 裝置使用定義好的資料結構 (報告, Report) 進行資料傳輸。報告中包含用途標籤 (Usage), 告知主機如何使用接收到的資料。
 
-4. **Power Device**: 定義了 UPS 和可監控電池的功能。
+2. **實體介面裝置 (Physical Interface Device, PID)**: 定義了產生力回饋的輸入裝置, 如遊戲搖桿。
 
-5. **Point of Sale (POS)**: 定義條碼機、秤重裝置和磁帶讀卡機等 POS 裝置的功能。
+3. **顯示器控制 (Monitor Control)**: 定義了顯示器的使用者控制和電源管理功能。
 
-## 2. HID 裝置功能和限制
+4. **電源裝置 (Power Device)**: 定義了 UPS 和可監控電池的功能。
 
-[未有直接 Source 錨點，待確認] HID 裝置有以下主要功能和限制:
+5. **銷售點裝置 (Point of Sale, POS)**: 定義了條碼掃描器、電子秤和磁卡讀取器等銷售點裝置。
 
-a. 所有資料交換都儲存在固定長度的結構,稱為「報告(Report)」,主機透過控制傳輸或中斷傳輸來要求或接收報告。[`HID Device Capabilities`]
+## 3. HID 裝置的通訊方式
 
-b. HID 裝置必須有一個中斷 IN 端點,用來送出輸入報告(Input Reports)。[`HID Device Capabilities`]
+[未有直接 Source 錨點，待確認] HID 裝置通常使用以下兩種通訊方式:
 
-c. 一個 HID 裝置最多只能有一個中斷 IN 和 OUT 端點,除非是複合性裝置(Composite Device)。[`HID Device Capabilities`]
+1. **控制傳輸 (Control Transfer)**: 用於傳輸特徵報告 (Feature Report)。
 
-d. 中斷 IN 端點送資料給主機的時間是不可預期的,主機必須透過輪詢(Polling)或 USB 3.0 SuperSpeed 的 ERDY 交易封包來獲取資料。[`HID Device Capabilities`]
+2. **中斷傳輸 (Interrupt Transfer)**: 用於傳輸輸入報告 (Input Report) 和輸出報告 (Output Report)。中斷傳輸擁有頻寬保證,特別適用於需要定期讀取資料或低延遲的情況。
 
-e. 資料交換的速率有差異:慢速和中斷端點最高 800 byte/s,全速端點最高 64 KByte/s,預設機能介面端點最高 64 KByte/s。[`HID Device Capabilities`]
+## 4. HID 裝置的能力和限制
 
-## 3. HID 報告(Report)
+[未有直接 Source 錨點，待確認] 1. 所有資料交換都儲存在固定長度的結構 (報告) 中,主機透過控制傳輸或中斷傳輸來要求或接收報告。
 
-HID 裝置使用「報告(Report)」來交換資料,報告可能是簡單的位元緩衝區,也可能是複雜的項目組合。報告敘述表格(Report Description)會告知主機和裝置通信所需的資訊:
+2. HID 裝置必須至少有一個中斷 IN 端點,用於送出輸入報告。
 
-- [未有直接 Source 錨點，待確認] 控制項目是按鈕、開關或其他實體物
+3. 一個 HID 裝置最多只能有一個中斷 IN 端點和一個中斷 OUT 端點,除非是複合性裝置。
+
+4. 中斷 IN 端點送資料給主機的時間是不可預期的,主機無法提前知道使用者何時操作裝置。主機可以透過輪詢 (Polling) 或 USB 3.0 SuperSpeed 的 ERDY 交易封包來獲取資料。
+
+   - 慢速和中斷端點: 最高 800 Byte/s
+- [未有直接 Source 錨點，待確認] 全速端點: 最高 64 KByte/s
+- [未有直接 Source 錨點，待確認] 預設控制端點: 最高 64 KByte/s
+
+## 5. HID 報告 (Report)
+
+HID 裝置使用報告 (Report) 來交換資料。報告可能是簡單的位元緩衝區,也可能是複雜的項目組合,具有指定的功能和單元。報告描述表格 (Report Description) 提供了 HID 裝置送收資料的相關訊息,包括:
+
+[未有直接 Source 錨點，待確認] 3. 控制項目是按鈕、開關或其他實體物
+
+報告描述表格會告知主機和裝置在通訊時需要知道的需求。主機在列舉時會發送 Get Description 請求來獲取組態表格。
+
+[USB HID Usage Tables](https://www.usb.org/document-library/hid-usage-tables-112)文件提供了不同 Usage Page 的數值定義,包括通用桌面控制、遊戲控制、字母數字顯示等。如果是廠商自定義的 Usage Page,則會在 0xFF00 ~ 0xFFFF 範圍內。
 
 
-- Logical Minimum & Logical Maximum,指定報告數值範圍
-- Report Size 資料傳輸的位元數
-- Report Count 報告含有的資料項目數目
-- 指定是輸入(0x81)、輸出(0x91)或特徵報告(0xB1)
+[未有直接 Source 錨點，待確認] HID 裝置支援以下幾種相關命令:
 
+1. 控制傳輸命令: 提供 6 個類別相依的專屬命令。
+[未有直接 Source 錨點，待確認] 2. 中斷傳輸: 提供了另一種交換資料的方式,特別適用於接收器需要讀取週期性資料或最低延遲的場合。
 
-[未有直接 Source 錨點，待確認] HID 裝置使用以下兩種通信模式:
-
-1. **控制傳輸**: 提供 6 個類別相依的專屬命令。
-
-[未有直接 Source 錨點，待確認] 2. **中斷傳輸**: 提供了另一種交換資料的方式,特別適用於接收器需要讀取週期性資料或要求最低延遲的場合。如果控制傳輸被延遲,中斷傳輸仍能保證頻寬。
-
-[`HID Device Capabilities`]
+總之, USB 裝置類別是一種將具有相似功能的 USB 裝置歸類到同一類別的機制,以簡化主機端的管理和支援。其中,人機介面裝置 (HID) 是最常見的一種類別,它定義了輸入裝置、顯示器控制、電源管理等功能,並使用報告 (Report) 進行資料交換。

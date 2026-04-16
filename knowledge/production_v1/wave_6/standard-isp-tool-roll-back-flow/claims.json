@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "標準 ISP 工具回滾流程是指當使用 ISP 工具更新裝置韌體時發生錯誤或失敗的情況下，如何將裝置恢復到之前的舊版韌體。這個流程主要適用於 GenesysLogic 公司的 hub 晶片產品。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "1. 開啟 `GLHubDriver_v2.3.0.exe` 並安裝 Driver Ver 2.3 驅動程式。[Open GLHubDriver_v2.3.0.exe](path/to/open-glhubdriver.md)",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "2. 開啟標準 ISP 工具。[Open the Standard ISP Tool](path/to/open-standard-isp-tool.md)",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "3. 按下 Erase Flash 按鈕進行擦除操作。[Press the Erase Flash button](path/to/erase-flash.md)",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "4. 在斷電/上電後，選擇舊版 hub bin 檔案並執行 ISP 操作。[Select the old version hub bin file and select Do ISP](path/to/select-old-hub-bin.md)",
+    "tier": "Explicit",
+    "evidence_score": 18,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "1. **如何鎖定目標裝置**: 在使用 ISP 工具時，需要確保操作的是正確的目標裝置。這可以透過 `TargetDeviceChecker` 類別和 `TargetDevice.ini` 設定檔來實現。[How to bound target device](path/to/how-to-bound-target-device.md)",
+    "tier": "Explicit",
+    "evidence_score": 13,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "2. **HP ISP 工具 Hub 更新流程**: HP 公司也提供了自己的 ISP 工具用於 hub 韌體更新。這個流程包括安裝 GL 驅動程式和使用 HP ISP 工具進行更新操作。[HP ISP Tool Hub Update Flow](path/to/hp-isp-tool-hub-update-flow.md)",
+    "tier": "Explicit",
+    "evidence_score": 20,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "3. **HP Monitor ISP 工具開發和驗證**: HP 公司還提供了針對顯示器產品的 ISP 工具,包括工程用、終端用戶用和命令列工具。同時也介紹了如何使用治具進行低階和高階的韌體更新。[HP Monitor ISP Tool 開發和驗證方式](path/to/hp-monitor-isp-tool-開發和驗證方式.md)",
+    "tier": "Explicit",
+    "evidence_score": 14,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "standard-isp-tool-roll-back-flow",
+    "claim": "標準 ISP 工具回滾流程提供了一種在 ISP 工具更新失敗時將裝置恢復到舊版韌體的方法。這個流程需要結合目標裝置鎖定、HP ISP 工具更新流程以及 HP Monitor ISP 工具開發和驗證的相關知識。",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

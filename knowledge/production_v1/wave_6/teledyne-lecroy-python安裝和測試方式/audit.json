@@ -53,13 +53,13 @@
   "applied_model": "haiku",
   "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling",
   "model_used": "claude-3-haiku-20240307",
-  "batch_id": "batch_2026-04-16T03-48-40-717Z",
+  "batch_id": "batch_2026-04-16T05-37-42-990Z",
   "wave_id": 6,
   "synthesis_code_hash": "474e353e487e9f110f475bf131949e64",
   "enforcement_report": {
-    "removed": 3,
+    "removed": 2,
     "downgraded": 0,
-    "total_lines": 28,
+    "total_lines": 26,
     "is_clean": false
   },
   "kal_report": {
@@ -71,7 +71,7 @@
       {
         "question": "[KAL parse error]",
         "verdict": "UNANSWERABLE",
-        "justification": "Failed to parse KAL JSON response. Raw: {\n  \"questions\": [\n    {\n      \"question\": \"Where can the Python Sample code and Spec files be found?\",\n      \"verdict\":"
+        "justification": "Failed to parse KAL JSON response. Raw: {\n  \"questions\": [\n    {\n      \"question\": \"Where can I find the Teledyne LeCroy USB Protocol Suite software?\",\n      \"v"
       }
     ]
   },

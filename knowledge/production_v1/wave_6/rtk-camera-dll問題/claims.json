@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "所有 vendor 廠商提供的 DLL 檔案都必須改用 OCI DLL 格式。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "如果 Update Tool 中包含舊版的 RTK Camera DLL，在某些特定平台上會導致 RTK Audio update 失敗。相關的郵件可以參考下面提供的連結檔案。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "雖然新版的 Camera DLL 已經修正了這個問題，但是新舊版 Sample Code 的架構差異很大。我們需要找到對應的窗口詢問 Sample Code 的流程，才能修正這個問題。如果統一使用 OCI DLL 格式的話，我們原本就有統一的介面可以實作，可以避免溝通和實作的困難。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "在 [Etoken System Code View](code-sign/etoken-system-code-view-.html) 中，有提到一些 etoken 系統的程式碼審查結果。其中發現了一些架構和安全性方面的問題，例如:",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "1. 使用 `detach()` 執行緒可能會導致生命週期控制問題 `[BLOCKING]`。 `[1]`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "3. 協定錯位和 SQL 注入等安全性問題 `[WARNING]`。 `[1], [2]`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "這些問題都與 RTK Camera DLL 的整合和更新流程可能產生的影響相關。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "在 [HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html) 中，也提到了一些 HID 韌體更新相關的問題和討論事項，例如:",
+    "tier": "Explicit",
+    "evidence_score": 11,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "2. USB LOGO 驗證問題。 `[3]`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "這些問題都可能與 RTK Camera DLL 的更新流程相關，需要一併考慮。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "1. 舊版 DLL 可能導致 RTK Audio update 失敗。 `[4]`",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "2. 新舊版 Sample Code 架構差異大，需要溝通和實作成本高。 `[4]`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "2. 與 vendor 溝通，要求提供 OCI DLL 格式的 Camera DLL。 `[4]`",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rtk-camera-dll問題",
+    "claim": "3. 根據新的 OCI DLL 介面，更新 Sample Code 的實作。 `[4]`",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

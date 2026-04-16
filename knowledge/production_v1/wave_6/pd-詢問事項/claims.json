@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "pd-詢問事項",
+    "claim": "- ShareMemory、I2C 和 Billboard PD 是不同的 PD 通訊協定，各有其特點和應用場景。需要進一步了解它們之間的差異。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "pd-詢問事項",
+    "claim": "- Billboard PD 規範中定義了 D1 和 D2 兩種模式，它們在功能和應用上可能有所不同。需要進一步了解 D1 和 D2 的具體區別。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "pd-詢問事項",
+    "claim": "- 插上 PD 設備後出現電腦燒壞或 overcurrent 的情況可能有多種原因,如 PD 設備本身問題、電源供應不足、電路設計不當等。需要進一步分析造成這些問題的具體原因。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "pd-詢問事項",
+    "claim": "- 介紹了 Camera 的 code sign 驗證流程,與 PD 相關的部分包括如何 Erase Camera 以及如何 Read Camera data。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "pd-詢問事項",
+    "claim": "- 審核了 etoken_dongle_server 和 etoken_server 的程式碼,發現了一些安全風險,如 detach 執行緒、外部命令執行、SQL 注入等,這些問題也可能影響到 PD 相關的系統。",
+    "tier": "Explicit",
+    "evidence_score": 10,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

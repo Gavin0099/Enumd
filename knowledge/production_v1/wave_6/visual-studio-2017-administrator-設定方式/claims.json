@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "1. 開始 --> 右鍵 Visual Studio 2017 捷徑 --> 開啟檔案位置",
+    "tier": "Explicit",
+    "evidence_score": 7,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "2. 右鍵 Visual Studio 2017 捷徑 --> 開啟檔案位置",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "3. 右鍵 `devend.exe` --> 疑難排解相容性",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "5. 選擇 `程式需要額外的權限` --> 下一步",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "6. 選擇 `測試程式開啟 visual studio 2017 看看是否有 administrator 權限` --> 下一步",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "7. 選擇 `是，為此程式儲存這些設定`",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "1. 透過右鍵 Visual Studio 2017 捷徑，可以找到其實際的檔案位置。這是設定 Administrator 權限的第一步。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "2. 同樣地，右鍵 Visual Studio 2017 捷徑也可以直接開啟其檔案位置。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "3. `devend.exe` 是 Visual Studio 2017 的一個相關元件。右鍵它並選擇 `疑難排解相容性` 可以進入設定 Administrator 權限的流程。",
+    "tier": "Explicit",
+    "evidence_score": 6,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "4. 選擇 `疑難排解程式` 進入設定流程。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "5. 選擇 `程式需要額外的權限` 並點選 `下一步`，表示需要提升權限。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "visual-studio-2017-administrator-設定方式",
+    "claim": "6. 選擇 `測試程式開啟 visual studio 2017 看看是否有 administrator 權限`，這是確認是否需要提升權限的關鍵步驟。",
+    "tier": "Explicit",
+    "evidence_score": 8,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]

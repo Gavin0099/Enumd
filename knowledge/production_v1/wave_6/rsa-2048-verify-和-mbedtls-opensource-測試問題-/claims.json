@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "2. 在 debug 源碼後發現，解密是從最後一個 byte 開始進行的，並且源碼會將所有 0xff 的資料刪除，然後複製到另一個陣列。因此需要了解這些無意義資料是如何產生的。",
+    "tier": "Derived",
+    "evidence_score": 3,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "3. 目前發現 `bn_mod_exp(c, m, e, edigits, n, ndigits)` 中的 `c` 與原始程式碼中生成的 `c` 不一致。原始的 `c` 陣列只有 7 個參數，而使用公鑰和簽章後得到的 `c` 有 12 個參數。",
+    "tier": "Explicit",
+    "evidence_score": 9,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "1. 修改簽章中的某一個 byte，整個解密出來的 hash 都是錯的 - 表示簽章資料應該是正確的。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "2. 修改公鑰中的某一個 byte，整個解密出來的 hash 都是錯的 - 表示公鑰資料應該是正確的。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "3. 原始程式碼中的金鑰對用 bin 檔案的 hash 進行加密解密，產出的 hash 也是正確的 - 表示與 hash 長度無關。",
+    "tier": "Explicit",
+    "evidence_score": 4,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "- 使用其他 eToken 生成的 bin 檔案再次驗證。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "- 查看 eToken 的 verify 函數 - 它被封裝在 DLL 中，無法查看源碼。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "- 使用 mbedTLS 進行測試。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "後來使用 mbedTLS 進行解密，解出的資料也是一樣，前面的資料應該是 ASN.1 格式。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "- RSA2048 解密時間：1分56秒",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "2. 確認 PD FW 的 code sign 功能是否正確。",
+    "tier": "Explicit",
+    "evidence_score": 5,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  },
+  {
+    "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+    "claim": "3. 檢查 SHA256 和 RSA2048 的計算演算法是否正確。",
+    "tier": "Derived",
+    "evidence_score": 2,
+    "wave_id": 6,
+    "batch_id": "batch_2026-04-16T05-37-42-990Z"
+  }
+]
