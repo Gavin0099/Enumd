@@ -119,25 +119,24 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
   const updatedAt = getPageLastEdited(page);
   const collector = new SignalCollector(page.id, updatedAt);
 
-  let content = await getPageContent(page.id, collector);
-  await sleep(RATE_LIMIT_MS);
+  const { markdown, signal } = await getPageContent(page.id, collector);
 
-  if (!content.trim()) {
+  if (!markdown.trim()) {
     console.log(`    → empty, skipping`);
     return "skipped";
   }
 
+  let finalContent = markdown;
   if (useSummarize) {
-    content = await summarizePage(title, content);
+    finalContent = await summarizePage(title, markdown);
     console.log(`    → summarized`);
   }
 
-  const fm = await buildFrontmatter(page, content, useSummarize);
-  const fileContent = matter.stringify(`\n${content}\n`, fm);
+  const fm = await buildFrontmatter(page, finalContent, useSummarize);
+  const fileContent = matter.stringify(`\n${finalContent}\n`, fm);
   writeFileSync(filePath, fileContent, "utf8");
 
   // Atomic Signal Persistence
-  const signal = collector.getSignal();
   const metaPath = filePath.replace(".md", ".metadata.json");
   writeFileSync(metaPath, JSON.stringify(signal, null, 2), "utf8");
 

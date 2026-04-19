@@ -11,6 +11,12 @@ dotenv.config({ path: ".env.local" });
 
 export const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
+const GLOBAL_DELAY_MS = 350;
+
+function sleep(ms: number) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
 export function getPageTitle(page: PageObjectResponse): string {
   const titleProp = Object.values(page.properties).find((p) => (p as any).type === "title");
   if (titleProp && (titleProp as any).type === "title") {
@@ -217,9 +223,12 @@ async function fetchAllChildren(blockId: string, collector?: SignalCollector): P
     allBlocks.push(...(res.results as BlockObjectResponse[]));
     cursor = res.has_more ? (res.next_cursor ?? undefined) : undefined;
     
-    if (res.has_more && !cursor) {
-        collector?.setTruncated(true);
-        break;
+    if (res.has_more) {
+        await sleep(GLOBAL_DELAY_MS);
+        if (!cursor) {
+          collector?.setTruncated(true);
+          break;
+        }
     }
   } while (cursor);
 
@@ -248,18 +257,20 @@ export async function discoverBlocks(
       counts.byType[block.type] = (counts.byType[block.type] || 0) + 1;
 
       if (block.has_children) {
+        await sleep(GLOBAL_DELAY_MS);
         await discoverBlocks(block.id, counts);
       }
     }
 
     cursor = response.next_cursor;
+    if (cursor) await sleep(GLOBAL_DELAY_MS);
   } while (cursor);
 
   return counts;
 }
 
-export async function getPageContent(pageId: string) {
-  const collector = new SignalCollector(pageId);
+export async function getPageContent(pageId: string, collector?: SignalCollector) {
+  if (!collector) collector = new SignalCollector(pageId);
 
   try {
     // 1. Discovery Pass (Independent Counting)
@@ -293,6 +304,7 @@ export async function getChildPageIds(blockId: string, depth = 0): Promise<strin
       const ltp = (block as any).link_to_page;
       if (ltp?.type === "page_id") pageIds.push(ltp.page_id);
     } else if (block.type === "column_list" || block.type === "column" || block.has_children) {
+      await sleep(GLOBAL_DELAY_MS);
       const nested = await getChildPageIds(block.id, depth + 1);
       pageIds.push(...nested);
     }

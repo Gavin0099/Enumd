@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-04-12T16:16:20.267Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 29,
+        "extracted_seen_total": 29,
+        "by_type": {
+          "paragraph": {
+            "discovered": 17,
+            "extracted": 17,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "link_to_page": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "file": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_1": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "image": {
+            "discovered": 8,
+            "extracted": 8,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "numbered_list_item": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "834f7a65-41b7-4ed3-b3b1-a9d1f605cb39",
+    "last_edited_time": "2026-01-21T09:25:00.000Z",
+    "extracted_at": "2026-04-12T16:16:19.308Z"
+  },
+  "metrics": {
+    "blocks": {
+      "paragraph": {
+        "seen": 17,
+        "fully_rendered": 17,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "link_to_page": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
+        "dropped": 0
+      },
+      "file": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
+        "dropped": 0
+      },
+      "heading_1": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "image": {
+        "seen": 8,
+        "fully_rendered": 0,
+        "degraded_rendered": 8,
+        "dropped": 0
+      },
+      "numbered_list_item": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 0,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 0,
+        "preserved": 0
+      },
+      "bold": {
+        "total": 0,
+        "preserved": 0
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 0,
+        "preserved": 0
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 0,
+        "preserved": 0
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 0,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}

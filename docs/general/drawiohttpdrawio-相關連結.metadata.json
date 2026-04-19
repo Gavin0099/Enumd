@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-04-12T16:14:18.896Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 37,
+        "extracted_seen_total": 37,
+        "by_type": {
+          "heading_2": {
+            "discovered": 7,
+            "extracted": 7,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "bulleted_list_item": {
+            "discovered": 13,
+            "extracted": 13,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "paragraph": {
+            "discovered": 6,
+            "extracted": 6,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "numbered_list_item": {
+            "discovered": 6,
+            "extracted": 6,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "image": {
+            "discovered": 5,
+            "extracted": 5,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "1ff76cd4-55cb-4678-afab-2becb11ad1d9",
+    "last_edited_time": "2026-01-21T09:41:00.000Z",
+    "extracted_at": "2026-04-12T16:14:08.488Z"
+  },
+  "metrics": {
+    "blocks": {
+      "heading_2": {
+        "seen": 7,
+        "fully_rendered": 7,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "bulleted_list_item": {
+        "seen": 13,
+        "fully_rendered": 13,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "paragraph": {
+        "seen": 6,
+        "fully_rendered": 6,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "numbered_list_item": {
+        "seen": 6,
+        "fully_rendered": 6,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "image": {
+        "seen": 5,
+        "fully_rendered": 0,
+        "degraded_rendered": 5,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 1,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 14,
+        "preserved": 14
+      },
+      "bold": {
+        "total": 0,
+        "preserved": 0
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 0,
+        "preserved": 0
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 6,
+        "preserved": 6
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 0,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}

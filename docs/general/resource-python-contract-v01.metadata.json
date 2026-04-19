@@ -1,0 +1,197 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-04-12T16:21:56.138Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 734,
+        "extracted_seen_total": 734,
+        "by_type": {
+          "heading_1": {
+            "discovered": 37,
+            "extracted": 37,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "paragraph": {
+            "discovered": 437,
+            "extracted": 437,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "quote": {
+            "discovered": 27,
+            "extracted": 27,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "bulleted_list_item": {
+            "discovered": 128,
+            "extracted": 128,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "divider": {
+            "discovered": 35,
+            "extracted": 35,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_3": {
+            "discovered": 51,
+            "extracted": 51,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "numbered_list_item": {
+            "discovered": 16,
+            "extracted": 16,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "child_page": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "code": {
+            "discovered": 2,
+            "extracted": 2,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "33d64f6b-c656-80ee-8cf4-c25efcf3f37a",
+    "last_edited_time": "2026-04-10T02:13:00.000Z",
+    "extracted_at": "2026-04-12T16:21:26.320Z"
+  },
+  "metrics": {
+    "blocks": {
+      "heading_1": {
+        "seen": 37,
+        "fully_rendered": 37,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "paragraph": {
+        "seen": 437,
+        "fully_rendered": 437,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "quote": {
+        "seen": 27,
+        "fully_rendered": 27,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "bulleted_list_item": {
+        "seen": 128,
+        "fully_rendered": 128,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "divider": {
+        "seen": 35,
+        "fully_rendered": 35,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_3": {
+        "seen": 51,
+        "fully_rendered": 51,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "numbered_list_item": {
+        "seen": 16,
+        "fully_rendered": 16,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "child_page": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
+        "dropped": 0
+      },
+      "code": {
+        "seen": 2,
+        "fully_rendered": 2,
+        "degraded_rendered": 0,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 1,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 0,
+        "preserved": 0
+      },
+      "bold": {
+        "total": 133,
+        "preserved": 133
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 0,
+        "preserved": 0
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 2,
+        "preserved": 2
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 0,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}

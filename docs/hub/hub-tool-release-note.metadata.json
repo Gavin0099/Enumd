@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-04-12T16:11:50.445Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 2071,
+        "extracted_seen_total": 2071,
+        "by_type": {
+          "child_page": {
+            "discovered": 19,
+            "extracted": 19,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_3": {
+            "discovered": 378,
+            "extracted": 378,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "paragraph": {
+            "discovered": 771,
+            "extracted": 771,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "bulleted_list_item": {
+            "discovered": 759,
+            "extracted": 759,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "file": {
+            "discovered": 5,
+            "extracted": 5,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "numbered_list_item": {
+            "discovered": 105,
+            "extracted": 105,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "callout": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "image": {
+            "discovered": 3,
+            "extracted": 3,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_2": {
+            "discovered": 14,
+            "extracted": 14,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "child_database": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "divider": {
+            "discovered": 10,
+            "extracted": 10,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "code": {
+            "discovered": 2,
+            "extracted": 2,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "column_list": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "column": {
+            "discovered": 2,
+            "extracted": 2,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "7c01c9d0-590c-4fc6-99e0-9f6887f913e8",
+    "last_edited_time": "2026-01-21T09:48:00.000Z",
+    "extracted_at": "2026-04-12T16:09:25.154Z"
+  },
+  "metrics": {
+    "blocks": {
+      "child_page": {
+        "seen": 19,
+        "fully_rendered": 0,
+        "degraded_rendered": 19,
+        "dropped": 0
+      },
+      "heading_3": {
+        "seen": 378,
+        "fully_rendered": 378,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "paragraph": {
+        "seen": 771,
+        "fully_rendered": 771,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "bulleted_list_item": {
+        "seen": 759,
+        "fully_rendered": 759,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "file": {
+        "seen": 5,
+        "fully_rendered": 0,
+        "degraded_rendered": 5,
+        "dropped": 0
+      },
+      "numbered_list_item": {
+        "seen": 105,
+        "fully_rendered": 105,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "callout": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "image": {
+        "seen": 3,
+        "fully_rendered": 0,
+        "degraded_rendered": 3,
+        "dropped": 0
+      },
+      "heading_2": {
+        "seen": 14,
+        "fully_rendered": 14,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "child_database": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
+        "dropped": 0
+      },
+      "divider": {
+        "seen": 10,
+        "fully_rendered": 10,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "code": {
+        "seen": 2,
+        "fully_rendered": 2,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "column_list": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
+        "dropped": 0
+      },
+      "column": {
+        "seen": 2,
+        "fully_rendered": 0,
+        "degraded_rendered": 2,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 4,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 2,
+        "preserved": 2
+      },
+      "bold": {
+        "total": 1,
+        "preserved": 1
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 2,
+        "preserved": 2
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 0,
+        "preserved": 0
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 1,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}

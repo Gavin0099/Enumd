@@ -1,0 +1,137 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-04-12T16:16:23.120Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 25,
+        "extracted_seen_total": 25,
+        "by_type": {
+          "paragraph": {
+            "discovered": 8,
+            "extracted": 8,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "child_database": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "file": {
+            "discovered": 14,
+            "extracted": 14,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "image": {
+            "discovered": 2,
+            "extracted": 2,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "dc397503-5f4c-4e8d-b32c-3e8c0302bb37",
+    "last_edited_time": "2026-01-21T09:31:00.000Z",
+    "extracted_at": "2026-04-12T16:16:20.873Z"
+  },
+  "metrics": {
+    "blocks": {
+      "paragraph": {
+        "seen": 8,
+        "fully_rendered": 8,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "child_database": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
+        "dropped": 0
+      },
+      "file": {
+        "seen": 14,
+        "fully_rendered": 0,
+        "degraded_rendered": 14,
+        "dropped": 0
+      },
+      "image": {
+        "seen": 2,
+        "fully_rendered": 0,
+        "degraded_rendered": 2,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 0,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 0,
+        "preserved": 0
+      },
+      "bold": {
+        "total": 0,
+        "preserved": 0
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 0,
+        "preserved": 0
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 0,
+        "preserved": 0
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 0,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}

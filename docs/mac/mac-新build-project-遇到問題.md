@@ -1,0 +1,22 @@
+---
+title: Mac 新build project 遇到問題
+domain_tags:
+  - mac
+  - security
+task_tags:
+  - debug
+  - build
+authority_level: source
+is_deprecated: false
+category: mac
+notion_id: 9eef42bb-ba5f-4b42-b4e3-fd5d2e37c713
+notion_url: 'https://www.notion.so/Mac-build-project-9eef42bbba5f4b42b4e3fd5d2e37c713'
+notion_updated_at: '2022-11-25T07:38:00.000Z'
+exported_at: '2026-04-12T16:15:15.637Z'
+is_summarized: false
+relations: []
+---
+
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/ef3eda5e-9c77-44f9-b717-5ff3cc16f52a/_2021-07-05_2.52.07.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664EBZWDWA%2F20260412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260412T161515Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICIjVBqNQCVwat2Rc3kPRMCwwLqRGd%2FhNCnmTfQNQ%2FKZAiEAxIWSvGh2itQwxgOx4oLofjxtaREVga4tff9f0YT1TMgq%2FwMIXRAAGgw2Mzc0MjMxODM4MDUiDF4WdkSKzwWT04GYXircAzqHY5luy6fdVBNg7HxYFew6xSRC2EAgNYzGW4DRkgkZMBCrcnc3nR7zyMFji31dLmJbkdobpSgImWVyz4jxX9937s3RcW7VI7Xkmn0%2BPEvbTbyHxbFmMaXLm79Z6dFjjs568t39Fi6ekyE6vhxiiuzzlJv9P8S1ILYA35htGELU66LGVItdGJhxpltdQP%2F%2FlzvDcFIrmJWSaJL0qC58W%2B7FnK%2BozuPmRycP%2FQM9HYbz2vrUvtpF0sXr%2BHzlD4hEzJZauNZ4rM2ngRAOGl1fTbdr5zszNWiX1fSWDnkIe5s3kIweveB3dSxmu0v2PE25r1R7UOxKzKzQ5BCoKUM%2BA6jeOHGBG5BfmggbR954W%2FauCFlZI4xn0XIr7utfznX3Dmin68T7t5Y1jicZIWQe22jDtiSU2rCSjdeo3%2FMY97XZBmPhNvNnzulxQYtuYRquS3gYqlPnJa%2FSsOUqXYKmy1RNfn9%2BIZ56j17uCunL%2BJ1dOCh14HC2C3xFOJ%2Fhcs1w098X5hO9z8KmBxiQFY4SFdjO6HNlBuOTo95JQhLZjYF7nGzzxIiIOuegVtYEoa8WpPYRvnoj1jNKtqWZgeqrC60kzmgPJVpK0e5g6kSgX3c%2FMHJMZdprBYya06hjMISW7s4GOqUBXmkWKfdKnSGAvJQvAtpsWgXAZ3hzWudogzE0zzS1R%2FQJOeIGEIr6ZlxlRde7%2FaI0%2B90B4E8Ypl7oOLf03JWESXW5Zafz2UexYn%2BleoyMwZAuhw4lt%2Bdz9hSFuJ3XcUbFpfE%2FG0FHEi5jABiGNUgCilr5eoqdbo9aJjgWrfbyeM4fGB%2BOnJLOY6U3Zh42U8RXgB0uVz%2FujiHEg4pADvXHaNAFId37&X-Amz-Signature=8aeced1620922d4ff3dc729f4fa8abc813230ff14f20be9d07073b13880a05a7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/4a29b116-9855-4f71-8b4f-10f3e14d3e56/%E6%88%AA%E5%9C%96_2021-08-18_%E4%B8%8B%E5%8D%886.18.40.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664EBZWDWA%2F20260412%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260412T161515Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEJT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICIjVBqNQCVwat2Rc3kPRMCwwLqRGd%2FhNCnmTfQNQ%2FKZAiEAxIWSvGh2itQwxgOx4oLofjxtaREVga4tff9f0YT1TMgq%2FwMIXRAAGgw2Mzc0MjMxODM4MDUiDF4WdkSKzwWT04GYXircAzqHY5luy6fdVBNg7HxYFew6xSRC2EAgNYzGW4DRkgkZMBCrcnc3nR7zyMFji31dLmJbkdobpSgImWVyz4jxX9937s3RcW7VI7Xkmn0%2BPEvbTbyHxbFmMaXLm79Z6dFjjs568t39Fi6ekyE6vhxiiuzzlJv9P8S1ILYA35htGELU66LGVItdGJhxpltdQP%2F%2FlzvDcFIrmJWSaJL0qC58W%2B7FnK%2BozuPmRycP%2FQM9HYbz2vrUvtpF0sXr%2BHzlD4hEzJZauNZ4rM2ngRAOGl1fTbdr5zszNWiX1fSWDnkIe5s3kIweveB3dSxmu0v2PE25r1R7UOxKzKzQ5BCoKUM%2BA6jeOHGBG5BfmggbR954W%2FauCFlZI4xn0XIr7utfznX3Dmin68T7t5Y1jicZIWQe22jDtiSU2rCSjdeo3%2FMY97XZBmPhNvNnzulxQYtuYRquS3gYqlPnJa%2FSsOUqXYKmy1RNfn9%2BIZ56j17uCunL%2BJ1dOCh14HC2C3xFOJ%2Fhcs1w098X5hO9z8KmBxiQFY4SFdjO6HNlBuOTo95JQhLZjYF7nGzzxIiIOuegVtYEoa8WpPYRvnoj1jNKtqWZgeqrC60kzmgPJVpK0e5g6kSgX3c%2FMHJMZdprBYya06hjMISW7s4GOqUBXmkWKfdKnSGAvJQvAtpsWgXAZ3hzWudogzE0zzS1R%2FQJOeIGEIr6ZlxlRde7%2FaI0%2B90B4E8Ypl7oOLf03JWESXW5Zafz2UexYn%2BleoyMwZAuhw4lt%2Bdz9hSFuJ3XcUbFpfE%2FG0FHEi5jABiGNUgCilr5eoqdbo9aJjgWrfbyeM4fGB%2BOnJLOY6U3Zh42U8RXgB0uVz%2FujiHEg4pADvXHaNAFId37&X-Amz-Signature=f04c2e4c3014aecd09133418ff7617b8d9003bc7900a83dd57342aafbb9ab917&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)

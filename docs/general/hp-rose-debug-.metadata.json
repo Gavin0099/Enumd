@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-04-12T16:17:17.044Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 73,
+        "extracted_seen_total": 73,
+        "by_type": {
+          "child_page": {
+            "discovered": 4,
+            "extracted": 4,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_3": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "paragraph": {
+            "discovered": 50,
+            "extracted": 50,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_1": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "divider": {
+            "discovered": 7,
+            "extracted": 7,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "quote": {
+            "discovered": 1,
+            "extracted": 1,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "code": {
+            "discovered": 2,
+            "extracted": 2,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "image": {
+            "discovered": 7,
+            "extracted": 7,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "7b138bc8-3e4c-4d15-8d6d-98fc719b3193",
+    "last_edited_time": "2026-01-21T09:27:00.000Z",
+    "extracted_at": "2026-04-12T16:17:09.599Z"
+  },
+  "metrics": {
+    "blocks": {
+      "child_page": {
+        "seen": 4,
+        "fully_rendered": 0,
+        "degraded_rendered": 4,
+        "dropped": 0
+      },
+      "heading_3": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "paragraph": {
+        "seen": 50,
+        "fully_rendered": 50,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_1": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "divider": {
+        "seen": 7,
+        "fully_rendered": 7,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "quote": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "code": {
+        "seen": 2,
+        "fully_rendered": 2,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "image": {
+        "seen": 7,
+        "fully_rendered": 0,
+        "degraded_rendered": 7,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 1,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 0,
+        "preserved": 0
+      },
+      "bold": {
+        "total": 7,
+        "preserved": 7
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 0,
+        "preserved": 0
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 0,
+        "preserved": 0
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 0,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}
