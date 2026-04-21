@@ -84,7 +84,79 @@ Archival responsibility:
 - Do not treat gitignore as "safe to delete" — "can re-fetch from Notion" is not the same as "can re-fetch the same version"
 - Revisit this policy if Notion API provides stable immutable page versioning
 
-**Current state (2026-04-21)**: 169 source.xml files (~4 MB) tracked in main repo. External archive does not yet exist. Source.xml removal from tracking is blocked until a manifest or bundle is produced.
+**Current state (2026-04-21)**: source.xml removed from git tracking. External bundle and manifest established. See lifecycle rules below.
+
+- Bundle: `e:/BackUp/Git_EE/source-snapshots/enumd-source-snapshot-2026-04-21.tar.gz`
+- Manifest: `artifacts/source-snapshots/manifest-2026-04-21.json`
+- sha256: `67f9e74a5c74c6f0c0ae9842cca492d75ea58c497cd3499aad3f829158dc5685`
+
+---
+
+### Source Snapshot Lifecycle
+
+#### When to produce a new bundle
+
+A new `source.xml` bundle is required before any of these events:
+
+| Trigger | Reason |
+|---|---|
+| New wave added to `production_v1` | New source files would not be in the previous bundle |
+| Full Notion re-export | Source content may have drifted; old bundle no longer matches current source |
+| Pipeline schema change that touches source ingestion | Source interpretation changed; need before/after snapshots |
+
+Routine `audit.json` schema evolution does NOT require a new bundle if source.xml files were not re-fetched.
+
+#### Naming rule
+
+```
+enumd-source-snapshot-YYYY-MM-DD.tar.gz
+```
+
+Store at: `e:/BackUp/Git_EE/source-snapshots/` (outside repo, same parent directory)
+
+If a second bundle is produced on the same date, append a sequence: `...-2026-04-21-b.tar.gz`.
+
+#### Manifest minimum fields
+
+Each manifest at `artifacts/source-snapshots/manifest-YYYY-MM-DD.json` must contain:
+
+```json
+{
+  "generated_at": "YYYY-MM-DD",
+  "count": <int>,
+  "total_bytes": <int>,
+  "bundle": {
+    "filename": "enumd-source-snapshot-YYYY-MM-DD.tar.gz",
+    "location": "<absolute path to bundle directory>",
+    "sha256": "<sha256 of .tar.gz file>",
+    "scope": "<which waves/batches are included>",
+    "entry_count": <int>
+  },
+  "entries": [
+    { "slug": "...", "path": "knowledge/...", "sha256": "..." }
+  ]
+}
+```
+
+`total_bytes` and `size_bytes` are file sizes before compression.
+
+#### Restore verification
+
+```bash
+# 1. Verify bundle integrity
+sha256sum e:/BackUp/Git_EE/source-snapshots/enumd-source-snapshot-YYYY-MM-DD.tar.gz
+# Compare against manifest bundle.sha256
+
+# 2. List contents
+tar -tzf enumd-source-snapshot-YYYY-MM-DD.tar.gz | grep <slug>
+
+# 3. Extract a specific file
+tar -xf enumd-source-snapshot-YYYY-MM-DD.tar.gz \
+  knowledge/production_v1/<wave>/<slug>/source.xml
+
+# 4. Verify individual file (optional)
+# Compare extracted file sha256 against manifest entries[].sha256
+```
 
 ---
 
