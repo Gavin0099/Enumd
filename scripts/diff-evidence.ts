@@ -65,13 +65,13 @@ function compareSignals(pathA: string, pathB: string) {
   });
 
   // 3. Validation Regressions
-  const newRegressions = (signalB.metadata.validation?.regressions || []).filter(
-    r => !(signalA.metadata.validation?.regressions || []).includes(r)
+  const newRegressions = (signalB.metadata.validation?.core_support_regressions || []).filter(
+    (r: string) => !(signalA.metadata.validation?.core_support_regressions || []).includes(r)
   );
 
   if (newRegressions.length > 0) {
     console.log("\n⚠️ NEW REGRESSIONS DETECTED:");
-    newRegressions.forEach(r => console.log(`  - ${r}: Fully supported type now failing to render.`));
+    newRegressions.forEach((r: string) => console.log(`  - ${r}: Fully supported type now failing to render.`));
   }
 
   console.log("\nDiff Complete.");

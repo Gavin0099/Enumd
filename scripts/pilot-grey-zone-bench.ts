@@ -41,26 +41,19 @@ for (const slug of pilotSamples) {
     let recommendation: "AUTO_ACCEPT" | "HUMAN_REVIEW" = "HUMAN_REVIEW";
     let reason = "";
 
-    const diversityDenied = audit.decision_guards?.diversity_denied || false;
-    const integrityDenied = audit.decision_guards?.integrity_denied || false;
-
-    if (diversityDenied || integrityDenied) {
-        recommendation = "AUTO_ACCEPT";
-        reason = "Guard successfully denied unstable policy switch.";
-    } else if (audit.topology_status === "STABLE_AT_A") {
+    if (audit.advisory.topology_status === "STABLE_AT_A") {
         recommendation = "AUTO_ACCEPT";
         reason = "Stable baseline reached.";
-    } else if (audit.topology_status === "RECOVERABLE") {
+    } else if (audit.advisory.topology_status === "RECOVERABLE") {
         recommendation = "HUMAN_REVIEW";
         reason = "Broadened context - check for semantic noise.";
     }
 
     results.push({
         slug,
-        topology: audit.topology_status,
+        topology: audit.advisory.topology_status,
         recommendation,
-        reason,
-        metrics: audit.outcome_metrics
+        reason
     });
 }
 

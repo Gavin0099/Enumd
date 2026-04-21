@@ -14,16 +14,16 @@ class MockRecoverableEngine extends KnowledgeQueryEngine {
     public override rankRelated(nodeSlug: string, limit: number = 5): { node: GraphNode, score: number, type: string }[] {
         if (nodeSlug === "MockNode") {
             return [
-                { node: { slug: "B", title: "Borderline B", body: "", integrity_band: "HIGH" } as GraphNode, score: 0.28, type: "related" },
-                { node: { slug: "C", title: "Borderline C", body: "", integrity_band: "HIGH" } as GraphNode, score: 0.26, type: "related" },
-                { node: { slug: "D", title: "Borderline D", body: "", integrity_band: "HIGH" } as GraphNode, score: 0.15, type: "related" }
+                { node: { slug: "B", title: "Borderline B", body: "", integrity_band: "HIGH" } as unknown as GraphNode, score: 0.28, type: "related" },
+                { node: { slug: "C", title: "Borderline C", body: "", integrity_band: "HIGH" } as unknown as GraphNode, score: 0.26, type: "related" },
+                { node: { slug: "D", title: "Borderline D", body: "", integrity_band: "HIGH" } as unknown as GraphNode, score: 0.15, type: "related" }
             ];
         }
         return [];
     }
     
     public override getNode(slug: string): GraphNode | undefined {
-        if (slug === "MockNode") return { slug: "MockNode", title: "Mock Target", body: "", integrity_band: "HIGH" } as GraphNode;
+        if (slug === "MockNode") return { slug: "MockNode", title: "Mock Target", body: "", integrity_band: "HIGH" } as unknown as GraphNode;
         return undefined;
     }
 

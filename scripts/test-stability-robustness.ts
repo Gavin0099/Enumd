@@ -38,8 +38,8 @@ class JitterEngine extends KnowledgeQueryEngine {
         const score1 = this.baseScore + (Math.random() * 2 - 1) * this.jitter;
         const score2 = this.baseScore + (Math.random() * 2 - 1) * this.jitter;
         return [
-            { node: { slug: "B1", title: "B1", body: "", integrity_band: "HIGH" } as GraphNode, score: score1, type: "related" },
-            { node: { slug: "B2", title: "B2", body: "", integrity_band: "HIGH" } as GraphNode, score: score2, type: "related" }
+            { node: { slug: "B1", title: "B1", body: "", integrity_band: "HIGH" } as unknown as GraphNode, score: score1, type: "related" },
+            { node: { slug: "B2", title: "B2", body: "", integrity_band: "HIGH" } as unknown as GraphNode, score: score2, type: "related" }
         ];
     }
     public override getNode(slug: string): any { return { slug, title: slug, body: "", integrity_band: "HIGH" }; }
@@ -58,7 +58,7 @@ class HysteresisControlEngine extends KnowledgeQueryEngine {
     public override rankRelated(nodeSlug: string): any[] {
         const results = [];
         for (let i = 0; i < this.borderlineCount; i++) {
-            results.push({ node: { slug: `B${i}`, title: `B${i}`, body: "", integrity_band: "HIGH" } as GraphNode, score: 0.25, type: "related" });
+            results.push({ node: { slug: `B${i}`, title: `B${i}`, body: "", integrity_band: "HIGH" } as unknown as GraphNode, score: 0.25, type: "related" });
         }
         return results;
     }

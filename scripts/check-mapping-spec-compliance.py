@@ -138,13 +138,13 @@ SCHEMA_EVOLUTION_COMPUTATION_TRIGGERS = {
 
 def get_staged_files() -> list[str]:
     r = subprocess.run(["git", "diff", "--cached", "--name-only"],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
     return [f.strip() for f in r.stdout.splitlines() if f.strip()]
 
 
 def get_staged_diff() -> str:
     r = subprocess.run(["git", "diff", "--cached"],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, encoding="utf-8", errors="replace")
     return r.stdout
 
 
@@ -168,6 +168,13 @@ def read_file(path: str) -> str | None:
 EXEMPT_SCAN_SCRIPTS = {
     "check-mapping-spec-compliance.py",   # self — defines all violation patterns
     "run-compliance-fixture-tests.py",    # fixture runner — references violation descriptions
+}
+
+# Path prefixes excluded from automatic staged/full-scan.
+# Fixture files are known-bad by design; they are only scanned when explicitly
+# passed via --files (by run-compliance-fixture-tests.py).
+EXEMPT_FIXTURE_PATHS = {
+    "test/fixtures/compliance",
 }
 
 
@@ -598,6 +605,14 @@ def main() -> None:
         # Deduplicate
         scan_files = list(dict.fromkeys(scan_files))
         mode = "full_scan"
+
+    # Exclude fixture files from automatic scans (they are known-bad by design).
+    # Fixture runner passes them explicitly via --files so they still get tested.
+    if mode != "explicit_files":
+        scan_files = [
+            f for f in scan_files
+            if not any(normalize_path(f).startswith(fp) for fp in EXEMPT_FIXTURE_PATHS)
+        ]
 
     results: dict = {
         "spec_authority": SPEC_AUTHORITY,

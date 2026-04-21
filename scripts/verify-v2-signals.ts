@@ -64,58 +64,64 @@ async function runTest() {
   
   console.log("--- Simulating Extraction Loop ---");
   
-  // Simulation of what blocksToMarkdown does:
+  // Simulation of what blocksToMarkdown does (updated to current SignalCollector API):
   for (const block of mockBlocks) {
-    collector.incrementTotal();
-    
-    if (block.type === "heading_1") collector.registerRendered("heading_1");
-    else if (block.type === "paragraph") collector.registerRendered("paragraph");
-    else if (block.type === "toggle") {
-      collector.registerRendered("toggle");
+    if (block.type === "heading_1") {
+      collector.registerEncounter("heading_1");
+      collector.registerSuccess("heading_1");
+    } else if (block.type === "paragraph") {
+      collector.registerEncounter("paragraph");
+      collector.registerSuccess("paragraph");
+    } else if (block.type === "toggle") {
+      collector.registerEncounter("toggle");
+      collector.registerSuccess("toggle");
       // Recursive call
       collector.updateDepth(1);
       for (const child of mockChildren["t1"]) {
-        collector.incrementTotal();
-        collector.registerRendered(child.type);
+        collector.registerEncounter(child.type);
+        collector.registerSuccess(child.type);
       }
-    }
-    else {
+    } else {
       // Unsupported block (like table in Phase 1)
-      collector.registerUnsupported(block.type);
+      collector.registerEncounter(block.type);
+      collector.registerDrop(block.type, "unsupported");
     }
-  }
-  
-  const signal = collector.getSignal();
-  
-  console.log("\nGenerated Extraction Signal:");
-  console.log(JSON.stringify(signal, null, 2));
-  
-  console.log("\n--- Verification Results ---");
-  const metrics = signal.metrics;
-  
-  const expectedTotal = mockBlocks.length + mockChildren["t1"].length;
-  if (metrics.total_blocks === expectedTotal) {
-    console.log("✅ Total blocks count matched:", metrics.total_blocks);
-  } else {
-    console.log("❌ Total blocks count mismatched! Expected:", expectedTotal, "Actual:", metrics.total_blocks);
-  }
-  
-  if (metrics.unsupported_blocks === 1) {
-    console.log("✅ Unsupported blocks count matched: 1");
-  } else {
-    console.log("❌ Unsupported blocks count mismatched! Actual:", metrics.unsupported_blocks);
-  }
-  
-  if (metrics.critical_missing.includes("table")) {
-    console.log("✅ Critical missing block 'table' detected.");
-  } else {
-    console.log("❌ Critical missing block 'table' NOT detected!");
   }
 
-  if (metrics.nested_depth_reached === 1) {
+  const signal = collector.getSignal();
+
+  console.log("\nGenerated Extraction Signal:");
+  console.log(JSON.stringify(signal, null, 2));
+
+  console.log("\n--- Verification Results ---");
+  const metrics = signal.metrics;
+
+  const totalSeen = Object.values(metrics.blocks).reduce((sum, m) => sum + m.seen, 0)
+    + metrics.unknown_blocks.seen;
+  const expectedTotal = mockBlocks.length + mockChildren["t1"].length;
+  if (totalSeen === expectedTotal) {
+    console.log("✅ Total blocks count matched:", totalSeen);
+  } else {
+    console.log("❌ Total blocks count mismatched! Expected:", expectedTotal, "Actual:", totalSeen);
+  }
+
+  const droppedCount = Object.values(metrics.blocks).reduce((sum, m) => sum + m.dropped, 0);
+  if (droppedCount === 1) {
+    console.log("✅ Dropped (unsupported) blocks count matched: 1");
+  } else {
+    console.log("❌ Dropped blocks count mismatched! Actual:", droppedCount);
+  }
+
+  if (metrics.dropped_reasons["table"]?.includes("unsupported")) {
+    console.log("✅ Dropped block 'table' detected with reason 'unsupported'.");
+  } else {
+    console.log("❌ Dropped block 'table' NOT detected!");
+  }
+
+  if (metrics.structure.max_depth === 1) {
     console.log("✅ Max depth reached matched: 1");
   } else {
-    console.log("❌ Max depth mismatched! Actual:", metrics.nested_depth_reached);
+    console.log("❌ Max depth mismatched! Actual:", metrics.structure.max_depth);
   }
 }
 

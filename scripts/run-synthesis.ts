@@ -114,7 +114,7 @@ async function runSynthesisWithPolicy(slug: string, policy: SynthesisPolicy, isA
     const modelToUse = modelOverride || "claude-3-haiku-20240307";
     const actualModelName = modelToUse === "sonnet" ? "claude-3-5-sonnet-20241022" : (modelToUse === "haiku" ? "claude-3-haiku-20240307" : modelToUse);
     
-    audit.model_used = actualModelName;
+    audit.applied_model = modelToUse === "sonnet" ? "sonnet" : "haiku";
 
     writeFileSync(join(outDir, "synthesis_prompt_dump.xml"), contextPrompt);
     writeFileSync(join(outDir, "synthesis_prompt_dump.audit.json"), JSON.stringify(audit, null, 2));

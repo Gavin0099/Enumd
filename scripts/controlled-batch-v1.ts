@@ -1,7 +1,6 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join } from "path";
 import { KnowledgeQueryEngine } from "../lib/knowledge-query";
-import { renderSynthesisBatch } from "./run-synthesis"; // Import logic if exported
 
 console.log("🔥 Enumd Phase 4.9: Controlled Batch v1 - Launching Pilot...");
 
