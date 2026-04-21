@@ -25,6 +25,7 @@ export interface SynthesisAudit {
     borderline_count: number;
     best_borderline_score: number;
     gap_detected: boolean;
+    borderline_neighbors?: { node: GraphNode; score: number; type: string }[];
   };
 
   advisory?: {
@@ -42,14 +43,14 @@ export interface SynthesisAudit {
     best_score: number;
     threshold_used: number;
     related_limit_used: number;
-    decision_confidence: number;
-    decision_guards: {
+    decision_confidence?: number;
+    decision_guards?: {
         diversity_denied: boolean;
         integrity_denied: boolean;
         hysteresis_applied: boolean;
         violations: string[];
     };
-    outcome_metrics: {
+    outcome_metrics?: {
         source_diversity: number;
         avg_integrity_score: number;
         noise_signal: "LOW" | "MEDIUM" | "HIGH";

@@ -1,4 +1,4 @@
-import { GraphNode, GraphEdge } from "./knowledge-types";
+import { GraphNode, GraphEdge, EdgeBasis } from "./knowledge-types";
 
 // Helper for unique string IDs in edges
 const edgeId = (src: string, tgt: string) => src < tgt ? `${src}-${tgt}` : `${tgt}-${src}`;
@@ -177,7 +177,7 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
       let finalType: GraphEdge["type"] = "explicit_ref";
       let confidence: GraphEdge["confidence"] = "high";
       let maxScore = 0;
-      const allBasis = [];
+      const allBasis: EdgeBasis[] = [];
       const baseEdge = edgeList[0];
       
       // Pull in any undirected basis that matches A-B
@@ -241,7 +241,7 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
           let finalType: GraphEdge["type"] = "same_domain";
           let confidence: GraphEdge["confidence"] = "low";
           let maxScore = 0;
-          const allBasis = [];
+          const allBasis: EdgeBasis[] = [];
 
           if (edgeList.some(e => e.type === "tag_related")) {
               finalType = "tag_related";
@@ -278,7 +278,7 @@ export function dedupeAndRankEdges(edges: GraphEdge[]): GraphEdge[] {
           let finalType: GraphEdge["type"] = "same_domain";
           let confidence: GraphEdge["confidence"] = "low";
           let maxScore = 0;
-          const allBasis = [];
+          const allBasis: EdgeBasis[] = [];
 
           if (edgeList.some(e => e.type === "tag_related")) {
               finalType = "tag_related";
