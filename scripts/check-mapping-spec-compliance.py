@@ -163,7 +163,12 @@ def read_file(path: str) -> str | None:
         return None
 
 
-SELF_SCRIPT = Path(__file__).name  # "check-mapping-spec-compliance.py"
+# Scripts excluded from invariant scanning — contain violation pattern strings as literals
+# (the checker itself, test runners, fixture metadata). These are NOT production logic.
+EXEMPT_SCAN_SCRIPTS = {
+    "check-mapping-spec-compliance.py",   # self — defines all violation patterns
+    "run-compliance-fixture-tests.py",    # fixture runner — references violation descriptions
+}
 
 
 def normalize_path(p: str) -> str:
@@ -174,8 +179,7 @@ def normalize_path(p: str) -> str:
 def is_code_file(path: str) -> bool:
     if not path.endswith((".ts", ".js", ".py")):
         return False
-    # Exclude this checker script from scans — it contains violation patterns as strings
-    if Path(path).name == SELF_SCRIPT:
+    if Path(path).name in EXEMPT_SCAN_SCRIPTS:
         return False
     return True
 
@@ -556,6 +560,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Mapping Spec Compliance Checker P2-1")
     parser.add_argument("--staged", action="store_true",
                         help="Pre-commit mode: analyze staged diff only")
+    parser.add_argument("--files", nargs="+", metavar="FILE",
+                        help="Override scan file list (for fixture tests / targeted CI)")
     parser.add_argument("--output", metavar="FILE",
                         help="Write JSON result to FILE")
     parser.add_argument("--quiet", action="store_true",
@@ -571,9 +577,15 @@ def main() -> None:
     except Exception:
         pass  # Not in a git repo or no staged changes — checks will degrade gracefully
 
-    if args.staged:
+    if args.files:
+        # Explicit file list — used for fixture tests and targeted CI scans
+        # INV-3 and schema-evolution still check staged diff independently
+        scan_files = list(dict.fromkeys(args.files))
+        mode = "explicit_files"
+    elif args.staged:
         # Pre-commit: only inspect staged files
         scan_files = staged_files
+        mode = "staged"
     else:
         # Full scan: all lib/ and scripts/ code files
         scan_files = (
@@ -585,10 +597,11 @@ def main() -> None:
         )
         # Deduplicate
         scan_files = list(dict.fromkeys(scan_files))
+        mode = "full_scan"
 
     results: dict = {
         "spec_authority": SPEC_AUTHORITY,
-        "mode": "staged" if args.staged else "full_scan",
+        "mode": mode,
         "files_scanned": scan_files,
         "staged_files": staged_files,
     }
