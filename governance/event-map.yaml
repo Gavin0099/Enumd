@@ -70,6 +70,31 @@ events:
       Requires reviewer sign-off. Cannot be mixed with knowledge: or pipeline:
       in the same PR without declared cause (see Mixed PR Policy).
 
+    gate_escalation_rule: >
+      A governance_change MUST be escalated to gate_required when ANY of these
+      conditions are met (treat as gate_required even though default is false):
+
+      ESCALATE TO GATE if the change touches:
+        1. contract.yaml interface fields (framework_interface_version,
+           framework_compatible, validators, blocking_actions) — these are
+           consumed by the governance framework and can silently alter gate behavior
+        2. gate_policy.yaml (fail_mode, blocking_actions, unknown_treatment,
+           canonical_audit_trend) — direct gate behavior change
+        3. governance/event-map.yaml gate_required flags or evidence_pack schemas
+           — changes what evidence is required before a gate passes
+        4. AGENTS.md §Repo-Specific Forbidden Behaviors or §L1→L2 Escalation Triggers
+           when these sections are non-N/A — changes what is blocked or escalated
+
+      DO NOT ESCALATE for:
+        - Updating docs/ or comments that have no downstream consumption
+        - Adding new rules that don't change existing blocking conditions
+        - governance/rules/** additions (new rules are additive, not breaking)
+        - AGENTS.md sections that remain N/A
+
+      Rationale: governance changes that modify the interface consumed by the
+      framework are indistinguishable in effect from an authority_upgrade —
+      they change what the governance engine will do at runtime.
+
   pipeline_change:
     trigger: >
       Any commit touching lib/ or scripts/ that changes data transformation logic,
