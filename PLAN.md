@@ -20,7 +20,7 @@
 
 - [x] P1-1: Create `governance/event-map.yaml` — event dictionary, decision map, evidence packs, intervention hooks
 - [x] P1-2: Create evidence output directory `artifacts/runtime/evidence/` and commit path convention
-- [ ] P1-3: Run schema_evolution vertical slice — first complete chain end-to-end using domain_advisory field as evidence
+- [x] P1-3: Run schema_evolution vertical slice — domain_advisory evidence pack + decision summary, gate_result=pass
 
 ## Backlog
 
@@ -28,6 +28,11 @@
 - P2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
 - P3: Automated evidence pack generation for schema_evolution (git-diff → pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
+
+## Open Questions (from P1-3 vertical slice)
+
+- OQ-1: Do any consumers of `governance_report.json` `nodeSignals` use `risk_level` for automated routing? (currently: no evidence — not yet exhaustively verified against all framework consumers)
+- OQ-2: Is `instrumentation_version: "1.0"` a versioned contract interface? If computation changes in a future pipeline update, does this need a version bump? (recommendation: yes — treat as versioned contract surface; add to schema_evolution trigger criteria)
 
 ## Decision Log
 
