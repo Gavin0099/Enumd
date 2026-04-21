@@ -24,8 +24,9 @@
 
 ## Backlog
 
-- P2: CI change classification hook — pre-commit script that reads event-map.yaml and classifies staged diff
-- P2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
+- [x] P2-0: Create `knowledge/production_v1/mapping-spec.md` — evidence-to-governance contract, source of truth, 11 sections
+- P2-1: CI change classification hook — pre-commit script that reads event-map.yaml and classifies staged diff; validates INV-1 through INV-4 from mapping-spec
+- P2-2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
 - P3: Automated evidence pack generation for schema_evolution (git-diff → pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
 
@@ -42,9 +43,11 @@
   - Both are versioned contract markers. A computation logic change (threshold, signal set, scoring rule) that changes meaning without changing field names MUST bump version AND trigger schema_evolution event.
   - Action taken: added both to schema_evolution trigger criteria in `governance/event-map.yaml`.
 
-- OQ-3: `knowledge/production_v1/mapping-spec.md` is referenced in `scripts/production-wave-runner.ts` at §5, §6.3, §6.4, §9, §9.2 but the file **does not exist**.
-  - This is a latent contract documentation gap. The `advisory_only` contract boundary and `synthesis_verdicts` vs `enforcement` vocabulary distinction have no written spec backing them.
-  - Resolution: create `knowledge/production_v1/mapping-spec.md` before P2, because P2 CI hook needs to reference the same contract boundaries.
+- ~~OQ-3: mapping-spec.md missing~~ **CLOSED 2026-04-21 — P2-0 complete**
+  - Created `knowledge/production_v1/mapping-spec.md` as **source of truth** (not README).
+  - Authority declaration: spec wins over code. Code must conform.
+  - Defines: advisory_only vs decision_consumable vocabulary (§2), governance_report schema (§3), advisory contract with invariants (§4, §9), enforcement vocabulary boundary (§5), domain_advisory field contract (§6), versioned contract markers (§8), schema_evolution triggers (§10).
+  - INV-1 through INV-4 codify the invariants CI hook (P2-1) will validate against.
 
 ## Decision Log
 
