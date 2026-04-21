@@ -1,53 +1,139 @@
 <context_boundaries>
-<core_topic id="apple-command-line-update-instruction-" title="Apple Command line update Instruction " path="/mac/apple-command-line-update-instruction-.html">
+<core_topic id="zeroplus_lap-i2c-訊號錄製方式" title="ZEROPLUS_LAP I2c 訊號錄製方式" path="/general/zeroplus_lap-i2c-訊號錄製方式.html">
 
-apple 有一個Tool需求為
-- command line tool
-- hub firmware update 
-- update hub related data
-hub related data 如下截圖
-- GL3523(5C) 
-Start Address: 0x8000 
-- GL3523(2A) 
-Start Address: 0x8000 
-- GL3590 
-Start Address: 0xA000 
-### Command line Parameter
-### SW Update Firmware Flow
-### hub related data Description
-- Apple Head String
-- checksum —>  Apple Header String + checksum 後面的資料累加後的值，如下圖
-- serial Number data
-- Container ID data
-### 相關文件
-- GL3523 FW Update Note 
-- GL3590 FW update Note
-- Mac Command Line Tool Update Note
-### svn path
-https://gli-cse.genesyslogic.com.tw/svn/storage/Hub/Mac AP/Engineer/GLHubFWUpdateTool
+MTK Scaler 在 溝通時，常常會遇到抓取Bus Hound資料時，還是不能判斷是Hub or Scaler的問題，這時候就必須再抓取i2c 的訊號跟Bus Hound資料做比對，這時候就必須透過 Logic Analyzer要錄 i2c 訊號
+錄製流程如下
+1.安裝Logic Analyzer (Z:\SW_Release_New\Hub\lac_s31403_all.rar)
+2.開啟Logic Analyzer ，開啟設定好的profile檔(i2c.alc)Z:\SW_Release_New\Hub\i2c.alc
+3.按照 i2c.alc設定的方式接上線，按照設定的顏色接到指定的位置(請FAE把I2c量測線接出來)
+4.選擇完取樣大小和取樣頻率後按下開始鍵即可S
+5.如果要抓取比較多筆資料的話要改成如下設定(Sampling size < 2M ，按下壓縮選項)
+6..抓取Scaler Fw Version當作範例
+Scaler Firmware version 下法如下，紅框的部分就是這次抓到的data
+Genesys to Scalar with RT1711 communcation apn V13.pdf
 
 </core_topic>
   <related_context>
-    <related id="code-sign-flow" title="Code sign Flow" path="/code-sign/code-sign-flow.html">
+    <related id="etoken-system-code-view-" title="Etoken System Code View " path="/code-sign/etoken-system-code-view-.html">
     
-    ## Genesys Logic code sign overview
-    因應客戶的需求，firmware 都必須要驗證合法性，目前做法是把bin檔做成hash，然後 用 private key 對 hash 做sign的動作產生signature(deliver signed firmware) 
-    把 firmware bin data & signature & public key 傳送給security module，讓 security module透過 public key 對 signature做解密，產生hash ，然後再用firmware bin data 產生一組 hash ，互相做比對，來決定firmware bin是否合法(firmware update and verification)。
-    code sign 的做法有下面幾種
-    1. OpenSSL
-    會把generate 出來的key pair 放在電腦裡面，deliver signed firmware 也是在電腦裡面完成的
-    1. Token
-    1. HSM (Hardware security module)
-    A hardware security module (HSM) is a physical computing device that safeguards and manages digital keys, performs encryption and decryption functions for digital signatures, strong authentication and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a computer or network server. A hardware security module contains one or more secure cryptoprocessor chips
-    但是根據HP 規定要符合fips 140-2 level 3 以上，所以至少要用Token來達成code sign 功能
-    fips 140-2 level 3
-    > **Note:** In addition to the tamper-evident physical security mechanisms required at Security Level 2, Security Level 3 attempts to prevent the intruder from gaining access to CSPs held within the cryptographic module. Physical security mechanisms required at Security Level 3 are intended to have a high probability of detecting and responding to attempts at physical access, use or modification of the cryptographic module. The physical security mechanisms may include the use of strong enclosures and tamper-detection/response circuitry that zeroes all plaintext CSPs when the removable covers/doors of the cryptographic module are opened.
-    目前Genesys Logic 使用的 code sign 演算法為Ecdsa nistp256
-    ## Genesys Logic CodeSign flow
-    1. generate key
-    1. deliver signed firmware
-    sign的動作如下，先把Data轉成hash 檔，然後透過eToken or Smart Card裡面的 Private key 轉成 signatute 
-    1. firmware update and verification
+    ## etoken_dongle_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: 不通過。連線工作流程使用 detach 且無生命週期收斂，違反可預測關閉原則。
+    - Native Safety: 不通過。檔案大小與外部命令執行缺乏邊界控制，存在資源與執行風險。
+    - Test Integrity: 不通過。看不到針對失敗路徑（超大輸入、shutdown race、協定錯位）的測試證據。
+    ### Technical Findings
+    1. [BLOCKING] Detached worker thread may outlive owner (this)
+    1. [BLOCKING] Unbounded memory allocation from peer-provided file size
+    1. [WARNING] Protocol error opcode mismatch in public-key stage
+    1. [WARNING] system() execution path with externally-derived parameters
+    1. [WARNING] Timeout conversion bug in select()
+    1. [SUGGESTION] Hardcoded token password in source
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md.
+    - Result: Conflict Found (特別是 system()/sub-process hang 與協定失配/卡住風險已命中)。
+    ## etoken_server
+    ### [Decision Summary]
+    Verdict: CHANGES_REQUESTED
+    Risk Level: High
+    ---
+    ### Governance Audit
+    - Architecture: Release 組態已移除 OFFLINE_TEST，這點較前版改善；但連線工作執行緒仍採 detach，生命週期不可控，違反可預測性。
+    - Native Safety: 未發現新的 pointer free 錯誤；但外部命令執行與檔案大小處理缺乏邊界，仍有高風險。
+    - Test Integrity: 看不到對失敗路徑（超大 file size、thread shutdown race、SQL 注入字串）的測試鎖定證據。
+    ### Technical Findings
+    1. [BLOCKING] SQL injection 風險（登入授權查詢）
+    1. [WARNING] detach 執行緒捕獲 this，存在 shutdown race / UAF 風險
+    1. [WARNING] Dongle 管理同樣使用 detach，生命週期不可驗證
+    1. [WARNING] 檔案大小由對端提供且未設上限，可能 OOM/卡死
+    1. [WARNING] 對 Dongle 端取檔同樣無大小上限
+    1. [WARNING] DB 密碼硬編碼在程式碼
+    ### Knowledge Base Alignment
+    - Checked 4 Anti-Patterns/Pitfalls in 03_knowledge_base.md（含 system()/子程序卡死、流程卡住類型）。
+    - Result: Conflict Found（當前風險與既有 anti-pattern 高度重疊）。
+    
+    </related>
+    <related id="etoken-安全簽章系統技術說明" title="eToken 安全簽章系統技術說明" path="/code-sign/etoken-安全簽章系統技術說明.html">
+    
+    ## 1. 系統概述
+    本文件旨在說明 eToken 系統如何從一個原始的二進位檔案 (ori bin) 開始，經過整合、簽章與封裝等一系列步驟，最終產生安全的 sig.bin 與 rom 檔案。整個流程由 eToken Server 作為協調者，與 Dongle Server (安全核心) 和 GLBin (檔案處理工具) 協同運作完成。
+    ---
+    ## 2. 系統架構圖
+    此架構圖展示了系統中各個元件的部署位置及其相互之間的通訊關係。
+    ---
+    ## 3. 詳細處理流程
+    整個流程可分為三個主要階段：
+    ---
+    ## 4. 流程視覺化圖表
+    4.1 循序圖 (Sequence Diagram)
+    4.2 流程圖 (Flowchart)
+    ---
+    ## 5. 演算法特定規則
+    在階段三 (最終檔案生成) 中，GLBin 組裝檔案的格式會根據簽章演算法 (ECDSA/RSA/RSA + HID) 而有所不同。
+    ---
+    ## 6. 各晶片韌體格式詳解
+    ---
+    ## 7. 晶片格式總覽表
+    ## GLBinTool Commands
+    ---
+    ### ⚙️ WIP 階段
+    ```c
+    glbin --wip -i Fw.bin [--input# Fw#.bin] -p publickey.bin -t <rsa2048|ecdsa256>
+    ```
+    用途
+    將 Public Key 嵌入原始 Bin，依晶片規則重算 checksum、產生 WIP 檔
+    在 case B 時，每個 input 都會獨立生成一個 WIP 檔，其餘 case 皆只會生成一個合併的 WIP 檔
+    輸出檔名為原始檔名末  .bin 改為 wip.bin ，例如 FW.bin 改為  FWwip.bin 
+    必要參數 
+    - i, --input → 原始 Bin 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個原始 Bin 檔
+    回傳
+    -  回傳 Output 檔案數量，若為 0 則為 Fail
+    特殊狀況
+    -  case A in 才需要放 public key 進去
+    ---
+    ### 🔑 SIGN 階段
+    ```c
+    glbin --sign -i Fw.bin [--input# Fw#.bin] --g signature.bin [--signature# signature#.bin] -o sig.bin -p publickey.bin  -t <rsa2048|ecdsa256> [-f]
+    ```
+    用途
+    計算 wip.bin 的 Hash，產生 Signed bin 檔。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出 sig 檔
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    - f, --Convert hid code sign bin file format —> Convert hid code sign bin file format
+    特殊狀況
+    -  case B in 除了把 public key & hash &signature 放到 bin檔內外也需要放到bin檔的結尾
+    ---
+    ### 📦 ROM 階段
+    ```c
+    glbin --rom -i Fw.bin [--input# Fw#.bin] -g signature.bin [--signature# signature#.bin] -o rom.bin -p publickey.bin-t <rsa2048|ecdsa256>
+    ```
+    用途
+    依晶片演算法，組裝最終檔案 rom。
+    必要參數
+    - i, --input → wip.bin 檔
+    - g, --signagure —> Signature 檔案
+    - o, --output → 輸出檔案
+    - p, --publickey → Public Key 檔案
+    - -t → 簽章類型（rsa2048 / ecdsa256）
+    可選參數
+    - --input#→ 第 N 個 wip.Bin 檔
+    - --signagure# —>第 N 個  Signature 檔案
+    ---
+    ## 測試Chip & bin 檔
     
     </related>
     <related id="hid-code-sign-記錄" title="HID Code Sign 記錄" path="/code-sign/hid-code-sign-記錄.html">
@@ -84,82 +170,6 @@ https://gli-cse.genesyslogic.com.tw/svn/storage/Hub/Mac AP/Engineer/GLHubFWUpdat
     HP ISP Tool ( HID ) 預設只使用 2.0
     ### 會議記錄
     2021/12/17 HP ISP Tool
-    
-    </related>
-    <related id="hp-monitor-code-sign-update-flow" title="HP Monitor Code Sign Update Flow" path="/code-sign/hp-monitor-code-sign-update-flow.html">
-    
-    ### ISP Tool 與 Hub Firmware 初始化交握機制
-    目的是確認：
-    1. ISP Tool 是否通過 Hub Firmware 的認證。
-    1. Hub Firmware 是否通過 ISP Tool 的認證。
-    流程如下
-    - 使用bcdDevice 和ToolString 裡面的Firmware Info Tool String 來當參數
-    - 取出 bcdDevice 的兩個位元組並做 XOR 運算。
-    - Firmware Info Tool String 會 Random 產生一組 Start Range 和 Stop Range ，然後跟bcdDevice  產生出來的值再做XOR
-    - uValue：範圍組合，將 Stop 放高位、Start 放低位。
-    - uIndex：將 XOR 結果放高位，加上固定值 0x01。
-    - 使用 uValue 和 uIndex 傳送至 Hub Firmware 進行驗證。如果返回值 uRetVal != 1，表示驗證失敗。
-    ## 概述
-    目前驗證方式有分四種方式 ，可以透過Dynamic Tool String  裡面的The 3rd Party Vendor Support  HP Proprietary 參數來判斷 ，如下圖
-    - HP Hw Check Code Signed
-    因為GL3523沒有Security Module ，所以必須透過scaler 驗證 code sign
-    - HP Sw Check Code Signed
-    GL3523 使用，在此模式下連scaler 都沒有Security Module ，所以必須透過Tool 來驗證code sign
-    - HP Code Signed Slave
-    此模式下必然會有兩層以上的Hub ，另外一層Hub 會是HP Hw Check Code Signed
-    or  HP Hub Check Code Signed ，兩種方式驗證方法不一樣
-    - HP Hub Check Code Signed (ECDSA)
-    主要為GL3590 驗證方式，因為GL3590 有Security Module ，可以自己(Hub)做驗證
-    ---
-    ## HP Hw Check Code Signed update Flow
-    update前會傳送public key 給 hub ，當update到最後兩筆資料時會傳送 hash & signature給Hub ，讓Hub 傳送給 scaler ，由scaler驗證是否成功，失敗的話最後兩筆資料就不update ，這樣的話 update data不完整，hub boot 起來就不會跑這一塊，成功的話繼續update流程，可以參考下圖流程
-    Send Hash & Signature 和 Get Hub authorization 可參考下圖做法
-    ---
-    ## HP Sw Check Code Signed
-    在load bin file時就會送給 解密Tool 做驗證，驗證失敗就不做update ，成功的話就正常update
-    詳細作法可參考下圖。
-    ---
-    ## HP Code Signed Slave
-    會根據另外一層Hub的code signed mode來決定 code signed flow
-    - HP Hw Check Code Signed update Flow
-    驗證方式類似 ，只是在Send Hash & Signature 和 Get Hub authorization 這邊是送到HP Hw Check Code Signed的那層Hub給scaler 做驗證
-    - HP Hub Check Code Signed 
-    會在HP Hub Check Code Signed 一併說明
-    
-    ---
-    ## HP Hub Check Code Signed (ECDSA)
-    有兩種方式，驗證方式都是會傳給有Security Module 的Hub做驗證，只是流程不一樣
-    ### 原本Hub 就有Security Module (GL3590)
-    ```plain text
-    1.	40 ac 00 00  00 00 00 00 : Enable SHA256 Engine
-    2.	c0 a2 00 00  00 00 40 00
-    3.	c0 a2 00 00  40 00 40 00
-    4.	……
-    5.	c0 a2 00 00  c0 8f 40 00
-    6.	40 ac 0b 04  09 00 00 00 : Send Hash Length : 4K
-    7.	40 ac 0b 00  00 00 20 00 : Send Hash Data
-    8.	c0 ac 0b 02  00 00 20 00 : Read Digested Data for test 
-    9.	c0 ac 0c 02  00 00 40 00 : Read Signature     for test 
-    10.	c0 ac 0c 01  00 00 40 00 : Read  Public Key   for test 
-    11.	c0 ac 0b 00  00 00 01 00 : fw return hash comparision result
-    12.	40 ac 00 00  00 00 00 00 : Enable SHA256 Engine
-    13.	c0 a2 00 00  00 00 40 00
-    14.	c0 a2 00 00  40 00 40 00
-    15.	……
-    16.	c0 a2 00 00  c0 8f 40 00
-    17.	40 ac 0b 04  09 00 00 00 : Send signature Length : 4K
-    18.	40 ac 0c 02  00 ff 00 00 : Provide fw public key
-    19.	40 ac 0c 01  00 00 40 00 : send signature data
-    20.	c0 ac 0c 01  00 00 40 00 : Read  Public Key   for test 
-    21.	c0 ac 0b 02  00 00 20 00 : Read Digested Data for test 
-    22.	c0 ac 0c 02  00 00 40 00 : Read Signature     for test 
-    23.	c0 ac 0c 00  00 00 01 00: fw return hash comparision result
-    ```
-    ### 原本Hub 沒有Security Module(GL3523)
-    流程跟GL3590 驗證方式差不多，不一樣的地方為，當update 後 ，要把data送到有Security Module的Hub(GL3590) 做驗證，所以除了第一步是傳給GL3523 update data之外，其他command都是傳給GL3590
-    -
-    ### 原本PD沒有Security Module(GL9511)
-    hash 應該是不用驗，所以去掉此步驟，其他跟GL3523驗證方式差不多，當update 後 ，要把data送到有Security Module的Hub(GL3590) 做驗證，所以除了第一步是傳給GL3523 update data之外，其他command都是傳給GL3590
     
     </related>
   </related_context>

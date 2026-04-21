@@ -1,42 +1,19 @@
-以下為基於提供的內容所合成的 Apple Command line update Instruction 的詳細文件:
+以下是針對「ZEROPLUS_LAP I2c 訊號錄製方式」的詳細文件:
 
-# Apple Command line update Instruction
+# ZEROPLUS_LAP I2c 訊號錄製方式
 
 ## 概述
-Apple 需要一個命令列工具來執行以下功能:
-- 更新 hub 韌體
-- 更新 hub 相關資料
+當 MTK Scaler 在通訊時遇到無法判斷是 Hub 還是 Scaler 的問題時，需要透過抓取 I2C 訊號和 Bus Hound 資料進行比對分析。為此需要使用 Logic Analyzer 來錄製 I2C 訊號。
 
-hub 相關資料包括以下內容:
-- GL3523(5C) 起始位址: 0x8000
-- GL3523(2A) 起始位址: 0x8000
-- GL3590 起始位址: 0xA000
+## 錄製流程
+1. 安裝 Logic Analyzer 軟體 `[lac_s31403_all.rar](Z:\SW_Release_New\Hub\lac_s31403_all.rar)`。
+2. 開啟 Logic Analyzer，並載入預先設定好的 I2C 設定檔 `[i2c.alc](Z:\SW_Release_New\Hub\i2c.alc)`。
+3. 依照 `i2c.alc` 的設定接上測試線，並將其連接到指定位置（請 FAE 協助將 I2C 測試線接出）。
+4. 設定好取樣大小和取樣頻率後，按下開始鍵即可開始錄製。
+5. 如果需要錄製較多資料，可以調整設定為 `Sampling size < 2M` 並勾選壓縮選項。
+6. 以抓取 Scaler Firmware Version 為例，錄製的資料如下圖所示。
 
-## 命令列參數
-### 韌體更新流程
-### Hub 相關資料描述
-- Apple Header String
-- Checksum: Apple Header String + 後續資料累加值
-- 序號資料
-- Container ID 資料
+![Scaler Firmware Version 抓取範例](Genesys to Scalar with RT1711 communcation apn V13.pdf)
 
-## 相關文件
-- [GL3523 FW Update Note](https://gli-cse.genesyslogic.com.tw/svn/storage/Hub/Mac%20AP/Engineer/GLHubFWUpdateTool)
-- [GL3590 FW Update Note](https://gli-cse.genesyslogic.com.tw/svn/storage/Hub/Mac%20AP/Engineer/GLHubFWUpdateTool)
-- [Mac Command Line Tool Update Note](https://gli-cse.genesyslogic.com.tw/svn/storage/Hub/Mac%20AP/Engineer/GLHubFWUpdateTool)
-
-## SVN 路徑
-https://gli-cse.genesyslogic.com.tw/svn/storage/Hub/Mac%20AP/Engineer/GLHubFWUpdateTool
-
-## 相關上下文
-### Code Sign 流程 `[Code sign Flow](code-sign/code-sign-flow.html)`
-Genesys Logic 目前使用 ECDSA nistp256 演算法進行韌體的數位簽章。數位簽章的流程如下:
-1. 生成金鑰對
-1. 使用私鑰對韌體資料進行簽章
-1. 將簽章資料與韌體資料一併傳送給安全模組進行驗證
-
-### HID Code Sign 記錄 `[HID Code Sign 記錄](code-sign/hid-code-sign-記錄.html)`
-HID 韌體更新流程、工具測試、已解決問題等相關記錄。
-
-### HP Monitor Code Sign Update Flow `[HP Monitor Code Sign Update Flow](code-sign/hp-monitor-code-sign-update-flow.html)`
-描述 HP 顯示器韌體更新時的數位簽章驗證流程,包括 HP HW Check Code Signed、HP SW Check Code Signed、HP Code Signed Slave 和 HP Hub Check Code Signed 等四種模式。
+## 結論
+透過 Logic Analyzer 錄製 I2C 訊號，可以輔助分析 MTK Scaler 在通訊時遇到的問題，有助於判斷是 Hub 還是 Scaler 的問題所在。
