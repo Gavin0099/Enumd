@@ -167,6 +167,7 @@ All commits must use one of these prefixes:
 | Prefix | Scope | Notes |
 |---|---|---|
 | `governance:` | `contract.yaml`, `governance/`, `.governance*`, `AGENTS.md` | Requires reviewer sign-off |
+| `authority-upgrade:` | `ai-governance-framework` submodule pointer | External authority version boundary change; see separate policy below |
 | `pipeline:` | `lib/`, `scripts/` | Must document which knowledge outputs are affected |
 | `knowledge:` | `knowledge/` data sync | Batch pipeline output; routine updates |
 | `schema-evolution:` | `knowledge/` when schema of `audit.json` or `claims.json` changes | See below |
@@ -190,6 +191,83 @@ A `governance:` or `pipeline:` change that legitimately triggers a full knowledg
    - Whether any existing verdicts or downstream semantics changed
 
 This exception exists because sometimes a contract or rule change **is** the causal reason for a knowledge corpus update. Breaking the causal chain across two PRs would be worse than allowing the mixed change with documentation.
+
+---
+
+## Authority Upgrade Policy
+
+The `ai-governance-framework` submodule is the **external authority source** for this consuming repo. Updating its pointer is not a dependency bump — it is an **authority version boundary change** that may alter prompt payload, runtime hook behavior, contract semantics, or reporting format.
+
+### What makes it different from other governance changes
+
+| Change type | Scope | Who owns the change |
+|---|---|---|
+| `governance:` | Consuming repo rules, templates, config | Enumd |
+| `authority-upgrade:` | External authority version boundary | Upstream + Enumd compatibility |
+
+An `authority-upgrade:` can silently invalidate consuming-repo assumptions. The review gate exists to make that visible before it lands.
+
+### Minimum review gate before pointer update
+
+Answer all five questions before committing a pointer change:
+
+**1. What layers does this upstream change touch?**
+
+Check which of these are affected in the upstream diff:
+- [ ] Prompt payload structure (`AGENTS.base.md`, system prompt templates)
+- [ ] Runtime hook behavior (pre/post task hooks, stop hooks)
+- [ ] Contract semantics (`contract.yaml` fields, validation rules)
+- [ ] Advisory taxonomy (signal types, risk levels, tier definitions)
+- [ ] Artifact schema (session verdict format, audit log format, report fields)
+
+**2. Is `contract.yaml` still compatible?**
+
+Verify Enumd's `contract.yaml` satisfies any new interface requirements in the upstream version.
+
+**3. Do any consuming-side documents need updating?**
+
+Check if `governance/SYSTEM_PROMPT.md`, `governance/AGENT.md`, `governance/RULE_REGISTRY.md`, or `AGENTS.md` reference assumptions that the upstream change invalidates.
+
+**4. What is the change level?**
+
+| Level | Description | Required action |
+|---|---|---|
+| patch | Bug fix, wording clarification, additive fields | Review checklist only |
+| minor | New capability, new signal type, new hook | Review + update consuming docs if needed |
+| major | Contract interface change, breaking schema, removal | Must update consuming repo before or in same PR |
+
+**5. Can this be done as a standalone commit?**
+
+An `authority-upgrade:` commit must not be mixed with:
+- `knowledge:` data sync (knowledge churn must not obscure authority boundary changes)
+- `schema-evolution:` events
+- `pipeline:` logic changes
+- Routine `chore:` housekeeping
+
+If a pointer update legitimately triggers downstream changes (e.g., consuming doc update), include them in the same `authority-upgrade:` commit with explanation.
+
+### Commit message format
+
+```
+authority-upgrade: advance ai-governance-framework to <short-sha>
+
+Upstream changes:
+- <what changed, which layer>
+
+Review gate:
+- Layers affected: <list from gate question 1>
+- contract.yaml compatible: yes / yes with update / no (blocked)
+- Consuming docs updated: yes / none required
+- Change level: patch / minor / major
+
+No consuming-side behavior change expected.
+```
+
+### Prohibition
+
+**A submodule pointer update is never a "quick dependency bump."**
+
+If you find yourself thinking "I'll just update the submodule pointer real quick while I'm in here" — stop. Open a separate commit. Fill in the review gate. Then decide if this is the right time to absorb that authority version.
 
 ---
 
