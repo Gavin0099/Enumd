@@ -1,0 +1,1790 @@
+{
+  "generated_at": "2026-04-21",
+  "source": "git-tracked source.xml snapshot before removal from tracking",
+  "count": 297,
+  "total_bytes": 3641535,
+  "entries": [
+    {
+      "slug": "-clawdbot-自主代理建置與資安防禦全紀錄",
+      "path": "knowledge/production_v1/wave_1/-clawdbot-自主代理建置與資安防禦全紀錄/source.xml",
+      "bytes": 2861,
+      "sha256": "d6693920573128beb93013fb0fdb02359ec32ff79bac338465b3b6a445eefed4"
+    },
+    {
+      "slug": "-generic-usb-filter-driver-",
+      "path": "knowledge/production_v1/wave_1/-generic-usb-filter-driver-/source.xml",
+      "bytes": 29252,
+      "sha256": "a786dc080cf7c3cf89a62091c889f92a056f5bf2b45d562e49e4d950ff1f92ba"
+    },
+    {
+      "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "path": "knowledge/production_v1/wave_1/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-/source.xml",
+      "bytes": 22690,
+      "sha256": "a468a14a5a498cd839529817767fad6e3d28bd8cbba688f3256956ab4ee480c6"
+    },
+    {
+      "slug": "-hp-firmware-installer-macos-完整修復與發布手冊",
+      "path": "knowledge/production_v1/wave_1/-hp-firmware-installer-macos-完整修復與發布手冊/source.xml",
+      "bytes": 4308,
+      "sha256": "e48dca959daf341e7f91ee68ecfce4f09ec2aaf054a957556be1b5dbfbd4df1a"
+    },
+    {
+      "slug": "-hp-sdlc-master-compliance-checklist-2025-edition",
+      "path": "knowledge/production_v1/wave_1/-hp-sdlc-master-compliance-checklist-2025-edition/source.xml",
+      "bytes": 28897,
+      "sha256": "641a66a867fb03216c332194d87dde639b95016df7a77f41ebc543bf9a9a2e9a"
+    },
+    {
+      "slug": "-lenovo-display-daisy-chain-issue",
+      "path": "knowledge/production_v1/wave_1/-lenovo-display-daisy-chain-issue/source.xml",
+      "bytes": 7053,
+      "sha256": "483dbe84c9dd31dec301c51e23a9d4db68cf26083d495d663b005bdcd5d1630c"
+    },
+    {
+      "slug": "-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網",
+      "path": "knowledge/production_v1/wave_1/-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網/source.xml",
+      "bytes": 327,
+      "sha256": "f1d110b4f73584b19a994e9aad9f06a49e6d82bd0e605df4a3b0befc8fd97693"
+    },
+    {
+      "slug": "-投影片大綱從餵指令到定規則",
+      "path": "knowledge/production_v1/wave_1/-投影片大綱從餵指令到定規則/source.xml",
+      "bytes": 4915,
+      "sha256": "e0522d632978b59ae8b872363c631ecd710cc82c89096c366fe475e9d9a67da2"
+    },
+    {
+      "slug": "0206-0209-交接",
+      "path": "knowledge/production_v1/wave_1/0206-0209-交接/source.xml",
+      "bytes": 6666,
+      "sha256": "3fe832acffb11150b3c1806d19afc1c26b170b7e2e51c17640f4007b26a498b3"
+    },
+    {
+      "slug": "0326-0330-交接",
+      "path": "knowledge/production_v1/wave_1/0326-0330-交接/source.xml",
+      "bytes": 3483,
+      "sha256": "e5ef0ddf700576654b5acc69eabb17374023f0567f58da8e8c9b61ef22365eb9"
+    },
+    {
+      "slug": "12261230-交接",
+      "path": "knowledge/production_v1/wave_1/12261230-交接/source.xml",
+      "bytes": 5607,
+      "sha256": "22aca61bc04442b20a9fbeb8db012f3ff8a55487e4f990d18eb3f3c049adf55d"
+    },
+    {
+      "slug": "2021-今年重點目標",
+      "path": "knowledge/production_v1/wave_1/2021-今年重點目標/source.xml",
+      "bytes": 34150,
+      "sha256": "163315ab14ef9f2e431e601a84487e84824bdf5eb1fa3ee04ae4fda493645320"
+    },
+    {
+      "slug": "2021部門創新提案",
+      "path": "knowledge/production_v1/wave_1/2021部門創新提案/source.xml",
+      "bytes": 30106,
+      "sha256": "627acb9513209dca5c8960e7b4558dda9a3daf7f9c4b491055f6d6df9c7f6515"
+    },
+    {
+      "slug": "20240729-82-交接事項",
+      "path": "knowledge/production_v1/wave_1/20240729-82-交接事項/source.xml",
+      "bytes": 28106,
+      "sha256": "b7e02a8cb12db92eafb8c57be8198238ecd43f0f46638339791c82f7a144c635"
+    },
+    {
+      "slug": "2024部門創新提案",
+      "path": "knowledge/production_v1/wave_1/2024部門創新提案/source.xml",
+      "bytes": 27256,
+      "sha256": "35d3210489ae3fcc928db5a0663f46e016a0eb6d4e175745cdca6a0f594175fe"
+    },
+    {
+      "slug": "2025-519523-交接事項",
+      "path": "knowledge/production_v1/wave_1/2025-519523-交接事項/source.xml",
+      "bytes": 5409,
+      "sha256": "69c82abba1c6d8419e2f3db0643942a9c1bafd31efa7fa52a9c54c8c84e374c6"
+    },
+    {
+      "slug": "2025-minimum-elements-for-a-software-bill-of-materials-sbom",
+      "path": "knowledge/production_v1/wave_1/2025-minimum-elements-for-a-software-bill-of-materials-sbom/source.xml",
+      "bytes": 30734,
+      "sha256": "babc1fa12c9cc3a457e6819ab0d752263d5cbf82435e75633b4f57140bf7af6b"
+    },
+    {
+      "slug": "2025-工作會報",
+      "path": "knowledge/production_v1/wave_1/2025-工作會報/source.xml",
+      "bytes": 9834,
+      "sha256": "4e1a674b6a0237fdef998681bfe979c57ac4d486ecdea8df519fa44124407d29"
+    },
+    {
+      "slug": "2025h2-報告",
+      "path": "knowledge/production_v1/wave_1/2025h2-報告/source.xml",
+      "bytes": 30837,
+      "sha256": "73606cb0e27821ec120dde522c1f767e7f75c2aa167070ed51c51ee926ba017c"
+    },
+    {
+      "slug": "3rd-party-code-signing-specification-ecdsa",
+      "path": "knowledge/production_v1/wave_1/3rd-party-code-signing-specification-ecdsa/source.xml",
+      "bytes": 2861,
+      "sha256": "3f667a36aa7bdd440eb7223f1e64e7e2241bd61758a6967612c87d5bf7e4d6cc"
+    },
+    {
+      "slug": "3rd-party-code-signing-specification-ecdsaen-",
+      "path": "knowledge/production_v1/wave_1/3rd-party-code-signing-specification-ecdsaen-/source.xml",
+      "bytes": 2861,
+      "sha256": "d6693920573128beb93013fb0fdb02359ec32ff79bac338465b3b6a445eefed4"
+    },
+    {
+      "slug": "8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool",
+      "path": "knowledge/production_v1/wave_1/8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool/source.xml",
+      "bytes": 6555,
+      "sha256": "612c677433965dd230bd311cef1fc9799bbd6926e3ff800173ca756c3d04e2f2"
+    },
+    {
+      "slug": "ai-協作開發框架定義規則的開發模式",
+      "path": "knowledge/production_v1/wave_1/ai-協作開發框架定義規則的開發模式/source.xml",
+      "bytes": 14935,
+      "sha256": "4b7cc38505f50bd9aeb23dfcf5d288c0674bb377b6cb913ea8394c7703a3e8f2"
+    },
+    {
+      "slug": "apple-command-line-update-instruction-",
+      "path": "knowledge/production_v1/wave_1/apple-command-line-update-instruction-/source.xml",
+      "bytes": 9834,
+      "sha256": "4e1a674b6a0237fdef998681bfe979c57ac4d486ecdea8df519fa44124407d29"
+    },
+    {
+      "slug": "世界上最快樂的工作",
+      "path": "knowledge/production_v1/wave_1/世界上最快樂的工作/source.xml",
+      "bytes": 964,
+      "sha256": "32fb7a49bea20d0e94d40a41d377db12e69dd973b7effe731e306653554912e0"
+    },
+    {
+      "slug": "交叉評核作業",
+      "path": "knowledge/production_v1/wave_1/交叉評核作業/source.xml",
+      "bytes": 22690,
+      "sha256": "a468a14a5a498cd839529817767fad6e3d28bd8cbba688f3256956ab4ee480c6"
+    },
+    {
+      "slug": "克服團隊領導的五大障礙-會議記錄",
+      "path": "knowledge/production_v1/wave_1/克服團隊領導的五大障礙-會議記錄/source.xml",
+      "bytes": 1525,
+      "sha256": "4680e6281502f2cd527497d1725e04d6b43a2b4e9a7c136eb1f7d93cbf6b9d4f"
+    },
+    {
+      "slug": "共好會議",
+      "path": "knowledge/production_v1/wave_1/共好會議/source.xml",
+      "bytes": 483,
+      "sha256": "e5ec0509e1b513f20e8bcbfbf0f7f79fc1b37b841d6d4165adba0c1c4ba7181f"
+    },
+    {
+      "slug": "判斷dll-是-x86-還是-x64",
+      "path": "knowledge/production_v1/wave_1/判斷dll-是-x86-還是-x64/source.xml",
+      "bytes": 327,
+      "sha256": "f1d110b4f73584b19a994e9aad9f06a49e6d82bd0e605df4a3b0befc8fd97693"
+    },
+    {
+      "slug": "取消使用stdafxh-include-方式",
+      "path": "knowledge/production_v1/wave_1/取消使用stdafxh-include-方式/source.xml",
+      "bytes": 6666,
+      "sha256": "3fe832acffb11150b3c1806d19afc1c26b170b7e2e51c17640f4007b26a498b3"
+    },
+    {
+      "slug": "各家ui",
+      "path": "knowledge/production_v1/wave_1/各家ui/source.xml",
+      "bytes": 161,
+      "sha256": "bbe6475b2f670aeaf7936e960e5b4af55271116dea46c0a939f0ee4fc9163da0"
+    },
+    {
+      "slug": "如何在mac-上透過wireshark-抓取-usb訊號",
+      "path": "knowledge/production_v1/wave_1/如何在mac-上透過wireshark-抓取-usb訊號/source.xml",
+      "bytes": 4308,
+      "sha256": "e48dca959daf341e7f91ee68ecfce4f09ec2aaf054a957556be1b5dbfbd4df1a"
+    },
+    {
+      "slug": "如何在xocde-執行-clang-format",
+      "path": "knowledge/production_v1/wave_1/如何在xocde-執行-clang-format/source.xml",
+      "bytes": 6812,
+      "sha256": "5af25e868b1a2e56031cf5a6e33dec88b6c137a5c97b7c7c8608fc566e04924d"
+    },
+    {
+      "slug": "工作目標",
+      "path": "knowledge/production_v1/wave_1/工作目標/source.xml",
+      "bytes": 826,
+      "sha256": "fba9f101f872bce988198a3d6460703ad15d08bd75e37d4afe59fd788b2e5059"
+    },
+    {
+      "slug": "憑證檔案",
+      "path": "knowledge/production_v1/wave_1/憑證檔案/source.xml",
+      "bytes": 167,
+      "sha256": "51001603df131bd09452fa249d60b32c636e623c7b3bd255d99ab393b7c60c80"
+    },
+    {
+      "slug": "新人參考資料",
+      "path": "knowledge/production_v1/wave_1/新人參考資料/source.xml",
+      "bytes": 27256,
+      "sha256": "35d3210489ae3fcc928db5a0663f46e016a0eb6d4e175745cdca6a0f594175fe"
+    },
+    {
+      "slug": "新架構導入新的chip-updatemt9052-方式",
+      "path": "knowledge/production_v1/wave_1/新架構導入新的chip-updatemt9052-方式/source.xml",
+      "bytes": 32900,
+      "sha256": "ed508cc4a0b0697678374cd56a237e696e2bf5a8e870611a413b6b77c5dc978f"
+    },
+    {
+      "slug": "物件導向分析與uml",
+      "path": "knowledge/production_v1/wave_1/物件導向分析與uml/source.xml",
+      "bytes": 3483,
+      "sha256": "e5ef0ddf700576654b5acc69eabb17374023f0567f58da8e8c9b61ef22365eb9"
+    },
+    {
+      "slug": "用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題",
+      "path": "knowledge/production_v1/wave_1/用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題/source.xml",
+      "bytes": 29252,
+      "sha256": "a786dc080cf7c3cf89a62091c889f92a056f5bf2b45d562e49e4d950ff1f92ba"
+    },
+    {
+      "slug": "短期行動-vs-長期視野從混亂到有序結構化軟體建構之路",
+      "path": "knowledge/production_v1/wave_1/短期行動-vs-長期視野從混亂到有序結構化軟體建構之路/source.xml",
+      "bytes": 34150,
+      "sha256": "163315ab14ef9f2e431e601a84487e84824bdf5eb1fa3ee04ae4fda493645320"
+    },
+    {
+      "slug": "研發投扺專案資料列印流程",
+      "path": "knowledge/production_v1/wave_1/研發投扺專案資料列印流程/source.xml",
+      "bytes": 5607,
+      "sha256": "22aca61bc04442b20a9fbeb8db012f3ff8a55487e4f990d18eb3f3c049adf55d"
+    },
+    {
+      "slug": "結構-struct-的宣告與封裝和使用練習-c",
+      "path": "knowledge/production_v1/wave_1/結構-struct-的宣告與封裝和使用練習-c/source.xml",
+      "bytes": 28106,
+      "sha256": "b7e02a8cb12db92eafb8c57be8198238ecd43f0f46638339791c82f7a144c635"
+    },
+    {
+      "slug": "自動化測試",
+      "path": "knowledge/production_v1/wave_1/自動化測試/source.xml",
+      "bytes": 28897,
+      "sha256": "641a66a867fb03216c332194d87dde639b95016df7a77f41ebc543bf9a9a2e9a"
+    },
+    {
+      "slug": "自評",
+      "path": "knowledge/production_v1/wave_1/自評/source.xml",
+      "bytes": 7053,
+      "sha256": "483dbe84c9dd31dec301c51e23a9d4db68cf26083d495d663b005bdcd5d1630c"
+    },
+    {
+      "slug": "軟體一組會議記錄",
+      "path": "knowledge/production_v1/wave_1/軟體一組會議記錄/source.xml",
+      "bytes": 469,
+      "sha256": "3d82102363e09be763b74b3d3f703741903fdb5b1e9a5cf4569db24483cbcf4b"
+    },
+    {
+      "slug": "軟體品質",
+      "path": "knowledge/production_v1/wave_1/軟體品質/source.xml",
+      "bytes": 197,
+      "sha256": "65482cc15549b9c96c8accac109a3f67624c83388af8658cd4da59d0b585db4e"
+    },
+    {
+      "slug": "遠端會議相關資料",
+      "path": "knowledge/production_v1/wave_1/遠端會議相關資料/source.xml",
+      "bytes": 5601,
+      "sha256": "1fbf57ae759f783eac78bcf7677d78e45179e3575fe64e75899fc039f8eb37d3"
+    },
+    {
+      "slug": "bu-support-相關知識",
+      "path": "knowledge/production_v1/wave_2/bu-support-相關知識/source.xml",
+      "bytes": 4251,
+      "sha256": "be8e9dbd543fbdbbac7246091ab2876dcd251be5f0e91f8c1c677db4391aeea8"
+    },
+    {
+      "slug": "bu5-support-update-chip-類型",
+      "path": "knowledge/production_v1/wave_2/bu5-support-update-chip-類型/source.xml",
+      "bytes": 1056,
+      "sha256": "4ebbb2c8691c9fbb9d9e68772e68bb6fd325ca6676ff252a22a252dd0ca782c7"
+    },
+    {
+      "slug": "bus-hound-簡易說明",
+      "path": "knowledge/production_v1/wave_2/bus-hound-簡易說明/source.xml",
+      "bytes": 7139,
+      "sha256": "3ac61814f32e03b3b5826ff3673872af666faad35e39304b5b8dd10dc1d4b95f"
+    },
+    {
+      "slug": "c-11-design-pattern-uml",
+      "path": "knowledge/production_v1/wave_2/c-11-design-pattern-uml/source.xml",
+      "bytes": 3627,
+      "sha256": "95963ec28dd7b464b5f408e767c4e4dfa81d0b144edf23fb12607008ad26991f"
+    },
+    {
+      "slug": "c-使用c產生的dll-問題",
+      "path": "knowledge/production_v1/wave_2/c-使用c產生的dll-問題/source.xml",
+      "bytes": 29497,
+      "sha256": "8a16ee426af47dbc808c600652be7a4123b3d19178ed12d5863e390f2c38cb25"
+    },
+    {
+      "slug": "camera-透過我們驗證-code-sign",
+      "path": "knowledge/production_v1/wave_2/camera-透過我們驗證-code-sign/source.xml",
+      "bytes": 5625,
+      "sha256": "3ef354c93db93fcb9aa417fc948a9264b1e1ae5bb5e67d265fe546220461d556"
+    },
+    {
+      "slug": "chatgpt-temp",
+      "path": "knowledge/production_v1/wave_2/chatgpt-temp/source.xml",
+      "bytes": 57194,
+      "sha256": "4534a4460ba711397ff4b507d810d4b7e4e171c515c2d2023efa648b6d9a770b"
+    },
+    {
+      "slug": "chatgpt-簡介",
+      "path": "knowledge/production_v1/wave_2/chatgpt-簡介/source.xml",
+      "bytes": 29328,
+      "sha256": "301b1034bdcb70a1d88fc73904b61e15c812b5c6dacf4fceb4bb38fec58562e9"
+    },
+    {
+      "slug": "check-list-before-release-tool",
+      "path": "knowledge/production_v1/wave_2/check-list-before-release-tool/source.xml",
+      "bytes": 22173,
+      "sha256": "882bc9e09088740b638cd04c37e411272e28683b5a1609a2495426c34d32677c"
+    },
+    {
+      "slug": "check-windows-version",
+      "path": "knowledge/production_v1/wave_2/check-windows-version/source.xml",
+      "bytes": 215,
+      "sha256": "6e88aa2f7e457be991ba45b9896268507c9c3eb0776d253bcb960005d8258ad5"
+    },
+    {
+      "slug": "chrome-遠端桌面設定方式",
+      "path": "knowledge/production_v1/wave_2/chrome-遠端桌面設定方式/source.xml",
+      "bytes": 27415,
+      "sha256": "7ec46b76325b64bfdf4c87f02582900a5fa1899296ba6a28e07e5fc50060050c"
+    },
+    {
+      "slug": "clash_noise",
+      "path": "knowledge/production_v1/wave_2/clash_noise/source.xml",
+      "bytes": 734,
+      "sha256": "70d14084162a6f8293f82f21bf1c9fe246ef76d7d62123c1900db963ac3a99da"
+    },
+    {
+      "slug": "cli-command-line-list",
+      "path": "knowledge/production_v1/wave_2/cli-command-line-list/source.xml",
+      "bytes": 2966,
+      "sha256": "dd916a5398f79bfb40dab4787ca89eb9c763bde0bad38cbcce4d94bce8e1a14c"
+    },
+    {
+      "slug": "cmake-設定方式",
+      "path": "knowledge/production_v1/wave_2/cmake-設定方式/source.xml",
+      "bytes": 5831,
+      "sha256": "3987e890b16bc0783c151a5bad02e0ac26d0c6d9500283f436afdab34884a203"
+    },
+    {
+      "slug": "code-sign-ecc-key",
+      "path": "knowledge/production_v1/wave_2/code-sign-ecc-key/source.xml",
+      "bytes": 2857,
+      "sha256": "def28ced7cc5552e8b9177433d90519a552c7e282f45945c4fb4017a4e2a564a"
+    },
+    {
+      "slug": "code-sign-flow",
+      "path": "knowledge/production_v1/wave_2/code-sign-flow/source.xml",
+      "bytes": 4869,
+      "sha256": "d610aaa0e2996d29bc019394c03090c067c414932d810fa4c8638d028b73c1e7"
+    },
+    {
+      "slug": "code-sign-技術規格文件-整合版",
+      "path": "knowledge/production_v1/wave_2/code-sign-技術規格文件-整合版/source.xml",
+      "bytes": 53121,
+      "sha256": "506838bed735db0c92e6dd8e64c646ce8cf8a0ca6c3f887ac2486f50755beea3"
+    },
+    {
+      "slug": "code-sign-概述",
+      "path": "knowledge/production_v1/wave_2/code-sign-概述/source.xml",
+      "bytes": 4537,
+      "sha256": "7d940dc16f2a4da40439907a288377403984b7e016d8032315379cdbefaa783f"
+    },
+    {
+      "slug": "code-sign-資源",
+      "path": "knowledge/production_v1/wave_2/code-sign-資源/source.xml",
+      "bytes": 3819,
+      "sha256": "5281746b01c29df66a69b3b8f0ab95639ed549236f9babf3b77405cc1dd1752b"
+    },
+    {
+      "slug": "command-line-tool-debug-路徑",
+      "path": "knowledge/production_v1/wave_2/command-line-tool-debug-路徑/source.xml",
+      "bytes": 28747,
+      "sha256": "3a5056c6119f3e7577bd0c866a9e9abf026ef8e06c5f1667a22eaf45514b9641"
+    },
+    {
+      "slug": "command-line-tool-instructions",
+      "path": "knowledge/production_v1/wave_2/command-line-tool-instructions/source.xml",
+      "bytes": 7155,
+      "sha256": "477fb2643ae736bc6e1a2fac1fc0ad32352d784c5e3786dddd33bf60a08f56f9"
+    },
+    {
+      "slug": "command-line-tool-logging-method",
+      "path": "knowledge/production_v1/wave_2/command-line-tool-logging-method/source.xml",
+      "bytes": 6511,
+      "sha256": "f39a3609142b25588d105eb0ab6eafe2853c8fd10b2248175f4e1643cde672dc"
+    },
+    {
+      "slug": "command-line-tool-user-guide",
+      "path": "knowledge/production_v1/wave_2/command-line-tool-user-guide/source.xml",
+      "bytes": 679,
+      "sha256": "f960f57abf2aa3b4aa13b2f73c6d6be1a10885632260629c5290919c21ecf453"
+    },
+    {
+      "slug": "command-line-uninstall-driver",
+      "path": "knowledge/production_v1/wave_2/command-line-uninstall-driver/source.xml",
+      "bytes": 5843,
+      "sha256": "53d0214a1a9a49320fd73f814ce45e9e6615a87708f1854112f298947dfd87ad"
+    },
+    {
+      "slug": "debug-前客戶取得需求資訊",
+      "path": "knowledge/production_v1/wave_2/debug-前客戶取得需求資訊/source.xml",
+      "bytes": 3572,
+      "sha256": "f7b7cc96c20accd52bac60fa2cf4267dfbde82a66f239f54c007610050a7b8ca"
+    },
+    {
+      "slug": "discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-",
+      "path": "knowledge/production_v1/wave_2/discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-/source.xml",
+      "bytes": 8810,
+      "sha256": "4aa86177824575829dcd2104d6d561ab9f2b8fe30195f4b4a4e5eea5e3c28d83"
+    },
+    {
+      "slug": "drawio-相關連結",
+      "path": "knowledge/production_v1/wave_2/drawio-相關連結/source.xml",
+      "bytes": 3335,
+      "sha256": "617f4425c14293db9908689654f47f035a65b24413c73c0d6bed25fe76ae5364"
+    },
+    {
+      "slug": "driver-刪除方式",
+      "path": "knowledge/production_v1/wave_2/driver-刪除方式/source.xml",
+      "bytes": 27621,
+      "sha256": "33d8410e4fdb79cc0853bf08488e520ce597dfbd7c7bd70b7271e069b2c16fbe"
+    },
+    {
+      "slug": "e22e24i-1st-2nd-scalar-update-",
+      "path": "knowledge/production_v1/wave_2/e22e24i-1st-2nd-scalar-update-/source.xml",
+      "bytes": 29306,
+      "sha256": "ae95154c3a341fc0f3ba2ebefaf0a866618ba0706e908f342069d300baf8bfa7"
+    },
+    {
+      "slug": "e27m-e34m-driver-install-fail",
+      "path": "knowledge/production_v1/wave_2/e27m-e34m-driver-install-fail/source.xml",
+      "bytes": 5835,
+      "sha256": "50075449c0c2fb4b4be3bd3b5123deff00b13e851e8d7247e5f158830ff94714"
+    },
+    {
+      "slug": "ecc-key",
+      "path": "knowledge/production_v1/wave_2/ecc-key/source.xml",
+      "bytes": 6659,
+      "sha256": "3b8dba1c686531e76daa9d7bf508fa617357abde35092516c66f24505f9a39d0"
+    },
+    {
+      "slug": "electron",
+      "path": "knowledge/production_v1/wave_2/electron/source.xml",
+      "bytes": 16903,
+      "sha256": "a54a0f7a2f56f33fb540600d4feb24e432f59e72ba7505943fbed06ae4117784"
+    },
+    {
+      "slug": "etoken-system",
+      "path": "knowledge/production_v1/wave_2/etoken-system/source.xml",
+      "bytes": 17311,
+      "sha256": "5f9f17341339263044a40cc0a8b55823dc42603b422747c2dab713fb9afc7fb4"
+    },
+    {
+      "slug": "etoken-system-code-view-",
+      "path": "knowledge/production_v1/wave_2/etoken-system-code-view-/source.xml",
+      "bytes": 31161,
+      "sha256": "e7300ebd4629930363d17b19beb1bf9230079af6037437e09920c1edf8058555"
+    },
+    {
+      "slug": "etoken-安全簽章系統技術說明",
+      "path": "knowledge/production_v1/wave_2/etoken-安全簽章系統技術說明/source.xml",
+      "bytes": 5650,
+      "sha256": "6c63da408dc207b95a23b51f05bcbb9547658026a912c215832f15ec52406d9c"
+    },
+    {
+      "slug": "faststone-capture-註冊碼-序列號-",
+      "path": "knowledge/production_v1/wave_2/faststone-capture-註冊碼-序列號-/source.xml",
+      "bytes": 2856,
+      "sha256": "3dd8cda6aacfe3d2594e7223d110d84d82017a5f4a26e5589fe24b65d81d73d8"
+    },
+    {
+      "slug": "flutter",
+      "path": "knowledge/production_v1/wave_2/flutter/source.xml",
+      "bytes": 8493,
+      "sha256": "4ffac6d9c1cfb22e80f16e25a95ab470d17448505d1d56c5e7f4eca7835b28d9"
+    },
+    {
+      "slug": "fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification",
+      "path": "knowledge/production_v1/wave_2/fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification/source.xml",
+      "bytes": 15587,
+      "sha256": "23879f325483d7e367647d1865436787ae1617cab94bf9ca377d6c927f540431"
+    },
+    {
+      "slug": "genesys-logic-3rd-party-code-signing-specification-ecdsa-",
+      "path": "knowledge/production_v1/wave_2/genesys-logic-3rd-party-code-signing-specification-ecdsa-/source.xml",
+      "bytes": 2949,
+      "sha256": "6d1d1ee857965a086d87aa3d48cd2e1144f80d320fd94fc9f1f5dc1b22930f46"
+    },
+    {
+      "slug": "genesys-logic-spec",
+      "path": "knowledge/production_v1/wave_2/genesys-logic-spec/source.xml",
+      "bytes": 4081,
+      "sha256": "44ca975fa6b3415963546ae785f73603b4b6705790d91264a5d472ea7c25fdcc"
+    },
+    {
+      "slug": "genesys-logic-sw-3rd-source-code-license-",
+      "path": "knowledge/production_v1/wave_2/genesys-logic-sw-3rd-source-code-license-/source.xml",
+      "bytes": 2913,
+      "sha256": "e60abd4511d25c7fc485917bccd667795c70651e4c1e8f58990f0918d45983ce"
+    },
+    {
+      "slug": "genesyslogic-integrates-sdk-specification",
+      "path": "knowledge/production_v1/wave_2/genesyslogic-integrates-sdk-specification/source.xml",
+      "bytes": 6235,
+      "sha256": "43752598f54ac98488cd7078e2c07d689e9ede62ff7996aa0e750a2345857606"
+    },
+    {
+      "slug": "get-monitor-info-",
+      "path": "knowledge/production_v1/wave_2/get-monitor-info-/source.xml",
+      "bytes": 6252,
+      "sha256": "e35da7d274064b5d349f95b1a3d97e65ad7286a26aafbf9ce90101d988549e0c"
+    },
+    {
+      "slug": "git-command-list",
+      "path": "knowledge/production_v1/wave_2/git-command-list/source.xml",
+      "bytes": 5752,
+      "sha256": "f1ee8e20e1b4602e14733bc5d0638a1b17bc8a32c34339e5e788dbf7559db383"
+    },
+    {
+      "slug": "git-gitlab",
+      "path": "knowledge/production_v1/wave_2/git-gitlab/source.xml",
+      "bytes": 4750,
+      "sha256": "32a7a37311cda762019c3a2a86007c62ea823638151d4bba60f04c45c601bb83"
+    },
+    {
+      "slug": "gitlab-ee-wiki-",
+      "path": "knowledge/production_v1/wave_2/gitlab-ee-wiki-/source.xml",
+      "bytes": 4263,
+      "sha256": "df92e0297fdd60f6c4e5ea44d5c26196b72b4d56681a523ca4c7ab1f2583818d"
+    },
+    {
+      "slug": "gl-3590-ecdsa-code-驗證",
+      "path": "knowledge/production_v1/wave_2/gl-3590-ecdsa-code-驗證/source.xml",
+      "bytes": 4602,
+      "sha256": "6c4bc3a8ba04b681ac6516f7b4db9681724286006fe03b8eee548cfd213fa76f"
+    },
+    {
+      "slug": "gl-bin",
+      "path": "knowledge/production_v1/wave_2/gl-bin/source.xml",
+      "bytes": 57243,
+      "sha256": "add7f5fda517137720d45819d2425b2f56634a375758e8afe6078c4c5751a0f6"
+    },
+    {
+      "slug": "gl-bin-tool",
+      "path": "knowledge/production_v1/wave_2/gl-bin-tool/source.xml",
+      "bytes": 48572,
+      "sha256": "4f788cf4b17b10c662c0391db559544a6a03a725e886908ea5850d66811cc4e4"
+    },
+    {
+      "slug": "gl-diagnostic-tool",
+      "path": "knowledge/production_v1/wave_2/gl-diagnostic-tool/source.xml",
+      "bytes": 163,
+      "sha256": "c186234fc99bf0740d806c94b01327c72e9a227546fd3e9c44b31b6847c5c702"
+    },
+    {
+      "slug": "gl-enduser-tool-architecture-",
+      "path": "knowledge/production_v1/wave_3/gl-enduser-tool-architecture-/source.xml",
+      "bytes": 7836,
+      "sha256": "eeaaca1eb7686b4d14947988a8f65730f1f75c605fb104b2a17e7363284b3299"
+    },
+    {
+      "slug": "gl-enduser-tool-for-electron",
+      "path": "knowledge/production_v1/wave_3/gl-enduser-tool-for-electron/source.xml",
+      "bytes": 8705,
+      "sha256": "8f3f0aee28c4affbc93ae37d0be70c2251bdddf10d6c3e75509c9cae807eea30"
+    },
+    {
+      "slug": "gl-enduser-tool-instruction",
+      "path": "knowledge/production_v1/wave_3/gl-enduser-tool-instruction/source.xml",
+      "bytes": 11694,
+      "sha256": "52db0f1b38101f3b17c613456f3f97b3d446c5019e632d01b287dc98dcbf6aed"
+    },
+    {
+      "slug": "gl-enduser-tool-merge-bin-head-format",
+      "path": "knowledge/production_v1/wave_3/gl-enduser-tool-merge-bin-head-format/source.xml",
+      "bytes": 9208,
+      "sha256": "90e3b7f5385118c8a064369129962767b3aab89b2c7314abed017ee6d5a8c306"
+    },
+    {
+      "slug": "gl-hub-code-sign-recovery-flow",
+      "path": "knowledge/production_v1/wave_3/gl-hub-code-sign-recovery-flow/source.xml",
+      "bytes": 8710,
+      "sha256": "a1c30ac8a5b76e0feb546eaa80ff4b6a30753a2781eec46a7373536dc60eb45d"
+    },
+    {
+      "slug": "gl-hub-software-development-kit",
+      "path": "knowledge/production_v1/wave_3/gl-hub-software-development-kit/source.xml",
+      "bytes": 6962,
+      "sha256": "53558e5f0d2e8158b1fabd94adbc06f877575f7d0c3e7a3988cb7b031fb6ed4f"
+    },
+    {
+      "slug": "gl-hubdriver-v163-測試流程",
+      "path": "knowledge/production_v1/wave_3/gl-hubdriver-v163-測試流程/source.xml",
+      "bytes": 15935,
+      "sha256": "0426ef25bf9a8b98a01b44121d496ee5857688f4e9f06b6b8b2bb7f492050a7c"
+    },
+    {
+      "slug": "gl-mac-bundle-id-結論",
+      "path": "knowledge/production_v1/wave_3/gl-mac-bundle-id-結論/source.xml",
+      "bytes": 2905,
+      "sha256": "3b5bc0c42aa401f0ee62851e563ab33e330eb57e32ca0de32616d3ca1c431a43"
+    },
+    {
+      "slug": "gl3590-code-sign-flow-hub-hostbridge",
+      "path": "knowledge/production_v1/wave_3/gl3590-code-sign-flow-hub-hostbridge/source.xml",
+      "bytes": 3115,
+      "sha256": "832d7650113fab4db3131eca85912d2003c8919e04acd139ca8a31859a8d9216"
+    },
+    {
+      "slug": "gl3590-gl9510-code-sign",
+      "path": "knowledge/production_v1/wave_3/gl3590-gl9510-code-sign/source.xml",
+      "bytes": 8862,
+      "sha256": "52f85a5cbd99b8ddc225e8dbdbfcdd4d6bfde352d170adbc889f01ae91a6a938"
+    },
+    {
+      "slug": "gl3590-hostbridge-code-sign",
+      "path": "knowledge/production_v1/wave_3/gl3590-hostbridge-code-sign/source.xml",
+      "bytes": 4788,
+      "sha256": "3920f103c03a4b7611bf52cac14662a357c984f4e54ec3d231458b4b70b19e28"
+    },
+    {
+      "slug": "gl3590-s-cmd-line-tool-for-windows",
+      "path": "knowledge/production_v1/wave_3/gl3590-s-cmd-line-tool-for-windows/source.xml",
+      "bytes": 4078,
+      "sha256": "c6d57c64a2ec312f1d5b580cd8670d653db806f71b7d2ac6b0909114cbf674e1"
+    },
+    {
+      "slug": "gl7524-a02-code-sign-與-isp-安全架構case-3",
+      "path": "knowledge/production_v1/wave_3/gl7524-a02-code-sign-與-isp-安全架構case-3/source.xml",
+      "bytes": 21031,
+      "sha256": "36fc01d2128e6f7de5d6d025c039026a8ebe20bf59b363788876811735dbde0b"
+    },
+    {
+      "slug": "glbin-tool-user-guide",
+      "path": "knowledge/production_v1/wave_3/glbin-tool-user-guide/source.xml",
+      "bytes": 2940,
+      "sha256": "ef10f47e1a98021cd48017e29cfc52fd675571ee5c47fa803fef2f010063039b"
+    },
+    {
+      "slug": "gldualbankfwtesttool-說明文件",
+      "path": "knowledge/production_v1/wave_3/gldualbankfwtesttool-說明文件/source.xml",
+      "bytes": 16593,
+      "sha256": "40caa27390515899677ff2cb1f2d602fd07378f21c12224b2e561f7b90a481a1"
+    },
+    {
+      "slug": "glhub-driver-instruction",
+      "path": "knowledge/production_v1/wave_3/glhub-driver-instruction/source.xml",
+      "bytes": 16905,
+      "sha256": "1ca167271e94061d1348d722c08d821d29b5ad55a71b71ff6fa29a1495a64e86"
+    },
+    {
+      "slug": "glhubupdatetoolcli-req-command-description",
+      "path": "knowledge/production_v1/wave_3/glhubupdatetoolcli-req-command-description/source.xml",
+      "bytes": 24081,
+      "sha256": "ebeffc82f384ca43b8ce147d0ebdb3db8341614dbab614d6f2f2d7f78f097738"
+    },
+    {
+      "slug": "gli7524-hub-isp-update-too",
+      "path": "knowledge/production_v1/wave_3/gli7524-hub-isp-update-too/source.xml",
+      "bytes": 37894,
+      "sha256": "c381c63654fd43668b3510d7076f9c937599400568fa46adec75cc9ce6ab4cca"
+    },
+    {
+      "slug": "glitw-vpn-client-操作說明",
+      "path": "knowledge/production_v1/wave_3/glitw-vpn-client-操作說明/source.xml",
+      "bytes": 215,
+      "sha256": "a2bb301f616ccd8e31c6aac6621008a7547c58f25f2213fc8fc3f5ab7b8593d0"
+    },
+    {
+      "slug": "helper-utility-librarydll",
+      "path": "knowledge/production_v1/wave_3/helper-utility-librarydll/source.xml",
+      "bytes": 3052,
+      "sha256": "20f204672a658e42ca34f26c1801a97aa8bfc2c84508b866cf1657f6d3d12840"
+    },
+    {
+      "slug": "hid-code-sign-update-rule",
+      "path": "knowledge/production_v1/wave_3/hid-code-sign-update-rule/source.xml",
+      "bytes": 3195,
+      "sha256": "846819389c149dd139eb130efce4f5eebb1c2daf5ba3b5f4dca1ed26f15e21be"
+    },
+    {
+      "slug": "hid-code-sign-記錄",
+      "path": "knowledge/production_v1/wave_3/hid-code-sign-記錄/source.xml",
+      "bytes": 4041,
+      "sha256": "0a04128f95c378c2c57821b728745f378d7563212dd4f9a41d2ea0a1ab01f0d1"
+    },
+    {
+      "slug": "hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd",
+      "path": "knowledge/production_v1/wave_3/hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd/source.xml",
+      "bytes": 18106,
+      "sha256": "cc2da7d91f34281eb57f93fe0f0b3b88ebed6ebb5a13a4c34e07b8069b6e4ff2"
+    },
+    {
+      "slug": "how-to-bound-target-device",
+      "path": "knowledge/production_v1/wave_3/how-to-bound-target-device/source.xml",
+      "bytes": 8925,
+      "sha256": "88302849aae61e08c0792a8f9fdea7ef49c0d5cab6605c4e9ed448d1d2631648"
+    },
+    {
+      "slug": "how-to-capture-standard-isp-tool-log",
+      "path": "knowledge/production_v1/wave_3/how-to-capture-standard-isp-tool-log/source.xml",
+      "bytes": 24531,
+      "sha256": "6b35c61198077cc4841e57c0460eb1619856e8cfe0aaa38836f2beeae4e389ca"
+    },
+    {
+      "slug": "how-to-generate-system-log",
+      "path": "knowledge/production_v1/wave_3/how-to-generate-system-log/source.xml",
+      "bytes": 9654,
+      "sha256": "2fbe1e704eabd1efd5a2de74b11699498378075718239e1cd550ff049de1084b"
+    },
+    {
+      "slug": "how-to-grab-debugview-log",
+      "path": "knowledge/production_v1/wave_3/how-to-grab-debugview-log/source.xml",
+      "bytes": 9742,
+      "sha256": "dfc35d4eb3efe3a43e20be745fbb0ddead002717995220edf95177f6d66a468b"
+    },
+    {
+      "slug": "how-to-grab-hp-command-tool-log-",
+      "path": "knowledge/production_v1/wave_3/how-to-grab-hp-command-tool-log-/source.xml",
+      "bytes": 5025,
+      "sha256": "c52f4f24cf7f39b5ef9a8db287e51852b6a64c5a88022db08475e7fec1aa4f24"
+    },
+    {
+      "slug": "how-to-grab-hp-enduser-tool-log-",
+      "path": "knowledge/production_v1/wave_3/how-to-grab-hp-enduser-tool-log-/source.xml",
+      "bytes": 9329,
+      "sha256": "1d9816c77fd7c498bfb51224ef948c9a4840d2030fe7d34812cbdc934fbff9ef"
+    },
+    {
+      "slug": "how-to-grab-hp-isp-tool-log",
+      "path": "knowledge/production_v1/wave_3/how-to-grab-hp-isp-tool-log/source.xml",
+      "bytes": 24458,
+      "sha256": "459f0a9c4f0788d99050ae99d388fc0a567c9c53f1b5140e205c8039c87ca2f4"
+    },
+    {
+      "slug": "how-to-grab-isp-tool-log-",
+      "path": "knowledge/production_v1/wave_3/how-to-grab-isp-tool-log-/source.xml",
+      "bytes": 24523,
+      "sha256": "62214b5c72c953a6999b7223895ccf705ed6be657b030d5ff2461ecf1e9a1562"
+    },
+    {
+      "slug": "how-to-grab-log",
+      "path": "knowledge/production_v1/wave_3/how-to-grab-log/source.xml",
+      "bytes": 9549,
+      "sha256": "50516ce8064841780ec4b6b0b01886597acc1b65a58c468c5690d15b985d8a9d"
+    },
+    {
+      "slug": "how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file",
+      "path": "knowledge/production_v1/wave_3/how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file/source.xml",
+      "bytes": 3243,
+      "sha256": "fdea63e8b9cbe901c00a19999129d0bac81895a748ddd069c906ec0ac9a67314"
+    },
+    {
+      "slug": "how-to-wrap-self-extraction-file-by-packagefortheweb400_0830",
+      "path": "knowledge/production_v1/wave_3/how-to-wrap-self-extraction-file-by-packagefortheweb400_0830/source.xml",
+      "bytes": 8438,
+      "sha256": "f1a4db09612d411fdc80256e61d012f46bb0ff64566e7c363bb5fc58982dc1cf"
+    },
+    {
+      "slug": "hp-534pm-fail-log",
+      "path": "knowledge/production_v1/wave_3/hp-534pm-fail-log/source.xml",
+      "bytes": 8215,
+      "sha256": "679dae539bfe48d2c02bdd153c2de62e0c5d60d6a06a355d865008f65f6e9b06"
+    },
+    {
+      "slug": "hp-549pm-dump-hub-flash-sop",
+      "path": "knowledge/production_v1/wave_3/hp-549pm-dump-hub-flash-sop/source.xml",
+      "bytes": 3294,
+      "sha256": "810c965fc6efdbc816469a30fcc2fcda94bdcfa8d72642ba8750aa2a12a35e80"
+    },
+    {
+      "slug": "hp-724-pu-firmware-更新流程與-ini-設定說明文件",
+      "path": "knowledge/production_v1/wave_3/hp-724-pu-firmware-更新流程與-ini-設定說明文件/source.xml",
+      "bytes": 16611,
+      "sha256": "ab7d1f5b90dc0e574bf465f5ca88b21740872be8b9cb97fd9a8f6dd7b2985178"
+    },
+    {
+      "slug": "hp-command-line-tool-logging-method",
+      "path": "knowledge/production_v1/wave_3/hp-command-line-tool-logging-method/source.xml",
+      "bytes": 6519,
+      "sha256": "34e4da293640fb4b929e5a5ee4d777e2afd976a5549c545c6ff6d64f76af3b20"
+    },
+    {
+      "slug": "hp-command-line-tool-user-guide",
+      "path": "knowledge/production_v1/wave_3/hp-command-line-tool-user-guide/source.xml",
+      "bytes": 299,
+      "sha256": "0128a7eebd9690512a747b27950a670df45cc3d0270ce3105c42bc3e6dde4bfb"
+    },
+    {
+      "slug": "hp-display-firmware-specification-v11",
+      "path": "knowledge/production_v1/wave_3/hp-display-firmware-specification-v11/source.xml",
+      "bytes": 30033,
+      "sha256": "2923dcfd2b35ac79566b97bbe2b19399e0aac46b944b79534f23e4763d4d3111"
+    },
+    {
+      "slug": "hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式",
+      "path": "knowledge/production_v1/wave_3/hp-e24mv-g4-enduser-tool-scaler-新舊chip-判斷方式/source.xml",
+      "bytes": 357,
+      "sha256": "fb9b6f9b4c10ad61514a07ab045f0140c73a1b7cf31ed556f2231fe101feed2c"
+    },
+    {
+      "slug": "hp-end-user-tool-packing-user-guide",
+      "path": "knowledge/production_v1/wave_3/hp-end-user-tool-packing-user-guide/source.xml",
+      "bytes": 8717,
+      "sha256": "45b4b30b22b374d4af1cf7ab582b3c3227a0603d5f933ec8df9c363e47969d40"
+    },
+    {
+      "slug": "hp-end-user-tool-封裝方式",
+      "path": "knowledge/production_v1/wave_3/hp-end-user-tool-封裝方式/source.xml",
+      "bytes": 21508,
+      "sha256": "5ceabac34a71f9e8a04d1820b12e34dd39270d28bc03b28347fec403434603d7"
+    },
+    {
+      "slug": "hp-enduser-tool-",
+      "path": "knowledge/production_v1/wave_3/hp-enduser-tool-/source.xml",
+      "bytes": 10672,
+      "sha256": "70578829e6ba4356973912ebb9eaffd2060091debbebe6f3b9d460f9809e7c30"
+    },
+    {
+      "slug": "hp-enduser-tool-debug-sop",
+      "path": "knowledge/production_v1/wave_3/hp-enduser-tool-debug-sop/source.xml",
+      "bytes": 3338,
+      "sha256": "774079d9758a476b5aef0c65932f4de4ed392d617aed3f283563576d04f1928f"
+    },
+    {
+      "slug": "hp-enduser-tool-包裝流程",
+      "path": "knowledge/production_v1/wave_3/hp-enduser-tool-包裝流程/source.xml",
+      "bytes": 13892,
+      "sha256": "3338a5daf3e02b59ac49d4c0a7af02990c95c1d2676db2cdef452b5f59760140"
+    },
+    {
+      "slug": "hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga",
+      "path": "knowledge/production_v1/wave_3/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga/source.xml",
+      "bytes": 7223,
+      "sha256": "b9c74a5cbcb73315e2a4549cf7f07f1120cb2791eef6d9f0fb5cd8c3a26904e1"
+    },
+    {
+      "slug": "hp-good-place-524pu-scaler-update-fail",
+      "path": "knowledge/production_v1/wave_3/hp-good-place-524pu-scaler-update-fail/source.xml",
+      "bytes": 9426,
+      "sha256": "83ad0d4205b79616d2d39e898bda53fb01dd42624c24ba1b4ed3729dba6dad93"
+    },
+    {
+      "slug": "hp-hemiz34c-cpu3-code-sign-驗證問題",
+      "path": "knowledge/production_v1/wave_3/hp-hemiz34c-cpu3-code-sign-驗證問題/source.xml",
+      "bytes": 45207,
+      "sha256": "ea370e22e23a17b8228ea514681a33ae148aa6020a96aeb83d83dde5e71ff75d"
+    },
+    {
+      "slug": "hp_display_firmware_update_specification",
+      "path": "knowledge/production_v1/wave_3/hp_display_firmware_update_specification/source.xml",
+      "bytes": 21912,
+      "sha256": "998346d2ec79769016ec423b85eb8b92ee7af687a7197ddf1b0a5733bc2dd580"
+    },
+    {
+      "slug": "hp-hub-code-sign-bin-format",
+      "path": "knowledge/production_v1/wave_4/hp-hub-code-sign-bin-format/source.xml",
+      "bytes": 2712,
+      "sha256": "e120069683440de19a84c8fc666e79f258bc8ec43aff9cf711aac0a75e7d10f7"
+    },
+    {
+      "slug": "hp-isp-tool-hub-update-flow",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-hub-update-flow/source.xml",
+      "bytes": 6761,
+      "sha256": "78f9837889d3c8b28eaca382694629d399567aa0ff428465c74594f6104c3561"
+    },
+    {
+      "slug": "hp-isp-tool-hub-update-flowhid",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-hub-update-flowhid/source.xml",
+      "bytes": 8313,
+      "sha256": "ddbe068d6995aeae928969438f5b54ea73eeac015ac7797bb372a6b19d10d37e"
+    },
+    {
+      "slug": "hp-isp-tool-mask-code-update-flow",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-mask-code-update-flow/source.xml",
+      "bytes": 8024,
+      "sha256": "66a80fc4618ecb685df1c08e7b435e7c87c6b58de56d2bd752b4db8ce4d48f8b"
+    },
+    {
+      "slug": "hp-isp-tool-rollback-hub-firmware-flow",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-rollback-hub-firmware-flow/source.xml",
+      "bytes": 8289,
+      "sha256": "55fa26e488d66ba896cc0d85c274f74c8522f8c7975ea8a05831018e1c001f51"
+    },
+    {
+      "slug": "hp-isp-tool-rollback-hub-firmware-flowu32",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-rollback-hub-firmware-flowu32/source.xml",
+      "bytes": 7936,
+      "sha256": "77f1654c5b7a9d5c5ccc7f9bdf199e6eabcb00932f1526bc17c9827cd4ff74be"
+    },
+    {
+      "slug": "hp-isp-tool-special-case-update-method",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-special-case-update-method/source.xml",
+      "bytes": 3625,
+      "sha256": "c07de9e6034c90235860f833ed7e4e3eac3a7b0618781a8b5976ab249b4fab27"
+    },
+    {
+      "slug": "hp-isp-tool-update-hub-firmware-flowz24m",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-update-hub-firmware-flowz24m/source.xml",
+      "bytes": 8061,
+      "sha256": "f6e01bf9d91067101bcc9342fe47d6e7ad95e1b0082fac5b28e07c2959f73ed8"
+    },
+    {
+      "slug": "hp-isp-tool-update-速度問題",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-update-速度問題/source.xml",
+      "bytes": 28358,
+      "sha256": "7ea04e482b6a8bd3d6503eb10fc563c8725e73d32d49fa026941a8c8c08cffc4"
+    },
+    {
+      "slug": "hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式",
+      "path": "knowledge/production_v1/wave_4/hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式/source.xml",
+      "bytes": 5879,
+      "sha256": "afefa7e1b8e3c1e832bcbbd2e94f78c2f30f394704e2f34e67652de83f048064"
+    },
+    {
+      "slug": "hp-mandatory-firmware-update-strategy-expansion-for-future-projects",
+      "path": "knowledge/production_v1/wave_4/hp-mandatory-firmware-update-strategy-expansion-for-future-projects/source.xml",
+      "bytes": 10890,
+      "sha256": "6b15f33cc3174c10b0dbdea20297711f274c8d44fbdcd2cd68cf1e7ef02202c3"
+    },
+    {
+      "slug": "hp-monitor-2023-schedule-",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-2023-schedule-/source.xml",
+      "bytes": 210,
+      "sha256": "ae7232bd7ab12e1ca72c31fde0e00646e10d12eaab1e811d82e88c63d74476ea"
+    },
+    {
+      "slug": "hp-monitor-2025-schedule-",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-2025-schedule-/source.xml",
+      "bytes": 193,
+      "sha256": "a7375523116caab09f668e24b247d4c58c4a0b62b808088737504ec09d469ceb"
+    },
+    {
+      "slug": "hp-monitor-code-sign-update-flow",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-code-sign-update-flow/source.xml",
+      "bytes": 11158,
+      "sha256": "40dc5c830bc94e460ae64c08d0d19d7ef150bc47d879f48601a1d184e3877821"
+    },
+    {
+      "slug": "hp-monitor-isp-tool-開發和驗證方式",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-isp-tool-開發和驗證方式/source.xml",
+      "bytes": 18547,
+      "sha256": "20a8b6afc9ef0e9c92f2d34884bdbe3d7d45db381b49cdd3304c0f5e4aca1654"
+    },
+    {
+      "slug": "hp-monitor-rtk-audio-update-fail-原因",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-rtk-audio-update-fail-原因/source.xml",
+      "bytes": 7654,
+      "sha256": "faf78168486cf51b27874aa6088de245255c6363d501d0373654f59c5c78f0b2"
+    },
+    {
+      "slug": "hp-monitor-scaler-chip-",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-scaler-chip-/source.xml",
+      "bytes": 196,
+      "sha256": "e22cf4b40e9654cb030f8f718ad1f87aab1f6fa31149e39c54cb9b5d5468544e"
+    },
+    {
+      "slug": "hp-monitor-scaler-chip-資料",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-scaler-chip-資料/source.xml",
+      "bytes": 239,
+      "sha256": "cb892d60f3dba5bd29e2460e860b6e6966f3076259b33be1af84b35af5a1578f"
+    },
+    {
+      "slug": "hp-monitor-test-flow",
+      "path": "knowledge/production_v1/wave_4/hp-monitor-test-flow/source.xml",
+      "bytes": 9959,
+      "sha256": "a4a29947d425ffee7a425a1e6fb639381b9d08e3516b7f8d25e77bcb6b1ad7b1"
+    },
+    {
+      "slug": "hp-oci-app",
+      "path": "knowledge/production_v1/wave_4/hp-oci-app/source.xml",
+      "bytes": 6888,
+      "sha256": "063b1f0dc659a3d812968eff0f7beedffb48d4d710b9d1a06e7472e645f68e3f"
+    },
+    {
+      "slug": "hp-oci-dll",
+      "path": "knowledge/production_v1/wave_4/hp-oci-dll/source.xml",
+      "bytes": 8284,
+      "sha256": "95f405a308edf3bb0c9fa506dba5f72e5d191c6f18ae736a5930a0bf116ac7c6"
+    },
+    {
+      "slug": "hp-oci-tool-ui-flow",
+      "path": "knowledge/production_v1/wave_4/hp-oci-tool-ui-flow/source.xml",
+      "bytes": 15203,
+      "sha256": "ce3f5309c18d3c4e18cddff2016bb7df6dbe651dd71bfb79be37b1db79fcd8d3"
+    },
+    {
+      "slug": "hp-oci-tool-工作彙整",
+      "path": "knowledge/production_v1/wave_4/hp-oci-tool-工作彙整/source.xml",
+      "bytes": 31106,
+      "sha256": "6b267faeaf0843adaf3bc4d2f2af9aa932e26073070ef86311a324d6acedad91"
+    },
+    {
+      "slug": "hp-oci-tool-現行架構解析",
+      "path": "knowledge/production_v1/wave_4/hp-oci-tool-現行架構解析/source.xml",
+      "bytes": 24181,
+      "sha256": "36326579444532644599741d94bd27786dbad1726403fb0835577b218f8ff299"
+    },
+    {
+      "slug": "hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-",
+      "path": "knowledge/production_v1/wave_4/hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-/source.xml",
+      "bytes": 36769,
+      "sha256": "1ffd173a91738be1378f81d84f0c6fc0e8642910e00e8dcd8692c9ecf8a2b72f"
+    },
+    {
+      "slug": "hp-oci-資料",
+      "path": "knowledge/production_v1/wave_4/hp-oci-資料/source.xml",
+      "bytes": 18985,
+      "sha256": "4f3ac86f3a485375eaf3c86bc846c69247c877688a880e70539a1f84ca1f62b2"
+    },
+    {
+      "slug": "hp-project-store-forward-fw-update-specification",
+      "path": "knowledge/production_v1/wave_4/hp-project-store-forward-fw-update-specification/source.xml",
+      "bytes": 9071,
+      "sha256": "9cbbb31a5728eac70b898d5bab54113e9c2e88a64edad91b0ebf1635e41b602a"
+    },
+    {
+      "slug": "hp-qc-tool-",
+      "path": "knowledge/production_v1/wave_4/hp-qc-tool-/source.xml",
+      "bytes": 18837,
+      "sha256": "c72543770cbdf1022029b147aead50b7f98ef6ca191721610fd9f3f87b11c81d"
+    },
+    {
+      "slug": "hp-rtk-scaler-code-sign",
+      "path": "knowledge/production_v1/wave_4/hp-rtk-scaler-code-sign/source.xml",
+      "bytes": 8884,
+      "sha256": "79ad66c675ae87a7308a84578887e812e62ba3f896893aa76ecfd9668551fa1d"
+    },
+    {
+      "slug": "hp-scheduled-update-flow-",
+      "path": "knowledge/production_v1/wave_4/hp-scheduled-update-flow-/source.xml",
+      "bytes": 7829,
+      "sha256": "96b619c37f4bcd2cfccb8ae596b0252d15450c6d8997f42d055f5b0002bcfc37"
+    },
+    {
+      "slug": "hp-security-spec",
+      "path": "knowledge/production_v1/wave_4/hp-security-spec/source.xml",
+      "bytes": 15846,
+      "sha256": "f79a9ad32e1ee55eafd6af788538cd76d652c3ca5c18c6a7c870227e73af4f08"
+    },
+    {
+      "slug": "hp-security-spec-",
+      "path": "knowledge/production_v1/wave_4/hp-security-spec-/source.xml",
+      "bytes": 14398,
+      "sha256": "e52d80f108833c0801e3c8313fc2c8bf2cfba748c0af5ede6531c80315af5f7f"
+    },
+    {
+      "slug": "hp-silent-install-project-support-list",
+      "path": "knowledge/production_v1/wave_4/hp-silent-install-project-support-list/source.xml",
+      "bytes": 16441,
+      "sha256": "fc7f872998960cbe03d0adf9c42dcc78065bf4f5009fcf097bf48051555d1e3c"
+    },
+    {
+      "slug": "hp-silent-mode-tool-",
+      "path": "knowledge/production_v1/wave_4/hp-silent-mode-tool-/source.xml",
+      "bytes": 197,
+      "sha256": "a61a47675217ea327ae7a3b957c1f9f1b838421b067bed7b3a3ee97da252543f"
+    },
+    {
+      "slug": "hub-2020工作事項",
+      "path": "knowledge/production_v1/wave_4/hub-2020工作事項/source.xml",
+      "bytes": 6964,
+      "sha256": "5a256e3cbf1f7f4bfa082e2c09d9b3e9f88b69e620971ee5a69b548e61befd28"
+    },
+    {
+      "slug": "hub-auto-test-",
+      "path": "knowledge/production_v1/wave_4/hub-auto-test-/source.xml",
+      "bytes": 6933,
+      "sha256": "2772f72fd1c15699d95233ca943b03112beac39aba5f35952a65e241f9b448e5"
+    },
+    {
+      "slug": "hub-chip-資訊",
+      "path": "knowledge/production_v1/wave_4/hub-chip-資訊/source.xml",
+      "bytes": 402,
+      "sha256": "7685115d435de65ea5c0233978517bdc9227a90a6aa2a68f73c651e4722194ca"
+    },
+    {
+      "slug": "hub-driver-",
+      "path": "knowledge/production_v1/wave_4/hub-driver-/source.xml",
+      "bytes": 179,
+      "sha256": "f2df1c58e2c83c98a2852adedf81e99aefadbe212daf7dd4da53a2f6672c429d"
+    },
+    {
+      "slug": "hub-driver-debugging-method-csr",
+      "path": "knowledge/production_v1/wave_4/hub-driver-debugging-method-csr/source.xml",
+      "bytes": 8078,
+      "sha256": "aa31fc754bd540b6c661ebc1498015794c4ca521aed01e547307a704030e5a67"
+    },
+    {
+      "slug": "hub-driver-判斷方式",
+      "path": "knowledge/production_v1/wave_4/hub-driver-判斷方式/source.xml",
+      "bytes": 473,
+      "sha256": "468c5a1ec192afaa3e4ea893cb979b625899605f0d053d9311c02a5ab173ba5a"
+    },
+    {
+      "slug": "hub-driver-除錯方式",
+      "path": "knowledge/production_v1/wave_4/hub-driver-除錯方式/source.xml",
+      "bytes": 8034,
+      "sha256": "3191ea60d7dc75d53749292085da73fd792024e4b1d1259ecbc2ed41174112a5"
+    },
+    {
+      "slug": "hub-firmware-update-tool-command-line-list",
+      "path": "knowledge/production_v1/wave_4/hub-firmware-update-tool-command-line-list/source.xml",
+      "bytes": 19518,
+      "sha256": "62d71bf6c1285ab5171d0bebd78421ab8ee85c47d0d64432823e5fea24fd1ae9"
+    },
+    {
+      "slug": "hub-fw-bug",
+      "path": "knowledge/production_v1/wave_4/hub-fw-bug/source.xml",
+      "bytes": 13599,
+      "sha256": "7aeb0480809c2d2bcac0e7dc92528a80146dc2af2a89ac12b21d8c8f857d61b2"
+    },
+    {
+      "slug": "hub-fw-update-策略技術評估-cfu-導入分析",
+      "path": "knowledge/production_v1/wave_4/hub-fw-update-策略技術評估-cfu-導入分析/source.xml",
+      "bytes": 34739,
+      "sha256": "5e6fb170a7bdb698602f3be572dda9b444ffb0999477df52317ee29b902ea20d"
+    },
+    {
+      "slug": "hub-hid-get-string-descriptor-status",
+      "path": "knowledge/production_v1/wave_4/hub-hid-get-string-descriptor-status/source.xml",
+      "bytes": 2980,
+      "sha256": "2213103ea57afed677346c78be46de2c793ffc8ae6e6083c5fdbd6cc8c0db9d8"
+    },
+    {
+      "slug": "hub-mp-tool",
+      "path": "knowledge/production_v1/wave_4/hub-mp-tool/source.xml",
+      "bytes": 8803,
+      "sha256": "a659613f51e1a0a8086d4373a6fdd1db072ac48c88a4906cd91f21fe564e4cc8"
+    },
+    {
+      "slug": "hub-project-string-定義",
+      "path": "knowledge/production_v1/wave_4/hub-project-string-定義/source.xml",
+      "bytes": 307,
+      "sha256": "6221c5f7547502ef5fd917769da3c14de4d01f38fd6f3a84e3741e74517157cf"
+    },
+    {
+      "slug": "hub-virtual-device-stress-test-",
+      "path": "knowledge/production_v1/wave_4/hub-virtual-device-stress-test-/source.xml",
+      "bytes": 18424,
+      "sha256": "82b031d862faadf4c27532d8f543612bc323222b990b2118cdbdf57080250d41"
+    },
+    {
+      "slug": "hubdriverinstaller-user-guide",
+      "path": "knowledge/production_v1/wave_4/hubdriverinstaller-user-guide/source.xml",
+      "bytes": 6244,
+      "sha256": "4bb6e3c8ff3d7d60879cdbb12ee6b46e3fd6d6d1ffd361399d5ef472082f441c"
+    },
+    {
+      "slug": "hxd-計算checksum方式",
+      "path": "knowledge/production_v1/wave_4/hxd-計算checksum方式/source.xml",
+      "bytes": 396,
+      "sha256": "8610c127524e3cbc95dce863e7716338e9e0b171477d07492b6c3824273f4692"
+    },
+    {
+      "slug": "ikv-tool-相關mail資料",
+      "path": "knowledge/production_v1/wave_5/ikv-tool-相關mail資料/source.xml",
+      "bytes": 2782,
+      "sha256": "c66bfab62e289d44473e7d4b4b108814de31798fbfa2cd2d7152b34a7187ef98"
+    },
+    {
+      "slug": "inno-setup-script",
+      "path": "knowledge/production_v1/wave_5/inno-setup-script/source.xml",
+      "bytes": 11429,
+      "sha256": "99250db0d5ce17a334240809bb55e28885db42d0c7ecadd50d93af5974c002bf"
+    },
+    {
+      "slug": "io-data-安全性與開發規範清單-security-development-requirements",
+      "path": "knowledge/production_v1/wave_5/io-data-安全性與開發規範清單-security-development-requirements/source.xml",
+      "bytes": 9823,
+      "sha256": "0e082867273a502bd87382e4ec6d58be7fca8cbe487e4d62edd9bc26503cc8ea"
+    },
+    {
+      "slug": "lenovo-code-sign-交握流程",
+      "path": "knowledge/production_v1/wave_5/lenovo-code-sign-交握流程/source.xml",
+      "bytes": 8109,
+      "sha256": "0b3568c3783e1f0d2f5b814fec7010569b87e78345aa3cf9bddbdf71c7cdf503"
+    },
+    {
+      "slug": "lenovo-command-line-tool-update-flow",
+      "path": "knowledge/production_v1/wave_5/lenovo-command-line-tool-update-flow/source.xml",
+      "bytes": 10194,
+      "sha256": "22bebaccf03c25c3bb48e7325ffafa65d6d030a94386aede3889f13acd51d9e6"
+    },
+    {
+      "slug": "lenovo-daisy-chain-update-flow-",
+      "path": "knowledge/production_v1/wave_5/lenovo-daisy-chain-update-flow-/source.xml",
+      "bytes": 21726,
+      "sha256": "8ebb741f053f9a3f73ba9a574dc103e21895f3cbb3723a6da5786ec2f46a09e8"
+    },
+    {
+      "slug": "lenovo-dmc",
+      "path": "knowledge/production_v1/wave_5/lenovo-dmc/source.xml",
+      "bytes": 24265,
+      "sha256": "00b6238f829aff467075f6fddf668cd55c3dd3e56c6669c20b6387ceac9896dd"
+    },
+    {
+      "slug": "lenovo-fwupdatetool",
+      "path": "knowledge/production_v1/wave_5/lenovo-fwupdatetool/source.xml",
+      "bytes": 27018,
+      "sha256": "57dfe28b037bc93a8c68c4204d0bcc25012cf3aa07c51b026565be77e617b66d"
+    },
+    {
+      "slug": "lenovo-ldcc-update-tool-",
+      "path": "knowledge/production_v1/wave_5/lenovo-ldcc-update-tool-/source.xml",
+      "bytes": 8981,
+      "sha256": "cb725f12fc99d59db4ace9d6b4eefa88ea8feb4ca282b3510ae27951868a8bc3"
+    },
+    {
+      "slug": "lenovo-monitor-firmware-update-specification-v01",
+      "path": "knowledge/production_v1/wave_5/lenovo-monitor-firmware-update-specification-v01/source.xml",
+      "bytes": 32646,
+      "sha256": "9a2b939beb60f72630c11b9e8502f7278b7f56149a91ffe5f7631667f54dcd02"
+    },
+    {
+      "slug": "lenovo-monitor-i2c-info",
+      "path": "knowledge/production_v1/wave_5/lenovo-monitor-i2c-info/source.xml",
+      "bytes": 27516,
+      "sha256": "77b31900cb2c1d49422bec81bd2cc814d6475481c0a6f13daa5f6546236fa433"
+    },
+    {
+      "slug": "lenovo-offline-update-flow-",
+      "path": "knowledge/production_v1/wave_5/lenovo-offline-update-flow-/source.xml",
+      "bytes": 13478,
+      "sha256": "ea3079246799e5e7508a109e30ee399dc4dce37d4d5b69ee1fb62fbbbe188bf4"
+    },
+    {
+      "slug": "lenovo-one-key-update-tool-",
+      "path": "knowledge/production_v1/wave_5/lenovo-one-key-update-tool-/source.xml",
+      "bytes": 25414,
+      "sha256": "dbabd5573ffbcd0621b51ffa6ba43c898ffee3afc404bd81c17e13fb7fc1f7df"
+    },
+    {
+      "slug": "lenovo-spec-",
+      "path": "knowledge/production_v1/wave_5/lenovo-spec-/source.xml",
+      "bytes": 2729,
+      "sha256": "4a66ec59259bc0d8aa6d4e0eca9110768d3cd676b1825b0e701467b7d6e2b8b5"
+    },
+    {
+      "slug": "lenovo-update-debug-flow-",
+      "path": "knowledge/production_v1/wave_5/lenovo-update-debug-flow-/source.xml",
+      "bytes": 5392,
+      "sha256": "874bfd6157006b7d4330682567ddd6a5acc1db2146c0c8f3433d56a86fbeacbe"
+    },
+    {
+      "slug": "lenovo-討論",
+      "path": "knowledge/production_v1/wave_5/lenovo-討論/source.xml",
+      "bytes": 2784,
+      "sha256": "ac3839914ae53d00186325c07387151c68047b3a9643d85ae9564e5a2b3db039"
+    },
+    {
+      "slug": "lenovo-需求",
+      "path": "knowledge/production_v1/wave_5/lenovo-需求/source.xml",
+      "bytes": 6747,
+      "sha256": "73065c3173151c512753d6d3e9d9fd01e7b9fb71a06bc779229cb21cf0d7fdfa"
+    },
+    {
+      "slug": "linux-mac-共code-",
+      "path": "knowledge/production_v1/wave_5/linux-mac-共code-/source.xml",
+      "bytes": 4901,
+      "sha256": "03dfdbfc0fac30a00c54541cd9ab248557cc4689ad15a476704b93aa4adc6728"
+    },
+    {
+      "slug": "linux-usb-hid-description",
+      "path": "knowledge/production_v1/wave_5/linux-usb-hid-description/source.xml",
+      "bytes": 6800,
+      "sha256": "3a0bbf6d96e90c35ffb65fdd3ee002b08f5d48419863fd1dbe0573a027e5474c"
+    },
+    {
+      "slug": "log分類",
+      "path": "knowledge/production_v1/wave_5/log分類/source.xml",
+      "bytes": 5538,
+      "sha256": "584816cf9e141f945b5b2c663567946d4c77a3efcc518fbef5435bb0c1b97746"
+    },
+    {
+      "slug": "low_integrity_noise",
+      "path": "knowledge/production_v1/wave_5/low_integrity_noise/source.xml",
+      "bytes": 734,
+      "sha256": "7dd0f0d59825d61fefaf27ee91a61f57813ccb83fa5684c4843463bdf57f7279"
+    },
+    {
+      "slug": "mac-command-line-tool-user-guide",
+      "path": "knowledge/production_v1/wave_5/mac-command-line-tool-user-guide/source.xml",
+      "bytes": 231,
+      "sha256": "315c92b9fb1c8350e2fdef4dac7cdb3347e26907e0b772a2226bfefa17c0e625"
+    },
+    {
+      "slug": "mac-conan-clang-tidy-設定方式",
+      "path": "knowledge/production_v1/wave_5/mac-conan-clang-tidy-設定方式/source.xml",
+      "bytes": 20836,
+      "sha256": "e7b9750f9bb6266fe01ae45ca2ac9b096602e7bc81728bf48d4ba1760a2843de"
+    },
+    {
+      "slug": "mac-eep-tool",
+      "path": "knowledge/production_v1/wave_5/mac-eep-tool/source.xml",
+      "bytes": 23678,
+      "sha256": "fe7ad7772694e92464bbdca998e9eee5cecc76bee1608bc2a2d4428a77e99323"
+    },
+    {
+      "slug": "mac-framework",
+      "path": "knowledge/production_v1/wave_5/mac-framework/source.xml",
+      "bytes": 8236,
+      "sha256": "f1494b7c4c0ae9b57b809784034d88357dcdc1d20c72365713e32b205fdc2ef8"
+    },
+    {
+      "slug": "mac-hub-update-tool-user-guide",
+      "path": "knowledge/production_v1/wave_5/mac-hub-update-tool-user-guide/source.xml",
+      "bytes": 26499,
+      "sha256": "664f561513eb6318b7edb35008aa9cf23028b0ddbed29119a279b7c288b9aaaf"
+    },
+    {
+      "slug": "mac-oci-demo-flow",
+      "path": "knowledge/production_v1/wave_5/mac-oci-demo-flow/source.xml",
+      "bytes": 5420,
+      "sha256": "430ae43c47cdd76391e988c15cafe124fe060769f6ad2d8f71ebc887c2615f5d"
+    },
+    {
+      "slug": "mac-oci-dll-import-方式",
+      "path": "knowledge/production_v1/wave_5/mac-oci-dll-import-方式/source.xml",
+      "bytes": 6294,
+      "sha256": "b1db9c57540a1651f1e1eb06bbc312b76dfb682897bf37e0789d1a227ed9483a"
+    },
+    {
+      "slug": "mac-oci-tool-",
+      "path": "knowledge/production_v1/wave_5/mac-oci-tool-/source.xml",
+      "bytes": 19450,
+      "sha256": "95314ce9066214149621d6c058a272aae9c9e128e8f016fc943f1b1097d11d26"
+    },
+    {
+      "slug": "mac-packages-installation-file-process",
+      "path": "knowledge/production_v1/wave_5/mac-packages-installation-file-process/source.xml",
+      "bytes": 9468,
+      "sha256": "069b75202ad432d863ac938b5407cd75a1a2d6fac1bc8ae3e9427d4e575c7320"
+    },
+    {
+      "slug": "mac-packages-installation-file-processcn",
+      "path": "knowledge/production_v1/wave_5/mac-packages-installation-file-processcn/source.xml",
+      "bytes": 21346,
+      "sha256": "1f64d8ec08ca1352d4058355e57aa6a19050a2c851a68abbbd1d08a8eff91719"
+    },
+    {
+      "slug": "mac-ui-客制化修改-以hostbridge-為例",
+      "path": "knowledge/production_v1/wave_5/mac-ui-客制化修改-以hostbridge-為例/source.xml",
+      "bytes": 6721,
+      "sha256": "6982f97abef201121aae99cb2bb00c3a98a334f6270cc1e2ec9e544dd4c69462"
+    },
+    {
+      "slug": "mac-usb-20-eep-tool-開發簡介",
+      "path": "knowledge/production_v1/wave_5/mac-usb-20-eep-tool-開發簡介/source.xml",
+      "bytes": 16487,
+      "sha256": "e6b8edd8416fba309002ec8685a99c71845646cd46ca957014d4a828b8733a36"
+    },
+    {
+      "slug": "mac-權限問題",
+      "path": "knowledge/production_v1/wave_5/mac-權限問題/source.xml",
+      "bytes": 6922,
+      "sha256": "035d4e5c83bdf9d6ecd235536f707823274a77f0672a43dbd41a7eb0eb5457f3"
+    },
+    {
+      "slug": "mac-顯示-framework-name-方式",
+      "path": "knowledge/production_v1/wave_5/mac-顯示-framework-name-方式/source.xml",
+      "bytes": 242,
+      "sha256": "f8f6044bbc74d958a054d3d0397d5a1cad980b541b7dd95a4be6950d0ed1fd1c"
+    },
+    {
+      "slug": "macos-mdm-與-full-disk-access-fda-權限管理實作說明",
+      "path": "knowledge/production_v1/wave_5/macos-mdm-與-full-disk-access-fda-權限管理實作說明/source.xml",
+      "bytes": 22355,
+      "sha256": "7b9ccd9fc9ffcde401c63202afc3582db3b29fca4052446659bf6bfe6eeea98a"
+    },
+    {
+      "slug": "mbedtls-source-code",
+      "path": "knowledge/production_v1/wave_5/mbedtls-source-code/source.xml",
+      "bytes": 3600,
+      "sha256": "2c828f63cba60a70d2f57de584cb3a13e4593a62bfb3017d47328f65cf4bd483"
+    },
+    {
+      "slug": "mdgg-mask-code-",
+      "path": "knowledge/production_v1/wave_5/mdgg-mask-code-/source.xml",
+      "bytes": 321,
+      "sha256": "47b21dbb8d43579174edec4bd97faab619b38728220d763b50a0191331b1f4d6"
+    },
+    {
+      "slug": "merge-code-tool-help",
+      "path": "knowledge/production_v1/wave_5/merge-code-tool-help/source.xml",
+      "bytes": 12502,
+      "sha256": "d777f0c0e3c174ca346c4bb0c61042097107bd2a2ea6d3e48c68767e8ad2e4f8"
+    },
+    {
+      "slug": "mfc-ui-因為windwos-縮放比例導致ui錯位解決方法",
+      "path": "knowledge/production_v1/wave_5/mfc-ui-因為windwos-縮放比例導致ui錯位解決方法/source.xml",
+      "bytes": 11518,
+      "sha256": "41ce1138ce6b9adbbff401ee686c0a6799996b8a42b86e7da81e6c8f6bbd6e89"
+    },
+    {
+      "slug": "monitor-debug-參考資料",
+      "path": "knowledge/production_v1/wave_5/monitor-debug-參考資料/source.xml",
+      "bytes": 12378,
+      "sha256": "30c4b102ec19c31bed014ccb4282af128046028fa70c733a1ca39cf3c9f4568a"
+    },
+    {
+      "slug": "monitor-開案內容",
+      "path": "knowledge/production_v1/wave_5/monitor-開案內容/source.xml",
+      "bytes": 8060,
+      "sha256": "34017c78db72f0e5581729541943a7be877a30b7dfc1452a5d3c6d3834745818"
+    },
+    {
+      "slug": "monitorvcp",
+      "path": "knowledge/production_v1/wave_5/monitorvcp/source.xml",
+      "bytes": 8315,
+      "sha256": "06b666168fafde2acb363e9b49e8202bf9bc90aa01233397c63055d9f891ed91"
+    },
+    {
+      "slug": "mt9052",
+      "path": "knowledge/production_v1/wave_5/mt9052/source.xml",
+      "bytes": 179,
+      "sha256": "c4b85ccf1407c73f0e853e8a43144cd0b78438584b9133a0754c67334718408e"
+    },
+    {
+      "slug": "mtk-3rd-send-usb-hub-isp-event",
+      "path": "knowledge/production_v1/wave_5/mtk-3rd-send-usb-hub-isp-event/source.xml",
+      "bytes": 756,
+      "sha256": "aec4d40a9a726669e64113a85cd3a33e7e5050fde718b54602d066f300d5d0ae"
+    },
+    {
+      "slug": "mtk-scaler-update-flow",
+      "path": "knowledge/production_v1/wave_5/mtk-scaler-update-flow/source.xml",
+      "bytes": 10193,
+      "sha256": "5e57bf37fd1659c9ac12c278ffbb83b1b448642a2bf5a69b7be75add75ae9a1c"
+    },
+    {
+      "slug": "multi-isp-user-guide",
+      "path": "knowledge/production_v1/wave_5/multi-isp-user-guide/source.xml",
+      "bytes": 196,
+      "sha256": "698433d9a840fde88e2481944a4e84c384c1798c35324b0c6c97097f6a612c40"
+    },
+    {
+      "slug": "notion-使用方式",
+      "path": "knowledge/production_v1/wave_5/notion-使用方式/source.xml",
+      "bytes": 27980,
+      "sha256": "210fa9764699ae101f59f9dab82ba7e3fbb59849f1b4f1f65e906b0bace66ddc"
+    },
+    {
+      "slug": "openssl-generate-rsa-key-pair-etoken-code-sign",
+      "path": "knowledge/production_v1/wave_5/openssl-generate-rsa-key-pair-etoken-code-sign/source.xml",
+      "bytes": 3368,
+      "sha256": "9331a51188aced5c5c7507319082c6d1911e7ca91c6b5f6eac4c1001b2f4a09b"
+    },
+    {
+      "slug": "osdmanager",
+      "path": "knowledge/production_v1/wave_5/osdmanager/source.xml",
+      "bytes": 36416,
+      "sha256": "e3c2fa0ffcc499b9ea7ad102e048b0671c5337779f1f811c3433c87c137ad096"
+    },
+    {
+      "slug": "outlook-封存失敗如何設定",
+      "path": "knowledge/production_v1/wave_6/outlook-封存失敗如何設定/source.xml",
+      "bytes": 27158,
+      "sha256": "5e412ee91fa37f53e16a5b9716b05e3cc1c27ae50cdf661a0fb3003255d5bc05"
+    },
+    {
+      "slug": "p32p-30-reset-scaler-command",
+      "path": "knowledge/production_v1/wave_6/p32p-30-reset-scaler-command/source.xml",
+      "bytes": 335,
+      "sha256": "8e5b913c7036d60230189a0b9f457cfb632da7d90b07d194f845184a52d14655"
+    },
+    {
+      "slug": "pd-typec",
+      "path": "knowledge/production_v1/wave_6/pd-typec/source.xml",
+      "bytes": 4797,
+      "sha256": "0e847958ca7a52bfed0e4a3d88b0e3f0836b9eae4d33563ecb4984aa9864da85"
+    },
+    {
+      "slug": "pd-詢問事項",
+      "path": "knowledge/production_v1/wave_6/pd-詢問事項/source.xml",
+      "bytes": 5667,
+      "sha256": "0a8da9fde268aef3c5d623ee38196c8f61795327020afeb74b5b0275e837530b"
+    },
+    {
+      "slug": "project-string",
+      "path": "knowledge/production_v1/wave_6/project-string/source.xml",
+      "bytes": 260,
+      "sha256": "1bcb9ba118a14852561d3452af99e4fddf4832a1995a6c0dd2eeb6127e28471e"
+    },
+    {
+      "slug": "ps196-update-flow",
+      "path": "knowledge/production_v1/wave_6/ps196-update-flow/source.xml",
+      "bytes": 8544,
+      "sha256": "fba74cf16b26efad69863d0a53befcce5bd99f71721f6d3446e8e9698ee3ba30"
+    },
+    {
+      "slug": "realtek-scaler-isp-tool-開發流程",
+      "path": "knowledge/production_v1/wave_6/realtek-scaler-isp-tool-開發流程/source.xml",
+      "bytes": 17384,
+      "sha256": "d4b97cc8feff533644f74861f4222fcf39d1ab800637a7c8736d2a3805a6438b"
+    },
+    {
+      "slug": "richelieu-issue-description",
+      "path": "knowledge/production_v1/wave_6/richelieu-issue-description/source.xml",
+      "bytes": 10002,
+      "sha256": "2941249e07a90c0fff9344a2e945428076d134e3f09defe57cda4b97e758b01f"
+    },
+    {
+      "slug": "ricktek-7880-pd-update-flow",
+      "path": "knowledge/production_v1/wave_6/ricktek-7880-pd-update-flow/source.xml",
+      "bytes": 8145,
+      "sha256": "2c1b59eb92496c921e1c2845b3530255ac94e16ac533a73ec259c3c910383184"
+    },
+    {
+      "slug": "rsa-2048-verify-和-mbedtls-opensource-測試問題-",
+      "path": "knowledge/production_v1/wave_6/rsa-2048-verify-和-mbedtls-opensource-測試問題-/source.xml",
+      "bytes": 30661,
+      "sha256": "e91af37d9a22d23fdb403e040cb1977847c09bae9bf481eec2d24fbb8cdd9811"
+    },
+    {
+      "slug": "rtk-camera-dll問題",
+      "path": "knowledge/production_v1/wave_6/rtk-camera-dll問題/source.xml",
+      "bytes": 10151,
+      "sha256": "0020fc86ea75e2c254fd66b1d7e6aa9dc547eba2e141ba904150f0e9d1a905e7"
+    },
+    {
+      "slug": "saleae-logic-i2c-tool-使用說明",
+      "path": "knowledge/production_v1/wave_6/saleae-logic-i2c-tool-使用說明/source.xml",
+      "bytes": 9579,
+      "sha256": "6e42a6764e1463387ca1838c0c0f8bbd76790c6a6d8e966626bcebfd940cae72"
+    },
+    {
+      "slug": "sc-query-to-determine-the-driver-mode",
+      "path": "knowledge/production_v1/wave_6/sc-query-to-determine-the-driver-mode/source.xml",
+      "bytes": 8106,
+      "sha256": "563368936cd3b101e7fc828dc52f31cfed82d4b639e567b8cea7bab725ebbaff"
+    },
+    {
+      "slug": "sd-reader-sample-code-",
+      "path": "knowledge/production_v1/wave_6/sd-reader-sample-code-/source.xml",
+      "bytes": 29794,
+      "sha256": "0e7fd70842bd97a25065945cdebfd9bcfc657c0412153227c6e1407de553f320"
+    },
+    {
+      "slug": "secure-firmware-recovery",
+      "path": "knowledge/production_v1/wave_6/secure-firmware-recovery/source.xml",
+      "bytes": 26704,
+      "sha256": "6d408b6eebad5bfc0aa0cc9a51e134fc3b9d2ac225e210b00b7fdfbfd7b0904d"
+    },
+    {
+      "slug": "srs-crd-輔助工具入口介面-",
+      "path": "knowledge/production_v1/wave_6/srs-crd-輔助工具入口介面-/source.xml",
+      "bytes": 28691,
+      "sha256": "0fe060a32a8bd2f728e5f35b8466c8e08a566ead666d0f2313245c9a126d1d3d"
+    },
+    {
+      "slug": "ssdlc-",
+      "path": "knowledge/production_v1/wave_6/ssdlc-/source.xml",
+      "bytes": 8389,
+      "sha256": "277854b47f807bd8e06da398393880cea03365c88c52b71e6ba95ebc0bc9f500"
+    },
+    {
+      "slug": "standard-isp-tool-roll-back-flow",
+      "path": "knowledge/production_v1/wave_6/standard-isp-tool-roll-back-flow/source.xml",
+      "bytes": 6773,
+      "sha256": "de96326c86c0d0354572dbd60c6c9f6845979c0bdb01116b2a0c0dca5a3e2bce"
+    },
+    {
+      "slug": "sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰",
+      "path": "knowledge/production_v1/wave_6/sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰/source.xml",
+      "bytes": 10729,
+      "sha256": "7d01baaa389f1fc0da8c6397b373f496d74d65d9376842ebf8cf052e0c2eaf4c"
+    },
+    {
+      "slug": "sw272u-抓取log方式",
+      "path": "knowledge/production_v1/wave_6/sw272u-抓取log方式/source.xml",
+      "bytes": 9644,
+      "sha256": "39c77ae171685a963c43178056311baaa0bdbada77a1fc1a32fd5376b04ee721"
+    },
+    {
+      "slug": "sw文件撰寫sop",
+      "path": "knowledge/production_v1/wave_6/sw文件撰寫sop/source.xml",
+      "bytes": 31358,
+      "sha256": "f38b8a71ba9f1312570ef99a6ecacabf0fa9d3bf5658ad413278443b3971ce41"
+    },
+    {
+      "slug": "system-design-specification-v31-usb-log-explorer-antigravity-edition-",
+      "path": "knowledge/production_v1/wave_6/system-design-specification-v31-usb-log-explorer-antigravity-edition-/source.xml",
+      "bytes": 8840,
+      "sha256": "eb15bafe66d9746f2513a0590f7165ca4d39a7abc248db2a0502d7830ecb821b"
+    },
+    {
+      "slug": "target-device-ini-產生器-測試",
+      "path": "knowledge/production_v1/wave_6/target-device-ini-產生器-測試/source.xml",
+      "bytes": 26003,
+      "sha256": "3049d78d756437fd03feddf95cb1b35d3711759f92b822b9ea0d1a79b6e804fb"
+    },
+    {
+      "slug": "teledyne-lecroy-python安裝和測試方式",
+      "path": "knowledge/production_v1/wave_6/teledyne-lecroy-python安裝和測試方式/source.xml",
+      "bytes": 5022,
+      "sha256": "4cb4a26c573e997285c90023960e304db53cff030343e9bc6e1c16f44616b2b6"
+    },
+    {
+      "slug": "teledyne-lecroy-usb-protocol-suiteusb-trace",
+      "path": "knowledge/production_v1/wave_6/teledyne-lecroy-usb-protocol-suiteusb-trace/source.xml",
+      "bytes": 7444,
+      "sha256": "0767335c21e2f34bad9c3ff0966c7d16673de542aad244f1bc93075bd064c856"
+    },
+    {
+      "slug": "tool-sign-flow",
+      "path": "knowledge/production_v1/wave_6/tool-sign-flow/source.xml",
+      "bytes": 2978,
+      "sha256": "6cf50803736240d704a51aa4c28cf1bd9f04ffe8c27658d4a44446dbe0668d55"
+    },
+    {
+      "slug": "tri-code-command-line-tool-command-line-list",
+      "path": "knowledge/production_v1/wave_6/tri-code-command-line-tool-command-line-list/source.xml",
+      "bytes": 27179,
+      "sha256": "a6c8f4b170f65bdd3296aed3e6b70e09965f2d12f96c595cb7bcaaae661d89f8"
+    },
+    {
+      "slug": "tri-code-command-list",
+      "path": "knowledge/production_v1/wave_6/tri-code-command-list/source.xml",
+      "bytes": 47628,
+      "sha256": "b1682f774619591a204c56ccef5f3ad50494cd895ab9c7f1f5bcdff405f13a9a"
+    },
+    {
+      "slug": "tricode-ptester",
+      "path": "knowledge/production_v1/wave_6/tricode-ptester/source.xml",
+      "bytes": 189,
+      "sha256": "f2d340fdb4f9f14981ec88952c2865b9838ae764485a4e819979dbc5351cc1d8"
+    },
+    {
+      "slug": "tvsuthinkvantage-system-update-fwupdate需求",
+      "path": "knowledge/production_v1/wave_6/tvsuthinkvantage-system-update-fwupdate需求/source.xml",
+      "bytes": 31151,
+      "sha256": "6f893522ea683c7cff1a19ca78805c5d998efc5516c6a7c114937f658edf26e1"
+    },
+    {
+      "slug": "u27m-scaler-update速度",
+      "path": "knowledge/production_v1/wave_6/u27m-scaler-update速度/source.xml",
+      "bytes": 3778,
+      "sha256": "24090c7c8989ede783bc16419948b130d7a1a532dcbb3ccdf9b1030e457e5748"
+    },
+    {
+      "slug": "uac-permission-setting-method",
+      "path": "knowledge/production_v1/wave_6/uac-permission-setting-method/source.xml",
+      "bytes": 27102,
+      "sha256": "5a8e55fd6d3d71d1802a7798ee27d7721695b36354455cf65329045ef24dfdaa"
+    },
+    {
+      "slug": "usb-device-class",
+      "path": "knowledge/production_v1/wave_6/usb-device-class/source.xml",
+      "bytes": 7826,
+      "sha256": "27f71203c50ef6400f47c1f7412df5e55f99cbb5f86cec9731712c7f61dcb88e"
+    },
+    {
+      "slug": "usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist",
+      "path": "knowledge/production_v1/wave_6/usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist/source.xml",
+      "bytes": 4519,
+      "sha256": "4c7cf462cd33d07dc092d59202f56c55c9c29e2feed1fa983669355e676b7542"
+    },
+    {
+      "slug": "usb30影響配對問題",
+      "path": "knowledge/production_v1/wave_6/usb30影響配對問題/source.xml",
+      "bytes": 5128,
+      "sha256": "f5eb5f573a465e56b087d00062cec571f63583cde9b711217665f62773206739"
+    },
+    {
+      "slug": "usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification",
+      "path": "knowledge/production_v1/wave_6/usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification/source.xml",
+      "bytes": 3301,
+      "sha256": "4f9a83e0321e75e9fceefcf09ae56b0ea4a0ca5b1bdb0677ea831b739606ca4c"
+    },
+    {
+      "slug": "usbview-grab-the-log",
+      "path": "knowledge/production_v1/wave_6/usbview-grab-the-log/source.xml",
+      "bytes": 2512,
+      "sha256": "4f357aa78b9e58ccd05dda0ec2b7b4d2d42b5d2178ac5fed410847bae8e3c070"
+    },
+    {
+      "slug": "vendor-oci-error-code-",
+      "path": "knowledge/production_v1/wave_6/vendor-oci-error-code-/source.xml",
+      "bytes": 29968,
+      "sha256": "c2e7e10de50e0977e4d3c558d89b0d1600d62b1971daf3947952ecd28c32c24f"
+    },
+    {
+      "slug": "vibe-coding",
+      "path": "knowledge/production_v1/wave_6/vibe-coding/source.xml",
+      "bytes": 7565,
+      "sha256": "dbc90fabba469953e1e2f74a04e9abd816aebaa6f7a9d4c8b71498b0a205d5d3"
+    },
+    {
+      "slug": "visual-studio-2017-administrator-設定方式",
+      "path": "knowledge/production_v1/wave_6/visual-studio-2017-administrator-設定方式/source.xml",
+      "bytes": 27505,
+      "sha256": "7ca9a863c30b0ba37e37b43156a055bdfb64cd062708f5ead5b9a144003fb8a1"
+    },
+    {
+      "slug": "visusal-stdio-sdk-設定",
+      "path": "knowledge/production_v1/wave_6/visusal-stdio-sdk-設定/source.xml",
+      "bytes": 27279,
+      "sha256": "34b42eb71645d729e138ec8d214c449ae134b8bc8843c76c45095b755f3964b2"
+    },
+    {
+      "slug": "vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f",
+      "path": "knowledge/production_v1/wave_6/vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f/source.xml",
+      "bytes": 6878,
+      "sha256": "d1729ffaf8833c95676912e42a78d13fc151cf6110fe6e2ea4f83cdd5fe4ea92"
+    },
+    {
+      "slug": "w25x21cl-rdid問題",
+      "path": "knowledge/production_v1/wave_6/w25x21cl-rdid問題/source.xml",
+      "bytes": 28794,
+      "sha256": "51e0024373c482e739bb264939e5a6ddeabb8036ac5b3eb1a32259ab4ba48c9f"
+    },
+    {
+      "slug": "windows-10-h2-driver-移除流程",
+      "path": "knowledge/production_v1/wave_6/windows-10-h2-driver-移除流程/source.xml",
+      "bytes": 15935,
+      "sha256": "017c9868fff9644b3d34f80696c2b42570761638c4a00fc5e97abb8eb293db92"
+    },
+    {
+      "slug": "windows-11-core-isolation",
+      "path": "knowledge/production_v1/wave_6/windows-11-core-isolation/source.xml",
+      "bytes": 27204,
+      "sha256": "aaae31d27625626e6c52f46cf4e8f86e8088d346e8b5e29750a31f6b91bb13e2"
+    },
+    {
+      "slug": "windows-command",
+      "path": "knowledge/production_v1/wave_6/windows-command/source.xml",
+      "bytes": 178,
+      "sha256": "b22f92f679ef26d96975e5b6fe0107d7933a7a856e95053e6d074b05e70830dd"
+    },
+    {
+      "slug": "windows-register-語系改法",
+      "path": "knowledge/production_v1/wave_6/windows-register-語系改法/source.xml",
+      "bytes": 16451,
+      "sha256": "b827c926a3bf4222da65337354c795bc34493f8e2d7448a82da7752c73aacfd2"
+    },
+    {
+      "slug": "xcode-architecture-設定",
+      "path": "knowledge/production_v1/wave_6/xcode-architecture-設定/source.xml",
+      "bytes": 6183,
+      "sha256": "6885f361e2d5c8395aea91a7057282768ef8ad3c0c6a3da93457ee38349771b9"
+    },
+    {
+      "slug": "z24ng3-scaler-update-時間",
+      "path": "knowledge/production_v1/wave_6/z24ng3-scaler-update-時間/source.xml",
+      "bytes": 1308,
+      "sha256": "a4f5d05aebdf6655ec0fd01b4383162d9768769d0cf3a6db7912bc0555fdb011"
+    },
+    {
+      "slug": "zeroplus_lap-i2c-訊號錄製方式",
+      "path": "knowledge/production_v1/wave_6/zeroplus_lap-i2c-訊號錄製方式/source.xml",
+      "bytes": 8856,
+      "sha256": "516606f1e511201c896a554a3043bb88a1f9aa5da3a4ebb6ab5a5d84ba66accd"
+    }
+  ]
+}

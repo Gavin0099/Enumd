@@ -3,3 +3,13 @@ node_modules/
 .vitepress/cache/
 docs/.vitepress/
 .env.local
+
+# Knowledge graph build artifacts (reproducible computation outputs)
+knowledge/edges.json
+knowledge/nodes.json
+knowledge/build-report.json
+knowledge/graph_diff.json
+
+# Raw Notion source exports — DO NOT gitignore until manifest exists
+# See docs/repo-boundary.md "Source.xml Archival Note"
+# knowledge/**/source.xml
