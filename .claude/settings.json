@@ -42,6 +42,11 @@
             "type": "command",
             "command": "python D:/Enumd/ai-governance-framework/governance_tools/session_closeout_entry.py --project-root . 2>/dev/null || true",
             "statusMessage": "Running governance session closeout..."
+          },
+          {
+            "type": "command",
+            "command": "python scripts/check-mapping-spec-compliance.py --staged 2>&1; exit 0",
+            "statusMessage": "Mapping-spec compliance check (P2-1)..."
           }
         ]
       }
