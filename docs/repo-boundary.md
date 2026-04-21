@@ -151,6 +151,45 @@ Impact:
 
 ---
 
+## Runtime Session Artifact Policy
+
+`artifacts/runtime/` contains per-session governance enforcement evidence. These are **not** operational logs. They form the canonical evidence chain for governance decisions.
+
+### Structure
+
+Each completed session produces artifacts across 6 sub-directories:
+
+| Sub-directory | Content | Retention class |
+|---|---|---|
+| `verdicts/` | Gate decision, `gate_blocked`, `decision_governance` | Permanent |
+| `closeouts/` | Session end state | Permanent |
+| `canonical-audit-log.jsonl` | Master audit trail (append-only) | Permanent |
+| `summaries/` | Human-readable session summaries | Permanent |
+| `curated/` | Curated evidence for reviewer handoff | Permanent |
+| `candidates/` | Pre-gate candidate records | Permanent |
+| `traces/` | Execution traces | Permanent |
+
+### Inclusion Rule
+
+**All completed sessions are tracked.** A session that ran governance processing and closed is canonical evidence regardless of verdict outcome.
+
+Do not selectively track only "interesting" sessions — the absence of an adverse verdict is also evidence.
+
+### Archival Rule
+
+There is no automatic purge. If repository size becomes a concern, archive sessions older than a defined cutoff to external storage and record the archive event in a manifest. Never delete without a manifest.
+
+### Commit Rule
+
+New session artifacts are committed with prefix `governance:`. They must not be mixed with:
+- `chore:` / `.gitignore` changes
+- `knowledge:` data sync
+- `pipeline:` logic changes
+
+Batch-committing multiple sessions in one `governance:` commit is acceptable if they represent a single pipeline run or test batch.
+
+---
+
 ## What Does Not Belong in This Repo
 
 - Raw Notion page content in non-XML form (belongs in Notion or archive)
