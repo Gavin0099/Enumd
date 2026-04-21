@@ -162,12 +162,18 @@ pre_commit_advisory_only:
 Sessions qualifying toward the ≥3 minimum.
 **Criterion**: stop hook fired with non-empty staged files.
 
-| # | Date | Staged files (summary) | includes lib/ or scripts/ .ts/.py? | INV-1 | INV-2 | INV-3 | INV-4 | SE trigger | FPs? | Classification |
-|---|------|------------------------|------------------------------------|-------|-------|-------|-------|------------|------|----------------|
-| — | —    | (pending first session) | —                                 | —     | —     | —     | —     | —          | —    | —              |
+| # | Date | Staged files summary | Includes .ts/.py? | Hook result | FP? | Message self-contained? | Reset trigger? | Notes |
+|---|------|----------------------|-------------------|-------------|-----|------------------------|----------------|-------|
+| — | —    | (pending first session) | —              | —           | —   | —                      | —              | —     |
 
 **Sessions meeting minimum criterion: 0 / 3**
 **Sessions including .ts/.py scan surface: 0** (at least 1 required before promotion)
+
+Column notes:
+- **Hook result**: pass / fail (INV-N) / schema_evolution_required
+- **FP?**: yes/no — if yes, which INV and what file/line
+- **Message self-contained?**: could developer fix without reading mapping-spec.md? yes/no
+- **Reset trigger?**: DT-N if any demotion trigger tripped; "none" if clean
 
 ## §7 Promotion Decision Record
 
