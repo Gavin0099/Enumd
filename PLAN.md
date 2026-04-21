@@ -31,8 +31,20 @@
 
 ## Open Questions (from P1-3 vertical slice)
 
-- OQ-1: Do any consumers of `governance_report.json` `nodeSignals` use `risk_level` for automated routing? (currently: no evidence — not yet exhaustively verified against all framework consumers)
-- OQ-2: Is `instrumentation_version: "1.0"` a versioned contract interface? If computation changes in a future pipeline update, does this need a version bump? (recommendation: yes — treat as versioned contract surface; add to schema_evolution trigger criteria)
+- ~~OQ-1: nodeSignals downstream consumers~~ **CLOSED 2026-04-21**
+  - Finding: zero active consumers. `ai-governance-framework` has no code reading `governance_report.json`.
+  - Code explicitly guards against misuse: `decision_distance: "advisory_only"` per entry; section comment "do not represent framework enforcement decisions."
+  - Classification stands: `schema_addition / reviewer_routing_surface_only` (routing surface exists but has no live consumer).
+  - Reclassification trigger: if framework adds code that reads `governance_report.json.advisory.node_signals` for promotion/filtering/escalation → reassess.
+
+- ~~OQ-2: instrumentation_version contract status~~ **CLOSED 2026-04-21 — Decision: B (versioned contract marker)**
+  - Two separate versioned markers: `audit.json→domain_advisory.instrumentation_version: "1.0"` (field-level) and `governance_report.json.instrumentation_version: "slice1-v1"` (report-level).
+  - Both are versioned contract markers. A computation logic change (threshold, signal set, scoring rule) that changes meaning without changing field names MUST bump version AND trigger schema_evolution event.
+  - Action taken: added both to schema_evolution trigger criteria in `governance/event-map.yaml`.
+
+- OQ-3: `knowledge/production_v1/mapping-spec.md` is referenced in `scripts/production-wave-runner.ts` at §5, §6.3, §6.4, §9, §9.2 but the file **does not exist**.
+  - This is a latent contract documentation gap. The `advisory_only` contract boundary and `synthesis_verdicts` vs `enforcement` vocabulary distinction have no written spec backing them.
+  - Resolution: create `knowledge/production_v1/mapping-spec.md` before P2, because P2 CI hook needs to reference the same contract boundaries.
 
 ## Decision Log
 

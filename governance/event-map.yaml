@@ -27,18 +27,32 @@ events:
   schema_evolution:
     trigger: >
       Any commit to knowledge/ that adds, removes, renames, or changes the type of
-      a field in audit.json or claims.json — or changes instrumentation_version
-      in either file type.
+      a field in audit.json or claims.json.
+
+      ALSO triggers when any of these versioned contract markers change value:
+        - audit.json → domain_advisory.instrumentation_version (field-level contract)
+        - governance_report.json → instrumentation_version (report-level contract)
+        - governance_report.json → schema_version
+
+      Rationale: instrumentation_version values are versioned contract markers (B),
+      not metadata. A computation logic change (threshold, signal set, scoring rule)
+      that does not change field names but changes the meaning of field values MUST
+      bump the version AND trigger a schema_evolution event.
+
+      See: P1.5-b decision record in PLAN.md (2026-04-21).
     scope:
       - "knowledge/**/audit.json"
       - "knowledge/**/claims.json"
+      - "knowledge/**/governance_report.json"
     default_risk: gate_required
     gate_required: true
     commit_prefix: "schema-evolution:"
     evidence_pack: schema_evolution_evidence
     notes: >
-      audit.json and claims.json are pipeline contract surfaces. Schema drift without
-      documentation breaks downstream consumers silently. Highest-risk routine event.
+      audit.json and claims.json are pipeline contract surfaces. governance_report.json
+      instrumentation_version is a versioned contract marker. Schema drift or version
+      drift without documentation breaks downstream consumers silently.
+      Highest-risk routine event.
 
   authority_upgrade:
     trigger: >
