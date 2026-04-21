@@ -103,5 +103,12 @@
     "derived_count": 3,
     "reason": "Unsupported rate 0% (0/3) below audit threshold.",
     "removed_count": 0
+  },
+  "domain_advisory": {
+    "risk_level": "NONE",
+    "signals": [],
+    "corpus_overlap_score": 0.5859203927385747,
+    "note": "No cross-domain risk signals. corpus_overlap=0.59.",
+    "instrumentation_version": "1.0"
   }
 }

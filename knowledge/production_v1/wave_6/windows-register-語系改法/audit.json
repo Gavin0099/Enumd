@@ -92,5 +92,12 @@
     "derived_count": 2,
     "reason": "FRAGMENTARY node — structural disclaimer already present; suppression redundant",
     "removed_count": 0
+  },
+  "domain_advisory": {
+    "risk_level": "NONE",
+    "signals": [],
+    "corpus_overlap_score": 0.7065934065934065,
+    "note": "No cross-domain risk signals. corpus_overlap=0.71.",
+    "instrumentation_version": "1.0"
   }
 }

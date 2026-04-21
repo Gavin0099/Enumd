@@ -102,5 +102,12 @@
     "derived_count": 0,
     "reason": "No Derived-tier claims checked; semantic scorer skipped",
     "removed_count": 0
+  },
+  "domain_advisory": {
+    "risk_level": "NONE",
+    "signals": [],
+    "corpus_overlap_score": 0.8296254073284969,
+    "note": "No cross-domain risk signals. corpus_overlap=0.83.",
+    "instrumentation_version": "1.0"
   }
 }

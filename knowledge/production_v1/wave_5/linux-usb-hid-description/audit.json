@@ -128,5 +128,15 @@
     "reason": "Majority-unsupported Derived tier: 5/10 (50%). Derived claims cannot be collectively trusted as source-derived.",
     "suppression_note": "⚠️ Derived-tier claims suppressed: majority of Derived claims lacked semantic source support. Source-near claims retained.",
     "removed_count": 10
+  },
+  "domain_advisory": {
+    "risk_level": "MODERATE",
+    "signals": [
+      "domain_misalignment_risk",
+      "external_tool_context_gap"
+    ],
+    "corpus_overlap_score": 0.6212157287157287,
+    "note": "Signals: [domain_misalignment_risk, external_tool_context_gap]. corpus_overlap=0.62.",
+    "instrumentation_version": "1.0"
   }
 }

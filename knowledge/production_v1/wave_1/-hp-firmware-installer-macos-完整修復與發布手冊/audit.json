@@ -113,5 +113,15 @@
     "derived_count": 8,
     "reason": "Non-trivial unsupported rate: 2/8 Derived claims (25%). Flagged for priority reviewer sampling.",
     "removed_count": 0
+  },
+  "domain_advisory": {
+    "risk_level": "MODERATE",
+    "signals": [
+      "low_semantic_overlap",
+      "domain_misalignment_risk"
+    ],
+    "corpus_overlap_score": 0.2561252668708809,
+    "note": "Signals: [low_semantic_overlap, domain_misalignment_risk]. corpus_overlap=0.26.",
+    "instrumentation_version": "1.0"
   }
 }

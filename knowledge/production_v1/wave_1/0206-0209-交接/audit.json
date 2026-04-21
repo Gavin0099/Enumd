@@ -134,5 +134,12 @@
     "reason": "HANDOFF node: 6/7 Derived claims unsupported (86%). Handoff-type sources have misleading keyword overlap.",
     "suppression_note": "⚠️ Derived-tier claims suppressed: handoff/memo source with high semantic drift. Source-near claims retained.",
     "removed_count": 7
+  },
+  "domain_advisory": {
+    "risk_level": "NONE",
+    "signals": [],
+    "corpus_overlap_score": 1,
+    "note": "No cross-domain risk signals. corpus_overlap=1.00.",
+    "instrumentation_version": "1.0"
   }
 }
