@@ -43,6 +43,13 @@ promotion_criteria:
       Sessions with no staged files do not count — they produce no
       real-world signal about FP rate on actual commits.
     current_count: 0
+    sample_representativeness_note: >
+      3 is the minimum, not a sufficient sample. If all 3 qualifying
+      sessions only touched documentation, YAML, or JSON (files the
+      checker does not scan), the FP signal is artificially clean.
+      The observation log (§6) tracks staged file types — reviewer
+      should confirm at least 1 session included changes to lib/ or
+      scripts/ (.ts/.py files) before approving promotion.
 
   false_positive_rate:
     INV-1_max_fps: 0
@@ -155,11 +162,12 @@ pre_commit_advisory_only:
 Sessions qualifying toward the ≥3 minimum.
 **Criterion**: stop hook fired with non-empty staged files.
 
-| # | Date | Staged files (summary) | INV-1 | INV-2 | INV-3 | INV-4 | SE trigger | FPs? | Classification |
-|---|------|------------------------|-------|-------|-------|-------|------------|------|----------------|
-| — | —    | (pending first session) | —    | —     | —     | —     | —          | —    | —              |
+| # | Date | Staged files (summary) | includes lib/ or scripts/ .ts/.py? | INV-1 | INV-2 | INV-3 | INV-4 | SE trigger | FPs? | Classification |
+|---|------|------------------------|------------------------------------|-------|-------|-------|-------|------------|------|----------------|
+| — | —    | (pending first session) | —                                 | —     | —     | —     | —     | —          | —    | —              |
 
 **Sessions meeting minimum criterion: 0 / 3**
+**Sessions including .ts/.py scan surface: 0** (at least 1 required before promotion)
 
 ## §7 Promotion Decision Record
 
