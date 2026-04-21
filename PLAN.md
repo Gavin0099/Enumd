@@ -30,6 +30,11 @@
   - Stop hook wired: `.claude/settings.json` Stop hook (runs at session end, advisory/soft gate, exits 0)
   - Observation period: run for several sessions; promote to pre-commit or CI only after noise/FP rate confirmed acceptable
   - Not yet wired: `.git/hooks/pre-commit` — promote only after observation period
+- [x] P2-1.5: Promotion criteria for pre-commit — `governance/pre-commit-promotion-criteria.md`
+  - Criteria: ≥3 qualifying sessions (non-empty staged), 0 FPs on INV-1/INV-2/INV-4, actionable messages, no recurring noise
+  - 5 demotion/delay triggers (DT-1..DT-5) with reset conditions
+  - Observation log (§6) and promotion decision record (§7) — closeable stage gate
+  - **Current**: 0 / 3 qualifying sessions
 - P2-2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
 - P3: Automated evidence pack generation for schema_evolution (git-diff → pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
