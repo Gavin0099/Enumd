@@ -10,9 +10,10 @@ knowledge/nodes.json
 knowledge/build-report.json
 knowledge/graph_diff.json
 
-# Raw Notion source exports — DO NOT gitignore until manifest exists
+# Raw Notion source exports — external bundle at e:/BackUp/Git_EE/source-snapshots/
+# Manifest: artifacts/source-snapshots/manifest-2026-04-21.json
 # See docs/repo-boundary.md "Source.xml Archival Note"
-# knowledge/**/source.xml
+knowledge/**/source.xml
 
 # Local machine / personal settings
 .claude/settings.local.json

@@ -1786,5 +1786,16 @@
       "bytes": 8856,
       "sha256": "516606f1e511201c896a554a3043bb88a1f9aa5da3a4ebb6ab5a5d84ba66accd"
     }
-  ]
+  ],
+  "bundle": {
+    "filename": "enumd-source-snapshot-2026-04-21.tar.gz",
+    "location": "e:/BackUp/Git_EE/source-snapshots/",
+    "size_bytes": 1044819,
+    "sha256": "67f9e74a5c74c6f0c0ae9842cca492d75ea58c497cd3499aad3f829158dc5685",
+    "scope": "knowledge/production_v1 (wave_1 through wave_6)",
+    "entry_count": 297,
+    "created_at": "2026-04-21",
+    "note": "External archive. Content snapshot before source.xml removal from git tracking."
+  },
+  "tracking_status": "pre-removal"
 }
