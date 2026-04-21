@@ -26,8 +26,10 @@
 
 - [x] P2-0: Create `knowledge/production_v1/mapping-spec.md` — evidence-to-governance contract, source of truth, 11 sections
 - [x] P2-1: Mapping-spec compliance checker — `scripts/check-mapping-spec-compliance.py`, enforces INV-1..INV-4, schema-evolution triggers, advisory misuse; full-scan + `--staged` pre-commit mode; exit codes 0/1/2
-  - Hook integration path: `PYTHONIOENCODING=utf-8 python scripts/check-mapping-spec-compliance.py --staged` as pre-commit hook or Claude Code stop hook
-  - Known gap: not yet wired as `.git/hooks/pre-commit` — wiring is a separate `pipeline:` commit
+  - Failure fixtures: `test/fixtures/compliance/inv{1,2,4}_*.ts` — all 3 violations confirmed caught; baseline clean
+  - Stop hook wired: `.claude/settings.json` Stop hook (runs at session end, advisory/soft gate, exits 0)
+  - Observation period: run for several sessions; promote to pre-commit or CI only after noise/FP rate confirmed acceptable
+  - Not yet wired: `.git/hooks/pre-commit` — promote only after observation period
 - P2-2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
 - P3: Automated evidence pack generation for schema_evolution (git-diff → pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
