@@ -25,7 +25,9 @@
 ## Backlog
 
 - [x] P2-0: Create `knowledge/production_v1/mapping-spec.md` — evidence-to-governance contract, source of truth, 11 sections
-- P2-1: CI change classification hook — pre-commit script that reads event-map.yaml and classifies staged diff; validates INV-1 through INV-4 from mapping-spec
+- [x] P2-1: Mapping-spec compliance checker — `scripts/check-mapping-spec-compliance.py`, enforces INV-1..INV-4, schema-evolution triggers, advisory misuse; full-scan + `--staged` pre-commit mode; exit codes 0/1/2
+  - Hook integration path: `PYTHONIOENCODING=utf-8 python scripts/check-mapping-spec-compliance.py --staged` as pre-commit hook or Claude Code stop hook
+  - Known gap: not yet wired as `.git/hooks/pre-commit` — wiring is a separate `pipeline:` commit
 - P2-2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
 - P3: Automated evidence pack generation for schema_evolution (git-diff → pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
