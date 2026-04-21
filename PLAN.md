@@ -10,21 +10,24 @@
 
 ## Current Phase
 
-<!-- Required: fill in current phase ID and description -->
-
-- [ ] Phase A : Initial Setup
+- [x] Phase A : Repo Boundary & Integration Seam Foundation
+  - Repo boundary policy established (docs/repo-boundary.md)
+  - Commit type taxonomy defined (7 types, mixed PR policy)
+  - Source.xml external bundle + manifest created
+  - Integration seam P1: event-map.yaml created (governance/event-map.yaml)
 
 ## Active Sprint
 
-<!-- Required: list current sprint tasks -->
-
-- [ ] (no tasks yet)
+- [x] P1-1: Create `governance/event-map.yaml` — event dictionary, decision map, evidence packs, intervention hooks
+- [x] P1-2: Create evidence output directory `artifacts/runtime/evidence/` and commit path convention
+- [ ] P1-3: Run schema_evolution vertical slice — first complete chain end-to-end using domain_advisory field as evidence
 
 ## Backlog
 
-<!-- Required: prioritized items not yet started -->
-
-- P1: (none)
+- P2: CI change classification hook — pre-commit script that reads event-map.yaml and classifies staged diff
+- P2: Pre-release promotion check — script that walks release_promotion_evidence and blocks if pending gates
+- P3: Automated evidence pack generation for schema_evolution (git-diff → pre-filled JSON template)
+- P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
 
 ## Decision Log
 

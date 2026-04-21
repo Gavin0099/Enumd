@@ -1,0 +1,527 @@
+# governance/event-map.yaml
+# Integration seam: event classification → decision type → evidence → intervention
+#
+# This is the thin governance layer in Enumd that maps "something happened"
+# to "which decision is required, what evidence is needed, and which gate fires."
+#
+# Version: 1.0.0
+# Last updated: 2026-04-21
+# Scope: Enumd consuming repo only (not ai-governance-framework authority)
+
+version: "1.0.0"
+last_updated: "2026-04-21"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SECTION 1: Event Dictionary
+#
+# Each event_type defines:
+#   trigger        — what condition creates this event
+#   scope          — file paths / areas that are relevant
+#   default_risk   — low | medium | high | gate_required
+#   gate_required  — bool: must pass intervention gate before proceeding
+#   commit_prefix  — required commit message prefix (see docs/repo-boundary.md)
+#   evidence_pack  — reference to evidence schema in section 3 (null = not required)
+# ──────────────────────────────────────────────────────────────────────────────
+events:
+
+  schema_evolution:
+    trigger: >
+      Any commit to knowledge/ that adds, removes, renames, or changes the type of
+      a field in audit.json or claims.json — or changes instrumentation_version
+      in either file type.
+    scope:
+      - "knowledge/**/audit.json"
+      - "knowledge/**/claims.json"
+    default_risk: gate_required
+    gate_required: true
+    commit_prefix: "schema-evolution:"
+    evidence_pack: schema_evolution_evidence
+    notes: >
+      audit.json and claims.json are pipeline contract surfaces. Schema drift without
+      documentation breaks downstream consumers silently. Highest-risk routine event.
+
+  authority_upgrade:
+    trigger: >
+      Any change to the ai-governance-framework submodule pointer (advance, rollback,
+      or re-pin to a different SHA).
+    scope:
+      - "ai-governance-framework"
+    default_risk: gate_required
+    gate_required: true
+    commit_prefix: "authority-upgrade:"
+    evidence_pack: authority_upgrade_evidence
+    notes: >
+      An authority upgrade is not a dependency bump. It may silently change prompt
+      payload, runtime hook behavior, contract semantics, or reporting format.
+      See docs/repo-boundary.md §Authority Upgrade Policy.
+
+  governance_change:
+    trigger: >
+      Any commit touching contract.yaml, governance/, .governance*, or AGENTS.md.
+    scope:
+      - "contract.yaml"
+      - "governance/**"
+      - "AGENTS.md"
+    default_risk: high
+    gate_required: false
+    commit_prefix: "governance:"
+    evidence_pack: null
+    notes: >
+      Requires reviewer sign-off. Cannot be mixed with knowledge: or pipeline:
+      in the same PR without declared cause (see Mixed PR Policy).
+
+  pipeline_change:
+    trigger: >
+      Any commit touching lib/ or scripts/ that changes data transformation logic,
+      extraction behavior, or output schema production.
+    scope:
+      - "lib/**"
+      - "scripts/**"
+    default_risk: high
+    gate_required: false
+    commit_prefix: "pipeline:"
+    evidence_pack: pipeline_impact_evidence
+    notes: >
+      Must document which knowledge outputs are affected. Pipeline controls the
+      data boundary and publish risk — treat as control plane, not just code.
+
+  knowledge_sync:
+    trigger: >
+      Routine commit updating knowledge/ files as pipeline output (audit.json content
+      changes, synthesis.md updates, claims.json value updates) where NO schema changes.
+    scope:
+      - "knowledge/**"
+    default_risk: low
+    gate_required: false
+    commit_prefix: "knowledge:"
+    evidence_pack: null
+    notes: >
+      Only valid when schema is NOT changing. If any audit.json/claims.json field
+      structure changes, reclassify as schema_evolution immediately.
+
+  source_snapshot:
+    trigger: >
+      Any of: new wave added to production_v1, full Notion re-export, pipeline
+      schema change that touches source ingestion behavior.
+    scope:
+      - "knowledge/production_v1/**"
+      - "artifacts/source-snapshots/**"
+    default_risk: medium
+    gate_required: false
+    commit_prefix: "chore:"
+    evidence_pack: source_snapshot_evidence
+    notes: >
+      Requires new external bundle before triggering gitignore of new source.xml files.
+      See docs/repo-boundary.md §Source Snapshot Lifecycle.
+
+  release_promotion:
+    trigger: >
+      Any intent to tag a release, publish an artifact, or mark knowledge output
+      as production-ready (synthesis_snapshot.json or pilot_trust_report.json update).
+    scope:
+      - "knowledge/synthesis_snapshot.json"
+      - "knowledge/pilot_trust_report.json"
+    default_risk: gate_required
+    gate_required: true
+    commit_prefix: "governance:"
+    evidence_pack: release_promotion_evidence
+    notes: >
+      Pre-release gate. All pending schema_evolution and authority_upgrade gate
+      events must be resolved before this gate can pass.
+
+  session_artifact_commit:
+    trigger: >
+      Committing new runtime session artifacts produced by governance enforcement runs.
+    scope:
+      - "artifacts/runtime/**"
+    default_risk: low
+    gate_required: false
+    commit_prefix: "governance:"
+    evidence_pack: null
+    notes: >
+      All completed sessions are tracked permanently. Must not be mixed with
+      knowledge:, pipeline:, or chore: changes in the same commit.
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SECTION 2: Decision Type Mapping
+#
+# event_type → decision_type → default_action
+# decision_type is the machine-readable key the governance engine uses to route
+# to the correct gate or evidence check.
+# ──────────────────────────────────────────────────────────────────────────────
+decision_map:
+
+  schema_evolution:
+    decision_type: schema_evolution_gate
+    default_action: block_until_evidence_complete
+    fallback_if_no_evidence: block
+    human_review_required: true
+
+  authority_upgrade:
+    decision_type: authority_upgrade_gate
+    default_action: block_until_review_gate_complete
+    fallback_if_no_evidence: block
+    human_review_required: true
+
+  governance_change:
+    decision_type: governance_review
+    default_action: flag_for_reviewer_signoff
+    fallback_if_no_evidence: warn
+    human_review_required: true
+
+  pipeline_change:
+    decision_type: pipeline_impact_review
+    default_action: require_impact_documentation
+    fallback_if_no_evidence: warn
+    human_review_required: false
+
+  knowledge_sync:
+    decision_type: routine_sync
+    default_action: pass
+    fallback_if_no_evidence: pass
+    human_review_required: false
+
+  source_snapshot:
+    decision_type: snapshot_lifecycle_check
+    default_action: verify_bundle_exists
+    fallback_if_no_evidence: warn
+    human_review_required: false
+
+  release_promotion:
+    decision_type: release_gate
+    default_action: block_until_evidence_complete
+    fallback_if_no_evidence: block
+    human_review_required: true
+
+  session_artifact_commit:
+    decision_type: governance_evidence_commit
+    default_action: pass
+    fallback_if_no_evidence: pass
+    human_review_required: false
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SECTION 3: Evidence Pack Schemas
+#
+# Minimum evidence required before a gate_required event can proceed.
+# Each field:
+#   required    — bool
+#   source      — how to produce: manual | pipeline | git-diff | checklist | git
+#   description — what the field must contain
+# ──────────────────────────────────────────────────────────────────────────────
+evidence_packs:
+
+  schema_evolution_evidence:
+    _description: >
+      Required for any schema_evolution event. Capture before the schema-evolution:
+      commit lands. This is the first vertical slice: schema-evolution chain is
+      the canonical proof-of-concept for the full event → decision → evidence chain.
+    fields:
+      event_type:
+        required: true
+        source: manual
+        description: "Must be 'schema_evolution'"
+      changed_files:
+        required: true
+        source: git-diff
+        description: "List of audit.json or claims.json files whose schema changed"
+      field_diff:
+        required: true
+        source: git-diff
+        description: "Exact fields added, removed, renamed, or type-changed"
+      instrumentation_version:
+        required: true
+        source: manual
+        description: "New instrumentation_version value introduced by this change"
+      backward_compatible:
+        required: true
+        source: manual
+        description: "'yes' | 'no' | 'additive-only'. If 'no', migration issue required."
+      downstream_consumers_updated:
+        required: true
+        source: manual
+        description: "'yes' | 'none_required'. If 'yes', list which consumers."
+      verdict_or_semantic_changed:
+        required: true
+        source: manual
+        description: "'yes' | 'no'. If 'yes', describe what changed and impact."
+      wave_scope:
+        required: false
+        source: pipeline
+        description: "Which waves/documents are affected by this schema change"
+      commit_sha:
+        required: false
+        source: git
+        description: "SHA of the schema-evolution: commit (filled post-commit)"
+
+  authority_upgrade_evidence:
+    _description: >
+      Required for any authority_upgrade event. Must answer all 5 review gate
+      questions from docs/repo-boundary.md §Authority Upgrade Policy.
+    fields:
+      event_type:
+        required: true
+        source: manual
+        description: "Must be 'authority_upgrade'"
+      upstream_sha_before:
+        required: true
+        source: git
+        description: "Submodule pointer SHA before upgrade"
+      upstream_sha_after:
+        required: true
+        source: git
+        description: "Submodule pointer SHA after upgrade"
+      layers_affected:
+        required: true
+        source: checklist
+        description: >
+          Framework layers affected. List all that apply:
+          prompt_payload | runtime_hooks | contract_semantics | advisory_taxonomy | artifact_schema
+          Empty list is valid only if upstream diff confirms no layer changes.
+      contract_yaml_compatible:
+        required: true
+        source: manual
+        description: "'yes' | 'yes_with_update' | 'no_blocked'"
+      consuming_docs_updated:
+        required: true
+        source: manual
+        description: "'yes' | 'none_required'. If 'yes', list which docs."
+      change_level:
+        required: true
+        source: manual
+        description: "'patch' | 'minor' | 'major'"
+      no_consuming_behavior_change:
+        required: true
+        source: manual
+        description: "'true' | 'false'. If 'false', describe what changes for consumers."
+
+  pipeline_impact_evidence:
+    _description: >
+      Required for pipeline: commits that change data transformation behavior.
+    fields:
+      event_type:
+        required: true
+        source: manual
+        description: "Must be 'pipeline_change'"
+      affected_outputs:
+        required: true
+        source: manual
+        description: "Which knowledge outputs (waves, file types) are affected"
+      schema_change:
+        required: true
+        source: manual
+        description: "'yes' | 'no'. If 'yes', must reclassify this event as schema_evolution."
+      behavioral_change:
+        required: true
+        source: manual
+        description: "What the pipeline does differently after this change"
+
+  source_snapshot_evidence:
+    _description: >
+      Required before new source.xml files can be gitignored. Verifies external
+      bundle is in place.
+    fields:
+      event_type:
+        required: true
+        source: manual
+        description: "Must be 'source_snapshot'"
+      bundle_path:
+        required: true
+        source: manual
+        description: "Absolute path to the .tar.gz bundle"
+      bundle_sha256:
+        required: true
+        source: manual
+        description: "SHA-256 of the bundle file"
+      manifest_path:
+        required: true
+        source: manual
+        description: "Relative path to artifacts/source-snapshots/manifest-YYYY-MM-DD.json"
+      scope:
+        required: true
+        source: manual
+        description: "Which waves/batches are included in this bundle"
+      entry_count:
+        required: true
+        source: manual
+        description: "Number of source.xml files in the bundle"
+
+  release_promotion_evidence:
+    _description: >
+      Required for release_promotion gate. Confirms no unresolved gate events block
+      the release.
+    fields:
+      event_type:
+        required: true
+        source: manual
+        description: "Must be 'release_promotion'"
+      pending_schema_evolution_gates:
+        required: true
+        source: manual
+        description: "'none' | list of unresolved schema_evolution events blocking release"
+      pending_authority_upgrade_gates:
+        required: true
+        source: manual
+        description: "'none' | list of unresolved authority_upgrade events blocking release"
+      synthesis_snapshot_sha:
+        required: true
+        source: git
+        description: "SHA of knowledge/synthesis_snapshot.json at release point"
+      trust_report_verdict:
+        required: false
+        source: pipeline
+        description: "Latest verdict from knowledge/pilot_trust_report.json"
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SECTION 4: Intervention Hooks
+#
+# Named hooks triggered by decision_type.
+#   trigger_on     — list of decision_types that activate this hook
+#   action         — what the hook does
+#   output_format  — machine-readable record produced
+#   blocking       — bool: does this hook block progression if action unsatisfied
+# ──────────────────────────────────────────────────────────────────────────────
+intervention_hooks:
+
+  pre_change_classification:
+    trigger_on:
+      - schema_evolution_gate
+      - authority_upgrade_gate
+      - pipeline_impact_review
+      - governance_review
+    action: >
+      Classify the incoming change into an event_type using the event dictionary.
+      Emit a machine-readable classification record before any commit lands.
+    output_format:
+      type: json
+      fields:
+        - event_type
+        - trigger_matched
+        - commit_prefix_required
+        - gate_required
+        - evidence_pack_required
+    blocking: false
+    notes: >
+      Non-blocking classification. The commit prefix rule enforces downstream
+      correctness — a wrong prefix is a verifiable violation.
+
+  pre_merge_review_gate:
+    trigger_on:
+      - schema_evolution_gate
+      - authority_upgrade_gate
+      - release_gate
+    action: >
+      Verify the required evidence pack is complete (all required fields present).
+      Block merge if evidence is missing or incomplete.
+    output_format:
+      type: json
+      fields:
+        - event_type
+        - evidence_pack
+        - fields_present
+        - fields_missing
+        - gate_verdict
+    blocking: true
+    notes: >
+      gate_verdict must be 'pass' before merge is allowed. This is the hard stop
+      in the chain.
+
+  post_pipeline_evidence_summary:
+    trigger_on:
+      - schema_evolution_gate
+      - pipeline_impact_review
+    action: >
+      After pipeline runs that affect knowledge outputs, emit a summary of what
+      changed and whether any schema_evolution event was triggered.
+    output_format:
+      type: json
+      fields:
+        - pipeline_run_id
+        - waves_affected
+        - schema_changed
+        - event_triggered
+        - evidence_pack_required
+    blocking: false
+    notes: >
+      Non-blocking. Produces a machine-readable audit trail of pipeline impact.
+      Even when no gate fires, the absence of a schema_evolution event is evidence.
+
+  pre_release_promotion_check:
+    trigger_on:
+      - release_gate
+    action: >
+      Before any release promotion, verify:
+      1. No unresolved schema_evolution gates
+      2. No unresolved authority_upgrade gates
+      3. synthesis_snapshot.json is current
+    output_format:
+      type: json
+      fields:
+        - release_blocked
+        - blocking_events
+        - synthesis_snapshot_sha
+        - gate_verdict
+    blocking: true
+    notes: >
+      All pending gate events must resolve to 'pass' before release proceeds.
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SECTION 5: First Vertical Slice — schema_evolution
+#
+# This section documents the canonical complete chain for schema_evolution.
+# Use this as the reference implementation when proving out the other event types.
+# ──────────────────────────────────────────────────────────────────────────────
+vertical_slice_schema_evolution:
+  description: >
+    The schema_evolution event is the first complete vertical slice through the
+    integration seam. It exercises the full chain:
+    event detection → decision type assignment → evidence pack collection →
+    pre_merge gate → machine-readable summary.
+
+  chain:
+    - step: 1
+      name: detect
+      who: human or CI diff scan
+      action: >
+        Diff the knowledge/ commit. If any audit.json or claims.json field
+        structure changed → emit event_type=schema_evolution.
+
+    - step: 2
+      name: classify
+      who: pre_change_classification hook
+      action: >
+        Assign decision_type=schema_evolution_gate.
+        Confirm commit_prefix must be "schema-evolution:".
+        Confirm evidence_pack=schema_evolution_evidence is required.
+
+    - step: 3
+      name: collect_evidence
+      who: human (author)
+      action: >
+        Fill all required fields in schema_evolution_evidence.
+        Record the evidence pack as a JSON file under:
+        artifacts/runtime/evidence/schema-evolution-YYYY-MM-DD-<short-desc>.json
+
+    - step: 4
+      name: gate
+      who: pre_merge_review_gate hook
+      action: >
+        Verify all required fields are present.
+        If fields_missing is non-empty → gate_verdict=fail → block merge.
+        If all required fields present → gate_verdict=pass.
+
+    - step: 5
+      name: commit
+      who: human (author)
+      action: >
+        Commit with prefix "schema-evolution:" following the format in docs/repo-boundary.md.
+        Reference the evidence pack file in the commit body.
+
+    - step: 6
+      name: summary
+      who: post_pipeline_evidence_summary hook
+      action: >
+        Emit a machine-readable summary of this schema_evolution event to
+        artifacts/runtime/summaries/ for governance audit trail.
+
+  evidence_output_path_template: >
+    artifacts/runtime/evidence/schema-evolution-YYYY-MM-DD-<short-desc>.json

@@ -1,0 +1,3 @@
+# Evidence packs for gate_required events are stored here.
+# Naming convention: <event_type>-YYYY-MM-DD-<short-desc>.json
+# See governance/event-map.yaml §Section 5 for schema_evolution vertical slice.
