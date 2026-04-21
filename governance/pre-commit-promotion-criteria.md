@@ -164,10 +164,10 @@ Sessions qualifying toward the ≥3 minimum.
 
 | # | Date | Staged files summary | Includes .ts/.py? | Hook result | FP? | Message self-contained? | Reset trigger? | Notes |
 |---|------|----------------------|-------------------|-------------|-----|------------------------|----------------|-------|
-| — | —    | (pending first session) | —              | —           | —   | —                      | —              | —     |
+| 1 | 2026-04-21 | lib/knowledge-inference.ts, lib/synthesis-context.ts | yes | pass | no | yes | none | lib/ type annotation fixes; both staged .ts files |
 
-**Sessions meeting minimum criterion: 0 / 3**
-**Sessions including .ts/.py scan surface: 0** (at least 1 required before promotion)
+**Sessions meeting minimum criterion: 1 / 3**
+**Sessions including .ts/.py scan surface: 1** (at least 1 required before promotion)
 
 Column notes:
 - **Hook result**: pass / fail (INV-N) / schema_evolution_required
