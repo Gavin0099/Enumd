@@ -13,3 +13,9 @@ knowledge/graph_diff.json
 # Raw Notion source exports — DO NOT gitignore until manifest exists
 # See docs/repo-boundary.md "Source.xml Archival Note"
 # knowledge/**/source.xml
+
+# Local machine / personal settings
+.claude/settings.local.json
+
+# Scratch / working temp area
+scratch/
