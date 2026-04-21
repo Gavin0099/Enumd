@@ -1,0 +1,92 @@
+{
+  "schema_evolution_event_id": "schema-evolution-2026-04-21-domain-advisory",
+  "event_type": "schema_evolution",
+  "commit_sha": "f64e761ed21918374ce75912656a641979acd173",
+  "commit_prefix_used": "schema-evolution:",
+  "instrumentation_version": "1.0",
+
+  "changed_files": {
+    "source": "git-diff",
+    "value": [
+      "knowledge/production_v1/**/audit.json (all 297 production_v1 slugs)",
+      "knowledge/production_v1/dedupe-report.json (timestamp refresh only)"
+    ]
+  },
+
+  "field_diff": {
+    "source": "git-diff",
+    "value": {
+      "added": {
+        "domain_advisory": {
+          "type": "object",
+          "fields": {
+            "risk_level": "\"NONE\" | \"LOW\" | \"MODERATE\" | \"HIGH\"",
+            "signals": "Array<string> — see DomainAdvisory interface in lib/domain-advisory.ts",
+            "corpus_overlap_score": "number (float 0..1)",
+            "note": "string",
+            "instrumentation_version": "\"1.0\" (literal)"
+          }
+        }
+      },
+      "removed": {},
+      "renamed": {},
+      "type_changed": {}
+    }
+  },
+
+  "backward_compatible": {
+    "source": "manual",
+    "value": "additive-only",
+    "rationale": "New field only. No existing field was removed, renamed, or changed type. Consumers that do not read domain_advisory are unaffected."
+  },
+
+  "downstream_consumers_updated": {
+    "source": "manual",
+    "value": "none_required",
+    "rationale": "No existing consumer was reading domain_advisory before this change (field did not exist). Consumers that process governance_report.json nodeSignals now receive MODERATE-risk entries they previously did not see — this is additive, not breaking."
+  },
+
+  "verdict_or_semantic_changed": {
+    "source": "manual",
+    "value": "no — automated decisions unchanged; reviewer routing surface changed",
+    "detail": {
+      "automated_verdicts_changed": false,
+      "suppression_decisions_changed": false,
+      "claim_counts_changed": false,
+      "reviewer_visibility_changed": true,
+      "reviewer_visibility_detail": "governance_report.json nodeSignals now contains 4 MODERATE-risk docs (lenovo-dmc, lenovo-one-key-update-tool-, linux-usb-hid-description, -hp-firmware-installer-macos-*) that were not surfaced before. Reviewers and AI governance framework consumers reading nodeSignals see new routing information.",
+      "docs_affected_by_routing_change": 4,
+      "docs_risk_level_distribution": {
+        "NONE": 283,
+        "LOW": 10,
+        "MODERATE": 4,
+        "HIGH": 0
+      }
+    }
+  },
+
+  "wave_scope": {
+    "source": "pipeline",
+    "value": "production_v1/wave_1 through production_v1/wave_6, all 297 slugs"
+  },
+
+  "lib_consumer_analysis": {
+    "source": "manual",
+    "files_referencing_domain_advisory": [
+      "lib/domain-advisory.ts — defines DomainAdvisory interface and computeDomainAdvisory()",
+      "scripts/advisory-replay.ts — writes domain_advisory back to audit.json in-place",
+      "scripts/production-wave-runner.ts — computes and stores domain_advisory; exposes risk_level/signals/corpus_overlap_score in govNodes which feeds governance_report.json"
+    ],
+    "gate_consuming_domain_advisory": "none identified",
+    "gate_policy_references_domain_advisory": false,
+    "governance_report_nodeSignals_routing": "advisory_risk_level !== 'NONE' → included in nodeSignals array in governance_report.json (reviewer-visible, not a blocking gate)"
+  },
+
+  "classification_verdict": {
+    "schema_change_type": "schema_addition",
+    "semantics_change_type": "reviewer_routing_surface_only",
+    "automated_gate_behavior_changed": false,
+    "human_review_routing_surface_changed": true,
+    "risk_assessment": "LOW — additive field, verdict-neutral, no existing gate logic modified"
+  }
+}

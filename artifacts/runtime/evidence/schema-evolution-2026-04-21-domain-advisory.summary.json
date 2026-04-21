@@ -1,0 +1,39 @@
+{
+  "summary_type": "decision_summary",
+  "schema_evolution_event_id": "schema-evolution-2026-04-21-domain-advisory",
+  "generated_at": "2026-04-21",
+
+  "event_type": "schema_evolution",
+  "decision_type": "schema_evolution_gate",
+  "gate_required": true,
+  "gate_result": "pass",
+
+  "affected_documents": 297,
+  "affected_waves": ["wave_1", "wave_2", "wave_3", "wave_4", "wave_5", "wave_6"],
+
+  "schema_changed_fields": ["domain_advisory"],
+  "schema_change_type": "additive_only",
+
+  "verdict_semantics_changed": false,
+  "reviewer_routing_surface_changed": true,
+  "routing_impact_doc_count": 4,
+  "routing_impact_detail": "4 docs now surface MODERATE risk in governance_report.json nodeSignals (were invisible before). These docs have empty verdicts — no promotion decision was retroactively altered.",
+
+  "intervention_taken": "gate reviewed and passed — evidence pack complete, all required fields present, no blocking condition met",
+
+  "gate_checklist": {
+    "event_correctly_classified": true,
+    "decision_type_correctly_mapped": true,
+    "evidence_pack_fields_complete": true,
+    "evidence_sources_traceable": true,
+    "gate_decision_explicit": true
+  },
+
+  "open_questions": [
+    "Do any consumers of governance_report.json nodeSignals use risk_level for automated routing? (currently: no evidence of this — but not yet exhaustively verified against all framework consumers)",
+    "Is instrumentation_version: '1.0' a versioned interface? If the computation changes in a future pipeline update, does this need a version bump? (recommendation: yes, this should be treated as a versioned contract surface)"
+  ],
+
+  "evidence_pack_ref": "artifacts/runtime/evidence/schema-evolution-2026-04-21-domain-advisory.json",
+  "commit_sha": "f64e761ed21918374ce75912656a641979acd173"
+}
