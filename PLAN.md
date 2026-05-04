@@ -29,12 +29,12 @@
   - Failure fixtures: `test/fixtures/compliance/inv{1,2,4}_*.ts` ??all 3 violations confirmed caught; baseline clean
   - Stop hook wired: `.claude/settings.json` Stop hook (runs at session end, advisory/soft gate, exits 0)
   - Observation period: run for several sessions; promote to pre-commit or CI only after noise/FP rate confirmed acceptable
-  - Not yet wired: `.git/hooks/pre-commit` ??promote only after observation period
+  - Promotion approved (2026-05-04); pre-commit hard-gate wiring pending execution choice (.git/hooks/pre-commit or CI gate)
 - [x] P2-1.5: Promotion criteria for pre-commit ??`governance/pre-commit-promotion-criteria.md`
   - Criteria: ?? qualifying sessions (non-empty staged), 0 FPs on INV-1/INV-2/INV-4, actionable messages, no recurring noise
   - 5 demotion/delay triggers (DT-1..DT-5) with reset conditions
   - Observation log (禮6) and promotion decision record (禮7) ??closeable stage gate
-  - **Current**: 0 / 3 qualifying sessions
+  - **Current**: 3 / 3 qualifying sessions
 - P2-2: Pre-release promotion check ??script that walks release_promotion_evidence and blocks if pending gates
 - P3: Automated evidence pack generation for schema_evolution (git-diff ??pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
@@ -75,3 +75,4 @@
 ## Known Risks
 
 <!-- Optional: track identified risks and mitigation status -->
+
