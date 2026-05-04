@@ -36,7 +36,7 @@
   - Observation log (禮6) and promotion decision record (禮7) ??closeable stage gate
   - **Current**: 3 / 3 qualifying sessions
 - [x] P2-2: Pre-release promotion check ??`scripts/check-release-promotion-gate.py` implemented; blocks on pending gates or missing release_promotion_evidence
-- P3: Automated evidence pack generation for schema_evolution (git-diff ??pre-filled JSON template)
+- [x] P3-1: Automated evidence pack generation for schema_evolution (`scripts/generate-schema-evolution-evidence.py`; git-diff ??pre-filled JSON template)
 - P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
 
 ## Open Questions (from P1-3 vertical slice)
