@@ -80,7 +80,7 @@ def main() -> int:
         "evidence_pack_required": evidence_pack_required,
         "changed_files_count": len(relevant),
         "changed_files": relevant,
-        "generated_at": now.isoformat(timespec="seconds") + "Z",
+        "generated_at": now.isoformat(timespec="seconds").replace("+00:00", "Z"),
         "mode": "staged" if args.staged else "rev-range",
         "rev_range": None if args.staged else args.rev_range,
     }
