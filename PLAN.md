@@ -60,17 +60,17 @@
 
 ## Decision Log
 
-- 2026-04-21: Repo boundary?湔祥摰??Ⅱ蝡?撅文??ｇ??舫?撱箄?蝞撓?箇宏??repo??憪?皞翰?抒宏?喳???archive嚗xternal bundle + manifest + sha256嚗霅?箄?瘝餌??楚? repo?ommit type 撌脣?蝢?governance / authority-upgrade / pipeline / knowledge / schema-evolution 鈭車嚗?甇Ｘ毽?底閬?[docs/repo-boundary.md](docs/repo-boundary.md)??
+- 2026-04-21: Repo boundary 整治完成。確立三層分離：可重建計算輸出移出 repo、原始來源快照移至外部 archive（external bundle + manifest + sha256）、知識產出與治理痕跡留在 repo。commit type 已定義 governance / authority-upgrade / pipeline / knowledge / schema-evolution 五種，禁止混送。詳見 [docs/repo-boundary.md](docs/repo-boundary.md)。
 
-- 2026-04-21: `ai-governance-framework` submodule pointer drift ??**?思??豢嚗ending authority-upgrade candidate嚗?*??
-  - ?暹?嚗ointer ??drift嚗numd ?桀??甇?虜嚗撌脩 consuming-side incompatibility??
-  - 銝?嗅????⊥?蝣?trigger嚗迨????pointer ?芣 completion pressure嚗???architecture reason?olicy ?遣蝡??亦??駁??????曹?頝??渲死璅∪?嚗停蝑 policy ?芣鋆ˇ??
-  - ??璇辣嚗遙銝??嚗?
-    1. Enumd consuming behavior ??upstream authority 隤儔?箇銝???
-    2. Upstream 靽桀 Enumd ?曉?Ⅱ?閬?瘝餌?隤儔??fix
-    3. Reviewer 閬?撠???upstream authority baseline
-    4. Submodule drift 憭批?⊥????脩迂? repo 瘨祥??芸?authority baseline??
-  - 銝活閰摯??韏?`authority-upgrade:` review gate嚗ocs/repo-boundary.md嚗?
+- 2026-04-21: `ai-governance-framework` submodule pointer drift — **暫不吸收（pending authority-upgrade candidate）**。
+  - 現況：pointer 有 drift，Enumd 當時功能正常，無已知 consuming-side incompatibility。
+  - 不吸收原因：無明確 trigger；若僅因 completion pressure 跟進 pointer，缺乏 architecture reason，會弱化既有 policy。
+  - 重開條件（任一成立）：
+    1. Enumd consuming behavior 與 upstream authority 語義出現不一致
+    2. Upstream 修到 Enumd 當下明確需要的治理語義或 fix
+    3. Reviewer 要求對齊某個 upstream authority baseline
+    4. Submodule drift 大到無法合理聲稱本 repo 目前消費的是哪個 authority baseline
+  - 下次評估時：走 `authority-upgrade:` review gate（見 `docs/repo-boundary.md`）。
 
 ## Known Risks
 
