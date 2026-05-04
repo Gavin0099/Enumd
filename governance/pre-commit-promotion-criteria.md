@@ -193,7 +193,7 @@ promotion_decision:
   recurring_noise_confirmed_clean: true
   delay_triggers_tripped: []
   promote_date: "2026-05-04"
-  promote_commit: "TO_BE_FILLED_AFTER_COMMIT"
+  promote_commit: "e136824"
   promoted_by: "Codex"
   notes: "Criteria met with 3/3 qualifying sessions and zero FP on INV-1/2/4."
 ```
