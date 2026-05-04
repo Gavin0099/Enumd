@@ -3,7 +3,7 @@
 <!-- baseline_version: 1.0.0 -->
 
 > **最後更新**: 2026-05-04
-> **Owner**: TODO
+> **Owner**: Gavin
 > **Freshness**: Sprint (7d)
 
 ---
