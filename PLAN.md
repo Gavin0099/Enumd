@@ -37,7 +37,7 @@
   - **Current**: 3 / 3 qualifying sessions
 - [x] P2-2: Pre-release promotion check ??`scripts/check-release-promotion-gate.py` implemented; blocks on pending gates or missing release_promotion_evidence
 - [x] P3-1: Automated evidence pack generation for schema_evolution (`scripts/generate-schema-evolution-evidence.py`; git-diff ??pre-filled JSON template)
-- P3: `post_pipeline_evidence_summary` hook implementation for pipeline: commits
+- [x] P3-2: `post_pipeline_evidence_summary` hook implementation for pipeline commits (`scripts/post-pipeline-evidence-summary.py`)
 
 ## Open Questions (from P1-3 vertical slice)
 
