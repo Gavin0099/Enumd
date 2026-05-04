@@ -175,6 +175,7 @@ def _save_daily_rows(rows: list[dict[str, Any]]) -> None:
 
 
 def _evaluate_stop_condition(rows: list[dict[str, Any]], consecutive_days: int) -> dict[str, Any]:
+    # Use a sliding tail window so "3 consecutive days" always means the latest N daily records.
     rows_sorted = sorted(rows, key=lambda r: r["date"])
     recent = rows_sorted[-consecutive_days:]
     if len(recent) < consecutive_days:

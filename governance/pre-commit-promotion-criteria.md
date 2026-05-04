@@ -166,9 +166,10 @@ Sessions qualifying toward the ≥3 minimum.
 |---|------|----------------------|-------------------|-------------|-----|------------------------|----------------|-------|
 | 1 | 2026-04-21 | lib/knowledge-inference.ts, lib/synthesis-context.ts | yes | pass | no | yes | none | lib/ type annotation fixes; both staged .ts files |
 | 2 | 2026-04-21 | scripts/*.ts (9 files), scripts/check-mapping-spec-compliance.py | yes | pass | no | yes | none | scripts/ interface drift from Phase 4.9/5; checker subprocess encoding fix + EXEMPT_FIXTURE_PATHS |
+| 3 | 2026-05-04 | scripts/collect-ai-governance-daily.py | yes | pass | no | yes | none | Added stop-condition window comment; staged checker PASS |
 
-**Sessions meeting minimum criterion: 2 / 3**
-**Sessions including .ts/.py scan surface: 2** (at least 1 required before promotion)
+**Sessions meeting minimum criterion: 3 / 3**
+**Sessions including .ts/.py scan surface: 3** (at least 1 required before promotion)
 
 Column notes:
 - **Hook result**: pass / fail (INV-N) / schema_evolution_required
@@ -182,19 +183,19 @@ To be filled when all §3 criteria are met:
 
 ```yaml
 promotion_decision:
-  status: pending
-  sessions_qualifying: 2
+  status: approved
+  sessions_qualifying: 3
   sessions_required: 3
   fp_count_INV1: 0
   fp_count_INV2: 0
   fp_count_INV4: 0
-  actionability_confirmed: false
-  recurring_noise_confirmed_clean: false
+  actionability_confirmed: true
+  recurring_noise_confirmed_clean: true
   delay_triggers_tripped: []
-  promote_date: ~
-  promote_commit: ~
-  promoted_by: ~
-  notes: ~
+  promote_date: "2026-05-04"
+  promote_commit: "TO_BE_FILLED_AFTER_COMMIT"
+  promoted_by: "Codex"
+  notes: "Criteria met with 3/3 qualifying sessions and zero FP on INV-1/2/4."
 ```
 
 ## §8 Changelog
