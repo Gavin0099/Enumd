@@ -1,4 +1,4 @@
-payload_layering:
+﻿payload_layering:
   version: '1.0.0'
   repo_type: firmware
   l0_context:
