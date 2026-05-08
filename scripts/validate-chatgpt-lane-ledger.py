@@ -10,6 +10,7 @@ Checks docs/status/chatgpt-lane-run-ledger.md rows for:
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 import re
 import sys
@@ -17,10 +18,47 @@ import sys
 
 LEDGER = Path("docs/status/chatgpt-lane-run-ledger.md")
 STATUS_DIR = Path("docs/status")
+RUNTIME_SESSION_INDEX = Path("artifacts/session-index.ndjson")
 
 
 def _parse_row(line: str) -> list[str]:
     return [c.strip() for c in line.strip().strip("|").split("|")]
+
+
+def _normalize_words(text: str) -> set[str]:
+    words = re.findall(r"[a-z0-9]+", text.lower())
+    stop = {
+        "for",
+        "the",
+        "and",
+        "with",
+        "run",
+        "patch",
+        "pilot",
+        "lane",
+        "chatgpt",
+        "status",
+    }
+    return {w for w in words if len(w) >= 3 and w not in stop}
+
+
+def _load_runtime_sessions() -> dict[str, dict]:
+    if not RUNTIME_SESSION_INDEX.exists():
+        raise FileNotFoundError(f"missing runtime session index: {RUNTIME_SESSION_INDEX}")
+
+    sessions: dict[str, dict] = {}
+    for ln, raw in enumerate(RUNTIME_SESSION_INDEX.read_text(encoding="utf-8").splitlines(), start=1):
+        line = raw.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid JSON at {RUNTIME_SESSION_INDEX}:{ln}: {exc}") from exc
+        sid = obj.get("session_id")
+        if sid:
+            sessions[str(sid)] = obj
+    return sessions
 
 
 def main() -> int:
@@ -35,6 +73,13 @@ def main() -> int:
         return 1
 
     failed: list[str] = []
+    try:
+        runtime_sessions = _load_runtime_sessions()
+    except (FileNotFoundError, ValueError) as exc:
+        print("LEDGER_VALIDATION=FAIL")
+        print(f"- runtime session index load error: {exc}")
+        return 2
+
     for row in data_rows:
         cells = _parse_row(row)
         # run_id,date,slice_type,commit_hash,session_id,closeout_covered,mapping_confidence,completion_contract,remarks
@@ -74,6 +119,33 @@ def main() -> int:
                 failed.append(
                     f"{run_id}: closeout commit hash ({closeout_hash}) != ledger commit_hash ({commit_hash})"
                 )
+
+        # Runtime cross-check: ledger session must exist and be valid in artifacts/session-index.ndjson.
+        runtime = runtime_sessions.get(session_id)
+        if runtime is None:
+            failed.append(f"{run_id}: session_id not found in runtime index ({session_id})")
+            continue
+
+        runtime_status = str(runtime.get("closeout_status", "")).lower()
+        if runtime_status != "valid":
+            failed.append(
+                f"{run_id}: runtime closeout_status != valid (session={session_id}, actual={runtime_status or 'missing'})"
+            )
+
+        runtime_intent_raw = runtime.get("task_intent")
+        if runtime_intent_raw is None:
+            failed.append(f"{run_id}: runtime task_intent missing (session={session_id})")
+            continue
+
+        runtime_intent = str(runtime_intent_raw)
+        slice_terms = _normalize_words(cells[2])
+        intent_terms = _normalize_words(runtime_intent)
+        overlap = slice_terms & intent_terms
+        if not overlap:
+            failed.append(
+                f"{run_id}: task_intent incompatible with slice_type "
+                f"(slice='{cells[2]}', runtime_task_intent='{runtime_intent}')"
+            )
 
     if failed:
         print("LEDGER_VALIDATION=FAIL")
