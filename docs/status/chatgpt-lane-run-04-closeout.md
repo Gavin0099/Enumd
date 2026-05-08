@@ -1,0 +1,25 @@
+# ChatGPT Lane Pilot Run 04 Closeout
+
+- run_id: `run-04`
+- session_id: `chatgpt-lane-run4-2026-05-08`
+- closeout_status: `valid`
+- closed_at: `2026-05-08T18:40:00+08:00`
+- task_intent: `validator/tooling narrow patch for run-ledger contract checks`
+- primary_targets:
+  - `scripts/validate-chatgpt-lane-ledger.py`
+  - `docs/status/chatgpt-lane-session-index.md`
+  - `docs/status/chatgpt-lane-run-ledger.md`
+  - `docs/status/kpi-snapshot-template.md`
+- out_of_scope:
+  - broad validator refactor
+  - implementation code paths outside targeted script and `docs/status/`
+- execution_evidence:
+  - command: `python scripts/validate-chatgpt-lane-ledger.py`
+  - result: `LEDGER_VALIDATION=PASS`, `validated_runs=3`
+- time_order_check: `valid`
+- intent_compatibility_check: `valid`
+- completion_contract:
+  - semantic_slice_commit_exists: `pending until commit created`
+  - same_repo_closeout_valid: `yes`
+  - task_intent_compatible_and_time_order_valid: `yes`
+  - ledger_mapping_fields_present: `yes`

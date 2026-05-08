@@ -7,5 +7,5 @@
 | run-01 | 2026-05-08 | 1 | 1 | 0 | 1.00 | 1 | 1.00 | 0 | 0 | n/a | not captured yet |
 | run-02 | 2026-05-08 | 2 | 2 | 0 | 1.00 | 2 | 1.00 | 0 | 0 | n/a | not captured yet |
 | run-03 | 2026-05-08 | 3 | 3 | 0 | 1.00 | 3 | 1.00 | 0 | 0 | n/a | not captured yet |
-| run-04 | TBD | 4 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-04 | 2026-05-08 | 4 | 4 | 0 | 1.00 | 4 | 1.00 | 0 | 0 | n/a | validator run recorded |
 | run-05 | TBD | 5 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
