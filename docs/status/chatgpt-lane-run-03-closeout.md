@@ -1,0 +1,27 @@
+# ChatGPT Lane Pilot Run 03 Closeout
+
+- run_id: `run-03`
+- session_id: `chatgpt-lane-run3-2026-05-08`
+- closeout_status: `valid`
+- closed_at: `2026-05-08T18:20:00+08:00`
+- task_intent: `cross-file field naming sync patch for status surfaces`
+- primary_targets:
+  - `docs/status/chatgpt-lane-field-alignment.md`
+  - `docs/status/chatgpt-lane-pilot-plan.md`
+  - `docs/status/chatgpt-lane-session-index.md`
+  - `docs/status/chatgpt-lane-run-ledger.md`
+  - `docs/status/kpi-snapshot-template.md`
+- out_of_scope:
+  - `governance_tools/`
+  - `validators/`
+  - implementation code paths outside `docs/status/`
+- time_order_check: `valid`
+- intent_compatibility_check: `valid`
+- completion_contract:
+  - semantic_slice_commit_exists: `pending until commit created`
+  - same_repo_closeout_valid: `yes`
+  - task_intent_compatible_and_time_order_valid: `yes`
+  - ledger_mapping_fields_present: `yes`
+- reviewer_notes:
+  - `Cross-file naming aligned to canonical evidence fields.`
+  - `No scope expansion beyond docs/status.`

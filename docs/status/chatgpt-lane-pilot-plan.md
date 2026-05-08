@@ -54,6 +54,7 @@ After run:
 - verify session-index append with `valid`
 - backfill ledger with `yes/high`
 - run summary/detail consistency check
+- keep `docs/status` field naming aligned with `docs/status/chatgpt-lane-field-alignment.md`
 
 ## 5) Pilot KPI Capture
 
