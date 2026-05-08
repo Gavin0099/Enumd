@@ -1,11 +1,13 @@
 # ChatGPT Lane Session Index
 
-## 2026-05-08
+> Derived from `artifacts/session-index.ndjson` (do not hand-edit run rows).
+
+## Runtime-Mapped Runs
 
 | session_id | run_id | task_intent | closeout_status | closed_at | notes |
 |---|---|---|---|---|---|
-| chatgpt-lane-run1-2026-05-08 | run-01 | docs-only consistency patch for status/governance tracking bootstrap | valid | 2026-05-08T17:35:00+08:00 | Same-repo closeout record for pilot run 1 |
-| chatgpt-lane-run2-2026-05-08 | run-02 | reviewer-facing wording and claim boundary patch for pilot closeout language | valid | 2026-05-08T18:00:00+08:00 | Path-limited docs/status reviewer guidance |
-| chatgpt-lane-run3-2026-05-08 | run-03 | cross-file field naming sync patch for status surfaces | valid | 2026-05-08T18:20:00+08:00 | Terminology alignment across plan, ledger, closeout, and KPI |
-| chatgpt-lane-run4-2026-05-08 | run-04 | validator/tooling narrow patch for run-ledger contract checks | valid | 2026-05-08T18:40:00+08:00 | Added and executed a minimal ledger validator script |
-| chatgpt-lane-run5-2026-05-08 | run-05 | remediation patch for mapping/closeout hash alignment guard | valid | 2026-05-08T19:00:00+08:00 | Added closeout-hash alignment checks to prevent unresolved mapping gaps |
+| chatgpt-lane-run1-2026-05-08 | run-01 | docs-only consistency patch for status/governance tracking bootstrap | valid | 2026-05-08T17:35:00+08:00 | source=chatgpt_lane_docs_backfill |
+| chatgpt-lane-run2-2026-05-08 | run-02 | reviewer-facing wording and claim boundary patch for pilot closeout language | valid | 2026-05-08T18:00:00+08:00 | source=chatgpt_lane_docs_backfill |
+| chatgpt-lane-run3-2026-05-08 | run-03 | cross-file field naming sync patch for status surfaces | valid | 2026-05-08T18:20:00+08:00 | source=chatgpt_lane_docs_backfill |
+| chatgpt-lane-run4-2026-05-08 | run-04 | validator/tooling narrow patch for run-ledger contract checks | valid | 2026-05-08T18:40:00+08:00 | source=chatgpt_lane_docs_backfill |
+| chatgpt-lane-run5-2026-05-08 | run-05 | remediation patch for mapping/closeout hash alignment guard | valid | 2026-05-08T19:00:00+08:00 | source=chatgpt_lane_docs_backfill |
