@@ -1,0 +1,38 @@
+name: enumd-ci
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare env file
+        run: touch .env.local
+
+      - name: Graph fixtures
+        run: npm run -s test:graph
+
+      - name: Synthesis fixtures
+        run: npm run -s test:synthesis
+
+      - name: Build index
+        run: npm run -s build-index
+
+      - name: Stale advisory check
+        run: npm run -s check-stale
