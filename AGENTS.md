@@ -33,7 +33,10 @@ Prompt yourself:
 - What changes are safe enough to keep in a fast path?
 -->
 
-N/A
+Use this repository baseline:
+- HIGH: any run/process change that can break completion contract integrity (commit-session mapping, closeout validity, ledger consistency), or any cross-file governance tooling change affecting evidence generation.
+- MEDIUM: small validator/tooling patches, cross-file sync patches, or reviewer-facing wording/claim boundary updates.
+- LOW: docs-only consistency patches that do not alter contract logic, mapping logic, or KPI formulas.
 
 ## Must-Test Paths
 <!-- governance:key=must_test_paths -->
@@ -49,7 +52,10 @@ Prompt yourself:
 - Which user-visible or hardware-facing flows need explicit coverage?
 -->
 
-N/A
+Changes under these paths require explicit verification before merge:
+- `AGENTS.md`: verify completion contract wording remains machine-auditable and non-contradictory.
+- `docs/status/`: verify run summary/detail consistency and KPI field compatibility.
+- Any validator/tooling path that writes closeout or ledger data: verify `closeout_status`, `closeout_covered`, and `mapping_confidence` semantics remain intact.
 
 ## L1 → L2 Escalation Triggers
 <!-- governance:key=escalation_triggers -->
@@ -66,7 +72,11 @@ Prompt yourself:
 - What changes become risky mainly because they are broad, not because they touch one file?
 -->
 
-N/A
+Escalate to L2 evidence checklist when any of the following is true:
+- Any change to completion contract criteria or pass/fail interpretation.
+- Any change to closeout-session validation, session-index append behavior, or ledger mapping rules.
+- Any change touching more than 3 files across docs + tooling + governance control surfaces.
+- Any pilot result used for lane-to-lane comparison claims.
 
 ## Repo-Specific Forbidden Behaviors
 <!-- governance:key=forbidden_behaviors -->
@@ -82,4 +92,9 @@ Prompt yourself:
 - What "cleanup" or "shortcut" behaviors have already caused pain here?
 -->
 
-N/A
+For ChatGPT lane pilot runs, the following are mandatory:
+- Follow `docs/status/chatgpt-lane-pilot-plan.md` for every run.
+- One semantic slice per run; no mixed giant commit and no repo-wide refactor.
+- A run is counted only if completion contract is fully satisfied; otherwise mark `incomplete`.
+- Do not claim engineering correctness uplift, enforcement escalation, or deterministic cognition from this pilot alone.
+- Do not mark `mapping_confidence: high` unless commit-session-closeout linkage is directly auditable.
