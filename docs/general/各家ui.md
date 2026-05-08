@@ -20,9 +20,45 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: 2020-工作分類
+      title: 2020 工作分類
+      path: /general/2020-工作分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 2023部門預計要做的事
+      title: 2023部門預計要做的事
+      path: /general/2023部門預計要做的事.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: 2024部門創新提案
       title: 2024部門創新提案
       path: /general/2024部門創新提案.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 7504-測試
+      title: 7504 測試
+      path: /general/7504-測試.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: ai-agent-skills
+      title: AI Agent Skills
+      path: /general/ai-agent-skills.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: antigravity-skills
+      title: '**antigravity skills**'
+      path: /general/antigravity-skills.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: bu5-week-report
+      title: BU5 Week Report
+      path: /general/bu5-week-report.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -128,9 +164,21 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: resource-python-contract-v01
+      title: '**Resource / Python Contract v0.1**'
+      path: /general/resource-python-contract-v01.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: sw文件撰寫sop
       title: SW文件撰寫SOP
       path: /general/sw文件撰寫sop.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: tapo-p100-需求表
+      title: Tapo P100 需求表
+      path: /general/tapo-p100-需求表.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -176,9 +224,9 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
-    - target: 共好會議
-      title: 共好會議
-      path: /general/共好會議.html
+    - target: 測試環境
+      title: 測試環境
+      path: /general/測試環境.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -203,6 +251,12 @@ relations:
     - target: 軟體品質
       title: 軟體品質
       path: /general/軟體品質.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 開會預先準備資訊
+      title: 開會預先準備資訊
+      path: /general/開會預先準備資訊.html
       type: same_domain
       confidence: low
       score: 0.2

@@ -60,6 +60,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: code-sign-文件
+      title: Code Sign 文件
+      path: /code-sign/code-sign-文件.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: code-sign-概述
       title: Code Sign 概述
       path: /code-sign/code-sign-概述.html
@@ -127,6 +133,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: peitzuli-李珮慈-etoken
+      title: PeiTzuLi 李珮慈 Etoken
+      path: /code-sign/peitzuli-李珮慈-etoken.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: command-line-uninstall-driver
       title: Command line uninstall driver
       path: /driver/command-line-uninstall-driver.html
@@ -681,12 +693,24 @@ relations:
       type: same_domain
       confidence: low
       score: 0.5
+    - target: hub-mp-tool-user-guide
+      title: Hub Mp Tool User Guide
+      path: /hub/hub-mp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.5
     - target: hub-mp-tool
       title: Hub MP Tool
       path: /hub/hub-mp-tool.html
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hub-tool-release-note
+      title: Hub Tool Release Note
+      path: /hub/hub-tool-release-note.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
     - target: mac-hub-update-tool-user-guide
       title: Mac Hub Update Tool User Guide
       path: /hub/mac-hub-update-tool-user-guide.html
@@ -747,6 +771,36 @@ relations:
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: gl-command-line-tool-user-guide-
+      title: 'GL Command Line Tool User Guide '
+      path: /tools/gl-command-line-tool-user-guide-.html
+      type: same_domain
+      confidence: low
+      score: 0.5
+    - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
+      title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
+      path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-isp-tool-user-guide
+      title: HP ISP Tool User Guide
+      path: /tools/hp-isp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.5
+    - target: lenovo-one-key-update-tool-issue
+      title: Lenovo One key update Tool issue
+      path: /tools/lenovo-one-key-update-tool-issue.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: standard-isp-tool-instruction
+      title: Standard ISP Tool Instruction
+      path: /tools/standard-isp-tool-instruction.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: debug-前客戶取得需求資訊
       title: Debug 前客戶取得需求資訊
       path: /general/debug-前客戶取得需求資訊.html
@@ -759,6 +813,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.35
+    - target: drawiohttpdrawio-相關連結
+      title: '[Draw.io](http://draw.io/) 相關連結'
+      path: /general/drawiohttpdrawio-相關連結.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
     - target: e22e24i-1st-2nd-scalar-update-
       title: 'E22/E24i 1st & 2nd Scalar Update '
       path: /general/e22e24i-1st-2nd-scalar-update-.html
@@ -820,6 +880,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: hp-rose-debug-
+      title: 'HP Rose Debug '
+      path: /general/hp-rose-debug-.html
+      type: same_domain
+      confidence: low
+      score: 0.35
     - target: hp-scheduled-update-flow-
       title: 'HP Scheduled update flow '
       path: /general/hp-scheduled-update-flow-.html
@@ -895,6 +961,12 @@ relations:
     - target: osdmanager
       title: OSDManager
       path: /general/osdmanager.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: powershell
+      title: PowerShell
+      path: /general/powershell.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -993,6 +1065,12 @@ relations:
     - target: 交叉評核作業
       title: 交叉評核作業
       path: /general/交叉評核作業.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
+    - target: 共好會議
+      title: 共好會議
+      path: /general/共好會議.html
       type: same_domain
       confidence: low
       score: 0.30000000000000004
@@ -1102,6 +1180,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-2020工作事項-完成事項
+      title: Hub 2020工作事項 完成事項
+      path: /hub/hub-2020工作事項-完成事項.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
@@ -1159,6 +1243,12 @@ relations:
     - target: hub-hid-get-string-descriptor-status
       title: Hub HID Get String Descriptor Status
       path: /hub/hub-hid-get-string-descriptor-status.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hub-ini-parameter
+      title: Hub ini parameter
+      path: /hub/hub-ini-parameter.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -1244,6 +1334,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: 2020-monitor-tool需求列表
+      title: 2020 Monitor Tool需求列表
+      path: /monitor/2020-monitor-tool需求列表.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: asus-monitor-schedule-2024-2025
+      title: ASUS Monitor Schedule  2024 -2025
+      path: /monitor/asus-monitor-schedule-2024-2025.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: get-monitor-info-
       title: 'Get Monitor Info '
       path: /monitor/get-monitor-info-.html
@@ -1263,6 +1365,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hp-monitor-2022-schedule
+      title: HP Monitor 2022 Schedule
+      path: /monitor/hp-monitor-2022-schedule.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-monitor-2023-schedule-
       title: 'HP Monitor 2023 Schedule '
       path: /monitor/hp-monitor-2023-schedule-.html
@@ -1311,6 +1419,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: lenovo-monitor-schedule-2024
+      title: Lenovo Monitor Schedule  2024
+      path: /monitor/lenovo-monitor-schedule-2024.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo-monitor-schedule
+      title: Lenovo Monitor Schedule
+      path: /monitor/lenovo-monitor-schedule.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: monitor-debug-參考資料
       title: Monitor debug & 參考資料
       path: /monitor/monitor-debug-參考資料.html
@@ -1329,12 +1449,24 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: mtk-monitor-分類
+      title: MTK Monitor 分類
+      path: /monitor/mtk-monitor-分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: mtk-scaler-update-flow
       title: MTK Scaler Update flow
       path: /monitor/mtk-scaler-update-flow.html
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: philips-monitor-分類
+      title: Philips Monitor 分類
+      path: /monitor/philips-monitor-分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: u27m-scaler-update速度
       title: U27m Scaler Update速度
       path: /monitor/u27m-scaler-update速度.html
@@ -1374,6 +1506,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-security-request-checklist-
+      title: 'HP Security Request Checklist '
+      path: /security/hp-security-request-checklist-.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html

@@ -1,6 +1,6 @@
 {
-  "total_pages": 310,
-  "last_exported": "2026-04-06T13:20:29.720Z",
+  "total_pages": 343,
+  "last_exported": "2026-05-08T11:11:31.805Z",
   "categories": [
     {
       "dir": "hub",
@@ -12,7 +12,7 @@
         "Hub ini parameter",
         "GL Hub Software Development Kit"
       ],
-      "count": 35,
+      "count": 39,
       "latest_update": "FORCE_REFRESH"
     },
     {
@@ -38,7 +38,7 @@
         "eToken 安全簽章系統技術說明",
         "Code sign Flow"
       ],
-      "count": 30,
+      "count": 34,
       "latest_update": "FORCE_REFRESH"
     },
     {
@@ -51,7 +51,7 @@
         "Xcode Architecture 設定",
         "Mac 權限問題"
       ],
-      "count": 29,
+      "count": 30,
       "latest_update": "FORCE_REFRESH"
     },
     {
@@ -64,7 +64,7 @@
         "HP Monitor Code Sign Update Flow",
         "Lenovo offline update flow"
       ],
-      "count": 23,
+      "count": 30,
       "latest_update": "FORCE_REFRESH"
     },
     {
@@ -77,7 +77,7 @@
         "Cmake 設定方式",
         "Git Command List"
       ],
-      "count": 179,
+      "count": 196,
       "latest_update": "FORCE_REFRESH"
     }
   ],

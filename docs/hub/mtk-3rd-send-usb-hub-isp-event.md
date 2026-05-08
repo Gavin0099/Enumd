@@ -40,6 +40,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: code-sign-文件
+      title: Code Sign 文件
+      path: /code-sign/code-sign-文件.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: code-sign-概述
       title: Code Sign 概述
       path: /code-sign/code-sign-概述.html
@@ -361,6 +367,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: drawiohttpdrawio-相關連結
+      title: '[Draw.io](http://draw.io/) 相關連結'
+      path: /general/drawiohttpdrawio-相關連結.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: e22e24i-1st-2nd-scalar-update-
       title: 'E22/E24i 1st & 2nd Scalar Update '
       path: /general/e22e24i-1st-2nd-scalar-update-.html
@@ -461,6 +473,12 @@ relations:
     - target: hp-isp-tool-update-速度問題
       title: HP ISP Tool update 速度問題
       path: /general/hp-isp-tool-update-速度問題.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: hp-rose-debug-
+      title: 'HP Rose Debug '
+      path: /general/hp-rose-debug-.html
       type: same_domain
       confidence: low
       score: 0.25
@@ -652,6 +670,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: 共好會議
+      title: 共好會議
+      path: /general/共好會議.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: 工作目標
       title: 工作目標
       path: /general/工作目標.html
@@ -776,6 +800,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hub-2020工作事項-完成事項
+      title: Hub 2020工作事項 完成事項
+      path: /hub/hub-2020工作事項-完成事項.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
@@ -818,6 +848,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-ini-parameter
+      title: Hub ini parameter
+      path: /hub/hub-ini-parameter.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hub-mp-tool-user-guide
+      title: Hub Mp Tool User Guide
+      path: /hub/hub-mp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hub-mp-tool
       title: Hub MP Tool
       path: /hub/hub-mp-tool.html
@@ -830,6 +872,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-tool-release-note
+      title: Hub Tool Release Note
+      path: /hub/hub-tool-release-note.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hub-virtual-device-stress-test-
       title: 'Hub virtual device stress test '
       path: /hub/hub-virtual-device-stress-test-.html
@@ -933,6 +981,12 @@ relations:
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
       title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 2020-monitor-tool需求列表
+      title: 2020 Monitor Tool需求列表
+      path: /monitor/2020-monitor-tool需求列表.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -1045,6 +1099,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-security-request-checklist-
+      title: 'HP Security Request Checklist '
+      path: /security/hp-security-request-checklist-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
@@ -1108,6 +1168,12 @@ relations:
     - target: gl-bin-tool
       title: GL Bin Tool
       path: /general/gl-bin-tool.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl-command-line-tool-user-guide-
+      title: 'GL Command Line Tool User Guide '
+      path: /tools/gl-command-line-tool-user-guide-.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -1213,12 +1279,24 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
+      title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
+      path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-enduser-tool-包裝流程
       title: HP EndUser Tool 包裝流程
       path: /general/hp-enduser-tool-包裝流程.html
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hp-isp-tool-user-guide
+      title: HP ISP Tool User Guide
+      path: /tools/hp-isp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-qc-tool-
       title: 'HP QC Tool '
       path: /general/hp-qc-tool-.html
@@ -1255,6 +1333,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: lenovo-one-key-update-tool-issue
+      title: Lenovo One key update Tool issue
+      path: /tools/lenovo-one-key-update-tool-issue.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: merge-code-tool-help
       title: Merge Code Tool Help
       path: /general/merge-code-tool-help.html
@@ -1270,6 +1354,12 @@ relations:
     - target: srs-crd-輔助工具入口介面-
       title: 'SRS - CRD 輔助工具入口介面 '
       path: /general/srs-crd-輔助工具入口介面-.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: standard-isp-tool-instruction
+      title: Standard ISP Tool Instruction
+      path: /tools/standard-isp-tool-instruction.html
       type: same_domain
       confidence: low
       score: 0.25
@@ -1294,6 +1384,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: mtk-monitor-分類
+      title: MTK Monitor 分類
+      path: /monitor/mtk-monitor-分類.html
+      type: same_domain
+      confidence: low
+      score: 0.16666666666666666
 ---
 
 ## M24

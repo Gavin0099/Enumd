@@ -24,19 +24,19 @@ relations:
       path: /code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: 3rd-party-code-signing-specification-ecdsa
       title: 3rd party code signing specification (ECDSA)
       path: /code-sign/3rd-party-code-signing-specification-ecdsa.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: 3rd-party-code-signing-specification-ecdsaen-
       title: '3rd party code signing specification (ECDSA)(EN) '
       path: /code-sign/3rd-party-code-signing-specification-ecdsaen-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: camera-透過我們驗證-code-sign
       title: Camera 透過我們驗證 code sign
       path: /code-sign/camera-透過我們驗證-code-sign.html
@@ -48,16 +48,22 @@ relations:
       path: /code-sign/code-sign-ecc-key.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: code-sign-flow
       title: Code sign Flow
       path: /code-sign/code-sign-flow.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: code-sign-技術規格文件-整合版
       title: Code-Sign 技術規格文件 (整合版)
       path: /code-sign/code-sign-技術規格文件-整合版.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: code-sign-文件
+      title: Code Sign 文件
+      path: /code-sign/code-sign-文件.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -91,7 +97,7 @@ relations:
         /code-sign/genesys-logic-3rd-party-code-signing-specification-ecdsa-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: gl3590-code-sign-flow-hub-hostbridge
       title: GL3590 Code Sign flow (Hub + HostBridge)
       path: /code-sign/gl3590-code-sign-flow-hub-hostbridge.html
@@ -109,7 +115,7 @@ relations:
       path: /code-sign/gl3590-hostbridge-code-sign.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hid-code-sign-update-rule
       title: HID Code Sign Update Rule
       path: /code-sign/hid-code-sign-update-rule.html
@@ -145,25 +151,25 @@ relations:
       path: /code-sign/openssl-generate-rsa-key-pair-etoken-code-sign.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: command-line-uninstall-driver
       title: Command line uninstall driver
       path: /driver/command-line-uninstall-driver.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: e27m-e34m-driver-install-fail
       title: E27m & E34m Driver install fail
       path: /driver/e27m-e34m-driver-install-fail.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式
       title: HP ISP Tool 遇到舊driver 移除方式和新driver安裝方式
       path: /driver/hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hubdriverinstaller-user-guide
       title: HubDriverInstaller User Guide
       path: /driver/hubdriverinstaller-user-guide.html
@@ -196,7 +202,7 @@ relations:
         /firmware/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -209,7 +215,7 @@ relations:
       path: /firmware/hp-oci-app.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-oci-tool-ui-flow
       title: HP OCI Tool UI flow
       path: /firmware/hp-oci-tool-ui-flow.html
@@ -221,7 +227,7 @@ relations:
       path: /firmware/hp-oci-tool-工作彙整.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: hp-oci-tool-現行架構解析
       title: HP OCI Tool 現行架構解析
       path: /firmware/hp-oci-tool-現行架構解析.html
@@ -258,7 +264,7 @@ relations:
       path: /firmware/secure-firmware-recovery.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: tvsuthinkvantage-system-update-fwupdate需求
       title: TVSU(ThinkVantage System Update) FWUpdate需求
       path: /firmware/tvsuthinkvantage-system-update-fwupdate需求.html
@@ -270,19 +276,19 @@ relations:
       path: /general/-clawdbot-自主代理建置與資安防禦全紀錄.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: '-hp-sdlc-master-compliance-checklist-2025-edition'
       title: ' HP SDLC Master Compliance Checklist (2025 Edition)'
       path: /general/-hp-sdlc-master-compliance-checklist-2025-edition.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: '-lenovo-display-daisy-chain-issue'
       title: ' Lenovo Display Daisy Chain issue'
       path: /general/-lenovo-display-daisy-chain-issue.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: '-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網'
       title: "\U0001F5A5️ Windows 雙網卡企業分流設定SOP（乙太公司內網＋Wi-Fi外網）"
       path: /general/-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網.html
@@ -312,7 +318,7 @@ relations:
       path: /general/2021-今年重點目標.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: 2021部門創新提案
       title: 2021部門創新提案
       path: /general/2021部門創新提案.html
@@ -339,7 +345,7 @@ relations:
         /general/2025-minimum-elements-for-a-software-bill-of-materials-sbom.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: 2025-工作會報
       title: 2025 工作會報
       path: /general/2025-工作會報.html
@@ -357,7 +363,7 @@ relations:
       path: /general/8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: asus-update-tool-
       title: 'ASUS Update Tool '
       path: /general/asus-update-tool-.html
@@ -387,13 +393,13 @@ relations:
       path: /general/bus-hound-簡易說明.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: c-11-design-pattern-uml
       title: C++ 11 & Design pattern & UML
       path: /general/c-11-design-pattern-uml.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: chatgpt-簡介
       title: ChatGPT 簡介
       path: /general/chatgpt-簡介.html
@@ -405,7 +411,7 @@ relations:
       path: /general/check-list-before-release-tool.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: check-windows-version
       title: Check Windows Version
       path: /general/check-windows-version.html
@@ -441,7 +447,7 @@ relations:
       path: /general/command-line-tool-logging-method.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: command-line-tool-user-guide
       title: Command Line Tool User Guide
       path: /general/command-line-tool-user-guide.html
@@ -453,10 +459,16 @@ relations:
       path: /general/debug-前客戶取得需求資訊.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: drawio-相關連結
       title: Draw.io 相關連結
       path: /general/drawio-相關連結.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: drawiohttpdrawio-相關連結
+      title: '[Draw.io](http://draw.io/) 相關連結'
+      path: /general/drawiohttpdrawio-相關連結.html
       type: same_domain
       confidence: low
       score: 0.25
@@ -478,7 +490,7 @@ relations:
       path: /general/faststone-capture-註冊碼-序列號-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: flutter
       title: Flutter
       path: /general/flutter.html
@@ -496,19 +508,19 @@ relations:
       path: /general/genesys-logic-spec.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: genesys-logic-sw-3rd-source-code-license-
       title: 'Genesys Logic SW 3rd Source Code License '
       path: /general/genesys-logic-sw-3rd-source-code-license-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: git-command-list
       title: Git Command List
       path: /general/git-command-list.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: gitlab-ee-wiki-
       title: 'GitLab EE wiki '
       path: /general/gitlab-ee-wiki-.html
@@ -526,7 +538,7 @@ relations:
       path: /general/gl-bin.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: gl-diagnostic-tool
       title: GL Diagnostic Tool
       path: /general/gl-diagnostic-tool.html
@@ -568,7 +580,7 @@ relations:
       path: /general/hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: how-to-bound-target-device
       title: How to bound target device
       path: /general/how-to-bound-target-device.html
@@ -580,49 +592,49 @@ relations:
       path: /general/how-to-capture-standard-isp-tool-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-generate-system-log
       title: How to generate system log
       path: /general/how-to-generate-system-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-grab-debugview-log
       title: How To Grab DebugView Log
       path: /general/how-to-grab-debugview-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-grab-hp-command-tool-log-
       title: 'How to grab HP Command Tool log '
       path: /general/how-to-grab-hp-command-tool-log-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-grab-hp-enduser-tool-log-
       title: 'How to grab HP EndUser Tool log '
       path: /general/how-to-grab-hp-enduser-tool-log-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-grab-hp-isp-tool-log
       title: How to grab HP ISP Tool log
       path: /general/how-to-grab-hp-isp-tool-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-grab-isp-tool-log-
       title: 'How to grab ISP Tool log '
       path: /general/how-to-grab-isp-tool-log-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-grab-log
       title: How to grab log
       path: /general/how-to-grab-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: how-to-wrap-self-extraction-file-by-packagefortheweb400_0830
       title: How to wrap self-extraction file by PackageForTheWeb400_0830
       path: >-
@@ -635,13 +647,13 @@ relations:
       path: /general/hp-534pm-fail-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-command-line-tool-logging-method
       title: HP Command Line Tool logging method
       path: /general/hp-command-line-tool-logging-method.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-command-line-tool-user-guide
       title: HP Command Line Tool User Guide
       path: /general/hp-command-line-tool-user-guide.html
@@ -653,7 +665,7 @@ relations:
       path: /general/hp-end-user-tool-packing-user-guide.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: hp-end-user-tool-封裝方式
       title: HP End User Tool 封裝方式
       path: /general/hp-end-user-tool-封裝方式.html
@@ -665,13 +677,13 @@ relations:
       path: /general/hp-enduser-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-enduser-tool-debug-sop
       title: HP EndUser Tool Debug SOP
       path: /general/hp-enduser-tool-debug-sop.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-enduser-tool-包裝流程
       title: HP EndUser Tool 包裝流程
       path: /general/hp-enduser-tool-包裝流程.html
@@ -689,7 +701,7 @@ relations:
       path: /general/hp-isp-tool-special-case-update-method.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-isp-tool-update-速度問題
       title: HP ISP Tool update 速度問題
       path: /general/hp-isp-tool-update-速度問題.html
@@ -699,6 +711,12 @@ relations:
     - target: hp-qc-tool-
       title: 'HP QC Tool '
       path: /general/hp-qc-tool-.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: hp-rose-debug-
+      title: 'HP Rose Debug '
+      path: /general/hp-rose-debug-.html
       type: same_domain
       confidence: low
       score: 0.25
@@ -725,7 +743,7 @@ relations:
       path: /general/ikv-tool-相關mail資料.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: inno-setup-script
       title: Inno Setup Script
       path: /general/inno-setup-script.html
@@ -749,7 +767,7 @@ relations:
       path: /general/lenovo-ldcc-update-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: lenovo-one-key-update-tool-
       title: 'Lenovo one key update tool '
       path: /general/lenovo-one-key-update-tool-.html
@@ -779,13 +797,13 @@ relations:
       path: /general/lenovo-需求.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: log分類
       title: Log分類
       path: /general/log分類.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: merge-code-tool-help
       title: Merge Code Tool Help
       path: /general/merge-code-tool-help.html
@@ -827,7 +845,7 @@ relations:
       path: /general/saleae-logic-i2c-tool-使用說明.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: ssdlc-
       title: 'SSDLC '
       path: /general/ssdlc-.html
@@ -854,13 +872,13 @@ relations:
       path: /general/sw272u-抓取log方式.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: sw文件撰寫sop
       title: SW文件撰寫SOP
       path: /general/sw文件撰寫sop.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: system-design-specification-v31-usb-log-explorer-antigravity-edition-
       title: |
         System Design Specification v3.1: USB Log Explorer (Antigravity Edition)
@@ -868,7 +886,7 @@ relations:
         /general/system-design-specification-v31-usb-log-explorer-antigravity-edition-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: teledyne-lecroy-python安裝和測試方式
       title: Teledyne LeCroy python安裝和測試方式
       path: /general/teledyne-lecroy-python安裝和測試方式.html
@@ -916,13 +934,13 @@ relations:
       path: /general/usbview-grab-the-log.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: vibe-coding
       title: Vibe coding
       path: /general/vibe-coding.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: w25x21cl-rdid問題
       title: W25X21CL RDID問題
       path: /general/w25x21cl-rdid問題.html
@@ -958,13 +976,19 @@ relations:
       path: /general/交叉評核作業.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
+    - target: 共好會議
+      title: 共好會議
+      path: /general/共好會議.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: 取消使用stdafxh-include-方式
       title: 取消使用stdafx.h include 方式
       path: /general/取消使用stdafxh-include-方式.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: 如何在xocde-執行-clang-format
       title: 如何在xocde 執行 clang format
       path: /general/如何在xocde-執行-clang-format.html
@@ -994,13 +1018,13 @@ relations:
       path: /general/短期行動-vs-長期視野從混亂到有序結構化軟體建構之路.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: 自動化測試
       title: 自動化測試
       path: /general/自動化測試.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: 自評
       title: 自評
       path: /general/自評.html
@@ -1012,7 +1036,7 @@ relations:
       path: /general/遠端會議相關資料.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: >-
         discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-
       title: >-
@@ -1022,7 +1046,7 @@ relations:
         /hub/discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: gl-hub-code-sign-recovery-flow
       title: GL Hub Code Sign Recovery Flow
       path: /code-sign/gl-hub-code-sign-recovery-flow.html
@@ -1040,37 +1064,43 @@ relations:
       path: /code-sign/gl7524-a02-code-sign-與-isp-安全架構case-3.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: hub-auto-test-
       title: 'Hub Auto Test '
       path: /hub/hub-auto-test-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hub-firmware-update-tool-command-line-list
       title: 'Hub Firmware Update Tool : Command Line List'
       path: /hub/hub-firmware-update-tool-command-line-list.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: hub-hid-get-string-descriptor-status
       title: Hub HID Get String Descriptor Status
       path: /hub/hub-hid-get-string-descriptor-status.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hub-mp-tool
       title: Hub MP Tool
       path: /hub/hub-mp-tool.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
+    - target: hub-tool-release-note
+      title: Hub Tool Release Note
+      path: /hub/hub-tool-release-note.html
+      type: tag_related
+      confidence: medium
+      score: 0.690821582394367
     - target: usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist
       title: USB Hub Firmware（8051 / Keil C51）AI 開發前先期確認 Checklist
       path: /hub/usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist.html
@@ -1082,79 +1112,91 @@ relations:
       path: /mac/-hp-firmware-installer-macos-完整修復與發布手冊.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: apple-command-line-update-instruction-
       title: 'Apple Command line update Instruction '
       path: /mac/apple-command-line-update-instruction-.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: gl-mac-bundle-id-結論
       title: GL MAC Bundle ID 結論
       path: /mac/gl-mac-bundle-id-結論.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: mac-framework
       title: Mac Framework
       path: /mac/mac-framework.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: mac-oci-demo-flow
       title: Mac OCI Demo flow
       path: /mac/mac-oci-demo-flow.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: mac-oci-dll-import-方式
       title: Mac OCI Dll Import 方式
       path: /mac/mac-oci-dll-import-方式.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: mac-ui-客制化修改-以hostbridge-為例
       title: Mac UI 客制化修改 (以HostBridge 為例)
       path: /mac/mac-ui-客制化修改-以hostbridge-為例.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: xcode-architecture-設定
       title: Xcode Architecture 設定
       path: /mac/xcode-architecture-設定.html
       type: tag_related
       confidence: medium
-      score: 0.6855323786887682
+      score: 0.690821582394367
     - target: 如何在mac-上透過wireshark-抓取-usb訊號
       title: 如何在Mac 上透過WireShark 抓取 USB訊號
       path: /mac/如何在mac-上透過wireshark-抓取-usb訊號.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: hp-good-place-524pu-scaler-update-fail
       title: HP Good Place 524pu Scaler Update fail
       path: /monitor/hp-good-place-524pu-scaler-update-fail.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: genesyslogic-integrates-sdk-specification
       title: GenesysLogic integrates SDK specification
       path: /general/genesyslogic-integrates-sdk-specification.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
     - target: helper-utility-librarydll
       title: Helper utility library/dll
       path: /general/helper-utility-librarydll.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
+    - target: hp-security-request-checklist-
+      title: 'HP Security Request Checklist '
+      path: /security/hp-security-request-checklist-.html
+      type: tag_related
+      confidence: medium
+      score: 0.690821582394367
     - target: io-data-安全性與開發規範清單-security-development-requirements
       title: IO DATA 安全性與開發規範清單 (Security & Development Requirements)
       path: /general/io-data-安全性與開發規範清單-security-development-requirements.html
       type: tag_related
       confidence: medium
-      score: 0.4210848051518046
+      score: 0.4421659386083514
+    - target: standard-isp-tool-instruction
+      title: Standard ISP Tool Instruction
+      path: /tools/standard-isp-tool-instruction.html
+      type: tag_related
+      confidence: medium
+      score: 0.4421659386083514
     - target: gli7524-hub-isp-update-too
       title: GLI7524 Hub ISP update too
       path: /hub/gli7524-hub-isp-update-too.html
@@ -1203,6 +1245,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hub-2020工作事項-完成事項
+      title: Hub 2020工作事項 完成事項
+      path: /hub/hub-2020工作事項-完成事項.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hub-chip-資訊
       title: Hub Chip 資訊
       path: /hub/hub-chip-資訊.html
@@ -1245,6 +1293,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: hub-ini-parameter
+      title: Hub ini parameter
+      path: /hub/hub-ini-parameter.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hub-mp-tool-user-guide
+      title: Hub Mp Tool User Guide
+      path: /hub/hub-mp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hub-project-string-定義
       title: Hub Project String 定義
       path: /hub/hub-project-string-定義.html
@@ -1327,6 +1387,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: mac-新build-project-遇到問題
+      title: Mac 新build project 遇到問題
+      path: /mac/mac-新build-project-遇到問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: mac-權限問題
       title: Mac 權限問題
       path: /mac/mac-權限問題.html
@@ -1345,6 +1411,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: 2020-monitor-tool需求列表
+      title: 2020 Monitor Tool需求列表
+      path: /monitor/2020-monitor-tool需求列表.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: get-monitor-info-
       title: 'Get Monitor Info '
       path: /monitor/get-monitor-info-.html
@@ -1454,6 +1526,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: gl-command-line-tool-user-guide-
+      title: 'GL Command Line Tool User Guide '
+      path: /tools/gl-command-line-tool-user-guide-.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
     - target: gldualbankfwtesttool-說明文件
       title: GLDualBankFWTestTool 說明文件
       path: /general/gldualbankfwtesttool-說明文件.html
@@ -1469,6 +1547,24 @@ relations:
     - target: glitw-vpn-client-操作說明
       title: Glitw - VPN Client 操作說明
       path: /general/glitw-vpn-client-操作說明.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
+      title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
+      path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-isp-tool-user-guide
+      title: HP ISP Tool User Guide
+      path: /tools/hp-isp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo-one-key-update-tool-issue
+      title: Lenovo One key update Tool issue
+      path: /tools/lenovo-one-key-update-tool-issue.html
       type: same_domain
       confidence: low
       score: 0.2

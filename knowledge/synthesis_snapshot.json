@@ -1,122 +1,131 @@
 {
   "coreTopics": [
     {
-      "id": "c116bfa9-e7de-4701-9ef2-f70eddd1bc46",
-      "slug": "2021部門創新提案",
-      "title": "2021部門創新提案",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\2021部門創新提案.md",
-      "site_path": "/general/2021部門創新提案.html",
-      "category": "general",
+      "id": "25564f6b-c656-8075-89ad-e227d8c2c0d6",
+      "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "title": " Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) ",
+      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.md",
+      "site_path": "/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html",
+      "category": "code-sign",
       "domain_tags": [
-        "hub",
+        "code-sign",
+        "firmware",
+        "sdk",
         "security"
       ],
       "task_tags": [
-        "debug",
-        "spec"
+        "code-sign",
+        "spec",
+        "sop",
+        "log"
       ],
       "authority_level": "source",
-      "notion_id": "c116bfa9-e7de-4701-9ef2-f70eddd1bc46",
-      "notion_updated_at": "2026-01-21T09:25:00.000Z",
-      "exported_at": "2026-04-06T13:17:09.499Z"
+      "notion_id": "25564f6b-c656-8075-89ad-e227d8c2c0d6",
+      "notion_updated_at": "2026-01-22T05:56:00.000Z",
+      "exported_at": "2026-04-06T13:12:30.056Z"
     }
   ],
   "dependencies": [],
   "relatedContext": [
     {
-      "id": "21a62d13-82f0-4f21-87ce-91297befbb0f",
-      "slug": "自動化測試",
-      "title": "自動化測試",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\自動化測試.md",
-      "site_path": "/general/自動化測試.html",
-      "category": "general",
+      "id": "9c110ff0-ff09-41a9-a1d4-a2ed3eb786ab",
+      "slug": "3rd-party-code-signing-specification-ecdsa",
+      "title": "3rd party code signing specification (ECDSA)",
+      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\3rd-party-code-signing-specification-ecdsa.md",
+      "site_path": "/code-sign/3rd-party-code-signing-specification-ecdsa.html",
+      "category": "code-sign",
       "domain_tags": [
-        "sdk",
-        "tools"
+        "code-sign",
+        "firmware"
       ],
       "task_tags": [
-        "debug",
+        "code-sign",
         "spec",
-        "log",
-        "config"
+        "sop",
+        "log"
       ],
       "authority_level": "source",
-      "notion_id": "21a62d13-82f0-4f21-87ce-91297befbb0f",
-      "notion_updated_at": "2026-01-21T09:33:00.000Z",
-      "exported_at": "2026-04-06T13:17:58.629Z"
+      "notion_id": "9c110ff0-ff09-41a9-a1d4-a2ed3eb786ab",
+      "notion_updated_at": "2026-01-21T10:11:00.000Z",
+      "exported_at": "2026-04-06T13:20:10.234Z"
     },
     {
-      "id": "de97d58e-aa31-4cdd-8407-640927deb83a",
-      "slug": "usb30影響配對問題",
-      "title": "USB3.0影響配對問題",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\usb30影響配對問題.md",
-      "site_path": "/general/usb30影響配對問題.html",
-      "category": "general",
+      "id": "228ca3fe-96ec-4d48-9c91-8036bc7e02b1",
+      "slug": "3rd-party-code-signing-specification-ecdsaen-",
+      "title": "3rd party code signing specification (ECDSA)(EN) ",
+      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\3rd-party-code-signing-specification-ecdsaen-.md",
+      "site_path": "/code-sign/3rd-party-code-signing-specification-ecdsaen-.html",
+      "category": "code-sign",
       "domain_tags": [
-        "hub",
         "code-sign",
-        "tools"
-      ],
-      "task_tags": [
-        "firmware-update",
-        "debug",
-        "code-sign",
-        "sop"
-      ],
-      "authority_level": "source",
-      "notion_id": "de97d58e-aa31-4cdd-8407-640927deb83a",
-      "notion_updated_at": "2022-08-05T06:03:00.000Z",
-      "exported_at": "2026-04-06T13:10:25.686Z"
-    },
-    {
-      "id": "e54899d4-2872-4bb5-aebb-ed810330a794",
-      "slug": "交叉評核作業",
-      "title": "交叉評核作業",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\general\\交叉評核作業.md",
-      "site_path": "/general/交叉評核作業.html",
-      "category": "general",
-      "domain_tags": [
-        "hub",
-        "mac",
         "firmware",
-        "tools"
+        "security"
       ],
       "task_tags": [
-        "debug",
-        "release"
+        "code-sign",
+        "spec",
+        "sop",
+        "log"
       ],
       "authority_level": "source",
-      "notion_id": "e54899d4-2872-4bb5-aebb-ed810330a794",
-      "notion_updated_at": "2023-12-08T07:10:00.000Z",
-      "exported_at": "2026-04-06T13:18:10.868Z"
+      "notion_id": "228ca3fe-96ec-4d48-9c91-8036bc7e02b1",
+      "notion_updated_at": "2026-01-21T10:11:00.000Z",
+      "exported_at": "2026-04-06T13:20:12.303Z"
+    },
+    {
+      "id": "edf916c5-e83a-4ad4-82d4-7d54c71ebb46",
+      "slug": "code-sign-ecc-key",
+      "title": "Code sign - ECC key",
+      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\code-sign-ecc-key.md",
+      "site_path": "/code-sign/code-sign-ecc-key.html",
+      "category": "code-sign",
+      "domain_tags": [
+        "code-sign",
+        "firmware",
+        "security"
+      ],
+      "task_tags": [
+        "code-sign",
+        "spec",
+        "sop",
+        "log"
+      ],
+      "authority_level": "derived",
+      "notion_id": "edf916c5-e83a-4ad4-82d4-7d54c71ebb46",
+      "notion_updated_at": "2022-03-02T03:23:00.000Z",
+      "exported_at": "2026-04-06T13:12:23.482Z"
     }
   ],
   "contextEdges": [
     {
-      "source": "2021部門創新提案",
-      "target": "usb30影響配對問題",
+      "source": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "target": "3rd-party-code-signing-specification-ecdsa",
       "type": "tag_related",
       "confidence": "medium",
-      "score": 0.3198257085550478,
+      "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-04-13T03:17:30.229Z",
+      "generated_at": "2026-04-14T07:28:55.117Z",
       "basis": [
         {
           "kind": "tag_overlap",
-          "weight": 0.3198257085550478,
+          "weight": 0.9,
           "details": {
             "shared_tags": [
-              "debug"
+              "code-sign",
+              "spec",
+              "sop",
+              "log"
             ],
-            "raw_score": 1.599128542775239
+            "raw_score": 6.419070736121311
           }
         },
         {
           "kind": "same_domain",
-          "weight": 0.2,
+          "weight": 0.25,
           "details": {
             "shared_domains": [
-              "hub"
+              "code-sign",
+              "firmware"
             ],
             "target_authority": "source"
           }
@@ -124,30 +133,35 @@
       ]
     },
     {
-      "source": "2021部門創新提案",
-      "target": "交叉評核作業",
+      "source": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "target": "3rd-party-code-signing-specification-ecdsaen-",
       "type": "tag_related",
       "confidence": "medium",
-      "score": 0.3198257085550478,
+      "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-04-13T03:17:30.229Z",
+      "generated_at": "2026-04-14T07:28:55.117Z",
       "basis": [
         {
           "kind": "tag_overlap",
-          "weight": 0.3198257085550478,
+          "weight": 0.9,
           "details": {
             "shared_tags": [
-              "debug"
+              "code-sign",
+              "spec",
+              "sop",
+              "log"
             ],
-            "raw_score": 1.599128542775239
+            "raw_score": 6.419070736121311
           }
         },
         {
           "kind": "same_domain",
-          "weight": 0.2,
+          "weight": 0.30000000000000004,
           "details": {
             "shared_domains": [
-              "hub"
+              "code-sign",
+              "firmware",
+              "security"
             ],
             "target_authority": "source"
           }
@@ -155,117 +169,170 @@
       ]
     },
     {
-      "source": "2021部門創新提案",
-      "target": "自動化測試",
+      "source": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
+      "target": "code-sign-ecc-key",
       "type": "tag_related",
       "confidence": "medium",
-      "score": 0.5960509867473374,
+      "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-04-13T03:17:30.229Z",
+      "generated_at": "2026-04-14T07:28:55.117Z",
       "basis": [
         {
           "kind": "tag_overlap",
-          "weight": 0.5960509867473374,
+          "weight": 0.9,
           "details": {
             "shared_tags": [
-              "debug",
-              "spec"
+              "code-sign",
+              "spec",
+              "sop",
+              "log"
             ],
-            "raw_score": 2.980254933736687
+            "raw_score": 6.419070736121311
+          }
+        },
+        {
+          "kind": "same_domain",
+          "weight": 0.30000000000000004,
+          "details": {
+            "shared_domains": [
+              "code-sign",
+              "firmware",
+              "security"
+            ],
+            "target_authority": "derived"
           }
         }
       ]
     },
     {
-      "source": "usb30影響配對問題",
-      "target": "交叉評核作業",
+      "source": "3rd-party-code-signing-specification-ecdsa",
+      "target": "3rd-party-code-signing-specification-ecdsaen-",
       "type": "tag_related",
       "confidence": "medium",
-      "score": 0.3198257085550478,
+      "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-04-13T03:17:30.244Z",
+      "generated_at": "2026-04-14T07:28:55.118Z",
       "basis": [
         {
           "kind": "tag_overlap",
-          "weight": 0.3198257085550478,
+          "weight": 0.9,
           "details": {
             "shared_tags": [
-              "debug"
+              "code-sign",
+              "spec",
+              "sop",
+              "log"
             ],
-            "raw_score": 1.599128542775239
+            "raw_score": 6.419070736121311
           }
         },
         {
           "kind": "same_domain",
-          "weight": 0.2,
+          "weight": 0.25,
           "details": {
             "shared_domains": [
-              "hub",
-              "tools"
+              "code-sign",
+              "firmware"
             ],
             "target_authority": "source"
+          }
+        },
+        {
+          "kind": "authority_hint",
+          "weight": 0.5,
+          "details": {
+            "reason": "Title similarity",
+            "match_count": 5,
+            "jaccard": 0.7142857142857143
           }
         }
       ]
     },
     {
-      "source": "usb30影響配對問題",
-      "target": "自動化測試",
+      "source": "3rd-party-code-signing-specification-ecdsa",
+      "target": "code-sign-ecc-key",
       "type": "tag_related",
       "confidence": "medium",
-      "score": 0.3198257085550478,
+      "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-04-13T03:17:30.244Z",
+      "generated_at": "2026-04-14T07:28:55.118Z",
       "basis": [
         {
           "kind": "tag_overlap",
-          "weight": 0.3198257085550478,
+          "weight": 0.9,
           "details": {
             "shared_tags": [
-              "debug"
+              "code-sign",
+              "spec",
+              "sop",
+              "log"
             ],
-            "raw_score": 1.599128542775239
+            "raw_score": 6.419070736121311
           }
         },
         {
           "kind": "same_domain",
-          "weight": 0.2,
+          "weight": 0.25,
           "details": {
             "shared_domains": [
-              "tools"
+              "code-sign",
+              "firmware"
             ],
-            "target_authority": "source"
+            "target_authority": "derived"
+          }
+        },
+        {
+          "kind": "authority_hint",
+          "weight": 0.16666666666666666,
+          "details": {
+            "reason": "Title similarity",
+            "match_count": 1,
+            "jaccard": 0.1111111111111111
           }
         }
       ]
     },
     {
-      "source": "交叉評核作業",
-      "target": "自動化測試",
+      "source": "3rd-party-code-signing-specification-ecdsaen-",
+      "target": "code-sign-ecc-key",
       "type": "tag_related",
       "confidence": "medium",
-      "score": 0.3198257085550478,
+      "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-04-13T03:17:30.245Z",
+      "generated_at": "2026-04-14T07:28:55.118Z",
       "basis": [
         {
           "kind": "tag_overlap",
-          "weight": 0.3198257085550478,
+          "weight": 0.9,
           "details": {
             "shared_tags": [
-              "debug"
+              "code-sign",
+              "spec",
+              "sop",
+              "log"
             ],
-            "raw_score": 1.599128542775239
+            "raw_score": 6.419070736121311
           }
         },
         {
           "kind": "same_domain",
-          "weight": 0.2,
+          "weight": 0.30000000000000004,
           "details": {
             "shared_domains": [
-              "tools"
+              "code-sign",
+              "firmware",
+              "security"
             ],
-            "target_authority": "source"
+            "target_authority": "derived"
+          }
+        },
+        {
+          "kind": "authority_hint",
+          "weight": 0.16666666666666666,
+          "details": {
+            "reason": "Title similarity",
+            "match_count": 1,
+            "jaccard": 0.1111111111111111
           }
         }
       ]

@@ -130,6 +130,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: 共好會議
+      title: 共好會議
+      path: /general/共好會議.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: 取消使用stdafxh-include-方式
       title: 取消使用stdafx.h include 方式
       path: /general/取消使用stdafxh-include-方式.html
@@ -271,6 +277,12 @@ relations:
     - target: mac-usb-20-eep-tool-開發簡介
       title: Mac USB 2.0 EEP Tool 開發簡介
       path: /mac/mac-usb-20-eep-tool-開發簡介.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac-新build-project-遇到問題
+      title: Mac 新build project 遇到問題
+      path: /mac/mac-新build-project-遇到問題.html
       type: same_domain
       confidence: low
       score: 0.2

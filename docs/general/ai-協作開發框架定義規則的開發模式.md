@@ -26,9 +26,21 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: amity-etoken-python
+      title: Amity EToken Python
+      path: /code-sign/amity-etoken-python.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: camera-透過我們驗證-code-sign
       title: Camera 透過我們驗證 code sign
       path: /code-sign/camera-透過我們驗證-code-sign.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: chip-code-sign-info-list-hp
+      title: Chip code sign Info List (HP)
+      path: /code-sign/chip-code-sign-info-list-hp.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -41,6 +53,12 @@ relations:
     - target: code-sign-flow
       title: Code sign Flow
       path: /code-sign/code-sign-flow.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: code-sign-文件
+      title: Code Sign 文件
+      path: /code-sign/code-sign-文件.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -119,6 +137,12 @@ relations:
     - target: openssl-generate-rsa-key-pair-etoken-code-sign
       title: openssl generate rsa key pair & Etoken code sign
       path: /code-sign/openssl-generate-rsa-key-pair-etoken-code-sign.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: peitzuli-李珮慈-etoken
+      title: PeiTzuLi 李珮慈 Etoken
+      path: /code-sign/peitzuli-李珮慈-etoken.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -215,6 +239,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: ai-agent-skills
+      title: AI Agent Skills
+      path: /general/ai-agent-skills.html
+      type: same_domain
+      confidence: low
+      score: 0.375
+    - target: electron-ui
+      title: Electron UI
+      path: /general/electron-ui.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: faststone-capture-註冊碼-序列號-
       title: |
         FastStone Capture 註冊碼 序列號： 
@@ -259,9 +295,27 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: z24m-bat
+      title: Z24m bat
+      path: /general/z24m-bat.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 大話設計模式
+      title: 大話設計模式
+      path: /general/大話設計模式.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: 物件導向分析與uml
       title: 物件導向分析與UML
       path: /general/物件導向分析與uml.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 軟體專案代號-wai0013-wai0020
+      title: 軟體專案代號 WAI0013 ~ WAI0020
+      path: /general/軟體專案代號-wai0013-wai0020.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -289,6 +343,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-2020工作事項-完成事項
+      title: Hub 2020工作事項 完成事項
+      path: /hub/hub-2020工作事項-完成事項.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hub-driver-debugging-method-csr
       title: Hub Driver Debugging method (CSR)
       path: /driver/hub-driver-debugging-method-csr.html
@@ -307,6 +367,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-mp-tool-user-guide
+      title: Hub Mp Tool User Guide
+      path: /hub/hub-mp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: '-hp-firmware-installer-macos-完整修復與發布手冊'
       title: "\U0001F6E0️ HP Firmware Installer (macOS) 完整修復與發布手冊"
       path: /mac/-hp-firmware-installer-macos-完整修復與發布手冊.html
@@ -316,6 +382,12 @@ relations:
     - target: mac-framework
       title: Mac Framework
       path: /mac/mac-framework.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: mac-新build-project-遇到問題
+      title: Mac 新build project 遇到問題
+      path: /mac/mac-新build-project-遇到問題.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -362,6 +434,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: philips-monitor-分類
+      title: Philips Monitor 分類
+      path: /monitor/philips-monitor-分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰
       title: >-
         SunplusCamera.dll (x86) 在 Windows on ARM (ARM64) 平台上執行時因 0xc0000417
@@ -374,6 +452,12 @@ relations:
     - target: ecc-key
       title: ECC key
       path: /code-sign/ecc-key.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-security-request-checklist-
+      title: 'HP Security Request Checklist '
+      path: /security/hp-security-request-checklist-.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -395,6 +479,13 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: universal-serial-bus-4-usb4-specification-
+      title: |
+        Universal Serial Bus 4 (USB4®) Specification
+      path: /security/universal-serial-bus-4-usb4-specification-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: 憑證檔案
       title: 憑證檔案
       path: /general/憑證檔案.html
@@ -407,15 +498,45 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: gl-command-line-tool-user-guide-
+      title: 'GL Command Line Tool User Guide '
+      path: /tools/gl-command-line-tool-user-guide-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl-enduser-tool-instruction
+      title: GL EndUser Tool Instruction
+      path: /general/gl-enduser-tool-instruction.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
+      title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
+      path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-enduser-tool-包裝流程
       title: HP EndUser Tool 包裝流程
       path: /general/hp-enduser-tool-包裝流程.html
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-isp-tool-user-guide
+      title: HP ISP Tool User Guide
+      path: /tools/hp-isp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: lenovo-one-key-update-tool-
       title: 'Lenovo one key update tool '
       path: /general/lenovo-one-key-update-tool-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo-one-key-update-tool-issue
+      title: Lenovo One key update Tool issue
+      path: /tools/lenovo-one-key-update-tool-issue.html
       type: same_domain
       confidence: low
       score: 0.2

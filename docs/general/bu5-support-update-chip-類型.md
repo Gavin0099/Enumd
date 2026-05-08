@@ -22,6 +22,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: chip-code-sign-info-list-hp
+      title: Chip code sign Info List (HP)
+      path: /code-sign/chip-code-sign-info-list-hp.html
+      type: same_domain
+      confidence: low
+      score: 0.15000000000000002
     - target: code-sign-概述
       title: Code Sign 概述
       path: /code-sign/code-sign-概述.html
@@ -246,6 +252,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: drawiohttpdrawio-相關連結
+      title: '[Draw.io](http://draw.io/) 相關連結'
+      path: /general/drawiohttpdrawio-相關連結.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: e22e24i-1st-2nd-scalar-update-
       title: 'E22/E24i 1st & 2nd Scalar Update '
       path: /general/e22e24i-1st-2nd-scalar-update-.html
@@ -292,6 +304,12 @@ relations:
     - target: hp-534pm-fail-log
       title: HP 534pm fail log
       path: /general/hp-534pm-fail-log.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: hp-rose-debug-
+      title: 'HP Rose Debug '
+      path: /general/hp-rose-debug-.html
       type: same_domain
       confidence: low
       score: 0.25
@@ -427,6 +445,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: 共好會議
+      title: 共好會議
+      path: /general/共好會議.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: 如何在xocde-執行-clang-format
       title: 如何在xocde 執行 clang format
       path: /general/如何在xocde-執行-clang-format.html
@@ -545,6 +569,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-2020工作事項-完成事項
+      title: Hub 2020工作事項 完成事項
+      path: /hub/hub-2020工作事項-完成事項.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
@@ -611,6 +641,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-ini-parameter
+      title: Hub ini parameter
+      path: /hub/hub-ini-parameter.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hub-mp-tool-user-guide
+      title: Hub Mp Tool User Guide
+      path: /hub/hub-mp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hub-mp-tool
       title: Hub MP Tool
       path: /hub/hub-mp-tool.html
@@ -623,6 +665,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-tool-release-note
+      title: Hub Tool Release Note
+      path: /hub/hub-tool-release-note.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hub-virtual-device-stress-test-
       title: 'Hub virtual device stress test '
       path: /hub/hub-virtual-device-stress-test-.html
@@ -747,6 +795,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: mac-新build-project-遇到問題
+      title: Mac 新build project 遇到問題
+      path: /mac/mac-新build-project-遇到問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: mac-權限問題
       title: Mac 權限問題
       path: /mac/mac-權限問題.html
@@ -777,6 +831,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: 2020-monitor-tool需求列表
+      title: 2020 Monitor Tool需求列表
+      path: /monitor/2020-monitor-tool需求列表.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: asus-monitor-schedule-2024-2025
+      title: ASUS Monitor Schedule  2024 -2025
+      path: /monitor/asus-monitor-schedule-2024-2025.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: get-monitor-info-
       title: 'Get Monitor Info '
       path: /monitor/get-monitor-info-.html
@@ -802,6 +868,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hp-monitor-2022-schedule
+      title: HP Monitor 2022 Schedule
+      path: /monitor/hp-monitor-2022-schedule.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-monitor-2023-schedule-
       title: 'HP Monitor 2023 Schedule '
       path: /monitor/hp-monitor-2023-schedule-.html
@@ -856,6 +928,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: lenovo-monitor-schedule-2024
+      title: Lenovo Monitor Schedule  2024
+      path: /monitor/lenovo-monitor-schedule-2024.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo-monitor-schedule
+      title: Lenovo Monitor Schedule
+      path: /monitor/lenovo-monitor-schedule.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: monitor-debug-參考資料
       title: Monitor debug & 參考資料
       path: /monitor/monitor-debug-參考資料.html
@@ -874,6 +958,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: mtk-monitor-分類
+      title: MTK Monitor 分類
+      path: /monitor/mtk-monitor-分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: mtk-scaler-update-flow
       title: MTK Scaler Update flow
       path: /monitor/mtk-scaler-update-flow.html
@@ -883,6 +973,12 @@ relations:
     - target: p32p-30-reset-scaler-command
       title: P32p-30 Reset Scaler command
       path: /monitor/p32p-30-reset-scaler-command.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: philips-monitor-分類
+      title: Philips Monitor 分類
+      path: /monitor/philips-monitor-分類.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -904,6 +1000,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hp-security-request-checklist-
+      title: 'HP Security Request Checklist '
+      path: /security/hp-security-request-checklist-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
@@ -1024,6 +1126,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: standard-isp-tool-instruction
+      title: Standard ISP Tool Instruction
+      path: /tools/standard-isp-tool-instruction.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: standard-isp-tool-roll-back-flow
       title: Standard ISP Tool Roll Back Flow
       path: /general/standard-isp-tool-roll-back-flow.html
@@ -1036,6 +1144,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: bu5-week-report
+      title: BU5 Week Report
+      path: /general/bu5-week-report.html
+      type: same_domain
+      confidence: low
+      score: 0.21428571428571427
     - target: hp-silent-install-project-support-list
       title: HP silent install project support list
       path: /general/hp-silent-install-project-support-list.html
@@ -1060,6 +1174,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.21428571428571427
+    - target: lenovo-one-key-update-tool-issue
+      title: Lenovo One key update Tool issue
+      path: /tools/lenovo-one-key-update-tool-issue.html
+      type: same_domain
+      confidence: low
+      score: 0.15000000000000002
 ---
 
 目前BU5 可以 update chip 如下

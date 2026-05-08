@@ -28,12 +28,24 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: amity-etoken-python
+      title: Amity EToken Python
+      path: /code-sign/amity-etoken-python.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: camera-透過我們驗證-code-sign
       title: Camera 透過我們驗證 code sign
       path: /code-sign/camera-透過我們驗證-code-sign.html
       type: same_domain
       confidence: low
       score: 0.25
+    - target: chip-code-sign-info-list-hp
+      title: Chip code sign Info List (HP)
+      path: /code-sign/chip-code-sign-info-list-hp.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: code-sign-ecc-key
       title: Code sign - ECC key
       path: /code-sign/code-sign-ecc-key.html
@@ -43,6 +55,12 @@ relations:
     - target: code-sign-flow
       title: Code sign Flow
       path: /code-sign/code-sign-flow.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: code-sign-文件
+      title: Code Sign 文件
+      path: /code-sign/code-sign-文件.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -139,6 +157,12 @@ relations:
     - target: openssl-generate-rsa-key-pair-etoken-code-sign
       title: openssl generate rsa key pair & Etoken code sign
       path: /code-sign/openssl-generate-rsa-key-pair-etoken-code-sign.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: peitzuli-李珮慈-etoken
+      title: PeiTzuLi 李珮慈 Etoken
+      path: /code-sign/peitzuli-李珮慈-etoken.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -268,6 +292,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-2020工作事項-完成事項
+      title: Hub 2020工作事項 完成事項
+      path: /hub/hub-2020工作事項-完成事項.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
@@ -310,6 +340,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hub-ini-parameter
+      title: Hub ini parameter
+      path: /hub/hub-ini-parameter.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
+    - target: hub-mp-tool-user-guide
+      title: Hub Mp Tool User Guide
+      path: /hub/hub-mp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hub-mp-tool
       title: Hub MP Tool
       path: /hub/hub-mp-tool.html
@@ -319,6 +361,12 @@ relations:
     - target: hub-project-string-定義
       title: Hub Project String 定義
       path: /hub/hub-project-string-定義.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: hub-tool-release-note
+      title: Hub Tool Release Note
+      path: /hub/hub-tool-release-note.html
       type: same_domain
       confidence: low
       score: 0.25
@@ -499,9 +547,21 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: drawiohttpdrawio-相關連結
+      title: '[Draw.io](http://draw.io/) 相關連結'
+      path: /general/drawiohttpdrawio-相關連結.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: e22e24i-1st-2nd-scalar-update-
       title: 'E22/E24i 1st & 2nd Scalar Update '
       path: /general/e22e24i-1st-2nd-scalar-update-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: electron-ui
+      title: Electron UI
+      path: /general/electron-ui.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -540,6 +600,12 @@ relations:
     - target: hp-534pm-fail-log
       title: HP 534pm fail log
       path: /general/hp-534pm-fail-log.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-rose-debug-
+      title: 'HP Rose Debug '
+      path: /general/hp-rose-debug-.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -645,6 +711,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: z24m-bat
+      title: Z24m bat
+      path: /general/z24m-bat.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: zeroplus_lap-i2c-訊號錄製方式
       title: ZEROPLUS_LAP I2c 訊號錄製方式
       path: /general/zeroplus_lap-i2c-訊號錄製方式.html
@@ -657,6 +729,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: 大話設計模式
+      title: 大話設計模式
+      path: /general/大話設計模式.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: 物件導向分析與uml
       title: 物件導向分析與UML
       path: /general/物件導向分析與uml.html
@@ -666,6 +744,12 @@ relations:
     - target: 自評
       title: 自評
       path: /general/自評.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 軟體專案代號-wai0013-wai0020
+      title: 軟體專案代號 WAI0013 ~ WAI0020
+      path: /general/軟體專案代號-wai0013-wai0020.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -761,6 +845,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: mac-新build-project-遇到問題
+      title: Mac 新build project 遇到問題
+      path: /mac/mac-新build-project-遇到問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: mac-權限問題
       title: Mac 權限問題
       path: /mac/mac-權限問題.html
@@ -828,6 +918,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: philips-monitor-分類
+      title: Philips Monitor 分類
+      path: /monitor/philips-monitor-分類.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: realtek-scaler-isp-tool-開發流程
       title: Realtek Scaler ISP tool 開發流程
       path: /monitor/realtek-scaler-isp-tool-開發流程.html
@@ -861,6 +957,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-security-request-checklist-
+      title: 'HP Security Request Checklist '
+      path: /security/hp-security-request-checklist-.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
@@ -876,6 +978,13 @@ relations:
     - target: io-data-安全性與開發規範清單-security-development-requirements
       title: IO DATA 安全性與開發規範清單 (Security & Development Requirements)
       path: /general/io-data-安全性與開發規範清單-security-development-requirements.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: universal-serial-bus-4-usb4-specification-
+      title: |
+        Universal Serial Bus 4 (USB4®) Specification
+      path: /security/universal-serial-bus-4-usb4-specification-.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -921,9 +1030,21 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: gl-command-line-tool-user-guide-
+      title: 'GL Command Line Tool User Guide '
+      path: /tools/gl-command-line-tool-user-guide-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: gl-enduser-tool-for-electron
       title: GL Enduser Tool for Electron
       path: /general/gl-enduser-tool-for-electron.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl-enduser-tool-instruction
+      title: GL EndUser Tool Instruction
+      path: /general/gl-enduser-tool-instruction.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -963,6 +1084,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
+      title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
+      path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-enduser-tool-包裝流程
       title: HP EndUser Tool 包裝流程
       path: /general/hp-enduser-tool-包裝流程.html
@@ -978,6 +1105,12 @@ relations:
     - target: hp-isp-tool-update-速度問題
       title: HP ISP Tool update 速度問題
       path: /general/hp-isp-tool-update-速度問題.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: hp-isp-tool-user-guide
+      title: HP ISP Tool User Guide
+      path: /tools/hp-isp-tool-user-guide.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -999,9 +1132,21 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: lenovo-one-key-update-tool-issue
+      title: Lenovo One key update Tool issue
+      path: /tools/lenovo-one-key-update-tool-issue.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: srs-crd-輔助工具入口介面-
       title: 'SRS - CRD 輔助工具入口介面 '
       path: /general/srs-crd-輔助工具入口介面-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: standard-isp-tool-instruction
+      title: Standard ISP Tool Instruction
+      path: /tools/standard-isp-tool-instruction.html
       type: same_domain
       confidence: low
       score: 0.2

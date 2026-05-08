@@ -1,27 +1,38 @@
 {
-  "requested_slug": "2021部門創新提案",
+  "requested_slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
   "selected_core_count": 1,
   "selected_dependency_count": 0,
   "selected_related_count": 3,
   "dropped_low_integrity_nodes": [],
   "dropped_duplicate_nodes": [],
-  "dropped_below_score_nodes": [
-    "hp_display_firmware_update_specification",
-    "mt9052",
-    "物件導向分析與uml",
-    "憑證檔案"
-  ],
+  "dropped_below_score_nodes": [],
   "total_context_edges": 6,
   "topology_signature": {
-    "high_score_count": 6,
+    "high_score_count": 50,
     "borderline_count": 0,
     "best_borderline_score": 0,
-    "gap_detected": false
+    "gap_detected": false,
+    "borderline_neighbors": []
   },
   "advisory": {
     "topology_status": "STABLE_AT_A",
     "recommended_policy": "A",
-    "reason": "Baseline threshold (0.3) already yielded 6 nodes. Lowering threshold is likely unnecessary noise."
+    "reason": "Baseline threshold (0.3) already yielded 50 nodes. Lowering threshold is likely unnecessary noise."
+  },
+  "decision_confidence": "HIGH",
+  "decision_basis": {
+    "topology_status": "STABLE_AT_A",
+    "count_at_0_3": 50,
+    "count_at_0_22": 50,
+    "borderline_count": 0,
+    "best_score": 0,
+    "threshold_used": 0.3,
+    "related_limit_used": 3,
+    "pilot_evaluation": {
+      "trust_level": "HUMAN_REVIEW",
+      "post_review_verdict": "UNREVIEWED",
+      "reason": "Uncertain topology or borderline metrics - Manual calibration needed."
+    }
   },
   "snapshot_profile": {
     "core_count": 1,
@@ -31,5 +42,14 @@
     "has_low_integrity_core": false,
     "max_dependency_depth": 0,
     "context_class": "related_only"
-  }
+  },
+  "outcome_metrics": {
+    "source_diversity": 1,
+    "avg_integrity_score": 0,
+    "noise_signal": "HIGH"
+  },
+  "recommended_model": "undecided",
+  "recommendation_status": "undecided",
+  "applied_model": "haiku",
+  "model_policy_reason": "Production Policy v1: Haiku-only due to graph density ceiling"
 }

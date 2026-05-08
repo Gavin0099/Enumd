@@ -110,6 +110,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: powershell
+      title: PowerShell
+      path: /general/powershell.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: richelieu-issue-description
       title: Richelieu Issue description
       path: /general/richelieu-issue-description.html
@@ -119,6 +125,12 @@ relations:
     - target: sd-reader-sample-code-
       title: 'SD Reader Sample Code '
       path: /general/sd-reader-sample-code-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: 共好會議
+      title: 共好會議
+      path: /general/共好會議.html
       type: same_domain
       confidence: low
       score: 0.2

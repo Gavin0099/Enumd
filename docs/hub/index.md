@@ -2,7 +2,7 @@
 
 > Hub chip、ini 參數、Firmware Update Tool、SDK 規範
 
-共 **35** 頁文件
+共 **39** 頁文件
 
 ## 文件列表
 
@@ -23,6 +23,7 @@
 - [HP ISP Tool Rollback hub firmware flow](./hp-isp-tool-rollback-hub-firmware-flow)
 - [HP ISP Tool Rollback hub firmware flow(U32)](./hp-isp-tool-rollback-hub-firmware-flowu32)
 - [HP ISP Tool Update hub firmware flow(Z24m)](./hp-isp-tool-update-hub-firmware-flowz24m)
+- [Hub 2020工作事項 完成事項](./hub-2020工作事項-完成事項)
 - [Hub 2020工作事項](./hub-2020工作事項)
 - [Hub Auto Test ](./hub-auto-test-)
 - [Hub Chip 資訊](./hub-chip-資訊)
@@ -34,8 +35,11 @@
 - [Hub Fw bug](./hub-fw-bug)
 - [Hub FW Update 策略技術評估 — CFU 導入分析](./hub-fw-update-策略技術評估-cfu-導入分析)
 - [Hub HID Get String Descriptor Status](./hub-hid-get-string-descriptor-status)
+- [Hub ini parameter](./hub-ini-parameter)
+- [Hub Mp Tool User Guide](./hub-mp-tool-user-guide)
 - [Hub MP Tool](./hub-mp-tool)
 - [Hub Project String 定義](./hub-project-string-定義)
+- [Hub Tool Release Note](./hub-tool-release-note)
 - [Hub virtual device stress test ](./hub-virtual-device-stress-test-)
 - [Mac Hub Update Tool User Guide](./mac-hub-update-tool-user-guide)
 - [MTK 3rd Send USB Hub ISP Event](./mtk-3rd-send-usb-hub-isp-event)

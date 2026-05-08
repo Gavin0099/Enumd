@@ -2,7 +2,7 @@
 
 > Mac OCI Tool、Xcode 設定、Bundle ID、FDA 權限
 
-共 **29** 頁文件
+共 **30** 頁文件
 
 ## 文件列表
 
@@ -30,6 +30,7 @@
 - [Mac packages installation file process(CN)](./mac-packages-installation-file-processcn)
 - [Mac UI 客制化修改 (以HostBridge 為例)](./mac-ui-客制化修改-以hostbridge-為例)
 - [Mac USB 2.0 EEP Tool 開發簡介](./mac-usb-20-eep-tool-開發簡介)
+- [Mac 新build project 遇到問題](./mac-新build-project-遇到問題)
 - [Mac 權限問題](./mac-權限問題)
 - [Mac 顯示 framework name 方式](./mac-顯示-framework-name-方式)
 - [macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明](./macos-mdm-與-full-disk-access-fda-權限管理實作說明)
