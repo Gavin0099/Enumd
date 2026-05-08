@@ -11,10 +11,12 @@ Checks docs/status/chatgpt-lane-run-ledger.md rows for:
 from __future__ import annotations
 
 from pathlib import Path
+import re
 import sys
 
 
 LEDGER = Path("docs/status/chatgpt-lane-run-ledger.md")
+STATUS_DIR = Path("docs/status")
 
 
 def _parse_row(line: str) -> list[str]:
@@ -53,6 +55,25 @@ def main() -> int:
             failed.append(f"{run_id}: closeout_covered != yes")
         if mapping_confidence != "high":
             failed.append(f"{run_id}: mapping_confidence != high")
+
+        # Remediation guard: ensure closeout file has resolved semantic slice commit evidence.
+        closeout_path = STATUS_DIR / f"chatgpt-lane-{run_id}-closeout.md"
+        if not closeout_path.exists():
+            failed.append(f"{run_id}: closeout file missing ({closeout_path})")
+            continue
+        closeout_text = closeout_path.read_text(encoding="utf-8")
+        if "pending until commit created" in closeout_text:
+            failed.append(f"{run_id}: closeout semantic_slice_commit_exists still pending")
+
+        m = re.search(r"semantic_slice_commit_exists:\s*`yes \(commit: ([0-9a-fA-F]+)\)`", closeout_text)
+        if not m:
+            failed.append(f"{run_id}: closeout semantic_slice_commit_exists format invalid")
+        else:
+            closeout_hash = m.group(1)
+            if closeout_hash != commit_hash:
+                failed.append(
+                    f"{run_id}: closeout commit hash ({closeout_hash}) != ledger commit_hash ({commit_hash})"
+                )
 
     if failed:
         print("LEDGER_VALIDATION=FAIL")
