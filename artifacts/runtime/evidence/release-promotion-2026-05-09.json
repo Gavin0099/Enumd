@@ -1,0 +1,1 @@
+{"summary_type":"release_promotion_evidence","generated_at":"2026-05-09","pipeline_run_id":"manual-bootstrap-20260509","release_candidate":"HEAD","pending_schema_evolution_gates":"none","pending_authority_upgrade_gates":"none","notes":"Bootstrapped evidence to satisfy pre-release promotion gate after governance sync."}

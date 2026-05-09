@@ -1,0 +1,15 @@
+{
+  "pipeline_run_id": "post-sync-20260509",
+  "waves_affected": [],
+  "schema_changed": false,
+  "event_triggered": "none",
+  "evidence_pack_required": "none",
+  "changed_files_count": 2,
+  "changed_files": [
+    "knowledge/synthesis_snapshot.json",
+    "scripts/.temp/edges.json"
+  ],
+  "generated_at": "2026-05-09T03:21:04Z",
+  "mode": "rev-range",
+  "rev_range": "HEAD~1..HEAD"
+}

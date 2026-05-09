@@ -1,0 +1,8 @@
+{
+  "release_blocked": false,
+  "blocking_events": [],
+  "synthesis_snapshot_sha": "ce4b6ce5173b4a50b76eb2096c1c96d6a1d5649cd838448ae4c5016fb6218b46",
+  "gate_verdict": "pass",
+  "evidence_dir": "D:\\Enumd\\artifacts\\runtime\\evidence",
+  "release_evidence": "D:\\Enumd\\artifacts\\runtime\\evidence\\release-promotion-2026-05-09.json"
+}

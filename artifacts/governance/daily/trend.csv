@@ -1,0 +1,2 @@
+date,evidence_status,sample_status,daily_contract_validation.status,phase1_activation_coverage.status,PHASE1_EXIT,phase1_exit.reasons,session_count,runtime_validation_status,all_day_insufficient_evidence,integrity_error
+2026-05-09,sufficient_evidence,stable,PASS,IN_PROGRESS,HOLD,['manual-bootstrap'],2,PASS,False,False

@@ -1,0 +1,21 @@
+{
+  "evidence_status": "sufficient_evidence",
+  "sample_status": "stable",
+  "daily_contract_validation": {
+    "status": "PASS"
+  },
+  "phase1_activation_coverage": {
+    "status": "IN_PROGRESS"
+  },
+  "PHASE1_EXIT": "HOLD",
+  "phase1_exit": {
+    "reasons": [
+      "manual-bootstrap"
+    ]
+  },
+  "session_count": 1,
+  "runtime_validation_status": "PASS",
+  "integrity_error_count": 0,
+  "schema_error_count": 0,
+  "fk_error_count": 0
+}
