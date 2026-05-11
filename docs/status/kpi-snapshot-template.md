@@ -23,13 +23,14 @@
 | run-12 | 2026-05-11 | 2abc82a | chatgpt-lane-run12-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-13 | 2026-05-11 | 89fbf2d | chatgpt-lane-run13-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-14 | 2026-05-11 | f7d2eed | chatgpt-lane-run14-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
-| run-15 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-15 | 2026-05-11 | TBD_AFTER_COMMIT | chatgpt-lane-run15-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 
 ### Observation KPI Split (Runs 06-15)
 
 | window | closeout_valid_ratio | valid_native_total | valid_backfill_total | valid_native_ratio | valid_backfill_ratio | mapped_high_total | mapped_high_ratio | scope_violation_total | claim_overreach_total | summary_detail_consistency_all_pass | native_run_count |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---:|
-| run-06..run-15 | 1.00 | 9 | 0 | 1.00 | 0.00 | 9 | 1.00 | 0 | 0 | pass | 9 |
+| run-06..run-15 | 1.00 | 10 | 0 | 1.00 | 0.00 | 10 | 1.00 | 0 | 0 | pass | 10 |
+
 
 
 

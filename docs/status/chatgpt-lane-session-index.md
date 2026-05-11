@@ -12,6 +12,7 @@
 | chatgpt-lane-run12-2026-05-11 | run-12 | native closeout continuation for observation window run-12 | valid | 2026-05-11T23:40:00+08:00 | source=chatgpt_lane_native_closeout |
 | chatgpt-lane-run13-2026-05-11 | run-13 | native closeout continuation for observation window run-13 | valid | 2026-05-11T23:55:00+08:00 | source=chatgpt_lane_native_closeout |
 | chatgpt-lane-run14-2026-05-11 | run-14 | native closeout continuation for observation window run-14 | valid | 2026-05-11T23:58:00+08:00 | source=chatgpt_lane_native_closeout |
+| chatgpt-lane-run15-2026-05-11 | run-15 | native closeout continuation for observation window run-15 | valid | 2026-05-11T23:59:00+08:00 | source=chatgpt_lane_native_closeout |
 | chatgpt-lane-run2-2026-05-08 | run-02 | reviewer-facing wording and claim boundary patch for pilot closeout language | valid | 2026-05-08T18:00:00+08:00 | source=chatgpt_lane_docs_backfill |
 | chatgpt-lane-run3-2026-05-08 | run-03 | cross-file field naming sync patch for status surfaces | valid | 2026-05-08T18:20:00+08:00 | source=chatgpt_lane_docs_backfill |
 | chatgpt-lane-run4-2026-05-08 | run-04 | validator/tooling narrow patch for run-ledger contract checks | valid | 2026-05-08T18:40:00+08:00 | source=chatgpt_lane_docs_backfill |
