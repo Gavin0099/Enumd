@@ -14,7 +14,7 @@
 
 | run_id | date | commit_hash | session_id | closeout_status | session_source | closeout_covered | mapping_confidence | scope_violation_count | claim_overreach_count | summary_detail_consistency | notes |
 |---|---|---|---|---|---|---|---|---:|---:|---|---|
-| run-06 | 2026-05-11 | TBD_AFTER_COMMIT | chatgpt-lane-run6-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
+| run-06 | 2026-05-11 | d1dc0bb | chatgpt-lane-run6-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-07 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 | run-08 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 | run-09 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |

@@ -18,7 +18,7 @@
 - intent_compatibility_check: `valid`
 - summary_detail_consistency: `pass`
 - completion_contract:
-  - semantic_slice_commit_exists: `pending until commit created`
+  - semantic_slice_commit_exists: `yes (commit: d1dc0bb)`
   - same_repo_closeout_valid: `yes`
   - task_intent_compatible_and_time_order_valid: `yes`
   - ledger_mapping_fields_present: `yes`
