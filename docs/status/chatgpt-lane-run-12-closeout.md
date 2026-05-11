@@ -1,11 +1,11 @@
-﻿# ChatGPT Lane Observation Run 11 Closeout
+﻿# ChatGPT Lane Observation Run 12 Closeout
 
-- run_id: `run-11`
-- session_id: `chatgpt-lane-run11-2026-05-11`
+- run_id: `run-12`
+- session_id: `chatgpt-lane-run12-2026-05-11`
 - closeout_status: `valid`
 - session_source: `native`
-- closed_at: `2026-05-11T23:20:00+08:00`
-- task_intent: `native closeout continuation for observation window run-11`
+- closed_at: `2026-05-11T23:40:00+08:00`
+- task_intent: `native closeout continuation for observation window run-12`
 - primary_targets:
   - `artifacts/session-index.ndjson`
   - `docs/status/chatgpt-lane-run-ledger.md`
@@ -17,8 +17,7 @@
 - intent_compatibility_check: `valid`
 - summary_detail_consistency: `pass`
 - completion_contract:
-  - semantic_slice_commit_exists: `yes (commit: 1d4176a)`
+  - semantic_slice_commit_exists: `yes (commit: TBD_AFTER_COMMIT)`
   - same_repo_closeout_valid: `yes`
   - task_intent_compatible_and_time_order_valid: `yes`
   - ledger_mapping_fields_present: `yes`
-
