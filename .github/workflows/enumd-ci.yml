@@ -28,6 +28,9 @@ jobs:
       - name: Graph fixtures
         run: npm run -s test:graph
 
+      - name: Build graph artifacts
+        run: npm run -s build:graph
+
       - name: Synthesis fixtures
         run: npm run -s test:synthesis
 
