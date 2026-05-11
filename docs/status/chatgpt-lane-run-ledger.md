@@ -18,3 +18,4 @@
 | run-12 | 2026-05-11 | native closeout continuation patch | 2abc82a | chatgpt-lane-run12-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
 | run-13 | 2026-05-11 | native closeout continuation patch | 89fbf2d | chatgpt-lane-run13-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
 
+| run-14 | 2026-05-11 | native closeout continuation patch | TBD_AFTER_COMMIT | chatgpt-lane-run14-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
