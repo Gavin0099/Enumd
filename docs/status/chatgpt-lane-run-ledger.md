@@ -9,4 +9,4 @@
 | run-05 | 2026-05-08 | remediation patch for mapping/closeout gap | 0361c69 | chatgpt-lane-run5-2026-05-08 | yes | high | pass | Validator now checks closeout commit evidence is resolved and matches ledger hash |
 | run-06 | 2026-05-11 | native closeout entrypoint bootstrap patch | d1dc0bb | chatgpt-lane-run6-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
 | run-07 | 2026-05-11 | native closeout continuation patch | e959459 | chatgpt-lane-run7-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
-| run-08 | 2026-05-11 | native closeout continuation patch | TBD_AFTER_COMMIT | chatgpt-lane-run8-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
+| run-08 | 2026-05-11 | native closeout continuation patch | 79a3e23 | chatgpt-lane-run8-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
