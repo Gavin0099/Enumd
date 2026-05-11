@@ -1,4 +1,4 @@
-# ChatGPT Lane Run Ledger
+﻿# ChatGPT Lane Run Ledger
 
 | run_id | date | slice_type | commit_hash | session_id | closeout_covered | mapping_confidence | completion_contract | remarks |
 |---|---|---|---|---|---|---|---|---|
@@ -11,4 +11,5 @@
 | run-07 | 2026-05-11 | native closeout continuation patch | e959459 | chatgpt-lane-run7-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
 | run-08 | 2026-05-11 | native closeout continuation patch | 79a3e23 | chatgpt-lane-run8-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
 | run-09 | 2026-05-11 | native closeout continuation patch | debc11a | chatgpt-lane-run9-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
-| run-10 | 2026-05-11 | native closeout continuation patch | TBD_AFTER_COMMIT | chatgpt-lane-run10-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
+| run-10 | 2026-05-11 | native closeout continuation patch | 0f4dd1e | chatgpt-lane-run10-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
+
