@@ -36,3 +36,6 @@ jobs:
 
       - name: Stale advisory check
         run: npm run -s check-stale
+
+      - name: Governance runtime mapping guard
+        run: python scripts/validate-chatgpt-lane-ledger.py
