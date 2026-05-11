@@ -20,3 +20,6 @@ knowledge/**/source.xml
 
 # Scratch / working temp area
 scratch/
+
+# Local temporary outputs (ephemeral, non-authoritative)
+scripts/.temp/
