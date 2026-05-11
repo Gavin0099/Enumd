@@ -14,7 +14,7 @@
 
 | run_id | date | commit_hash | session_id | closeout_status | session_source | closeout_covered | mapping_confidence | scope_violation_count | claim_overreach_count | summary_detail_consistency | notes |
 |---|---|---|---|---|---|---|---|---:|---:|---|---|
-| run-06 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-06 | 2026-05-11 | TBD_AFTER_COMMIT | chatgpt-lane-run6-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-07 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 | run-08 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 | run-09 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
@@ -29,4 +29,4 @@
 
 | window | closeout_valid_ratio | valid_native_total | valid_backfill_total | valid_native_ratio | valid_backfill_ratio | mapped_high_total | mapped_high_ratio | scope_violation_total | claim_overreach_total | summary_detail_consistency_all_pass | native_run_count |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---:|
-| run-06..run-15 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-06..run-15 | 1.00 | 1 | 0 | 1.00 | 0.00 | 1 | 1.00 | 0 | 0 | pass | 1 |

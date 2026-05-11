@@ -7,3 +7,4 @@
 | run-03 | 2026-05-08 | cross-file sync patch (small) | 1797df5 | chatgpt-lane-run3-2026-05-08 | yes | high | pass | Synchronized canonical field naming across status surfaces |
 | run-04 | 2026-05-08 | validator/tooling narrow patch | d1d725b | chatgpt-lane-run4-2026-05-08 | yes | high | pass | Added scripts/validate-chatgpt-lane-ledger.py and validated current ledger rows |
 | run-05 | 2026-05-08 | remediation patch for mapping/closeout gap | 0361c69 | chatgpt-lane-run5-2026-05-08 | yes | high | pass | Validator now checks closeout commit evidence is resolved and matches ledger hash |
+| run-06 | 2026-05-11 | native closeout entrypoint bootstrap patch | TBD_AFTER_COMMIT | chatgpt-lane-run6-2026-05-11 | yes | high | pass | Session source set to native via runtime closeout entrypoint |
