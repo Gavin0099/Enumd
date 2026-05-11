@@ -9,3 +9,24 @@
 | run-03 | 2026-05-08 | 3 | 3 | 0 | 1.00 | 3 | 1.00 | 0 | 0 | n/a | not captured yet |
 | run-04 | 2026-05-08 | 4 | 4 | 0 | 1.00 | 4 | 1.00 | 0 | 0 | n/a | validator run recorded |
 | run-05 | 2026-05-08 | 5 | 5 | 0 | 1.00 | 5 | 1.00 | 0 | 0 | n/a | remediation guard added |
+
+## ChatGPT Lane Observation Window (Runs 06-15)
+
+| run_id | date | commit_hash | session_id | closeout_status | session_source | closeout_covered | mapping_confidence | scope_violation_count | claim_overreach_count | summary_detail_consistency | notes |
+|---|---|---|---|---|---|---|---|---:|---:|---|---|
+| run-06 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-07 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-08 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-09 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-10 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-11 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-12 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-13 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-14 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+| run-15 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
+
+### Observation KPI Split (Runs 06-15)
+
+| window | closeout_valid_ratio | valid_native_total | valid_backfill_total | valid_native_ratio | valid_backfill_ratio | mapped_high_total | mapped_high_ratio | scope_violation_total | claim_overreach_total | summary_detail_consistency_all_pass | native_run_count |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---:|
+| run-06..run-15 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |

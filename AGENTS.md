@@ -94,7 +94,9 @@ Prompt yourself:
 
 For ChatGPT lane pilot runs, the following are mandatory:
 - Follow `docs/status/chatgpt-lane-pilot-plan.md` for every run.
+- Follow `docs/status/enumd-chatgpt-lane-10-run-observation-plan.md` for run-06 through run-15.
 - One semantic slice per run; no mixed giant commit and no repo-wide refactor.
 - A run is counted only if completion contract is fully satisfied; otherwise mark `incomplete`.
 - Do not claim engineering correctness uplift, enforcement escalation, or deterministic cognition from this pilot alone.
 - Do not mark `mapping_confidence: high` unless commit-session-closeout linkage is directly auditable.
+- For run-06..run-15, always record `session_source` as `native` or `backfill` and keep KPI split metrics separate.
