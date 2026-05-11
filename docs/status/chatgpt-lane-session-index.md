@@ -14,3 +14,4 @@
 | chatgpt-lane-run6-2026-05-11 | run-06 | native closeout entrypoint bootstrap for observation window run-06 | valid | 2026-05-11T21:10:00+08:00 | source=chatgpt_lane_native_closeout |
 | chatgpt-lane-run7-2026-05-11 | run-07 | native closeout continuation for observation window run-07 | valid | 2026-05-11T21:40:00+08:00 | source=chatgpt_lane_native_closeout |
 | chatgpt-lane-run8-2026-05-11 | run-08 | native closeout continuation for observation window run-08 | valid | 2026-05-11T22:10:00+08:00 | source=chatgpt_lane_native_closeout |
+| chatgpt-lane-run9-2026-05-11 | run-09 | native closeout continuation for observation window run-09 | valid | 2026-05-11T22:35:00+08:00 | source=chatgpt_lane_native_closeout |
