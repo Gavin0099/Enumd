@@ -17,7 +17,7 @@
 | run-06 | 2026-05-11 | d1dc0bb | chatgpt-lane-run6-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-07 | 2026-05-11 | e959459 | chatgpt-lane-run7-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-08 | 2026-05-11 | 79a3e23 | chatgpt-lane-run8-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
-| run-09 | 2026-05-11 | TBD_AFTER_COMMIT | chatgpt-lane-run9-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
+| run-09 | 2026-05-11 | debc11a | chatgpt-lane-run9-2026-05-11 | valid | native | yes | high | 0 | 0 | pass | native closeout via runtime entrypoint |
 | run-10 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 | run-11 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
 | run-12 | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD | TBD |
