@@ -12,3 +12,4 @@
 | chatgpt-lane-run4-2026-05-08 | run-04 | validator/tooling narrow patch for run-ledger contract checks | valid | 2026-05-08T18:40:00+08:00 | source=chatgpt_lane_docs_backfill |
 | chatgpt-lane-run5-2026-05-08 | run-05 | remediation patch for mapping/closeout hash alignment guard | valid | 2026-05-08T19:00:00+08:00 | source=chatgpt_lane_docs_backfill |
 | chatgpt-lane-run6-2026-05-11 | run-06 | native closeout entrypoint bootstrap for observation window run-06 | valid | 2026-05-11T21:10:00+08:00 | source=chatgpt_lane_native_closeout |
+| chatgpt-lane-run7-2026-05-11 | run-07 | native closeout continuation for observation window run-07 | valid | 2026-05-11T21:40:00+08:00 | source=chatgpt_lane_native_closeout |
