@@ -1,7 +1,7 @@
 # Gate C Cross-Window Trend Report
 
 - generated: 2026-05-12
-- windows: Round B, Round C, Round D, Round E, Round F, Round G, Round H, Round H-live
+- windows: Round B, Round C, Round D, Round E, Round F, Round G, Round H, Round H-live, Round I, Round J
 - scope: Enumd (primary)
 
 ## Date-Governance Rule
@@ -21,6 +21,8 @@ use `-rN` suffix instead of future-date window labels.
 | G | gate-c-window-2026-05-12-r2 | 2026-05-12 | yes | pass | observational-only (non-live) | 0.00 | 1.00 | pass | pass | pass | 4 passed |
 | H | gate-c-window-2026-05-12-r3 | 2026-05-12 | yes | pass | observational-only (non-live) | 0.00 | 1.00 | pass | pass | pass | 4 passed |
 | H-live | gate-c-window-2026-05-12-r4 | 2026-05-12 | yes | pass | live-only | 1.00 | 0.00 | pass | pass | pass | 4 passed |
+| I | gate-c-window-2026-05-12-r5 | 2026-05-12 | yes | pass | live-only | 1.00 | 0.00 | pass | pass | pass | 4 passed |
+| J | gate-c-window-2026-05-12-r7 | 2026-05-12 | yes | pass | live-only | 1.00 | 0.00 | pass | pass | pass | 4 passed |
 
 ## Per-Lane Timing (avg_review_minutes)
 
@@ -34,6 +36,8 @@ use `-rN` suffix instead of future-date window labels.
 | G | 15.00 | 15.00 | 15.00 |
 | H | 15.00 | 15.00 | 15.00 |
 | H-live | 15.00 | 15.00 | 15.00 |
+| I | 15.00 | 15.00 | 15.00 |
+| J | 15.00 | 15.00 | 15.00 |
 
 ## Round D Data-Gap Note
 
@@ -44,9 +48,9 @@ Round D remains a data-gap window.
 
 ## Gating Counts
 
-- completed windows (cross_lane_decision=pass): 7 of 8 (B, C, E, F, G, H, H-live)
-- provisional windows: 1 of 8 (D data gap)
-- hostile regression pass rate: 7/7 across completed rounds with hostile run executed
+- completed windows (cross_lane_decision=pass): 9 of 10 (B, C, E, F, G, H, H-live, I, J)
+- provisional windows: 1 of 10 (D data gap)
+- hostile regression pass rate: 9/9 across completed rounds with hostile run executed
 
 ## Trend Observation
 
@@ -54,14 +58,26 @@ Round D remains a data-gap window.
 - reopen_revert_rate: 0.0 across all completed windows
 - integration_stability: stable across all completed windows
 - date governance compliance begins at Round G
-- date_match: 3/8 windows aligned execution_date to window_id date
+- date_match: 4/10 windows aligned execution_date to window_id date
 - evidence split now explicit: r2/r3 are non-live proxy windows; r4 is a live-only 3x10 window
+- r7 shows stable continuation: no new effort drift, rework, or degraded stability signal
 
 ## Evidence Guardrail
 
 - `cross-agent validated` may be used only when `live_row_ratio >= 0.70`.
 - Round G and Round H do not meet this threshold (`0.00`), so they remain observational-only.
 - Round H-live meets evidence-source threshold (`1.00`) and lane completeness threshold (`valid_review_timing_count=10` each).
+
+## Claim Gate (Formal)
+
+- Label: `cross-agent validated (execution governance scope)` is allowed only when all are true:
+- `live_row_ratio == 1.00`
+- `cross_lane_decision = pass`
+- consecutive live-only pass windows `N >= 2` (current policy: `N=2`)
+- Current status:
+- `gate-c-window-2026-05-12-r4`: live-only + pass
+- `gate-c-window-2026-05-12-r5`: live-only + pass
+- Result: first qualified use of `cross-agent validated (execution governance scope)` is now satisfied.
 
 ## Boundary
 

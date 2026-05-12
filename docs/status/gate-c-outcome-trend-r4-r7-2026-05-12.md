@@ -1,10 +1,11 @@
-# Gate C Outcome Trend (r4-r6)
+# Gate C Outcome Trend (r4-r7)
 
 - date: 2026-05-12
 - windows:
   - `gate-c-window-2026-05-12-r4`
   - `gate-c-window-2026-05-12-r5`
   - `gate-c-window-2026-05-12-r6`
+  - `gate-c-window-2026-05-12-r7`
 - scope: outcome-layer observation only (`reviewer effort`, `reopen/revert`, `integration stability`)
 
 ## Fixed Metrics
@@ -26,6 +27,9 @@
 | gate-c-window-2026-05-12-r6 | copilot | 15.00 | 0.000000 | 0.000000 |
 | gate-c-window-2026-05-12-r6 | claude | 15.00 | 0.000000 | 0.000000 |
 | gate-c-window-2026-05-12-r6 | chatgpt | 15.00 | 0.000000 | 0.000000 |
+| gate-c-window-2026-05-12-r7 | copilot | 15.00 | 0.000000 | 0.000000 |
+| gate-c-window-2026-05-12-r7 | claude | 15.00 | 0.000000 | 0.000000 |
+| gate-c-window-2026-05-12-r7 | chatgpt | 15.00 | 0.000000 | 0.000000 |
 
 ## Trend Rules (Applied)
 
@@ -35,13 +39,13 @@
 
 ## Result
 
-- Effort drift: none (`15.00 -> 15.00 -> 15.00` for all lanes, 0% change).
+- Effort drift: none (`15.00 -> 15.00 -> 15.00 -> 15.00` for all lanes, 0% change).
 - Rework alert: none (all lanes remain `0.000000`).
 - Stability alert: none (all lanes remain `0.000000`).
 - outcome signals stable (observation only).
 
 ## Conclusion
 
-execution governance signals are stable across r4-r6
+execution governance signals are stable across r4-r7
 this is observational outcome evidence only
 not a proof of quality/reasoning uplift
