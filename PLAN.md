@@ -2,7 +2,7 @@
 <!-- governance-baseline: overridable -->
 <!-- baseline_version: 1.0.0 -->
 
-> **最後更新**: 2026-05-16
+> **最後更新**: 2026-05-17
 > **Owner**: Gavin
 > **Freshness**: Sprint (7d)
 
