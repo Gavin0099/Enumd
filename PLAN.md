@@ -72,6 +72,11 @@
     4. Submodule drift 大到無法合理聲稱本 repo 目前消費的是哪個 authority baseline
   - 下次評估時：走 `authority-upgrade:` review gate（見 `docs/repo-boundary.md`）。
 
+- 2026-05-16: `ai-governance-framework` submodule 升版吸收（`598267d`）— **已執行**。
+  - Trigger：R49x consolidation + R50 opening（upstream 有 Enumd 明確需要的 governance baseline 更新）。
+  - 條件 2 成立：upstream 修到 Enumd 當下需要的治理語義（reviewer substitution scaffold、Layer 0/1 schema）。
+  - commit: `dfcb7b3`
+
 ## Known Risks
 
 <!-- Optional: track identified risks and mitigation status -->
