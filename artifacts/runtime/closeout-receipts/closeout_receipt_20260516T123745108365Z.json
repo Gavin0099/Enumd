@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "timestamp": "2026-05-16T12:37:45.108365+00:00",
+  "agent_id": "unknown",
+  "trigger_mode": "unknown",
+  "entrypoint": "governance_tools.session_closeout_entry",
+  "exit_code": 0,
+  "closeout_artifact_path": "D:\\Enumd\\artifacts\\session-closeout.txt",
+  "checksum_of_cleaned_path": "",
+  "memory_eligibility_evaluated": true,
+  "memory_write_required": false,
+  "memory_write_performed": false,
+  "memory_eligibility_reason": "no_eligibility_trigger"
+}
