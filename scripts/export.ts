@@ -88,7 +88,7 @@ async function buildFrontmatter(
   };
 }
 
-async function exportPage(meta: PageMeta): Promise<"skipped" | "exported"> {
+async function exportPage(meta: PageMeta, seenPaths: Map<string, string>): Promise<"skipped" | "exported"> {
   const title = meta.title;
 
   if (SKIP_TITLES.some((s) => title.includes(s))) {
@@ -99,7 +99,16 @@ async function exportPage(meta: PageMeta): Promise<"skipped" | "exported"> {
   // Quick infer for routing only (no AI, just title)
   const { domain_tags } = inferTagsFromText(title, "");
   const primary_category = domain_tags[0];
-  const slug = titleToSlug(title) || meta.id;
+  const baseSlug = titleToSlug(title) || meta.id;
+  const pathKey = `${primary_category}/${baseSlug}`;
+
+  // Collision guard: if another page already owns this path, append page ID suffix
+  const existingOwner = seenPaths.get(pathKey);
+  const slug = existingOwner && existingOwner !== meta.id
+    ? `${baseSlug}--${meta.id.slice(0, 8)}`
+    : baseSlug;
+  seenPaths.set(pathKey, meta.id);
+
   const filePath = buildFilePath(primary_category, slug);
 
   // Stale check: skip if Notion page hasn't changed
@@ -144,11 +153,12 @@ async function crawl(parentPageId: string) {
 
   let exported = 0;
   let skipped = 0;
+  const seenPaths = new Map<string, string>(); // pathKey → pageId
 
   for (const meta of pages) {
     try {
       await sleep(RATE_LIMIT_MS);
-      const result = await exportPage(meta);
+      const result = await exportPage(meta, seenPaths);
       if (result === "exported") exported++;
       else skipped++;
     } catch (err) {
