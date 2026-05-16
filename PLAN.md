@@ -2,7 +2,7 @@
 <!-- governance-baseline: overridable -->
 <!-- baseline_version: 1.0.0 -->
 
-> **最後更新**: 2026-05-04
+> **最後更新**: 2026-05-16
 > **Owner**: Gavin
 > **Freshness**: Sprint (7d)
 
@@ -29,7 +29,7 @@
   - Failure fixtures: `test/fixtures/compliance/inv{1,2,4}_*.ts` ??all 3 violations confirmed caught; baseline clean
   - Stop hook wired: `.claude/settings.json` Stop hook (runs at session end, advisory/soft gate, exits 0)
   - Observation period: run for several sessions; promote to pre-commit or CI only after noise/FP rate confirmed acceptable
-  - Promotion approved (2026-05-04); pre-commit hard-gate wiring pending execution choice (.git/hooks/pre-commit or CI gate)
+  - Promotion approved (2026-05-04); pre-commit hard-gate wired to `.git/hooks/pre-commit` (2026-05-16)
 - [x] P2-1.5: Promotion criteria for pre-commit ??`governance/pre-commit-promotion-criteria.md`
   - Criteria: ?? qualifying sessions (non-empty staged), 0 FPs on INV-1/INV-2/INV-4, actionable messages, no recurring noise
   - 5 demotion/delay triggers (DT-1..DT-5) with reset conditions

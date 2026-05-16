@@ -14,12 +14,11 @@
 ## §1 Current Enforcement State
 
 ```yaml
-current_level: advisory_only
-hook_type: claude_code_stop_hook
-exit_code_behavior: always_0  # never blocks
-blocking: false
-wired_since: "2026-04-21"
-commit: aebe245
+current_level: hard_gate
+hook_type: git_pre_commit_hook
+exit_code_behavior: 1_on_fail_or_violation
+blocking: true
+wired_since: "2026-05-16"
 ```
 
 ## §2 Target Enforcement State
