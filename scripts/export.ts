@@ -12,16 +12,10 @@
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
-import {
-  notion,
-  getPageTitle,
-  getPageUrl,
-  getPageLastEdited,
-  getPageContent,
-  getChildPageIds,
-} from "../lib/notion";
+import { getPageContent } from "../lib/notion";
+import { NotionAdapter } from "../lib/adapters/notion-adapter";
+import type { PageMeta } from "../lib/source-adapter";
 import { SignalCollector } from "../lib/signals";
 import { summarizePage } from "../lib/summarize";
 import { titleToSlug } from "../lib/categorize";
@@ -56,11 +50,11 @@ function buildFilePath(category: string, slug: string): string {
 }
 
 async function buildFrontmatter(
-  page: PageObjectResponse,
+  meta: PageMeta,
   content: string,
   isSummarized: boolean
 ) {
-  const title = getPageTitle(page);
+  const title = meta.title;
 
   // Infer tags: use AI only when --infer flag is set AND rule-based gives weak results
   let tags = inferTagsFromText(title, content);
@@ -81,9 +75,9 @@ async function buildFrontmatter(
     // Legacy / display
     category: primary_category,
     // Notion metadata
-    notion_id: page.id,
-    notion_url: getPageUrl(page),
-    notion_updated_at: getPageLastEdited(page),
+    notion_id: meta.id,
+    notion_url: meta.url,
+    notion_updated_at: meta.lastEditedAt,
     exported_at: new Date().toISOString(),
     is_summarized: isSummarized,
     // Relations (Object schema for clear separation of authority vs inference)
@@ -94,8 +88,8 @@ async function buildFrontmatter(
   };
 }
 
-async function exportPage(page: PageObjectResponse): Promise<"skipped" | "exported"> {
-  const title = getPageTitle(page);
+async function exportPage(meta: PageMeta): Promise<"skipped" | "exported"> {
+  const title = meta.title;
 
   if (SKIP_TITLES.some((s) => title.includes(s))) {
     console.log(`  [skip] deprecated: ${title}`);
@@ -105,21 +99,20 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
   // Quick infer for routing only (no AI, just title)
   const { domain_tags } = inferTagsFromText(title, "");
   const primary_category = domain_tags[0];
-  const slug = titleToSlug(title) || page.id;
+  const slug = titleToSlug(title) || meta.id;
   const filePath = buildFilePath(primary_category, slug);
 
   // Stale check: skip if Notion page hasn't changed
   const existing = getExistingMeta(filePath);
-  if (existing.notion_updated_at === getPageLastEdited(page)) {
+  if (existing.notion_updated_at === meta.lastEditedAt) {
     console.log(`  [skip] unchanged: ${title}`);
     return "skipped";
   }
 
   console.log(`  [export] ${title} → ${primary_category}/${slug}.md`);
-  const updatedAt = getPageLastEdited(page);
-  const collector = new SignalCollector(page.id, updatedAt);
+  const collector = new SignalCollector(meta.id, meta.lastEditedAt);
 
-  const { markdown, signal } = await getPageContent(page.id, collector);
+  const { markdown, signal } = await getPageContent(meta.id, collector);
 
   if (!markdown.trim()) {
     console.log(`    → empty, skipping`);
@@ -132,7 +125,7 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
     console.log(`    → summarized`);
   }
 
-  const fm = await buildFrontmatter(page, finalContent, useSummarize);
+  const fm = await buildFrontmatter(meta, finalContent, useSummarize);
   const fileContent = matter.stringify(`\n${finalContent}\n`, fm);
   writeFileSync(filePath, fileContent, "utf8");
 
@@ -144,22 +137,22 @@ async function exportPage(page: PageObjectResponse): Promise<"skipped" | "export
 }
 
 async function crawl(parentPageId: string) {
+  const adapter = new NotionAdapter();
   console.log(`[export] Crawling: ${parentPageId}`);
-  const childIds = await getChildPageIds(parentPageId);
-  console.log(`[export] Found ${childIds.length} child pages`);
+  const pages = await adapter.listPages({ parentPageId });
+  console.log(`[export] Found ${pages.length} child pages`);
 
   let exported = 0;
   let skipped = 0;
 
-  for (const childId of childIds) {
+  for (const meta of pages) {
     try {
-      const page = (await notion.pages.retrieve({ page_id: childId })) as PageObjectResponse;
       await sleep(RATE_LIMIT_MS);
-      const result = await exportPage(page);
+      const result = await exportPage(meta);
       if (result === "exported") exported++;
       else skipped++;
     } catch (err) {
-      console.warn(`  [error] ${childId}:`, (err as Error).message);
+      console.warn(`  [error] ${meta.id}:`, (err as Error).message);
     }
   }
 
