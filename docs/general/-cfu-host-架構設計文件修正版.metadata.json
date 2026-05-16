@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "schema_version": "2.7.1",
+    "extractor_version": "enumd-notion-exporter/1.5.0",
+    "timestamp": "2026-05-16T12:43:06.856Z",
+    "validation": {
+      "core_support_regressions": [],
+      "has_failures": false,
+      "invariant_ok": true,
+      "audit_log": [
+        "All invariants satisfied."
+      ],
+      "integrity_report": {
+        "band": "HIGH",
+        "reasons": []
+      },
+      "coverage_alignment": {
+        "source": "discovered_source",
+        "discovered_total": 515,
+        "extracted_seen_total": 515,
+        "by_type": {
+          "quote": {
+            "discovered": 7,
+            "extracted": 7,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "paragraph": {
+            "discovered": 71,
+            "extracted": 71,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "divider": {
+            "discovered": 29,
+            "extracted": 29,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_1": {
+            "discovered": 15,
+            "extracted": 15,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_2": {
+            "discovered": 39,
+            "extracted": 39,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "table": {
+            "discovered": 19,
+            "extracted": 19,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "table_row": {
+            "discovered": 120,
+            "extracted": 120,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "numbered_list_item": {
+            "discovered": 22,
+            "extracted": 22,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "code": {
+            "discovered": 19,
+            "extracted": 19,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "bulleted_list_item": {
+            "discovered": 137,
+            "extracted": 137,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_3": {
+            "discovered": 37,
+            "extracted": 37,
+            "delta": 0,
+            "classification": "aligned"
+          }
+        }
+      }
+    }
+  },
+  "source": {
+    "page_id": "34b64f6b-c656-8061-ab16-fcbfb202f4c9",
+    "last_edited_time": "2026-04-23T02:38:00.000Z",
+    "extracted_at": "2026-05-16T12:42:35.148Z"
+  },
+  "metrics": {
+    "blocks": {
+      "quote": {
+        "seen": 7,
+        "fully_rendered": 7,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "paragraph": {
+        "seen": 71,
+        "fully_rendered": 71,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "divider": {
+        "seen": 29,
+        "fully_rendered": 29,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_1": {
+        "seen": 15,
+        "fully_rendered": 15,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_2": {
+        "seen": 39,
+        "fully_rendered": 39,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "table": {
+        "seen": 19,
+        "fully_rendered": 19,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "table_row": {
+        "seen": 120,
+        "fully_rendered": 120,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "numbered_list_item": {
+        "seen": 22,
+        "fully_rendered": 22,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "code": {
+        "seen": 19,
+        "fully_rendered": 19,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "bulleted_list_item": {
+        "seen": 137,
+        "fully_rendered": 137,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_3": {
+        "seen": 37,
+        "fully_rendered": 37,
+        "degraded_rendered": 0,
+        "dropped": 0
+      }
+    },
+    "unknown_blocks": {
+      "seen": 0,
+      "fully_rendered": 0,
+      "degraded_rendered": 0,
+      "dropped": 0
+    },
+    "render_errors": [],
+    "dropped_reasons": {},
+    "structure": {
+      "max_depth": 1,
+      "truncated": false
+    }
+  },
+  "fidelity": {
+    "rich_text": {
+      "links": {
+        "total": 0,
+        "preserved": 0
+      },
+      "bold": {
+        "total": 23,
+        "preserved": 23
+      },
+      "italic": {
+        "total": 0,
+        "preserved": 0
+      },
+      "strikethrough": {
+        "total": 0,
+        "preserved": 0
+      },
+      "underline": {
+        "total": 0,
+        "preserved": 0
+      },
+      "code": {
+        "total": 13,
+        "preserved": 13
+      }
+    },
+    "lossy_elements": {
+      "mention": {
+        "total": 0,
+        "preserved": 0
+      },
+      "equation": {
+        "total": 0,
+        "preserved": 0
+      },
+      "synced_block": {
+        "total": 0,
+        "preserved": 0
+      }
+    }
+  }
+}

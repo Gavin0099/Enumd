@@ -2,7 +2,7 @@
   "metadata": {
     "schema_version": "2.7.1",
     "extractor_version": "enumd-notion-exporter/1.5.0",
-    "timestamp": "2026-05-16T12:37:36.009Z",
+    "timestamp": "2026-05-16T12:36:19.053Z",
     "validation": {
       "core_support_regressions": [],
       "has_failures": false,
@@ -16,42 +16,24 @@
       },
       "coverage_alignment": {
         "source": "discovered_source",
-        "discovered_total": 29,
-        "extracted_seen_total": 29,
+        "discovered_total": 70,
+        "extracted_seen_total": 70,
         "by_type": {
           "paragraph": {
-            "discovered": 17,
-            "extracted": 17,
-            "delta": 0,
-            "classification": "aligned"
-          },
-          "link_to_page": {
-            "discovered": 1,
-            "extracted": 1,
-            "delta": 0,
-            "classification": "aligned"
-          },
-          "file": {
-            "discovered": 1,
-            "extracted": 1,
-            "delta": 0,
-            "classification": "aligned"
-          },
-          "heading_1": {
-            "discovered": 1,
-            "extracted": 1,
+            "discovered": 54,
+            "extracted": 54,
             "delta": 0,
             "classification": "aligned"
           },
           "image": {
-            "discovered": 8,
-            "extracted": 8,
+            "discovered": 2,
+            "extracted": 2,
             "delta": 0,
             "classification": "aligned"
           },
-          "numbered_list_item": {
-            "discovered": 1,
-            "extracted": 1,
+          "bulleted_list_item": {
+            "discovered": 14,
+            "extracted": 14,
             "delta": 0,
             "classification": "aligned"
           }
@@ -60,45 +42,27 @@
     }
   },
   "source": {
-    "page_id": "834f7a65-41b7-4ed3-b3b1-a9d1f605cb39",
-    "last_edited_time": "2026-01-21T09:25:00.000Z",
-    "extracted_at": "2026-05-16T12:37:35.077Z"
+    "page_id": "06e74c82-89ff-48be-9919-4e76eae5b2ea",
+    "last_edited_time": "2026-04-13T07:09:00.000Z",
+    "extracted_at": "2026-05-16T12:36:17.429Z"
   },
   "metrics": {
     "blocks": {
       "paragraph": {
-        "seen": 17,
-        "fully_rendered": 17,
-        "degraded_rendered": 0,
-        "dropped": 0
-      },
-      "link_to_page": {
-        "seen": 1,
-        "fully_rendered": 0,
-        "degraded_rendered": 1,
-        "dropped": 0
-      },
-      "file": {
-        "seen": 1,
-        "fully_rendered": 0,
-        "degraded_rendered": 1,
-        "dropped": 0
-      },
-      "heading_1": {
-        "seen": 1,
-        "fully_rendered": 1,
+        "seen": 54,
+        "fully_rendered": 54,
         "degraded_rendered": 0,
         "dropped": 0
       },
       "image": {
-        "seen": 8,
+        "seen": 2,
         "fully_rendered": 0,
-        "degraded_rendered": 8,
+        "degraded_rendered": 2,
         "dropped": 0
       },
-      "numbered_list_item": {
-        "seen": 1,
-        "fully_rendered": 1,
+      "bulleted_list_item": {
+        "seen": 14,
+        "fully_rendered": 14,
         "degraded_rendered": 0,
         "dropped": 0
       }
@@ -119,12 +83,12 @@
   "fidelity": {
     "rich_text": {
       "links": {
-        "total": 0,
-        "preserved": 0
+        "total": 3,
+        "preserved": 3
       },
       "bold": {
-        "total": 0,
-        "preserved": 0
+        "total": 12,
+        "preserved": 12
       },
       "italic": {
         "total": 0,

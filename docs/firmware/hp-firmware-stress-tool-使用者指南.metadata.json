@@ -2,7 +2,7 @@
   "metadata": {
     "schema_version": "2.7.1",
     "extractor_version": "enumd-notion-exporter/1.5.0",
-    "timestamp": "2026-05-16T12:40:17.998Z",
+    "timestamp": "2026-05-16T12:43:29.558Z",
     "validation": {
       "core_support_regressions": [],
       "has_failures": false,
@@ -16,48 +16,66 @@
       },
       "coverage_alignment": {
         "source": "discovered_source",
-        "discovered_total": 28,
-        "extracted_seen_total": 28,
+        "discovered_total": 304,
+        "extracted_seen_total": 304,
         "by_type": {
-          "heading_1": {
-            "discovered": 1,
-            "extracted": 1,
-            "delta": 0,
-            "classification": "aligned"
-          },
           "quote": {
             "discovered": 1,
             "extracted": 1,
             "delta": 0,
             "classification": "aligned"
           },
+          "divider": {
+            "discovered": 2,
+            "extracted": 2,
+            "delta": 0,
+            "classification": "aligned"
+          },
           "heading_2": {
-            "discovered": 3,
-            "extracted": 3,
+            "discovered": 12,
+            "extracted": 12,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "numbered_list_item": {
+            "discovered": 44,
+            "extracted": 44,
             "delta": 0,
             "classification": "aligned"
           },
           "paragraph": {
-            "discovered": 10,
-            "extracted": 10,
+            "discovered": 48,
+            "extracted": 48,
             "delta": 0,
             "classification": "aligned"
           },
           "bulleted_list_item": {
-            "discovered": 7,
-            "extracted": 7,
+            "discovered": 91,
+            "extracted": 91,
             "delta": 0,
             "classification": "aligned"
           },
-          "code": {
-            "discovered": 4,
-            "extracted": 4,
+          "table": {
+            "discovered": 13,
+            "extracted": 13,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "table_row": {
+            "discovered": 63,
+            "extracted": 63,
             "delta": 0,
             "classification": "aligned"
           },
           "heading_3": {
-            "discovered": 2,
-            "extracted": 2,
+            "discovered": 29,
+            "extracted": 29,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "image": {
+            "discovered": 1,
+            "extracted": 1,
             "delta": 0,
             "classification": "aligned"
           }
@@ -66,52 +84,70 @@
     }
   },
   "source": {
-    "page_id": "19164f6b-c656-80fb-b1d4-fdf017e455b3",
-    "last_edited_time": "2026-01-21T09:36:00.000Z",
-    "extracted_at": "2026-05-16T12:40:16.882Z"
+    "page_id": "35164f6b-c656-80c1-804e-f6983c6c86db",
+    "last_edited_time": "2026-04-29T05:40:00.000Z",
+    "extracted_at": "2026-05-16T12:43:07.215Z"
   },
   "metrics": {
     "blocks": {
-      "heading_1": {
-        "seen": 1,
-        "fully_rendered": 1,
-        "degraded_rendered": 0,
-        "dropped": 0
-      },
       "quote": {
         "seen": 1,
         "fully_rendered": 1,
         "degraded_rendered": 0,
         "dropped": 0
       },
+      "divider": {
+        "seen": 2,
+        "fully_rendered": 2,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
       "heading_2": {
-        "seen": 3,
-        "fully_rendered": 3,
+        "seen": 12,
+        "fully_rendered": 12,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "numbered_list_item": {
+        "seen": 44,
+        "fully_rendered": 44,
         "degraded_rendered": 0,
         "dropped": 0
       },
       "paragraph": {
-        "seen": 10,
-        "fully_rendered": 10,
+        "seen": 48,
+        "fully_rendered": 48,
         "degraded_rendered": 0,
         "dropped": 0
       },
       "bulleted_list_item": {
-        "seen": 7,
-        "fully_rendered": 7,
+        "seen": 91,
+        "fully_rendered": 91,
         "degraded_rendered": 0,
         "dropped": 0
       },
-      "code": {
-        "seen": 4,
-        "fully_rendered": 4,
+      "table": {
+        "seen": 13,
+        "fully_rendered": 13,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "table_row": {
+        "seen": 63,
+        "fully_rendered": 63,
         "degraded_rendered": 0,
         "dropped": 0
       },
       "heading_3": {
-        "seen": 2,
-        "fully_rendered": 2,
+        "seen": 29,
+        "fully_rendered": 29,
         "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "image": {
+        "seen": 1,
+        "fully_rendered": 0,
+        "degraded_rendered": 1,
         "dropped": 0
       }
     },
@@ -124,19 +160,19 @@
     "render_errors": [],
     "dropped_reasons": {},
     "structure": {
-      "max_depth": 0,
+      "max_depth": 1,
       "truncated": false
     }
   },
   "fidelity": {
     "rich_text": {
       "links": {
-        "total": 0,
-        "preserved": 0
+        "total": 11,
+        "preserved": 11
       },
       "bold": {
-        "total": 12,
-        "preserved": 12
+        "total": 0,
+        "preserved": 0
       },
       "italic": {
         "total": 0,
@@ -151,8 +187,8 @@
         "preserved": 0
       },
       "code": {
-        "total": 0,
-        "preserved": 0
+        "total": 127,
+        "preserved": 127
       }
     },
     "lossy_elements": {
