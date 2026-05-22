@@ -1,0 +1,165 @@
+{
+  "ok": true,
+  "repo_root": "D:\\Enumd",
+  "contract_path": "D:\\Enumd\\contract.yaml",
+  "generated_at": "2026-05-22T15:32:05.774958+00:00",
+  "readiness": {
+    "ready": true,
+    "checks": {
+      "git_repo_present": true,
+      "hooks_ready": true,
+      "plan_present": true,
+      "plan_fresh_enough": true,
+      "contract_resolved": true,
+      "contract_files_complete": true,
+      "project_facts_present": true,
+      "project_facts_intakeable": true,
+      "project_facts_schema_complete": true,
+      "project_facts_drift_free": true,
+      "governance_baseline_present": true,
+      "governance_drift_clean": false,
+      "framework_version_known": false,
+      "framework_version_current": false,
+      "framework_release_compatible": true,
+      "framework_source_canonical": false
+    },
+    "contract": {
+      "source": "explicit",
+      "path": "D:\\Enumd\\contract.yaml",
+      "name": "enumd-contract",
+      "domain": "enumd",
+      "plugin_version": "1.0.0",
+      "documents": 4,
+      "rule_roots": 1,
+      "validators": 0,
+      "missing_documents": [],
+      "missing_behavior_overrides": [],
+      "missing_validators": []
+    },
+    "framework_version": {
+      "current_release": "1.2.0",
+      "adopted_release": null,
+      "adopted_commit": null,
+      "framework_repo": null,
+      "canonical_framework_repo": "https://github.com/Gavin0099/ai-governance-framework.git",
+      "framework_interface_version": "1",
+      "compatibility_range": ">=1.0.0,<2.0.0",
+      "lock_file": null,
+      "state": "unknown",
+      "reasons": [
+        "framework lock file missing",
+        "adopted release not recorded"
+      ]
+    },
+    "plan": {
+      "path": "D:\\Enumd\\PLAN.md",
+      "status": "FRESH",
+      "days_since_update": 5,
+      "threshold_days": 7,
+      "errors": [],
+      "warnings": []
+    },
+    "hooks": {
+      "valid": true,
+      "framework_root": "D:\\Enumd\\ai-governance-framework",
+      "checks": {
+        "git_hooks_dir_present": true,
+        "pre_commit_installed": true,
+        "pre_push_installed": true,
+        "framework_root_config_present": true,
+        "framework_root_exists": true,
+        "framework_file:scripts/lib/python.sh": true,
+        "framework_file:scripts/run-runtime-governance.sh": true,
+        "framework_file:governance_tools/plan_freshness.py": true,
+        "framework_file:governance_tools/contract_validator.py": true
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "project_facts": {
+      "status": "available",
+      "available": true,
+      "source_file": "D:\\Enumd\\memory\\02_tech_stack.md",
+      "source_filename": "02_tech_stack.md",
+      "content_sha256": "f3a27c8460f37cd1bc261aa70268ec67234b7cded7685259ace532d01064c8c0",
+      "memory_schema_status": "complete",
+      "missing_logical_names": [],
+      "sync_direction": "external_to_framework",
+      "artifact_path": "D:\\Enumd\\ai-governance-framework\\artifacts\\external-project-facts\\Enumd.json",
+      "artifact_exists": true,
+      "artifact_content_sha256": "f3a27c8460f37cd1bc261aa70268ec67234b7cded7685259ace532d01064c8c0",
+      "artifact_drift": false,
+      "reason": null,
+      "remediation_hint": null
+    },
+    "agents_calibration": {
+      "status": "repo_specific_minimal",
+      "reason": "repo_local_paths_commands_or_boundaries_detected",
+      "path": "D:\\Enumd\\AGENTS.md",
+      "section_states": {
+        "risk_levels": "filled",
+        "must_test_paths": "filled",
+        "escalation_triggers": "filled",
+        "forbidden_behaviors": "filled"
+      },
+      "repo_specific_signals": [
+        "path_or_file:- HIGH: any run/process change that can break completion contract integrity (commit-session mapping, closeout validity, ledger consistency), or any cross-file governance tooling change affecting evidence generation.",
+        "path_or_file:- MEDIUM: small validator/tooling patches, cross-file sync patches, or reviewer-facing wording/claim boundary updates.",
+        "path_or_file:- `AGENTS.md`: verify completion contract wording remains machine-auditable and non-contradictory.",
+        "path_or_file:- `docs/status/`: verify run summary/detail consistency and KPI field compatibility.",
+        "path_or_file:- Any validator/tooling path that writes closeout or ledger data: verify `closeout_status`, `closeout_covered`, and `mapping_confidence` semantics remain intact.",
+        "path_or_file:- Any change to completion contract criteria or pass/fail interpretation.",
+        "path_or_file:- Follow `docs/status/chatgpt-lane-pilot-plan.md` for every run.",
+        "path_or_file:- Follow `docs/status/enumd-chatgpt-lane-10-run-observation-plan.md` for run-06 through run-15.",
+        "command:- A run is counted only if completion contract is fully satisfied; otherwise mark `incomplete`.",
+        "command:- Do not mark `mapping_confidence: high` unless commit-session-closeout linkage is directly auditable.",
+        "command:- For run-06..run-15, always record `session_source` as `native` or `backfill` and keep KPI split metrics separate."
+      ],
+      "reviewer_signal": null,
+      "next_questions": []
+    },
+    "warnings": [
+      "governance-drift: expansion_boundary: new_return_key: unrecognized key(s) in return dict: ['by_consumer', 'by_field', 'by_type', 'contract_version', 'high_frequency_misuse_triggers_enforcement', 'notice', 'total_violations', 'visibility_only'] — if these are new decision inputs, they require Expansion Admission Gate passage",
+      "framework-version: framework lock file missing",
+      "framework-version: adopted release not recorded"
+    ],
+    "errors": []
+  },
+  "smoke": {
+    "ok": true,
+    "rules": [
+      "common",
+      "avalonia",
+      "cpp",
+      "csharp",
+      "gl-hub-vendor-cmd",
+      "kernel-driver",
+      "python",
+      "refactor",
+      "swift"
+    ],
+    "plan_path": "D:\\Enumd\\PLAN.md",
+    "contract_path": "D:\\Enumd\\contract.yaml",
+    "pre_task_ok": true,
+    "session_start_ok": true,
+    "post_task_ok": null,
+    "post_task_cases": [],
+    "token_summary": {
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "total_tokens": null,
+      "token_source_summary": "unknown",
+      "token_observability_level": "none",
+      "provenance_warning": "not_provided_by_smoke",
+      "decision_usage_allowed": false,
+      "analysis_safe_for_decision": false
+    },
+    "warnings": [
+      "Suggested language pack 'objective-c' is not active; repo signals: notion-rag/node_modules/sharp/src/common.h, notion-rag/node_modules/sharp/src/metadata.h",
+      "Suggested framework pack 'electron' is not active; repo signals: electron",
+      "Assumption check missing before modification planning: missing=assumptions, alternative_root_causes, evidence, reframe_or_validation_step",
+      "Decision policy advisory: assumption evidence missing"
+    ],
+    "errors": []
+  }
+}

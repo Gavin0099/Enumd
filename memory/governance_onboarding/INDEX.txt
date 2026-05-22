@@ -1,0 +1,5 @@
+[external_repo_onboarding_index]
+history_dir=D:\Enumd\memory\governance_onboarding\history
+reports=1
+[reports]
+20260522_153205.json | ok=True | repo_root=D:\Enumd | contract_path=D:\Enumd\contract.yaml | generated_at=2026-05-22T15:32:05.774958+00:00
