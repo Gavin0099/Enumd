@@ -22,9 +22,15 @@
   - Ledger: `docs/status/chatgpt-lane-run-ledger.md`
   - Summary: `docs/status/chatgpt-lane-pilot-summary.md`
 
-- [ ] Phase C : Governance Onboarding + Route B Abstraction — **ACTIVE**
+- [x] Phase C : Governance Onboarding + Route B Abstraction — **COMPLETE 2026-05-22**
   - [x] Governance onboarding complete (2026-05-22): hooks installed, contract.yaml updated, project facts artifact synced
-  - [ ] Route B: migrate `scripts/export.ts` to use NotionAdapter (end-to-end)
+  - [x] Route B: migrate `scripts/export.ts` to use NotionAdapter end-to-end (2026-05-22)
+    - NotionAdapter.getPageContentWithSignal() added; direct lib/notion import removed from export.ts
+    - TypeScript 0 errors; signal collection preserved through adapter layer
+
+- [ ] Phase D : Gate-C Close + Phase D Reviewer Closeout — **PENDING**
+  - [ ] Gate-C final outcome summary (10 windows, Round B–J all pass)
+  - [ ] Phase D Reviewer Closeout: `artifacts/governance/phase-d-reviewer-closeout.json` — **human reviewer required** (NC-1; see governance/PHASE_D_CLOSE_AUTHORITY.md)
 
 ## Active Sprint
 
@@ -92,5 +98,5 @@
 ## Known Risks
 
 - `governance_drift_clean=False` (accepted advisory): `runtime_hooks/core/post_task_check.py` in the framework submodule has unrecognized return keys (`by_consumer`, `by_field`, `by_type`, `contract_version`, `high_frequency_misuse_triggers_enforcement`, `notice`, `total_violations`, `visibility_only`) that have not passed the Expansion Admission Gate. This is a framework-internal issue — Enumd cannot pass the gate on behalf of the framework. Accepted as advisory because Enumd does not consume these keys as decision inputs. Revisit if the framework upgrades and resolves this upstream.
-- `framework_version_known=False` (advisory): lock file not generated. `framework_adopted_release: 1.2.0` declared in contract.yaml but no `.framework-lock` file exists.
+- ~~`framework_version_known=False`~~ **RESOLVED 2026-05-22**: `governance/framework.lock.json` created, `framework_source_canonical=True`.
 
