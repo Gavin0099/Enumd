@@ -28,9 +28,9 @@
     - NotionAdapter.getPageContentWithSignal() added; direct lib/notion import removed from export.ts
     - TypeScript 0 errors; signal collection preserved through adapter layer
 
-- [ ] Phase D : Gate-C Close + Phase D Reviewer Closeout — **PENDING**
+- [x] Phase D : Gate-C Close + Phase D Reviewer Closeout — **COMPLETE 2026-05-23**
   - [x] Gate-C final outcome summary (2026-05-23): `docs/status/gate-c-final-outcome-summary.md`; claim gate `cross-agent validated (execution governance scope)` satisfied (r4+r5)
-  - [ ] Phase D Reviewer Closeout: `artifacts/governance/phase-d-reviewer-closeout.json` — **human reviewer required** (NC-1; see governance/PHASE_D_CLOSE_AUTHORITY.md)
+  - [x] Phase D Reviewer Closeout (2026-05-23): `artifacts/governance/phase-d-reviewer-closeout.json`; reviewer_id=Gavin0099; assess_ok=True
 
 ## Active Sprint
 
