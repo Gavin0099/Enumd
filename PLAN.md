@@ -91,6 +91,6 @@
 
 ## Known Risks
 
-- `governance_drift_clean=False` (advisory): unrecognized return keys in expansion boundary — not yet passed through Expansion Admission Gate. Non-blocking; monitor if keys become decision inputs.
+- `governance_drift_clean=False` (accepted advisory): `runtime_hooks/core/post_task_check.py` in the framework submodule has unrecognized return keys (`by_consumer`, `by_field`, `by_type`, `contract_version`, `high_frequency_misuse_triggers_enforcement`, `notice`, `total_violations`, `visibility_only`) that have not passed the Expansion Admission Gate. This is a framework-internal issue — Enumd cannot pass the gate on behalf of the framework. Accepted as advisory because Enumd does not consume these keys as decision inputs. Revisit if the framework upgrades and resolves this upstream.
 - `framework_version_known=False` (advisory): lock file not generated. `framework_adopted_release: 1.2.0` declared in contract.yaml but no `.framework-lock` file exists.
 
