@@ -13,7 +13,6 @@ import { writeFileSync, mkdirSync, existsSync, readFileSync } from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
-import { getPageContent } from "../lib/notion";
 import { NotionAdapter } from "../lib/adapters/notion-adapter";
 import type { PageMeta } from "../lib/source-adapter";
 import { SignalCollector } from "../lib/signals";
@@ -88,7 +87,7 @@ async function buildFrontmatter(
   };
 }
 
-async function exportPage(meta: PageMeta, seenPaths: Map<string, string>): Promise<"skipped" | "exported"> {
+async function exportPage(meta: PageMeta, seenPaths: Map<string, string>, adapter: NotionAdapter): Promise<"skipped" | "exported"> {
   const title = meta.title;
 
   if (SKIP_TITLES.some((s) => title.includes(s))) {
@@ -121,7 +120,7 @@ async function exportPage(meta: PageMeta, seenPaths: Map<string, string>): Promi
   console.log(`  [export] ${title} → ${primary_category}/${slug}.md`);
   const collector = new SignalCollector(meta.id, meta.lastEditedAt);
 
-  const { markdown, signal } = await getPageContent(meta.id, collector);
+  const { markdown, signal } = await adapter.getPageContentWithSignal(meta.id, collector);
 
   if (!markdown.trim()) {
     console.log(`    → empty, skipping`);
@@ -158,7 +157,7 @@ async function crawl(parentPageId: string) {
   for (const meta of pages) {
     try {
       await sleep(RATE_LIMIT_MS);
-      const result = await exportPage(meta, seenPaths);
+      const result = await exportPage(meta, seenPaths, adapter);
       if (result === "exported") exported++;
       else skipped++;
     } catch (err) {

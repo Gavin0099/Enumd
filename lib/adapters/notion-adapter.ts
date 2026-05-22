@@ -8,6 +8,7 @@
 import * as dotenv from "dotenv";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { KnowledgeSourceAdapter, PageMeta } from "../source-adapter";
+import type { ExtractionSignal, SignalCollector } from "../signals";
 import {
   notion,
   getPageTitle,
@@ -48,6 +49,13 @@ export class NotionAdapter implements KnowledgeSourceAdapter {
   async getPageContent(pageId: string): Promise<string> {
     const result = await getPageContent(pageId);
     return result.markdown;
+  }
+
+  async getPageContentWithSignal(
+    pageId: string,
+    collector: SignalCollector
+  ): Promise<{ markdown: string; signal: ExtractionSignal }> {
+    return getPageContent(pageId, collector);
   }
 
   async getChildPageIds(pageId: string): Promise<string[]> {
