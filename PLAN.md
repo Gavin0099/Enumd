@@ -2,7 +2,7 @@
 <!-- governance-baseline: overridable -->
 <!-- baseline_version: 1.0.0 -->
 
-> **最後更新**: 2026-05-17
+> **最後更新**: 2026-05-22
 > **Owner**: Gavin
 > **Freshness**: Sprint (7d)
 
@@ -15,6 +15,16 @@
   - Commit type taxonomy defined (7 types, mixed PR policy)
   - Source.xml external bundle + manifest created
   - Integration seam P1: event-map.yaml created (governance/event-map.yaml)
+
+- [x] Phase B : ChatGPT Lane Pilot (run-01 ~ run-15) — **COMPLETE 2026-05-11**
+  - 15 runs, `closeout_valid_ratio: 1.00`, `mapped_high_ratio: 1.00`
+  - All completion contracts satisfied; no scope violations; no claim overreach
+  - Ledger: `docs/status/chatgpt-lane-run-ledger.md`
+  - Summary: `docs/status/chatgpt-lane-pilot-summary.md`
+
+- [ ] Phase C : Governance Onboarding + Route B Abstraction — **ACTIVE**
+  - [x] Governance onboarding complete (2026-05-22): hooks installed, contract.yaml updated, project facts artifact synced
+  - [ ] Route B: migrate `scripts/export.ts` to use NotionAdapter (end-to-end)
 
 ## Active Sprint
 
@@ -77,7 +87,10 @@
   - 條件 2 成立：upstream 修到 Enumd 當下需要的治理語義（reviewer substitution scaffold、Layer 0/1 schema）。
   - commit: `dfcb7b3`
 
+- 2026-05-22: governance onboarding 完成（contract.yaml risk_tier + framework_repo + adopted_release 宣告；pre-commit + pre-push hooks 安裝；project facts artifact 生成；runtime-smoke all-pass）。submodule bumped to `d082a7e`。reviewer-handoff: `reviewer_handoff_governance_onboarding_2026-05-22.md`。
+
 ## Known Risks
 
-<!-- Optional: track identified risks and mitigation status -->
+- `governance_drift_clean=False` (advisory): unrecognized return keys in expansion boundary — not yet passed through Expansion Admission Gate. Non-blocking; monitor if keys become decision inputs.
+- `framework_version_known=False` (advisory): lock file not generated. `framework_adopted_release: 1.2.0` declared in contract.yaml but no `.framework-lock` file exists.
 
