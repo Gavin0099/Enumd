@@ -193,3 +193,9 @@
 {"session_id": "session-20260516T172648-1a8658", "closed_at": "2026-05-16T17:26:48.315242+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
 {"session_id": "session-20260516T172652-4bb9ce", "closed_at": "2026-05-16T17:26:52.907954+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
 {"session_id": "session-20260517T045340-b32aa9", "closed_at": "2026-05-17T04:53:40.270142+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
+{"session_id": "session-20260517T051840-c114dc", "closed_at": "2026-05-17T05:18:40.434813+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
+{"session_id": "session-20260522T150109-4b610c", "closed_at": "2026-05-22T15:01:09.731553+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
+{"session_id": "session-20260522T150258-c4a9f9", "closed_at": "2026-05-22T15:02:58.241984+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
+{"session_id": "session-20260522T151730-639466", "closed_at": "2026-05-22T15:17:30.102270+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
+{"session_id": "session-20260522T153421-632692", "closed_at": "2026-05-22T15:34:21.706302+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
+{"session_id": "session-20260522T153550-c8b1f2", "closed_at": "2026-05-22T15:35:50.141769+00:00", "closeout_status": "missing", "task_intent": null, "has_open_risks": false}
