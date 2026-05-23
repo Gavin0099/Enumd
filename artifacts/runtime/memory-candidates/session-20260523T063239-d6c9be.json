@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.2",
+  "candidate_id": "msc-session-20260523T063239-d6c9be",
+  "repo": "D:\\Enumd",
+  "session_id": "session-20260523T063239-d6c9be",
+  "run_id": "",
+  "commit_hash": "8b716b3",
+  "generated_at_utc": "2026-05-23T06:32:39.510043+00:00",
+  "significance_level": "L1",
+  "event_type": "other",
+  "why_significant": "no high-significance trigger detected",
+  "evidence_links": [
+    "artifacts/runtime/verdicts/session-20260523T063239-d6c9be.json",
+    "artifacts/runtime/traces/session-20260523T063239-d6c9be.json"
+  ],
+  "suggested_memory_target": "",
+  "promotion_state": "candidate",
+  "authority_flags": {
+    "canonical_review_required": false,
+    "canonical_conflict_detected": false
+  },
+  "validation": {
+    "l3_enum_valid": true,
+    "evidence_linkage_complete": true
+  },
+  "notes": ""
+}
