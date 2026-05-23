@@ -6,12 +6,17 @@ on:
       - master
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   quality-gates:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -50,13 +55,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: recursive
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout ai-governance-framework submodule
+        run: git submodule update --init --depth=1 ai-governance-framework
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Run governance check (warn-only)
+        env:
+          PYTHONPATH: ${{ github.workspace }}/ai-governance-framework
         run: |
           python ai-governance-framework/governance_tools/ci_governance_check.py \
             --project-root . \
