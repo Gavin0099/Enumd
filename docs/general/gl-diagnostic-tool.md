@@ -132,6 +132,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.21428571428571427
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -171,7 +177,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -678,6 +684,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.42857142857142855
+    - target: gl-enduser-tool-instruction--834f7a65
+      title: GL EndUser Tool Instruction
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
+      type: same_domain
+      confidence: low
+      score: 0.5
     - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
       title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
       path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
@@ -687,6 +699,12 @@ relations:
     - target: hp-isp-tool-user-guide
       title: HP ISP Tool User Guide
       path: /tools/hp-isp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.21428571428571427
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: same_domain
       confidence: low
       score: 0.21428571428571427
@@ -1034,7 +1052,7 @@ relations:
       confidence: low
       score: 0.2
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: same_domain
       confidence: low

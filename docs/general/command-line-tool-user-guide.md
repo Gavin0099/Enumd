@@ -188,6 +188,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -239,7 +245,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -274,6 +280,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
     - target: '-lenovo-display-daisy-chain-issue'
       title: ' Lenovo Display Daisy Chain issue'
       path: /general/-lenovo-display-daisy-chain-issue.html
@@ -450,7 +462,7 @@ relations:
       path: /general/gl-enduser-tool-instruction.html
       type: same_domain
       confidence: low
-      score: 0.2
+      score: 0.25
     - target: gl-enduser-tool-merge-bin-head-format
       title: GL EndUser Tool Merge bin head format
       path: /general/gl-enduser-tool-merge-bin-head-format.html
@@ -769,6 +781,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.5
+    - target: gl-enduser-tool-instruction--834f7a65
+      title: GL EndUser Tool Instruction
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
       title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
       path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
@@ -781,6 +799,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.5
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: lenovo-one-key-update-tool-issue
       title: Lenovo One key update Tool issue
       path: /tools/lenovo-one-key-update-tool-issue.html
@@ -1147,7 +1171,7 @@ relations:
       path: /code-sign/gl3590-hostbridge-code-sign.html
       type: same_domain
       confidence: low
-      score: 0.30000000000000004
+      score: 0.25
     - target: gl7524-a02-code-sign-與-isp-安全架構case-3
       title: GL7524 A02 Code-Sign 與 ISP 安全架構(Case 3)
       path: /code-sign/gl7524-a02-code-sign-與-isp-安全架構case-3.html
@@ -1321,7 +1345,7 @@ relations:
       confidence: low
       score: 0.25
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: same_domain
       confidence: low

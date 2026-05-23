@@ -20,37 +20,37 @@ relations:
       path: /code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 3rd-party-code-signing-specification-ecdsa
       title: 3rd party code signing specification (ECDSA)
       path: /code-sign/3rd-party-code-signing-specification-ecdsa.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 3rd-party-code-signing-specification-ecdsaen-
       title: '3rd party code signing specification (ECDSA)(EN) '
       path: /code-sign/3rd-party-code-signing-specification-ecdsaen-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: chip-code-sign-info-list-hp
       title: Chip code sign Info List (HP)
       path: /code-sign/chip-code-sign-info-list-hp.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: code-sign-ecc-key
       title: Code sign - ECC key
       path: /code-sign/code-sign-ecc-key.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: code-sign-技術規格文件-整合版
       title: Code-Sign 技術規格文件 (整合版)
       path: /code-sign/code-sign-技術規格文件-整合版.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: code-sign-概述
       title: Code Sign 概述
       path: /code-sign/code-sign-概述.html
@@ -62,38 +62,38 @@ relations:
       path: /code-sign/etoken-system-code-view-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: etoken-安全簽章系統技術說明
       title: eToken 安全簽章系統技術說明
       path: /code-sign/etoken-安全簽章系統技術說明.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: genesys-logic-3rd-party-code-signing-specification-ecdsa-
       title: 'Genesys Logic 3rd party code signing specification (ECDSA) '
       path: >-
         /code-sign/genesys-logic-3rd-party-code-signing-specification-ecdsa-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hid-code-sign-update-rule
       title: HID Code Sign Update Rule
       path: /code-sign/hid-code-sign-update-rule.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hid-code-sign-記錄
       title: HID Code Sign 記錄
       path: /code-sign/hid-code-sign-記錄.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-hemiz34c-cpu3-code-sign-驗證問題
       title: HP Hemi(Z34c) CPU3 Code Sign 驗證問題
       path: /code-sign/hp-hemiz34c-cpu3-code-sign-驗證問題.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-monitor-code-sign-update-flow
       title: HP Monitor Code Sign Update Flow
       path: /code-sign/hp-monitor-code-sign-update-flow.html
@@ -105,7 +105,7 @@ relations:
       path: /code-sign/hp-rtk-scaler-code-sign.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-code-sign-交握流程
       title: Lenovo Code Sign 交握流程
       path: /code-sign/lenovo-code-sign-交握流程.html
@@ -117,31 +117,31 @@ relations:
       path: /code-sign/mbedtls-source-code.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: openssl-generate-rsa-key-pair-etoken-code-sign
       title: openssl generate rsa key pair & Etoken code sign
       path: /code-sign/openssl-generate-rsa-key-pair-etoken-code-sign.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: rsa-2048-verify-和-mbedtls-opensource-測試問題-
       title: 'RSA 2048 verify 和 mbedtls opensource 測試問題 '
       path: /code-sign/rsa-2048-verify-和-mbedtls-opensource-測試問題-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: '-generic-usb-filter-driver-'
       title: ' Generic USB Filter Driver '
       path: /driver/-generic-usb-filter-driver-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: command-line-uninstall-driver
       title: Command line uninstall driver
       path: /driver/command-line-uninstall-driver.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: e27m-e34m-driver-install-fail
       title: E27m & E34m Driver install fail
       path: /driver/e27m-e34m-driver-install-fail.html
@@ -153,7 +153,7 @@ relations:
       path: /driver/sc-query-to-determine-the-driver-mode.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-724-pu-firmware-更新流程與-ini-設定說明文件
       title: HP 724 pu firmware 更新流程與 ini 設定說明文件
       path: /firmware/hp-724-pu-firmware-更新流程與-ini-設定說明文件.html
@@ -165,7 +165,7 @@ relations:
       path: /firmware/hp-display-firmware-specification-v11.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga
       title: >-
         HP Enterprise Firmware Stress Tool - Technical Specification (Rev 9.0
@@ -174,14 +174,14 @@ relations:
         /firmware/hp-enterprise-firmware-stress-tool-technical-specification-rev-90-ga.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
         /firmware/hp-mandatory-firmware-update-strategy-expansion-for-future-projects.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-oci-app
       title: HP OCI APP
       path: /firmware/hp-oci-app.html
@@ -193,38 +193,38 @@ relations:
       path: /firmware/hp-oci-dll.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-oci-tool-現行架構解析
       title: HP OCI Tool 現行架構解析
       path: /firmware/hp-oci-tool-現行架構解析.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-
       title: |
         HP OCI Tool 跨平台架構技術規格書 (v3.4 - Visualized Final)
       path: /firmware/hp-oci-tool-跨平台架構技術規格書-v34-visualized-final-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-oci-資料
       title: HP OCI 資料
       path: /firmware/hp-oci-資料.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp_display_firmware_update_specification
       title: HP_Display_Firmware_Update_Specification
       path: /firmware/hp_display_firmware_update_specification.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-fwupdatetool
       title: Lenovo FWUpdateTool
       path: /firmware/lenovo-fwupdatetool.html
@@ -236,25 +236,31 @@ relations:
       path: /firmware/secure-firmware-recovery.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: vendor-oci-error-code-
       title: 'Vendor OCI Error Code '
       path: /firmware/vendor-oci-error-code-.html
       type: same_domain
       confidence: low
       score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
+      type: tag_related
+      confidence: medium
+      score: 0.3584241500036186
     - target: '-clawdbot-自主代理建置與資安防禦全紀錄'
       title: ' Clawdbot 自主代理建置與資安防禦全紀錄'
       path: /general/-clawdbot-自主代理建置與資安防禦全紀錄.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: '-hp-sdlc-master-compliance-checklist-2025-edition'
       title: ' HP SDLC Master Compliance Checklist (2025 Edition)'
       path: /general/-hp-sdlc-master-compliance-checklist-2025-edition.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: '-lenovo-display-daisy-chain-issue'
       title: ' Lenovo Display Daisy Chain issue'
       path: /general/-lenovo-display-daisy-chain-issue.html
@@ -266,31 +272,31 @@ relations:
       path: /general/12261230-交接.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 2021-今年重點目標
       title: 2021 今年重點目標
       path: /general/2021-今年重點目標.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 2021部門創新提案
       title: 2021部門創新提案
       path: /general/2021部門創新提案.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 2025h2-報告
       title: 2025H2 報告
       path: /general/2025h2-報告.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: ai-agent-skills
       title: AI Agent Skills
       path: /general/ai-agent-skills.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: bu5-support-update-chip-類型
       title: BU5 Support Update Chip 類型
       path: /general/bu5-support-update-chip-類型.html
@@ -302,13 +308,13 @@ relations:
       path: /general/chatgpt-簡介.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: drawio-相關連結
       title: Draw.io 相關連結
       path: /general/drawio-相關連結.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: e22e24i-1st-2nd-scalar-update-
       title: 'E22/E24i 1st & 2nd Scalar Update '
       path: /general/e22e24i-1st-2nd-scalar-update-.html
@@ -320,38 +326,38 @@ relations:
       path: /general/fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: genesys-logic-spec
       title: Genesys Logic Spec
       path: /general/genesys-logic-spec.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: gitlab-ee-wiki-
       title: 'GitLab EE wiki '
       path: /general/gitlab-ee-wiki-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd
       title: HostBridge plus 跨 OS 協作技術參考設計 - 產品需求文件 (PRD)
       path: /general/hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: how-to-bound-target-device
       title: How to bound target device
       path: /general/how-to-bound-target-device.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: how-to-wrap-self-extraction-file-by-packagefortheweb400_0830
       title: How to wrap self-extraction file by PackageForTheWeb400_0830
       path: >-
         /general/how-to-wrap-self-extraction-file-by-packagefortheweb400_0830.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-534pm-fail-log
       title: HP 534pm fail log
       path: /general/hp-534pm-fail-log.html
@@ -369,7 +375,7 @@ relations:
       path: /general/hp-scheduled-update-flow-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-daisy-chain-update-flow-
       title: 'Lenovo Daisy-chain Update flow '
       path: /general/lenovo-daisy-chain-update-flow-.html
@@ -387,7 +393,7 @@ relations:
       path: /general/lenovo-spec-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-update-debug-flow-
       title: 'Lenovo Update Debug Flow '
       path: /general/lenovo-update-debug-flow-.html
@@ -411,25 +417,25 @@ relations:
       path: /general/osdmanager.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: pd-typec
       title: PD + TYPEC
       path: /general/pd-typec.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: richelieu-issue-description
       title: Richelieu Issue description
       path: /general/richelieu-issue-description.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: ricktek-7880-pd-update-flow
       title: RickTek 7880 PD Update Flow
       path: /general/ricktek-7880-pd-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: sw272u-抓取log方式
       title: SW272U 抓取log方式
       path: /general/sw272u-抓取log方式.html
@@ -443,7 +449,7 @@ relations:
         /general/system-design-specification-v31-usb-log-explorer-antigravity-edition-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: target-device-ini-產生器-測試
       title: Target Device ini 產生器 測試
       path: /general/target-device-ini-產生器-測試.html
@@ -455,19 +461,19 @@ relations:
       path: /general/teledyne-lecroy-python安裝和測試方式.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: teledyne-lecroy-usb-protocol-suiteusb-trace
       title: Teledyne LeCroy USB Protocol Suite(USB Trace)
       path: /general/teledyne-lecroy-usb-protocol-suiteusb-trace.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: tri-code-command-list
       title: Tri Code Command List
       path: /general/tri-code-command-list.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: tricode-ptester
       title: TriCode Ptester
       path: /general/tricode-ptester.html
@@ -479,115 +485,115 @@ relations:
       path: /general/vibe-coding.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: w25x21cl-rdid問題
       title: W25X21CL RDID問題
       path: /general/w25x21cl-rdid問題.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 共好會議
       title: 共好會議
       path: /general/共好會議.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 取消使用stdafxh-include-方式
       title: 取消使用stdafx.h include 方式
       path: /general/取消使用stdafxh-include-方式.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 如何在xocde-執行-clang-format
       title: 如何在xocde 執行 clang format
       path: /general/如何在xocde-執行-clang-format.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 新架構導入新的chip-updatemt9052-方式
       title: 新架構導入新的chip update(MT9052) 方式
       path: /general/新架構導入新的chip-updatemt9052-方式.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 物件導向分析與uml
       title: 物件導向分析與UML
       path: /general/物件導向分析與uml.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 結構-struct-的宣告與封裝和使用練習-c
       title: 結構 struct 的宣告與封裝和使用練習 c#
       path: /general/結構-struct-的宣告與封裝和使用練習-c.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: 自動化測試
       title: 自動化測試
       path: /general/自動化測試.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: gl-hub-software-development-kit
       title: GL Hub Software Development Kit
       path: /hub/gl-hub-software-development-kit.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: gl7524-a02-code-sign-與-isp-安全架構case-3
       title: GL7524 A02 Code-Sign 與 ISP 安全架構(Case 3)
       path: /code-sign/gl7524-a02-code-sign-與-isp-安全架構case-3.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-hub-code-sign-bin-format
       title: HP Hub Code Sign Bin Format
       path: /code-sign/hp-hub-code-sign-bin-format.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hub-driver-debugging-method-csr
       title: Hub Driver Debugging method (CSR)
       path: /driver/hub-driver-debugging-method-csr.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hub-driver-除錯方式
       title: Hub Driver 除錯方式
       path: /driver/hub-driver-除錯方式.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hub-fw-update-策略技術評估-cfu-導入分析
       title: Hub FW Update 策略技術評估 — CFU 導入分析
       path: /hub/hub-fw-update-策略技術評估-cfu-導入分析.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hub-tool-release-note
       title: Hub Tool Release Note
       path: /hub/hub-tool-release-note.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: mac-hub-update-tool-user-guide
       title: Mac Hub Update Tool User Guide
       path: /hub/mac-hub-update-tool-user-guide.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist
       title: USB Hub Firmware（8051 / Keil C51）AI 開發前先期確認 Checklist
       path: /hub/usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: >-
         usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification
       title: >-
@@ -597,74 +603,74 @@ relations:
         /hub/usb31-ch10-hub-host-downstream-port-and-device-upstream-port-specification.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: mac-oci-dll-import-方式
       title: Mac OCI Dll Import 方式
       path: /mac/mac-oci-dll-import-方式.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: mac-usb-20-eep-tool-開發簡介
       title: Mac USB 2.0 EEP Tool 開發簡介
       path: /mac/mac-usb-20-eep-tool-開發簡介.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file
       title: How to use the decryption tool to decrypt the scaler encrypted bin file
       path: >-
         /monitor/how-to-use-the-decryption-tool-to-decrypt-the-scaler-encrypted-bin-file.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-monitor-firmware-update-specification-v01
       title: Lenovo monitor firmware update specification V0.1
       path: /monitor/lenovo-monitor-firmware-update-specification-v01.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-monitor-i2c-info
       title: Lenovo Monitor i2c info
       path: /monitor/lenovo-monitor-i2c-info.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: monitorvcp
       title: MonitorVCP
       path: /monitor/monitorvcp.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: mtk-scaler-update-flow
       title: MTK Scaler Update flow
       path: /monitor/mtk-scaler-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: c-使用c產生的dll-問題
       title: C# 使用C產生的DLL 問題
       path: /general/c-使用c產生的dll-問題.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: genesyslogic-integrates-sdk-specification
       title: GenesysLogic integrates SDK specification
       path: /general/genesyslogic-integrates-sdk-specification.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: rtk-camera-dll問題
       title: RTK Camera Dll問題
       path: /monitor/rtk-camera-dll問題.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰
       title: >-
         SunplusCamera.dll (x86) 在 Windows on ARM (ARM64) 平台上執行時因 0xc0000417
@@ -673,92 +679,92 @@ relations:
         /general/sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-security-spec
       title: HP Security Spec
       path: /general/hp-security-spec.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: io-data-安全性與開發規範清單-security-development-requirements
       title: IO DATA 安全性與開發規範清單 (Security & Development Requirements)
       path: /general/io-data-安全性與開發規範清單-security-development-requirements.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: universal-serial-bus-4-usb4-specification-
       title: |
         Universal Serial Bus 4 (USB4®) Specification
       path: /security/universal-serial-bus-4-usb4-specification-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: asus-update-tool-
       title: 'ASUS Update Tool '
       path: /general/asus-update-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: command-line-tool-instructions
       title: Command Line Tool Instructions
       path: /general/command-line-tool-instructions.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: gl-enduser-tool-for-electron
       title: GL Enduser Tool for Electron
       path: /general/gl-enduser-tool-for-electron.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: gl-enduser-tool-merge-bin-head-format
       title: GL EndUser Tool Merge bin head format
       path: /general/gl-enduser-tool-merge-bin-head-format.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-isp-tool-special-case-update-method
       title: HP ISP Tool Special case update method
       path: /general/hp-isp-tool-special-case-update-method.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: hp-isp-tool-update-速度問題
       title: HP ISP Tool update 速度問題
       path: /general/hp-isp-tool-update-速度問題.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-command-line-tool-update-flow
       title: Lenovo command Line tool update flow
       path: /general/lenovo-command-line-tool-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: lenovo-ldcc-update-tool-
       title: 'Lenovo LDCC Update Tool '
       path: /general/lenovo-ldcc-update-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
-    - target: lenovo-one-key-update-tool-
+      score: 0.3584241500036186
+    - target: lenovo-one-key-update-tool---19164f6b
       title: 'Lenovo one key update tool '
-      path: /general/lenovo-one-key-update-tool-.html
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: tri-code-command-line-tool-command-line-list
       title: Tri Code Command line Tool command line List
       path: /general/tri-code-command-line-tool-command-line-list.html
       type: tag_related
       confidence: medium
-      score: 0.3585375955743814
+      score: 0.3584241500036186
     - target: zeroplus_lap-i2c-訊號錄製方式
       title: ZEROPLUS_LAP I2c 訊號錄製方式
       path: /general/zeroplus_lap-i2c-訊號錄製方式.html
@@ -772,12 +778,6 @@ relations:
         Expansion for Future Projects - Genesys
       path: >-
         /hub/discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-.html
-      type: same_domain
-      confidence: low
-      score: 0.2
-    - target: gl3590-hostbridge-code-sign
-      title: GL3590 +HostBridge Code Sign
-      path: /code-sign/gl3590-hostbridge-code-sign.html
       type: same_domain
       confidence: low
       score: 0.2

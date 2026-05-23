@@ -228,6 +228,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.23076923076923078
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -279,7 +285,7 @@ relations:
       confidence: low
       score: 0.21428571428571427
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -684,7 +690,7 @@ relations:
       path: /general/hp-scheduled-update-flow-.html
       type: same_domain
       confidence: low
-      score: 0.1875
+      score: 0.2
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
@@ -1232,7 +1238,7 @@ relations:
       confidence: low
       score: 0.2
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: same_domain
       confidence: low
@@ -1422,6 +1428,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.5
+    - target: gl-enduser-tool-instruction--834f7a65
+      title: GL EndUser Tool Instruction
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: gldualbankfwtesttool-說明文件
       title: GLDualBankFWTestTool 說明文件
       path: /general/gldualbankfwtesttool-說明文件.html
@@ -1446,6 +1458,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.30000000000000004
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: lenovo-one-key-update-tool-issue
       title: Lenovo One key update Tool issue
       path: /tools/lenovo-one-key-update-tool-issue.html

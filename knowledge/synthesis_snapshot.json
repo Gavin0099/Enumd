@@ -4,7 +4,7 @@
       "id": "25564f6b-c656-8075-89ad-e227d8c2c0d6",
       "slug": "-genesys-logic-firmware-安全簽署與驗證流程-code-signing-",
       "title": " Genesys Logic Firmware 安全簽署與驗證流程 (Code Signing) ",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.md",
+      "path": "d:\\Enumd\\docs\\code-sign\\-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.md",
       "site_path": "/code-sign/-genesys-logic-firmware-安全簽署與驗證流程-code-signing-.html",
       "category": "code-sign",
       "domain_tags": [
@@ -31,7 +31,7 @@
       "id": "9c110ff0-ff09-41a9-a1d4-a2ed3eb786ab",
       "slug": "3rd-party-code-signing-specification-ecdsa",
       "title": "3rd party code signing specification (ECDSA)",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\3rd-party-code-signing-specification-ecdsa.md",
+      "path": "d:\\Enumd\\docs\\code-sign\\3rd-party-code-signing-specification-ecdsa.md",
       "site_path": "/code-sign/3rd-party-code-signing-specification-ecdsa.html",
       "category": "code-sign",
       "domain_tags": [
@@ -53,7 +53,7 @@
       "id": "228ca3fe-96ec-4d48-9c91-8036bc7e02b1",
       "slug": "3rd-party-code-signing-specification-ecdsaen-",
       "title": "3rd party code signing specification (ECDSA)(EN) ",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\3rd-party-code-signing-specification-ecdsaen-.md",
+      "path": "d:\\Enumd\\docs\\code-sign\\3rd-party-code-signing-specification-ecdsaen-.md",
       "site_path": "/code-sign/3rd-party-code-signing-specification-ecdsaen-.html",
       "category": "code-sign",
       "domain_tags": [
@@ -76,7 +76,7 @@
       "id": "edf916c5-e83a-4ad4-82d4-7d54c71ebb46",
       "slug": "code-sign-ecc-key",
       "title": "Code sign - ECC key",
-      "path": "E:\\BackUp\\Git_EE\\Enumd\\docs\\code-sign\\code-sign-ecc-key.md",
+      "path": "d:\\Enumd\\docs\\code-sign\\code-sign-ecc-key.md",
       "site_path": "/code-sign/code-sign-ecc-key.html",
       "category": "code-sign",
       "domain_tags": [
@@ -104,7 +104,7 @@
       "confidence": "medium",
       "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-05-08T11:17:52.531Z",
+      "generated_at": "2026-05-23T05:36:52.786Z",
       "basis": [
         {
           "kind": "tag_overlap",
@@ -116,7 +116,7 @@
               "sop",
               "log"
             ],
-            "raw_score": 6.613246976869637
+            "raw_score": 6.612667246140831
           }
         },
         {
@@ -139,7 +139,7 @@
       "confidence": "medium",
       "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-05-08T11:17:52.531Z",
+      "generated_at": "2026-05-23T05:36:52.786Z",
       "basis": [
         {
           "kind": "tag_overlap",
@@ -151,7 +151,7 @@
               "sop",
               "log"
             ],
-            "raw_score": 6.613246976869637
+            "raw_score": 6.612667246140831
           }
         },
         {
@@ -175,7 +175,7 @@
       "confidence": "medium",
       "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-05-08T11:17:52.531Z",
+      "generated_at": "2026-05-23T05:36:52.786Z",
       "basis": [
         {
           "kind": "tag_overlap",
@@ -187,7 +187,7 @@
               "sop",
               "log"
             ],
-            "raw_score": 6.613246976869637
+            "raw_score": 6.612667246140831
           }
         },
         {
@@ -211,7 +211,7 @@
       "confidence": "medium",
       "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-05-08T11:17:52.535Z",
+      "generated_at": "2026-05-23T05:36:52.786Z",
       "basis": [
         {
           "kind": "tag_overlap",
@@ -223,7 +223,7 @@
               "sop",
               "log"
             ],
-            "raw_score": 6.613246976869637
+            "raw_score": 6.612667246140831
           }
         },
         {
@@ -255,7 +255,7 @@
       "confidence": "medium",
       "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-05-08T11:17:52.535Z",
+      "generated_at": "2026-05-23T05:36:52.786Z",
       "basis": [
         {
           "kind": "tag_overlap",
@@ -267,7 +267,7 @@
               "sop",
               "log"
             ],
-            "raw_score": 6.613246976869637
+            "raw_score": 6.612667246140831
           }
         },
         {
@@ -299,7 +299,7 @@
       "confidence": "medium",
       "score": 0.9,
       "bidirectional": true,
-      "generated_at": "2026-05-08T11:17:52.536Z",
+      "generated_at": "2026-05-23T05:36:52.787Z",
       "basis": [
         {
           "kind": "tag_overlap",
@@ -311,7 +311,7 @@
               "sop",
               "log"
             ],
-            "raw_score": 6.613246976869637
+            "raw_score": 6.612667246140831
           }
         },
         {

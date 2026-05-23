@@ -233,9 +233,9 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
-    - target: lenovo-one-key-update-tool-
+    - target: lenovo-one-key-update-tool---19164f6b
       title: 'Lenovo one key update tool '
-      path: /general/lenovo-one-key-update-tool-.html
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: same_domain
       confidence: low
       score: 0.2

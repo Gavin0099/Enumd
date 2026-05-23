@@ -119,6 +119,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -158,7 +164,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -720,7 +726,7 @@ relations:
       confidence: low
       score: 0.2
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: same_domain
       confidence: low
@@ -900,6 +906,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: gl-enduser-tool-instruction--834f7a65
+      title: GL EndUser Tool Instruction
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: gl-enduser-tool-instruction
       title: GL EndUser Tool Instruction
       path: /general/gl-enduser-tool-instruction.html
@@ -1059,6 +1071,12 @@ relations:
     - target: lenovo-ldcc-update-tool-
       title: 'Lenovo LDCC Update Tool '
       path: /general/lenovo-ldcc-update-tool-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: same_domain
       confidence: low
       score: 0.2

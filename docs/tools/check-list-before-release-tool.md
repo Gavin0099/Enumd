@@ -76,7 +76,7 @@ relations:
       path: /code-sign/hid-code-sign-記錄.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hp-hemiz34c-cpu3-code-sign-驗證問題
       title: HP Hemi(Z34c) CPU3 Code Sign 驗證問題
       path: /code-sign/hp-hemiz34c-cpu3-code-sign-驗證問題.html
@@ -170,6 +170,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -194,7 +200,7 @@ relations:
       path: /firmware/hp-oci-tool-工作彙整.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hp-oci-tool-現行架構解析
       title: HP OCI Tool 現行架構解析
       path: /firmware/hp-oci-tool-現行架構解析.html
@@ -209,7 +215,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -231,7 +237,7 @@ relations:
       path: /firmware/secure-firmware-recovery.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: tvsuthinkvantage-system-update-fwupdate需求
       title: TVSU(ThinkVantage System Update) FWUpdate需求
       path: /firmware/tvsuthinkvantage-system-update-fwupdate需求.html
@@ -243,7 +249,7 @@ relations:
       path: /general/-hp-sdlc-master-compliance-checklist-2025-edition.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: '-lenovo-display-daisy-chain-issue'
       title: ' Lenovo Display Daisy Chain issue'
       path: /general/-lenovo-display-daisy-chain-issue.html
@@ -294,7 +300,7 @@ relations:
         /general/2025-minimum-elements-for-a-software-bill-of-materials-sbom.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: 2025-工作會報
       title: 2025 工作會報
       path: /general/2025-工作會報.html
@@ -450,7 +456,7 @@ relations:
       path: /general/hp-end-user-tool-packing-user-guide.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hp-end-user-tool-封裝方式
       title: HP End User Tool 封裝方式
       path: /general/hp-end-user-tool-封裝方式.html
@@ -528,7 +534,7 @@ relations:
       path: /general/lenovo-ldcc-update-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: lenovo-one-key-update-tool-
       title: 'Lenovo one key update tool '
       path: /general/lenovo-one-key-update-tool-.html
@@ -576,7 +582,7 @@ relations:
       path: /hub/gl3590-s-cmd-line-tool-for-windows.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hp-isp-tool-hub-update-flow
       title: HP ISP Tool Hub Update Flow
       path: /hub/hp-isp-tool-hub-update-flow.html
@@ -612,7 +618,7 @@ relations:
       path: /hub/hub-firmware-update-tool-command-line-list.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hub-mp-tool-user-guide
       title: Hub Mp Tool User Guide
       path: /hub/hub-mp-tool-user-guide.html
@@ -630,7 +636,7 @@ relations:
       path: /hub/hub-tool-release-note.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: mac-hub-update-tool-user-guide
       title: Mac Hub Update Tool User Guide
       path: /hub/mac-hub-update-tool-user-guide.html
@@ -685,6 +691,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: gl-enduser-tool-instruction--834f7a65
+      title: GL EndUser Tool Instruction
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
       title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
       path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
@@ -694,6 +706,12 @@ relations:
     - target: hp-isp-tool-user-guide
       title: HP ISP Tool User Guide
       path: /tools/hp-isp-tool-user-guide.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -756,7 +774,7 @@ relations:
       path: /general/hostbridge-plus-跨-os-協作技術參考設計-產品需求文件-prd.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: how-to-bound-target-device
       title: How to bound target device
       path: /general/how-to-bound-target-device.html
@@ -871,7 +889,7 @@ relations:
       path: /general/sw文件撰寫sop.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: system-design-specification-v31-usb-log-explorer-antigravity-edition-
       title: |
         System Design Specification v3.1: USB Log Explorer (Antigravity Edition)
@@ -885,13 +903,13 @@ relations:
       path: /general/teledyne-lecroy-python安裝和測試方式.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: teledyne-lecroy-usb-protocol-suiteusb-trace
       title: Teledyne LeCroy USB Protocol Suite(USB Trace)
       path: /general/teledyne-lecroy-usb-protocol-suiteusb-trace.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: usb30影響配對問題
       title: USB3.0影響配對問題
       path: /general/usb30影響配對問題.html
@@ -915,13 +933,13 @@ relations:
       path: /general/zeroplus_lap-i2c-訊號錄製方式.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: 交叉評核作業
       title: 交叉評核作業
       path: /general/交叉評核作業.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: 共好會議
       title: 共好會議
       path: /general/共好會議.html
@@ -933,7 +951,7 @@ relations:
       path: /general/取消使用stdafxh-include-方式.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: 工作目標
       title: 工作目標
       path: /general/工作目標.html
@@ -957,7 +975,7 @@ relations:
       path: /general/短期行動-vs-長期視野從混亂到有序結構化軟體建構之路.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: 自動化測試
       title: 自動化測試
       path: /general/自動化測試.html
@@ -991,7 +1009,7 @@ relations:
       path: /hub/gl-hub-software-development-kit.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: gl3590-code-sign-flow-hub-hostbridge
       title: GL3590 Code Sign flow (Hub + HostBridge)
       path: /code-sign/gl3590-code-sign-flow-hub-hostbridge.html
@@ -1021,7 +1039,7 @@ relations:
       path: /hub/hub-2020工作事項.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hub-auto-test-
       title: 'Hub Auto Test '
       path: /hub/hub-auto-test-.html
@@ -1081,13 +1099,13 @@ relations:
       path: /hub/usb-hub-firmware8051-keil-c51ai-開發前先期確認-checklist.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: '-hp-firmware-installer-macos-完整修復與發布手冊'
       title: "\U0001F6E0️ HP Firmware Installer (macOS) 完整修復與發布手冊"
       path: /mac/-hp-firmware-installer-macos-完整修復與發布手冊.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: apple-command-line-update-instruction-
       title: 'Apple Command line update Instruction '
       path: /mac/apple-command-line-update-instruction-.html
@@ -1131,7 +1149,7 @@ relations:
       confidence: low
       score: 0.2
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: same_domain
       confidence: low
@@ -1141,7 +1159,7 @@ relations:
       path: /mac/xcode-architecture-設定.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: 2020-monitor-tool需求列表
       title: 2020 Monitor Tool需求列表
       path: /monitor/2020-monitor-tool需求列表.html
@@ -1229,7 +1247,7 @@ relations:
       path: /security/hp-security-request-checklist-.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
@@ -1247,7 +1265,7 @@ relations:
       path: /general/8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool.html
       type: tag_related
       confidence: medium
-      score: 0.690821582394367
+      score: 0.6931471805599453
     - target: gldualbankfwtesttool-說明文件
       title: GLDualBankFWTestTool 說明文件
       path: /general/gldualbankfwtesttool-說明文件.html

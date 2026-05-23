@@ -2,10 +2,11 @@
 
 > Visual Studio、CMake、Git、Windows 指令、Log 抓取
 
-共 **196** 頁文件
+共 **197** 頁文件
 
 ## 文件列表
 
+- [📄 CFU Host 架構設計文件（修正版）](./-cfu-host-架構設計文件修正版)
 - [ Clawdbot 自主代理建置與資安防禦全紀錄](./-clawdbot-自主代理建置與資安防禦全紀錄)
 - [ HP SDLC Master Compliance Checklist (2025 Edition)](./-hp-sdlc-master-compliance-checklist-2025-edition)
 - [ Lenovo Display Daisy Chain issue](./-lenovo-display-daisy-chain-issue)

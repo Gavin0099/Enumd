@@ -304,8 +304,14 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -726,6 +732,12 @@ relations:
     - target: gl-enduser-tool-for-electron
       title: GL Enduser Tool for Electron
       path: /general/gl-enduser-tool-for-electron.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: gl-enduser-tool-instruction
+      title: GL EndUser Tool Instruction
+      path: /general/gl-enduser-tool-instruction.html
       type: same_domain
       confidence: low
       score: 0.2

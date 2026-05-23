@@ -107,146 +107,152 @@ relations:
       path: /driver/-generic-usb-filter-driver-.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: command-line-uninstall-driver
       title: Command line uninstall driver
       path: /driver/command-line-uninstall-driver.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: e27m-e34m-driver-install-fail
       title: E27m & E34m Driver install fail
       path: /driver/e27m-e34m-driver-install-fail.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: gl-hubdriver-v163-測試流程
       title: GL HubDriver v1.63 測試流程
       path: /driver/gl-hubdriver-v163-測試流程.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: glhub-driver-instruction
       title: GLHub Driver Instruction
       path: /driver/glhub-driver-instruction.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式
       title: HP ISP Tool 遇到舊driver 移除方式和新driver安裝方式
       path: /driver/hp-isp-tool-遇到舊driver-移除方式和新driver安裝方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hubdriverinstaller-user-guide
       title: HubDriverInstaller User Guide
       path: /driver/hubdriverinstaller-user-guide.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: sc-query-to-determine-the-driver-mode
       title: SC query to determine the driver mode
       path: /driver/sc-query-to-determine-the-driver-mode.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: windows-10-h2-driver-移除流程
       title: Windows 10 H2 driver 移除流程
       path: /driver/windows-10-h2-driver-移除流程.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-display-firmware-specification-v11
       title: HP DISPLAY FIRMWARE SPECIFICATION V1.1
       path: /firmware/hp-display-firmware-specification-v11.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: tag_related
+      confidence: medium
+      score: 0.4893879310176998
     - target: hp-oci-app
       title: HP OCI APP
       path: /firmware/hp-oci-app.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-oci-dll
       title: HP OCI DLL
       path: /firmware/hp-oci-dll.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp_display_firmware_update_specification
       title: HP_Display_Firmware_Update_Specification
       path: /firmware/hp_display_firmware_update_specification.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: tvsuthinkvantage-system-update-fwupdate需求
       title: TVSU(ThinkVantage System Update) FWUpdate需求
       path: /firmware/tvsuthinkvantage-system-update-fwupdate需求.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: antigravity-skills
       title: '**antigravity skills**'
       path: /general/antigravity-skills.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: bcg-build-問題
       title: BCG Build 問題
       path: /general/bcg-build-問題.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: chatgpt-temp
       title: ChatGPT temp
       path: /general/chatgpt-temp.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: debug-前客戶取得需求資訊
       title: Debug 前客戶取得需求資訊
       path: /general/debug-前客戶取得需求資訊.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: flutter
       title: Flutter
       path: /general/flutter.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: how-to-bound-target-device
       title: How to bound target device
       path: /general/how-to-bound-target-device.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: how-to-wrap-self-extraction-file-by-packagefortheweb400_0830
       title: How to wrap self-extraction file by PackageForTheWeb400_0830
       path: >-
         /general/how-to-wrap-self-extraction-file-by-packagefortheweb400_0830.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-silent-install-project-support-list
       title: HP silent install project support list
       path: /general/hp-silent-install-project-support-list.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: inno-setup-script
       title: Inno Setup Script
       path: /general/inno-setup-script.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: richelieu-issue-description
       title: Richelieu Issue description
       path: /general/richelieu-issue-description.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: system-design-specification-v31-usb-log-explorer-antigravity-edition-
       title: |
         System Design Specification v3.1: USB Log Explorer (Antigravity Edition)
@@ -254,187 +260,193 @@ relations:
         /general/system-design-specification-v31-usb-log-explorer-antigravity-edition-.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: teledyne-lecroy-python安裝和測試方式
       title: Teledyne LeCroy python安裝和測試方式
       path: /general/teledyne-lecroy-python安裝和測試方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: teledyne-lecroy-usb-protocol-suiteusb-trace
       title: Teledyne LeCroy USB Protocol Suite(USB Trace)
       path: /general/teledyne-lecroy-usb-protocol-suiteusb-trace.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: windows-register-語系改法
       title: Windows register 語系改法
       path: /general/windows-register-語系改法.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: zeroplus_lap-i2c-訊號錄製方式
       title: ZEROPLUS_LAP I2c 訊號錄製方式
       path: /general/zeroplus_lap-i2c-訊號錄製方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: 如何在xocde-執行-clang-format
       title: 如何在xocde 執行 clang format
       path: /general/如何在xocde-執行-clang-format.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: gl-hub-software-development-kit
       title: GL Hub Software Development Kit
       path: /hub/gl-hub-software-development-kit.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-isp-tool-hub-update-flow
       title: HP ISP Tool Hub Update Flow
       path: /hub/hp-isp-tool-hub-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hub-2020工作事項
       title: Hub 2020工作事項
       path: /hub/hub-2020工作事項.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hub-driver-debugging-method-csr
       title: Hub Driver Debugging method (CSR)
       path: /driver/hub-driver-debugging-method-csr.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hub-driver-除錯方式
       title: Hub Driver 除錯方式
       path: /driver/hub-driver-除錯方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hub-firmware-update-tool-command-line-list
       title: 'Hub Firmware Update Tool : Command Line List'
       path: /hub/hub-firmware-update-tool-command-line-list.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hub-tool-release-note
       title: Hub Tool Release Note
       path: /hub/hub-tool-release-note.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hub-virtual-device-stress-test-
       title: 'Hub virtual device stress test '
       path: /hub/hub-virtual-device-stress-test-.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: '-hp-firmware-installer-macos-完整修復與發布手冊'
       title: "\U0001F6E0️ HP Firmware Installer (macOS) 完整修復與發布手冊"
       path: /mac/-hp-firmware-installer-macos-完整修復與發布手冊.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: mac-conan-clang-tidy-設定方式
       title: Mac  Conan & Clang-Tidy 設定方式
       path: /mac/mac-conan-clang-tidy-設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: mac-packages-installation-file-process
       title: Mac packages installation file process
       path: /mac/mac-packages-installation-file-process.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: mac-packages-installation-file-processcn
       title: Mac packages installation file process(CN)
       path: /mac/mac-packages-installation-file-processcn.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
+    - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
+      path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
+      type: tag_related
+      confidence: medium
+      score: 0.4893879310176998
     - target: xcode-architecture-設定
       title: Xcode Architecture 設定
       path: /mac/xcode-architecture-設定.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: 如何在mac-上透過wireshark-抓取-usb訊號
       title: 如何在Mac 上透過WireShark 抓取 USB訊號
       path: /mac/如何在mac-上透過wireshark-抓取-usb訊號.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-monitor-isp-tool-開發和驗證方式
       title: HP Monitor ISP Tool 開發和驗證方式
       path: /monitor/hp-monitor-isp-tool-開發和驗證方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-monitor-rtk-audio-update-fail-原因
       title: HP Monitor RTK Audio update fail 原因
       path: /monitor/hp-monitor-rtk-audio-update-fail-原因.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: command-line-tool-instructions
       title: Command Line Tool Instructions
       path: /general/command-line-tool-instructions.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
-    - target: gl-enduser-tool-instruction
+      score: 0.4893879310176998
+    - target: gl-enduser-tool-instruction--834f7a65
       title: GL EndUser Tool Instruction
-      path: /general/gl-enduser-tool-instruction.html
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: gldualbankfwtesttool-說明文件
       title: GLDualBankFWTestTool 說明文件
       path: /general/gldualbankfwtesttool-說明文件.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: glhubupdatetoolcli-req-command-description
       title: GLHubUpdateToolCli req command Description
       path: /hub/glhubupdatetoolcli-req-command-description.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-end-user-tool-packing-user-guide
       title: HP End User Tool Packing User Guide
       path: /general/hp-end-user-tool-packing-user-guide.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-end-user-tool-封裝方式
       title: HP End User Tool 封裝方式
       path: /general/hp-end-user-tool-封裝方式.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: hp-enduser-tool-debug-sop
       title: HP EndUser Tool Debug SOP
       path: /general/hp-enduser-tool-debug-sop.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: merge-code-tool-help
       title: Merge Code Tool Help
       path: /general/merge-code-tool-help.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: standard-isp-tool-roll-back-flow
       title: Standard ISP Tool Roll Back Flow
       path: /general/standard-isp-tool-roll-back-flow.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f
       title: >-
         VMware-viclient-all-6.0.0-2502222 無法安裝 .Net Framework 3.5 問題 錯誤代碼
@@ -443,7 +455,7 @@ relations:
         /general/vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f.html
       type: tag_related
       confidence: medium
-      score: 0.49539643791901933
+      score: 0.4893879310176998
     - target: genesys-logic-3rd-party-code-signing-specification-ecdsa-
       title: 'Genesys Logic 3rd party code signing specification (ECDSA) '
       path: >-
@@ -559,7 +571,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -573,6 +585,12 @@ relations:
     - target: secure-firmware-recovery
       title: Secure Firmware Recovery
       path: /firmware/secure-firmware-recovery.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -777,7 +795,7 @@ relations:
       path: /general/hp-scheduled-update-flow-.html
       type: same_domain
       confidence: low
-      score: 0.2
+      score: 0.30000000000000004
     - target: hxd-計算checksum方式
       title: Hxd 計算checksum方式
       path: /general/hxd-計算checksum方式.html
@@ -1230,12 +1248,6 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
-    - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
-      path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
-      type: same_domain
-      confidence: low
-      score: 0.25
     - target: 2020-monitor-tool需求列表
       title: 2020 Monitor Tool需求列表
       path: /monitor/2020-monitor-tool需求列表.html
@@ -1469,6 +1481,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: gl-enduser-tool-instruction
+      title: GL EndUser Tool Instruction
+      path: /general/gl-enduser-tool-instruction.html
+      type: same_domain
+      confidence: low
+      score: 0.30000000000000004
     - target: gl-enduser-tool-merge-bin-head-format
       title: GL EndUser Tool Merge bin head format
       path: /general/gl-enduser-tool-merge-bin-head-format.html
@@ -1598,6 +1616,12 @@ relations:
     - target: lenovo-ldcc-update-tool-
       title: 'Lenovo LDCC Update Tool '
       path: /general/lenovo-ldcc-update-tool-.html
+      type: same_domain
+      confidence: low
+      score: 0.25
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: same_domain
       confidence: low
       score: 0.25

@@ -20,7 +20,7 @@ relations:
       path: /code-sign/code-sign-技術規格文件-整合版.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: code-sign-文件
       title: Code Sign 文件
       path: /code-sign/code-sign-文件.html
@@ -44,7 +44,7 @@ relations:
       path: /code-sign/etoken-system-code-view-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: etoken-system
       title: Etoken System
       path: /code-sign/etoken-system.html
@@ -56,7 +56,7 @@ relations:
       path: /code-sign/etoken-安全簽章系統技術說明.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hid-code-sign-update-rule
       title: HID Code Sign Update Rule
       path: /code-sign/hid-code-sign-update-rule.html
@@ -74,7 +74,7 @@ relations:
       path: /code-sign/hp-hemiz34c-cpu3-code-sign-驗證問題.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-hub-code-sign-bin-format
       title: HP Hub Code Sign Bin Format
       path: /code-sign/hp-hub-code-sign-bin-format.html
@@ -86,25 +86,25 @@ relations:
       path: /code-sign/hp-monitor-code-sign-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-rtk-scaler-code-sign
       title: HP RTK Scaler Code Sign
       path: /code-sign/hp-rtk-scaler-code-sign.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-code-sign-交握流程
       title: Lenovo Code Sign 交握流程
       path: /code-sign/lenovo-code-sign-交握流程.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: rsa-2048-verify-和-mbedtls-opensource-測試問題-
       title: 'RSA 2048 verify 和 mbedtls opensource 測試問題 '
       path: /code-sign/rsa-2048-verify-和-mbedtls-opensource-測試問題-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: command-line-uninstall-driver
       title: Command line uninstall driver
       path: /driver/command-line-uninstall-driver.html
@@ -116,7 +116,7 @@ relations:
       path: /driver/driver-刪除方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: e27m-e34m-driver-install-fail
       title: E27m & E34m Driver install fail
       path: /driver/e27m-e34m-driver-install-fail.html
@@ -152,7 +152,7 @@ relations:
       path: /firmware/hp-724-pu-firmware-更新流程與-ini-設定說明文件.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-display-firmware-specification-v11
       title: HP DISPLAY FIRMWARE SPECIFICATION V1.1
       path: /firmware/hp-display-firmware-specification-v11.html
@@ -168,6 +168,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2727272727272727
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.21428571428571427
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -180,13 +186,13 @@ relations:
       path: /firmware/hp-oci-app.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-oci-dll
       title: HP OCI DLL
       path: /firmware/hp-oci-dll.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-oci-tool-ui-flow
       title: HP OCI Tool UI flow
       path: /firmware/hp-oci-tool-ui-flow.html
@@ -219,7 +225,7 @@ relations:
       confidence: low
       score: 0.30000000000000004
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -235,25 +241,31 @@ relations:
       path: /firmware/lenovo-fwupdatetool.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: tvsuthinkvantage-system-update-fwupdate需求
       title: TVSU(ThinkVantage System Update) FWUpdate需求
       path: /firmware/tvsuthinkvantage-system-update-fwupdate需求.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: vendor-oci-error-code-
       title: 'Vendor OCI Error Code '
       path: /firmware/vendor-oci-error-code-.html
       type: same_domain
       confidence: low
       score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: '-clawdbot-自主代理建置與資安防禦全紀錄'
       title: ' Clawdbot 自主代理建置與資安防禦全紀錄'
       path: /general/-clawdbot-自主代理建置與資安防禦全紀錄.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: '-hp-sdlc-master-compliance-checklist-2025-edition'
       title: ' HP SDLC Master Compliance Checklist (2025 Edition)'
       path: /general/-hp-sdlc-master-compliance-checklist-2025-edition.html
@@ -265,13 +277,13 @@ relations:
       path: /general/-lenovo-display-daisy-chain-issue.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: '-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網'
       title: "\U0001F5A5️ Windows 雙網卡企業分流設定SOP（乙太公司內網＋Wi-Fi外網）"
       path: /general/-windows-雙網卡企業分流設定sop乙太公司內網wi-fi外網.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 0206-0209-交接
       title: 0206 - 0209 交接
       path: /general/0206-0209-交接.html
@@ -340,13 +352,13 @@ relations:
       path: /general/8d-report-for-e22-g4e23-g4e24-g4e24i-g4-hp-enduser-tool.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: antigravity-skills
       title: '**antigravity skills**'
       path: /general/antigravity-skills.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: asus-update-tool-
       title: 'ASUS Update Tool '
       path: /general/asus-update-tool-.html
@@ -358,7 +370,7 @@ relations:
       path: /general/bcg-build-問題.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: bin-file-merge-case-update-case
       title: Bin file merge case  & Update case
       path: /general/bin-file-merge-case-update-case.html
@@ -382,7 +394,7 @@ relations:
       path: /general/bus-hound-簡易說明.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: check-list-before-release-tool
       title: Check list before release tool
       path: /general/check-list-before-release-tool.html
@@ -394,31 +406,31 @@ relations:
       path: /general/chrome-遠端桌面設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: cmake-設定方式
       title: Cmake 設定方式
       path: /general/cmake-設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: command-line-tool-debug-路徑
       title: Command line tool debug 路徑
       path: /general/command-line-tool-debug-路徑.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: command-line-tool-instructions
       title: Command Line Tool Instructions
       path: /general/command-line-tool-instructions.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: command-line-tool-logging-method
       title: Command Line Tool logging method
       path: /general/command-line-tool-logging-method.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: command-line-tool-user-guide
       title: Command Line Tool User Guide
       path: /general/command-line-tool-user-guide.html
@@ -448,37 +460,37 @@ relations:
       path: /general/e22e24i-1st-2nd-scalar-update-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: electron
       title: electron
       path: /general/electron.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: flutter
       title: Flutter
       path: /general/flutter.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification
       title: FW_SBOM_Spec_for_3rd_Party.v2a(HP CMIT FW SBOM Specification)
       path: /general/fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: genesys-logic-spec
       title: Genesys Logic Spec
       path: /general/genesys-logic-spec.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: git-command-list
       title: Git Command List
       path: /general/git-command-list.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: gitlab-ee-wiki-
       title: 'GitLab EE wiki '
       path: /general/gitlab-ee-wiki-.html
@@ -490,13 +502,13 @@ relations:
       path: /general/gl-bin-tool.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: gl-bin
       title: GL Bin
       path: /general/gl-bin.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: gl-diagnostic-tool
       title: GL Diagnostic Tool
       path: /general/gl-diagnostic-tool.html
@@ -520,7 +532,7 @@ relations:
       path: /general/gl-enduser-tool-instruction.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: gl-enduser-tool-merge-bin-head-format
       title: GL EndUser Tool Merge bin head format
       path: /general/gl-enduser-tool-merge-bin-head-format.html
@@ -538,19 +550,19 @@ relations:
       path: /general/how-to-bound-target-device.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: how-to-capture-standard-isp-tool-log
       title: How to capture standard Isp tool log
       path: /general/how-to-capture-standard-isp-tool-log.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: how-to-grab-debugview-log
       title: How To Grab DebugView Log
       path: /general/how-to-grab-debugview-log.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: how-to-grab-hp-command-tool-log-
       title: 'How to grab HP Command Tool log '
       path: /general/how-to-grab-hp-command-tool-log-.html
@@ -574,7 +586,7 @@ relations:
       path: /general/how-to-grab-isp-tool-log-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: how-to-grab-log
       title: How to grab log
       path: /general/how-to-grab-log.html
@@ -587,7 +599,7 @@ relations:
         /general/how-to-wrap-self-extraction-file-by-packagefortheweb400_0830.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-534pm-fail-log
       title: HP 534pm fail log
       path: /general/hp-534pm-fail-log.html
@@ -665,7 +677,7 @@ relations:
       path: /general/hp-scheduled-update-flow-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-security-spec-
       title: 'HP Security Spec '
       path: /general/hp-security-spec-.html
@@ -707,7 +719,7 @@ relations:
       path: /general/lenovo-ldcc-update-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-one-key-update-tool-
       title: 'Lenovo one key update tool '
       path: /general/lenovo-one-key-update-tool-.html
@@ -719,13 +731,13 @@ relations:
       path: /general/merge-code-tool-help.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: saleae-logic-i2c-tool-使用說明
       title: Saleae logic i2c  Tool 使用說明
       path: /general/saleae-logic-i2c-tool-使用說明.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: standard-isp-tool-roll-back-flow
       title: Standard ISP Tool Roll Back Flow
       path: /general/standard-isp-tool-roll-back-flow.html
@@ -803,13 +815,13 @@ relations:
       path: /hub/hub-mp-tool.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hub-tool-release-note
       title: Hub Tool Release Note
       path: /hub/hub-tool-release-note.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-hub-update-tool-user-guide
       title: Mac Hub Update Tool User Guide
       path: /hub/mac-hub-update-tool-user-guide.html
@@ -821,7 +833,7 @@ relations:
       path: /mac/-hp-firmware-installer-macos-完整修復與發布手冊.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-command-line-tool-user-guide
       title: Mac Command Line Tool User Guide
       path: /mac/mac-command-line-tool-user-guide.html
@@ -918,7 +930,7 @@ relations:
       path: /monitor/realtek-scaler-isp-tool-開發流程.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hp-security-request-checklist-
       title: 'HP Security Request Checklist '
       path: /security/hp-security-request-checklist-.html
@@ -931,6 +943,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: gl-enduser-tool-instruction--834f7a65
+      title: GL EndUser Tool Instruction
+      path: /tools/gl-enduser-tool-instruction--834f7a65.html
+      type: tag_related
+      confidence: medium
+      score: 0.3308733649702151
     - target: hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題
       title: 'HP EndUser Tool error LNK2019: 無法解析的外部符號 問題'
       path: /tools/hp-enduser-tool-error-lnk2019-無法解析的外部符號-問題.html
@@ -943,6 +961,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.5
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
+      type: same_domain
+      confidence: low
+      score: 0.21428571428571427
     - target: lenovo-one-key-update-tool-issue
       title: Lenovo One key update Tool issue
       path: /tools/lenovo-one-key-update-tool-issue.html
@@ -954,7 +978,7 @@ relations:
       path: /tools/standard-isp-tool-instruction.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hxd-計算checksum方式
       title: Hxd 計算checksum方式
       path: /general/hxd-計算checksum方式.html
@@ -966,7 +990,7 @@ relations:
       path: /general/inno-setup-script.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-daisy-chain-update-flow-
       title: 'Lenovo Daisy-chain Update flow '
       path: /general/lenovo-daisy-chain-update-flow-.html
@@ -978,13 +1002,13 @@ relations:
       path: /general/lenovo-dmc.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-offline-update-flow-
       title: 'Lenovo offline update flow '
       path: /general/lenovo-offline-update-flow-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-spec-
       title: 'Lenovo spec '
       path: /general/lenovo-spec-.html
@@ -996,7 +1020,7 @@ relations:
       path: /general/lenovo-update-debug-flow-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-討論
       title: Lenovo 討論
       path: /general/lenovo-討論.html
@@ -1008,7 +1032,7 @@ relations:
       path: /general/lenovo-需求.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: log分類
       title: Log分類
       path: /general/log分類.html
@@ -1020,7 +1044,7 @@ relations:
       path: /general/mfc-ui-因為windwos-縮放比例導致ui錯位解決方法.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mt9052
       title: MT9052
       path: /general/mt9052.html
@@ -1032,37 +1056,37 @@ relations:
       path: /general/notion-使用方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: osdmanager
       title: OSDManager
       path: /general/osdmanager.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: outlook-封存失敗如何設定
       title: Outlook 封存失敗如何設定
       path: /general/outlook-封存失敗如何設定.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: richelieu-issue-description
       title: Richelieu Issue description
       path: /general/richelieu-issue-description.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: ricktek-7880-pd-update-flow
       title: RickTek 7880 PD Update Flow
       path: /general/ricktek-7880-pd-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: sd-reader-sample-code-
       title: 'SD Reader Sample Code '
       path: /general/sd-reader-sample-code-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: ssdlc-
       title: 'SSDLC '
       path: /general/ssdlc-.html
@@ -1080,7 +1104,7 @@ relations:
       path: /general/sw文件撰寫sop.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: system-design-specification-v31-usb-log-explorer-antigravity-edition-
       title: |
         System Design Specification v3.1: USB Log Explorer (Antigravity Edition)
@@ -1094,7 +1118,7 @@ relations:
       path: /general/target-device-ini-產生器-測試.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: teledyne-lecroy-python安裝和測試方式
       title: Teledyne LeCroy python安裝和測試方式
       path: /general/teledyne-lecroy-python安裝和測試方式.html
@@ -1106,13 +1130,13 @@ relations:
       path: /general/teledyne-lecroy-usb-protocol-suiteusb-trace.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: tri-code-command-list
       title: Tri Code Command List
       path: /general/tri-code-command-list.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: tricode-ptester
       title: TriCode Ptester
       path: /general/tricode-ptester.html
@@ -1124,7 +1148,7 @@ relations:
       path: /general/uac-permission-setting-method.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: usb-device-class
       title: USB Device Class
       path: /general/usb-device-class.html
@@ -1154,7 +1178,7 @@ relations:
       path: /general/visual-studio-2017-administrator-設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: w25x21cl-rdid問題
       title: W25X21CL RDID問題
       path: /general/w25x21cl-rdid問題.html
@@ -1166,13 +1190,13 @@ relations:
       path: /general/windows-11-core-isolation.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: zeroplus_lap-i2c-訊號錄製方式
       title: ZEROPLUS_LAP I2c 訊號錄製方式
       path: /general/zeroplus_lap-i2c-訊號錄製方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 交叉評核作業
       title: 交叉評核作業
       path: /general/交叉評核作業.html
@@ -1190,7 +1214,7 @@ relations:
       path: /general/如何在xocde-執行-clang-format.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 工作目標
       title: 工作目標
       path: /general/工作目標.html
@@ -1202,19 +1226,19 @@ relations:
       path: /general/新人參考資料.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 新架構導入新的chip-updatemt9052-方式
       title: 新架構導入新的chip update(MT9052) 方式
       path: /general/新架構導入新的chip-updatemt9052-方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題
       title: 用Bcgcontrolbar套用的UI在某些電腦上UI會錯誤的問題
       path: /general/用bcgcontrolbar套用的ui在某些電腦上ui會錯誤的問題.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 短期行動-vs-長期視野從混亂到有序結構化軟體建構之路
       title: 短期行動 vs 長期視野，從混亂到有序，結構化軟體建構之路
       path: /general/短期行動-vs-長期視野從混亂到有序結構化軟體建構之路.html
@@ -1226,13 +1250,13 @@ relations:
       path: /general/結構-struct-的宣告與封裝和使用練習-c.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 自動化測試
       title: 自動化測試
       path: /general/自動化測試.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 自評
       title: 自評
       path: /general/自評.html
@@ -1284,19 +1308,19 @@ relations:
       path: /code-sign/gl3590-hostbridge-code-sign.html
       type: same_domain
       confidence: low
-      score: 0.30000000000000004
+      score: 0.25
     - target: gl7524-a02-code-sign-與-isp-安全架構case-3
       title: GL7524 A02 Code-Sign 與 ISP 安全架構(Case 3)
       path: /code-sign/gl7524-a02-code-sign-與-isp-安全架構case-3.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: gli7524-hub-isp-update-too
       title: GLI7524 Hub ISP update too
       path: /hub/gli7524-hub-isp-update-too.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hub-2020工作事項-完成事項
       title: Hub 2020工作事項 完成事項
       path: /hub/hub-2020工作事項-完成事項.html
@@ -1308,13 +1332,13 @@ relations:
       path: /hub/hub-2020工作事項.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hub-auto-test-
       title: 'Hub Auto Test '
       path: /hub/hub-auto-test-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hub-chip-資訊
       title: Hub Chip 資訊
       path: /hub/hub-chip-資訊.html
@@ -1350,7 +1374,7 @@ relations:
       path: /hub/hub-fw-bug.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hub-fw-update-策略技術評估-cfu-導入分析
       title: Hub FW Update 策略技術評估 — CFU 導入分析
       path: /hub/hub-fw-update-策略技術評估-cfu-導入分析.html
@@ -1368,7 +1392,7 @@ relations:
       path: /hub/hub-ini-parameter.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: hub-project-string-定義
       title: Hub Project String 定義
       path: /hub/hub-project-string-定義.html
@@ -1408,7 +1432,7 @@ relations:
       path: /mac/apple-command-line-update-instruction-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: linux-mac-共code-
       title: 'Linux & Mac 共code '
       path: /mac/linux-mac-共code-.html
@@ -1420,19 +1444,19 @@ relations:
       path: /mac/mac-conan-clang-tidy-設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-framework
       title: Mac Framework
       path: /mac/mac-framework.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-oci-demo-flow
       title: Mac OCI Demo flow
       path: /mac/mac-oci-demo-flow.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-oci-dll-import-方式
       title: Mac OCI Dll Import 方式
       path: /mac/mac-oci-dll-import-方式.html
@@ -1444,43 +1468,43 @@ relations:
       path: /mac/mac-packages-installation-file-process.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-packages-installation-file-processcn
       title: Mac packages installation file process(CN)
       path: /mac/mac-packages-installation-file-processcn.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-ui-客制化修改-以hostbridge-為例
       title: Mac UI 客制化修改 (以HostBridge 為例)
       path: /mac/mac-ui-客制化修改-以hostbridge-為例.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: mac-權限問題
       title: Mac 權限問題
       path: /mac/mac-權限問題.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: macos-mdm-與-full-disk-access-fda-權限管理實作說明
-      title: macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明
+      title: '**macOS MDM 與 Full Disk Access (FDA) 權限管理實作說明**'
       path: /mac/macos-mdm-與-full-disk-access-fda-權限管理實作說明.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: xcode-architecture-設定
       title: Xcode Architecture 設定
       path: /mac/xcode-architecture-設定.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 如何在mac-上透過wireshark-抓取-usb訊號
       title: 如何在Mac 上透過WireShark 抓取 USB訊號
       path: /mac/如何在mac-上透過wireshark-抓取-usb訊號.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: 2020-monitor-tool需求列表
       title: 2020 Monitor Tool需求列表
       path: /monitor/2020-monitor-tool需求列表.html
@@ -1504,13 +1528,13 @@ relations:
       path: /monitor/lenovo-monitor-firmware-update-specification-v01.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-monitor-i2c-info
       title: Lenovo Monitor i2c info
       path: /monitor/lenovo-monitor-i2c-info.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: lenovo-monitor-schedule-2024
       title: Lenovo Monitor Schedule  2024
       path: /monitor/lenovo-monitor-schedule-2024.html
@@ -1552,7 +1576,7 @@ relations:
       path: /monitor/mtk-scaler-update-flow.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: p32p-30-reset-scaler-command
       title: P32p-30 Reset Scaler command
       path: /monitor/p32p-30-reset-scaler-command.html
@@ -1564,7 +1588,7 @@ relations:
       path: /monitor/philips-monitor-分類.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: u27m-scaler-update速度
       title: U27m Scaler Update速度
       path: /monitor/u27m-scaler-update速度.html
@@ -1582,13 +1606,13 @@ relations:
       path: /general/c-使用c產生的dll-問題.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: genesyslogic-integrates-sdk-specification
       title: GenesysLogic integrates SDK specification
       path: /general/genesyslogic-integrates-sdk-specification.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: helper-utility-librarydll
       title: Helper utility library/dll
       path: /general/helper-utility-librarydll.html
@@ -1609,20 +1633,20 @@ relations:
         /general/sunpluscameradll-x86-在-windows-on-arm-arm64-平台上執行時因-0xc0000417-錯誤而崩潰.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: visusal-stdio-sdk-設定
       title: Visusal Stdio SDK 設定
       path: /general/visusal-stdio-sdk-設定.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: universal-serial-bus-4-usb4-specification-
       title: |
         Universal Serial Bus 4 (USB4®) Specification
       path: /security/universal-serial-bus-4-usb4-specification-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: cli-command-line-list
       title: CLI command line list
       path: /general/cli-command-line-list.html
@@ -1652,7 +1676,7 @@ relations:
       path: /general/srs-crd-輔助工具入口介面-.html
       type: tag_related
       confidence: medium
-      score: 0.33073118679682534
+      score: 0.3308733649702151
     - target: vmware-viclient-all-600-2502222-無法安裝-net-framework-35-問題-錯誤代碼-0x800f081f
       title: >-
         VMware-viclient-all-6.0.0-2502222 無法安裝 .Net Framework 3.5 問題 錯誤代碼

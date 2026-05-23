@@ -77,7 +77,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -91,6 +91,12 @@ relations:
     - target: vendor-oci-error-code-
       title: 'Vendor OCI Error Code '
       path: /firmware/vendor-oci-error-code-.html
+      type: same_domain
+      confidence: low
+      score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -270,12 +276,6 @@ relations:
         Expansion for Future Projects - Genesys
       path: >-
         /hub/discussion-required_pd-and-usb-hub-mandatory-firmware-update-strategy-expansion-.html
-      type: same_domain
-      confidence: low
-      score: 0.2
-    - target: gl3590-hostbridge-code-sign
-      title: GL3590 +HostBridge Code Sign
-      path: /code-sign/gl3590-hostbridge-code-sign.html
       type: same_domain
       confidence: low
       score: 0.2
@@ -532,6 +532,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: lenovo-one-key-update-tool---19164f6b
+      title: 'Lenovo one key update tool '
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
+      type: same_domain
+      confidence: low
+      score: 0.1875
     - target: lenovo-one-key-update-tool-issue
       title: Lenovo One key update Tool issue
       path: /tools/lenovo-one-key-update-tool-issue.html

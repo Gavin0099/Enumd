@@ -113,7 +113,7 @@ relations:
       confidence: low
       score: 0.2
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -130,6 +130,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
+      type: same_domain
+      confidence: low
+      score: 0.25
     - target: '-lenovo-display-daisy-chain-issue'
       title: ' Lenovo Display Daisy Chain issue'
       path: /general/-lenovo-display-daisy-chain-issue.html
@@ -422,7 +428,7 @@ relations:
       path: /code-sign/gl3590-hostbridge-code-sign.html
       type: same_domain
       confidence: low
-      score: 0.25
+      score: 0.2
     - target: gl3590-s-cmd-line-tool-for-windows
       title: GL3590-s cmd line tool for Windows
       path: /hub/gl3590-s-cmd-line-tool-for-windows.html
@@ -866,6 +872,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.25
+    - target: gl-enduser-tool-instruction
+      title: GL EndUser Tool Instruction
+      path: /general/gl-enduser-tool-instruction.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: glbin-tool-user-guide
       title: GLBin Tool User Guide
       path: /general/glbin-tool-user-guide.html

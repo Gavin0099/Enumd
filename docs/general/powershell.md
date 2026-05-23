@@ -82,7 +82,7 @@ relations:
       path: /code-sign/hid-code-sign-記錄.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-monitor-code-sign-update-flow
       title: HP Monitor Code Sign Update Flow
       path: /code-sign/hp-monitor-code-sign-update-flow.html
@@ -128,6 +128,12 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: hp-firmware-stress-tool-使用者指南
+      title: '**HP Firmware Stress Tool — 使用者指南**'
+      path: /firmware/hp-firmware-stress-tool-使用者指南.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: hp-mandatory-firmware-update-strategy-expansion-for-future-projects
       title: HP Mandatory Firmware Update Strategy Expansion for Future Projects
       path: >-
@@ -140,13 +146,13 @@ relations:
       path: /firmware/hp-oci-app.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-oci-dll
       title: HP OCI DLL
       path: /firmware/hp-oci-dll.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-oci-tool-ui-flow
       title: HP OCI Tool UI flow
       path: /firmware/hp-oci-tool-ui-flow.html
@@ -177,9 +183,9 @@ relations:
       path: /firmware/hp-oci-資料.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-project-store-forward-fw-update-specification
-      title: 'HP Project: Store & Forward FW Update Specification'
+      title: '**HP Project: Store & Forward FW Update Specification**'
       path: /firmware/hp-project-store-forward-fw-update-specification.html
       type: same_domain
       confidence: low
@@ -189,7 +195,7 @@ relations:
       path: /firmware/hp_display_firmware_update_specification.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: lenovo-fwupdatetool
       title: Lenovo FWUpdateTool
       path: /firmware/lenovo-fwupdatetool.html
@@ -214,12 +220,18 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
+    - target: '-cfu-host-架構設計文件修正版'
+      title: "\U0001F4C4 CFU Host 架構設計文件（修正版）"
+      path: /general/-cfu-host-架構設計文件修正版.html
+      type: same_domain
+      confidence: low
+      score: 0.2
     - target: '-hp-sdlc-master-compliance-checklist-2025-edition'
       title: ' HP SDLC Master Compliance Checklist (2025 Edition)'
       path: /general/-hp-sdlc-master-compliance-checklist-2025-edition.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: 0326-0330-交接
       title: 0326-0330 交接
       path: /general/0326-0330-交接.html
@@ -255,7 +267,7 @@ relations:
       path: /general/bcg-build-問題.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: c-11-design-pattern-uml
       title: C++ 11 & Design pattern & UML
       path: /general/c-11-design-pattern-uml.html
@@ -273,7 +285,7 @@ relations:
       path: /general/cmake-設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: drawio-相關連結
       title: Draw.io 相關連結
       path: /general/drawio-相關連結.html
@@ -291,7 +303,7 @@ relations:
       path: /general/electron.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: flutter
       title: Flutter
       path: /general/flutter.html
@@ -303,7 +315,7 @@ relations:
       path: /general/fw_sbom_spec_for_3rd_partyv2ahp-cmit-fw-sbom-specification.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: genesys-logic-spec
       title: Genesys Logic Spec
       path: /general/genesys-logic-spec.html
@@ -315,7 +327,7 @@ relations:
       path: /general/git-command-list.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: gitlab-ee-wiki-
       title: 'GitLab EE wiki '
       path: /general/gitlab-ee-wiki-.html
@@ -328,7 +340,7 @@ relations:
         /general/how-to-wrap-self-extraction-file-by-packagefortheweb400_0830.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-534pm-fail-log
       title: HP 534pm fail log
       path: /general/hp-534pm-fail-log.html
@@ -346,7 +358,7 @@ relations:
       path: /general/lenovo-daisy-chain-update-flow-.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: log分類
       title: Log分類
       path: /general/log分類.html
@@ -358,133 +370,133 @@ relations:
       path: /general/取消使用stdafxh-include-方式.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: gl-hub-software-development-kit
       title: GL Hub Software Development Kit
       path: /hub/gl-hub-software-development-kit.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hub-auto-test-
       title: 'Hub Auto Test '
       path: /hub/hub-auto-test-.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hub-fw-bug
       title: Hub Fw bug
       path: /hub/hub-fw-bug.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hub-fw-update-策略技術評估-cfu-導入分析
       title: Hub FW Update 策略技術評估 — CFU 導入分析
       path: /hub/hub-fw-update-策略技術評估-cfu-導入分析.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: '-hp-firmware-installer-macos-完整修復與發布手冊'
       title: "\U0001F6E0️ HP Firmware Installer (macOS) 完整修復與發布手冊"
       path: /mac/-hp-firmware-installer-macos-完整修復與發布手冊.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: linux-mac-共code-
       title: 'Linux & Mac 共code '
       path: /mac/linux-mac-共code-.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-conan-clang-tidy-設定方式
       title: Mac  Conan & Clang-Tidy 設定方式
       path: /mac/mac-conan-clang-tidy-設定方式.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-framework
       title: Mac Framework
       path: /mac/mac-framework.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-oci-tool-
       title: 'MAC OCI Tool '
       path: /mac/mac-oci-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-packages-installation-file-process
       title: Mac packages installation file process
       path: /mac/mac-packages-installation-file-process.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-packages-installation-file-processcn
       title: Mac packages installation file process(CN)
       path: /mac/mac-packages-installation-file-processcn.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-ui-客制化修改-以hostbridge-為例
       title: Mac UI 客制化修改 (以HostBridge 為例)
       path: /mac/mac-ui-客制化修改-以hostbridge-為例.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-新build-project-遇到問題
       title: Mac 新build project 遇到問題
       path: /mac/mac-新build-project-遇到問題.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: mac-權限問題
       title: Mac 權限問題
       path: /mac/mac-權限問題.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: xcode-architecture-設定
       title: Xcode Architecture 設定
       path: /mac/xcode-architecture-設定.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: c-使用c產生的dll-問題
       title: C# 使用C產生的DLL 問題
       path: /general/c-使用c產生的dll-問題.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: genesyslogic-integrates-sdk-specification
       title: GenesysLogic integrates SDK specification
       path: /general/genesyslogic-integrates-sdk-specification.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-end-user-tool-packing-user-guide
       title: HP End User Tool Packing User Guide
       path: /general/hp-end-user-tool-packing-user-guide.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-end-user-tool-封裝方式
       title: HP End User Tool 封裝方式
       path: /general/hp-end-user-tool-封裝方式.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: hp-enduser-tool-
       title: 'HP EndUser Tool '
       path: /general/hp-enduser-tool-.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: merge-code-tool-help
       title: Merge Code Tool Help
       path: /general/merge-code-tool-help.html
       type: tag_related
       confidence: medium
-      score: 0.6120513207343932
+      score: 0.6143769188999715
     - target: ps196-update-flow
       title: PS196 Update Flow
       path: /general/ps196-update-flow.html
@@ -798,9 +810,9 @@ relations:
       type: same_domain
       confidence: low
       score: 0.2
-    - target: lenovo-one-key-update-tool-
+    - target: lenovo-one-key-update-tool---19164f6b
       title: 'Lenovo one key update tool '
-      path: /general/lenovo-one-key-update-tool-.html
+      path: /tools/lenovo-one-key-update-tool---19164f6b.html
       type: same_domain
       confidence: low
       score: 0.2
