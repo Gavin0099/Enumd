@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.2",
+  "candidate_id": "msc-session-20260523T064045-75bc1f",
+  "session_id": "session-20260523T064045-75bc1f",
+  "generated_at_utc": "2026-05-23T06:40:45.713095+00:00",
+  "advisories": [],
+  "advisory_only": true,
+  "validation": {
+    "l3_enum_valid": true,
+    "evidence_linkage_complete": true
+  }
+}
