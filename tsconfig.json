@@ -6,5 +6,12 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "ai-governance-framework",
+    "notion-rag",
+    "notion-wiki",
+    "notion-private-wiki"
+  ]
 }
