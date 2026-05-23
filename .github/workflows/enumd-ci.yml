@@ -42,3 +42,23 @@ jobs:
 
       - name: Governance runtime mapping guard
         run: python scripts/validate-chatgpt-lane-ledger.py
+
+  governance-check:
+    name: Interception Ledger Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run governance check (warn-only)
+        run: |
+          python ai-governance-framework/governance_tools/ci_governance_check.py \
+            --project-root . \
+            --warn-only \
+            --format human
