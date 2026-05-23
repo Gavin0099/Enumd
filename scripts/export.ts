@@ -14,7 +14,7 @@ import { join } from "path";
 import matter from "gray-matter";
 
 import { NotionAdapter } from "../lib/adapters/notion-adapter";
-import type { PageMeta } from "../lib/source-adapter";
+import type { KnowledgeSourceAdapter, PageMeta } from "../lib/source-adapter";
 import { SignalCollector } from "../lib/signals";
 import { summarizePage } from "../lib/summarize";
 import { titleToSlug } from "../lib/categorize";
@@ -87,7 +87,7 @@ async function buildFrontmatter(
   };
 }
 
-async function exportPage(meta: PageMeta, seenPaths: Map<string, string>, adapter: NotionAdapter): Promise<"skipped" | "exported"> {
+async function exportPage(meta: PageMeta, seenPaths: Map<string, string>, adapter: KnowledgeSourceAdapter): Promise<"skipped" | "exported"> {
   const title = meta.title;
 
   if (SKIP_TITLES.some((s) => title.includes(s))) {
