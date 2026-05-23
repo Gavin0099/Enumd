@@ -1,63 +1,106 @@
 ---
 title: GL EndUser Tool Instruction
 domain_tags:
+  - hub
   - tools
   - security
 task_tags:
-  - install
   - config
 authority_level: source
 is_deprecated: false
-category: tools
-notion_id: 834f7a65-41b7-4ed3-b3b1-a9d1f605cb39
+category: hub
+notion_id: 731d4ff9-83df-46eb-9efa-177cb15f6ec8
 notion_url: >-
-  https://www.notion.so/GL-EndUser-Tool-Instruction-834f7a6541b74ed3b3b1a9d1f605cb39
-notion_updated_at: '2026-01-21T09:25:00.000Z'
-exported_at: '2026-05-16T12:37:36.010Z'
+  https://www.notion.so/GL-EndUser-Tool-Instruction-731d4ff983df46eb9efa177cb15f6ec8
+notion_updated_at: '2026-01-22T03:25:00.000Z'
+exported_at: '2026-05-23T04:48:33.071Z'
 is_summarized: false
 relations:
   manual: []
   inferred: []
 ---
 
-GL EndUser Tool ini 參數
+## Ini parameter Description
 
-[UNSUPPORTED_BLOCK: link_to_page]
+## Hub Related settings
 
-[DOWNLOAD FILE: file](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/d41727bf-fe60-4940-ad54-ae7e30ab7a07/General_End_User_Tool_Packing_Instruction.docx?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=a0a8296a545c9afa1c081b803f9af3c8183da73f26db4bef96f5a8140296e64a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/7f132fb1-2ccf-4e9b-8335-d39e9b060647/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663TGOUHC5%2F20260523%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260523T044828Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGQaCXVzLXdlc3QtMiJGMEQCIAVKXavXS4VdzRFATzwKiUfircgseCFkgSxagwD6Z4s8AiAkjD1Lz9eEUl%2FF5%2FSyFHYkNcRM0OJ8pP9hgDJ7WIjWUCr%2FAwgtEAAaDDYzNzQyMzE4MzgwNSIMzAGiG35iwu2KugrlKtwDcW6UkF%2BgQvbKXK%2FoRWKnRehgtxyThF95m9vPWc27MK%2FB9eEpePYxAPxQI2fO2m0fl466XEFZ7K5kKXjJ65quwH5bR9R5TsZfnT6OSBMS3i%2FLWSQFIiZGJpebwEW6PDN52p3f2tODpAITHSRfDr56pd2f5PClja4m%2BS9fDywK8AIHx6UKWbwb1Gskvi2n3CyhQ9sinwAeL4h%2BB0g9osCECCgiNHuLCSXEc7hvkrtqsGNaQMtzltp44sKkMnKQQd3FEcagj%2FmMS0kJSvDpNC75rYprfliEFiuB6P5g4V9tSm%2B4tOm9c%2B9KBkBDkAqoPOYDzqTa98yNcnxvLR1ABPQi%2FhViLV0QFLGjkw%2FurJ7UKlNaNo6x836Hc7dZRrmYRLOezGb3VrV5Q%2FDNHwvu9bCOkswdG4CcaJZobNGDcA35BmMmoVX1ktiSK0Ycdy3UeHk15z49IQKX8TJM%2BHFGocTbDvM3TBnhRksuIaZrPPExq0OL161n4hsG4rSJAf0yaKgyevDDZ0GFl%2FgU1bJEOBdTlALJHyt86OLMuYjvaHnbL6IpQbVdSG%2Few8YmMJLbiV3VSuvnBR3EfCO03CK6cJpHfJ0PiUhVvpwoZAfK6nB3b25LBiDdEh4bq2EoyHUw1s3E0AY6pgFxjwIJxir7m%2FGPHpWHFVkh5ngCVi7t0SBg5SwaV2JiHBfj4zQyWXLpIcAScsy0aWsrhbUh89cDsFEwXgXEwc4h%2FCbvd5qKNkkeGax8ccD8mu%2FaNAcRUNMaX3lnZ%2B3C7T2x5d83C9FX17h%2FNcg16etoV2iRi9dUSCURGNmkkO4fhpw1HodVNsyKmhVpLdb1uks2mrD0wHo6Bo816HLtRBXyAfEfqdPr&X-Amz-Signature=a295ddb56c18def2cd78f804c48c62a7d1e6bf8b9a14f3c3c3e776d7ff0147fc&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-# 如何修改程式Icon
+1. ToolName:
+Update Tool title, which can be set by this parameter, as shown in the red box below.
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/59ca62c6-dba1-4ea3-8415-3ba8c648eca4/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=117419d33d373db7639ed8bdcbfb81131ee1d1c2cfe4fb24d7b8419e311f978d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  ![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/87e338fb-9895-4783-a443-7ba698f35ff5/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UVOCX4XN%2F20260523%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260523T044828Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGQaCXVzLXdlc3QtMiJIMEYCIQDOwXeLWQ%2BZ4QOuAxzABrlgGnZXZ21ROhddoEJDVf7euQIhAJQMJH0R9YZhhmF4VsevVJEVhQLBzmv0lLrIUjp2OoucKv8DCC0QABoMNjM3NDIzMTgzODA1Igy5ISDSnpafPoFFJx4q3APt%2BXIk1u%2FjdPkUKwM42E5Y7YTwNNz70%2BrGEc9q4s5wAFSPmcqpyxSLIk5grEyKBbk%2FAAPJvLdcs5djwQydL8ksls5JMJEW9B1idAvmkfgyNzLsntBesD1E%2BIIUmUtXNoM%2Bs1CbhJFwsrpzHcurhomObAiAmdVGpNodyPQ%2B%2FrepRScs2uxpinva0egtsakV8Pe%2B0tao4T8sP1BgASFIdR2GpC8zlqOw23xiXFB%2Bg8YqLk0c7ymbMHfrIrUvoXaZ6kX42srFViekJYxfHktT3apwRh6ywct60BlnpbRU9mie7uYE%2FyWK%2BdOnzW0VNZMdcBMsswuJYxYyS0%2Bp2%2B397w0bN5UIENN0Gtk67CfcFy0ylo7CSPrSguhISX1ft%2FWNSH2SiReozm3aryI6o0gOuPB%2FVQtKAN98TmTGRyjIRRf4w23A3Vk4pkzpw3UnMmOuLL6pBZJSxa4Z611V%2BPKFRwUWbQD8SSkyWmSEklPEihAuPaSe6ZdrM5AJMXuGYuoY2hdaX27FlNQVhj6opw6nnYdnPAcoLFvQuTHDQltnFWD8d3YMtFBcAu%2BfWMCdTsYGxXcuqUx9hyRiprj1vzkaGPrnTHn1J1AK90ujn5micsPHI57GY9QO%2BkOdTg5SSjDiy8TQBjqkAay7y9GM2poov%2BNVtenzcJvRTe7c61chwhgYo3TtToT%2BFWGatMEDrQMV7e4hOn83VAJNIytrHSrFtFhuVIrSd5xh1zj3lpiMeCUz4KHh9CTNMBLnWMAiVYbsEG%2B5GWdc%2B1Y%2FjzzyOahFt1NMxzS1kA7yaAvah8MLqPa2P68QhAmUL%2FMiodrASDlO%2FPz8t7OvQzQ222QaOtsZSGKiFSubV3DYyz%2FC&X-Amz-Signature=1a50291665bc9d608d2f2a82b4e25920ac20bf0551be9f86d1722123e9774ae5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-程式的左上角與左方的Icon是可以更換或是新增的, 請參考以下步驟
+1. ISPItem:
+Set the chip to be updated. For example, if there are two layers of GL3523hub and scaler, write **0 0 6**. You can refer to the comment on the second point.
 
-例如現在要新增TypeA+C.ico的新圖
+1. Hub File Name:
+Bin file name to be updated by Hub.
 
-1. 將要新增的Icon放到res資料夾內
+1. Scaler File Name:
+Bin file name to be updated by Scaler.
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/ea21b491-6efc-4fe4-9ec6-e43db2edd378/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=3e87e534e71a3b2b6253ae23b784e46bc148658454624c4a042c33ecdfc72de0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+1. Mstar_Scaler:
+Scaler chip setting, you need to fill in the corresponding chip Name Scaler to update normally.
 
-2. 回到Visual Studio內, 開啟GLISPDocking.rc, 找到Icon段落並新增一個ID
+1. EUserAutoUninstall (Default: 1)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/f85adc7d-2ee6-43fb-acfb-e3a1faa12d01/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=2cec561912f35883c30febc088e3af7d238aa414074292793dd170dcc95187c2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  1: ISP結束後會自動移除Driver
 
-3. 開啟resource.h, 新增ID
+1. HubRecovery (Default: 0)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/1ede5e83-4e91-4d08-ab83-a721c073c3b9/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=0883c4b4785f9b9a7140c38045653c7681d1057f6948d2ec99df22fc91c03323&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  1: 開啟Recovery, 如果有Host Bridge也會一併開啟
+  
+  0: 關閉Recovery, 如果Recovery Block有資料也會一併清除
 
-下方的也要_APS_NEXT_RESOURCE_VALUE記得修改, 要比剛剛新增的數字+1
+1. PdRecovery (Default: 0)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/88781b12-ad2f-4b26-8c9d-3d19263dfe2e/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=ca6833ce49b9b3a2b607b047776e7984e13e151b9cea154e64a04a8f47329372&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  1: 開啟Recovery
+  
+  0: 關閉Recovery, 如果Recovery Block有資料也會一併清除
 
-4. 開啟IconDefine.h, 新增一個新的Type
+1. GetUsb2HubOnly (Default: 0)
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/3097c181-b4d5-4881-b126-df52be3303f6/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=44fbb4ca60eb69918ab757d38ef47a2cf975e63fece6ea8a62ca1b42bd0556df&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+  1: 只抓USB2.0的Hub: 原因是有些板子有兩層的Hub, 但因為不穩導致3.0的Hub可能少一層, 或是Device Descriptor不見, 使得Tool認Hub會出現問題, 因此增加此選項只抓U2的Hub減少抓錯機會
 
-5. 開啟ISPDockingDlg.cpp, 找到InitializeIconOnUi(), 加入以下code
+## **PD相關設定**
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/27cd6254-9422-4bfe-ae02-9e854ac33f30/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=6f94c74256cd429776dce8074ce927a57bb97dedf0b63cd628993b2a1c524c3b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+1. ShowWarningBeforeISP (Default: 0)
 
-6. 以上就完成新增的流程, 之後要換Icon, 只要去IconDefine.h修改ICON_TYPE後面的值即可
+  1: 按下更新後會出現提示視窗"Must unplug the power adapter before starting ISP!!"
 
-![image](https://prod-files-secure.s3.us-west-2.amazonaws.com/98ac40db-c3ab-4237-a4c9-5a9cd8cc0a6a/25e667f8-37ca-4beb-8e1b-7d18da822b49/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QEUSENIN%2F20260516%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260516T123736Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIFTa8wlXFQUGcqT0DbCm2CIpSW7Rm3jyPshvxUU85EIOAiAyq9127%2BgkiUHlLbyNOOhvR%2BY%2FCXG4xUF%2BsUVxcGNETiqIBAiK%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMp5vrHSw1Pwa5JtIDKtwDEc%2BkYVLFgpqgd6PH1kWZDHvR3RsOklpWNsMxtLEySwXoj07FjZpeHEAtB18Ldi2XWnwog466u5%2B%2FLwsQnoZCDkLG6R%2BtUrLJNGPVYNllbSQ4S63TxGb%2Fj8tpB3pyAioClCMb6gOvYhzsv5vjCJyu984saMTWFAxU580U%2FaoaGDw5IBCo9soHlGcXFiD%2Flpyd0kV7IceOTTOjYIREhFMx2oDp0nEU%2Fwt1iUbq%2FPwRGt00zpTqDLTRvBifo%2FydXkDTUQcosqYWJwCuz2Hn8TtKnSLLYy4D4xJecMlser3AQHh0XfF%2B34Fm2O%2FplcV5xTnOSM%2Fz26pThBSx4%2BPH8EqZM8hms8%2BXt6%2FsrJpHXZorcLskPu54T9rk6jizSIGYaP1KtkckVg82BfWMHb1jUYON3o%2BQx1wEVqVVBfI%2Bw71XgIlc5VmwLs7l09N7ytTfG%2FUHlSJleXmADvN1corK6KO%2F7IKqT446u1u2a%2Bj3gvFJngarGv3NzhBES9nyRd%2FdJY6VH1tDuBbRC0pp5BmdIxOiYuvVNInBDVEX43puautALRK0ZkRy0fIxojZxSAKLZUZ0uFT7wW07J6KAQREi1UdsMkL%2BxjFzrmlf6GOskY0SKj%2BUs8H2SA6Ynr3tQcsw%2Femg0AY6pgHnGpq%2Brxrm%2B63Pu6JZjEcGUI%2B3Ha3AJO1oNseRyIEwajjCUBTBjC6dyrbrUomg8HLKlTP%2FWnxyXPmbPIJwhV2O9w%2BZxq9ALLem9iaJk97J%2BmyfHFCcZJozyKC9hZ2ax0YQKTQPNWfZ28DBxb%2FvbzG6SdebyfFf5lft0AHbxZgW0jFlg%2FxdO4jEzNjlWNLGb%2FLlj6mkiWiUpf3C5ymeQ39ci3%2FaB5Wq&X-Amz-Signature=2135f8746ee2b575c6cf8a458330fe0613fc58aa8eb3e72be4b4990e4c38b41b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+1. ShowWarningAfterISP (Default: 0)
+
+  1: 燒錄完畢後會出現提示視窗"Must detach the cable and power adapter!!"
+
+1. ShowFwVersion (Default: 0)
+
+  1: 顯示FW的版本
+
+1. ReadADC (Default: 0, only for Billboard PD)
+
+  1: 不走Set PD to Sink的流程, 而是讀取ADC
+
+1. ForcePDMode (Default: 0)
+
+  程式預設會去讀取ToolString來判斷是否支援PD, 當設定為1時, 不管ToolString內容有沒有支援PD, 強制當成有PD
+
+1. BlockOldSetPdToSinkFail (Default: 1)
+
+  1: 如果板子是用舊版的FW又遇到錯誤時, 則會擋掉當作燒錄失敗
+
+1. SkipSetPdToSinkProcess  (Default: 0, only for Billboard PD)
+
+  1: 跳過Set PD to Sink的流程不做
+
+1. DelayTimeBeforePDEnterISP (Default: 0, only for I2C PD)
+
+  1: Set PD to Sink流程結束要EnterISP之前需要delay的秒數
+
+1. DelayTimeBeforePDSetToSink  (Default: 0, only for Billboard PD)
+
+  問完PD狀態(ROM or RAM code)後, Set PD to Sink之前delay的秒數
+
+1. DelayTimeAfterEraseBlock (Default: 500ms, only for I2C PD)
+
+  Recovery未開啟時, Erase Block後, Enter ISP之前delay的秒數

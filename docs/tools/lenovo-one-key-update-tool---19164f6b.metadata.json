@@ -2,7 +2,7 @@
   "metadata": {
     "schema_version": "2.7.1",
     "extractor_version": "enumd-notion-exporter/1.5.0",
-    "timestamp": "2026-05-23T04:48:59.614Z",
+    "timestamp": "2026-05-23T04:49:03.550Z",
     "validation": {
       "core_support_regressions": [],
       "has_failures": false,
@@ -16,42 +16,48 @@
       },
       "coverage_alignment": {
         "source": "discovered_source",
-        "discovered_total": 17,
-        "extracted_seen_total": 17,
+        "discovered_total": 28,
+        "extracted_seen_total": 28,
         "by_type": {
-          "paragraph": {
-            "discovered": 6,
-            "extracted": 6,
+          "heading_1": {
+            "discovered": 1,
+            "extracted": 1,
             "delta": 0,
             "classification": "aligned"
           },
-          "file": {
+          "quote": {
             "discovered": 1,
             "extracted": 1,
             "delta": 0,
             "classification": "aligned"
           },
           "heading_2": {
-            "discovered": 1,
-            "extracted": 1,
-            "delta": 0,
-            "classification": "aligned"
-          },
-          "heading_3": {
             "discovered": 3,
             "extracted": 3,
             "delta": 0,
             "classification": "aligned"
           },
-          "code": {
-            "discovered": 2,
-            "extracted": 2,
+          "paragraph": {
+            "discovered": 10,
+            "extracted": 10,
             "delta": 0,
             "classification": "aligned"
           },
           "bulleted_list_item": {
+            "discovered": 7,
+            "extracted": 7,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "code": {
             "discovered": 4,
             "extracted": 4,
+            "delta": 0,
+            "classification": "aligned"
+          },
+          "heading_3": {
+            "discovered": 2,
+            "extracted": 2,
             "delta": 0,
             "classification": "aligned"
           }
@@ -60,45 +66,51 @@
     }
   },
   "source": {
-    "page_id": "104302e4-2b34-45fa-be86-a1ba192ae5dc",
-    "last_edited_time": "2026-01-21T09:34:00.000Z",
-    "extracted_at": "2026-05-23T04:48:57.618Z"
+    "page_id": "19164f6b-c656-80fb-b1d4-fdf017e455b3",
+    "last_edited_time": "2026-01-21T09:36:00.000Z",
+    "extracted_at": "2026-05-23T04:49:02.845Z"
   },
   "metrics": {
     "blocks": {
-      "paragraph": {
-        "seen": 6,
-        "fully_rendered": 6,
-        "degraded_rendered": 0,
-        "dropped": 0
-      },
-      "file": {
-        "seen": 1,
-        "fully_rendered": 0,
-        "degraded_rendered": 1,
-        "dropped": 0
-      },
-      "heading_2": {
+      "heading_1": {
         "seen": 1,
         "fully_rendered": 1,
         "degraded_rendered": 0,
         "dropped": 0
       },
-      "heading_3": {
+      "quote": {
+        "seen": 1,
+        "fully_rendered": 1,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_2": {
         "seen": 3,
         "fully_rendered": 3,
         "degraded_rendered": 0,
         "dropped": 0
       },
-      "code": {
-        "seen": 2,
-        "fully_rendered": 2,
+      "paragraph": {
+        "seen": 10,
+        "fully_rendered": 10,
         "degraded_rendered": 0,
         "dropped": 0
       },
       "bulleted_list_item": {
+        "seen": 7,
+        "fully_rendered": 7,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "code": {
         "seen": 4,
         "fully_rendered": 4,
+        "degraded_rendered": 0,
+        "dropped": 0
+      },
+      "heading_3": {
+        "seen": 2,
+        "fully_rendered": 2,
         "degraded_rendered": 0,
         "dropped": 0
       }
@@ -112,7 +124,7 @@
     "render_errors": [],
     "dropped_reasons": {},
     "structure": {
-      "max_depth": 1,
+      "max_depth": 0,
       "truncated": false
     }
   },
@@ -123,8 +135,8 @@
         "preserved": 0
       },
       "bold": {
-        "total": 0,
-        "preserved": 0
+        "total": 12,
+        "preserved": 12
       },
       "italic": {
         "total": 0,
