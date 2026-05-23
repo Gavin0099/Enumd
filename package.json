@@ -22,7 +22,8 @@
     "build-index": "tsx --env-file .env.local scripts/build-index.ts",
     "check-stale": "tsx --env-file .env.local scripts/check-stale.ts",
     "backfill:audit": "tsx --env-file .env.local scripts/backfill-wave-audit.ts",
-    "query": "tsx --env-file .env.local scripts/query.ts"
+    "query": "tsx --env-file .env.local scripts/query.ts",
+    "typecheck:rag": "npx tsc --noEmit -p notion-rag/tsconfig.json"
   },
   "devDependencies": {
     "tsx": "^4.19.2",
