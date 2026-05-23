@@ -2,7 +2,7 @@
 <!-- governance-baseline: overridable -->
 <!-- baseline_version: 1.0.0 -->
 
-> **最後更新**: 2026-05-22
+> **最後更新**: 2026-05-23
 > **Owner**: Gavin
 > **Freshness**: Sprint (7d)
 
@@ -94,6 +94,11 @@
   - commit: `dfcb7b3`
 
 - 2026-05-22: governance onboarding 完成（contract.yaml risk_tier + framework_repo + adopted_release 宣告；pre-commit + pre-push hooks 安裝；project facts artifact 生成；runtime-smoke all-pass）。submodule bumped to `d082a7e`。reviewer-handoff: `reviewer_handoff_governance_onboarding_2026-05-22.md`。
+
+- 2026-05-23: `ai-governance-framework` submodule 升版吸收（`b540c65`）— **已執行**。
+  - Trigger：enumd-ci.yml `governance-check` job 引用 `ci_governance_check.py`，該檔案在 `d082a7e` 不存在。
+  - 條件 2 成立：upstream `6a7f1a0` 新增 Runtime Enforcement Attachment v0.1（`ci_governance_check.py`），Enumd CI 明確需要。
+  - commit: `4315432`；`framework.lock.json` 更新至 `b540c65`。
 
 ## Known Risks
 
